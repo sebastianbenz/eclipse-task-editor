@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="taskPaper"
+    nsURI="http://www.sebastianbenz.de/task/TaskPaper" nsPrefix="taskPaper">
+  <eClassifiers xsi:type="ecore:EClass" name="Todo">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="contents" upperBound="-1"
+        eType="ecore:EClass platform:/resource/de.sebastianbenz.task/src-gen/de/sebastianbenz/task/TaskPaper.ecore#//Content"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Content">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="text" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Task" eSuperTypes="platform:/resource/de.sebastianbenz.task/src-gen/de/sebastianbenz/task/TaskPaper.ecore#//Content"/>
+  <eClassifiers xsi:type="ecore:EClass" name="OpenTask" eSuperTypes="platform:/resource/de.sebastianbenz.task/src-gen/de/sebastianbenz/task/TaskPaper.ecore#//Task"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ClosedTask" eSuperTypes="platform:/resource/de.sebastianbenz.task/src-gen/de/sebastianbenz/task/TaskPaper.ecore#//Task"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Note" eSuperTypes="platform:/resource/de.sebastianbenz.task/src-gen/de/sebastianbenz/task/TaskPaper.ecore#//Content"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Project" eSuperTypes="platform:/resource/de.sebastianbenz.task/src-gen/de/sebastianbenz/task/TaskPaper.ecore#//Content">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="intend" unique="false"
+        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Spaces" eSuperTypes="platform:/resource/de.sebastianbenz.task/src-gen/de/sebastianbenz/task/TaskPaper.ecore#//Content"/>
+</ecore:EPackage>

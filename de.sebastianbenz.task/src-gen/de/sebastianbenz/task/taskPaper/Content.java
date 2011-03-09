@@ -1,0 +1,54 @@
+/**
+ * <copyright>
+ * </copyright>
+ *
+ */
+package de.sebastianbenz.task.taskPaper;
+
+import org.eclipse.emf.ecore.EObject;
+
+/**
+ * <!-- begin-user-doc -->
+ * A representation of the model object '<em><b>Content</b></em>'.
+ * <!-- end-user-doc -->
+ *
+ * <p>
+ * The following features are supported:
+ * <ul>
+ *   <li>{@link de.sebastianbenz.task.taskPaper.Content#getText <em>Text</em>}</li>
+ * </ul>
+ * </p>
+ *
+ * @see de.sebastianbenz.task.taskPaper.TaskPaperPackage#getContent()
+ * @model
+ * @generated
+ */
+public interface Content extends EObject
+{
+  /**
+   * Returns the value of the '<em><b>Text</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Text</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Text</em>' attribute.
+   * @see #setText(String)
+   * @see de.sebastianbenz.task.taskPaper.TaskPaperPackage#getContent_Text()
+   * @model
+   * @generated
+   */
+  String getText();
+
+  /**
+   * Sets the value of the '{@link de.sebastianbenz.task.taskPaper.Content#getText <em>Text</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Text</em>' attribute.
+   * @see #getText()
+   * @generated
+   */
+  void setText(String value);
+
+} // Content

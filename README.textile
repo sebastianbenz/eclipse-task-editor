@@ -1,0 +1,18 @@
+h1. A simple textual todo editor for Eclipse
+
+
+
+h2. Installation
+
+The editor can be installed via the following update site:
+
+http://sebastianbenz.github.com/eclipse-task-editor/updatesite/interim
+
+Please note: the eclipse task editor is based on Xtext 2.0, for which currently only nightly builds are available (http://download.eclipse.org/modeling/tmf/updates/nightly).
+
+h2. License
+
+Copyright (C) 2010 Sebastian Benz. Distributed under the Eclipse Public License.
+
+
+

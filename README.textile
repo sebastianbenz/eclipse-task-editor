@@ -1,6 +1,7 @@
 h1. A simple textual todo editor for Eclipse
 
-http://sebastianbenz.github.com/eclipse-task-editor/images/Screenshot.png
+!http://sebastianbenz.github.com/eclipse-task-editor/images/Screenshot.png(Screenshot)!
+
 
 h2. Installation
 

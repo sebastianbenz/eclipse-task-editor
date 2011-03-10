@@ -12,6 +12,7 @@ import de.sebastianbenz.task.tagging.DefaultTagsProcessor;
 import de.sebastianbenz.task.tagging.Region;
 import de.sebastianbenz.task.tagging.TagsProcessor;
 
+@SuppressWarnings("unchecked")
 public class TagProcessorTest {
 	
 	private TagsProcessor fixture = new DefaultTagsProcessor();

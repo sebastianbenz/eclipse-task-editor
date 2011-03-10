@@ -29,6 +29,7 @@ import de.sebastianbenz.task.taskPaper.Task;
 import de.sebastianbenz.task.taskPaper.Todo;
 import de.sebastianbenz.task.util.Tasks;
 
+@SuppressWarnings("restriction")
 @RunWith(XtextRunner.class)
 @InjectWith(TaskPaperInjectorProvider.class)
 public abstract class AbstractTest {
@@ -50,11 +51,9 @@ public abstract class AbstractTest {
 		return filter(contents, Task.class).iterator().next();
 	}
 
-	@SuppressWarnings("restriction")
 	protected Matcher<EList<Content>> are(final Class<?>... types) {
 		return new TypeSafeMatcher<EList<Content>>() {
 	
-			@Override
 			public void describeTo(Description description) {
 				description.appendValueList("", ", ", "", types);
 			}

@@ -90,7 +90,6 @@ public class SemanticHighlightingCalculator implements ISemanticHighlightingCalc
 	}
 	
 	
-	@Override
 	public void provideHighlightingFor(XtextResource resource,
 			IHighlightedPositionAcceptor acceptor) {
 		if (noNodeModel(resource)){

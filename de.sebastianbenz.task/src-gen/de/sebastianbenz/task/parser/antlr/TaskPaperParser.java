@@ -3,10 +3,9 @@
 */
 package de.sebastianbenz.task.parser.antlr;
 
-import org.eclipse.xtext.parser.antlr.XtextTokenStream;
-
 import com.google.inject.Inject;
 
+import org.eclipse.xtext.parser.antlr.XtextTokenStream;
 import de.sebastianbenz.task.services.TaskPaperGrammarAccess;
 
 public class TaskPaperParser extends org.eclipse.xtext.parser.antlr.AbstractAntlrParser {

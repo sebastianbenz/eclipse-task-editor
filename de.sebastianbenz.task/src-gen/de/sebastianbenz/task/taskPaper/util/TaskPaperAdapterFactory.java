@@ -5,17 +5,14 @@
  */
 package de.sebastianbenz.task.taskPaper.util;
 
+import de.sebastianbenz.task.taskPaper.*;
+
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
-import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
-import org.eclipse.emf.ecore.EObject;
 
-import de.sebastianbenz.task.taskPaper.Content;
-import de.sebastianbenz.task.taskPaper.Note;
-import de.sebastianbenz.task.taskPaper.Project;
-import de.sebastianbenz.task.taskPaper.Task;
-import de.sebastianbenz.task.taskPaper.TaskPaperPackage;
-import de.sebastianbenz.task.taskPaper.Todo;
+import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
+
+import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->

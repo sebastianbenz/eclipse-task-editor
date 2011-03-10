@@ -4,11 +4,10 @@
 package de.sebastianbenz.task.ui.contentassist;
 
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.xtext.Assignment;
-import org.eclipse.xtext.RuleCall;
+import org.eclipse.xtext.*;
 import org.eclipse.xtext.ui.editor.contentassist.AbstractJavaBasedContentProposalProvider;
-import org.eclipse.xtext.ui.editor.contentassist.ContentAssistContext;
 import org.eclipse.xtext.ui.editor.contentassist.ICompletionProposalAcceptor;
+import org.eclipse.xtext.ui.editor.contentassist.ContentAssistContext;
 
 /**
  * Represents a generated, default implementation of interface {@link IProposalProvider}.

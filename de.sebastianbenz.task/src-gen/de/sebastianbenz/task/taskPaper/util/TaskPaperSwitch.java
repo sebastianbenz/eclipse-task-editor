@@ -5,16 +5,12 @@
  */
 package de.sebastianbenz.task.taskPaper.util;
 
+import de.sebastianbenz.task.taskPaper.*;
+
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-import org.eclipse.emf.ecore.util.Switch;
 
-import de.sebastianbenz.task.taskPaper.Content;
-import de.sebastianbenz.task.taskPaper.Note;
-import de.sebastianbenz.task.taskPaper.Project;
-import de.sebastianbenz.task.taskPaper.Task;
-import de.sebastianbenz.task.taskPaper.TaskPaperPackage;
-import de.sebastianbenz.task.taskPaper.Todo;
+import org.eclipse.emf.ecore.util.Switch;
 
 /**
  * <!-- begin-user-doc -->

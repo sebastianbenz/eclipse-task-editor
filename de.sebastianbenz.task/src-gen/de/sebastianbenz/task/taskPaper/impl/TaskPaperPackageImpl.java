@@ -5,12 +5,6 @@
  */
 package de.sebastianbenz.task.taskPaper.impl;
 
-import org.eclipse.emf.ecore.EAttribute;
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EPackage;
-import org.eclipse.emf.ecore.EReference;
-import org.eclipse.emf.ecore.impl.EPackageImpl;
-
 import de.sebastianbenz.task.taskPaper.Content;
 import de.sebastianbenz.task.taskPaper.Note;
 import de.sebastianbenz.task.taskPaper.Project;
@@ -18,6 +12,13 @@ import de.sebastianbenz.task.taskPaper.Task;
 import de.sebastianbenz.task.taskPaper.TaskPaperFactory;
 import de.sebastianbenz.task.taskPaper.TaskPaperPackage;
 import de.sebastianbenz.task.taskPaper.Todo;
+
+import org.eclipse.emf.ecore.EAttribute;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EReference;
+
+import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 /**
  * <!-- begin-user-doc -->

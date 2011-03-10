@@ -18,7 +18,6 @@ import de.sebastianbenz.task.taskPaper.Note;
 import de.sebastianbenz.task.taskPaper.Project;
 import de.sebastianbenz.task.taskPaper.Task;
 import de.sebastianbenz.task.taskPaper.Todo;
-import de.sebastianbenz.task.util.Contents;
 
 /**
  * Provides labels for a EObjects.

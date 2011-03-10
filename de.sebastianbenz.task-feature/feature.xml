@@ -16,12 +16,13 @@ are made available under the terms of the Eclipse Public License
 v1.0 which accompanies this distribution, and is available at
 http://www.eclipse.org/legal/epl-v10.html.
    </copyright>
+
    <url>
+      <update url="http://github.com/sebastianbenz/eclipse-task-editor/tree/gh-pages/updatesite"/>
       <discovery label="Xtext Nightly" url="http://download.eclipse.org/modeling/tmf/updates/nightly"/>
    </url>
 
    <requires>
-      <import plugin="org.eclipse.xtext"/>
       <import plugin="org.eclipse.xtext.util"/>
       <import plugin="org.eclipse.emf.ecore"/>
       <import plugin="org.eclipse.emf.common"/>
@@ -36,6 +37,7 @@ http://www.eclipse.org/legal/epl-v10.html.
       <import plugin="org.eclipse.xtext.ui.shared"/>
       <import plugin="org.eclipse.ui"/>
       <import plugin="org.eclipse.xtext.builder"/>
+      <import plugin="org.eclipse.xtext" version="2.0.0" match="greaterOrEqual"/>
    </requires>
 
    <plugin

@@ -3,10 +3,8 @@
  */
 package de.sebastianbenz.task;
 
-import org.eclipse.xtext.linking.ILinker;
 import org.eclipse.xtext.resource.ILocationInFileProvider;
 
-import de.sebastianbenz.task.model.RestructuringLinker;
 import de.sebastianbenz.task.resource.LocationInFileProvider;
 
 /**
@@ -14,12 +12,6 @@ import de.sebastianbenz.task.resource.LocationInFileProvider;
  */
 public class TaskPaperRuntimeModule extends de.sebastianbenz.task.AbstractTaskPaperRuntimeModule {
 
-	@Override
-	public Class<? extends ILinker> bindILinker() {
-		return RestructuringLinker.class;
-	}
-	
-	@Override
 	public Class<? extends ILocationInFileProvider> bindILocationInFileProvider() {
 		return LocationInFileProvider.class;
 	}

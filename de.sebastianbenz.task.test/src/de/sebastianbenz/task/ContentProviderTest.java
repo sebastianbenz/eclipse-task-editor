@@ -115,7 +115,6 @@ public class ContentProviderTest extends AbstractTest{
 
 	protected String[] toString(List<Content> contents) {
 		return newArrayList(transform(contents, new Function<Content, String>() {
-			@Override
 			public String apply(Content content) {
 				return textOf(content);
 			}

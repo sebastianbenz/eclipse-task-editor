@@ -4,6 +4,7 @@
 package de.sebastianbenz.task.parser.antlr;
 
 import java.io.InputStream;
+
 import org.eclipse.xtext.parser.antlr.IAntlrTokenFileProvider;
 
 public class TaskPaperAntlrTokenFileProvider implements IAntlrTokenFileProvider {

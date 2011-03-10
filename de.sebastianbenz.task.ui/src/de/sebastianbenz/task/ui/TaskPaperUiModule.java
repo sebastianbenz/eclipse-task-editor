@@ -5,13 +5,17 @@ package de.sebastianbenz.task.ui;
 
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.eclipse.xtext.ui.editor.XtextEditor;
+import org.eclipse.xtext.ui.editor.autoedit.AbstractEditStrategyProvider;
+import org.eclipse.xtext.ui.editor.folding.IFoldingRegionProvider;
 import org.eclipse.xtext.ui.editor.syntaxcoloring.AbstractAntlrTokenToAttributeIdMapper;
 import org.eclipse.xtext.ui.editor.syntaxcoloring.IHighlightingConfiguration;
 
 import com.google.inject.Binder;
 
-import de.sebastianbenz.task.ui.highlighting.AntlrTokenToAttributeMapper;
+import de.sebastianbenz.task.ui.editor.AutoEditStrategy;
 import de.sebastianbenz.task.ui.highlighting.Configuration;
+import de.sebastianbenz.task.ui.highlighting.SemanticHighlightingCalculator;
+import de.sebastianbenz.task.ui.highlighting.TokenHighlightingConfiguration;
 
 /**
  * Use this class to register components to be used within the IDE.
@@ -25,6 +29,11 @@ public class TaskPaperUiModule extends de.sebastianbenz.task.ui.AbstractTaskPape
 	public void configure(Binder binder) {
 		super.configure(binder);
 		binder.bind(XtextEditor.class).to(TaskEditor.class);
+		binder.bind(IFoldingRegionProvider.class).to(FoldingRegionProvider.class);
+	}
+	
+	public Class<? extends org.eclipse.xtext.ui.editor.syntaxcoloring.ISemanticHighlightingCalculator> bindISemanticHighlightingCalculator() {
+		return SemanticHighlightingCalculator.class;
 	}
 	
 	public Class<? extends IHighlightingConfiguration> bindIHighlightingConfiguration() {
@@ -32,7 +41,13 @@ public class TaskPaperUiModule extends de.sebastianbenz.task.ui.AbstractTaskPape
 	}
 	
 	public Class<? extends AbstractAntlrTokenToAttributeIdMapper> bindAbstractAntlrTokenToAttributeIdMapper() {
-		return AntlrTokenToAttributeMapper.class;
+		return TokenHighlightingConfiguration.class;
 	}
+
+	@Override
+	public Class<? extends AbstractEditStrategyProvider> bindAbstractEditStrategyProvider() {
+		return AutoEditStrategy.class;
+	}
+	
 	
 }

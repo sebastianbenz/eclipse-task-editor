@@ -3,9 +3,48 @@
 */
 package de.sebastianbenz.task.ui.contentassist;
 
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.xtext.Assignment;
+import org.eclipse.xtext.ui.editor.contentassist.ContentAssistContext;
+import org.eclipse.xtext.ui.editor.contentassist.ICompletionProposalAcceptor;
+
+import com.google.inject.Inject;
+
+import de.sebastianbenz.task.tagging.Tag;
+import de.sebastianbenz.task.tagging.TagProvider;
+
 /**
  * see http://www.eclipse.org/Xtext/documentation/latest/xtext.html#contentAssist on how to customize content assistant
  */
 public class TaskPaperProposalProvider extends AbstractTaskPaperProposalProvider {
 
+	@Inject
+	private TagProvider tagProvider;
+	
+	@Override
+	public void completeTask_Text(EObject model, Assignment assignment,
+			ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+		Tag done = Tag.from("done");
+		createProposal(model, context, acceptor, done);
+		for (Tag tag : tagProvider.in(model.eResource())) {
+			createProposal(model, context, acceptor, tag);
+		}
+	}
+	
+
+	protected void createProposal(EObject model, ContentAssistContext context,
+			ICompletionProposalAcceptor acceptor, Tag tag) {
+		String prefix = context.getPrefix();
+		if(prefix.trim().startsWith("-") && !prefix.contains("@" + tag.getName())){
+			acceptor.accept(
+					createCompletionProposal(
+							prefix+ tag, 
+							getStyledDisplayString(model, tag.getName(), tag.getName()), 
+							getLabelProvider().getImage(Tag.EMPTY_TAG), 
+							0, 
+							"", 
+							context));
+		}
+	}
+	
 }

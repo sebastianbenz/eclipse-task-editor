@@ -1,12 +1,13 @@
 package de.sebastianbenz.task.ui.highlighting;
 
+import org.eclipse.jface.resource.JFaceResources;
+import org.eclipse.jface.text.TextAttribute;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.FontData;
 import org.eclipse.swt.graphics.RGB;
 import org.eclipse.xtext.ui.editor.syntaxcoloring.DefaultHighlightingConfiguration;
 import org.eclipse.xtext.ui.editor.syntaxcoloring.IHighlightingConfigurationAcceptor;
 import org.eclipse.xtext.ui.editor.utils.TextStyle;
-import org.eclipse.xtext.ui.editor.utils.TextStyleConstants;
 
 public class Configuration extends DefaultHighlightingConfiguration {
 	
@@ -15,8 +16,9 @@ public class Configuration extends DefaultHighlightingConfiguration {
 	public static final String PROJECT1_ID = "project1";
 	public static final String PROJECT2_ID = "project2";
 	public static final String PROJECT3_ID = "project3";
-	static final String TASK_DONE_ID = "taskDone";
-	static final String TASK_OPEN_ID = "taskOpen";
+	public static final String TASK_DONE_ID = "taskDone";
+	public static final String TASK_OPEN_ID = "taskOpen";
+	public static final String TAG_ID = "tag";
 
 	public void configure(IHighlightingConfigurationAcceptor acceptor) {
 		acceptor.acceptDefaultHighlighting(KEYWORD_ID, "Keyword", defaultTextStyle());
@@ -35,23 +37,23 @@ public class Configuration extends DefaultHighlightingConfiguration {
 		
 		acceptor.acceptDefaultHighlighting(TASK_DONE_ID, "Task closed", taskDoneTextStyle());
 		acceptor.acceptDefaultHighlighting(TASK_OPEN_ID, "Task open", taskOpenTextStyle());
+		acceptor.acceptDefaultHighlighting(TAG_ID, "Tags", tagTextStyle());
 	}
 
 	private TextStyle taskOpenTextStyle() {
 		TextStyle textStyle = defaultTextStyle().copy();
-		textStyle.setColor(new RGB(255, 0, 0));
 		return textStyle;
 	}
 
 	private TextStyle taskDoneTextStyle() {
 		TextStyle textStyle = defaultTextStyle().copy();
-		textStyle.setColor(new RGB(174, 226, 57));
+		textStyle.setStyle(TextAttribute.STRIKETHROUGH);
 		return textStyle;
 	}
 
 	private TextStyle project3TextStyle() {
 		TextStyle textStyle = defaultTextStyle().copy();
-		textStyle.setFontData(fontWithHeight(11));
+		textStyle.setFontData(fontWithHeight(12));
 		return textStyle;
 	}
 
@@ -63,30 +65,41 @@ public class Configuration extends DefaultHighlightingConfiguration {
 
 	private TextStyle project1TextStyle() {
 		TextStyle textStyle = defaultTextStyle().copy();
-		textStyle.setFontData(fontWithHeight(15));
+		textStyle.setFontData(fontWithHeight(14));
 		return textStyle;
 	}
 
 	protected FontData fontWithHeight(int height) {
-		return new FontData(TextStyleConstants.DEFAULT_FONT_NAME, height, SWT.BOLD);
+		return new FontData(JFaceResources.HEADER_FONT, height, SWT.BOLD);
 	}
 
 	private TextStyle urlTextStyle() {
 		TextStyle textStyle = nodeTextStyle().copy();
-		textStyle.setStyle(SWT.UNDERLINE_LINK);
+		textStyle.setStyle(TextAttribute.UNDERLINE);
 		return textStyle;
 	}
 
 	private TextStyle nodeTextStyle() {
 		TextStyle textStyle = defaultTextStyle().copy();
-		textStyle.setColor(new RGB(125, 125, 125));
+		textStyle.setColor(grey());
+		return textStyle;
+	}
+
+	protected RGB grey() {
+		return new RGB(125, 125, 125);
+	}
+	
+	private TextStyle tagTextStyle() {
+		TextStyle textStyle = nodeTextStyle().copy();
+		textStyle.setStyle(TextAttribute.UNDERLINE);
+		textStyle.setColor(grey());
 		return textStyle;
 	}
 	
 	@Override
 	public TextStyle defaultTextStyle() {
 		TextStyle result = super.defaultTextStyle().copy();
-		result.setFontData(new FontData("org.eclipse.jface.dialogfont", 11, SWT.NORMAL));
+		result.setFontData(new FontData(JFaceResources.DIALOG_FONT, 11, SWT.NORMAL));
 		return result;
 	}
 }

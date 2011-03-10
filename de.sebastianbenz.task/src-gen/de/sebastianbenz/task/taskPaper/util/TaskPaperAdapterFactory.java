@@ -5,14 +5,17 @@
  */
 package de.sebastianbenz.task.taskPaper.util;
 
-import de.sebastianbenz.task.taskPaper.*;
-
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
-
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
-
 import org.eclipse.emf.ecore.EObject;
+
+import de.sebastianbenz.task.taskPaper.Content;
+import de.sebastianbenz.task.taskPaper.Note;
+import de.sebastianbenz.task.taskPaper.Project;
+import de.sebastianbenz.task.taskPaper.Task;
+import de.sebastianbenz.task.taskPaper.TaskPaperPackage;
+import de.sebastianbenz.task.taskPaper.Todo;
 
 /**
  * <!-- begin-user-doc -->
@@ -93,16 +96,6 @@ public class TaskPaperAdapterFactory extends AdapterFactoryImpl
         return createTaskAdapter();
       }
       @Override
-      public Adapter caseOpenTask(OpenTask object)
-      {
-        return createOpenTaskAdapter();
-      }
-      @Override
-      public Adapter caseClosedTask(ClosedTask object)
-      {
-        return createClosedTaskAdapter();
-      }
-      @Override
       public Adapter caseNote(Note object)
       {
         return createNoteAdapter();
@@ -111,11 +104,6 @@ public class TaskPaperAdapterFactory extends AdapterFactoryImpl
       public Adapter caseProject(Project object)
       {
         return createProjectAdapter();
-      }
-      @Override
-      public Adapter caseSpaces(Spaces object)
-      {
-        return createSpacesAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -185,36 +173,6 @@ public class TaskPaperAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link de.sebastianbenz.task.taskPaper.OpenTask <em>Open Task</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see de.sebastianbenz.task.taskPaper.OpenTask
-   * @generated
-   */
-  public Adapter createOpenTaskAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link de.sebastianbenz.task.taskPaper.ClosedTask <em>Closed Task</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see de.sebastianbenz.task.taskPaper.ClosedTask
-   * @generated
-   */
-  public Adapter createClosedTaskAdapter()
-  {
-    return null;
-  }
-
-  /**
    * Creates a new adapter for an object of class '{@link de.sebastianbenz.task.taskPaper.Note <em>Note</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -240,21 +198,6 @@ public class TaskPaperAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createProjectAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link de.sebastianbenz.task.taskPaper.Spaces <em>Spaces</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see de.sebastianbenz.task.taskPaper.Spaces
-   * @generated
-   */
-  public Adapter createSpacesAdapter()
   {
     return null;
   }

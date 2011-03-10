@@ -4,8 +4,8 @@
 package de.sebastianbenz.task.ui.contentassist.antlr;
 
 import java.util.Collection;
-import java.util.Map;
 import java.util.HashMap;
+import java.util.Map;
 
 import org.antlr.runtime.RecognitionException;
 import org.eclipse.xtext.AbstractElement;
@@ -37,21 +37,20 @@ public class TaskPaperParser extends AbstractContentAssistParser {
 			nameMappings = new HashMap<AbstractElement, String>() {
 				private static final long serialVersionUID = 1L;
 				{
+					put(grammarAccess.getTodoAccess().getAlternatives_1(), "rule__Todo__Alternatives_1");
 					put(grammarAccess.getContentAccess().getAlternatives(), "rule__Content__Alternatives");
-					put(grammarAccess.getTaskAccess().getAlternatives(), "rule__Task__Alternatives");
-					put(grammarAccess.getProjectAccess().getTextAlternatives_2_0(), "rule__Project__TextAlternatives_2_0");
 					put(grammarAccess.getTodoAccess().getGroup(), "rule__Todo__Group__0");
-					put(grammarAccess.getOpenTaskAccess().getGroup(), "rule__OpenTask__Group__0");
-					put(grammarAccess.getClosedTaskAccess().getGroup(), "rule__ClosedTask__Group__0");
+					put(grammarAccess.getTaskAccess().getGroup(), "rule__Task__Group__0");
+					put(grammarAccess.getNoteAccess().getGroup(), "rule__Note__Group__0");
 					put(grammarAccess.getProjectAccess().getGroup(), "rule__Project__Group__0");
-					put(grammarAccess.getProjectAccess().getGroup_1(), "rule__Project__Group_1__0");
-					put(grammarAccess.getTodoAccess().getContentsAssignment_1(), "rule__Todo__ContentsAssignment_1");
-					put(grammarAccess.getOpenTaskAccess().getTextAssignment_1(), "rule__OpenTask__TextAssignment_1");
-					put(grammarAccess.getClosedTaskAccess().getTextAssignment_1(), "rule__ClosedTask__TextAssignment_1");
-					put(grammarAccess.getNoteAccess().getTextAssignment(), "rule__Note__TextAssignment");
-					put(grammarAccess.getProjectAccess().getIntendAssignment_1_0(), "rule__Project__IntendAssignment_1_0");
-					put(grammarAccess.getProjectAccess().getTextAssignment_2(), "rule__Project__TextAssignment_2");
-					put(grammarAccess.getSpacesAccess().getTextAssignment(), "rule__Spaces__TextAssignment");
+					put(grammarAccess.getSpacesAccess().getGroup(), "rule__Spaces__Group__0");
+					put(grammarAccess.getTodoAccess().getContentsAssignment_1_0(), "rule__Todo__ContentsAssignment_1_0");
+					put(grammarAccess.getTaskAccess().getIntendAssignment_0(), "rule__Task__IntendAssignment_0");
+					put(grammarAccess.getTaskAccess().getTextAssignment_1(), "rule__Task__TextAssignment_1");
+					put(grammarAccess.getNoteAccess().getIntendAssignment_0(), "rule__Note__IntendAssignment_0");
+					put(grammarAccess.getNoteAccess().getTextAssignment_1(), "rule__Note__TextAssignment_1");
+					put(grammarAccess.getProjectAccess().getIntendAssignment_0(), "rule__Project__IntendAssignment_0");
+					put(grammarAccess.getProjectAccess().getTextAssignment_1(), "rule__Project__TextAssignment_1");
 				}
 			};
 		}

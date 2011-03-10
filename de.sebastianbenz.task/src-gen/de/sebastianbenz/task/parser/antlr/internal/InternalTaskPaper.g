@@ -83,10 +83,10 @@ ruleTodo returns [EObject current=null]
             grammarAccess.getTodoAccess().getTodoAction_0(),
             $current);
     }
-)(
+)((
 (
 		{ 
-	        newCompositeNode(grammarAccess.getTodoAccess().getContentsContentParserRuleCall_1_0()); 
+	        newCompositeNode(grammarAccess.getTodoAccess().getContentsContentParserRuleCall_1_0_0()); 
 	    }
 		lv_contents_1_0=ruleContent		{
 	        if ($current==null) {
@@ -101,9 +101,18 @@ ruleTodo returns [EObject current=null]
 	    }
 
 )
-)+(this_WS_2=RULE_WS
+)
+    |
     { 
-    newLeafNode(this_WS_2, grammarAccess.getTodoAccess().getWSTerminalRuleCall_2()); 
+        newCompositeNode(grammarAccess.getTodoAccess().getSpacesParserRuleCall_1_1()); 
+    }
+ruleSpaces
+    { 
+        afterParserOrEnumRuleCall();
+    }
+)*(this_WS_3=RULE_WS
+    { 
+    newLeafNode(this_WS_3, grammarAccess.getTodoAccess().getWSTerminalRuleCall_2()); 
     }
 )*)
 ;
@@ -126,7 +135,7 @@ ruleContent returns [EObject current=null]
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
-(((	ruleProject)=>
+(
     { 
         newCompositeNode(grammarAccess.getContentAccess().getProjectParserRuleCall_0()); 
     }
@@ -135,8 +144,8 @@ ruleContent returns [EObject current=null]
         $current = $this_Project_0.current; 
         afterParserOrEnumRuleCall();
     }
-)
-    |((	ruleTask)=>
+
+    |
     { 
         newCompositeNode(grammarAccess.getContentAccess().getTaskParserRuleCall_1()); 
     }
@@ -145,7 +154,7 @@ ruleContent returns [EObject current=null]
         $current = $this_Task_1.current; 
         afterParserOrEnumRuleCall();
     }
-)
+
     |
     { 
         newCompositeNode(grammarAccess.getContentAccess().getNoteParserRuleCall_2()); 
@@ -153,16 +162,6 @@ ruleContent returns [EObject current=null]
     this_Note_2=ruleNote
     { 
         $current = $this_Note_2.current; 
-        afterParserOrEnumRuleCall();
-    }
-
-    |
-    { 
-        newCompositeNode(grammarAccess.getContentAccess().getSpacesParserRuleCall_3()); 
-    }
-    this_Spaces_3=ruleSpaces
-    { 
-        $current = $this_Spaces_3.current; 
         afterParserOrEnumRuleCall();
     }
 )
@@ -186,112 +185,39 @@ ruleTask returns [EObject current=null]
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
-(((	ruleClosedTask)=>
-    { 
-        newCompositeNode(grammarAccess.getTaskAccess().getClosedTaskParserRuleCall_0()); 
-    }
-    this_ClosedTask_0=ruleClosedTask
-    { 
-        $current = $this_ClosedTask_0.current; 
-        afterParserOrEnumRuleCall();
-    }
-)
-    |
-    { 
-        newCompositeNode(grammarAccess.getTaskAccess().getOpenTaskParserRuleCall_1()); 
-    }
-    this_OpenTask_1=ruleOpenTask
-    { 
-        $current = $this_OpenTask_1.current; 
-        afterParserOrEnumRuleCall();
-    }
-)
-;
-
-
-
-
-
-// Entry rule entryRuleOpenTask
-entryRuleOpenTask returns [EObject current=null] 
-	:
-	{ newCompositeNode(grammarAccess.getOpenTaskRule()); }
-	 iv_ruleOpenTask=ruleOpenTask 
-	 { $current=$iv_ruleOpenTask.current; } 
-	 EOF 
-;
-
-// Rule OpenTask
-ruleOpenTask returns [EObject current=null] 
-    @init { enterRule(); 
-    }
-    @after { leaveRule(); }:
 ((
-    {
-        $current = forceCreateModelElement(
-            grammarAccess.getOpenTaskAccess().getOpenTaskAction_0(),
-            $current);
-    }
-)(
 (
-		lv_text_1_0=RULE_TASK_OPEN
+		lv_intend_0_0=RULE_WS
 		{
-			newLeafNode(lv_text_1_0, grammarAccess.getOpenTaskAccess().getTextTASK_OPENTerminalRuleCall_1_0()); 
+			newLeafNode(lv_intend_0_0, grammarAccess.getTaskAccess().getIntendWSTerminalRuleCall_0_0()); 
 		}
 		{
 	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getOpenTaskRule());
+	            $current = createModelElement(grammarAccess.getTaskRule());
 	        }
-       		setWithLastConsumed(
+       		addWithLastConsumed(
        			$current, 
-       			"text",
-        		lv_text_1_0, 
-        		"TASK_OPEN");
+       			"intend",
+        		lv_intend_0_0, 
+        		"WS");
 	    }
 
 )
-))
-;
-
-
-
-
-
-// Entry rule entryRuleClosedTask
-entryRuleClosedTask returns [EObject current=null] 
-	:
-	{ newCompositeNode(grammarAccess.getClosedTaskRule()); }
-	 iv_ruleClosedTask=ruleClosedTask 
-	 { $current=$iv_ruleClosedTask.current; } 
-	 EOF 
-;
-
-// Rule ClosedTask
-ruleClosedTask returns [EObject current=null] 
-    @init { enterRule(); 
-    }
-    @after { leaveRule(); }:
-((
-    {
-        $current = forceCreateModelElement(
-            grammarAccess.getClosedTaskAccess().getClosedTaskAction_0(),
-            $current);
-    }
-)(
+)*(
 (
-		lv_text_1_0=RULE_TASK_CLOSED
+		lv_text_1_0=RULE_TASK_TEXT
 		{
-			newLeafNode(lv_text_1_0, grammarAccess.getClosedTaskAccess().getTextTASK_CLOSEDTerminalRuleCall_1_0()); 
+			newLeafNode(lv_text_1_0, grammarAccess.getTaskAccess().getTextTASK_TEXTTerminalRuleCall_1_0()); 
 		}
 		{
 	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getClosedTaskRule());
+	            $current = createModelElement(grammarAccess.getTaskRule());
 	        }
        		setWithLastConsumed(
        			$current, 
        			"text",
         		lv_text_1_0, 
-        		"TASK_CLOSED");
+        		"TASK_TEXT");
 	    }
 
 )
@@ -316,11 +242,29 @@ ruleNote returns [EObject current=null]
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
+((
 (
-(
-		lv_text_0_0=RULE_NOTE_CONTENT
+		lv_intend_0_0=RULE_WS
 		{
-			newLeafNode(lv_text_0_0, grammarAccess.getNoteAccess().getTextNOTE_CONTENTTerminalRuleCall_0()); 
+			newLeafNode(lv_intend_0_0, grammarAccess.getNoteAccess().getIntendWSTerminalRuleCall_0_0()); 
+		}
+		{
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getNoteRule());
+	        }
+       		addWithLastConsumed(
+       			$current, 
+       			"intend",
+        		lv_intend_0_0, 
+        		"WS");
+	    }
+
+)
+)*(
+(
+		lv_text_1_0=RULE_TEXT
+		{
+			newLeafNode(lv_text_1_0, grammarAccess.getNoteAccess().getTextTEXTTerminalRuleCall_1_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -329,12 +273,12 @@ ruleNote returns [EObject current=null]
        		setWithLastConsumed(
        			$current, 
        			"text",
-        		lv_text_0_0, 
-        		"NOTE_CONTENT");
+        		lv_text_1_0, 
+        		"TEXT");
 	    }
 
 )
-)
+))
 ;
 
 
@@ -356,21 +300,10 @@ ruleProject returns [EObject current=null]
     }
     @after { leaveRule(); }:
 ((
-    {
-        $current = forceCreateModelElement(
-            grammarAccess.getProjectAccess().getProjectAction_0(),
-            $current);
-    }
-)(((
 (
-RULE_WS
-
-)
-))=>(
-(
-		lv_intend_1_0=RULE_WS
+		lv_intend_0_0=RULE_WS
 		{
-			newLeafNode(lv_intend_1_0, grammarAccess.getProjectAccess().getIntendWSTerminalRuleCall_1_0_0()); 
+			newLeafNode(lv_intend_0_0, grammarAccess.getProjectAccess().getIntendWSTerminalRuleCall_0_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -379,17 +312,16 @@ RULE_WS
        		addWithLastConsumed(
        			$current, 
        			"intend",
-        		lv_intend_1_0, 
+        		lv_intend_0_0, 
         		"WS");
 	    }
 
 )
-))*(
+)*(
 (
-(
-		lv_text_2_1=RULE_PROJECT_1
+		lv_text_1_0=RULE_PROJECT_
 		{
-			newLeafNode(lv_text_2_1, grammarAccess.getProjectAccess().getTextPROJECT_1TerminalRuleCall_2_0_0()); 
+			newLeafNode(lv_text_1_0, grammarAccess.getProjectAccess().getTextPROJECT_TerminalRuleCall_1_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -398,41 +330,9 @@ RULE_WS
        		setWithLastConsumed(
        			$current, 
        			"text",
-        		lv_text_2_1, 
-        		"PROJECT_1");
+        		lv_text_1_0, 
+        		"PROJECT_");
 	    }
-
-    |		lv_text_2_2=RULE_PROJECT_2
-		{
-			newLeafNode(lv_text_2_2, grammarAccess.getProjectAccess().getTextPROJECT_2TerminalRuleCall_2_0_1()); 
-		}
-		{
-	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getProjectRule());
-	        }
-       		setWithLastConsumed(
-       			$current, 
-       			"text",
-        		lv_text_2_2, 
-        		"PROJECT_2");
-	    }
-
-    |		lv_text_2_3=RULE_PROJECT_3
-		{
-			newLeafNode(lv_text_2_3, grammarAccess.getProjectAccess().getTextPROJECT_3TerminalRuleCall_2_0_2()); 
-		}
-		{
-	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getProjectRule());
-	        }
-       		setWithLastConsumed(
-       			$current, 
-       			"text",
-        		lv_text_2_3, 
-        		"PROJECT_3");
-	    }
-
-)
 
 )
 ))
@@ -443,39 +343,35 @@ RULE_WS
 
 
 // Entry rule entryRuleSpaces
-entryRuleSpaces returns [EObject current=null] 
+entryRuleSpaces returns [String current=null] 
 	:
-	{ newCompositeNode(grammarAccess.getSpacesRule()); }
+	{ newCompositeNode(grammarAccess.getSpacesRule()); } 
 	 iv_ruleSpaces=ruleSpaces 
-	 { $current=$iv_ruleSpaces.current; } 
+	 { $current=$iv_ruleSpaces.current.getText(); }  
 	 EOF 
 ;
 
 // Rule Spaces
-ruleSpaces returns [EObject current=null] 
+ruleSpaces returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] 
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
-(
-(
-		lv_text_0_0=RULE_SPACE
-		{
-			newLeafNode(lv_text_0_0, grammarAccess.getSpacesAccess().getTextSPACETerminalRuleCall_0()); 
-		}
-		{
-	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getSpacesRule());
-	        }
-       		setWithLastConsumed(
-       			$current, 
-       			"text",
-        		lv_text_0_0, 
-        		"SPACE");
-	    }
+((    this_WS_0=RULE_WS    {
+		$current.merge(this_WS_0);
+    }
 
+    { 
+    newLeafNode(this_WS_0, grammarAccess.getSpacesAccess().getWSTerminalRuleCall_0()); 
+    }
+)*    this_NL_1=RULE_NL    {
+		$current.merge(this_NL_1);
+    }
+
+    { 
+    newLeafNode(this_NL_1, grammarAccess.getSpacesAccess().getNLTerminalRuleCall_1()); 
+    }
 )
-)
-;
+    ;
 
 
 
@@ -483,24 +379,16 @@ ruleSpaces returns [EObject current=null]
 
 RULE_WS : (' '|'\t');
 
-RULE_SPACE : RULE_WS* RULE_NL;
+RULE_NL : '\r'? '\n';
 
-RULE_NOTE_CONTENT : RULE_WS* ~((RULE_TASK_START|'\n'|'\r'|RULE_WS)) ~(('\n'|'\r'))* ~((RULE_PROJECT_DELIMITER|'\n'|'\r')) RULE_NL;
+RULE_TASK_TEXT : RULE_HYPHEN ~(('\n'|'\r'))* RULE_NL;
 
-RULE_TASK_OPEN : RULE_WS* RULE_TASK_START ~(('@'|'\n'|'\r'))* RULE_NL;
+RULE_TEXT : ~((RULE_HYPHEN|'\n'|'\r'|RULE_WS)) ~(('\n'|'\r'))* ~((RULE_COLON|'\n'|'\r')) RULE_NL;
 
-RULE_TASK_CLOSED : (RULE_WS* RULE_TASK_START ~(('\n'|'\r'|'@'))+ '@done' ~(('\n'|'\r'|'@'))+ RULE_NL|RULE_WS* RULE_TASK_START ~(('\n'|'\r'|'@'))+ '@done' RULE_NL|RULE_WS* RULE_TASK_START '@done' ~(('\n'|'\r'|'@'))+ RULE_NL);
+RULE_PROJECT_ : ~(('\n'|'\r'|RULE_HYPHEN|RULE_WS)) ~(('\n'|'\r'))* RULE_COLON RULE_NL;
 
-RULE_PROJECT_1 : ~(('\n'|'\r'|RULE_TASK_START|RULE_WS)) ~(('\n'|'\r'))* RULE_PROJECT_DELIMITER RULE_NL;
+fragment RULE_COLON : ':';
 
-RULE_PROJECT_2 : RULE_WS ~(('\n'|'\r'|RULE_TASK_START|RULE_WS)) ~(('\n'|'\r'))* RULE_PROJECT_DELIMITER RULE_NL;
-
-RULE_PROJECT_3 : RULE_WS RULE_WS+ ~(('\n'|'\r'|RULE_TASK_START|RULE_WS)) ~(('\n'|'\r'))* RULE_PROJECT_DELIMITER RULE_NL;
-
-fragment RULE_PROJECT_DELIMITER : ':';
-
-fragment RULE_NL : '\r'? '\n';
-
-fragment RULE_TASK_START : '-';
+fragment RULE_HYPHEN : '-';
 
 

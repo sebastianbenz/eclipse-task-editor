@@ -1,0 +1,24 @@
+Task Editor:
+	
+	All tasks related to the editor components.
+	
+	- Enable folding
+	- Show structure in outline view @done
+	- Reduce tabsize to 2
+	- Automatic line wrap should be aware of the intendation 
+	- Strip tags from label provider  @done
+	- Look whether it is possible to automatically increase the space after a heading.
+	- 
+	
+Query View:
+	
+	All tasks related to the query view.
+
+	- view should show result tree
+	- view should show text field for queries
+	- By default show all open tasks
+	- equal/not-equal query by project
+	- equal/not-equal query by tag
+	- equal/not-equal query by tag value
+	- and or queries
+	- if values are numbers enable greater less than 

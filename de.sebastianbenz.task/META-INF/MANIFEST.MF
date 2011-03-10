@@ -1,8 +1,8 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: de.sebastianbenz.task
-Bundle-Vendor: My Company
-Bundle-Version: 1.0.0
+Bundle-Vendor: Sebastian Benz
+Bundle-Version: 1.0.0.qualifier
 Bundle-SymbolicName: de.sebastianbenz.task; singleton:=true
 Bundle-ActivationPolicy: lazy
 Require-Bundle: org.eclipse.xtext;bundle-version="2.0.0",
@@ -21,11 +21,14 @@ Import-Package: org.apache.log4j,
  org.eclipse.xtext.xtend2.lib
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
 Export-Package: de.sebastianbenz.task,
- de.sebastianbenz.task.services,
- de.sebastianbenz.task.taskPaper,
- de.sebastianbenz.task.taskPaper.impl,
- de.sebastianbenz.task.taskPaper.util,
+ de.sebastianbenz.task.model,
  de.sebastianbenz.task.parseTreeConstruction,
  de.sebastianbenz.task.parser.antlr,
  de.sebastianbenz.task.parser.antlr.internal,
+ de.sebastianbenz.task.services,
+ de.sebastianbenz.task.tagging,
+ de.sebastianbenz.task.taskPaper,
+ de.sebastianbenz.task.taskPaper.impl,
+ de.sebastianbenz.task.taskPaper.util,
+ de.sebastianbenz.task.util,
  de.sebastianbenz.task.validation

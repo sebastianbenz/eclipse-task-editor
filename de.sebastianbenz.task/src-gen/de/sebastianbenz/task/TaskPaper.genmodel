@@ -13,15 +13,11 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/de.sebastianbenz.task/src-gen/de/sebastianbenz/task/TaskPaper.ecore#//Todo/contents"/>
     </genClasses>
     <genClasses ecoreClass="platform:/resource/de.sebastianbenz.task/src-gen/de/sebastianbenz/task/TaskPaper.ecore#//Content">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/de.sebastianbenz.task/src-gen/de/sebastianbenz/task/TaskPaper.ecore#//Content/intend"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/de.sebastianbenz.task/src-gen/de/sebastianbenz/task/TaskPaper.ecore#//Content/text"/>
     </genClasses>
     <genClasses ecoreClass="platform:/resource/de.sebastianbenz.task/src-gen/de/sebastianbenz/task/TaskPaper.ecore#//Task"/>
-    <genClasses ecoreClass="platform:/resource/de.sebastianbenz.task/src-gen/de/sebastianbenz/task/TaskPaper.ecore#//OpenTask"/>
-    <genClasses ecoreClass="platform:/resource/de.sebastianbenz.task/src-gen/de/sebastianbenz/task/TaskPaper.ecore#//ClosedTask"/>
     <genClasses ecoreClass="platform:/resource/de.sebastianbenz.task/src-gen/de/sebastianbenz/task/TaskPaper.ecore#//Note"/>
-    <genClasses ecoreClass="platform:/resource/de.sebastianbenz.task/src-gen/de/sebastianbenz/task/TaskPaper.ecore#//Project">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/de.sebastianbenz.task/src-gen/de/sebastianbenz/task/TaskPaper.ecore#//Project/intend"/>
-    </genClasses>
-    <genClasses ecoreClass="platform:/resource/de.sebastianbenz.task/src-gen/de/sebastianbenz/task/TaskPaper.ecore#//Spaces"/>
+    <genClasses ecoreClass="platform:/resource/de.sebastianbenz.task/src-gen/de/sebastianbenz/task/TaskPaper.ecore#//Project"/>
   </genPackages>
 </genmodel:GenModel>

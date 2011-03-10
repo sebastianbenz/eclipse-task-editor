@@ -5,12 +5,16 @@
  */
 package de.sebastianbenz.task.taskPaper.util;
 
-import de.sebastianbenz.task.taskPaper.*;
-
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.util.Switch;
+
+import de.sebastianbenz.task.taskPaper.Content;
+import de.sebastianbenz.task.taskPaper.Note;
+import de.sebastianbenz.task.taskPaper.Project;
+import de.sebastianbenz.task.taskPaper.Task;
+import de.sebastianbenz.task.taskPaper.TaskPaperPackage;
+import de.sebastianbenz.task.taskPaper.Todo;
 
 /**
  * <!-- begin-user-doc -->
@@ -97,24 +101,6 @@ public class TaskPaperSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case TaskPaperPackage.OPEN_TASK:
-      {
-        OpenTask openTask = (OpenTask)theEObject;
-        T result = caseOpenTask(openTask);
-        if (result == null) result = caseTask(openTask);
-        if (result == null) result = caseContent(openTask);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case TaskPaperPackage.CLOSED_TASK:
-      {
-        ClosedTask closedTask = (ClosedTask)theEObject;
-        T result = caseClosedTask(closedTask);
-        if (result == null) result = caseTask(closedTask);
-        if (result == null) result = caseContent(closedTask);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
       case TaskPaperPackage.NOTE:
       {
         Note note = (Note)theEObject;
@@ -128,14 +114,6 @@ public class TaskPaperSwitch<T> extends Switch<T>
         Project project = (Project)theEObject;
         T result = caseProject(project);
         if (result == null) result = caseContent(project);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case TaskPaperPackage.SPACES:
-      {
-        Spaces spaces = (Spaces)theEObject;
-        T result = caseSpaces(spaces);
-        if (result == null) result = caseContent(spaces);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -192,38 +170,6 @@ public class TaskPaperSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Open Task</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Open Task</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseOpenTask(OpenTask object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Closed Task</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Closed Task</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseClosedTask(ClosedTask object)
-  {
-    return null;
-  }
-
-  /**
    * Returns the result of interpreting the object as an instance of '<em>Note</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -251,22 +197,6 @@ public class TaskPaperSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseProject(Project object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Spaces</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Spaces</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseSpaces(Spaces object)
   {
     return null;
   }

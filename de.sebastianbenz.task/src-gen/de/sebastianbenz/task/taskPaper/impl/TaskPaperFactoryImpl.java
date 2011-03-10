@@ -5,15 +5,19 @@
  */
 package de.sebastianbenz.task.taskPaper.impl;
 
-import de.sebastianbenz.task.taskPaper.*;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
+
+import de.sebastianbenz.task.taskPaper.Content;
+import de.sebastianbenz.task.taskPaper.Note;
+import de.sebastianbenz.task.taskPaper.Project;
+import de.sebastianbenz.task.taskPaper.Task;
+import de.sebastianbenz.task.taskPaper.TaskPaperFactory;
+import de.sebastianbenz.task.taskPaper.TaskPaperPackage;
+import de.sebastianbenz.task.taskPaper.Todo;
 
 /**
  * <!-- begin-user-doc -->
@@ -70,11 +74,8 @@ public class TaskPaperFactoryImpl extends EFactoryImpl implements TaskPaperFacto
       case TaskPaperPackage.TODO: return createTodo();
       case TaskPaperPackage.CONTENT: return createContent();
       case TaskPaperPackage.TASK: return createTask();
-      case TaskPaperPackage.OPEN_TASK: return createOpenTask();
-      case TaskPaperPackage.CLOSED_TASK: return createClosedTask();
       case TaskPaperPackage.NOTE: return createNote();
       case TaskPaperPackage.PROJECT: return createProject();
-      case TaskPaperPackage.SPACES: return createSpaces();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -118,28 +119,6 @@ public class TaskPaperFactoryImpl extends EFactoryImpl implements TaskPaperFacto
    * <!-- end-user-doc -->
    * @generated
    */
-  public OpenTask createOpenTask()
-  {
-    OpenTaskImpl openTask = new OpenTaskImpl();
-    return openTask;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public ClosedTask createClosedTask()
-  {
-    ClosedTaskImpl closedTask = new ClosedTaskImpl();
-    return closedTask;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public Note createNote()
   {
     NoteImpl note = new NoteImpl();
@@ -155,17 +134,6 @@ public class TaskPaperFactoryImpl extends EFactoryImpl implements TaskPaperFacto
   {
     ProjectImpl project = new ProjectImpl();
     return project;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Spaces createSpaces()
-  {
-    SpacesImpl spaces = new SpacesImpl();
-    return spaces;
   }
 
   /**

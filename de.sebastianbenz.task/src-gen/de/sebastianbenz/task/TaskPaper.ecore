@@ -9,15 +9,11 @@
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Content">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="intend" unique="false"
+        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="text" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Task" eSuperTypes="platform:/resource/de.sebastianbenz.task/src-gen/de/sebastianbenz/task/TaskPaper.ecore#//Content"/>
-  <eClassifiers xsi:type="ecore:EClass" name="OpenTask" eSuperTypes="platform:/resource/de.sebastianbenz.task/src-gen/de/sebastianbenz/task/TaskPaper.ecore#//Task"/>
-  <eClassifiers xsi:type="ecore:EClass" name="ClosedTask" eSuperTypes="platform:/resource/de.sebastianbenz.task/src-gen/de/sebastianbenz/task/TaskPaper.ecore#//Task"/>
   <eClassifiers xsi:type="ecore:EClass" name="Note" eSuperTypes="platform:/resource/de.sebastianbenz.task/src-gen/de/sebastianbenz/task/TaskPaper.ecore#//Content"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Project" eSuperTypes="platform:/resource/de.sebastianbenz.task/src-gen/de/sebastianbenz/task/TaskPaper.ecore#//Content">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="intend" unique="false"
-        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Spaces" eSuperTypes="platform:/resource/de.sebastianbenz.task/src-gen/de/sebastianbenz/task/TaskPaper.ecore#//Content"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Project" eSuperTypes="platform:/resource/de.sebastianbenz.task/src-gen/de/sebastianbenz/task/TaskPaper.ecore#//Content"/>
 </ecore:EPackage>

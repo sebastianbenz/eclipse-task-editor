@@ -98,13 +98,22 @@ public interface TaskPaperPackage extends EPackage
   int CONTENT = 1;
 
   /**
+   * The feature id for the '<em><b>Intend</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONTENT__INTEND = 0;
+
+  /**
    * The feature id for the '<em><b>Text</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CONTENT__TEXT = 0;
+  int CONTENT__TEXT = 1;
 
   /**
    * The number of structural features of the '<em>Content</em>' class.
@@ -113,7 +122,7 @@ public interface TaskPaperPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONTENT_FEATURE_COUNT = 1;
+  int CONTENT_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link de.sebastianbenz.task.taskPaper.impl.TaskImpl <em>Task</em>}' class.
@@ -124,6 +133,15 @@ public interface TaskPaperPackage extends EPackage
    * @generated
    */
   int TASK = 2;
+
+  /**
+   * The feature id for the '<em><b>Intend</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TASK__INTEND = CONTENT__INTEND;
 
   /**
    * The feature id for the '<em><b>Text</b></em>' attribute.
@@ -144,62 +162,6 @@ public interface TaskPaperPackage extends EPackage
   int TASK_FEATURE_COUNT = CONTENT_FEATURE_COUNT + 0;
 
   /**
-   * The meta object id for the '{@link de.sebastianbenz.task.taskPaper.impl.OpenTaskImpl <em>Open Task</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see de.sebastianbenz.task.taskPaper.impl.OpenTaskImpl
-   * @see de.sebastianbenz.task.taskPaper.impl.TaskPaperPackageImpl#getOpenTask()
-   * @generated
-   */
-  int OPEN_TASK = 3;
-
-  /**
-   * The feature id for the '<em><b>Text</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int OPEN_TASK__TEXT = TASK__TEXT;
-
-  /**
-   * The number of structural features of the '<em>Open Task</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int OPEN_TASK_FEATURE_COUNT = TASK_FEATURE_COUNT + 0;
-
-  /**
-   * The meta object id for the '{@link de.sebastianbenz.task.taskPaper.impl.ClosedTaskImpl <em>Closed Task</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see de.sebastianbenz.task.taskPaper.impl.ClosedTaskImpl
-   * @see de.sebastianbenz.task.taskPaper.impl.TaskPaperPackageImpl#getClosedTask()
-   * @generated
-   */
-  int CLOSED_TASK = 4;
-
-  /**
-   * The feature id for the '<em><b>Text</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CLOSED_TASK__TEXT = TASK__TEXT;
-
-  /**
-   * The number of structural features of the '<em>Closed Task</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CLOSED_TASK_FEATURE_COUNT = TASK_FEATURE_COUNT + 0;
-
-  /**
    * The meta object id for the '{@link de.sebastianbenz.task.taskPaper.impl.NoteImpl <em>Note</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -207,7 +169,16 @@ public interface TaskPaperPackage extends EPackage
    * @see de.sebastianbenz.task.taskPaper.impl.TaskPaperPackageImpl#getNote()
    * @generated
    */
-  int NOTE = 5;
+  int NOTE = 3;
+
+  /**
+   * The feature id for the '<em><b>Intend</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NOTE__INTEND = CONTENT__INTEND;
 
   /**
    * The feature id for the '<em><b>Text</b></em>' attribute.
@@ -235,7 +206,16 @@ public interface TaskPaperPackage extends EPackage
    * @see de.sebastianbenz.task.taskPaper.impl.TaskPaperPackageImpl#getProject()
    * @generated
    */
-  int PROJECT = 6;
+  int PROJECT = 4;
+
+  /**
+   * The feature id for the '<em><b>Intend</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PROJECT__INTEND = CONTENT__INTEND;
 
   /**
    * The feature id for the '<em><b>Text</b></em>' attribute.
@@ -247,50 +227,13 @@ public interface TaskPaperPackage extends EPackage
   int PROJECT__TEXT = CONTENT__TEXT;
 
   /**
-   * The feature id for the '<em><b>Intend</b></em>' attribute list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PROJECT__INTEND = CONTENT_FEATURE_COUNT + 0;
-
-  /**
    * The number of structural features of the '<em>Project</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PROJECT_FEATURE_COUNT = CONTENT_FEATURE_COUNT + 1;
-
-  /**
-   * The meta object id for the '{@link de.sebastianbenz.task.taskPaper.impl.SpacesImpl <em>Spaces</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see de.sebastianbenz.task.taskPaper.impl.SpacesImpl
-   * @see de.sebastianbenz.task.taskPaper.impl.TaskPaperPackageImpl#getSpaces()
-   * @generated
-   */
-  int SPACES = 7;
-
-  /**
-   * The feature id for the '<em><b>Text</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SPACES__TEXT = CONTENT__TEXT;
-
-  /**
-   * The number of structural features of the '<em>Spaces</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SPACES_FEATURE_COUNT = CONTENT_FEATURE_COUNT + 0;
+  int PROJECT_FEATURE_COUNT = CONTENT_FEATURE_COUNT + 0;
 
 
   /**
@@ -325,6 +268,17 @@ public interface TaskPaperPackage extends EPackage
   EClass getContent();
 
   /**
+   * Returns the meta object for the attribute list '{@link de.sebastianbenz.task.taskPaper.Content#getIntend <em>Intend</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute list '<em>Intend</em>'.
+   * @see de.sebastianbenz.task.taskPaper.Content#getIntend()
+   * @see #getContent()
+   * @generated
+   */
+  EAttribute getContent_Intend();
+
+  /**
    * Returns the meta object for the attribute '{@link de.sebastianbenz.task.taskPaper.Content#getText <em>Text</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -346,26 +300,6 @@ public interface TaskPaperPackage extends EPackage
   EClass getTask();
 
   /**
-   * Returns the meta object for class '{@link de.sebastianbenz.task.taskPaper.OpenTask <em>Open Task</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Open Task</em>'.
-   * @see de.sebastianbenz.task.taskPaper.OpenTask
-   * @generated
-   */
-  EClass getOpenTask();
-
-  /**
-   * Returns the meta object for class '{@link de.sebastianbenz.task.taskPaper.ClosedTask <em>Closed Task</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Closed Task</em>'.
-   * @see de.sebastianbenz.task.taskPaper.ClosedTask
-   * @generated
-   */
-  EClass getClosedTask();
-
-  /**
    * Returns the meta object for class '{@link de.sebastianbenz.task.taskPaper.Note <em>Note</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -384,27 +318,6 @@ public interface TaskPaperPackage extends EPackage
    * @generated
    */
   EClass getProject();
-
-  /**
-   * Returns the meta object for the attribute list '{@link de.sebastianbenz.task.taskPaper.Project#getIntend <em>Intend</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Intend</em>'.
-   * @see de.sebastianbenz.task.taskPaper.Project#getIntend()
-   * @see #getProject()
-   * @generated
-   */
-  EAttribute getProject_Intend();
-
-  /**
-   * Returns the meta object for class '{@link de.sebastianbenz.task.taskPaper.Spaces <em>Spaces</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Spaces</em>'.
-   * @see de.sebastianbenz.task.taskPaper.Spaces
-   * @generated
-   */
-  EClass getSpaces();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -458,6 +371,14 @@ public interface TaskPaperPackage extends EPackage
     EClass CONTENT = eINSTANCE.getContent();
 
     /**
+     * The meta object literal for the '<em><b>Intend</b></em>' attribute list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute CONTENT__INTEND = eINSTANCE.getContent_Intend();
+
+    /**
      * The meta object literal for the '<em><b>Text</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -474,26 +395,6 @@ public interface TaskPaperPackage extends EPackage
      * @generated
      */
     EClass TASK = eINSTANCE.getTask();
-
-    /**
-     * The meta object literal for the '{@link de.sebastianbenz.task.taskPaper.impl.OpenTaskImpl <em>Open Task</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see de.sebastianbenz.task.taskPaper.impl.OpenTaskImpl
-     * @see de.sebastianbenz.task.taskPaper.impl.TaskPaperPackageImpl#getOpenTask()
-     * @generated
-     */
-    EClass OPEN_TASK = eINSTANCE.getOpenTask();
-
-    /**
-     * The meta object literal for the '{@link de.sebastianbenz.task.taskPaper.impl.ClosedTaskImpl <em>Closed Task</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see de.sebastianbenz.task.taskPaper.impl.ClosedTaskImpl
-     * @see de.sebastianbenz.task.taskPaper.impl.TaskPaperPackageImpl#getClosedTask()
-     * @generated
-     */
-    EClass CLOSED_TASK = eINSTANCE.getClosedTask();
 
     /**
      * The meta object literal for the '{@link de.sebastianbenz.task.taskPaper.impl.NoteImpl <em>Note</em>}' class.
@@ -514,24 +415,6 @@ public interface TaskPaperPackage extends EPackage
      * @generated
      */
     EClass PROJECT = eINSTANCE.getProject();
-
-    /**
-     * The meta object literal for the '<em><b>Intend</b></em>' attribute list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute PROJECT__INTEND = eINSTANCE.getProject_Intend();
-
-    /**
-     * The meta object literal for the '{@link de.sebastianbenz.task.taskPaper.impl.SpacesImpl <em>Spaces</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see de.sebastianbenz.task.taskPaper.impl.SpacesImpl
-     * @see de.sebastianbenz.task.taskPaper.impl.TaskPaperPackageImpl#getSpaces()
-     * @generated
-     */
-    EClass SPACES = eINSTANCE.getSpaces();
 
   }
 

@@ -1,82 +1,50 @@
-grammar de.sebastianbenz.task.TaskPaper
+grammar de.sebastianbenz.task.TaskPaper 
 
 import "http://www.eclipse.org/emf/2002/Ecore" as ecore
 generate taskPaper "http://www.sebastianbenz.de/task/TaskPaper"
 
 Todo:
 	{Todo}
-	(contents += Content)+
+	(contents += Content | Spaces)*
 	WS*;
+/*
+Project
+WS TASK
+WS PROJECT
+WS WS TASK
+WS WS PROJECT
+ */
 
 Content:
-	=> Project | 
-	=> Task | 
-	Note;
-
-Task:
-	(=> ClosedTask) | OpenTask;
-
-OpenTask:
-	{OpenTask}
-	text=TASK_OPEN;
-	
-ClosedTask:
-	{ClosedTask}
-	text=TASK_CLOSED;
-
-
-//DoneTask:
-//	text=TASK_DONE;
-//
-Note:
-	text=NOTE_CONTENT;
-
-Project:
-	{Project}
-	=> (intend+=WS)* text=(PROJECT_1 | PROJECT_2 | PROJECT_3);
-
-Spaces:
-	text=SPACE
-;
-
-	
-terminal WS:
-	' ' | '\t';
-
-terminal SPACE:
-	WS* NL
-;
-
-terminal NOTE_CONTENT:
-	 WS* !(TASK_START|'\n'|'\r' | WS) !('\n'|'\r')* !(PROJECT_DELIMITER | '\n'|'\r') NL 
-;
-
-terminal TASK_OPEN:	
-	 WS* TASK_START !('@' | '\n'|'\r')* NL;
-
-terminal TASK_CLOSED:	
-	 WS* (TASK_START !('\n'|'\r' | '@')+  '@done' !('\n'|'\r'| '@')+  NL) |
-	 WS* (TASK_START !('\n'|'\r'| '@')+ '@done' NL) |
-	 WS* (TASK_START '@done' !('\n'|'\r'| '@')+  NL) 
+	Project |
+	Task | 
+	Note 
 	;
 
-terminal PROJECT_1:
-	!('\n'|'\r'|TASK_START|WS) !('\n'|'\r')* PROJECT_DELIMITER NL;
+Task:
+	(intend+=WS)* text=TASK_TEXT;
 
-terminal PROJECT_2:
-	WS !('\n'|'\r'|TASK_START|WS) !('\n'|'\r')* PROJECT_DELIMITER NL;
+Note:
+	(intend+=WS)* text=TEXT;
+
+Project:
+	(intend+=WS)* text=PROJECT_
+;
+
+Spaces:
+	(WS)* NL
+;
 	
-terminal PROJECT_3:
-	WS WS+ !('\n'|'\r'|TASK_START|WS) !('\n'|'\r')* PROJECT_DELIMITER NL;
+terminal WS				:	' ' | '\t';
+terminal NL				:	'\r'? '\n';
+	
+terminal TASK_TEXT		: HYPHEN !('\n'|'\r')* NL;
+terminal TEXT			: !(HYPHEN|'\n'|'\r' | WS) !('\n'|'\r')* !(COLON | '\n'|'\r') NL;
+terminal PROJECT_		: !('\n'|'\r'|HYPHEN|WS) !('\n'|'\r')* COLON NL;		
 
-terminal fragment PROJECT_DELIMITER:
-	':';
+terminal fragment COLON : ':';
 
-terminal fragment NL:
-	'\r'? '\n';
-
-terminal fragment TASK_START:
-	'-';
+terminal fragment HYPHEN: '-';
 	
 
 

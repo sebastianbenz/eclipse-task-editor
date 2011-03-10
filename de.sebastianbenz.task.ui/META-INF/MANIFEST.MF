@@ -1,8 +1,8 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: de.sebastianbenz.task.ui
-Bundle-Vendor: My Company
-Bundle-Version: 1.0.0
+Bundle-Vendor: Sebastian Benz
+Bundle-Version: 1.0.0.qualifier
 Bundle-SymbolicName: de.sebastianbenz.task.ui; singleton:=true
 Bundle-ActivationPolicy: lazy
 Require-Bundle: de.sebastianbenz.task;visibility:=reexport,
@@ -17,5 +17,6 @@ Import-Package: org.apache.log4j,
  org.apache.commons.logging
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
 Export-Package: de.sebastianbenz.task.ui.contentassist.antlr,
+ de.sebastianbenz.task.ui.highlighting,
  de.sebastianbenz.task.ui.internal
 Bundle-Activator: de.sebastianbenz.task.ui.internal.TaskPaperActivator

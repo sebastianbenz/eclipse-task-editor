@@ -5,15 +5,17 @@
  */
 package de.sebastianbenz.task.taskPaper.impl;
 
-import de.sebastianbenz.task.taskPaper.Content;
-import de.sebastianbenz.task.taskPaper.TaskPaperPackage;
+import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
-
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+import org.eclipse.emf.ecore.util.EDataTypeEList;
+
+import de.sebastianbenz.task.taskPaper.Content;
+import de.sebastianbenz.task.taskPaper.TaskPaperPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -22,6 +24,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <p>
  * The following features are implemented:
  * <ul>
+ *   <li>{@link de.sebastianbenz.task.taskPaper.impl.ContentImpl#getIntend <em>Intend</em>}</li>
  *   <li>{@link de.sebastianbenz.task.taskPaper.impl.ContentImpl#getText <em>Text</em>}</li>
  * </ul>
  * </p>
@@ -30,6 +33,16 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  */
 public class ContentImpl extends MinimalEObjectImpl.Container implements Content
 {
+  /**
+   * The cached value of the '{@link #getIntend() <em>Intend</em>}' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getIntend()
+   * @generated
+   * @ordered
+   */
+  protected EList<String> intend;
+
   /**
    * The default value of the '{@link #getText() <em>Text</em>}' attribute.
    * <!-- begin-user-doc -->
@@ -76,6 +89,20 @@ public class ContentImpl extends MinimalEObjectImpl.Container implements Content
    * <!-- end-user-doc -->
    * @generated
    */
+  public EList<String> getIntend()
+  {
+    if (intend == null)
+    {
+      intend = new EDataTypeEList<String>(String.class, this, TaskPaperPackage.CONTENT__INTEND);
+    }
+    return intend;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public String getText()
   {
     return text;
@@ -104,6 +131,8 @@ public class ContentImpl extends MinimalEObjectImpl.Container implements Content
   {
     switch (featureID)
     {
+      case TaskPaperPackage.CONTENT__INTEND:
+        return getIntend();
       case TaskPaperPackage.CONTENT__TEXT:
         return getText();
     }
@@ -115,11 +144,16 @@ public class ContentImpl extends MinimalEObjectImpl.Container implements Content
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
+      case TaskPaperPackage.CONTENT__INTEND:
+        getIntend().clear();
+        getIntend().addAll((Collection<? extends String>)newValue);
+        return;
       case TaskPaperPackage.CONTENT__TEXT:
         setText((String)newValue);
         return;
@@ -137,6 +171,9 @@ public class ContentImpl extends MinimalEObjectImpl.Container implements Content
   {
     switch (featureID)
     {
+      case TaskPaperPackage.CONTENT__INTEND:
+        getIntend().clear();
+        return;
       case TaskPaperPackage.CONTENT__TEXT:
         setText(TEXT_EDEFAULT);
         return;
@@ -154,6 +191,8 @@ public class ContentImpl extends MinimalEObjectImpl.Container implements Content
   {
     switch (featureID)
     {
+      case TaskPaperPackage.CONTENT__INTEND:
+        return intend != null && !intend.isEmpty();
       case TaskPaperPackage.CONTENT__TEXT:
         return TEXT_EDEFAULT == null ? text != null : !TEXT_EDEFAULT.equals(text);
     }
@@ -171,7 +210,9 @@ public class ContentImpl extends MinimalEObjectImpl.Container implements Content
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (text: ");
+    result.append(" (intend: ");
+    result.append(intend);
+    result.append(", text: ");
     result.append(text);
     result.append(')');
     return result.toString();

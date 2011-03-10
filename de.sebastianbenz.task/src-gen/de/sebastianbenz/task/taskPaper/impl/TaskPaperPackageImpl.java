@@ -5,23 +5,19 @@
  */
 package de.sebastianbenz.task.taskPaper.impl;
 
-import de.sebastianbenz.task.taskPaper.ClosedTask;
-import de.sebastianbenz.task.taskPaper.Content;
-import de.sebastianbenz.task.taskPaper.Note;
-import de.sebastianbenz.task.taskPaper.OpenTask;
-import de.sebastianbenz.task.taskPaper.Project;
-import de.sebastianbenz.task.taskPaper.Spaces;
-import de.sebastianbenz.task.taskPaper.Task;
-import de.sebastianbenz.task.taskPaper.TaskPaperFactory;
-import de.sebastianbenz.task.taskPaper.TaskPaperPackage;
-import de.sebastianbenz.task.taskPaper.Todo;
-
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-
 import org.eclipse.emf.ecore.impl.EPackageImpl;
+
+import de.sebastianbenz.task.taskPaper.Content;
+import de.sebastianbenz.task.taskPaper.Note;
+import de.sebastianbenz.task.taskPaper.Project;
+import de.sebastianbenz.task.taskPaper.Task;
+import de.sebastianbenz.task.taskPaper.TaskPaperFactory;
+import de.sebastianbenz.task.taskPaper.TaskPaperPackage;
+import de.sebastianbenz.task.taskPaper.Todo;
 
 /**
  * <!-- begin-user-doc -->
@@ -57,20 +53,6 @@ public class TaskPaperPackageImpl extends EPackageImpl implements TaskPaperPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass openTaskEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass closedTaskEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   private EClass noteEClass = null;
 
   /**
@@ -79,13 +61,6 @@ public class TaskPaperPackageImpl extends EPackageImpl implements TaskPaperPacka
    * @generated
    */
   private EClass projectEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass spacesEClass = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -185,9 +160,19 @@ public class TaskPaperPackageImpl extends EPackageImpl implements TaskPaperPacka
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getContent_Text()
+  public EAttribute getContent_Intend()
   {
     return (EAttribute)contentEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getContent_Text()
+  {
+    return (EAttribute)contentEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -198,26 +183,6 @@ public class TaskPaperPackageImpl extends EPackageImpl implements TaskPaperPacka
   public EClass getTask()
   {
     return taskEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getOpenTask()
-  {
-    return openTaskEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getClosedTask()
-  {
-    return closedTaskEClass;
   }
 
   /**
@@ -238,26 +203,6 @@ public class TaskPaperPackageImpl extends EPackageImpl implements TaskPaperPacka
   public EClass getProject()
   {
     return projectEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getProject_Intend()
-  {
-    return (EAttribute)projectEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getSpaces()
-  {
-    return spacesEClass;
   }
 
   /**
@@ -294,20 +239,14 @@ public class TaskPaperPackageImpl extends EPackageImpl implements TaskPaperPacka
     createEReference(todoEClass, TODO__CONTENTS);
 
     contentEClass = createEClass(CONTENT);
+    createEAttribute(contentEClass, CONTENT__INTEND);
     createEAttribute(contentEClass, CONTENT__TEXT);
 
     taskEClass = createEClass(TASK);
 
-    openTaskEClass = createEClass(OPEN_TASK);
-
-    closedTaskEClass = createEClass(CLOSED_TASK);
-
     noteEClass = createEClass(NOTE);
 
     projectEClass = createEClass(PROJECT);
-    createEAttribute(projectEClass, PROJECT__INTEND);
-
-    spacesEClass = createEClass(SPACES);
   }
 
   /**
@@ -340,31 +279,22 @@ public class TaskPaperPackageImpl extends EPackageImpl implements TaskPaperPacka
 
     // Add supertypes to classes
     taskEClass.getESuperTypes().add(this.getContent());
-    openTaskEClass.getESuperTypes().add(this.getTask());
-    closedTaskEClass.getESuperTypes().add(this.getTask());
     noteEClass.getESuperTypes().add(this.getContent());
     projectEClass.getESuperTypes().add(this.getContent());
-    spacesEClass.getESuperTypes().add(this.getContent());
 
     // Initialize classes and features; add operations and parameters
     initEClass(todoEClass, Todo.class, "Todo", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getTodo_Contents(), this.getContent(), null, "contents", null, 0, -1, Todo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(contentEClass, Content.class, "Content", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getContent_Intend(), ecorePackage.getEString(), "intend", null, 0, -1, Content.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getContent_Text(), ecorePackage.getEString(), "text", null, 0, 1, Content.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(taskEClass, Task.class, "Task", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-    initEClass(openTaskEClass, OpenTask.class, "OpenTask", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-    initEClass(closedTaskEClass, ClosedTask.class, "ClosedTask", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
     initEClass(noteEClass, Note.class, "Note", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(projectEClass, Project.class, "Project", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getProject_Intend(), ecorePackage.getEString(), "intend", null, 0, -1, Project.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(spacesEClass, Spaces.class, "Spaces", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     // Create resource
     createResource(eNS_URI);

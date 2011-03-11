@@ -5,6 +5,7 @@ package de.sebastianbenz.task.ui;
 
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.eclipse.xtext.ui.editor.XtextEditor;
+import org.eclipse.xtext.ui.editor.XtextSourceViewerConfiguration;
 import org.eclipse.xtext.ui.editor.autoedit.AbstractEditStrategyProvider;
 import org.eclipse.xtext.ui.editor.folding.IFoldingRegionProvider;
 import org.eclipse.xtext.ui.editor.syntaxcoloring.AbstractAntlrTokenToAttributeIdMapper;
@@ -12,8 +13,10 @@ import org.eclipse.xtext.ui.editor.syntaxcoloring.IHighlightingConfiguration;
 
 import com.google.inject.Binder;
 
-import de.sebastianbenz.task.ui.editor.AutoEditStrategy;
-import de.sebastianbenz.task.ui.highlighting.Configuration;
+import de.sebastianbenz.task.ui.editor.AutoEditStrategyProvider;
+import de.sebastianbenz.task.ui.editor.FoldingRegionProvider;
+import de.sebastianbenz.task.ui.editor.TaskPaperSourceViewerConfiguration;
+import de.sebastianbenz.task.ui.highlighting.HighlightingConfiguration;
 import de.sebastianbenz.task.ui.highlighting.SemanticHighlightingCalculator;
 import de.sebastianbenz.task.ui.highlighting.TokenHighlightingConfiguration;
 
@@ -37,7 +40,7 @@ public class TaskPaperUiModule extends de.sebastianbenz.task.ui.AbstractTaskPape
 	}
 	
 	public Class<? extends IHighlightingConfiguration> bindIHighlightingConfiguration() {
-		return Configuration.class;
+		return HighlightingConfiguration.class;
 	}
 	
 	public Class<? extends AbstractAntlrTokenToAttributeIdMapper> bindAbstractAntlrTokenToAttributeIdMapper() {
@@ -46,7 +49,11 @@ public class TaskPaperUiModule extends de.sebastianbenz.task.ui.AbstractTaskPape
 
 	@Override
 	public Class<? extends AbstractEditStrategyProvider> bindAbstractEditStrategyProvider() {
-		return AutoEditStrategy.class;
+		return AutoEditStrategyProvider.class;
+	}
+	
+	public Class<? extends XtextSourceViewerConfiguration> bindXtextSourceViewerConfiguration(){
+		return TaskPaperSourceViewerConfiguration.class;
 	}
 	
 	

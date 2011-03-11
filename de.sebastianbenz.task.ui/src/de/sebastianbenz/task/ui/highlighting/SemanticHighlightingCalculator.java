@@ -1,8 +1,8 @@
 package de.sebastianbenz.task.ui.highlighting;
 
-import static de.sebastianbenz.task.ui.highlighting.Configuration.PROJECT2_ID;
-import static de.sebastianbenz.task.ui.highlighting.Configuration.PROJECT3_ID;
-import static de.sebastianbenz.task.ui.highlighting.Configuration.TAG_ID;
+import static de.sebastianbenz.task.ui.highlighting.HighlightingConfiguration.PROJECT2_ID;
+import static de.sebastianbenz.task.ui.highlighting.HighlightingConfiguration.PROJECT3_ID;
+import static de.sebastianbenz.task.ui.highlighting.HighlightingConfiguration.TAG_ID;
 import static de.sebastianbenz.task.util.Tasks.isDone;
 
 import java.util.Iterator;
@@ -49,7 +49,7 @@ public class SemanticHighlightingCalculator implements ISemanticHighlightingCalc
 				int length = tag.getOffset() - begin;
 				if(length > 0){
 					int offset = offset(task) + begin;
-					acceptor.addPosition(offset, length, Configuration.TASK_DONE_ID);
+					acceptor.addPosition(offset, length, HighlightingConfiguration.TASK_DONE_ID);
 				}
 				begin = tag.getOffset() + tag.getLength();
 			}

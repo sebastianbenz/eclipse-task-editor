@@ -1,4 +1,4 @@
-package de.sebastianbenz.task.ui;
+package de.sebastianbenz.task.ui.editor;
 
 import static com.google.common.collect.Sets.newHashSet;
 import static de.sebastianbenz.task.taskPaper.TaskPaperPackage.Literals.PROJECT;

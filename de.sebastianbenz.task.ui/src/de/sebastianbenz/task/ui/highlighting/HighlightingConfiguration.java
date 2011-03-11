@@ -9,8 +9,9 @@ import org.eclipse.xtext.ui.editor.syntaxcoloring.DefaultHighlightingConfigurati
 import org.eclipse.xtext.ui.editor.syntaxcoloring.IHighlightingConfigurationAcceptor;
 import org.eclipse.xtext.ui.editor.utils.TextStyle;
 
-public class Configuration extends DefaultHighlightingConfiguration {
+public class HighlightingConfiguration extends DefaultHighlightingConfiguration {
 	
+	private static final int DEFAULT_FONT_SIZE = JFaceResources.getDefaultFontDescriptor().getFontData()[0].getHeight();
 	public static final String NOTE_ID = "node";
 	public static final String URL_ID = "url";
 	public static final String PROJECT1_ID = "project1";
@@ -53,19 +54,19 @@ public class Configuration extends DefaultHighlightingConfiguration {
 
 	private TextStyle project3TextStyle() {
 		TextStyle textStyle = defaultTextStyle().copy();
-		textStyle.setFontData(fontWithHeight(12));
+		textStyle.setFontData(fontWithHeight(DEFAULT_FONT_SIZE + 1));
 		return textStyle;
 	}
 
 	private TextStyle project2TextStyle() {
 		TextStyle textStyle = defaultTextStyle().copy();
-		textStyle.setFontData(fontWithHeight(13));
+		textStyle.setFontData(fontWithHeight(DEFAULT_FONT_SIZE + 2));
 		return textStyle;
 	}
 
 	private TextStyle project1TextStyle() {
 		TextStyle textStyle = defaultTextStyle().copy();
-		textStyle.setFontData(fontWithHeight(14));
+		textStyle.setFontData(fontWithHeight(DEFAULT_FONT_SIZE + 3));
 		return textStyle;
 	}
 
@@ -99,7 +100,7 @@ public class Configuration extends DefaultHighlightingConfiguration {
 	@Override
 	public TextStyle defaultTextStyle() {
 		TextStyle result = super.defaultTextStyle().copy();
-		result.setFontData(new FontData(JFaceResources.DIALOG_FONT, 11, SWT.NORMAL));
+		result.setFontData(new FontData(JFaceResources.DIALOG_FONT, DEFAULT_FONT_SIZE, SWT.NORMAL));
 		return result;
 	}
 }

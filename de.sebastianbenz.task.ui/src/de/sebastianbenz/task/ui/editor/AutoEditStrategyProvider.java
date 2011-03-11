@@ -7,7 +7,7 @@ import org.eclipse.xtext.ui.editor.autoedit.ShortCutEditStrategy;
 import com.google.inject.Inject;
 import com.google.inject.Provider;
 
-public class AutoEditStrategy extends DefaultAutoEditStrategyProvider{
+public class AutoEditStrategyProvider extends DefaultAutoEditStrategyProvider{
 
 	@Inject
 	protected Provider<ShortCutEditStrategy> shortCut;

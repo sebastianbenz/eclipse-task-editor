@@ -4,10 +4,10 @@ Task Editor:
 	
 	- Enable folding
 	- Show structure in outline view @done
-	- Reduce tabsize to 2
+	- Reduce tabsize to 2 @done
 	- Automatic line wrap should be aware of the intendation 
 	- Strip tags from label provider  @done
-	- Look whether it is possible to automatically increase the space after a heading.
+	- Look into whether it is possible to automatically increase the space after a heading.
 	
 Query View:
 	

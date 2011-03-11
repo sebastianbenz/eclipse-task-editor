@@ -8,7 +8,7 @@
  * Contributors:
  *     Sebastian Benz - initial API and implementation
  *******************************************************************************/
-package de.sebastianbenz.task.ui;
+package de.sebastianbenz.task.ui.editor;
 
 import org.eclipse.jface.text.source.ISourceViewer;
 import org.eclipse.jface.text.source.IVerticalRuler;

@@ -25,7 +25,8 @@ import com.google.inject.Binder;
 
 import de.sebastianbenz.task.ui.editor.AutoEditStrategyProvider;
 import de.sebastianbenz.task.ui.editor.FoldingRegionProvider;
-import de.sebastianbenz.task.ui.editor.TaskPaperSourceViewerConfiguration;
+import de.sebastianbenz.task.ui.editor.TaskEditor;
+import de.sebastianbenz.task.ui.editor.SourceViewerConfiguration;
 import de.sebastianbenz.task.ui.highlighting.HighlightingConfiguration;
 import de.sebastianbenz.task.ui.highlighting.SemanticHighlightingCalculator;
 import de.sebastianbenz.task.ui.highlighting.TokenHighlightingConfiguration;
@@ -63,7 +64,7 @@ public class TaskPaperUiModule extends de.sebastianbenz.task.ui.AbstractTaskPape
 	}
 	
 	public Class<? extends XtextSourceViewerConfiguration> bindXtextSourceViewerConfiguration(){
-		return TaskPaperSourceViewerConfiguration.class;
+		return SourceViewerConfiguration.class;
 	}
 	
 	

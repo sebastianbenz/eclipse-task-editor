@@ -18,19 +18,20 @@ import org.junit.Test;
 
 import com.google.common.base.Joiner;
 
-import de.sebastianbenz.task.tagging.DefaultTagsProcessor;
-import de.sebastianbenz.task.tagging.Region;
-import de.sebastianbenz.task.tagging.TagsProcessor;
-
 @SuppressWarnings("unchecked")
 public class TagProcessorTest {
 	
-	private TagsProcessor fixture = new DefaultTagsProcessor();
 
 	@Test
 	public void shouldReturnNoTagsForNullOrEmptyString() {
-		assertThat(fixture.parse(null).isEmpty(), is(true));
-		assertThat(fixture.parse("").isEmpty(), is(true));
+		assertThat(newTask(null).getTags().isEmpty(), is(true));
+		assertThat(newTask("").getTags().isEmpty(), is(true));
+	}
+
+	protected Task newTask(String text) {
+		Task task = TaskFactory.eINSTANCE.createTask();
+		task.setText(text);
+		return task;
 	}
 	
 	@Test
@@ -54,13 +55,13 @@ public class TagProcessorTest {
 	
 	@Test
 	public void shouldStoreOffsetAndLength() throws Exception {
-		Region firstTag = fixture.parse("01234 @to(1) ").values().iterator().next();
+		Tag firstTag = newTask("01234 @to(1) ").getTags().get(0);
 		assertThat(firstTag.getOffset(), is(6));
 		assertThat(firstTag.getLength(), is(6));
 	}
 
 	private String tagsIn(String string) {
-		return Joiner.on(", ").join(fixture.parse(string).values());
+		return Joiner.on(", ").join(newTask(string).getTags());
 	}
 
 }

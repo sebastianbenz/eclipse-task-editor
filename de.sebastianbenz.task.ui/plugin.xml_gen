@@ -6,42 +6,42 @@
     <extension
             point="org.eclipse.ui.editors">
         <editor
-            class="de.sebastianbenz.task.ui.TaskPaperExecutableExtensionFactory:org.eclipse.xtext.ui.editor.XtextEditor"
+            class="de.sebastianbenz.task.ui.TaskExecutableExtensionFactory:org.eclipse.xtext.ui.editor.XtextEditor"
             contributorClass="org.eclipse.ui.editors.text.TextEditorActionContributor"
             default="true"
             extensions="todo,taskpaper"
-            id="de.sebastianbenz.task.TaskPaper"
-            name="TaskPaper Editor">
+            id="de.sebastianbenz.task.Task"
+            name="Task Editor">
         </editor>
     </extension>
     <extension
         point="org.eclipse.ui.handlers">
         <handler
-            class="de.sebastianbenz.task.ui.TaskPaperExecutableExtensionFactory:org.eclipse.xtext.ui.editor.hyperlinking.OpenDeclarationHandler"
+            class="de.sebastianbenz.task.ui.TaskExecutableExtensionFactory:org.eclipse.xtext.ui.editor.hyperlinking.OpenDeclarationHandler"
             commandId="org.eclipse.xtext.ui.editor.hyperlinking.OpenDeclaration">
             <activeWhen>
                 <reference
-                    definitionId="de.sebastianbenz.task.TaskPaper.Editor.opened">
+                    definitionId="de.sebastianbenz.task.Task.Editor.opened">
                 </reference>
             </activeWhen>
         </handler>
         <handler
-            class="de.sebastianbenz.task.ui.TaskPaperExecutableExtensionFactory:org.eclipse.xtext.ui.editor.handler.ValidateActionHandler"
-            commandId="de.sebastianbenz.task.TaskPaper.validate">
+            class="de.sebastianbenz.task.ui.TaskExecutableExtensionFactory:org.eclipse.xtext.ui.editor.handler.ValidateActionHandler"
+            commandId="de.sebastianbenz.task.Task.validate">
          <activeWhen>
             <reference
-                    definitionId="de.sebastianbenz.task.TaskPaper.Editor.opened">
+                    definitionId="de.sebastianbenz.task.Task.Editor.opened">
             </reference>
          </activeWhen>
       </handler>
     </extension>
     <extension point="org.eclipse.core.expressions.definitions">
-        <definition id="de.sebastianbenz.task.TaskPaper.Editor.opened">
+        <definition id="de.sebastianbenz.task.Task.Editor.opened">
             <and>
                 <reference definitionId="isActiveEditorAnInstanceOfXtextEditor"/>
                 <with variable="activeEditor">
                     <test property="org.eclipse.xtext.ui.editor.XtextEditor.languageName" 
-                        value="de.sebastianbenz.task.TaskPaper" 
+                        value="de.sebastianbenz.task.Task" 
                         forcePluginActivation="true"/>
                 </with>        
             </and>
@@ -50,37 +50,37 @@
     <extension
             point="org.eclipse.ui.preferencePages">
         <page
-            class="de.sebastianbenz.task.ui.TaskPaperExecutableExtensionFactory:org.eclipse.xtext.ui.editor.preferences.LanguageRootPreferencePage"
-            id="de.sebastianbenz.task.TaskPaper"
-            name="TaskPaper">
-            <keywordReference id="de.sebastianbenz.task.ui.keyword_TaskPaper"/>
+            class="de.sebastianbenz.task.ui.TaskExecutableExtensionFactory:org.eclipse.xtext.ui.editor.preferences.LanguageRootPreferencePage"
+            id="de.sebastianbenz.task.Task"
+            name="Task">
+            <keywordReference id="de.sebastianbenz.task.ui.keyword_Task"/>
         </page>
         <page
-            category="de.sebastianbenz.task.TaskPaper"
-            class="de.sebastianbenz.task.ui.TaskPaperExecutableExtensionFactory:org.eclipse.xtext.ui.editor.syntaxcoloring.SyntaxColoringPreferencePage"
-            id="de.sebastianbenz.task.TaskPaper.coloring"
+            category="de.sebastianbenz.task.Task"
+            class="de.sebastianbenz.task.ui.TaskExecutableExtensionFactory:org.eclipse.xtext.ui.editor.syntaxcoloring.SyntaxColoringPreferencePage"
+            id="de.sebastianbenz.task.Task.coloring"
             name="Syntax Coloring">
-            <keywordReference id="de.sebastianbenz.task.ui.keyword_TaskPaper"/>
+            <keywordReference id="de.sebastianbenz.task.ui.keyword_Task"/>
         </page>
         <page
-            category="de.sebastianbenz.task.TaskPaper"
-            class="de.sebastianbenz.task.ui.TaskPaperExecutableExtensionFactory:org.eclipse.xtext.ui.editor.templates.XtextTemplatePreferencePage"
-            id="de.sebastianbenz.task.TaskPaper.templates"
+            category="de.sebastianbenz.task.Task"
+            class="de.sebastianbenz.task.ui.TaskExecutableExtensionFactory:org.eclipse.xtext.ui.editor.templates.XtextTemplatePreferencePage"
+            id="de.sebastianbenz.task.Task.templates"
             name="Templates">
-            <keywordReference id="de.sebastianbenz.task.ui.keyword_TaskPaper"/>
+            <keywordReference id="de.sebastianbenz.task.ui.keyword_Task"/>
         </page>
     </extension>
     <extension
         point="org.eclipse.ui.keywords">
         <keyword
-            id="de.sebastianbenz.task.ui.keyword_TaskPaper"
-            label="TaskPaper"/>
+            id="de.sebastianbenz.task.ui.keyword_Task"
+            label="Task"/>
     </extension>
     <extension
          point="org.eclipse.ui.commands">
       <command
             description="Trigger expensive validation"
-            id="de.sebastianbenz.task.TaskPaper.validate"
+            id="de.sebastianbenz.task.Task.validate"
             name="Validate">
       </command>
     </extension>
@@ -88,12 +88,12 @@
         <menuContribution
             locationURI="popup:#TextEditorContext?after=group.edit">
              <command
-                 commandId="de.sebastianbenz.task.TaskPaper.validate"
+                 commandId="de.sebastianbenz.task.Task.validate"
                  style="push"
                  tooltip="Trigger expensive validation">
             <visibleWhen checkEnabled="false">
                 <reference
-                    definitionId="de.sebastianbenz.task.TaskPaper.Editor.opened">
+                    definitionId="de.sebastianbenz.task.Task.Editor.opened">
                 </reference>
             </visibleWhen>
          </command>  
@@ -103,7 +103,7 @@
 		<menuContribution locationURI="popup:#TextEditorContext?endof=group.find">
 			<command commandId="org.eclipse.xtext.ui.editor.FindReferences">
 				<visibleWhen checkEnabled="false">
-                	<reference definitionId="de.sebastianbenz.task.TaskPaper.Editor.opened">
+                	<reference definitionId="de.sebastianbenz.task.Task.Editor.opened">
                 	</reference>
             	</visibleWhen>
 			</command>
@@ -111,11 +111,11 @@
 	</extension>
 	<extension point="org.eclipse.ui.handlers">
 	    <handler
-            class="de.sebastianbenz.task.ui.TaskPaperExecutableExtensionFactory:org.eclipse.xtext.ui.editor.findrefs.FindReferencesHandler"
+            class="de.sebastianbenz.task.ui.TaskExecutableExtensionFactory:org.eclipse.xtext.ui.editor.findrefs.FindReferencesHandler"
             commandId="org.eclipse.xtext.ui.editor.FindReferences">
             <activeWhen>
                 <reference
-                    definitionId="de.sebastianbenz.task.TaskPaper.Editor.opened">
+                    definitionId="de.sebastianbenz.task.Task.Editor.opened">
                 </reference>
             </activeWhen>
         </handler>
@@ -126,13 +126,13 @@
 	<extension
 		point="org.eclipse.emf.ecore.extension_parser">
 		<parser
-			class="de.sebastianbenz.task.ui.TaskPaperExecutableExtensionFactory:org.eclipse.xtext.resource.IResourceFactory"
+			class="de.sebastianbenz.task.ui.TaskExecutableExtensionFactory:org.eclipse.xtext.resource.IResourceFactory"
 			type="todo">
 		</parser>
 	</extension>
 	<extension point="org.eclipse.xtext.extension_resourceServiceProvider">
         <resourceServiceProvider
-            class="de.sebastianbenz.task.ui.TaskPaperExecutableExtensionFactory:org.eclipse.xtext.ui.resource.IResourceUIServiceProvider"
+            class="de.sebastianbenz.task.ui.TaskExecutableExtensionFactory:org.eclipse.xtext.ui.resource.IResourceUIServiceProvider"
             uriExtension="todo">
         </resourceServiceProvider>
     </extension>
@@ -140,13 +140,13 @@
 	<extension
 		point="org.eclipse.emf.ecore.extension_parser">
 		<parser
-			class="de.sebastianbenz.task.ui.TaskPaperExecutableExtensionFactory:org.eclipse.xtext.resource.IResourceFactory"
+			class="de.sebastianbenz.task.ui.TaskExecutableExtensionFactory:org.eclipse.xtext.resource.IResourceFactory"
 			type="taskpaper">
 		</parser>
 	</extension>
 	<extension point="org.eclipse.xtext.extension_resourceServiceProvider">
         <resourceServiceProvider
-            class="de.sebastianbenz.task.ui.TaskPaperExecutableExtensionFactory:org.eclipse.xtext.ui.resource.IResourceUIServiceProvider"
+            class="de.sebastianbenz.task.ui.TaskExecutableExtensionFactory:org.eclipse.xtext.ui.resource.IResourceUIServiceProvider"
             uriExtension="taskpaper">
         </resourceServiceProvider>
     </extension>
@@ -157,11 +157,11 @@
 	<extension
 		point="org.eclipse.ui.handlers">
 		<handler 
-			class="de.sebastianbenz.task.ui.TaskPaperExecutableExtensionFactory:org.eclipse.xtext.ui.editor.outline.quickoutline.ShowQuickOutlineActionHandler"
+			class="de.sebastianbenz.task.ui.TaskExecutableExtensionFactory:org.eclipse.xtext.ui.editor.outline.quickoutline.ShowQuickOutlineActionHandler"
 			commandId="org.eclipse.xtext.ui.editor.outline.QuickOutline">
 			<activeWhen>
 				<reference
-					definitionId="de.sebastianbenz.task.TaskPaper.Editor.opened">
+					definitionId="de.sebastianbenz.task.Task.Editor.opened">
 				</reference>
 			</activeWhen>
 		</handler>
@@ -181,7 +181,7 @@
 				style="push"
 				tooltip="Open Quick Outline">
 				<visibleWhen checkEnabled="false">
-					<reference definitionId="de.sebastianbenz.task.TaskPaper.Editor.opened"/>
+					<reference definitionId="de.sebastianbenz.task.Task.Editor.opened"/>
 				</visibleWhen>
 			</command>
 		</menuContribution>
@@ -190,7 +190,7 @@
    <extension
          point="org.eclipse.ui.ide.markerResolution">
       <markerResolutionGenerator
-            class="de.sebastianbenz.task.ui.TaskPaperExecutableExtensionFactory:org.eclipse.xtext.ui.editor.quickfix.MarkerResolutionGenerator">
+            class="de.sebastianbenz.task.ui.TaskExecutableExtensionFactory:org.eclipse.xtext.ui.editor.quickfix.MarkerResolutionGenerator">
       </markerResolutionGenerator>
    </extension>
 

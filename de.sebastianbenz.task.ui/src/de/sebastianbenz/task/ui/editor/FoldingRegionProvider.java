@@ -11,8 +11,8 @@
 package de.sebastianbenz.task.ui.editor;
 
 import static com.google.common.collect.Sets.newHashSet;
-import static de.sebastianbenz.task.taskPaper.TaskPaperPackage.Literals.PROJECT;
-import static de.sebastianbenz.task.taskPaper.TaskPaperPackage.Literals.TODO;
+import static de.sebastianbenz.task.TaskPackage.Literals.PROJECT;
+import static de.sebastianbenz.task.TaskPackage.Literals.TASK_MODEL;
 
 import java.util.Set;
 
@@ -22,12 +22,12 @@ import org.eclipse.xtext.ui.editor.folding.DefaultFoldingRegionProvider;
 
 public class FoldingRegionProvider extends DefaultFoldingRegionProvider {
 	
-	private static final Set<EClass> supportedTypes = newHashSet(TODO, PROJECT);//, NOTE);
+	private static final Set<EClass> supportedTypes = newHashSet(TASK_MODEL, PROJECT);//, NOTE);
 	
 //
 //	
 //	
-//	public class Implementation extends TaskPaperSwitch<Boolean> {
+//	public class Implementation extends TaskSwitch<Boolean> {
 //
 //		private final IFoldingRegionAcceptor<ITextRegion> foldingRegionAcceptor;
 //

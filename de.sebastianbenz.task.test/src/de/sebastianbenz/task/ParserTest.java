@@ -18,9 +18,6 @@ import static org.junit.Assert.assertThat;
 
 import org.junit.Test;
 
-import de.sebastianbenz.task.taskPaper.Note;
-import de.sebastianbenz.task.taskPaper.Project;
-import de.sebastianbenz.task.taskPaper.Task;
 
 public class ParserTest extends AbstractTest {
 

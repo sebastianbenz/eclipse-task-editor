@@ -27,9 +27,9 @@ import org.eclipse.xtext.util.ITextRegion;
 
 import com.google.common.collect.Iterables;
 
-import de.sebastianbenz.task.taskPaper.Content;
-import de.sebastianbenz.task.taskPaper.Project;
-import de.sebastianbenz.task.taskPaper.Todo;
+import de.sebastianbenz.task.Content;
+import de.sebastianbenz.task.Project;
+import de.sebastianbenz.task.TaskModel;
 
 public class LocationInFileProvider extends DefaultLocationInFileProvider {
 
@@ -54,7 +54,7 @@ public class LocationInFileProvider extends DefaultLocationInFileProvider {
 	private List<INode> findNextProjectOnSameOrHigherLevel(Project project) {
 		List<INode> result = newArrayList(getNodes(project));
 		
-		Todo todo = (Todo) project.eContainer();
+		TaskModel todo = (TaskModel) project.eContainer();
 		int start = todo.getContents().indexOf(project) + 1;
 		while (start < todo.getContents().size()){
 			Content content = todo.getContents().get(start);

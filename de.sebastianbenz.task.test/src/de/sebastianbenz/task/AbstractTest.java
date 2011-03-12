@@ -18,6 +18,7 @@ import java.io.IOException;
 
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.Resource.Diagnostic;
 import org.eclipse.xtext.Constants;
@@ -27,6 +28,7 @@ import org.eclipse.xtext.resource.XtextResourceSet;
 import org.eclipse.xtext.util.StringInputStream;
 import org.hamcrest.Description;
 import org.hamcrest.Matcher;
+import org.junit.BeforeClass;
 import org.junit.internal.matchers.TypeSafeMatcher;
 import org.junit.runner.RunWith;
 
@@ -34,16 +36,15 @@ import com.google.common.base.Joiner;
 import com.google.inject.Inject;
 import com.google.inject.name.Named;
 
-import de.sebastianbenz.task.taskPaper.Content;
-import de.sebastianbenz.task.taskPaper.Task;
-import de.sebastianbenz.task.taskPaper.Todo;
-import de.sebastianbenz.task.util.Tasks;
-
 @SuppressWarnings("restriction")
 @RunWith(XtextRunner.class)
-@InjectWith(TaskPaperInjectorProvider.class)
+@InjectWith(TaskInjectorProvider.class)
 public abstract class AbstractTest {
 
+	static{
+		TaskPackage.eINSTANCE.getClass();
+	}
+	
 	@Inject
 	private XtextResourceSet resourceSet;
 	private String fileExtension;
@@ -54,7 +55,7 @@ public abstract class AbstractTest {
 	}
 
 	protected String tagsOf(Task task) {
-		return Joiner.on(", ").join(Tasks.tagsIn(task).values());
+		return Joiner.on(", ").join(task.getTags());
 	}
 
 	protected Task firstTask(EList<Content> contents) {
@@ -87,11 +88,16 @@ public abstract class AbstractTest {
 		return root(input).getContents();
 	}
 	
-	protected Todo root(String input) throws IOException{
-		Resource resource = resourceSet.createResource(URI.createURI(String.format("TaskPaperTest.%s",fileExtension)));
+	protected TaskModel root(String input) throws IOException{
+		Resource resource = resource(input);
+		return (TaskModel)resource.getContents().get(0);
+	}
+
+	protected Resource resource(String input) throws IOException {
+		Resource resource = resourceSet.createResource(URI.createURI(String.format("TaskTest.%s",fileExtension)));
 		resource.load(new StringInputStream(input), null);
 		assertNoErrors(resource);
-		return (Todo)resource.getContents().get(0);
+		return resource;
 	}
 
 	protected void assertNoErrors(Resource resource) {

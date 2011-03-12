@@ -13,7 +13,6 @@ package de.sebastianbenz.task.ui.highlighting;
 import static de.sebastianbenz.task.ui.highlighting.HighlightingConfiguration.PROJECT2_ID;
 import static de.sebastianbenz.task.ui.highlighting.HighlightingConfiguration.PROJECT3_ID;
 import static de.sebastianbenz.task.ui.highlighting.HighlightingConfiguration.TAG_ID;
-import static de.sebastianbenz.task.util.Tasks.isDone;
 
 import java.util.Iterator;
 
@@ -24,17 +23,15 @@ import org.eclipse.xtext.resource.XtextResource;
 import org.eclipse.xtext.ui.editor.syntaxcoloring.IHighlightedPositionAcceptor;
 import org.eclipse.xtext.ui.editor.syntaxcoloring.ISemanticHighlightingCalculator;
 
-import de.sebastianbenz.task.tagging.Region;
-import de.sebastianbenz.task.tagging.Tag;
-import de.sebastianbenz.task.taskPaper.Content;
-import de.sebastianbenz.task.taskPaper.Project;
-import de.sebastianbenz.task.taskPaper.Task;
-import de.sebastianbenz.task.taskPaper.util.TaskPaperSwitch;
-import de.sebastianbenz.task.util.Tasks;
+import de.sebastianbenz.task.Content;
+import de.sebastianbenz.task.Project;
+import de.sebastianbenz.task.Tag;
+import de.sebastianbenz.task.Task;
+import de.sebastianbenz.task.util.TaskSwitch;
 
 public class SemanticHighlightingCalculator implements ISemanticHighlightingCalculator{
 
-	private class Implementation extends TaskPaperSwitch<Boolean>{
+	private class Implementation extends TaskSwitch<Boolean>{
 
 		private final IHighlightedPositionAcceptor acceptor;
 
@@ -44,8 +41,8 @@ public class SemanticHighlightingCalculator implements ISemanticHighlightingCalc
 
 		@Override
 		public Boolean caseTask(Task task) {
-			Iterable<Tag> allTags = Tasks.allTags(task);
-			if(isDone(task)){
+			Iterable<Tag> allTags = task.getTags();
+			if(task.isDone()){
 				highlightText(task, allTags);
 			}
 			highlightTags(task, allTags);
@@ -55,7 +52,7 @@ public class SemanticHighlightingCalculator implements ISemanticHighlightingCalc
 		private void highlightText(Task task, Iterable<Tag> allTags) {
 			int begin = task.getText().startsWith("- ") ? 2 : 1;
 			
-			for (Region tag : allTags) {
+			for (Tag tag : allTags) {
 				int length = tag.getOffset() - begin;
 				if(length > 0){
 					int offset = offset(task) + begin;
@@ -67,7 +64,7 @@ public class SemanticHighlightingCalculator implements ISemanticHighlightingCalc
 		}
 
 		private void highlightTags(Task task, Iterable<Tag> allTags) {
-			for (Region tag : allTags) {
+			for (Tag tag : allTags) {
 				acceptor.addPosition(offset(task) + tag.getOffset(), tag.getLength(), TAG_ID);
 			}
 		}

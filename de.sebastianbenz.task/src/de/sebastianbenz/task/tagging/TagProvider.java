@@ -19,8 +19,8 @@ import org.eclipse.emf.ecore.resource.Resource;
 
 import com.google.common.collect.Iterators;
 
-import de.sebastianbenz.task.taskPaper.Task;
-import de.sebastianbenz.task.util.Tasks;
+import de.sebastianbenz.task.Tag;
+import de.sebastianbenz.task.Task;
 
 public class TagProvider {
 
@@ -28,7 +28,7 @@ public class TagProvider {
 		Iterator<Task> tasks = Iterators.filter(r.getAllContents(), Task.class);
 		Iterable<Tag> result = Collections.emptyList();
 		while (tasks.hasNext()) {
-			result = concat(Tasks.allTags(tasks.next()), result);
+			result = concat(tasks.next().getTags(), result);
 		}
 		return result;
 	}

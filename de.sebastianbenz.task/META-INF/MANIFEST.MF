@@ -27,8 +27,5 @@ Export-Package: de.sebastianbenz.task,
  de.sebastianbenz.task.parser.antlr.internal,
  de.sebastianbenz.task.services,
  de.sebastianbenz.task.tagging,
- de.sebastianbenz.task.taskPaper,
- de.sebastianbenz.task.taskPaper.impl,
- de.sebastianbenz.task.taskPaper.util,
  de.sebastianbenz.task.util,
  de.sebastianbenz.task.validation

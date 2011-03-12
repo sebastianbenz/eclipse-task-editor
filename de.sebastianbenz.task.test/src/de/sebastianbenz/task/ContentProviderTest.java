@@ -12,7 +12,6 @@ package de.sebastianbenz.task;
 
 import static com.google.common.collect.Iterables.transform;
 import static com.google.common.collect.Lists.newArrayList;
-import static de.sebastianbenz.task.util.Contents.textOf;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertThat;
@@ -26,17 +25,12 @@ import org.junit.Test;
 
 import com.google.common.base.Function;
 
-import de.sebastianbenz.task.model.ContentProvider;
-import de.sebastianbenz.task.taskPaper.Content;
-import de.sebastianbenz.task.taskPaper.Todo;
-
 public class ContentProviderTest extends AbstractTest{
 
-	private ContentProvider fixture = new ContentProvider();
 	
 	@Test
 	public void shouldReturnEmptyListForEmptyTodos() throws IOException {
-		assertThat(fixture.getContents(root("")), is(Collections.<Content>emptyList()));
+		assertThat(root("").getChildren(), is(Collections.<Content>emptyList()));
 	}
 
 	@Test
@@ -76,41 +70,28 @@ public class ContentProviderTest extends AbstractTest{
 	
 	@Test
 	public void shouldCacheResults() throws Exception {
-		Todo root = root("text\n");
-		List<Content> first =  fixture.getContents(root);
-		List<Content> second =  fixture.getContents(root);
+		TaskModel root = root("text\n");
+		List<Content> first =  root.getChildren();
+		List<Content> second =  root.getChildren();
 		assertSame(first, second);
 	}
 	
 	
 	@Test
 	public void shouldResolveAllContainedTasksOfAProject() throws Exception {
-		Todo root = root("project:\n" +
+		TaskModel root = root("project:\n" +
 						 " note\n" +
 						 " - task\n" +
 						 "project2:\n" +
 						 "  note2\n");
 		EList<Content> contents = root.getContents();
-		assertThat(contentsOf(contents.get(0)), is(array("note", "task")));
-		assertThat(contentsOf(contents.get(3)), is(array("note2")));
+		assertThat(contentsOf((Project) contents.get(0)), is(array("note", "task")));
+		assertThat(contentsOf((Project) contents.get(3)), is(array("note2")));
 	}
 	
-	@Test
-	public void aTaskHasNoContents() throws Exception {
-		Todo root = root("note\n" +
-				 		 " note2\n");
-		assertThat(contentsOf(root.getContents().get(0)), is(array()));
-	}
 	
-	@Test
-	public void aNoteHasNoContents() throws Exception {
-		Todo root = root("- task\n" +
-		 " note2\n");
-		assertThat(contentsOf(root.getContents().get(0)), is(array()));
-	}
-	
-	private String[] contentsOf(Content content) {
-		List<Content> contents = fixture.getContents(content);
+	private String[] contentsOf(Project content) {
+		List<Content> contents = content.getChildren();
 		return toString(contents);
 	}
 
@@ -119,14 +100,14 @@ public class ContentProviderTest extends AbstractTest{
 	}
 
 	private String[] contentsOf(String input) throws IOException {
-		List<Content> contents = fixture.getContents(root(input));
+		List<Content> contents = root(input).getChildren();
 		return toString(contents);
 	}
 
 	protected String[] toString(List<Content> contents) {
 		return newArrayList(transform(contents, new Function<Content, String>() {
 			public String apply(Content content) {
-				return textOf(content);
+				return content.getValue();
 			}
 		})).toArray(new String[0]);
 	}

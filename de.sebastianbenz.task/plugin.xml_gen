@@ -3,14 +3,6 @@
 
 <plugin>
 
-  <extension point="org.eclipse.emf.ecore.generated_package">
-    <package 
-       uri = "http://www.sebastianbenz.de/task/TaskPaper" 
-       class = "de.sebastianbenz.task.taskPaper.TaskPaperPackage"
-       genModel = "de/sebastianbenz/task/TaskPaper.genmodel" /> 
-	
-  </extension>
-
 
 
 

@@ -1,0 +1,68 @@
+grammar de.sebastianbenz.task.Task with org.eclipse.xtext.common.Terminals
+
+import "platform:/resource/de.sebastianbenz.task/model/Task.ecore"
+import "http://www.eclipse.org/emf/2002/Ecore" as ecore
+
+generate taskPaper "http://www.sebastianbenz.de/task/query/2011/"
+
+Query:
+	{Query} (expression=OrExpr)?
+;
+
+OrExpr returns Expression:
+	AndExpr ({OrExpr.left=current} 'or' right=AndExpr)*;
+
+AndExpr returns Expression:
+	CompEqExpr ({AndExpr.left=current} 'and' right=CompEqExpr)*;
+ 
+CompEqExpr returns Expression:
+	CompExpr ({CompEqExpr.left=current} operator=CompEqOperator right=CompExpr)*;
+
+CompExpr returns Expression:
+	UnaryExpr ({CompExpr.left=current} operator=CompOperator right=UnaryExpr)*;
+
+UnaryExpr returns Expression:
+	Atom | ({UnaryExpr} 'not' expr=UnaryExpr);
+
+Atom returns Expression:
+	NumberAtom
+	| TypeReference
+	| StringReference
+	| TagReference
+	| ParenExpr 
+	| Phrase;
+
+ParenExpr returns Expression:
+	'(' {ParenExpr} expr=OrExpr ')';
+ 
+NumberAtom returns Expression:
+	value = INT;
+	
+TypeReference  returns Expression:
+	type=Type 'contains' phrase=Phrase
+;
+
+StringReference  returns Expression:
+	search=STRING	
+;
+
+TagReference:
+	'@' tagName=[Tag]	
+;
+
+Phrase:
+	words=(STRING | WORDS)
+;
+
+enum Type:
+	PROJECT="project" | TASK="task" | TEXT="text"	
+;
+
+enum CompEqOperator returns CompEqOperator:
+	EQUAL = '=' | NOT_EQUAL = '!=';
+
+enum CompOperator returns CompOperator:
+	LESS_EQUAL = '<=' | LESS = '<' | GREATER_EQUAL = '>=' |  GREATER = '>';
+
+terminal WORDS: (INT | ID)+;	
+	

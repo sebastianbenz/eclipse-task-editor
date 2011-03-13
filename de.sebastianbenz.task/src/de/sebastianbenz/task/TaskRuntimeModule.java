@@ -13,6 +13,7 @@
  */
 package de.sebastianbenz.task;
 
+import org.eclipse.xtext.linking.ILinker;
 import org.eclipse.xtext.naming.IQualifiedNameProvider;
 import org.eclipse.xtext.resource.IDefaultResourceDescriptionStrategy;
 import org.eclipse.xtext.resource.ILocationInFileProvider;
@@ -20,6 +21,7 @@ import org.eclipse.xtext.validation.CompositeEValidator;
 
 import com.google.inject.Binder;
 
+import de.sebastianbenz.task.model.RestructuringLinker;
 import de.sebastianbenz.task.resource.LocationInFileProvider;
 import de.sebastianbenz.task.resource.TaskResourceDescriptionStrategy;
 import de.sebastianbenz.task.util.TaskQualifiedNameProvider;
@@ -51,6 +53,11 @@ public class TaskRuntimeModule extends
 		binder.bindConstant().annotatedWith( //
 				com.google.inject.name.Names.named(//
 						CompositeEValidator.USE_EOBJECT_VALIDATOR)).to(false);
+	}
+	
+	@Override
+	public Class<? extends ILinker> bindILinker() {
+		return RestructuringLinker.class;
 	}
 
 }

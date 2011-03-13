@@ -50,17 +50,33 @@ public class SemanticHighlightingCalculator implements ISemanticHighlightingCalc
 		}
 		
 		private void highlightText(Task task, Iterable<Tag> allTags) {
-			int begin = task.getText().startsWith("- ") ? 2 : 1;
-			
+			int begin = getStartPosition(task);
+			int lastTagEnd = 0;
+			int taskOffset = offset(task);
 			for (Tag tag : allTags) {
 				int length = tag.getOffset() - begin;
 				if(length > 0){
-					int offset = offset(task) + begin;
+					int offset = taskOffset + begin;
 					acceptor.addPosition(offset, length, HighlightingConfiguration.TASK_DONE_ID);
+					lastTagEnd = offset + length + tag.getLength();
 				}
 				begin = tag.getOffset() + tag.getLength();
 			}
 			
+			int taskLength = length(task);
+			if(lastTagEnd < taskOffset + taskLength){
+				acceptor.addPosition(lastTagEnd, taskLength-begin, HighlightingConfiguration.TASK_DONE_ID);
+			}
+		}
+
+		protected int getStartPosition(Task task) {
+			String text = task.getText();
+			for(int i = 1; i < text.length(); i++){
+				if(text.charAt(i) != ' '){
+					return i;
+				}
+			}
+			return 1;
 		}
 
 		private void highlightTags(Task task, Iterable<Tag> allTags) {
@@ -72,6 +88,11 @@ public class SemanticHighlightingCalculator implements ISemanticHighlightingCalc
 		private int offset(Task task) {
 			ICompositeNode node = NodeModelUtils.getNode(task);
 			return node.getOffset() + task.getIntend().size();
+		}
+		
+		private int length(Task task) {
+			ICompositeNode node = NodeModelUtils.getNode(task);
+			return node.getLength();
 		}
 
 		@Override

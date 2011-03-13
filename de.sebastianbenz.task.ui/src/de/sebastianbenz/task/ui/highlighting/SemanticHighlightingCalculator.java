@@ -54,18 +54,18 @@ public class SemanticHighlightingCalculator implements ISemanticHighlightingCalc
 			int lastTagEnd = 0;
 			int taskOffset = offset(task);
 			for (Tag tag : allTags) {
-				int length = tag.getOffset() - begin;
+				int length = tag.getOffset() - begin - 1;
 				if(length > 0){
 					int offset = taskOffset + begin;
 					acceptor.addPosition(offset, length, HighlightingConfiguration.TASK_DONE_ID);
 					lastTagEnd = offset + length + tag.getLength();
 				}
-				begin = tag.getOffset() + tag.getLength();
+				begin = tag.getOffset() + tag.getLength() + 1;
 			}
 			
 			int taskLength = length(task);
 			if(lastTagEnd < taskOffset + taskLength){
-				acceptor.addPosition(lastTagEnd, taskLength-begin, HighlightingConfiguration.TASK_DONE_ID);
+				acceptor.addPosition(lastTagEnd + 2, taskLength-begin, HighlightingConfiguration.TASK_DONE_ID);
 			}
 		}
 

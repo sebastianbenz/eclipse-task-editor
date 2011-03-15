@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin>
+
+   
+   <extension
+         id="product"
+         point="org.eclipse.core.runtime.products">
+      <product
+            description="%productDescription"
+            name="%productName"
+            application="de.sebastianbenz.task.rcp.application">
+         <property
+               name="appName"
+               value="%productName"/>
+         <property
+               name="windowImages"
+               value="icons/text.gif"/>
+         <property
+               name="aboutText"
+               value="An RCP text editor based on the optional text infrastructure."/>
+         <property
+               name="aboutImage"
+               value="icons/eclipse_lg.gif"/>
+      </product>
+   </extension>
+
+   <extension
+         id="application"
+         name="%applicationName"
+         point="org.eclipse.core.runtime.applications">
+      <application>
+         <run class="de.sebastianbenz.task.app.TextEditorApplication"/>
+      </application>
+   </extension>
+   
+   <extension
+         id="perspective"
+         name="%perspectiveName"
+         point="org.eclipse.ui.perspectives">
+      <perspective
+            icon="icons/perspective.gif"
+            class="de.sebastianbenz.task.app.TextEditorPerspective"
+            fixed="true"
+            name="%perspectiveName"
+            id="de.sebastianbenz.task.app.TextEditorPerspective"/>
+   </extension>
+   
+   <extension
+         point="org.eclipse.ui.commands">
+      <command
+            categoryId="org.eclipse.ui.category.file"
+            description="%openFile.description"
+            id="de.sebastianbenz.task.app.commands.OpenFile"
+            name="%openFile.name"/>
+   </extension>
+   
+   <extension
+         point="org.eclipse.ui.bindings">
+      <key
+            commandId="de.sebastianbenz.task.app.commands.OpenFile"
+            contextId="org.eclipse.ui.contexts.window"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+            sequence="M1+O"/>
+   </extension>
+   
+   <!-- must come after the command definition above -->
+   <extension
+         point="org.eclipse.ui.actionSets">
+      <actionSet
+            label="%fileActionSet.label"
+            visible="true"
+            id="de.sebastianbenz.task.app.fileActionSet">
+         <action
+               id="de.sebastianbenz.task.app.actions.OpenFile"
+               icon="icons/open.gif"
+               label="%openFile.label"
+               tooltip="%openFile.tooltip"
+               toolbarPath="org.eclipse.ui.workbench.file/open.ext"
+               menubarPath="file/new.ext"
+               class="de.sebastianbenz.task.app.actions.OpenFileAction"
+               definitionId="de.sebastianbenz.task.app.commands.OpenFile"
+               style="push"
+               state="false"/>
+      </actionSet>
+   </extension>
+</plugin>

@@ -19,7 +19,8 @@
 
    <windowImages i16="icons/text.gif"/>
 
-   <launcher>
+
+   <launcher name="taskeditor">
       <solaris/>
       <win useIco="false">
          <bmp/>
@@ -29,7 +30,6 @@
 
    <vm>
    </vm>
-
 
    <plugins>
    </plugins>

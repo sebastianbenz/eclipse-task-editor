@@ -16,7 +16,7 @@ public class TextEditorApplication implements IApplication {
 	 * @since 3.3
 	 */
 	public Object start(IApplicationContext context) throws Exception {
-        WorkbenchAdvisor workbenchAdvisor = new TextEditorWorkbenchAdvisor();
+        WorkbenchAdvisor workbenchAdvisor = new TaskEditorWorkbenchAdvisor();
         Display display = PlatformUI.createDisplay();
         try {
             int returnCode = PlatformUI.createAndRunWorkbench(display, workbenchAdvisor);

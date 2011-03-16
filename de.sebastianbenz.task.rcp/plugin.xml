@@ -15,10 +15,10 @@
                value="%productName"/>
          <property
                name="windowImages"
-               value="icons/text.gif"/>
+               value="icons/TodoFile.png,icons/TodoEditor_32.gif,icons/TodoEditor_48.gif,icons/TodoEditor_64.gif,icons/TodoEditor_128.gif"/>
          <property
                name="aboutText"
-               value="An RCP text editor based on the optional text infrastructure."/>
+               value="A simple textual TODO editor."/>
          <property
                name="aboutImage"
                value="icons/eclipse_lg.gif"/>
@@ -29,7 +29,8 @@
          id="application"
          name="%applicationName"
          point="org.eclipse.core.runtime.applications">
-      <application>
+      <application
+            icon="icons/TodoFile.png">
          <run class="de.sebastianbenz.task.app.TextEditorApplication"/>
       </application>
    </extension>
@@ -39,7 +40,7 @@
          name="%perspectiveName"
          point="org.eclipse.ui.perspectives">
       <perspective
-            icon="icons/perspective.gif"
+            icon="icons/TodoFile.png"
             class="de.sebastianbenz.task.app.TextEditorPerspective"
             fixed="true"
             name="%perspectiveName"

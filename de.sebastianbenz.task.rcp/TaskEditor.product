@@ -6,7 +6,7 @@
    <aboutInfo>
       <image path="icons/eclipse_lg.gif"/>
       <text>
-         An RCP text editor based on the optional text infrastructure.
+         A simple textual TODO editor.
       </text>
    </aboutInfo>
 
@@ -17,12 +17,14 @@
       <vmArgsMac>-XstartOnFirstThread -Dorg.eclipse.swt.internal.carbon.smallFonts</vmArgsMac>
    </launcherArgs>
 
-   <windowImages i16="icons/text.gif"/>
+   <windowImages i16="/de.sebastianbenz.task.rcp/icons/TodoFile.png" i32="/de.sebastianbenz.task.rcp/icons/TodoEditor_32.gif" i48="/de.sebastianbenz.task.rcp/icons/TodoEditor_48.gif" i64="/de.sebastianbenz.task.rcp/icons/TodoEditor_64.gif" i128="/de.sebastianbenz.task.rcp/icons/TodoEditor_128.gif"/>
 
 
    <launcher name="taskeditor">
+      <macosx icon="/de.sebastianbenz.task.rcp/icons/Icon.icns"/>
       <solaris/>
-      <win useIco="false">
+      <win useIco="true">
+         <ico path="/de.sebastianbenz.task.rcp/icons/Icon.ico"/>
          <bmp/>
       </win>
    </launcher>
@@ -30,6 +32,7 @@
 
    <vm>
    </vm>
+
 
    <plugins>
    </plugins>

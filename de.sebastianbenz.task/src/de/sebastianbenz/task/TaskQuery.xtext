@@ -9,60 +9,62 @@ Query:
 	{Query} (expression=OrExpr)?
 ;
 
-OrExpr returns Expression:
+Expression:
+	OrExpr | AndExpr | CompEqExpr | CompExpr | UnaryExpr | Atom
+;
+
+OrExpr :
 	AndExpr ({OrExpr.left=current} 'or' right=AndExpr)*;
 
-AndExpr returns Expression:
+AndExpr :
 	CompEqExpr ({AndExpr.left=current} 'and' right=CompEqExpr)*;
  
-CompEqExpr returns Expression:
+CompEqExpr :
 	CompExpr ({CompEqExpr.left=current} operator=CompEqOperator right=CompExpr)*;
-
-CompExpr returns Expression:
+ 
+CompExpr :
 	UnaryExpr ({CompExpr.left=current} operator=CompOperator right=UnaryExpr)*;
 
-UnaryExpr returns Expression:
+UnaryExpr :
 	Atom | ({UnaryExpr} 'not' expr=UnaryExpr);
 
-Atom returns Expression:
+Atom :
 	NumberAtom
-	| TypeReference
+	| ProjectReference
 	| StringReference
 	| TagReference
 	| ParenExpr 
 	| Phrase;
 
-ParenExpr returns Expression:
+ParenExpr :
 	'(' {ParenExpr} expr=OrExpr ')';
  
-NumberAtom returns Expression:
+NumberAtom :
 	value = INT;
 	
-TypeReference  returns Expression:
-	type=Type 'contains' phrase=Phrase
+ProjectReference :
+	'project' ':' project=QueryString
 ;
 
-StringReference  returns Expression:
-	search=STRING	
+Phrase :
+	value=QueryString	
+;
+
+QueryString returns ecore::EString: 
+		(ID|'*')* | STRING 
+;
+
+StringReference  :
+	search=QueryString	
 ;
 
 TagReference:
 	'@' tagName=[Tag]	
 ;
 
-Phrase:
-	words=(STRING | WORDS)
-;
-
-enum Type:
-	PROJECT="project" | TASK="task" | TEXT="text"	
-;
-
-enum CompEqOperator returns CompEqOperator:
+enum CompEqOperator:
 	EQUAL = '=' | NOT_EQUAL = '!=';
 
-enum CompOperator returns CompOperator:
+enum CompOperator:
 	LESS_EQUAL = '<=' | LESS = '<' | GREATER_EQUAL = '>=' |  GREATER = '>';
-
-terminal WORDS: (INT | ID)+;	
 	

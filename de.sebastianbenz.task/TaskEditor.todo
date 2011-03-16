@@ -5,9 +5,11 @@ Task Editor:
 	- Enable folding
 	- Show structure in outline view @done
 	- Reduce tabsize to 2 @done
-	- Automatic line wrap should be aware of the intendation 
+	- Automatic line wrap in editor should be aware of the intendation 
 	- Strip tags from label provider  @done
 	- Look into whether it is possible to automatically increase the space after a heading.
+	- make linebreak after last task / text / project not required
+	- pressing enter after a task should automatically create a new task
 	
 Query View:
 	
@@ -22,3 +24,13 @@ Query View:
 	- equal/not-equal query by tag value
 	- and or queries
 	- if values are numbers enable greater less than 
+
+RCP:
+
+	-  enable drag and drop
+	-  store open todos files
+	-  Ctr + T should create a new todo
+	-  change title
+	-  add icons
+	-  setup build
+		

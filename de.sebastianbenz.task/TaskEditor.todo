@@ -33,4 +33,6 @@ RCP:
 	-  change title
 	-  add icons
 	-  setup build
+	-  remove java from menu
+	-  add file wizard
 		

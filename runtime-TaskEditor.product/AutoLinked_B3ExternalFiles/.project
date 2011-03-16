@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>AutoLinked_B3ExternalFiles</name>
+	<comment></comment>
+	<projects>
+	</projects>
+	<buildSpec>
+		<buildCommand>
+			<name>org.eclipse.xtext.ui.shared.xtextBuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+	</buildSpec>
+	<natures>
+		<nature>org.eclipse.xtext.ui.shared.xtextNature</nature>
+	</natures>
+	<linkedResources>
+		<link>
+			<name>Users/sebastian.benz/Desktop/Todo.todo</name>
+			<type>1</type>
+			<location>C:/Users/sebastian.benz/Desktop/Todo.todo</location>
+		</link>
+	</linkedResources>
+</projectDescription>

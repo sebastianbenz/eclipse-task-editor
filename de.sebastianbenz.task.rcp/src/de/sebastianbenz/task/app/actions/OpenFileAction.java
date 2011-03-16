@@ -45,7 +45,7 @@ public class OpenFileAction extends Action implements IWorkbenchWindowActionDele
 	private File queryFile() {
 		FileDialog dialog= new FileDialog(fWindow.getShell(), SWT.OPEN);
 		dialog.setText("Open File"); //$NON-NLS-1$
-		dialog.setFilterExtensions(new String[]{"todo", "taskpaper"});
+		dialog.setFilterExtensions(new String[]{"*.todo;*.taskpaper"});
 		String path= dialog.open();
 		if (path != null && path.length() > 0)
 			return new File(path);

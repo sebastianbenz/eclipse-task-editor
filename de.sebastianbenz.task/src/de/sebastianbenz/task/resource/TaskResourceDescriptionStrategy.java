@@ -7,7 +7,6 @@ import org.eclipse.xtext.resource.IEObjectDescription;
 import org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy;
 import org.eclipse.xtext.util.IAcceptor;
 
-import de.sebastianbenz.task.Content;
 import de.sebastianbenz.task.Project;
 import de.sebastianbenz.task.Tag;
 import de.sebastianbenz.task.Task;

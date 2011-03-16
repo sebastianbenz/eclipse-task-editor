@@ -15,7 +15,7 @@ import org.eclipse.jface.text.source.IVerticalRuler;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.xtext.ui.editor.XtextEditor;
 
-public class TaskEditor extends XtextEditor {
+public class TaskEditor extends ExtLinkedXtextEditor{
 
 	@Override
 	protected ISourceViewer createSourceViewer(Composite parent,

@@ -60,11 +60,17 @@ public class TaskGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cNoteParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
 		
 		/// *
+		//
 		//Project
+		//
 		//WS TASK
+		//
 		//WS PROJECT
+		//
 		//WS WS TASK
+		//
 		//WS WS PROJECT 
+		//
 		// * / Content:
 		//	Project | Task | Note;
 		public ParserRule getRule() { return rule; }
@@ -225,11 +231,17 @@ public class TaskGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	/// *
+	//
 	//Project
+	//
 	//WS TASK
+	//
 	//WS PROJECT
+	//
 	//WS WS TASK
+	//
 	//WS WS PROJECT 
+	//
 	// * / Content:
 	//	Project | Task | Note;
 	public ContentElements getContentAccess() {

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?pde version="3.5"?>
+
+<product name="%productName" id="de.sebastianbenz.task.rcp.product" application="de.sebastianbenz.task.rcp.application" version="1.0.0.qualifier" useFeatures="true" includeLaunchers="true">
+
+   <aboutInfo>
+      <image path="icons/eclipse_lg.gif"/>
+      <text>
+         An RCP text editor based on the optional text infrastructure.
+      </text>
+   </aboutInfo>
+
+   <configIni use="default">
+   </configIni>
+
+   <launcherArgs>
+      <vmArgsMac>-XstartOnFirstThread -Dorg.eclipse.swt.internal.carbon.smallFonts</vmArgsMac>
+   </launcherArgs>
+
+   <windowImages i16="icons/text.gif"/>
+
+
+   <launcher name="taskeditor">
+      <solaris/>
+      <win useIco="false">
+         <bmp/>
+      </win>
+   </launcher>
+
+
+   <vm>
+   </vm>
+
+   <plugins>
+   </plugins>
+
+   <features>
+      <feature id="de.sebastianbenz.task" version="1.0.0.qualifier"/>
+      <feature id="de.sebastianbenz.task.rcp" version="1.0.0.qualifier"/>
+      <feature id="de.sebastianbenz.task.platform" version="1.0.0.qualifier"/>
+   </features>
+
+
+</product>

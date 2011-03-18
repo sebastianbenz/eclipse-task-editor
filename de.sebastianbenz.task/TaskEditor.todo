@@ -10,6 +10,7 @@ Task Editor:
 	- Look into whether it is possible to automatically increase the space after a heading.
 	- make linebreak after last task / text / project not required
 	- pressing enter after a task should automatically create a new task
+	- Currently email addresses are recognized as tags -> tags should have a whitespace as prefix
 	
 Query View:
 	

@@ -10,6 +10,7 @@ import org.eclipse.ui.application.WorkbenchAdvisor;
 import org.eclipse.ui.application.WorkbenchWindowAdvisor;
 
 import de.sebastianbenz.task.app.actions.TextEditorActionBarAdvisor;
+import de.sebastianbenz.task.ui.internal.TaskActivator;
 
 
 public class TaskEditorWorkbenchAdvisor extends WorkbenchAdvisor {
@@ -43,7 +44,7 @@ public class TaskEditorWorkbenchAdvisor extends WorkbenchAdvisor {
 //					pages[i].hideActionSet("org.eclipse.ui.edit.text.actionSet.annotationNavigation");
 //					pages[i].hideActionSet("org.eclipse.ui.edit.text.actionSet.navigation");
 				}
-				
+				TaskActivator.getInstance();
 			}
 			
             /*

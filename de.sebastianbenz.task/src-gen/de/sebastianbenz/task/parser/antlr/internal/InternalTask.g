@@ -383,7 +383,7 @@ RULE_NL : '\r'? '\n';
 
 RULE_TASK_TEXT : RULE_HYPHEN ~(('\n'|'\r'))* RULE_NL;
 
-RULE_TEXT : ~((RULE_HYPHEN|'\n'|'\r'|RULE_WS)) ~(('\n'|'\r'))* ~((RULE_COLON|'\n'|'\r')) RULE_NL;
+RULE_TEXT : (~((RULE_HYPHEN|RULE_COLON|'\n'|'\r'|RULE_WS))|~((RULE_HYPHEN|'\n'|'\r'|RULE_WS)) ~(('\n'|'\r'))* ~((RULE_COLON|'\n'|'\r'))) RULE_NL;
 
 RULE_PROJECT_ : ~(('\n'|'\r'|RULE_HYPHEN|RULE_WS)) ~(('\n'|'\r'))* RULE_COLON RULE_NL;
 

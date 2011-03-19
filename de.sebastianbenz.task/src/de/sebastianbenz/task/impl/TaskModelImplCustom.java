@@ -14,18 +14,18 @@ import de.sebastianbenz.task.Content;
 public class TaskModelImplCustom extends
 		de.sebastianbenz.task.impl.TaskModelImpl {
 
-	private boolean childrenResolved = true;
+	private boolean childrenResolved = false;
 
 	@Override
 	public EList<Content> getChildren() {
 		EList<Content> theChildren = super.getChildren();
 		if (!childrenResolved) {
+			childrenResolved = true;
 			for (Content current : getContents()) {
 				if (current.getParent() != null) {
-					theChildren.add(current);
+				//	theChildren.add(current);
 				}
 			}
-			childrenResolved = true;
 		}
 		return theChildren;
 	}

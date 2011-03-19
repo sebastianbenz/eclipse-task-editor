@@ -299,7 +299,7 @@ public class TaskGrammarAccess extends AbstractGrammarElementFinder {
 	} 
 
 	//terminal TEXT:
-	//	!(HYPHEN | "\n" | "\r" | WS) !("\n" | "\r")* !(COLON | "\n" | "\r") NL;
+	//	(!(HYPHEN | COLON | "\n" | "\r" | WS) | !(HYPHEN | "\n" | "\r" | WS) !("\n" | "\r")* !(COLON | "\n" | "\r")) NL;
 	public TerminalRule getTEXTRule() {
 		return (tTEXT != null) ? tTEXT : (tTEXT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "TEXT"));
 	} 

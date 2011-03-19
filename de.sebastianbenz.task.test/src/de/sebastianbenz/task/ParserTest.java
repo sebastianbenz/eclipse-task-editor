@@ -93,8 +93,17 @@ public class ParserTest extends AbstractTest {
 	
 	@Test
 	public void noSyntaxErrorsOnTextWithSingleCharacter() throws Exception {
-		assertThat(tagsOf(firstTask(parse("- a task @today\n"))), is("@today"));
+		assertThat(parse("n\nProject:\n"), are(Note.class, Project.class));
+		assertThat(parse(" n\nProject:\n"), are(Note.class, Project.class));
+		assertThat(parse(" n \nProject:\n"), are(Note.class, Project.class));
 	}
+	
+//	@Test
+//	public void noSyntaxErrorWhenLastLineHasNoLineBreak() throws Exception {
+//		assertThat(parse("a project:"), are(Project.class));
+//		assertThat(parse("- a task"), are(Task.class));
+//		assertThat(parse("text"), are(Note.class));
+//	}
 	
 	
 }

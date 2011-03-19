@@ -25,8 +25,8 @@ public class ContentImplCustom extends de.sebastianbenz.task.impl.ContentImpl {
 	@Override
 	public de.sebastianbenz.task.Container getParent() {
 		if(!isInitialized){
-			setParent(resolveContainer());
 			isInitialized  = true;
+			setParent(resolveContainer());
 		}
 		return super.getParent();
 	}

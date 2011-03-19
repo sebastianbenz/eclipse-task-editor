@@ -63,9 +63,10 @@ public class ContentProviderTest extends AbstractTest{
 
 	@Test
 	public void shouldReturnChildProjects() throws Exception {
-		assertThat(contentsOf(" project1:\n" +
-	  			  " project2:\n" +
-	  			  "note\n"), is(array("project1", "project2", "note")));
+		assertThat(contentsOf(	" project1:\n" +
+	  			  				" project2:\n" +
+	  			  				"note\n"), 
+	  			  						is(array("project1", "project2", "note")));
 	}
 	
 	@Test

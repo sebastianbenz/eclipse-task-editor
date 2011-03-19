@@ -36,7 +36,7 @@ public class TagProcessorTest {
 	
 	@Test
 	public void shouldParseSimpleTags() throws Exception {
-		assertThat(tagsIn("@today"), is("@today"));
+		assertThat(tagsIn(" @today"), is("@today"));
 		assertThat(tagsIn("  @today"), is("@today"));
 		assertThat(tagsIn("  @today  "), is("@today"));
 		assertThat(tagsIn("  @a @b  "), anyOf(is("@a, @b"), is("@b, @a")));
@@ -46,10 +46,10 @@ public class TagProcessorTest {
 	
 	@Test
 	public void shouldParseValues() throws Exception {
-		assertThat(tagsIn("@today(1)"), is("@today(1)"));
-		assertThat(tagsIn("@today(A)"), is("@today(A)"));
-		assertThat(tagsIn("@today(A1)"), is("@today(A1)"));
-		assertThat(tagsIn("@today(1A1)"), is("@today(1A1)"));
+		assertThat(tagsIn(" @today(1)"), is("@today(1)"));
+		assertThat(tagsIn(" @today(A)"), is("@today(A)"));
+		assertThat(tagsIn(" @today(A1)"), is("@today(A1)"));
+		assertThat(tagsIn(" @today(1A1)"), is("@today(1A1)"));
 		assertThat(tagsIn("adfafds @ asdfdsaf @today(1A1) adsf (6)23 23"), is("@today(1A1)"));
 	}
 	

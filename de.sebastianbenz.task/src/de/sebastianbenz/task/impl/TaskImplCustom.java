@@ -19,6 +19,8 @@ import de.sebastianbenz.task.tagging.Tags;
 
 public class TaskImplCustom extends de.sebastianbenz.task.impl.TaskImpl {
 
+	private static final int SPACE = 1;
+
 	private enum DoneStatus {
 		UNKNOWN, OPEN, COMPLETED
 	}
@@ -45,7 +47,7 @@ public class TaskImplCustom extends de.sebastianbenz.task.impl.TaskImpl {
 		while (matcher.find()) {
 			String name = matcher.group(1);
 			String value = matcher.group(3);
-			int offset = matcher.start(0);
+			int offset = matcher.start(0) + SPACE;
 			int length = matcher.end(0) - offset;
 			getTags().add(Tags.create(name, value, offset, length));
 		}

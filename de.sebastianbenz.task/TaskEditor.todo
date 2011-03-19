@@ -9,9 +9,10 @@ Task Editor:
 	- Strip tags from label provider  @done
 	- Look into whether it is possible to automatically increase the space after a heading.
 	- make linebreak after last task / text / project not required
-	- pressing enter after a task should automatically create a new task
-	-  enable single character text
-	- Currently email addresses are recognized as tags -> tags should have a whitespace as prefix
+	- pressing enter after a task should automatically create a new task @done
+	- pressing enter after a project declaration should automatically intend the next line @done
+	- enable single character text @done
+	- Currently email addresses are recognized as tags -> tags should have a whitespace as prefix @done
 	
 Query View:
 	

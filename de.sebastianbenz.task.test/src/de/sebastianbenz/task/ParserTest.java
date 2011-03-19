@@ -69,12 +69,17 @@ public class ParserTest extends AbstractTest {
 
 	@Test
 	public void parseDoneTag() throws Exception {
-		assertThat(tagsOf(firstTask(parse("- a task@done\n"))), is("@done"));
+		assertThat(tagsOf(firstTask(parse("- a task @done\n"))), is("@done"));
+	}
+	
+	@Test
+	public void tagShouldBeginWithSpace() throws Exception {
+		assertThat(tagsOf(firstTask(parse("- a task@done\n"))), is(""));
 	}
 
 	@Test
 	public void parseOtherTag() throws Exception {
-		assertThat(tagsOf(firstTask(parse("- a task@today\n"))), is("@today"));
+		assertThat(tagsOf(firstTask(parse("- a task @today\n"))), is("@today"));
 	}
 
 	@Test
@@ -85,4 +90,11 @@ public class ParserTest extends AbstractTest {
 		assertThat(parse("Project:\n\n\nProject:\n"),
 				are(Project.class, Project.class));
 	}
+	
+	@Test
+	public void noSyntaxErrorsOnTextWithSingleCharacter() throws Exception {
+		assertThat(tagsOf(firstTask(parse("- a task @today\n"))), is("@today"));
+	}
+	
+	
 }

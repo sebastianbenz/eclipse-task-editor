@@ -23,7 +23,7 @@ public class TaskImplCustom extends de.sebastianbenz.task.impl.TaskImpl {
 		UNKNOWN, OPEN, COMPLETED
 	}
 
-	public static final String TAG_PATTERN = "@(\\w+)(\\((.*?)\\))?";
+	public static final String TAG_PATTERN = " @(\\w+)(\\((.*?)\\))?";
 	private Pattern pattern = Pattern.compile(TAG_PATTERN, Pattern.DOTALL);
 	private String formattedText;
 	private DoneStatus isDone = DoneStatus.UNKNOWN;

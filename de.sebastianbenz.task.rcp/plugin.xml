@@ -85,4 +85,25 @@
                state="false"/>
       </actionSet>
    </extension>
+   <extension
+         point="org.eclipse.ui.elementFactories">
+      <factory
+            class="de.sebastianbenz.task.app.TaskEditorFactory"
+            id="de.sebastianbenz.task.rcp.editorfactory">
+      </factory>
+   </extension>
+   <extension
+         point="org.eclipse.ui.elementFactories">
+      <factory
+            class="de.sebastianbenz.task.app.TaskEditorFactory"
+            id="de.sebastianbenz.task.rcp.editorfactory">
+      </factory>
+   </extension>
+   <extension
+         point="org.eclipse.ui.elementFactories">
+      <factory
+            class="de.sebastianbenz.task.app.TaskEditorFactory"
+            id="de.sebastianbenz.task.rcp.TaskEditorFactory">
+      </factory>
+   </extension>
 </plugin>

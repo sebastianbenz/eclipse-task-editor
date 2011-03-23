@@ -64,7 +64,7 @@ public class ExtLinkedXtextEditor extends XtextEditor {
 	 * TODO: this should come from the customizer
 	 */
 	public static final QualifiedName LAST_SAVEAS_LOCATION = new QualifiedName(
-		"org.eclipse.b3.beelang.ui", "lastSaveLocation");
+		"de.sebastianbenz.task.editor", "lastSaveLocation");
 
 	/**
 	 * Does nothing except server as a place to set a breakpoint :)
@@ -258,7 +258,7 @@ public class ExtLinkedXtextEditor extends XtextEditor {
 			if(suggestedPath != null)
 				dialog.setFilterPath(suggestedPath);
 
-			dialog.setFilterExtensions(new String[] { "*.b3", "*.*" });
+			dialog.setFilterExtensions(new String[] { "*.todo", "*.taskpaper", "*.*" });
 			String path = dialog.open();
 			if(path == null) {
 				if(progressMonitor != null)

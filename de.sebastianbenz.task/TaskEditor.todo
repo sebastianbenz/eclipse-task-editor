@@ -8,7 +8,7 @@ Task Editor:
 	- Automatic line wrap in editor should be aware of the intendation 
 	- Strip tags from label provider  @done
 	- Look into whether it is possible to automatically increase the space after a heading.
-	- make linebreak after last task / text / project not required
+	- make linebreak after last task / text / project not required 
 	- pressing enter after a task should automatically create a new task @done
 	- pressing enter after a project declaration should automatically intend the next line @done
 	- enable single character text @done
@@ -31,10 +31,10 @@ Query View:
 RCP:
 
 	-  enable drag and drop
-	-  store open todos files
-	-  Ctr + T should create a new todo
-	-  change title
-	-  add icons
+	-  store open todos files @done
+	-  Ctr + T should create a new todo file @done
+	-  change title @done
+	-  add icons @done
 	-  setup build
 	-  remove java from menu
 	-  add file wizard

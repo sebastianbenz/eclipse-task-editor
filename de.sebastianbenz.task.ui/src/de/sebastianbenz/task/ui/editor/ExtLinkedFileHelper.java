@@ -18,17 +18,10 @@ import org.eclipse.xtext.builder.nature.XtextNature;
 
 import com.google.inject.Inject;
 
-/**
- * Helper class for dealing with external files in the ExtLinkedXtextEditor.
- * This class is responsible for managing the linked files - obtaining a link, unlinking it etc.
- * TODO: This class is specific to b3 in a few places (file extension, name of project for links,
- * use of UTF-8), but is otherwise generic.
- */
 public class ExtLinkedFileHelper {
 	// TODO: Should be configurable
 	public static final String AUTOLINK_PROJECT_NAME = "Default_Project";
 
-	// TODO: Should be configurable (but b3 is always utf-8).
 	public static final String ENCODING_UTF8 = "utf-8";
 	
 	@Inject
@@ -70,7 +63,7 @@ public class ExtLinkedFileHelper {
 				IFolder untitledFolder = project.getFolder("untitled");
 				String fileName = "untitled" + (firstFree > 1
 						? "-" + Integer.toString(firstFree)
-						: "") + ".b3";
+						: "") + ".todo";
 				linkFile = untitledFolder.getFile(fileName);
 			}
 			else {

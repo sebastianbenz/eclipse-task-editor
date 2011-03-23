@@ -19,6 +19,7 @@ Import-Package: org.apache.log4j,
  org.apache.commons.logging
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
 Export-Package: de.sebastianbenz.task.ui.contentassist.antlr,
+ de.sebastianbenz.task.ui.editor,
  de.sebastianbenz.task.ui.highlighting,
  de.sebastianbenz.task.ui.internal
 Bundle-Activator: de.sebastianbenz.task.ui.internal.TaskActivator

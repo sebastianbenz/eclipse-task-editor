@@ -11,6 +11,7 @@
               extensions="todo,taskpaper"
               icon="icons/TodoFile.png"
               id="de.sebastianbenz.task.Task"
+              matchingStrategy="de.sebastianbenz.task.ui.editor.ExtLinkedXtextEditorMatchingStrategy"
               name="Task Editor">
         </editor>
     </extension>

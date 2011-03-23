@@ -54,6 +54,12 @@
             description="%openFile.description"
             id="de.sebastianbenz.task.app.commands.OpenFile"
             name="%openFile.name"/>
+      <command
+            categoryId="org.eclipse.ui.category.file"
+            description="%newTodo.description"
+            id="de.sebastianbenz.task.app.commands.NewTodo"
+            name="%newTodo.name">
+      </command>
    </extension>
    
    <extension
@@ -63,6 +69,12 @@
             contextId="org.eclipse.ui.contexts.window"
             schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
             sequence="M1+O"/>
+      <key
+            commandId="de.sebastianbenz.task.app.commands.NewTodo"
+            contextId="org.eclipse.ui.contexts.window"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+            sequence="M1+T">
+      </key>
    </extension>
    
    <!-- must come after the command definition above -->
@@ -83,27 +95,18 @@
                definitionId="de.sebastianbenz.task.app.commands.OpenFile"
                style="push"
                state="false"/>
+         <action
+               class="de.sebastianbenz.task.app.actions.NewTodoAction"
+               definitionId="de.sebastianbenz.task.app.commands.NewTodo"
+               icon="icons/TodoFile.png"
+               id="de.sebastianbenz.task.app.actions.NewTodo"
+               label="%newTodo.label"
+               menubarPath="file/new.ext"
+               state="false"
+               style="push"
+               toolbarPath="org.eclipse.ui.workbench.file/open.ext"
+               tooltip="%openFile.tooltip">
+         </action>
       </actionSet>
-   </extension>
-   <extension
-         point="org.eclipse.ui.elementFactories">
-      <factory
-            class="de.sebastianbenz.task.app.TaskEditorFactory"
-            id="de.sebastianbenz.task.rcp.editorfactory">
-      </factory>
-   </extension>
-   <extension
-         point="org.eclipse.ui.elementFactories">
-      <factory
-            class="de.sebastianbenz.task.app.TaskEditorFactory"
-            id="de.sebastianbenz.task.rcp.editorfactory">
-      </factory>
-   </extension>
-   <extension
-         point="org.eclipse.ui.elementFactories">
-      <factory
-            class="de.sebastianbenz.task.app.TaskEditorFactory"
-            id="de.sebastianbenz.task.rcp.TaskEditorFactory">
-      </factory>
    </extension>
 </plugin>

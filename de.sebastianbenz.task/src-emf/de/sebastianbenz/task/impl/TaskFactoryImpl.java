@@ -72,6 +72,7 @@ public class TaskFactoryImpl extends EFactoryImpl implements TaskFactory
 			case TaskPackage.NOTE: return createNote();
 			case TaskPackage.PROJECT: return createProject();
 			case TaskPackage.TAG: return createTag();
+			case TaskPackage.GLOBAL_TASK_MODEL: return createGlobalTaskModel();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -130,6 +131,17 @@ public class TaskFactoryImpl extends EFactoryImpl implements TaskFactory
 	{
 		TagImplCustom tag = new TagImplCustom();
 		return tag;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public GlobalTaskModel createGlobalTaskModel()
+	{
+		GlobalTaskModelImplCustom globalTaskModel = new GlobalTaskModelImplCustom();
+		return globalTaskModel;
 	}
 
 	/**

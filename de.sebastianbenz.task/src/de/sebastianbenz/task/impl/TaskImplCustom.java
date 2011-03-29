@@ -36,13 +36,13 @@ public class TaskImplCustom extends de.sebastianbenz.task.impl.TaskImpl {
 			tags = new EObjectContainmentEList<Tag>(Tag.class, this,
 					TaskPackage.TASK__TAGS);
 			if(text != null){
-				parserTags();
+				parseTags();
 			}
 		}
 		return tags;
 	}
 
-	protected void parserTags() {
+	protected void parseTags() {
 		Matcher matcher = pattern.matcher(text);
 		while (matcher.find()) {
 			String name = matcher.group(1);

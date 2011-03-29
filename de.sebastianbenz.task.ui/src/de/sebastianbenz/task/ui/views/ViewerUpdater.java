@@ -21,6 +21,7 @@ public class ViewerUpdater implements IXtextBuilderParticipant {
 
 	private List<ResourceDescriptionsChangeListener> listeners = Lists.newArrayList();
 	
+	
 	public void build(IBuildContext context, IProgressMonitor monitor)
 			throws CoreException {
 		for (ResourceDescriptionsChangeListener listener : listeners) {
@@ -30,6 +31,10 @@ public class ViewerUpdater implements IXtextBuilderParticipant {
 
 	public void addListener(ResourceDescriptionsChangeListener eventListener) {
 		listeners.add(eventListener);
+	}
+
+	public void removeListener(ResourceDescriptionsChangeListener listener) {
+		listeners.remove(listener);
 	}
 
 }

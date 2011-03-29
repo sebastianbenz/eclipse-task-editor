@@ -19,8 +19,12 @@
        class = "de.sebastianbenz.task.TaskPackage"
        genModel = "model/Task.genmodel" /> 
 	
+    <package 
+       uri = "http://www.sebastianbenz.de/task/query/2011/" 
+       class = "de.sebastianbenz.task.query.QueryPackage"
+       genModel = "de/sebastianbenz/task/Query.genmodel" /> 
+	
   </extension>
-
 
 
 

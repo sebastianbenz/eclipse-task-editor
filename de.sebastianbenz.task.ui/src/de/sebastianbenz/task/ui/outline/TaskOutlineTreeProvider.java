@@ -13,13 +13,6 @@
  */
 package de.sebastianbenz.task.ui.outline;
 
-import static com.google.common.collect.Lists.newArrayList;
-
-import java.util.List;
-
-import org.eclipse.swt.graphics.Image;
-import org.eclipse.xtext.resource.IEObjectDescription;
-import org.eclipse.xtext.ui.editor.outline.IOutlineNode;
 import org.eclipse.xtext.ui.editor.outline.impl.AbstractOutlineNode;
 import org.eclipse.xtext.ui.editor.outline.impl.DefaultOutlineTreeProvider;
 import org.eclipse.xtext.ui.editor.outline.impl.DocumentRootNode;
@@ -30,7 +23,6 @@ import de.sebastianbenz.task.Project;
 import de.sebastianbenz.task.Tag;
 import de.sebastianbenz.task.Task;
 import de.sebastianbenz.task.TaskModel;
-import de.sebastianbenz.task.ui.views.GlobalState;
 
 /**
  * customization of the default outline structure
@@ -38,38 +30,6 @@ import de.sebastianbenz.task.ui.views.GlobalState;
  */
 public class TaskOutlineTreeProvider extends DefaultOutlineTreeProvider {
 	
-	public class EObjectDescriptionNode extends AbstractOutlineNode implements
-			IOutlineNode {
-
-		public EObjectDescriptionNode(IOutlineNode parent,
-				IEObjectDescription source) {
-			super(parent, labelProvider.getImage(source.getEClass().getEPackage().getEFactoryInstance().create(source.getEClass())), source.getName().toString(), false);
-		}
-
-	}
-
-	public class GlobalStateRootNode extends AbstractOutlineNode {
-
-		private final GlobalState root;
-
-		public GlobalStateRootNode(Image image, String text, GlobalState root,
-				TaskOutlineTreeProvider TaskOutlineTreeProvider) {
-			super(null, image, text, false);
-			this.root = root;
-		}
-
-		List<IOutlineNode> children;
-		
-		@Override
-		public List<IOutlineNode> getChildren() {
-			children = newArrayList();
-			for (IEObjectDescription contentDescription : root.getChildren()) {
-				children.add(new EObjectDescriptionNode(this, contentDescription));
-			}
-			return children;
-		}
-
-	}
 
 
 	protected void _createChildren(DocumentRootNode parentNode, TaskModel todo) {
@@ -96,12 +56,6 @@ public class TaskOutlineTreeProvider extends DefaultOutlineTreeProvider {
 		for (Tag tag : task.getTags()) {
 			createEObjectNode(parentNode, tag);
 		}
-	}
-
-	public IOutlineNode createRoot(GlobalState root) {
-		GlobalStateRootNode rootNode = new GlobalStateRootNode(labelProvider.getImage(root),
-				labelProvider.getText(root), root, this);
-		return rootNode;
 	}
 
 }

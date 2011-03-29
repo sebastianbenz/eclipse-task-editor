@@ -14,7 +14,6 @@ import org.eclipse.emf.common.util.WrappedException;
 import org.eclipse.ui.IFileEditorInput;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.xtext.builder.nature.ToggleXtextNatureAction;
-import org.eclipse.xtext.builder.nature.XtextNature;
 
 import com.google.inject.Inject;
 

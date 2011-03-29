@@ -25,12 +25,14 @@ import org.junit.Test;
 
 import com.google.common.base.Function;
 
+import de.sebastianbenz.task.util.AbstractTest;
+
 public class ContentProviderTest extends AbstractTest{
 
 	
 	@Test
 	public void shouldReturnEmptyListForEmptyTodos() throws IOException {
-		assertThat(root("").getChildren(), is(Collections.<Content>emptyList()));
+		assertThat(taskModel("").getChildren(), is(Collections.<Content>emptyList()));
 	}
 
 	@Test
@@ -71,7 +73,7 @@ public class ContentProviderTest extends AbstractTest{
 	
 	@Test
 	public void shouldCacheResults() throws Exception {
-		TaskModel root = root("text\n");
+		TaskModel root = taskModel("text\n");
 		List<Content> first =  root.getChildren();
 		List<Content> second =  root.getChildren();
 		assertSame(first, second);
@@ -80,7 +82,7 @@ public class ContentProviderTest extends AbstractTest{
 	
 	@Test
 	public void shouldResolveAllContainedTasksOfAProject() throws Exception {
-		TaskModel root = root("project:\n" +
+		TaskModel root = taskModel("project:\n" +
 						 " note\n" +
 						 " - task\n" +
 						 "project2:\n" +
@@ -101,7 +103,7 @@ public class ContentProviderTest extends AbstractTest{
 	}
 
 	private String[] contentsOf(String input) throws IOException {
-		List<Content> contents = root(input).getChildren();
+		List<Content> contents = taskModel(input).getChildren();
 		return toString(contents);
 	}
 

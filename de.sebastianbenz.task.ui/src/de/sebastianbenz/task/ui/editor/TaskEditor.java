@@ -13,7 +13,6 @@ package de.sebastianbenz.task.ui.editor;
 import org.eclipse.jface.text.source.ISourceViewer;
 import org.eclipse.jface.text.source.IVerticalRuler;
 import org.eclipse.swt.widgets.Composite;
-import org.eclipse.xtext.ui.editor.XtextEditor;
 
 public class TaskEditor extends ExtLinkedXtextEditor{
 

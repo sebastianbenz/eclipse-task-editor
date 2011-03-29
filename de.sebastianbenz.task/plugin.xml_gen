@@ -6,4 +6,14 @@
 
 
 
+  <extension point="org.eclipse.emf.ecore.generated_package">
+    <package 
+       uri = "http://www.sebastianbenz.de/task/query/2011/" 
+       class = "de.sebastianbenz.task.query.QueryPackage"
+       genModel = "de/sebastianbenz/task/Query.genmodel" /> 
+	
+  </extension>
+
+
+
 </plugin>

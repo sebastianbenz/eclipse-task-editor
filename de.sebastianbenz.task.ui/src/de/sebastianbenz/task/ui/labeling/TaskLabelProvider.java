@@ -13,7 +13,6 @@
  */
 package de.sebastianbenz.task.ui.labeling;
 
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider;
 import org.eclipse.xtext.ui.label.DefaultEObjectLabelProvider;
 
@@ -25,7 +24,6 @@ import de.sebastianbenz.task.Project;
 import de.sebastianbenz.task.Tag;
 import de.sebastianbenz.task.Task;
 import de.sebastianbenz.task.TaskModel;
-import de.sebastianbenz.task.ui.views.GlobalState;
 
 /**
  * Provides labels for a EObjects.
@@ -35,63 +33,16 @@ import de.sebastianbenz.task.ui.views.GlobalState;
  */
 public class TaskLabelProvider extends DefaultEObjectLabelProvider {
 
-	private static final int MAX_TEXT_LENGTH = 35;
+	private final AdapterFactoryLabelProvider adapterFactoryLabelProvider;
 
 	@Inject
 	public TaskLabelProvider(AdapterFactoryLabelProvider delegate) {
 		super(delegate);
-	}
-
-	String text(EObject eObject) {
-		return eObject.eClass().getName();
-	}
-
-	String text(TaskModel todo) {
-		return "Document";
+		adapterFactoryLabelProvider = delegate;
 	}
 	
-	String text(GlobalState globalState){
-		return "Workspace";
-	}
-	
-	String text(Tag tag) {
-		return tag.toString().substring(1);
-	}
-
-	protected String shorten(String original) {
-		if (original == null) {
-			return "null";
-		}
-		String text;
-		if (original.length() > MAX_TEXT_LENGTH) {
-			text = original.substring(0, MAX_TEXT_LENGTH) + "...";
-		} else {
-			text = original;
-		}
-		return text;
-	}
-
-	String text(Content content) {
-		return shorten(content.getValue());
-	}
-
-	String image(TaskModel ele) {
-		return  "TodoFile.png";
-	}
-
-	String image(Project ele) {
-		return "Project.png";
-	}
-	
-	String image(Tag ele) {
-		return "Tag.png";
-	}
-
-	String image(Task task) {
-		return task.isDone() ? "CompletedTask.png" : "OpenTask.png";
-	}
-
-	String image(Note ele) {
-		return "Note.png";
+	@Override
+	protected Object doGetText(Object element) {
+		return adapterFactoryLabelProvider.getText(element);
 	}
 }

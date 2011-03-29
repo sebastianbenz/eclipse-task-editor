@@ -18,17 +18,18 @@ Query View:
 	
 	All tasks related to the query view.
 
-	- view should show result tree
-	- view should show text field for queries
-	- should store last entered search
-	- By default show all open tasks
-	- equal/not-equal query by project
-	- equal/not-equal query by tag
-	- equal/not-equal query by tag value
-	- and or queries
-	- if values are numbers enable greater less than 
+	- view should show result tree @done
+	- view should show text field for queries  @done
+	- should store last entered search @done
+	- equal/not-equal query by project  @done
+	- equal/not-equal query by tag  @done 
+	- equal/not-equal query by tag value  @done
+	- and or queries  @done
+	- if values are numbers enable greater less than  @done 
 
 RCP:
+	
+	All tasks related to the RCP application.
 
 	-  enable drag and drop
 	-  store open todos files @done

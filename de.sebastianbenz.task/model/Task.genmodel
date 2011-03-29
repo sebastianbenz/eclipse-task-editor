@@ -2,9 +2,9 @@
 <genmodel:GenModel xmi:version="2.0"
     xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
     xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/de.sebastianbenz.task/src-emf"
-    modelPluginID="de.sebastianbenz.task" modelName="Task" importerID="org.eclipse.emf.importer.ecore"
-    complianceLevel="5.0" copyrightFields="false" runtimeVersion="2.5" language=""
-    runtimePlatform="RCP">
+    editDirectory="/de.sebastianbenz.task.edit/src-emf" modelPluginID="de.sebastianbenz.task"
+    modelName="Task" importerID="org.eclipse.emf.importer.ecore" complianceLevel="5.0"
+    copyrightFields="false" runtimeVersion="2.5" language="" runtimePlatform="RCP">
   <foreignModel>Task.ecore</foreignModel>
   <genPackages prefix="Task" basePackage="de.sebastianbenz" disposableProviderFactory="true"
       ecorePackage="Task.ecore#/">
@@ -34,5 +34,6 @@
     <genClasses image="false" ecoreClass="Task.ecore#//Container">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Task.ecore#//Container/children"/>
     </genClasses>
+    <genClasses ecoreClass="Task.ecore#//GlobalTaskModel"/>
   </genPackages>
 </genmodel:GenModel>

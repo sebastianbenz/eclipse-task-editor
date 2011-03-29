@@ -6,6 +6,7 @@
 package de.sebastianbenz.task.impl;
 
 import de.sebastianbenz.task.Content;
+import de.sebastianbenz.task.GlobalTaskModel;
 import de.sebastianbenz.task.Note;
 import de.sebastianbenz.task.Project;
 import de.sebastianbenz.task.Tag;
@@ -77,6 +78,13 @@ public class TaskPackageImpl extends EPackageImpl implements TaskPackage
 	 * @generated
 	 */
 	private EClass containerEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass globalTaskModelEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -326,6 +334,16 @@ public class TaskPackageImpl extends EPackageImpl implements TaskPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getGlobalTaskModel()
+	{
+		return globalTaskModelEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public TaskFactory getTaskFactory()
 	{
 		return (TaskFactory)getEFactoryInstance();
@@ -375,6 +393,8 @@ public class TaskPackageImpl extends EPackageImpl implements TaskPackage
 
 		containerEClass = createEClass(CONTAINER);
 		createEReference(containerEClass, CONTAINER__CHILDREN);
+
+		globalTaskModelEClass = createEClass(GLOBAL_TASK_MODEL);
 	}
 
 	/**
@@ -411,6 +431,7 @@ public class TaskPackageImpl extends EPackageImpl implements TaskPackage
 		noteEClass.getESuperTypes().add(this.getContent());
 		projectEClass.getESuperTypes().add(this.getContent());
 		projectEClass.getESuperTypes().add(this.getContainer());
+		globalTaskModelEClass.getESuperTypes().add(this.getContainer());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(taskModelEClass, TaskModel.class, "TaskModel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -443,6 +464,8 @@ public class TaskPackageImpl extends EPackageImpl implements TaskPackage
 
 		initEClass(containerEClass, de.sebastianbenz.task.Container.class, "Container", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getContainer_Children(), this.getContent(), this.getContent_Parent(), "children", null, 0, -1, de.sebastianbenz.task.Container.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+
+		initEClass(globalTaskModelEClass, GlobalTaskModel.class, "GlobalTaskModel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		// Create resource
 		createResource(eNS_URI);

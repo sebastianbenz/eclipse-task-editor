@@ -5,7 +5,9 @@ import org.eclipse.xtext.generator.*
 import org.eclipse.xtext.ui.generator.*
 
 var grammarURI = "classpath:/de/sebastianbenz/task/Task.xtext"
+var grammarURI2 = "classpath:/de/sebastianbenz/task/TaskQuery.xtext"
 var file.extensions = "todo, taskpaper"
+var file2.extensions = "__query"
 var projectName = "de.sebastianbenz.task"
 var runtimeProject = "../${projectName}"
 
@@ -30,6 +32,7 @@ Workflow {
 		genModel = "platform:/resource/${projectName}/model/Task.genmodel"
 		srcPath ="platform:/resource/${projectName}/src"
 		generateCustomClasses = true
+		//generateEdit = true
 	}
 
 	component = Generator {
@@ -114,6 +117,64 @@ Workflow {
 			// 		generatorProjectName = "${projectName}.generator" 
 			//		modelFileExtension = file.extensions
 			// }
+		}
+		language = {
+			uri = grammarURI2
+			fileExtensions = file2.extensions
+
+			// Java API to access grammar elements (required by several other fragments)
+			fragment = grammarAccess.GrammarAccessFragment {}
+
+			// generates Java API for the generated EPackages 
+			fragment = ecore.EcoreGeneratorFragment {
+			 referencedGenModels = "platform:/resource/${projectName}/model/Task.genmodel"
+			}
+
+			// the serialization component
+			fragment = parseTreeConstructor.ParseTreeConstructorFragment {}
+
+			// a custom ResourceFactory for use with EMF 
+			fragment = resourceFactory.ResourceFactoryFragment {
+				fileExtensions = file2.extensions
+			}
+
+			// The antlr parser generator fragment.
+			fragment = parser.antlr.XtextAntlrGeneratorFragment {
+			//  options = {
+			//		backtrack = true
+			//	}
+			}
+			
+			// generates the needed binding only if the grammar inherits from Xbase
+			//fragment = xbase.XbaseGeneratorFragment {}
+
+			// java-based API for validation 
+			fragment = validation.JavaValidatorFragment {
+			//	composedCheck = "org.eclipse.xtext.validation.ImportUriValidator"
+			//	composedCheck = "org.eclipse.xtext.validation.NamesAreUniqueValidator"
+				// registerForImportedPackages = true
+			}
+
+			// scoping and exporting API
+			//fragment = scoping.ImportURIScopingFragment {}
+			//fragment = exporting.SimpleNamesFragment {}
+
+			// scoping and exporting API 
+			fragment = scoping.ImportNamespacesScopingFragment {}
+			fragment = exporting.QualifiedNamesFragment {}
+			fragment = builder.BuilderIntegrationFragment {}
+
+			// generator API
+			//fragment = generator.GeneratorFragment {}
+			
+			// content assist API  
+			fragment = contentAssist.JavaBasedContentAssistFragment {}
+
+			// generates a more lightweight Antlr parser and lexer tailored for content assist  
+			fragment = parser.antlr.XtextAntlrUiGeneratorFragment {}
+
+			// generates junit test support classes into Generator#pathTestProject
+			fragment = junit.Junit4Fragment {}
 		}
 	}
 }

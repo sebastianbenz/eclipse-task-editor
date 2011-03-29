@@ -35,4 +35,5 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="children" upperBound="-1"
         eType="#//Content" derived="true" eOpposite="#//Content/parent"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="GlobalTaskModel" eSuperTypes="#//Container"/>
 </ecore:EPackage>

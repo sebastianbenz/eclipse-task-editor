@@ -1,12 +1,10 @@
 package de.sebastianbenz.task.app;
 
-import org.eclipse.swt.widgets.Display;
-
-import org.eclipse.ui.PlatformUI;
-import org.eclipse.ui.application.WorkbenchAdvisor;
-
 import org.eclipse.equinox.app.IApplication;
 import org.eclipse.equinox.app.IApplicationContext;
+import org.eclipse.swt.widgets.Display;
+import org.eclipse.ui.PlatformUI;
+import org.eclipse.ui.application.WorkbenchAdvisor;
 
 
 public class TextEditorApplication implements IApplication {

@@ -71,6 +71,15 @@ public interface TaskFactory extends EFactory
 	Tag createTag();
 
 	/**
+	 * Returns a new object of class '<em>Global Task Model</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Global Task Model</em>'.
+	 * @generated
+	 */
+	GlobalTaskModel createGlobalTaskModel();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

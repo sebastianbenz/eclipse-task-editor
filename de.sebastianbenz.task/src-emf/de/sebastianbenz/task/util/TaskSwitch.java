@@ -149,6 +149,14 @@ public class TaskSwitch<T>
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case TaskPackage.GLOBAL_TASK_MODEL:
+			{
+				GlobalTaskModel globalTaskModel = (GlobalTaskModel)theEObject;
+				T result = caseGlobalTaskModel(globalTaskModel);
+				if (result == null) result = caseContainer(globalTaskModel);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -261,6 +269,22 @@ public class TaskSwitch<T>
 	 * @generated
 	 */
 	public T caseContainer(Container object)
+	{
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Global Task Model</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Global Task Model</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseGlobalTaskModel(GlobalTaskModel object)
 	{
 		return null;
 	}

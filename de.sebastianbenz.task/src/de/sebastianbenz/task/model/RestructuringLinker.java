@@ -6,6 +6,7 @@ import org.eclipse.xtext.linking.impl.Linker;
 
 import de.sebastianbenz.task.Container;
 import de.sebastianbenz.task.Content;
+import de.sebastianbenz.task.Task;
 import de.sebastianbenz.task.TaskModel;
 
 public class RestructuringLinker extends Linker {
@@ -18,6 +19,8 @@ public class RestructuringLinker extends Linker {
 		}else if (model instanceof Content) {
 			Content content = (Content) model;
 			content.getParent(); // initialize the parent
+		}else if(model instanceof Task){
+			((Task) model).getTags();
 		}
 	}
 

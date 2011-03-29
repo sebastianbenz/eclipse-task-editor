@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="query"
+    nsURI="http://www.sebastianbenz.de/task/query/2011/" nsPrefix="query">
+  <eClassifiers xsi:type="ecore:EClass" name="Query">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="expression" eType="ecore:EClass platform:/resource/de.sebastianbenz.task/src-gen/de/sebastianbenz/task/Query.ecore#//Expression"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Expression"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Atom" eSuperTypes="platform:/resource/de.sebastianbenz.task/src-gen/de/sebastianbenz/task/Query.ecore#//Expression"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Value" eSuperTypes="platform:/resource/de.sebastianbenz.task/src-gen/de/sebastianbenz/task/Query.ecore#//Atom">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ParenExpr" eSuperTypes="platform:/resource/de.sebastianbenz.task/src-gen/de/sebastianbenz/task/Query.ecore#//Atom">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="expr" eType="ecore:EClass platform:/resource/de.sebastianbenz.task/src-gen/de/sebastianbenz/task/Query.ecore#//Expression"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ProjectReference" eSuperTypes="platform:/resource/de.sebastianbenz.task/src-gen/de/sebastianbenz/task/Query.ecore#//Value"/>
+  <eClassifiers xsi:type="ecore:EClass" name="TaskReference" eSuperTypes="platform:/resource/de.sebastianbenz.task/src-gen/de/sebastianbenz/task/Query.ecore#//Value"/>
+  <eClassifiers xsi:type="ecore:EClass" name="TextReference" eSuperTypes="platform:/resource/de.sebastianbenz.task/src-gen/de/sebastianbenz/task/Query.ecore#//Value"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Words" eSuperTypes="platform:/resource/de.sebastianbenz.task/src-gen/de/sebastianbenz/task/Query.ecore#//Atom">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="values" unique="false"
+        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Word" eSuperTypes="platform:/resource/de.sebastianbenz.task/src-gen/de/sebastianbenz/task/Query.ecore#//Value"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Phrase" eSuperTypes="platform:/resource/de.sebastianbenz.task/src-gen/de/sebastianbenz/task/Query.ecore#//Value"/>
+  <eClassifiers xsi:type="ecore:EClass" name="TagReference" eSuperTypes="platform:/resource/de.sebastianbenz.task/src-gen/de/sebastianbenz/task/Query.ecore#//Value"/>
+  <eClassifiers xsi:type="ecore:EEnum" name="CompEqOperator">
+    <eLiterals name="EQUAL" literal="="/>
+    <eLiterals name="NOT_EQUAL" value="1" literal="!="/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="CompOperator">
+    <eLiterals name="LESS_EQUAL" literal="&lt;="/>
+    <eLiterals name="LESS" value="1" literal="&lt;"/>
+    <eLiterals name="GREATER_EQUAL" value="2" literal=">="/>
+    <eLiterals name="GREATER" value="3" literal=">"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OrExpr" eSuperTypes="platform:/resource/de.sebastianbenz.task/src-gen/de/sebastianbenz/task/Query.ecore#//Expression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="left" eType="ecore:EClass platform:/resource/de.sebastianbenz.task/src-gen/de/sebastianbenz/task/Query.ecore#//Expression"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="right" eType="ecore:EClass platform:/resource/de.sebastianbenz.task/src-gen/de/sebastianbenz/task/Query.ecore#//Expression"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AndExpr" eSuperTypes="platform:/resource/de.sebastianbenz.task/src-gen/de/sebastianbenz/task/Query.ecore#//Expression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="left" eType="ecore:EClass platform:/resource/de.sebastianbenz.task/src-gen/de/sebastianbenz/task/Query.ecore#//Expression"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="right" eType="ecore:EClass platform:/resource/de.sebastianbenz.task/src-gen/de/sebastianbenz/task/Query.ecore#//Expression"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CompEqExpr" eSuperTypes="platform:/resource/de.sebastianbenz.task/src-gen/de/sebastianbenz/task/Query.ecore#//Expression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="left" eType="ecore:EClass platform:/resource/de.sebastianbenz.task/src-gen/de/sebastianbenz/task/Query.ecore#//Expression"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="operator" eType="ecore:EEnum platform:/resource/de.sebastianbenz.task/src-gen/de/sebastianbenz/task/Query.ecore#//CompEqOperator"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="right" eType="ecore:EClass platform:/resource/de.sebastianbenz.task/src-gen/de/sebastianbenz/task/Query.ecore#//Expression"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CompExpr" eSuperTypes="platform:/resource/de.sebastianbenz.task/src-gen/de/sebastianbenz/task/Query.ecore#//Expression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="left" eType="ecore:EClass platform:/resource/de.sebastianbenz.task/src-gen/de/sebastianbenz/task/Query.ecore#//Expression"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="operator" eType="ecore:EEnum platform:/resource/de.sebastianbenz.task/src-gen/de/sebastianbenz/task/Query.ecore#//CompOperator"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="right" eType="ecore:EClass platform:/resource/de.sebastianbenz.task/src-gen/de/sebastianbenz/task/Query.ecore#//Expression"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="UnaryExpr" eSuperTypes="platform:/resource/de.sebastianbenz.task/src-gen/de/sebastianbenz/task/Query.ecore#//Expression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="expr" eType="ecore:EClass platform:/resource/de.sebastianbenz.task/src-gen/de/sebastianbenz/task/Query.ecore#//Expression"
+        containment="true"/>
+  </eClassifiers>
+</ecore:EPackage>

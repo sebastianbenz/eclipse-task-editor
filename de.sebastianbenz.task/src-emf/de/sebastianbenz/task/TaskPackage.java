@@ -417,6 +417,34 @@ public interface TaskPackage extends EPackage
 	 */
 	int TAG_FEATURE_COUNT = 4;
 
+	/**
+	 * The meta object id for the '{@link de.sebastianbenz.task.impl.GlobalTaskModelImpl <em>Global Task Model</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.sebastianbenz.task.impl.GlobalTaskModelImpl
+	 * @see de.sebastianbenz.task.impl.TaskPackageImpl#getGlobalTaskModel()
+	 * @generated
+	 */
+	int GLOBAL_TASK_MODEL = 7;
+
+	/**
+	 * The feature id for the '<em><b>Children</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GLOBAL_TASK_MODEL__CHILDREN = CONTAINER__CHILDREN;
+
+	/**
+	 * The number of structural features of the '<em>Global Task Model</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GLOBAL_TASK_MODEL_FEATURE_COUNT = CONTAINER_FEATURE_COUNT + 0;
+
 
 	/**
 	 * Returns the meta object for class '{@link de.sebastianbenz.task.TaskModel <em>Model</em>}'.
@@ -610,6 +638,16 @@ public interface TaskPackage extends EPackage
 	EReference getContainer_Children();
 
 	/**
+	 * Returns the meta object for class '{@link de.sebastianbenz.task.GlobalTaskModel <em>Global Task Model</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Global Task Model</em>'.
+	 * @see de.sebastianbenz.task.GlobalTaskModel
+	 * @generated
+	 */
+	EClass getGlobalTaskModel();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -789,6 +827,16 @@ public interface TaskPackage extends EPackage
 		 * @generated
 		 */
 		EReference CONTAINER__CHILDREN = eINSTANCE.getContainer_Children();
+
+		/**
+		 * The meta object literal for the '{@link de.sebastianbenz.task.impl.GlobalTaskModelImpl <em>Global Task Model</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.sebastianbenz.task.impl.GlobalTaskModelImpl
+		 * @see de.sebastianbenz.task.impl.TaskPackageImpl#getGlobalTaskModel()
+		 * @generated
+		 */
+		EClass GLOBAL_TASK_MODEL = eINSTANCE.getGlobalTaskModel();
 
 	}
 

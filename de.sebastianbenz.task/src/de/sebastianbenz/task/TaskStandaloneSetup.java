@@ -11,14 +11,25 @@
 
 package de.sebastianbenz.task;
 
+import com.google.inject.Injector;
+
+import de.sebastianbenz.task.query.QueryPackage;
+
 /**
  * Initialization support for running Xtext languages 
  * without equinox extension registry
  */
 public class TaskStandaloneSetup extends TaskStandaloneSetupGenerated{
 
-	public static void doSetup() {
+	@Override
+	public Injector createInjectorAndDoEMFRegistration() {
 		TaskPackage.eINSTANCE.getClass();
+		QueryPackage.eINSTANCE.getClass();
+		new QueryStandaloneSetup().createInjectorAndDoEMFRegistration();
+		return super.createInjectorAndDoEMFRegistration();
+	}
+	
+	public static void doSetup() {
 		new TaskStandaloneSetup().createInjectorAndDoEMFRegistration();
 	}
 }

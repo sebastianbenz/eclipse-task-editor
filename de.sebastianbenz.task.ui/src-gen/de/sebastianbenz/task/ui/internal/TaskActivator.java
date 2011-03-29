@@ -36,6 +36,7 @@ public class TaskActivator extends AbstractUIPlugin {
 		INSTANCE = this;
 		try {
 			registerInjectorFor("de.sebastianbenz.task.Task");
+			registerInjectorFor("de.sebastianbenz.task.Query");
 			
 		} catch (Exception e) {
 			Logger.getLogger(getClass()).error(e.getMessage(), e);
@@ -63,6 +64,9 @@ public class TaskActivator extends AbstractUIPlugin {
 		if ("de.sebastianbenz.task.Task".equals(grammar)) {
 		  return new de.sebastianbenz.task.TaskRuntimeModule();
 		}
+		if ("de.sebastianbenz.task.Query".equals(grammar)) {
+		  return new de.sebastianbenz.task.QueryRuntimeModule();
+		}
 		
 		throw new IllegalArgumentException(grammar);
 	}
@@ -70,6 +74,9 @@ public class TaskActivator extends AbstractUIPlugin {
 	protected Module getUiModule(String grammar) {
 		if ("de.sebastianbenz.task.Task".equals(grammar)) {
 		  return new de.sebastianbenz.task.ui.TaskUiModule(this);
+		}
+		if ("de.sebastianbenz.task.Query".equals(grammar)) {
+		  return new de.sebastianbenz.task.ui.QueryUiModule(this);
 		}
 		
 		throw new IllegalArgumentException(grammar);

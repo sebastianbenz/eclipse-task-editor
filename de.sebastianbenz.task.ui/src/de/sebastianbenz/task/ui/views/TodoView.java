@@ -1,35 +1,46 @@
 package de.sebastianbenz.task.ui.views;
 
-import static com.google.common.collect.Lists.newArrayList;
+import static org.eclipse.emf.ecore.util.EcoreUtil.getURI;
 
-import java.util.Collection;
-import java.util.Collections;
-import java.util.List;
-
-import org.apache.log4j.Logger;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider;
 import org.eclipse.jface.action.Action;
-import org.eclipse.jface.viewers.StructuredSelection;
+import org.eclipse.jface.action.IAction;
+import org.eclipse.jface.action.IMenuManager;
+import org.eclipse.jface.action.IToolBarManager;
+import org.eclipse.jface.action.Separator;
+import org.eclipse.jface.resource.ImageDescriptor;
+import org.eclipse.jface.viewers.DoubleClickEvent;
+import org.eclipse.jface.viewers.IDoubleClickListener;
+import org.eclipse.jface.viewers.ISelection;
+import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.TreeViewer;
+import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.jface.viewers.ViewerFilter;
 import org.eclipse.jface.viewers.ViewerSorter;
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.layout.GridData;
+import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Text;
+import org.eclipse.ui.IActionBars;
+import org.eclipse.ui.IMemento;
+import org.eclipse.ui.IViewSite;
+import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.part.DrillDownAdapter;
 import org.eclipse.ui.part.ViewPart;
-import org.eclipse.xtext.resource.IResourceDescription.Delta;
-import org.eclipse.xtext.ui.editor.outline.IOutlineNode;
-import org.eclipse.xtext.ui.editor.outline.impl.OutlineNodeContentProvider;
-import org.eclipse.xtext.ui.editor.outline.impl.OutlineNodeLabelProvider;
-import org.eclipse.xtext.ui.editor.outline.impl.OutlinePage;
-import org.eclipse.xtext.ui.util.DisplayRunHelper;
+import org.eclipse.xtext.ui.editor.IURIEditorOpener;
 
-import com.google.common.collect.Iterables;
 import com.google.inject.Inject;
 
+import de.sebastianbenz.task.Content;
+import de.sebastianbenz.task.provider.TaskItemProviderAdapterFactory;
+import de.sebastianbenz.task.ui.internal.TaskActivator;
 import de.sebastianbenz.task.ui.outline.TaskOutlineTreeProvider;
-import de.sebastianbenz.task.ui.views.ViewerUpdater.ResourceDescriptionsChangeListener;
 
-public class TodoView extends ViewPart implements ResourceDescriptionsChangeListener {
+public class TodoView extends ViewPart {
+
 
 	/**
 	 * The ID of the view as specified by the extension.
@@ -37,146 +48,217 @@ public class TodoView extends ViewPart implements ResourceDescriptionsChangeList
 	public static final String ID = "de.sebastianbenz.task.ui.views.TodoView";
 
 	private TreeViewer viewer;
-	private Action doubleClickAction;
 
-	class NameSorter extends ViewerSorter {
+	private static class ContentSorter extends ViewerSorter {
+		@Override
+		public int compare(Viewer viewer, Object e1, Object e2) {
+			if (!(e1 instanceof Content)) {
+				return super.compare(viewer, e1, e2);
+			}
+			if (!(e2 instanceof Content)) {
+				return super.compare(viewer, e1, e2);
+			}
+			return ((Content)e1).getValue().compareTo(((Content)e2).getValue());
+		}
 	}
 
-	private static final Logger LOG = Logger.getLogger(OutlinePage.class);
-
+	private AdapterFactoryLabelProvider labelProvider  = new AdapterFactoryLabelProvider(new TaskItemProviderAdapterFactory());
+	
 	@Inject
-	private OutlineNodeLabelProvider labelProvider;
-
-	@Inject
-	private OutlineNodeContentProvider contentProvider;
-
-	@Inject
-	private TaskOutlineTreeProvider treeProvider;
-
-	@Inject
-	private ViewerUpdater updater;
+	private ContentProvider contentProvider;
 
 	@Inject
 	private QueryBasedFilter queryBasedViewFilter;
 
 	@Inject
-	private ViewRefreshJob refreshJob;
+	private GlobalStateManager globalState;
+
+	private Text queryText;
+
+	private Action actionCollapseAll;
+
+	private Action actionSort;
+
+	private Action openInEditor;
 	
 	@Inject
-	private GlobalState globalState;
+	private IURIEditorOpener editorOpener;
 	
+	@Inject
+	private TreeState treeState;
+
+	private DrillDownAdapter drillDownAdapter;
+
+	private IMemento memento;
+
 	@Override
 	public void createPartControl(Composite parent) {
-		// Create the help context id for the viewer's control
+		globalState.init();
+		
+		GridLayout layout = new GridLayout();
+		layout.numColumns = 1;
+		parent.setLayout(layout);
+
+		configureQueryField(parent);
 		configureTree(parent);
 		configureActions();
 		PlatformUI
 				.getWorkbench()
 				.getHelpSystem()
 				.setHelp(viewer.getControl(), "de.sebastianbenz.task.ui.viewer");
-		updater.addListener(this);
-		refreshJob.setOutlinePage(this);
+		
+		restoreState();
+	}
+	
+	private void restoreState() {
+		if(memento == null){
+			return;
+		}
+		viewer.setExpandedElements(treeState.restoreExpandedElements(memento, globalState));
+		queryText.setText(treeState.restoreQuery(memento));
+	}
+
+	@Override
+	public void init(IViewSite site, IMemento memento) throws PartInitException {
+		super.init(site, memento);
+		this.memento = memento;
+	}
+	
+	@Override
+	public void saveState(IMemento memento) {
+		super.saveState(memento);
+		treeState.saveExpandedElements(viewer.getExpandedElements(), memento);
+		treeState.saveQuery(queryText.getText(), memento);
+	}
+
+	protected void configureQueryField(Composite parent) {
+		queryText = new Text(parent,  SWT.SINGLE | SWT.BORDER | SWT.SEARCH
+				| SWT.ICON_CANCEL);
+		GridData gridData = new GridData(SWT.LEFT, SWT.TOP, true, false);
+		gridData.horizontalAlignment = GridData.FILL;
+		queryText.setLayoutData(gridData);
+		queryText.addModifyListener(queryBasedViewFilter);
 	}
 
 	protected void configureTree(Composite parent) {
 		viewer = new TreeViewer(parent);
+		GridData gridData = new GridData(SWT.LEFT, SWT.TOP, true, true);
+		gridData.horizontalAlignment = GridData.FILL;
+		gridData.verticalAlignment = GridData.FILL;
+		viewer.getTree().setLayoutData(gridData);
+		viewer.setAutoExpandLevel(1);
+		viewer.setSorter(new ContentSorter());
 		viewer.setLabelProvider(labelProvider);
 		viewer.setContentProvider(contentProvider);
 		viewer.setUseHashlookup(true);
-		viewer.setFilters(new ViewerFilter[]{queryBasedViewFilter});
-		new DrillDownAdapter(viewer);
-		initViewer();
+		viewer.setFilters(new ViewerFilter[] { queryBasedViewFilter });
+		drillDownAdapter = new DrillDownAdapter(viewer);
+		viewer.setInput(globalState.getRoot());
 	}
-
-	private void initViewer() {
-		List<IOutlineNode> initiallyExpandedNodes = getInitiallyExpandedNodes();
-		refreshViewer(initiallyExpandedNodes.isEmpty() ? null
-				: initiallyExpandedNodes.get(0), initiallyExpandedNodes,
-				Collections.<IOutlineNode> emptySet());
-	}
-
-	protected List<IOutlineNode> getInitiallyExpandedNodes() {
-			IOutlineNode rootNode = treeProvider.createRoot(globalState);
-			List<IOutlineNode> result = newArrayList(rootNode);
-			addChildren(Collections.singletonList(rootNode), result,
-					getDefaultExpansionLevel());
-			return result;
-	}
-
-	protected int getDefaultExpansionLevel() {
-		return 1;
-	}
-
-	protected void addChildren(List<IOutlineNode> nodes,
-			List<IOutlineNode> allChildren, int depth) {
-		for (IOutlineNode node : nodes) {
-			List<IOutlineNode> children = node.getChildren();
-			if (depth > 1) {
-				allChildren.addAll(children);
-				addChildren(children, allChildren, depth - 1);
-			}
-		}
-	}
-
 
 	protected void configureActions() {
+		makeActions();
+		IActionBars bars = ((IViewSite)getSite()).getActionBars();
+		fillLocalPullDown(bars.getMenuManager());
+		fillLocalToolBar(bars.getToolBarManager());
+		hookDoubleClickAction();
 	}
 
-	public void scheduleRefresh() {
-		refreshJob.cancel();
-		refreshJob.schedule();
+	private void fillLocalPullDown(IMenuManager manager) {
+		manager.add(actionCollapseAll);
+		manager.add(new Separator());
+		manager.add(actionSort);
+	}
+	
+	private void fillLocalToolBar(IToolBarManager manager) {
+		manager.add(actionCollapseAll);
+		manager.add(actionSort);
+		manager.add(new Separator());
+		drillDownAdapter.addNavigationActions(manager);
+	}
+
+	private void makeActions() {
+		actionCollapseAll = createActionCollapseAll();
+		actionCollapseAll.setText("Collapse all");
+		actionCollapseAll.setImageDescriptor(image("collapseall.gif"));
+
+		actionSort = createActionSort();
+		actionSort.setText("Sort");
+		actionSort.setImageDescriptor(image("sort.gif"));
+		openInEditor = createActionJumpToElement();
+
+	}
+
+	
+	private ImageDescriptor image(String string) {
+		String pluginId = TaskActivator.getInstance().getBundle().getSymbolicName();
+		return TaskActivator.imageDescriptorFromPlugin(pluginId , "icons/" + string);
+	}
+
+	private Action createActionCollapseAll() {
+		return new Action() {
+			@Override
+			public void run() {
+				viewer.collapseAll();
+			}
+		};
+	}
+
+	private Action createActionSort() {
+		return new Action("Sort", IAction.AS_CHECK_BOX) {
+			@Override
+			public void run() {
+
+				if (isChecked()) {
+					viewer.setSorter(new ContentSorter());
+				} else {
+					viewer.setSorter(null);
+				}
+				viewer.refresh();
+			}
+		};
+	}
+
+	private Action createActionJumpToElement() {
+		return new Action() {
+			@Override
+			public void run() {
+				ISelection selection = viewer.getSelection();
+				Object obj = ((IStructuredSelection) selection).getFirstElement();
+				if (obj instanceof EObject) {
+					editorOpener.open(getURI((EObject) obj), true);
+				}
+			}
+		};
+	}
+
+	private void hookDoubleClickAction() {
+		viewer.addDoubleClickListener(new IDoubleClickListener() {
+			public void doubleClick(DoubleClickEvent event) {
+				openInEditor.run();
+			}
+		});
 	}
 
 	public TreeViewer getTreeViewer() {
 		return viewer;
 	}
 
-	public TaskOutlineTreeProvider getTreeProvider() {
-		return treeProvider;
-	}
-
-	protected void refreshViewer(final IOutlineNode rootNode,
-			final Collection<IOutlineNode> nodesToBeExpanded,
-			final Collection<IOutlineNode> selectedNodes) {
-		DisplayRunHelper.runAsyncInDisplayThread(new Runnable() {
-			public void run() {
-				try {
-					TreeViewer viewer = getTreeViewer();
-					if (!viewer.getTree().isDisposed()) {
-						viewer.setInput(rootNode);
-						viewer.expandToLevel(2);
-						viewer.setExpandedElements(Iterables.toArray(
-								nodesToBeExpanded, IOutlineNode.class));
-						viewer.setSelection(new StructuredSelection(Iterables
-								.toArray(selectedNodes, IOutlineNode.class)));
-						treeUpdated();
-					}
-				} catch (Throwable t) {
-					LOG.error("Error refreshing task view", t);
-				}
-			}
-		});
-	}
-
-	/**
-	 * For testing.
-	 */
-	protected void treeUpdated() {
-	}
 
 	/**
 	 * Passing the focus request to the viewer's control.
 	 */
 	public void setFocus() {
-		viewer.getControl().setFocus();
+		queryText.setFocus();
 	}
 
-	public void handleResourceDescriptionChange(List<Delta> deltas) {
-		refreshJob.cancel();
-		refreshJob.schedule();
-	}
-
-	public GlobalState getGlobaState() {
+	public GlobalStateManager getGlobaState() {
 		return globalState;
+	}
+	
+	@Override
+	public void dispose() {
+		super.dispose();
+		globalState.dispose();
 	}
 }

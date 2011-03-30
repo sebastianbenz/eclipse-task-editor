@@ -10,10 +10,10 @@ Query:
 ;
 
 OrExpr returns Expression:
-	AndExpr ({OrExpr.left=current} 'or' right=AndExpr)*;
+	AndExpr ({OrExpr.left=current} ('or' | '||') right=AndExpr)*;
 
 AndExpr returns Expression :
-	CompEqExpr ({AndExpr.left=current} 'and' right=CompEqExpr)*;
+	CompEqExpr ({AndExpr.left=current} ('and' | '&&') right=CompEqExpr)*;
  
 CompEqExpr returns Expression :
 	CompExpr ({CompEqExpr.left=current} operator=CompEqOperator right=CompExpr)*;
@@ -22,7 +22,7 @@ CompExpr returns Expression :
 	UnaryExpr ({CompExpr.left=current} operator=CompOperator right=UnaryExpr)*;
 
 UnaryExpr returns Expression :
-	Atom | ({UnaryExpr} 'not' expr=UnaryExpr);
+	Atom | ({UnaryExpr} ('not'|'!') expr=UnaryExpr);
 
 Atom : 
 	Value |
@@ -79,5 +79,5 @@ enum CompOperator:
 	LESS_EQUAL = '<=' | LESS = '<' | GREATER_EQUAL = '>=' |  GREATER = '>';
 	
 
-terminal ID: !('@'|'='|'<'|'>'|'!'|'('|')'|':'|' '|'\t'|'\r'|'\n'|'"'|'\'') !(' '|'\t'|'\r'|'\n'|':')*;
+terminal ID: !('@'|'='|'<'|'>'|'!'|'('|')'|':'|' '|'\t'|'\r'|'\n'|'"'|'\''|'&' |'|') !(' '|'\t'|'\r'|'\n'|':')*;
 	

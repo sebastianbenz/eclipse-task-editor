@@ -37,7 +37,10 @@ public class QueryParser extends AbstractContentAssistParser {
 			nameMappings = new HashMap<AbstractElement, String>() {
 				private static final long serialVersionUID = 1L;
 				{
+					put(grammarAccess.getOrExprAccess().getAlternatives_1_1(), "rule__OrExpr__Alternatives_1_1");
+					put(grammarAccess.getAndExprAccess().getAlternatives_1_1(), "rule__AndExpr__Alternatives_1_1");
 					put(grammarAccess.getUnaryExprAccess().getAlternatives(), "rule__UnaryExpr__Alternatives");
+					put(grammarAccess.getUnaryExprAccess().getAlternatives_1_1(), "rule__UnaryExpr__Alternatives_1_1");
 					put(grammarAccess.getAtomAccess().getAlternatives(), "rule__Atom__Alternatives");
 					put(grammarAccess.getValueAccess().getAlternatives(), "rule__Value__Alternatives");
 					put(grammarAccess.getProjectReferenceAccess().getAlternatives_2(), "rule__ProjectReference__Alternatives_2");

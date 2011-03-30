@@ -169,11 +169,11 @@ protected class Query_ExpressionAssignment_1 extends AssignmentToken  {
 /************ begin Rule OrExpr ****************
  *
  * OrExpr returns Expression:
- * 	AndExpr ({OrExpr.left=current} "or" right=AndExpr)*;
+ * 	AndExpr ({OrExpr.left=current} ("or" | "||") right=AndExpr)*;
  *
  **/
 
-// AndExpr ({OrExpr.left=current} "or" right=AndExpr)*
+// AndExpr ({OrExpr.left=current} ("or" | "||") right=AndExpr)*
 protected class OrExpr_Group extends GroupToken {
 	
 	public OrExpr_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -262,7 +262,7 @@ protected class OrExpr_AndExprParserRuleCall_0 extends RuleCallToken {
 	}	
 }
 
-// ({OrExpr.left=current} "or" right=AndExpr)*
+// ({OrExpr.left=current} ("or" | "||") right=AndExpr)*
 protected class OrExpr_Group_1 extends GroupToken {
 	
 	public OrExpr_Group_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -321,16 +321,38 @@ protected class OrExpr_OrExprLeftAction_1_0 extends ActionToken  {
 	}
 }
 
-// "or"
-protected class OrExpr_OrKeyword_1_1 extends KeywordToken  {
+// "or" | "||"
+protected class OrExpr_Alternatives_1_1 extends AlternativesToken {
+
+	public OrExpr_Alternatives_1_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
 	
-	public OrExpr_OrKeyword_1_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	@Override
+	public Alternatives getGrammarElement() {
+		return grammarAccess.getOrExprAccess().getAlternatives_1_1();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new OrExpr_OrKeyword_1_1_0(lastRuleCallOrigin, this, 0, inst);
+			default: return null;
+		}	
+	}
+
+}
+
+// "or"
+protected class OrExpr_OrKeyword_1_1_0 extends KeywordToken  {
+	
+	public OrExpr_OrKeyword_1_1_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Keyword getGrammarElement() {
-		return grammarAccess.getOrExprAccess().getOrKeyword_1_1();
+		return grammarAccess.getOrExprAccess().getOrKeyword_1_1_0();
 	}
 
     @Override
@@ -342,6 +364,7 @@ protected class OrExpr_OrKeyword_1_1 extends KeywordToken  {
 	}
 
 }
+
 
 // right=AndExpr
 protected class OrExpr_RightAssignment_1_2 extends AssignmentToken  {
@@ -383,7 +406,7 @@ protected class OrExpr_RightAssignment_1_2 extends AssignmentToken  {
 	public AbstractToken createFollowerAfterReturn(AbstractToken next,	int actIndex, int index, IEObjectConsumer inst) {
 		if(value == inst.getEObject() && !inst.isConsumed()) return null;
 		switch(index) {
-			case 0: return new OrExpr_OrKeyword_1_1(lastRuleCallOrigin, next, actIndex, consumed);
+			case 0: return new OrExpr_Alternatives_1_1(lastRuleCallOrigin, next, actIndex, consumed);
 			default: return null;
 		}	
 	}	
@@ -397,11 +420,11 @@ protected class OrExpr_RightAssignment_1_2 extends AssignmentToken  {
 /************ begin Rule AndExpr ****************
  *
  * AndExpr returns Expression:
- * 	CompEqExpr ({AndExpr.left=current} "and" right=CompEqExpr)*;
+ * 	CompEqExpr ({AndExpr.left=current} ("and" | "&&") right=CompEqExpr)*;
  *
  **/
 
-// CompEqExpr ({AndExpr.left=current} "and" right=CompEqExpr)*
+// CompEqExpr ({AndExpr.left=current} ("and" | "&&") right=CompEqExpr)*
 protected class AndExpr_Group extends GroupToken {
 	
 	public AndExpr_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -488,7 +511,7 @@ protected class AndExpr_CompEqExprParserRuleCall_0 extends RuleCallToken {
 	}	
 }
 
-// ({AndExpr.left=current} "and" right=CompEqExpr)*
+// ({AndExpr.left=current} ("and" | "&&") right=CompEqExpr)*
 protected class AndExpr_Group_1 extends GroupToken {
 	
 	public AndExpr_Group_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -547,16 +570,38 @@ protected class AndExpr_AndExprLeftAction_1_0 extends ActionToken  {
 	}
 }
 
-// "and"
-protected class AndExpr_AndKeyword_1_1 extends KeywordToken  {
+// "and" | "&&"
+protected class AndExpr_Alternatives_1_1 extends AlternativesToken {
+
+	public AndExpr_Alternatives_1_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
 	
-	public AndExpr_AndKeyword_1_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	@Override
+	public Alternatives getGrammarElement() {
+		return grammarAccess.getAndExprAccess().getAlternatives_1_1();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new AndExpr_AndKeyword_1_1_0(lastRuleCallOrigin, this, 0, inst);
+			default: return null;
+		}	
+	}
+
+}
+
+// "and"
+protected class AndExpr_AndKeyword_1_1_0 extends KeywordToken  {
+	
+	public AndExpr_AndKeyword_1_1_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Keyword getGrammarElement() {
-		return grammarAccess.getAndExprAccess().getAndKeyword_1_1();
+		return grammarAccess.getAndExprAccess().getAndKeyword_1_1_0();
 	}
 
     @Override
@@ -568,6 +613,7 @@ protected class AndExpr_AndKeyword_1_1 extends KeywordToken  {
 	}
 
 }
+
 
 // right=CompEqExpr
 protected class AndExpr_RightAssignment_1_2 extends AssignmentToken  {
@@ -609,7 +655,7 @@ protected class AndExpr_RightAssignment_1_2 extends AssignmentToken  {
 	public AbstractToken createFollowerAfterReturn(AbstractToken next,	int actIndex, int index, IEObjectConsumer inst) {
 		if(value == inst.getEObject() && !inst.isConsumed()) return null;
 		switch(index) {
-			case 0: return new AndExpr_AndKeyword_1_1(lastRuleCallOrigin, next, actIndex, consumed);
+			case 0: return new AndExpr_Alternatives_1_1(lastRuleCallOrigin, next, actIndex, consumed);
 			default: return null;
 		}	
 	}	
@@ -1093,11 +1139,11 @@ protected class CompExpr_RightAssignment_1_2 extends AssignmentToken  {
 /************ begin Rule UnaryExpr ****************
  *
  * UnaryExpr returns Expression:
- * 	Atom | {UnaryExpr} "not" expr=UnaryExpr;
+ * 	Atom | {UnaryExpr} ("not" | "!") expr=UnaryExpr;
  *
  **/
 
-// Atom | {UnaryExpr} "not" expr=UnaryExpr
+// Atom | {UnaryExpr} ("not" | "!") expr=UnaryExpr
 protected class UnaryExpr_Alternatives extends AlternativesToken {
 
 	public UnaryExpr_Alternatives(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -1178,7 +1224,7 @@ protected class UnaryExpr_AtomParserRuleCall_0 extends RuleCallToken {
 	}	
 }
 
-// {UnaryExpr} "not" expr=UnaryExpr
+// {UnaryExpr} ("not" | "!") expr=UnaryExpr
 protected class UnaryExpr_Group_1 extends GroupToken {
 	
 	public UnaryExpr_Group_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -1233,16 +1279,38 @@ protected class UnaryExpr_UnaryExprAction_1_0 extends ActionToken  {
 	}
 }
 
-// "not"
-protected class UnaryExpr_NotKeyword_1_1 extends KeywordToken  {
+// "not" | "!"
+protected class UnaryExpr_Alternatives_1_1 extends AlternativesToken {
+
+	public UnaryExpr_Alternatives_1_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
+	}
 	
-	public UnaryExpr_NotKeyword_1_1(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
+	@Override
+	public Alternatives getGrammarElement() {
+		return grammarAccess.getUnaryExprAccess().getAlternatives_1_1();
+	}
+
+    @Override
+	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
+		switch(index) {
+			case 0: return new UnaryExpr_NotKeyword_1_1_0(lastRuleCallOrigin, this, 0, inst);
+			default: return null;
+		}	
+	}
+
+}
+
+// "not"
+protected class UnaryExpr_NotKeyword_1_1_0 extends KeywordToken  {
+	
+	public UnaryExpr_NotKeyword_1_1_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
 		super(lastRuleCallOrigin, next, transitionIndex, eObjectConsumer);
 	}
 	
 	@Override
 	public Keyword getGrammarElement() {
-		return grammarAccess.getUnaryExprAccess().getNotKeyword_1_1();
+		return grammarAccess.getUnaryExprAccess().getNotKeyword_1_1_0();
 	}
 
     @Override
@@ -1254,6 +1322,7 @@ protected class UnaryExpr_NotKeyword_1_1 extends KeywordToken  {
 	}
 
 }
+
 
 // expr=UnaryExpr
 protected class UnaryExpr_ExprAssignment_1_2 extends AssignmentToken  {
@@ -1295,7 +1364,7 @@ protected class UnaryExpr_ExprAssignment_1_2 extends AssignmentToken  {
 	public AbstractToken createFollowerAfterReturn(AbstractToken next,	int actIndex, int index, IEObjectConsumer inst) {
 		if(value == inst.getEObject() && !inst.isConsumed()) return null;
 		switch(index) {
-			case 0: return new UnaryExpr_NotKeyword_1_1(lastRuleCallOrigin, next, actIndex, consumed);
+			case 0: return new UnaryExpr_Alternatives_1_1(lastRuleCallOrigin, next, actIndex, consumed);
 			default: return null;
 		}	
 	}	

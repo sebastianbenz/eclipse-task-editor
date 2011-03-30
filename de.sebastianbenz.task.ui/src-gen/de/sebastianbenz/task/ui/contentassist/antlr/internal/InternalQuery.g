@@ -544,6 +544,58 @@ finally {
 
 
 
+rule__OrExpr__Alternatives_1_1
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getOrExprAccess().getOrKeyword_1_1_0()); }
+
+	'or' 
+
+{ after(grammarAccess.getOrExprAccess().getOrKeyword_1_1_0()); }
+)
+
+    |(
+{ before(grammarAccess.getOrExprAccess().getVerticalLineVerticalLineKeyword_1_1_1()); }
+
+	'||' 
+
+{ after(grammarAccess.getOrExprAccess().getVerticalLineVerticalLineKeyword_1_1_1()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__AndExpr__Alternatives_1_1
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getAndExprAccess().getAndKeyword_1_1_0()); }
+
+	'and' 
+
+{ after(grammarAccess.getAndExprAccess().getAndKeyword_1_1_0()); }
+)
+
+    |(
+{ before(grammarAccess.getAndExprAccess().getAmpersandAmpersandKeyword_1_1_1()); }
+
+	'&&' 
+
+{ after(grammarAccess.getAndExprAccess().getAmpersandAmpersandKeyword_1_1_1()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
 rule__UnaryExpr__Alternatives
     @init {
 		int stackSize = keepStackSize();
@@ -559,6 +611,32 @@ rule__UnaryExpr__Alternatives
 { before(grammarAccess.getUnaryExprAccess().getGroup_1()); }
 (rule__UnaryExpr__Group_1__0)
 { after(grammarAccess.getUnaryExprAccess().getGroup_1()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__UnaryExpr__Alternatives_1_1
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getUnaryExprAccess().getNotKeyword_1_1_0()); }
+
+	'not' 
+
+{ after(grammarAccess.getUnaryExprAccess().getNotKeyword_1_1_0()); }
+)
+
+    |(
+{ before(grammarAccess.getUnaryExprAccess().getExclamationMarkKeyword_1_1_1()); }
+
+	'!' 
+
+{ after(grammarAccess.getUnaryExprAccess().getExclamationMarkKeyword_1_1_1()); }
 )
 
 ;
@@ -943,11 +1021,9 @@ rule__OrExpr__Group_1__1__Impl
     }
 :
 (
-{ before(grammarAccess.getOrExprAccess().getOrKeyword_1_1()); }
-
-	'or' 
-
-{ after(grammarAccess.getOrExprAccess().getOrKeyword_1_1()); }
+{ before(grammarAccess.getOrExprAccess().getAlternatives_1_1()); }
+(rule__OrExpr__Alternatives_1_1)
+{ after(grammarAccess.getOrExprAccess().getAlternatives_1_1()); }
 )
 
 ;
@@ -1100,11 +1176,9 @@ rule__AndExpr__Group_1__1__Impl
     }
 :
 (
-{ before(grammarAccess.getAndExprAccess().getAndKeyword_1_1()); }
-
-	'and' 
-
-{ after(grammarAccess.getAndExprAccess().getAndKeyword_1_1()); }
+{ before(grammarAccess.getAndExprAccess().getAlternatives_1_1()); }
+(rule__AndExpr__Alternatives_1_1)
+{ after(grammarAccess.getAndExprAccess().getAlternatives_1_1()); }
 )
 
 ;
@@ -1506,11 +1580,9 @@ rule__UnaryExpr__Group_1__1__Impl
     }
 :
 (
-{ before(grammarAccess.getUnaryExprAccess().getNotKeyword_1_1()); }
-
-	'not' 
-
-{ after(grammarAccess.getUnaryExprAccess().getNotKeyword_1_1()); }
+{ before(grammarAccess.getUnaryExprAccess().getAlternatives_1_1()); }
+(rule__UnaryExpr__Alternatives_1_1)
+{ after(grammarAccess.getUnaryExprAccess().getAlternatives_1_1()); }
 )
 
 ;
@@ -2403,7 +2475,7 @@ finally {
 }
 
 
-RULE_ID : ~(('@'|'='|'<'|'>'|'!'|'('|')'|':'|' '|'\t'|'\r'|'\n'|'"'|'\'')) ~((' '|'\t'|'\r'|'\n'|':'))*;
+RULE_ID : ~(('@'|'='|'<'|'>'|'!'|'('|')'|':'|' '|'\t'|'\r'|'\n'|'"'|'\''|'&'|'|')) ~((' '|'\t'|'\r'|'\n'|':'|'&'|'|'|'!'))*;
 
 RULE_INT : ('0'..'9')+;
 

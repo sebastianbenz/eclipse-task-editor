@@ -47,28 +47,36 @@ public class QueryGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cAndExprParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
 		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
 		private final Action cOrExprLeftAction_1_0 = (Action)cGroup_1.eContents().get(0);
-		private final Keyword cOrKeyword_1_1 = (Keyword)cGroup_1.eContents().get(1);
+		private final Alternatives cAlternatives_1_1 = (Alternatives)cGroup_1.eContents().get(1);
+		private final Keyword cOrKeyword_1_1_0 = (Keyword)cAlternatives_1_1.eContents().get(0);
+		private final Keyword cVerticalLineVerticalLineKeyword_1_1_1 = (Keyword)cAlternatives_1_1.eContents().get(1);
 		private final Assignment cRightAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
 		private final RuleCall cRightAndExprParserRuleCall_1_2_0 = (RuleCall)cRightAssignment_1_2.eContents().get(0);
 		
 		//OrExpr returns Expression:
-		//	AndExpr ({OrExpr.left=current} "or" right=AndExpr)*;
+		//	AndExpr ({OrExpr.left=current} ("or" | "||") right=AndExpr)*;
 		public ParserRule getRule() { return rule; }
 
-		//AndExpr ({OrExpr.left=current} "or" right=AndExpr)*
+		//AndExpr ({OrExpr.left=current} ("or" | "||") right=AndExpr)*
 		public Group getGroup() { return cGroup; }
 
 		//AndExpr
 		public RuleCall getAndExprParserRuleCall_0() { return cAndExprParserRuleCall_0; }
 
-		//({OrExpr.left=current} "or" right=AndExpr)*
+		//({OrExpr.left=current} ("or" | "||") right=AndExpr)*
 		public Group getGroup_1() { return cGroup_1; }
 
 		//{OrExpr.left=current}
 		public Action getOrExprLeftAction_1_0() { return cOrExprLeftAction_1_0; }
 
+		//"or" | "||"
+		public Alternatives getAlternatives_1_1() { return cAlternatives_1_1; }
+
 		//"or"
-		public Keyword getOrKeyword_1_1() { return cOrKeyword_1_1; }
+		public Keyword getOrKeyword_1_1_0() { return cOrKeyword_1_1_0; }
+
+		//"||"
+		public Keyword getVerticalLineVerticalLineKeyword_1_1_1() { return cVerticalLineVerticalLineKeyword_1_1_1; }
 
 		//right=AndExpr
 		public Assignment getRightAssignment_1_2() { return cRightAssignment_1_2; }
@@ -83,28 +91,36 @@ public class QueryGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cCompEqExprParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
 		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
 		private final Action cAndExprLeftAction_1_0 = (Action)cGroup_1.eContents().get(0);
-		private final Keyword cAndKeyword_1_1 = (Keyword)cGroup_1.eContents().get(1);
+		private final Alternatives cAlternatives_1_1 = (Alternatives)cGroup_1.eContents().get(1);
+		private final Keyword cAndKeyword_1_1_0 = (Keyword)cAlternatives_1_1.eContents().get(0);
+		private final Keyword cAmpersandAmpersandKeyword_1_1_1 = (Keyword)cAlternatives_1_1.eContents().get(1);
 		private final Assignment cRightAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
 		private final RuleCall cRightCompEqExprParserRuleCall_1_2_0 = (RuleCall)cRightAssignment_1_2.eContents().get(0);
 		
 		//AndExpr returns Expression:
-		//	CompEqExpr ({AndExpr.left=current} "and" right=CompEqExpr)*;
+		//	CompEqExpr ({AndExpr.left=current} ("and" | "&&") right=CompEqExpr)*;
 		public ParserRule getRule() { return rule; }
 
-		//CompEqExpr ({AndExpr.left=current} "and" right=CompEqExpr)*
+		//CompEqExpr ({AndExpr.left=current} ("and" | "&&") right=CompEqExpr)*
 		public Group getGroup() { return cGroup; }
 
 		//CompEqExpr
 		public RuleCall getCompEqExprParserRuleCall_0() { return cCompEqExprParserRuleCall_0; }
 
-		//({AndExpr.left=current} "and" right=CompEqExpr)*
+		//({AndExpr.left=current} ("and" | "&&") right=CompEqExpr)*
 		public Group getGroup_1() { return cGroup_1; }
 
 		//{AndExpr.left=current}
 		public Action getAndExprLeftAction_1_0() { return cAndExprLeftAction_1_0; }
 
+		//"and" | "&&"
+		public Alternatives getAlternatives_1_1() { return cAlternatives_1_1; }
+
 		//"and"
-		public Keyword getAndKeyword_1_1() { return cAndKeyword_1_1; }
+		public Keyword getAndKeyword_1_1_0() { return cAndKeyword_1_1_0; }
+
+		//"&&"
+		public Keyword getAmpersandAmpersandKeyword_1_1_1() { return cAmpersandAmpersandKeyword_1_1_1; }
 
 		//right=CompEqExpr
 		public Assignment getRightAssignment_1_2() { return cRightAssignment_1_2; }
@@ -199,28 +215,36 @@ public class QueryGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cAtomParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
 		private final Action cUnaryExprAction_1_0 = (Action)cGroup_1.eContents().get(0);
-		private final Keyword cNotKeyword_1_1 = (Keyword)cGroup_1.eContents().get(1);
+		private final Alternatives cAlternatives_1_1 = (Alternatives)cGroup_1.eContents().get(1);
+		private final Keyword cNotKeyword_1_1_0 = (Keyword)cAlternatives_1_1.eContents().get(0);
+		private final Keyword cExclamationMarkKeyword_1_1_1 = (Keyword)cAlternatives_1_1.eContents().get(1);
 		private final Assignment cExprAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
 		private final RuleCall cExprUnaryExprParserRuleCall_1_2_0 = (RuleCall)cExprAssignment_1_2.eContents().get(0);
 		
 		//UnaryExpr returns Expression:
-		//	Atom | {UnaryExpr} "not" expr=UnaryExpr;
+		//	Atom | {UnaryExpr} ("not" | "!") expr=UnaryExpr;
 		public ParserRule getRule() { return rule; }
 
-		//Atom | {UnaryExpr} "not" expr=UnaryExpr
+		//Atom | {UnaryExpr} ("not" | "!") expr=UnaryExpr
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//Atom
 		public RuleCall getAtomParserRuleCall_0() { return cAtomParserRuleCall_0; }
 
-		//{UnaryExpr} "not" expr=UnaryExpr
+		//{UnaryExpr} ("not" | "!") expr=UnaryExpr
 		public Group getGroup_1() { return cGroup_1; }
 
 		//{UnaryExpr}
 		public Action getUnaryExprAction_1_0() { return cUnaryExprAction_1_0; }
 
+		//"not" | "!"
+		public Alternatives getAlternatives_1_1() { return cAlternatives_1_1; }
+
 		//"not"
-		public Keyword getNotKeyword_1_1() { return cNotKeyword_1_1; }
+		public Keyword getNotKeyword_1_1_0() { return cNotKeyword_1_1_0; }
+
+		//"!"
+		public Keyword getExclamationMarkKeyword_1_1_1() { return cExclamationMarkKeyword_1_1_1; }
 
 		//expr=UnaryExpr
 		public Assignment getExprAssignment_1_2() { return cExprAssignment_1_2; }
@@ -650,7 +674,7 @@ public class QueryGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//OrExpr returns Expression:
-	//	AndExpr ({OrExpr.left=current} "or" right=AndExpr)*;
+	//	AndExpr ({OrExpr.left=current} ("or" | "||") right=AndExpr)*;
 	public OrExprElements getOrExprAccess() {
 		return (pOrExpr != null) ? pOrExpr : (pOrExpr = new OrExprElements());
 	}
@@ -660,7 +684,7 @@ public class QueryGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//AndExpr returns Expression:
-	//	CompEqExpr ({AndExpr.left=current} "and" right=CompEqExpr)*;
+	//	CompEqExpr ({AndExpr.left=current} ("and" | "&&") right=CompEqExpr)*;
 	public AndExprElements getAndExprAccess() {
 		return (pAndExpr != null) ? pAndExpr : (pAndExpr = new AndExprElements());
 	}
@@ -690,7 +714,7 @@ public class QueryGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//UnaryExpr returns Expression:
-	//	Atom | {UnaryExpr} "not" expr=UnaryExpr;
+	//	Atom | {UnaryExpr} ("not" | "!") expr=UnaryExpr;
 	public UnaryExprElements getUnaryExprAccess() {
 		return (pUnaryExpr != null) ? pUnaryExpr : (pUnaryExpr = new UnaryExprElements());
 	}
@@ -820,8 +844,8 @@ public class QueryGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//terminal ID:
-	//	!("@" | "=" | "<" | ">" | "!" | "(" | ")" | ":" | " " | "\t" | "\r" | "\n" | "\"" | "\'") !(" " | "\t" | "\r" | "\n" |
-	//	":")*;
+	//	!("@" | "=" | "<" | ">" | "!" | "(" | ")" | ":" | " " | "\t" | "\r" | "\n" | "\"" | "\'" | "&" | "|") !(" " | "\t" |
+	//	"\r" | "\n" | ":" | "&" | "|" | "!")*;
 	public TerminalRule getIDRule() {
 		return (tID != null) ? tID : (tID = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "ID"));
 	} 

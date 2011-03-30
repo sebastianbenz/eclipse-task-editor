@@ -37,7 +37,10 @@
               <classifier xsi:type="ecore:EClass" href="http://www.sebastianbenz.de/task/query/2011/#//OrExpr"/>
             </type>
           </elements>
-          <elements xsi:type="xtext:Keyword" value="or"/>
+          <elements xsi:type="xtext:Alternatives">
+            <elements xsi:type="xtext:Keyword" value="or"/>
+            <elements xsi:type="xtext:Keyword" value="||"/>
+          </elements>
           <elements xsi:type="xtext:Assignment" feature="right" operator="=">
             <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.2"/>
           </elements>
@@ -56,7 +59,10 @@
               <classifier xsi:type="ecore:EClass" href="http://www.sebastianbenz.de/task/query/2011/#//AndExpr"/>
             </type>
           </elements>
-          <elements xsi:type="xtext:Keyword" value="and"/>
+          <elements xsi:type="xtext:Alternatives">
+            <elements xsi:type="xtext:Keyword" value="and"/>
+            <elements xsi:type="xtext:Keyword" value="&amp;&amp;"/>
+          </elements>
           <elements xsi:type="xtext:Assignment" feature="right" operator="=">
             <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.3"/>
           </elements>
@@ -117,7 +123,10 @@
               <classifier xsi:type="ecore:EClass" href="http://www.sebastianbenz.de/task/query/2011/#//UnaryExpr"/>
             </type>
           </elements>
-          <elements xsi:type="xtext:Keyword" value="not"/>
+          <elements xsi:type="xtext:Alternatives">
+            <elements xsi:type="xtext:Keyword" value="not"/>
+            <elements xsi:type="xtext:Keyword" value="!"/>
+          </elements>
           <elements xsi:type="xtext:Assignment" feature="expr" operator="=">
             <terminal xsi:type="xtext:RuleCall" rule="/0/@rules.5"/>
           </elements>
@@ -314,6 +323,8 @@
             <elements xsi:type="xtext:Keyword" value="&#xA;"/>
             <elements xsi:type="xtext:Keyword" value="&quot;"/>
             <elements xsi:type="xtext:Keyword" value="'"/>
+            <elements xsi:type="xtext:Keyword" value="&amp;"/>
+            <elements xsi:type="xtext:Keyword" value="|"/>
           </terminal>
         </elements>
         <elements xsi:type="xtext:NegatedToken" cardinality="*">
@@ -323,6 +334,9 @@
             <elements xsi:type="xtext:Keyword" value="&#xD;"/>
             <elements xsi:type="xtext:Keyword" value="&#xA;"/>
             <elements xsi:type="xtext:Keyword" value=":"/>
+            <elements xsi:type="xtext:Keyword" value="&amp;"/>
+            <elements xsi:type="xtext:Keyword" value="|"/>
+            <elements xsi:type="xtext:Keyword" value="!"/>
           </terminal>
         </elements>
       </alternatives>

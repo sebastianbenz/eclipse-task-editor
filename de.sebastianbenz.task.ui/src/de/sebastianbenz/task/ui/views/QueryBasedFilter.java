@@ -5,6 +5,7 @@ import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.core.runtime.jobs.Job;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.jface.viewers.TreeViewer;
 import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.jface.viewers.ViewerFilter;
 import org.eclipse.swt.events.ModifyEvent;
@@ -76,6 +77,13 @@ public class QueryBasedFilter extends ViewerFilter implements ModifyListener{
 
 	private void updateQuery() {
 		query = queryParser.parse(text);
+		if(query == null || query.getExpression() == null){
+			return;
+		}
+		if (viewer instanceof TreeViewer) {
+			TreeViewer treeViewer = (TreeViewer) viewer;
+			treeViewer.expandAll();
+		}
 	}
 
 }

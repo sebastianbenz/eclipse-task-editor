@@ -43,15 +43,15 @@ ParenExpr :
 	'(' {ParenExpr} expr=OrExpr ')';
 	
 ProjectReference :
-	'project' ':' value=ID
+	'project' ':' (value=ID | value = STRING)
 ;
 
 TaskReference :
-	'task' ':' value=ID
+	'task' ':' (value=ID | value = STRING)
 ;
 
 TextReference :
-	'text' ':' value=ID
+	'text' ':' (value=ID | value = STRING)
 ;
 
 

@@ -1629,22 +1629,23 @@ public class InternalQueryParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleProjectReference"
-    // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:624:1: ruleProjectReference returns [EObject current=null] : (otherlv_0= 'project' otherlv_1= ':' ( (lv_value_2_0= RULE_ID ) ) ) ;
+    // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:624:1: ruleProjectReference returns [EObject current=null] : (otherlv_0= 'project' otherlv_1= ':' ( ( (lv_value_2_0= RULE_ID ) ) | ( (lv_value_3_0= RULE_STRING ) ) ) ) ;
     public final EObject ruleProjectReference() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
         Token otherlv_1=null;
         Token lv_value_2_0=null;
+        Token lv_value_3_0=null;
 
          enterRule(); 
             
         try {
-            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:627:28: ( (otherlv_0= 'project' otherlv_1= ':' ( (lv_value_2_0= RULE_ID ) ) ) )
-            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:628:1: (otherlv_0= 'project' otherlv_1= ':' ( (lv_value_2_0= RULE_ID ) ) )
+            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:627:28: ( (otherlv_0= 'project' otherlv_1= ':' ( ( (lv_value_2_0= RULE_ID ) ) | ( (lv_value_3_0= RULE_STRING ) ) ) ) )
+            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:628:1: (otherlv_0= 'project' otherlv_1= ':' ( ( (lv_value_2_0= RULE_ID ) ) | ( (lv_value_3_0= RULE_STRING ) ) ) )
             {
-            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:628:1: (otherlv_0= 'project' otherlv_1= ':' ( (lv_value_2_0= RULE_ID ) ) )
-            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:628:3: otherlv_0= 'project' otherlv_1= ':' ( (lv_value_2_0= RULE_ID ) )
+            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:628:1: (otherlv_0= 'project' otherlv_1= ':' ( ( (lv_value_2_0= RULE_ID ) ) | ( (lv_value_3_0= RULE_STRING ) ) ) )
+            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:628:3: otherlv_0= 'project' otherlv_1= ':' ( ( (lv_value_2_0= RULE_ID ) ) | ( (lv_value_3_0= RULE_STRING ) ) )
             {
             otherlv_0=(Token)match(input,16,FOLLOW_16_in_ruleProjectReference1430); 
 
@@ -1654,29 +1655,87 @@ public class InternalQueryParser extends AbstractInternalAntlrParser {
 
                 	newLeafNode(otherlv_1, grammarAccess.getProjectReferenceAccess().getColonKeyword_1());
                 
-            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:636:1: ( (lv_value_2_0= RULE_ID ) )
-            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:637:1: (lv_value_2_0= RULE_ID )
-            {
-            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:637:1: (lv_value_2_0= RULE_ID )
-            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:638:3: lv_value_2_0= RULE_ID
-            {
-            lv_value_2_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleProjectReference1459); 
+            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:636:1: ( ( (lv_value_2_0= RULE_ID ) ) | ( (lv_value_3_0= RULE_STRING ) ) )
+            int alt9=2;
+            int LA9_0 = input.LA(1);
 
-            			newLeafNode(lv_value_2_0, grammarAccess.getProjectReferenceAccess().getValueIDTerminalRuleCall_2_0()); 
-            		
-
-            	        if (current==null) {
-            	            current = createModelElement(grammarAccess.getProjectReferenceRule());
-            	        }
-                   		setWithLastConsumed(
-                   			current, 
-                   			"value",
-                    		lv_value_2_0, 
-                    		"ID");
-            	    
-
+            if ( (LA9_0==RULE_ID) ) {
+                alt9=1;
             }
+            else if ( (LA9_0==RULE_STRING) ) {
+                alt9=2;
+            }
+            else {
+                NoViableAltException nvae =
+                    new NoViableAltException("", 9, 0, input);
 
+                throw nvae;
+            }
+            switch (alt9) {
+                case 1 :
+                    // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:636:2: ( (lv_value_2_0= RULE_ID ) )
+                    {
+                    // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:636:2: ( (lv_value_2_0= RULE_ID ) )
+                    // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:637:1: (lv_value_2_0= RULE_ID )
+                    {
+                    // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:637:1: (lv_value_2_0= RULE_ID )
+                    // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:638:3: lv_value_2_0= RULE_ID
+                    {
+                    lv_value_2_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleProjectReference1460); 
+
+                    			newLeafNode(lv_value_2_0, grammarAccess.getProjectReferenceAccess().getValueIDTerminalRuleCall_2_0_0()); 
+                    		
+
+                    	        if (current==null) {
+                    	            current = createModelElement(grammarAccess.getProjectReferenceRule());
+                    	        }
+                           		setWithLastConsumed(
+                           			current, 
+                           			"value",
+                            		lv_value_2_0, 
+                            		"ID");
+                    	    
+
+                    }
+
+
+                    }
+
+
+                    }
+                    break;
+                case 2 :
+                    // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:655:6: ( (lv_value_3_0= RULE_STRING ) )
+                    {
+                    // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:655:6: ( (lv_value_3_0= RULE_STRING ) )
+                    // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:656:1: (lv_value_3_0= RULE_STRING )
+                    {
+                    // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:656:1: (lv_value_3_0= RULE_STRING )
+                    // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:657:3: lv_value_3_0= RULE_STRING
+                    {
+                    lv_value_3_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleProjectReference1488); 
+
+                    			newLeafNode(lv_value_3_0, grammarAccess.getProjectReferenceAccess().getValueSTRINGTerminalRuleCall_2_1_0()); 
+                    		
+
+                    	        if (current==null) {
+                    	            current = createModelElement(grammarAccess.getProjectReferenceRule());
+                    	        }
+                           		setWithLastConsumed(
+                           			current, 
+                           			"value",
+                            		lv_value_3_0, 
+                            		"STRING");
+                    	    
+
+                    }
+
+
+                    }
+
+
+                    }
+                    break;
 
             }
 
@@ -1701,7 +1760,7 @@ public class InternalQueryParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleTaskReference"
-    // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:662:1: entryRuleTaskReference returns [EObject current=null] : iv_ruleTaskReference= ruleTaskReference EOF ;
+    // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:681:1: entryRuleTaskReference returns [EObject current=null] : iv_ruleTaskReference= ruleTaskReference EOF ;
     public final EObject entryRuleTaskReference() throws RecognitionException {
         EObject current = null;
 
@@ -1709,17 +1768,17 @@ public class InternalQueryParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:663:2: (iv_ruleTaskReference= ruleTaskReference EOF )
-            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:664:2: iv_ruleTaskReference= ruleTaskReference EOF
+            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:682:2: (iv_ruleTaskReference= ruleTaskReference EOF )
+            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:683:2: iv_ruleTaskReference= ruleTaskReference EOF
             {
              newCompositeNode(grammarAccess.getTaskReferenceRule()); 
-            pushFollow(FOLLOW_ruleTaskReference_in_entryRuleTaskReference1500);
+            pushFollow(FOLLOW_ruleTaskReference_in_entryRuleTaskReference1530);
             iv_ruleTaskReference=ruleTaskReference();
 
             state._fsp--;
 
              current =iv_ruleTaskReference; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleTaskReference1510); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleTaskReference1540); 
 
             }
 
@@ -1737,54 +1796,113 @@ public class InternalQueryParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleTaskReference"
-    // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:671:1: ruleTaskReference returns [EObject current=null] : (otherlv_0= 'task' otherlv_1= ':' ( (lv_value_2_0= RULE_ID ) ) ) ;
+    // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:690:1: ruleTaskReference returns [EObject current=null] : (otherlv_0= 'task' otherlv_1= ':' ( ( (lv_value_2_0= RULE_ID ) ) | ( (lv_value_3_0= RULE_STRING ) ) ) ) ;
     public final EObject ruleTaskReference() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
         Token otherlv_1=null;
         Token lv_value_2_0=null;
+        Token lv_value_3_0=null;
 
          enterRule(); 
             
         try {
-            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:674:28: ( (otherlv_0= 'task' otherlv_1= ':' ( (lv_value_2_0= RULE_ID ) ) ) )
-            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:675:1: (otherlv_0= 'task' otherlv_1= ':' ( (lv_value_2_0= RULE_ID ) ) )
+            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:693:28: ( (otherlv_0= 'task' otherlv_1= ':' ( ( (lv_value_2_0= RULE_ID ) ) | ( (lv_value_3_0= RULE_STRING ) ) ) ) )
+            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:694:1: (otherlv_0= 'task' otherlv_1= ':' ( ( (lv_value_2_0= RULE_ID ) ) | ( (lv_value_3_0= RULE_STRING ) ) ) )
             {
-            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:675:1: (otherlv_0= 'task' otherlv_1= ':' ( (lv_value_2_0= RULE_ID ) ) )
-            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:675:3: otherlv_0= 'task' otherlv_1= ':' ( (lv_value_2_0= RULE_ID ) )
+            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:694:1: (otherlv_0= 'task' otherlv_1= ':' ( ( (lv_value_2_0= RULE_ID ) ) | ( (lv_value_3_0= RULE_STRING ) ) ) )
+            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:694:3: otherlv_0= 'task' otherlv_1= ':' ( ( (lv_value_2_0= RULE_ID ) ) | ( (lv_value_3_0= RULE_STRING ) ) )
             {
-            otherlv_0=(Token)match(input,18,FOLLOW_18_in_ruleTaskReference1547); 
+            otherlv_0=(Token)match(input,18,FOLLOW_18_in_ruleTaskReference1577); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getTaskReferenceAccess().getTaskKeyword_0());
                 
-            otherlv_1=(Token)match(input,17,FOLLOW_17_in_ruleTaskReference1559); 
+            otherlv_1=(Token)match(input,17,FOLLOW_17_in_ruleTaskReference1589); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getTaskReferenceAccess().getColonKeyword_1());
                 
-            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:683:1: ( (lv_value_2_0= RULE_ID ) )
-            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:684:1: (lv_value_2_0= RULE_ID )
-            {
-            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:684:1: (lv_value_2_0= RULE_ID )
-            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:685:3: lv_value_2_0= RULE_ID
-            {
-            lv_value_2_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleTaskReference1576); 
+            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:702:1: ( ( (lv_value_2_0= RULE_ID ) ) | ( (lv_value_3_0= RULE_STRING ) ) )
+            int alt10=2;
+            int LA10_0 = input.LA(1);
 
-            			newLeafNode(lv_value_2_0, grammarAccess.getTaskReferenceAccess().getValueIDTerminalRuleCall_2_0()); 
-            		
-
-            	        if (current==null) {
-            	            current = createModelElement(grammarAccess.getTaskReferenceRule());
-            	        }
-                   		setWithLastConsumed(
-                   			current, 
-                   			"value",
-                    		lv_value_2_0, 
-                    		"ID");
-            	    
-
+            if ( (LA10_0==RULE_ID) ) {
+                alt10=1;
             }
+            else if ( (LA10_0==RULE_STRING) ) {
+                alt10=2;
+            }
+            else {
+                NoViableAltException nvae =
+                    new NoViableAltException("", 10, 0, input);
 
+                throw nvae;
+            }
+            switch (alt10) {
+                case 1 :
+                    // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:702:2: ( (lv_value_2_0= RULE_ID ) )
+                    {
+                    // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:702:2: ( (lv_value_2_0= RULE_ID ) )
+                    // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:703:1: (lv_value_2_0= RULE_ID )
+                    {
+                    // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:703:1: (lv_value_2_0= RULE_ID )
+                    // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:704:3: lv_value_2_0= RULE_ID
+                    {
+                    lv_value_2_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleTaskReference1607); 
+
+                    			newLeafNode(lv_value_2_0, grammarAccess.getTaskReferenceAccess().getValueIDTerminalRuleCall_2_0_0()); 
+                    		
+
+                    	        if (current==null) {
+                    	            current = createModelElement(grammarAccess.getTaskReferenceRule());
+                    	        }
+                           		setWithLastConsumed(
+                           			current, 
+                           			"value",
+                            		lv_value_2_0, 
+                            		"ID");
+                    	    
+
+                    }
+
+
+                    }
+
+
+                    }
+                    break;
+                case 2 :
+                    // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:721:6: ( (lv_value_3_0= RULE_STRING ) )
+                    {
+                    // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:721:6: ( (lv_value_3_0= RULE_STRING ) )
+                    // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:722:1: (lv_value_3_0= RULE_STRING )
+                    {
+                    // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:722:1: (lv_value_3_0= RULE_STRING )
+                    // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:723:3: lv_value_3_0= RULE_STRING
+                    {
+                    lv_value_3_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleTaskReference1635); 
+
+                    			newLeafNode(lv_value_3_0, grammarAccess.getTaskReferenceAccess().getValueSTRINGTerminalRuleCall_2_1_0()); 
+                    		
+
+                    	        if (current==null) {
+                    	            current = createModelElement(grammarAccess.getTaskReferenceRule());
+                    	        }
+                           		setWithLastConsumed(
+                           			current, 
+                           			"value",
+                            		lv_value_3_0, 
+                            		"STRING");
+                    	    
+
+                    }
+
+
+                    }
+
+
+                    }
+                    break;
 
             }
 
@@ -1809,7 +1927,7 @@ public class InternalQueryParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleTextReference"
-    // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:709:1: entryRuleTextReference returns [EObject current=null] : iv_ruleTextReference= ruleTextReference EOF ;
+    // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:747:1: entryRuleTextReference returns [EObject current=null] : iv_ruleTextReference= ruleTextReference EOF ;
     public final EObject entryRuleTextReference() throws RecognitionException {
         EObject current = null;
 
@@ -1817,17 +1935,17 @@ public class InternalQueryParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:710:2: (iv_ruleTextReference= ruleTextReference EOF )
-            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:711:2: iv_ruleTextReference= ruleTextReference EOF
+            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:748:2: (iv_ruleTextReference= ruleTextReference EOF )
+            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:749:2: iv_ruleTextReference= ruleTextReference EOF
             {
              newCompositeNode(grammarAccess.getTextReferenceRule()); 
-            pushFollow(FOLLOW_ruleTextReference_in_entryRuleTextReference1617);
+            pushFollow(FOLLOW_ruleTextReference_in_entryRuleTextReference1677);
             iv_ruleTextReference=ruleTextReference();
 
             state._fsp--;
 
              current =iv_ruleTextReference; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleTextReference1627); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleTextReference1687); 
 
             }
 
@@ -1845,54 +1963,113 @@ public class InternalQueryParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleTextReference"
-    // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:718:1: ruleTextReference returns [EObject current=null] : (otherlv_0= 'text' otherlv_1= ':' ( (lv_value_2_0= RULE_ID ) ) ) ;
+    // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:756:1: ruleTextReference returns [EObject current=null] : (otherlv_0= 'text' otherlv_1= ':' ( ( (lv_value_2_0= RULE_ID ) ) | ( (lv_value_3_0= RULE_STRING ) ) ) ) ;
     public final EObject ruleTextReference() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
         Token otherlv_1=null;
         Token lv_value_2_0=null;
+        Token lv_value_3_0=null;
 
          enterRule(); 
             
         try {
-            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:721:28: ( (otherlv_0= 'text' otherlv_1= ':' ( (lv_value_2_0= RULE_ID ) ) ) )
-            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:722:1: (otherlv_0= 'text' otherlv_1= ':' ( (lv_value_2_0= RULE_ID ) ) )
+            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:759:28: ( (otherlv_0= 'text' otherlv_1= ':' ( ( (lv_value_2_0= RULE_ID ) ) | ( (lv_value_3_0= RULE_STRING ) ) ) ) )
+            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:760:1: (otherlv_0= 'text' otherlv_1= ':' ( ( (lv_value_2_0= RULE_ID ) ) | ( (lv_value_3_0= RULE_STRING ) ) ) )
             {
-            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:722:1: (otherlv_0= 'text' otherlv_1= ':' ( (lv_value_2_0= RULE_ID ) ) )
-            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:722:3: otherlv_0= 'text' otherlv_1= ':' ( (lv_value_2_0= RULE_ID ) )
+            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:760:1: (otherlv_0= 'text' otherlv_1= ':' ( ( (lv_value_2_0= RULE_ID ) ) | ( (lv_value_3_0= RULE_STRING ) ) ) )
+            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:760:3: otherlv_0= 'text' otherlv_1= ':' ( ( (lv_value_2_0= RULE_ID ) ) | ( (lv_value_3_0= RULE_STRING ) ) )
             {
-            otherlv_0=(Token)match(input,19,FOLLOW_19_in_ruleTextReference1664); 
+            otherlv_0=(Token)match(input,19,FOLLOW_19_in_ruleTextReference1724); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getTextReferenceAccess().getTextKeyword_0());
                 
-            otherlv_1=(Token)match(input,17,FOLLOW_17_in_ruleTextReference1676); 
+            otherlv_1=(Token)match(input,17,FOLLOW_17_in_ruleTextReference1736); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getTextReferenceAccess().getColonKeyword_1());
                 
-            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:730:1: ( (lv_value_2_0= RULE_ID ) )
-            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:731:1: (lv_value_2_0= RULE_ID )
-            {
-            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:731:1: (lv_value_2_0= RULE_ID )
-            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:732:3: lv_value_2_0= RULE_ID
-            {
-            lv_value_2_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleTextReference1693); 
+            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:768:1: ( ( (lv_value_2_0= RULE_ID ) ) | ( (lv_value_3_0= RULE_STRING ) ) )
+            int alt11=2;
+            int LA11_0 = input.LA(1);
 
-            			newLeafNode(lv_value_2_0, grammarAccess.getTextReferenceAccess().getValueIDTerminalRuleCall_2_0()); 
-            		
-
-            	        if (current==null) {
-            	            current = createModelElement(grammarAccess.getTextReferenceRule());
-            	        }
-                   		setWithLastConsumed(
-                   			current, 
-                   			"value",
-                    		lv_value_2_0, 
-                    		"ID");
-            	    
-
+            if ( (LA11_0==RULE_ID) ) {
+                alt11=1;
             }
+            else if ( (LA11_0==RULE_STRING) ) {
+                alt11=2;
+            }
+            else {
+                NoViableAltException nvae =
+                    new NoViableAltException("", 11, 0, input);
 
+                throw nvae;
+            }
+            switch (alt11) {
+                case 1 :
+                    // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:768:2: ( (lv_value_2_0= RULE_ID ) )
+                    {
+                    // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:768:2: ( (lv_value_2_0= RULE_ID ) )
+                    // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:769:1: (lv_value_2_0= RULE_ID )
+                    {
+                    // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:769:1: (lv_value_2_0= RULE_ID )
+                    // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:770:3: lv_value_2_0= RULE_ID
+                    {
+                    lv_value_2_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleTextReference1754); 
+
+                    			newLeafNode(lv_value_2_0, grammarAccess.getTextReferenceAccess().getValueIDTerminalRuleCall_2_0_0()); 
+                    		
+
+                    	        if (current==null) {
+                    	            current = createModelElement(grammarAccess.getTextReferenceRule());
+                    	        }
+                           		setWithLastConsumed(
+                           			current, 
+                           			"value",
+                            		lv_value_2_0, 
+                            		"ID");
+                    	    
+
+                    }
+
+
+                    }
+
+
+                    }
+                    break;
+                case 2 :
+                    // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:787:6: ( (lv_value_3_0= RULE_STRING ) )
+                    {
+                    // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:787:6: ( (lv_value_3_0= RULE_STRING ) )
+                    // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:788:1: (lv_value_3_0= RULE_STRING )
+                    {
+                    // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:788:1: (lv_value_3_0= RULE_STRING )
+                    // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:789:3: lv_value_3_0= RULE_STRING
+                    {
+                    lv_value_3_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleTextReference1782); 
+
+                    			newLeafNode(lv_value_3_0, grammarAccess.getTextReferenceAccess().getValueSTRINGTerminalRuleCall_2_1_0()); 
+                    		
+
+                    	        if (current==null) {
+                    	            current = createModelElement(grammarAccess.getTextReferenceRule());
+                    	        }
+                           		setWithLastConsumed(
+                           			current, 
+                           			"value",
+                            		lv_value_3_0, 
+                            		"STRING");
+                    	    
+
+                    }
+
+
+                    }
+
+
+                    }
+                    break;
 
             }
 
@@ -1917,7 +2094,7 @@ public class InternalQueryParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleWords"
-    // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:756:1: entryRuleWords returns [EObject current=null] : iv_ruleWords= ruleWords EOF ;
+    // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:813:1: entryRuleWords returns [EObject current=null] : iv_ruleWords= ruleWords EOF ;
     public final EObject entryRuleWords() throws RecognitionException {
         EObject current = null;
 
@@ -1925,17 +2102,17 @@ public class InternalQueryParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:757:2: (iv_ruleWords= ruleWords EOF )
-            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:758:2: iv_ruleWords= ruleWords EOF
+            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:814:2: (iv_ruleWords= ruleWords EOF )
+            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:815:2: iv_ruleWords= ruleWords EOF
             {
              newCompositeNode(grammarAccess.getWordsRule()); 
-            pushFollow(FOLLOW_ruleWords_in_entryRuleWords1734);
+            pushFollow(FOLLOW_ruleWords_in_entryRuleWords1824);
             iv_ruleWords=ruleWords();
 
             state._fsp--;
 
              current =iv_ruleWords; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleWords1744); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleWords1834); 
 
             }
 
@@ -1953,7 +2130,7 @@ public class InternalQueryParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleWords"
-    // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:765:1: ruleWords returns [EObject current=null] : ( ( (lv_values_0_0= RULE_ID ) ) ( (lv_values_1_0= RULE_ID ) )+ ) ;
+    // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:822:1: ruleWords returns [EObject current=null] : ( ( (lv_values_0_0= RULE_ID ) ) ( (lv_values_1_0= RULE_ID ) )+ ) ;
     public final EObject ruleWords() throws RecognitionException {
         EObject current = null;
 
@@ -1963,19 +2140,19 @@ public class InternalQueryParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:768:28: ( ( ( (lv_values_0_0= RULE_ID ) ) ( (lv_values_1_0= RULE_ID ) )+ ) )
-            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:769:1: ( ( (lv_values_0_0= RULE_ID ) ) ( (lv_values_1_0= RULE_ID ) )+ )
+            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:825:28: ( ( ( (lv_values_0_0= RULE_ID ) ) ( (lv_values_1_0= RULE_ID ) )+ ) )
+            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:826:1: ( ( (lv_values_0_0= RULE_ID ) ) ( (lv_values_1_0= RULE_ID ) )+ )
             {
-            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:769:1: ( ( (lv_values_0_0= RULE_ID ) ) ( (lv_values_1_0= RULE_ID ) )+ )
-            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:769:2: ( (lv_values_0_0= RULE_ID ) ) ( (lv_values_1_0= RULE_ID ) )+
+            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:826:1: ( ( (lv_values_0_0= RULE_ID ) ) ( (lv_values_1_0= RULE_ID ) )+ )
+            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:826:2: ( (lv_values_0_0= RULE_ID ) ) ( (lv_values_1_0= RULE_ID ) )+
             {
-            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:769:2: ( (lv_values_0_0= RULE_ID ) )
-            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:770:1: (lv_values_0_0= RULE_ID )
+            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:826:2: ( (lv_values_0_0= RULE_ID ) )
+            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:827:1: (lv_values_0_0= RULE_ID )
             {
-            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:770:1: (lv_values_0_0= RULE_ID )
-            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:771:3: lv_values_0_0= RULE_ID
+            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:827:1: (lv_values_0_0= RULE_ID )
+            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:828:3: lv_values_0_0= RULE_ID
             {
-            lv_values_0_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleWords1786); 
+            lv_values_0_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleWords1876); 
 
             			newLeafNode(lv_values_0_0, grammarAccess.getWordsAccess().getValuesIDTerminalRuleCall_0_0()); 
             		
@@ -1995,26 +2172,26 @@ public class InternalQueryParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:787:2: ( (lv_values_1_0= RULE_ID ) )+
-            int cnt9=0;
-            loop9:
+            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:844:2: ( (lv_values_1_0= RULE_ID ) )+
+            int cnt12=0;
+            loop12:
             do {
-                int alt9=2;
-                int LA9_0 = input.LA(1);
+                int alt12=2;
+                int LA12_0 = input.LA(1);
 
-                if ( (LA9_0==RULE_ID) ) {
-                    alt9=1;
+                if ( (LA12_0==RULE_ID) ) {
+                    alt12=1;
                 }
 
 
-                switch (alt9) {
+                switch (alt12) {
             	case 1 :
-            	    // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:788:1: (lv_values_1_0= RULE_ID )
+            	    // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:845:1: (lv_values_1_0= RULE_ID )
             	    {
-            	    // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:788:1: (lv_values_1_0= RULE_ID )
-            	    // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:789:3: lv_values_1_0= RULE_ID
+            	    // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:845:1: (lv_values_1_0= RULE_ID )
+            	    // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:846:3: lv_values_1_0= RULE_ID
             	    {
-            	    lv_values_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleWords1808); 
+            	    lv_values_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleWords1898); 
 
             	    			newLeafNode(lv_values_1_0, grammarAccess.getWordsAccess().getValuesIDTerminalRuleCall_1_0()); 
             	    		
@@ -2036,12 +2213,12 @@ public class InternalQueryParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    if ( cnt9 >= 1 ) break loop9;
+            	    if ( cnt12 >= 1 ) break loop12;
                         EarlyExitException eee =
-                            new EarlyExitException(9, input);
+                            new EarlyExitException(12, input);
                         throw eee;
                 }
-                cnt9++;
+                cnt12++;
             } while (true);
 
 
@@ -2065,7 +2242,7 @@ public class InternalQueryParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleWord"
-    // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:813:1: entryRuleWord returns [EObject current=null] : iv_ruleWord= ruleWord EOF ;
+    // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:870:1: entryRuleWord returns [EObject current=null] : iv_ruleWord= ruleWord EOF ;
     public final EObject entryRuleWord() throws RecognitionException {
         EObject current = null;
 
@@ -2073,17 +2250,17 @@ public class InternalQueryParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:814:2: (iv_ruleWord= ruleWord EOF )
-            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:815:2: iv_ruleWord= ruleWord EOF
+            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:871:2: (iv_ruleWord= ruleWord EOF )
+            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:872:2: iv_ruleWord= ruleWord EOF
             {
              newCompositeNode(grammarAccess.getWordRule()); 
-            pushFollow(FOLLOW_ruleWord_in_entryRuleWord1850);
+            pushFollow(FOLLOW_ruleWord_in_entryRuleWord1940);
             iv_ruleWord=ruleWord();
 
             state._fsp--;
 
              current =iv_ruleWord; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleWord1860); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleWord1950); 
 
             }
 
@@ -2101,7 +2278,7 @@ public class InternalQueryParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleWord"
-    // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:822:1: ruleWord returns [EObject current=null] : ( (lv_value_0_0= RULE_ID ) ) ;
+    // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:879:1: ruleWord returns [EObject current=null] : ( (lv_value_0_0= RULE_ID ) ) ;
     public final EObject ruleWord() throws RecognitionException {
         EObject current = null;
 
@@ -2110,16 +2287,16 @@ public class InternalQueryParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:825:28: ( ( (lv_value_0_0= RULE_ID ) ) )
-            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:826:1: ( (lv_value_0_0= RULE_ID ) )
+            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:882:28: ( ( (lv_value_0_0= RULE_ID ) ) )
+            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:883:1: ( (lv_value_0_0= RULE_ID ) )
             {
-            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:826:1: ( (lv_value_0_0= RULE_ID ) )
-            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:827:1: (lv_value_0_0= RULE_ID )
+            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:883:1: ( (lv_value_0_0= RULE_ID ) )
+            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:884:1: (lv_value_0_0= RULE_ID )
             {
-            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:827:1: (lv_value_0_0= RULE_ID )
-            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:828:3: lv_value_0_0= RULE_ID
+            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:884:1: (lv_value_0_0= RULE_ID )
+            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:885:3: lv_value_0_0= RULE_ID
             {
-            lv_value_0_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleWord1901); 
+            lv_value_0_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleWord1991); 
 
             			newLeafNode(lv_value_0_0, grammarAccess.getWordAccess().getValueIDTerminalRuleCall_0()); 
             		
@@ -2157,7 +2334,7 @@ public class InternalQueryParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRulePhrase"
-    // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:852:1: entryRulePhrase returns [EObject current=null] : iv_rulePhrase= rulePhrase EOF ;
+    // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:909:1: entryRulePhrase returns [EObject current=null] : iv_rulePhrase= rulePhrase EOF ;
     public final EObject entryRulePhrase() throws RecognitionException {
         EObject current = null;
 
@@ -2165,17 +2342,17 @@ public class InternalQueryParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:853:2: (iv_rulePhrase= rulePhrase EOF )
-            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:854:2: iv_rulePhrase= rulePhrase EOF
+            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:910:2: (iv_rulePhrase= rulePhrase EOF )
+            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:911:2: iv_rulePhrase= rulePhrase EOF
             {
              newCompositeNode(grammarAccess.getPhraseRule()); 
-            pushFollow(FOLLOW_rulePhrase_in_entryRulePhrase1941);
+            pushFollow(FOLLOW_rulePhrase_in_entryRulePhrase2031);
             iv_rulePhrase=rulePhrase();
 
             state._fsp--;
 
              current =iv_rulePhrase; 
-            match(input,EOF,FOLLOW_EOF_in_entryRulePhrase1951); 
+            match(input,EOF,FOLLOW_EOF_in_entryRulePhrase2041); 
 
             }
 
@@ -2193,7 +2370,7 @@ public class InternalQueryParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulePhrase"
-    // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:861:1: rulePhrase returns [EObject current=null] : ( (lv_value_0_0= RULE_STRING ) ) ;
+    // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:918:1: rulePhrase returns [EObject current=null] : ( (lv_value_0_0= RULE_STRING ) ) ;
     public final EObject rulePhrase() throws RecognitionException {
         EObject current = null;
 
@@ -2202,16 +2379,16 @@ public class InternalQueryParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:864:28: ( ( (lv_value_0_0= RULE_STRING ) ) )
-            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:865:1: ( (lv_value_0_0= RULE_STRING ) )
+            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:921:28: ( ( (lv_value_0_0= RULE_STRING ) ) )
+            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:922:1: ( (lv_value_0_0= RULE_STRING ) )
             {
-            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:865:1: ( (lv_value_0_0= RULE_STRING ) )
-            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:866:1: (lv_value_0_0= RULE_STRING )
+            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:922:1: ( (lv_value_0_0= RULE_STRING ) )
+            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:923:1: (lv_value_0_0= RULE_STRING )
             {
-            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:866:1: (lv_value_0_0= RULE_STRING )
-            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:867:3: lv_value_0_0= RULE_STRING
+            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:923:1: (lv_value_0_0= RULE_STRING )
+            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:924:3: lv_value_0_0= RULE_STRING
             {
-            lv_value_0_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rulePhrase1992); 
+            lv_value_0_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rulePhrase2082); 
 
             			newLeafNode(lv_value_0_0, grammarAccess.getPhraseAccess().getValueSTRINGTerminalRuleCall_0()); 
             		
@@ -2249,7 +2426,7 @@ public class InternalQueryParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleTagReference"
-    // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:891:1: entryRuleTagReference returns [EObject current=null] : iv_ruleTagReference= ruleTagReference EOF ;
+    // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:948:1: entryRuleTagReference returns [EObject current=null] : iv_ruleTagReference= ruleTagReference EOF ;
     public final EObject entryRuleTagReference() throws RecognitionException {
         EObject current = null;
 
@@ -2257,17 +2434,17 @@ public class InternalQueryParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:892:2: (iv_ruleTagReference= ruleTagReference EOF )
-            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:893:2: iv_ruleTagReference= ruleTagReference EOF
+            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:949:2: (iv_ruleTagReference= ruleTagReference EOF )
+            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:950:2: iv_ruleTagReference= ruleTagReference EOF
             {
              newCompositeNode(grammarAccess.getTagReferenceRule()); 
-            pushFollow(FOLLOW_ruleTagReference_in_entryRuleTagReference2032);
+            pushFollow(FOLLOW_ruleTagReference_in_entryRuleTagReference2122);
             iv_ruleTagReference=ruleTagReference();
 
             state._fsp--;
 
              current =iv_ruleTagReference; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleTagReference2042); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleTagReference2132); 
 
             }
 
@@ -2285,7 +2462,7 @@ public class InternalQueryParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleTagReference"
-    // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:900:1: ruleTagReference returns [EObject current=null] : (otherlv_0= '@' ( (lv_value_1_0= RULE_ID ) ) ) ;
+    // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:957:1: ruleTagReference returns [EObject current=null] : (otherlv_0= '@' ( (lv_value_1_0= RULE_ID ) ) ) ;
     public final EObject ruleTagReference() throws RecognitionException {
         EObject current = null;
 
@@ -2295,23 +2472,23 @@ public class InternalQueryParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:903:28: ( (otherlv_0= '@' ( (lv_value_1_0= RULE_ID ) ) ) )
-            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:904:1: (otherlv_0= '@' ( (lv_value_1_0= RULE_ID ) ) )
+            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:960:28: ( (otherlv_0= '@' ( (lv_value_1_0= RULE_ID ) ) ) )
+            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:961:1: (otherlv_0= '@' ( (lv_value_1_0= RULE_ID ) ) )
             {
-            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:904:1: (otherlv_0= '@' ( (lv_value_1_0= RULE_ID ) ) )
-            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:904:3: otherlv_0= '@' ( (lv_value_1_0= RULE_ID ) )
+            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:961:1: (otherlv_0= '@' ( (lv_value_1_0= RULE_ID ) ) )
+            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:961:3: otherlv_0= '@' ( (lv_value_1_0= RULE_ID ) )
             {
-            otherlv_0=(Token)match(input,20,FOLLOW_20_in_ruleTagReference2079); 
+            otherlv_0=(Token)match(input,20,FOLLOW_20_in_ruleTagReference2169); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getTagReferenceAccess().getCommercialAtKeyword_0());
                 
-            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:908:1: ( (lv_value_1_0= RULE_ID ) )
-            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:909:1: (lv_value_1_0= RULE_ID )
+            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:965:1: ( (lv_value_1_0= RULE_ID ) )
+            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:966:1: (lv_value_1_0= RULE_ID )
             {
-            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:909:1: (lv_value_1_0= RULE_ID )
-            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:910:3: lv_value_1_0= RULE_ID
+            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:966:1: (lv_value_1_0= RULE_ID )
+            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:967:3: lv_value_1_0= RULE_ID
             {
-            lv_value_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleTagReference2096); 
+            lv_value_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleTagReference2186); 
 
             			newLeafNode(lv_value_1_0, grammarAccess.getTagReferenceAccess().getValueIDTerminalRuleCall_1_0()); 
             		
@@ -2352,7 +2529,7 @@ public class InternalQueryParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleCompEqOperator"
-    // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:934:1: ruleCompEqOperator returns [Enumerator current=null] : ( (enumLiteral_0= '=' ) | (enumLiteral_1= '!=' ) ) ;
+    // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:991:1: ruleCompEqOperator returns [Enumerator current=null] : ( (enumLiteral_0= '=' ) | (enumLiteral_1= '!=' ) ) ;
     public final Enumerator ruleCompEqOperator() throws RecognitionException {
         Enumerator current = null;
 
@@ -2361,33 +2538,33 @@ public class InternalQueryParser extends AbstractInternalAntlrParser {
 
          enterRule(); 
         try {
-            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:936:28: ( ( (enumLiteral_0= '=' ) | (enumLiteral_1= '!=' ) ) )
-            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:937:1: ( (enumLiteral_0= '=' ) | (enumLiteral_1= '!=' ) )
+            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:993:28: ( ( (enumLiteral_0= '=' ) | (enumLiteral_1= '!=' ) ) )
+            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:994:1: ( (enumLiteral_0= '=' ) | (enumLiteral_1= '!=' ) )
             {
-            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:937:1: ( (enumLiteral_0= '=' ) | (enumLiteral_1= '!=' ) )
-            int alt10=2;
-            int LA10_0 = input.LA(1);
+            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:994:1: ( (enumLiteral_0= '=' ) | (enumLiteral_1= '!=' ) )
+            int alt13=2;
+            int LA13_0 = input.LA(1);
 
-            if ( (LA10_0==21) ) {
-                alt10=1;
+            if ( (LA13_0==21) ) {
+                alt13=1;
             }
-            else if ( (LA10_0==22) ) {
-                alt10=2;
+            else if ( (LA13_0==22) ) {
+                alt13=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 10, 0, input);
+                    new NoViableAltException("", 13, 0, input);
 
                 throw nvae;
             }
-            switch (alt10) {
+            switch (alt13) {
                 case 1 :
-                    // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:937:2: (enumLiteral_0= '=' )
+                    // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:994:2: (enumLiteral_0= '=' )
                     {
-                    // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:937:2: (enumLiteral_0= '=' )
-                    // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:937:4: enumLiteral_0= '='
+                    // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:994:2: (enumLiteral_0= '=' )
+                    // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:994:4: enumLiteral_0= '='
                     {
-                    enumLiteral_0=(Token)match(input,21,FOLLOW_21_in_ruleCompEqOperator2151); 
+                    enumLiteral_0=(Token)match(input,21,FOLLOW_21_in_ruleCompEqOperator2241); 
 
                             current = grammarAccess.getCompEqOperatorAccess().getEQUALEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_0, grammarAccess.getCompEqOperatorAccess().getEQUALEnumLiteralDeclaration_0()); 
@@ -2399,12 +2576,12 @@ public class InternalQueryParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:943:6: (enumLiteral_1= '!=' )
+                    // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:1000:6: (enumLiteral_1= '!=' )
                     {
-                    // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:943:6: (enumLiteral_1= '!=' )
-                    // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:943:8: enumLiteral_1= '!='
+                    // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:1000:6: (enumLiteral_1= '!=' )
+                    // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:1000:8: enumLiteral_1= '!='
                     {
-                    enumLiteral_1=(Token)match(input,22,FOLLOW_22_in_ruleCompEqOperator2168); 
+                    enumLiteral_1=(Token)match(input,22,FOLLOW_22_in_ruleCompEqOperator2258); 
 
                             current = grammarAccess.getCompEqOperatorAccess().getNOT_EQUALEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_1, grammarAccess.getCompEqOperatorAccess().getNOT_EQUALEnumLiteralDeclaration_1()); 
@@ -2436,7 +2613,7 @@ public class InternalQueryParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleCompOperator"
-    // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:953:1: ruleCompOperator returns [Enumerator current=null] : ( (enumLiteral_0= '<=' ) | (enumLiteral_1= '<' ) | (enumLiteral_2= '>=' ) | (enumLiteral_3= '>' ) ) ;
+    // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:1010:1: ruleCompOperator returns [Enumerator current=null] : ( (enumLiteral_0= '<=' ) | (enumLiteral_1= '<' ) | (enumLiteral_2= '>=' ) | (enumLiteral_3= '>' ) ) ;
     public final Enumerator ruleCompOperator() throws RecognitionException {
         Enumerator current = null;
 
@@ -2447,47 +2624,47 @@ public class InternalQueryParser extends AbstractInternalAntlrParser {
 
          enterRule(); 
         try {
-            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:955:28: ( ( (enumLiteral_0= '<=' ) | (enumLiteral_1= '<' ) | (enumLiteral_2= '>=' ) | (enumLiteral_3= '>' ) ) )
-            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:956:1: ( (enumLiteral_0= '<=' ) | (enumLiteral_1= '<' ) | (enumLiteral_2= '>=' ) | (enumLiteral_3= '>' ) )
+            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:1012:28: ( ( (enumLiteral_0= '<=' ) | (enumLiteral_1= '<' ) | (enumLiteral_2= '>=' ) | (enumLiteral_3= '>' ) ) )
+            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:1013:1: ( (enumLiteral_0= '<=' ) | (enumLiteral_1= '<' ) | (enumLiteral_2= '>=' ) | (enumLiteral_3= '>' ) )
             {
-            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:956:1: ( (enumLiteral_0= '<=' ) | (enumLiteral_1= '<' ) | (enumLiteral_2= '>=' ) | (enumLiteral_3= '>' ) )
-            int alt11=4;
+            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:1013:1: ( (enumLiteral_0= '<=' ) | (enumLiteral_1= '<' ) | (enumLiteral_2= '>=' ) | (enumLiteral_3= '>' ) )
+            int alt14=4;
             switch ( input.LA(1) ) {
             case 23:
                 {
-                alt11=1;
+                alt14=1;
                 }
                 break;
             case 24:
                 {
-                alt11=2;
+                alt14=2;
                 }
                 break;
             case 25:
                 {
-                alt11=3;
+                alt14=3;
                 }
                 break;
             case 26:
                 {
-                alt11=4;
+                alt14=4;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 11, 0, input);
+                    new NoViableAltException("", 14, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt11) {
+            switch (alt14) {
                 case 1 :
-                    // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:956:2: (enumLiteral_0= '<=' )
+                    // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:1013:2: (enumLiteral_0= '<=' )
                     {
-                    // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:956:2: (enumLiteral_0= '<=' )
-                    // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:956:4: enumLiteral_0= '<='
+                    // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:1013:2: (enumLiteral_0= '<=' )
+                    // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:1013:4: enumLiteral_0= '<='
                     {
-                    enumLiteral_0=(Token)match(input,23,FOLLOW_23_in_ruleCompOperator2213); 
+                    enumLiteral_0=(Token)match(input,23,FOLLOW_23_in_ruleCompOperator2303); 
 
                             current = grammarAccess.getCompOperatorAccess().getLESS_EQUALEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_0, grammarAccess.getCompOperatorAccess().getLESS_EQUALEnumLiteralDeclaration_0()); 
@@ -2499,12 +2676,12 @@ public class InternalQueryParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:962:6: (enumLiteral_1= '<' )
+                    // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:1019:6: (enumLiteral_1= '<' )
                     {
-                    // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:962:6: (enumLiteral_1= '<' )
-                    // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:962:8: enumLiteral_1= '<'
+                    // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:1019:6: (enumLiteral_1= '<' )
+                    // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:1019:8: enumLiteral_1= '<'
                     {
-                    enumLiteral_1=(Token)match(input,24,FOLLOW_24_in_ruleCompOperator2230); 
+                    enumLiteral_1=(Token)match(input,24,FOLLOW_24_in_ruleCompOperator2320); 
 
                             current = grammarAccess.getCompOperatorAccess().getLESSEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_1, grammarAccess.getCompOperatorAccess().getLESSEnumLiteralDeclaration_1()); 
@@ -2516,12 +2693,12 @@ public class InternalQueryParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:968:6: (enumLiteral_2= '>=' )
+                    // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:1025:6: (enumLiteral_2= '>=' )
                     {
-                    // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:968:6: (enumLiteral_2= '>=' )
-                    // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:968:8: enumLiteral_2= '>='
+                    // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:1025:6: (enumLiteral_2= '>=' )
+                    // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:1025:8: enumLiteral_2= '>='
                     {
-                    enumLiteral_2=(Token)match(input,25,FOLLOW_25_in_ruleCompOperator2247); 
+                    enumLiteral_2=(Token)match(input,25,FOLLOW_25_in_ruleCompOperator2337); 
 
                             current = grammarAccess.getCompOperatorAccess().getGREATER_EQUALEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_2, grammarAccess.getCompOperatorAccess().getGREATER_EQUALEnumLiteralDeclaration_2()); 
@@ -2533,12 +2710,12 @@ public class InternalQueryParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:974:6: (enumLiteral_3= '>' )
+                    // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:1031:6: (enumLiteral_3= '>' )
                     {
-                    // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:974:6: (enumLiteral_3= '>' )
-                    // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:974:8: enumLiteral_3= '>'
+                    // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:1031:6: (enumLiteral_3= '>' )
+                    // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:1031:8: enumLiteral_3= '>'
                     {
-                    enumLiteral_3=(Token)match(input,26,FOLLOW_26_in_ruleCompOperator2264); 
+                    enumLiteral_3=(Token)match(input,26,FOLLOW_26_in_ruleCompOperator2354); 
 
                             current = grammarAccess.getCompOperatorAccess().getGREATEREnumLiteralDeclaration_3().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_3, grammarAccess.getCompOperatorAccess().getGREATEREnumLiteralDeclaration_3()); 
@@ -2622,37 +2799,40 @@ public class InternalQueryParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_ruleProjectReference_in_entryRuleProjectReference1383 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleProjectReference1393 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_16_in_ruleProjectReference1430 = new BitSet(new long[]{0x0000000000020000L});
-    public static final BitSet FOLLOW_17_in_ruleProjectReference1442 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleProjectReference1459 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleTaskReference_in_entryRuleTaskReference1500 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleTaskReference1510 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_18_in_ruleTaskReference1547 = new BitSet(new long[]{0x0000000000020000L});
-    public static final BitSet FOLLOW_17_in_ruleTaskReference1559 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleTaskReference1576 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleTextReference_in_entryRuleTextReference1617 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleTextReference1627 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_19_in_ruleTextReference1664 = new BitSet(new long[]{0x0000000000020000L});
-    public static final BitSet FOLLOW_17_in_ruleTextReference1676 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleTextReference1693 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleWords_in_entryRuleWords1734 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleWords1744 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleWords1786 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleWords1808 = new BitSet(new long[]{0x0000000000000012L});
-    public static final BitSet FOLLOW_ruleWord_in_entryRuleWord1850 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleWord1860 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleWord1901 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rulePhrase_in_entryRulePhrase1941 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRulePhrase1951 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_STRING_in_rulePhrase1992 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleTagReference_in_entryRuleTagReference2032 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleTagReference2042 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_20_in_ruleTagReference2079 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleTagReference2096 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_21_in_ruleCompEqOperator2151 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_22_in_ruleCompEqOperator2168 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_23_in_ruleCompOperator2213 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_24_in_ruleCompOperator2230 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_25_in_ruleCompOperator2247 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_26_in_ruleCompOperator2264 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_17_in_ruleProjectReference1442 = new BitSet(new long[]{0x0000000000000030L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleProjectReference1460 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleProjectReference1488 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleTaskReference_in_entryRuleTaskReference1530 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleTaskReference1540 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_18_in_ruleTaskReference1577 = new BitSet(new long[]{0x0000000000020000L});
+    public static final BitSet FOLLOW_17_in_ruleTaskReference1589 = new BitSet(new long[]{0x0000000000000030L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleTaskReference1607 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleTaskReference1635 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleTextReference_in_entryRuleTextReference1677 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleTextReference1687 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_19_in_ruleTextReference1724 = new BitSet(new long[]{0x0000000000020000L});
+    public static final BitSet FOLLOW_17_in_ruleTextReference1736 = new BitSet(new long[]{0x0000000000000030L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleTextReference1754 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleTextReference1782 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleWords_in_entryRuleWords1824 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleWords1834 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleWords1876 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleWords1898 = new BitSet(new long[]{0x0000000000000012L});
+    public static final BitSet FOLLOW_ruleWord_in_entryRuleWord1940 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleWord1950 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleWord1991 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rulePhrase_in_entryRulePhrase2031 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRulePhrase2041 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_STRING_in_rulePhrase2082 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleTagReference_in_entryRuleTagReference2122 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleTagReference2132 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_20_in_ruleTagReference2169 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleTagReference2186 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_21_in_ruleCompEqOperator2241 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_22_in_ruleCompEqOperator2258 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_23_in_ruleCompOperator2303 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_24_in_ruleCompOperator2320 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_25_in_ruleCompOperator2337 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_26_in_ruleCompOperator2354 = new BitSet(new long[]{0x0000000000000002L});
 
 }

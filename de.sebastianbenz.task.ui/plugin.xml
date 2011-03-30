@@ -341,7 +341,7 @@
       <view
             allowMultiple="false"
             category="de.sebastianbenz.task.ui"
-            class="de.sebastianbenz.task.ui.TaskExecutableExtensionFactory:de.sebastianbenz.task.ui.views.TodoView"
+            class="de.sebastianbenz.task.ui.QueryExecutableExtensionFactory:de.sebastianbenz.task.ui.views.TodoView"
             icon="icons/TodoFile.png"
             id="de.sebastianbenz.task.ui.views.TodoView"
             name="Todos"

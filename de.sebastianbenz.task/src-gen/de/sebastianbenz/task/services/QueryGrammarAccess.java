@@ -326,14 +326,17 @@ public class QueryGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cProjectKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Keyword cColonKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cValueAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cValueIDTerminalRuleCall_2_0 = (RuleCall)cValueAssignment_2.eContents().get(0);
+		private final Alternatives cAlternatives_2 = (Alternatives)cGroup.eContents().get(2);
+		private final Assignment cValueAssignment_2_0 = (Assignment)cAlternatives_2.eContents().get(0);
+		private final RuleCall cValueIDTerminalRuleCall_2_0_0 = (RuleCall)cValueAssignment_2_0.eContents().get(0);
+		private final Assignment cValueAssignment_2_1 = (Assignment)cAlternatives_2.eContents().get(1);
+		private final RuleCall cValueSTRINGTerminalRuleCall_2_1_0 = (RuleCall)cValueAssignment_2_1.eContents().get(0);
 		
 		//ProjectReference:
-		//	"project" ":" value=ID;
+		//	"project" ":" (value=ID | value=STRING);
 		public ParserRule getRule() { return rule; }
 
-		//"project" ":" value=ID
+		//"project" ":" (value=ID | value=STRING)
 		public Group getGroup() { return cGroup; }
 
 		//"project"
@@ -342,11 +345,20 @@ public class QueryGrammarAccess extends AbstractGrammarElementFinder {
 		//":"
 		public Keyword getColonKeyword_1() { return cColonKeyword_1; }
 
+		//value=ID | value=STRING
+		public Alternatives getAlternatives_2() { return cAlternatives_2; }
+
 		//value=ID
-		public Assignment getValueAssignment_2() { return cValueAssignment_2; }
+		public Assignment getValueAssignment_2_0() { return cValueAssignment_2_0; }
 
 		//ID
-		public RuleCall getValueIDTerminalRuleCall_2_0() { return cValueIDTerminalRuleCall_2_0; }
+		public RuleCall getValueIDTerminalRuleCall_2_0_0() { return cValueIDTerminalRuleCall_2_0_0; }
+
+		//value=STRING
+		public Assignment getValueAssignment_2_1() { return cValueAssignment_2_1; }
+
+		//STRING
+		public RuleCall getValueSTRINGTerminalRuleCall_2_1_0() { return cValueSTRINGTerminalRuleCall_2_1_0; }
 	}
 
 	public class TaskReferenceElements extends AbstractParserRuleElementFinder {
@@ -354,14 +366,17 @@ public class QueryGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cTaskKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Keyword cColonKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cValueAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cValueIDTerminalRuleCall_2_0 = (RuleCall)cValueAssignment_2.eContents().get(0);
+		private final Alternatives cAlternatives_2 = (Alternatives)cGroup.eContents().get(2);
+		private final Assignment cValueAssignment_2_0 = (Assignment)cAlternatives_2.eContents().get(0);
+		private final RuleCall cValueIDTerminalRuleCall_2_0_0 = (RuleCall)cValueAssignment_2_0.eContents().get(0);
+		private final Assignment cValueAssignment_2_1 = (Assignment)cAlternatives_2.eContents().get(1);
+		private final RuleCall cValueSTRINGTerminalRuleCall_2_1_0 = (RuleCall)cValueAssignment_2_1.eContents().get(0);
 		
 		//TaskReference:
-		//	"task" ":" value=ID;
+		//	"task" ":" (value=ID | value=STRING);
 		public ParserRule getRule() { return rule; }
 
-		//"task" ":" value=ID
+		//"task" ":" (value=ID | value=STRING)
 		public Group getGroup() { return cGroup; }
 
 		//"task"
@@ -370,11 +385,20 @@ public class QueryGrammarAccess extends AbstractGrammarElementFinder {
 		//":"
 		public Keyword getColonKeyword_1() { return cColonKeyword_1; }
 
+		//value=ID | value=STRING
+		public Alternatives getAlternatives_2() { return cAlternatives_2; }
+
 		//value=ID
-		public Assignment getValueAssignment_2() { return cValueAssignment_2; }
+		public Assignment getValueAssignment_2_0() { return cValueAssignment_2_0; }
 
 		//ID
-		public RuleCall getValueIDTerminalRuleCall_2_0() { return cValueIDTerminalRuleCall_2_0; }
+		public RuleCall getValueIDTerminalRuleCall_2_0_0() { return cValueIDTerminalRuleCall_2_0_0; }
+
+		//value=STRING
+		public Assignment getValueAssignment_2_1() { return cValueAssignment_2_1; }
+
+		//STRING
+		public RuleCall getValueSTRINGTerminalRuleCall_2_1_0() { return cValueSTRINGTerminalRuleCall_2_1_0; }
 	}
 
 	public class TextReferenceElements extends AbstractParserRuleElementFinder {
@@ -382,14 +406,17 @@ public class QueryGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cTextKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Keyword cColonKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cValueAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cValueIDTerminalRuleCall_2_0 = (RuleCall)cValueAssignment_2.eContents().get(0);
+		private final Alternatives cAlternatives_2 = (Alternatives)cGroup.eContents().get(2);
+		private final Assignment cValueAssignment_2_0 = (Assignment)cAlternatives_2.eContents().get(0);
+		private final RuleCall cValueIDTerminalRuleCall_2_0_0 = (RuleCall)cValueAssignment_2_0.eContents().get(0);
+		private final Assignment cValueAssignment_2_1 = (Assignment)cAlternatives_2.eContents().get(1);
+		private final RuleCall cValueSTRINGTerminalRuleCall_2_1_0 = (RuleCall)cValueAssignment_2_1.eContents().get(0);
 		
 		//TextReference:
-		//	"text" ":" value=ID;
+		//	"text" ":" (value=ID | value=STRING);
 		public ParserRule getRule() { return rule; }
 
-		//"text" ":" value=ID
+		//"text" ":" (value=ID | value=STRING)
 		public Group getGroup() { return cGroup; }
 
 		//"text"
@@ -398,11 +425,20 @@ public class QueryGrammarAccess extends AbstractGrammarElementFinder {
 		//":"
 		public Keyword getColonKeyword_1() { return cColonKeyword_1; }
 
+		//value=ID | value=STRING
+		public Alternatives getAlternatives_2() { return cAlternatives_2; }
+
 		//value=ID
-		public Assignment getValueAssignment_2() { return cValueAssignment_2; }
+		public Assignment getValueAssignment_2_0() { return cValueAssignment_2_0; }
 
 		//ID
-		public RuleCall getValueIDTerminalRuleCall_2_0() { return cValueIDTerminalRuleCall_2_0; }
+		public RuleCall getValueIDTerminalRuleCall_2_0_0() { return cValueIDTerminalRuleCall_2_0_0; }
+
+		//value=STRING
+		public Assignment getValueAssignment_2_1() { return cValueAssignment_2_1; }
+
+		//STRING
+		public RuleCall getValueSTRINGTerminalRuleCall_2_1_0() { return cValueSTRINGTerminalRuleCall_2_1_0; }
 	}
 
 	public class WordsElements extends AbstractParserRuleElementFinder {
@@ -694,7 +730,7 @@ public class QueryGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//ProjectReference:
-	//	"project" ":" value=ID;
+	//	"project" ":" (value=ID | value=STRING);
 	public ProjectReferenceElements getProjectReferenceAccess() {
 		return (pProjectReference != null) ? pProjectReference : (pProjectReference = new ProjectReferenceElements());
 	}
@@ -704,7 +740,7 @@ public class QueryGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//TaskReference:
-	//	"task" ":" value=ID;
+	//	"task" ":" (value=ID | value=STRING);
 	public TaskReferenceElements getTaskReferenceAccess() {
 		return (pTaskReference != null) ? pTaskReference : (pTaskReference = new TaskReferenceElements());
 	}
@@ -714,7 +750,7 @@ public class QueryGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//TextReference:
-	//	"text" ":" value=ID;
+	//	"text" ":" (value=ID | value=STRING);
 	public TextReferenceElements getTextReferenceAccess() {
 		return (pTextReference != null) ? pTextReference : (pTextReference = new TextReferenceElements());
 	}

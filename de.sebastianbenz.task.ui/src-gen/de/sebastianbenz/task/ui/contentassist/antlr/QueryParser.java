@@ -40,6 +40,9 @@ public class QueryParser extends AbstractContentAssistParser {
 					put(grammarAccess.getUnaryExprAccess().getAlternatives(), "rule__UnaryExpr__Alternatives");
 					put(grammarAccess.getAtomAccess().getAlternatives(), "rule__Atom__Alternatives");
 					put(grammarAccess.getValueAccess().getAlternatives(), "rule__Value__Alternatives");
+					put(grammarAccess.getProjectReferenceAccess().getAlternatives_2(), "rule__ProjectReference__Alternatives_2");
+					put(grammarAccess.getTaskReferenceAccess().getAlternatives_2(), "rule__TaskReference__Alternatives_2");
+					put(grammarAccess.getTextReferenceAccess().getAlternatives_2(), "rule__TextReference__Alternatives_2");
 					put(grammarAccess.getCompEqOperatorAccess().getAlternatives(), "rule__CompEqOperator__Alternatives");
 					put(grammarAccess.getCompOperatorAccess().getAlternatives(), "rule__CompOperator__Alternatives");
 					put(grammarAccess.getQueryAccess().getGroup(), "rule__Query__Group__0");
@@ -67,9 +70,12 @@ public class QueryParser extends AbstractContentAssistParser {
 					put(grammarAccess.getCompExprAccess().getRightAssignment_1_2(), "rule__CompExpr__RightAssignment_1_2");
 					put(grammarAccess.getUnaryExprAccess().getExprAssignment_1_2(), "rule__UnaryExpr__ExprAssignment_1_2");
 					put(grammarAccess.getParenExprAccess().getExprAssignment_2(), "rule__ParenExpr__ExprAssignment_2");
-					put(grammarAccess.getProjectReferenceAccess().getValueAssignment_2(), "rule__ProjectReference__ValueAssignment_2");
-					put(grammarAccess.getTaskReferenceAccess().getValueAssignment_2(), "rule__TaskReference__ValueAssignment_2");
-					put(grammarAccess.getTextReferenceAccess().getValueAssignment_2(), "rule__TextReference__ValueAssignment_2");
+					put(grammarAccess.getProjectReferenceAccess().getValueAssignment_2_0(), "rule__ProjectReference__ValueAssignment_2_0");
+					put(grammarAccess.getProjectReferenceAccess().getValueAssignment_2_1(), "rule__ProjectReference__ValueAssignment_2_1");
+					put(grammarAccess.getTaskReferenceAccess().getValueAssignment_2_0(), "rule__TaskReference__ValueAssignment_2_0");
+					put(grammarAccess.getTaskReferenceAccess().getValueAssignment_2_1(), "rule__TaskReference__ValueAssignment_2_1");
+					put(grammarAccess.getTextReferenceAccess().getValueAssignment_2_0(), "rule__TextReference__ValueAssignment_2_0");
+					put(grammarAccess.getTextReferenceAccess().getValueAssignment_2_1(), "rule__TextReference__ValueAssignment_2_1");
 					put(grammarAccess.getWordsAccess().getValuesAssignment_0(), "rule__Words__ValuesAssignment_0");
 					put(grammarAccess.getWordsAccess().getValuesAssignment_1(), "rule__Words__ValuesAssignment_1");
 					put(grammarAccess.getWordAccess().getValueAssignment(), "rule__Word__ValueAssignment");

@@ -125,6 +125,7 @@ public class TaskItemProvider
 		return super.getText(object);
 	}
 	
+	
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached
 	 * children and by creating a viewer notification, which it passes to {@link #fireNotifyChanged}.

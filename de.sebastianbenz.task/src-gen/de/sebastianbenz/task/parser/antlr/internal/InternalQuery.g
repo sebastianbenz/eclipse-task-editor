@@ -633,11 +633,11 @@ ruleProjectReference returns [EObject current=null]
     {
     	newLeafNode(otherlv_1, grammarAccess.getProjectReferenceAccess().getColonKeyword_1());
     }
-(
+((
 (
 		lv_value_2_0=RULE_ID
 		{
-			newLeafNode(lv_value_2_0, grammarAccess.getProjectReferenceAccess().getValueIDTerminalRuleCall_2_0()); 
+			newLeafNode(lv_value_2_0, grammarAccess.getProjectReferenceAccess().getValueIDTerminalRuleCall_2_0_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -651,7 +651,26 @@ ruleProjectReference returns [EObject current=null]
 	    }
 
 )
-))
+)
+    |(
+(
+		lv_value_3_0=RULE_STRING
+		{
+			newLeafNode(lv_value_3_0, grammarAccess.getProjectReferenceAccess().getValueSTRINGTerminalRuleCall_2_1_0()); 
+		}
+		{
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getProjectReferenceRule());
+	        }
+       		setWithLastConsumed(
+       			$current, 
+       			"value",
+        		lv_value_3_0, 
+        		"STRING");
+	    }
+
+)
+)))
 ;
 
 
@@ -680,11 +699,11 @@ ruleTaskReference returns [EObject current=null]
     {
     	newLeafNode(otherlv_1, grammarAccess.getTaskReferenceAccess().getColonKeyword_1());
     }
-(
+((
 (
 		lv_value_2_0=RULE_ID
 		{
-			newLeafNode(lv_value_2_0, grammarAccess.getTaskReferenceAccess().getValueIDTerminalRuleCall_2_0()); 
+			newLeafNode(lv_value_2_0, grammarAccess.getTaskReferenceAccess().getValueIDTerminalRuleCall_2_0_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -698,7 +717,26 @@ ruleTaskReference returns [EObject current=null]
 	    }
 
 )
-))
+)
+    |(
+(
+		lv_value_3_0=RULE_STRING
+		{
+			newLeafNode(lv_value_3_0, grammarAccess.getTaskReferenceAccess().getValueSTRINGTerminalRuleCall_2_1_0()); 
+		}
+		{
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getTaskReferenceRule());
+	        }
+       		setWithLastConsumed(
+       			$current, 
+       			"value",
+        		lv_value_3_0, 
+        		"STRING");
+	    }
+
+)
+)))
 ;
 
 
@@ -727,11 +765,11 @@ ruleTextReference returns [EObject current=null]
     {
     	newLeafNode(otherlv_1, grammarAccess.getTextReferenceAccess().getColonKeyword_1());
     }
-(
+((
 (
 		lv_value_2_0=RULE_ID
 		{
-			newLeafNode(lv_value_2_0, grammarAccess.getTextReferenceAccess().getValueIDTerminalRuleCall_2_0()); 
+			newLeafNode(lv_value_2_0, grammarAccess.getTextReferenceAccess().getValueIDTerminalRuleCall_2_0_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -745,7 +783,26 @@ ruleTextReference returns [EObject current=null]
 	    }
 
 )
-))
+)
+    |(
+(
+		lv_value_3_0=RULE_STRING
+		{
+			newLeafNode(lv_value_3_0, grammarAccess.getTextReferenceAccess().getValueSTRINGTerminalRuleCall_2_1_0()); 
+		}
+		{
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getTextReferenceRule());
+	        }
+       		setWithLastConsumed(
+       			$current, 
+       			"value",
+        		lv_value_3_0, 
+        		"STRING");
+	    }
+
+)
+)))
 ;
 
 

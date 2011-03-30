@@ -37,7 +37,8 @@ import de.sebastianbenz.task.Content;
 import de.sebastianbenz.task.ui.internal.TaskActivator;
 
 public class TodoView extends ViewPart {
-
+	
+	
 
 	/**
 	 * The ID of the view as specified by the extension.
@@ -64,6 +65,9 @@ public class TodoView extends ViewPart {
 	
 	@Inject
 	private ContentProvider contentProvider;
+	
+	@Inject
+	private TextProposalProvider proposalProvider;
 
 	@Inject
 	private QueryBasedFilter queryBasedViewFilter;
@@ -138,7 +142,10 @@ public class TodoView extends ViewPart {
 		queryText.setText("Enter query (e.g. '@today')...");
 		queryText.setSelection(0, queryText.getText().length());
 		queryText.addModifyListener(queryBasedViewFilter);
+		proposalProvider.configure(queryText);
 	}
+
+	
 
 	protected void configureTree(Composite parent) {
 		viewer = new TreeViewer(parent);

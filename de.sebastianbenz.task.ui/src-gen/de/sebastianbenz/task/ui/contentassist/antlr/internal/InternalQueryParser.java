@@ -1801,21 +1801,21 @@ public class InternalQueryParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__Value__Alternatives"
 
 
-    // $ANTLR start "rule__CompEqOperator__Alternatives"
-    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:643:1: rule__CompEqOperator__Alternatives : ( ( ( '=' ) ) | ( ( '!=' ) ) );
-    public final void rule__CompEqOperator__Alternatives() throws RecognitionException {
+    // $ANTLR start "rule__ProjectReference__Alternatives_2"
+    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:643:1: rule__ProjectReference__Alternatives_2 : ( ( ( rule__ProjectReference__ValueAssignment_2_0 ) ) | ( ( rule__ProjectReference__ValueAssignment_2_1 ) ) );
+    public final void rule__ProjectReference__Alternatives_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:647:1: ( ( ( '=' ) ) | ( ( '!=' ) ) )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:647:1: ( ( ( rule__ProjectReference__ValueAssignment_2_0 ) ) | ( ( rule__ProjectReference__ValueAssignment_2_1 ) ) )
             int alt4=2;
             int LA4_0 = input.LA(1);
 
-            if ( (LA4_0==11) ) {
+            if ( (LA4_0==RULE_ID) ) {
                 alt4=1;
             }
-            else if ( (LA4_0==12) ) {
+            else if ( (LA4_0==RULE_STRING) ) {
                 alt4=2;
             }
             else {
@@ -1826,16 +1826,289 @@ public class InternalQueryParser extends AbstractInternalContentAssistParser {
             }
             switch (alt4) {
                 case 1 :
-                    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:648:1: ( ( '=' ) )
+                    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:648:1: ( ( rule__ProjectReference__ValueAssignment_2_0 ) )
                     {
-                    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:648:1: ( ( '=' ) )
-                    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:649:1: ( '=' )
+                    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:648:1: ( ( rule__ProjectReference__ValueAssignment_2_0 ) )
+                    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:649:1: ( rule__ProjectReference__ValueAssignment_2_0 )
+                    {
+                     before(grammarAccess.getProjectReferenceAccess().getValueAssignment_2_0()); 
+                    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:650:1: ( rule__ProjectReference__ValueAssignment_2_0 )
+                    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:650:2: rule__ProjectReference__ValueAssignment_2_0
+                    {
+                    pushFollow(FOLLOW_rule__ProjectReference__ValueAssignment_2_0_in_rule__ProjectReference__Alternatives_21335);
+                    rule__ProjectReference__ValueAssignment_2_0();
+
+                    state._fsp--;
+
+
+                    }
+
+                     after(grammarAccess.getProjectReferenceAccess().getValueAssignment_2_0()); 
+
+                    }
+
+
+                    }
+                    break;
+                case 2 :
+                    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:654:6: ( ( rule__ProjectReference__ValueAssignment_2_1 ) )
+                    {
+                    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:654:6: ( ( rule__ProjectReference__ValueAssignment_2_1 ) )
+                    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:655:1: ( rule__ProjectReference__ValueAssignment_2_1 )
+                    {
+                     before(grammarAccess.getProjectReferenceAccess().getValueAssignment_2_1()); 
+                    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:656:1: ( rule__ProjectReference__ValueAssignment_2_1 )
+                    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:656:2: rule__ProjectReference__ValueAssignment_2_1
+                    {
+                    pushFollow(FOLLOW_rule__ProjectReference__ValueAssignment_2_1_in_rule__ProjectReference__Alternatives_21353);
+                    rule__ProjectReference__ValueAssignment_2_1();
+
+                    state._fsp--;
+
+
+                    }
+
+                     after(grammarAccess.getProjectReferenceAccess().getValueAssignment_2_1()); 
+
+                    }
+
+
+                    }
+                    break;
+
+            }
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__ProjectReference__Alternatives_2"
+
+
+    // $ANTLR start "rule__TaskReference__Alternatives_2"
+    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:665:1: rule__TaskReference__Alternatives_2 : ( ( ( rule__TaskReference__ValueAssignment_2_0 ) ) | ( ( rule__TaskReference__ValueAssignment_2_1 ) ) );
+    public final void rule__TaskReference__Alternatives_2() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:669:1: ( ( ( rule__TaskReference__ValueAssignment_2_0 ) ) | ( ( rule__TaskReference__ValueAssignment_2_1 ) ) )
+            int alt5=2;
+            int LA5_0 = input.LA(1);
+
+            if ( (LA5_0==RULE_ID) ) {
+                alt5=1;
+            }
+            else if ( (LA5_0==RULE_STRING) ) {
+                alt5=2;
+            }
+            else {
+                NoViableAltException nvae =
+                    new NoViableAltException("", 5, 0, input);
+
+                throw nvae;
+            }
+            switch (alt5) {
+                case 1 :
+                    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:670:1: ( ( rule__TaskReference__ValueAssignment_2_0 ) )
+                    {
+                    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:670:1: ( ( rule__TaskReference__ValueAssignment_2_0 ) )
+                    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:671:1: ( rule__TaskReference__ValueAssignment_2_0 )
+                    {
+                     before(grammarAccess.getTaskReferenceAccess().getValueAssignment_2_0()); 
+                    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:672:1: ( rule__TaskReference__ValueAssignment_2_0 )
+                    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:672:2: rule__TaskReference__ValueAssignment_2_0
+                    {
+                    pushFollow(FOLLOW_rule__TaskReference__ValueAssignment_2_0_in_rule__TaskReference__Alternatives_21386);
+                    rule__TaskReference__ValueAssignment_2_0();
+
+                    state._fsp--;
+
+
+                    }
+
+                     after(grammarAccess.getTaskReferenceAccess().getValueAssignment_2_0()); 
+
+                    }
+
+
+                    }
+                    break;
+                case 2 :
+                    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:676:6: ( ( rule__TaskReference__ValueAssignment_2_1 ) )
+                    {
+                    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:676:6: ( ( rule__TaskReference__ValueAssignment_2_1 ) )
+                    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:677:1: ( rule__TaskReference__ValueAssignment_2_1 )
+                    {
+                     before(grammarAccess.getTaskReferenceAccess().getValueAssignment_2_1()); 
+                    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:678:1: ( rule__TaskReference__ValueAssignment_2_1 )
+                    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:678:2: rule__TaskReference__ValueAssignment_2_1
+                    {
+                    pushFollow(FOLLOW_rule__TaskReference__ValueAssignment_2_1_in_rule__TaskReference__Alternatives_21404);
+                    rule__TaskReference__ValueAssignment_2_1();
+
+                    state._fsp--;
+
+
+                    }
+
+                     after(grammarAccess.getTaskReferenceAccess().getValueAssignment_2_1()); 
+
+                    }
+
+
+                    }
+                    break;
+
+            }
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__TaskReference__Alternatives_2"
+
+
+    // $ANTLR start "rule__TextReference__Alternatives_2"
+    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:687:1: rule__TextReference__Alternatives_2 : ( ( ( rule__TextReference__ValueAssignment_2_0 ) ) | ( ( rule__TextReference__ValueAssignment_2_1 ) ) );
+    public final void rule__TextReference__Alternatives_2() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:691:1: ( ( ( rule__TextReference__ValueAssignment_2_0 ) ) | ( ( rule__TextReference__ValueAssignment_2_1 ) ) )
+            int alt6=2;
+            int LA6_0 = input.LA(1);
+
+            if ( (LA6_0==RULE_ID) ) {
+                alt6=1;
+            }
+            else if ( (LA6_0==RULE_STRING) ) {
+                alt6=2;
+            }
+            else {
+                NoViableAltException nvae =
+                    new NoViableAltException("", 6, 0, input);
+
+                throw nvae;
+            }
+            switch (alt6) {
+                case 1 :
+                    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:692:1: ( ( rule__TextReference__ValueAssignment_2_0 ) )
+                    {
+                    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:692:1: ( ( rule__TextReference__ValueAssignment_2_0 ) )
+                    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:693:1: ( rule__TextReference__ValueAssignment_2_0 )
+                    {
+                     before(grammarAccess.getTextReferenceAccess().getValueAssignment_2_0()); 
+                    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:694:1: ( rule__TextReference__ValueAssignment_2_0 )
+                    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:694:2: rule__TextReference__ValueAssignment_2_0
+                    {
+                    pushFollow(FOLLOW_rule__TextReference__ValueAssignment_2_0_in_rule__TextReference__Alternatives_21437);
+                    rule__TextReference__ValueAssignment_2_0();
+
+                    state._fsp--;
+
+
+                    }
+
+                     after(grammarAccess.getTextReferenceAccess().getValueAssignment_2_0()); 
+
+                    }
+
+
+                    }
+                    break;
+                case 2 :
+                    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:698:6: ( ( rule__TextReference__ValueAssignment_2_1 ) )
+                    {
+                    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:698:6: ( ( rule__TextReference__ValueAssignment_2_1 ) )
+                    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:699:1: ( rule__TextReference__ValueAssignment_2_1 )
+                    {
+                     before(grammarAccess.getTextReferenceAccess().getValueAssignment_2_1()); 
+                    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:700:1: ( rule__TextReference__ValueAssignment_2_1 )
+                    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:700:2: rule__TextReference__ValueAssignment_2_1
+                    {
+                    pushFollow(FOLLOW_rule__TextReference__ValueAssignment_2_1_in_rule__TextReference__Alternatives_21455);
+                    rule__TextReference__ValueAssignment_2_1();
+
+                    state._fsp--;
+
+
+                    }
+
+                     after(grammarAccess.getTextReferenceAccess().getValueAssignment_2_1()); 
+
+                    }
+
+
+                    }
+                    break;
+
+            }
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__TextReference__Alternatives_2"
+
+
+    // $ANTLR start "rule__CompEqOperator__Alternatives"
+    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:709:1: rule__CompEqOperator__Alternatives : ( ( ( '=' ) ) | ( ( '!=' ) ) );
+    public final void rule__CompEqOperator__Alternatives() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:713:1: ( ( ( '=' ) ) | ( ( '!=' ) ) )
+            int alt7=2;
+            int LA7_0 = input.LA(1);
+
+            if ( (LA7_0==11) ) {
+                alt7=1;
+            }
+            else if ( (LA7_0==12) ) {
+                alt7=2;
+            }
+            else {
+                NoViableAltException nvae =
+                    new NoViableAltException("", 7, 0, input);
+
+                throw nvae;
+            }
+            switch (alt7) {
+                case 1 :
+                    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:714:1: ( ( '=' ) )
+                    {
+                    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:714:1: ( ( '=' ) )
+                    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:715:1: ( '=' )
                     {
                      before(grammarAccess.getCompEqOperatorAccess().getEQUALEnumLiteralDeclaration_0()); 
-                    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:650:1: ( '=' )
-                    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:650:3: '='
+                    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:716:1: ( '=' )
+                    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:716:3: '='
                     {
-                    match(input,11,FOLLOW_11_in_rule__CompEqOperator__Alternatives1336); 
+                    match(input,11,FOLLOW_11_in_rule__CompEqOperator__Alternatives1489); 
 
                     }
 
@@ -1847,16 +2120,16 @@ public class InternalQueryParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 2 :
-                    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:655:6: ( ( '!=' ) )
+                    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:721:6: ( ( '!=' ) )
                     {
-                    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:655:6: ( ( '!=' ) )
-                    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:656:1: ( '!=' )
+                    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:721:6: ( ( '!=' ) )
+                    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:722:1: ( '!=' )
                     {
                      before(grammarAccess.getCompEqOperatorAccess().getNOT_EQUALEnumLiteralDeclaration_1()); 
-                    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:657:1: ( '!=' )
-                    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:657:3: '!='
+                    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:723:1: ( '!=' )
+                    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:723:3: '!='
                     {
-                    match(input,12,FOLLOW_12_in_rule__CompEqOperator__Alternatives1357); 
+                    match(input,12,FOLLOW_12_in_rule__CompEqOperator__Alternatives1510); 
 
                     }
 
@@ -1885,54 +2158,54 @@ public class InternalQueryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__CompOperator__Alternatives"
-    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:667:1: rule__CompOperator__Alternatives : ( ( ( '<=' ) ) | ( ( '<' ) ) | ( ( '>=' ) ) | ( ( '>' ) ) );
+    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:733:1: rule__CompOperator__Alternatives : ( ( ( '<=' ) ) | ( ( '<' ) ) | ( ( '>=' ) ) | ( ( '>' ) ) );
     public final void rule__CompOperator__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:671:1: ( ( ( '<=' ) ) | ( ( '<' ) ) | ( ( '>=' ) ) | ( ( '>' ) ) )
-            int alt5=4;
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:737:1: ( ( ( '<=' ) ) | ( ( '<' ) ) | ( ( '>=' ) ) | ( ( '>' ) ) )
+            int alt8=4;
             switch ( input.LA(1) ) {
             case 13:
                 {
-                alt5=1;
+                alt8=1;
                 }
                 break;
             case 14:
                 {
-                alt5=2;
+                alt8=2;
                 }
                 break;
             case 15:
                 {
-                alt5=3;
+                alt8=3;
                 }
                 break;
             case 16:
                 {
-                alt5=4;
+                alt8=4;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 5, 0, input);
+                    new NoViableAltException("", 8, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt5) {
+            switch (alt8) {
                 case 1 :
-                    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:672:1: ( ( '<=' ) )
+                    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:738:1: ( ( '<=' ) )
                     {
-                    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:672:1: ( ( '<=' ) )
-                    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:673:1: ( '<=' )
+                    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:738:1: ( ( '<=' ) )
+                    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:739:1: ( '<=' )
                     {
                      before(grammarAccess.getCompOperatorAccess().getLESS_EQUALEnumLiteralDeclaration_0()); 
-                    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:674:1: ( '<=' )
-                    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:674:3: '<='
+                    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:740:1: ( '<=' )
+                    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:740:3: '<='
                     {
-                    match(input,13,FOLLOW_13_in_rule__CompOperator__Alternatives1393); 
+                    match(input,13,FOLLOW_13_in_rule__CompOperator__Alternatives1546); 
 
                     }
 
@@ -1944,16 +2217,16 @@ public class InternalQueryParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 2 :
-                    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:679:6: ( ( '<' ) )
+                    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:745:6: ( ( '<' ) )
                     {
-                    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:679:6: ( ( '<' ) )
-                    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:680:1: ( '<' )
+                    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:745:6: ( ( '<' ) )
+                    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:746:1: ( '<' )
                     {
                      before(grammarAccess.getCompOperatorAccess().getLESSEnumLiteralDeclaration_1()); 
-                    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:681:1: ( '<' )
-                    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:681:3: '<'
+                    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:747:1: ( '<' )
+                    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:747:3: '<'
                     {
-                    match(input,14,FOLLOW_14_in_rule__CompOperator__Alternatives1414); 
+                    match(input,14,FOLLOW_14_in_rule__CompOperator__Alternatives1567); 
 
                     }
 
@@ -1965,16 +2238,16 @@ public class InternalQueryParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 3 :
-                    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:686:6: ( ( '>=' ) )
+                    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:752:6: ( ( '>=' ) )
                     {
-                    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:686:6: ( ( '>=' ) )
-                    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:687:1: ( '>=' )
+                    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:752:6: ( ( '>=' ) )
+                    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:753:1: ( '>=' )
                     {
                      before(grammarAccess.getCompOperatorAccess().getGREATER_EQUALEnumLiteralDeclaration_2()); 
-                    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:688:1: ( '>=' )
-                    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:688:3: '>='
+                    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:754:1: ( '>=' )
+                    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:754:3: '>='
                     {
-                    match(input,15,FOLLOW_15_in_rule__CompOperator__Alternatives1435); 
+                    match(input,15,FOLLOW_15_in_rule__CompOperator__Alternatives1588); 
 
                     }
 
@@ -1986,16 +2259,16 @@ public class InternalQueryParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 4 :
-                    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:693:6: ( ( '>' ) )
+                    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:759:6: ( ( '>' ) )
                     {
-                    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:693:6: ( ( '>' ) )
-                    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:694:1: ( '>' )
+                    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:759:6: ( ( '>' ) )
+                    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:760:1: ( '>' )
                     {
                      before(grammarAccess.getCompOperatorAccess().getGREATEREnumLiteralDeclaration_3()); 
-                    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:695:1: ( '>' )
-                    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:695:3: '>'
+                    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:761:1: ( '>' )
+                    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:761:3: '>'
                     {
-                    match(input,16,FOLLOW_16_in_rule__CompOperator__Alternatives1456); 
+                    match(input,16,FOLLOW_16_in_rule__CompOperator__Alternatives1609); 
 
                     }
 
@@ -2024,21 +2297,21 @@ public class InternalQueryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Query__Group__0"
-    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:707:1: rule__Query__Group__0 : rule__Query__Group__0__Impl rule__Query__Group__1 ;
+    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:773:1: rule__Query__Group__0 : rule__Query__Group__0__Impl rule__Query__Group__1 ;
     public final void rule__Query__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:711:1: ( rule__Query__Group__0__Impl rule__Query__Group__1 )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:712:2: rule__Query__Group__0__Impl rule__Query__Group__1
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:777:1: ( rule__Query__Group__0__Impl rule__Query__Group__1 )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:778:2: rule__Query__Group__0__Impl rule__Query__Group__1
             {
-            pushFollow(FOLLOW_rule__Query__Group__0__Impl_in_rule__Query__Group__01489);
+            pushFollow(FOLLOW_rule__Query__Group__0__Impl_in_rule__Query__Group__01642);
             rule__Query__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Query__Group__1_in_rule__Query__Group__01492);
+            pushFollow(FOLLOW_rule__Query__Group__1_in_rule__Query__Group__01645);
             rule__Query__Group__1();
 
             state._fsp--;
@@ -2062,21 +2335,21 @@ public class InternalQueryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Query__Group__0__Impl"
-    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:719:1: rule__Query__Group__0__Impl : ( () ) ;
+    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:785:1: rule__Query__Group__0__Impl : ( () ) ;
     public final void rule__Query__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:723:1: ( ( () ) )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:724:1: ( () )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:789:1: ( ( () ) )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:790:1: ( () )
             {
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:724:1: ( () )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:725:1: ()
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:790:1: ( () )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:791:1: ()
             {
              before(grammarAccess.getQueryAccess().getQueryAction_0()); 
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:726:1: ()
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:728:1: 
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:792:1: ()
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:794:1: 
             {
             }
 
@@ -2099,16 +2372,16 @@ public class InternalQueryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Query__Group__1"
-    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:738:1: rule__Query__Group__1 : rule__Query__Group__1__Impl ;
+    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:804:1: rule__Query__Group__1 : rule__Query__Group__1__Impl ;
     public final void rule__Query__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:742:1: ( rule__Query__Group__1__Impl )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:743:2: rule__Query__Group__1__Impl
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:808:1: ( rule__Query__Group__1__Impl )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:809:2: rule__Query__Group__1__Impl
             {
-            pushFollow(FOLLOW_rule__Query__Group__1__Impl_in_rule__Query__Group__11550);
+            pushFollow(FOLLOW_rule__Query__Group__1__Impl_in_rule__Query__Group__11703);
             rule__Query__Group__1__Impl();
 
             state._fsp--;
@@ -2132,31 +2405,31 @@ public class InternalQueryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Query__Group__1__Impl"
-    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:749:1: rule__Query__Group__1__Impl : ( ( rule__Query__ExpressionAssignment_1 )? ) ;
+    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:815:1: rule__Query__Group__1__Impl : ( ( rule__Query__ExpressionAssignment_1 )? ) ;
     public final void rule__Query__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:753:1: ( ( ( rule__Query__ExpressionAssignment_1 )? ) )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:754:1: ( ( rule__Query__ExpressionAssignment_1 )? )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:819:1: ( ( ( rule__Query__ExpressionAssignment_1 )? ) )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:820:1: ( ( rule__Query__ExpressionAssignment_1 )? )
             {
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:754:1: ( ( rule__Query__ExpressionAssignment_1 )? )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:755:1: ( rule__Query__ExpressionAssignment_1 )?
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:820:1: ( ( rule__Query__ExpressionAssignment_1 )? )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:821:1: ( rule__Query__ExpressionAssignment_1 )?
             {
              before(grammarAccess.getQueryAccess().getExpressionAssignment_1()); 
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:756:1: ( rule__Query__ExpressionAssignment_1 )?
-            int alt6=2;
-            int LA6_0 = input.LA(1);
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:822:1: ( rule__Query__ExpressionAssignment_1 )?
+            int alt9=2;
+            int LA9_0 = input.LA(1);
 
-            if ( ((LA6_0>=RULE_ID && LA6_0<=RULE_STRING)||(LA6_0>=19 && LA6_0<=20)||LA6_0==22||(LA6_0>=24 && LA6_0<=26)) ) {
-                alt6=1;
+            if ( ((LA9_0>=RULE_ID && LA9_0<=RULE_STRING)||(LA9_0>=19 && LA9_0<=20)||LA9_0==22||(LA9_0>=24 && LA9_0<=26)) ) {
+                alt9=1;
             }
-            switch (alt6) {
+            switch (alt9) {
                 case 1 :
-                    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:756:2: rule__Query__ExpressionAssignment_1
+                    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:822:2: rule__Query__ExpressionAssignment_1
                     {
-                    pushFollow(FOLLOW_rule__Query__ExpressionAssignment_1_in_rule__Query__Group__1__Impl1577);
+                    pushFollow(FOLLOW_rule__Query__ExpressionAssignment_1_in_rule__Query__Group__1__Impl1730);
                     rule__Query__ExpressionAssignment_1();
 
                     state._fsp--;
@@ -2190,21 +2463,21 @@ public class InternalQueryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__OrExpr__Group__0"
-    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:770:1: rule__OrExpr__Group__0 : rule__OrExpr__Group__0__Impl rule__OrExpr__Group__1 ;
+    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:836:1: rule__OrExpr__Group__0 : rule__OrExpr__Group__0__Impl rule__OrExpr__Group__1 ;
     public final void rule__OrExpr__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:774:1: ( rule__OrExpr__Group__0__Impl rule__OrExpr__Group__1 )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:775:2: rule__OrExpr__Group__0__Impl rule__OrExpr__Group__1
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:840:1: ( rule__OrExpr__Group__0__Impl rule__OrExpr__Group__1 )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:841:2: rule__OrExpr__Group__0__Impl rule__OrExpr__Group__1
             {
-            pushFollow(FOLLOW_rule__OrExpr__Group__0__Impl_in_rule__OrExpr__Group__01612);
+            pushFollow(FOLLOW_rule__OrExpr__Group__0__Impl_in_rule__OrExpr__Group__01765);
             rule__OrExpr__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__OrExpr__Group__1_in_rule__OrExpr__Group__01615);
+            pushFollow(FOLLOW_rule__OrExpr__Group__1_in_rule__OrExpr__Group__01768);
             rule__OrExpr__Group__1();
 
             state._fsp--;
@@ -2228,20 +2501,20 @@ public class InternalQueryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__OrExpr__Group__0__Impl"
-    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:782:1: rule__OrExpr__Group__0__Impl : ( ruleAndExpr ) ;
+    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:848:1: rule__OrExpr__Group__0__Impl : ( ruleAndExpr ) ;
     public final void rule__OrExpr__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:786:1: ( ( ruleAndExpr ) )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:787:1: ( ruleAndExpr )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:852:1: ( ( ruleAndExpr ) )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:853:1: ( ruleAndExpr )
             {
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:787:1: ( ruleAndExpr )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:788:1: ruleAndExpr
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:853:1: ( ruleAndExpr )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:854:1: ruleAndExpr
             {
              before(grammarAccess.getOrExprAccess().getAndExprParserRuleCall_0()); 
-            pushFollow(FOLLOW_ruleAndExpr_in_rule__OrExpr__Group__0__Impl1642);
+            pushFollow(FOLLOW_ruleAndExpr_in_rule__OrExpr__Group__0__Impl1795);
             ruleAndExpr();
 
             state._fsp--;
@@ -2269,16 +2542,16 @@ public class InternalQueryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__OrExpr__Group__1"
-    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:799:1: rule__OrExpr__Group__1 : rule__OrExpr__Group__1__Impl ;
+    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:865:1: rule__OrExpr__Group__1 : rule__OrExpr__Group__1__Impl ;
     public final void rule__OrExpr__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:803:1: ( rule__OrExpr__Group__1__Impl )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:804:2: rule__OrExpr__Group__1__Impl
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:869:1: ( rule__OrExpr__Group__1__Impl )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:870:2: rule__OrExpr__Group__1__Impl
             {
-            pushFollow(FOLLOW_rule__OrExpr__Group__1__Impl_in_rule__OrExpr__Group__11671);
+            pushFollow(FOLLOW_rule__OrExpr__Group__1__Impl_in_rule__OrExpr__Group__11824);
             rule__OrExpr__Group__1__Impl();
 
             state._fsp--;
@@ -2302,35 +2575,35 @@ public class InternalQueryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__OrExpr__Group__1__Impl"
-    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:810:1: rule__OrExpr__Group__1__Impl : ( ( rule__OrExpr__Group_1__0 )* ) ;
+    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:876:1: rule__OrExpr__Group__1__Impl : ( ( rule__OrExpr__Group_1__0 )* ) ;
     public final void rule__OrExpr__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:814:1: ( ( ( rule__OrExpr__Group_1__0 )* ) )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:815:1: ( ( rule__OrExpr__Group_1__0 )* )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:880:1: ( ( ( rule__OrExpr__Group_1__0 )* ) )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:881:1: ( ( rule__OrExpr__Group_1__0 )* )
             {
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:815:1: ( ( rule__OrExpr__Group_1__0 )* )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:816:1: ( rule__OrExpr__Group_1__0 )*
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:881:1: ( ( rule__OrExpr__Group_1__0 )* )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:882:1: ( rule__OrExpr__Group_1__0 )*
             {
              before(grammarAccess.getOrExprAccess().getGroup_1()); 
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:817:1: ( rule__OrExpr__Group_1__0 )*
-            loop7:
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:883:1: ( rule__OrExpr__Group_1__0 )*
+            loop10:
             do {
-                int alt7=2;
-                int LA7_0 = input.LA(1);
+                int alt10=2;
+                int LA10_0 = input.LA(1);
 
-                if ( (LA7_0==17) ) {
-                    alt7=1;
+                if ( (LA10_0==17) ) {
+                    alt10=1;
                 }
 
 
-                switch (alt7) {
+                switch (alt10) {
             	case 1 :
-            	    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:817:2: rule__OrExpr__Group_1__0
+            	    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:883:2: rule__OrExpr__Group_1__0
             	    {
-            	    pushFollow(FOLLOW_rule__OrExpr__Group_1__0_in_rule__OrExpr__Group__1__Impl1698);
+            	    pushFollow(FOLLOW_rule__OrExpr__Group_1__0_in_rule__OrExpr__Group__1__Impl1851);
             	    rule__OrExpr__Group_1__0();
 
             	    state._fsp--;
@@ -2340,7 +2613,7 @@ public class InternalQueryParser extends AbstractInternalContentAssistParser {
             	    break;
 
             	default :
-            	    break loop7;
+            	    break loop10;
                 }
             } while (true);
 
@@ -2367,21 +2640,21 @@ public class InternalQueryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__OrExpr__Group_1__0"
-    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:831:1: rule__OrExpr__Group_1__0 : rule__OrExpr__Group_1__0__Impl rule__OrExpr__Group_1__1 ;
+    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:897:1: rule__OrExpr__Group_1__0 : rule__OrExpr__Group_1__0__Impl rule__OrExpr__Group_1__1 ;
     public final void rule__OrExpr__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:835:1: ( rule__OrExpr__Group_1__0__Impl rule__OrExpr__Group_1__1 )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:836:2: rule__OrExpr__Group_1__0__Impl rule__OrExpr__Group_1__1
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:901:1: ( rule__OrExpr__Group_1__0__Impl rule__OrExpr__Group_1__1 )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:902:2: rule__OrExpr__Group_1__0__Impl rule__OrExpr__Group_1__1
             {
-            pushFollow(FOLLOW_rule__OrExpr__Group_1__0__Impl_in_rule__OrExpr__Group_1__01733);
+            pushFollow(FOLLOW_rule__OrExpr__Group_1__0__Impl_in_rule__OrExpr__Group_1__01886);
             rule__OrExpr__Group_1__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__OrExpr__Group_1__1_in_rule__OrExpr__Group_1__01736);
+            pushFollow(FOLLOW_rule__OrExpr__Group_1__1_in_rule__OrExpr__Group_1__01889);
             rule__OrExpr__Group_1__1();
 
             state._fsp--;
@@ -2405,21 +2678,21 @@ public class InternalQueryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__OrExpr__Group_1__0__Impl"
-    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:843:1: rule__OrExpr__Group_1__0__Impl : ( () ) ;
+    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:909:1: rule__OrExpr__Group_1__0__Impl : ( () ) ;
     public final void rule__OrExpr__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:847:1: ( ( () ) )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:848:1: ( () )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:913:1: ( ( () ) )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:914:1: ( () )
             {
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:848:1: ( () )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:849:1: ()
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:914:1: ( () )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:915:1: ()
             {
              before(grammarAccess.getOrExprAccess().getOrExprLeftAction_1_0()); 
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:850:1: ()
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:852:1: 
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:916:1: ()
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:918:1: 
             {
             }
 
@@ -2442,21 +2715,21 @@ public class InternalQueryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__OrExpr__Group_1__1"
-    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:862:1: rule__OrExpr__Group_1__1 : rule__OrExpr__Group_1__1__Impl rule__OrExpr__Group_1__2 ;
+    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:928:1: rule__OrExpr__Group_1__1 : rule__OrExpr__Group_1__1__Impl rule__OrExpr__Group_1__2 ;
     public final void rule__OrExpr__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:866:1: ( rule__OrExpr__Group_1__1__Impl rule__OrExpr__Group_1__2 )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:867:2: rule__OrExpr__Group_1__1__Impl rule__OrExpr__Group_1__2
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:932:1: ( rule__OrExpr__Group_1__1__Impl rule__OrExpr__Group_1__2 )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:933:2: rule__OrExpr__Group_1__1__Impl rule__OrExpr__Group_1__2
             {
-            pushFollow(FOLLOW_rule__OrExpr__Group_1__1__Impl_in_rule__OrExpr__Group_1__11794);
+            pushFollow(FOLLOW_rule__OrExpr__Group_1__1__Impl_in_rule__OrExpr__Group_1__11947);
             rule__OrExpr__Group_1__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__OrExpr__Group_1__2_in_rule__OrExpr__Group_1__11797);
+            pushFollow(FOLLOW_rule__OrExpr__Group_1__2_in_rule__OrExpr__Group_1__11950);
             rule__OrExpr__Group_1__2();
 
             state._fsp--;
@@ -2480,20 +2753,20 @@ public class InternalQueryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__OrExpr__Group_1__1__Impl"
-    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:874:1: rule__OrExpr__Group_1__1__Impl : ( 'or' ) ;
+    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:940:1: rule__OrExpr__Group_1__1__Impl : ( 'or' ) ;
     public final void rule__OrExpr__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:878:1: ( ( 'or' ) )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:879:1: ( 'or' )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:944:1: ( ( 'or' ) )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:945:1: ( 'or' )
             {
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:879:1: ( 'or' )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:880:1: 'or'
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:945:1: ( 'or' )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:946:1: 'or'
             {
              before(grammarAccess.getOrExprAccess().getOrKeyword_1_1()); 
-            match(input,17,FOLLOW_17_in_rule__OrExpr__Group_1__1__Impl1825); 
+            match(input,17,FOLLOW_17_in_rule__OrExpr__Group_1__1__Impl1978); 
              after(grammarAccess.getOrExprAccess().getOrKeyword_1_1()); 
 
             }
@@ -2517,16 +2790,16 @@ public class InternalQueryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__OrExpr__Group_1__2"
-    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:893:1: rule__OrExpr__Group_1__2 : rule__OrExpr__Group_1__2__Impl ;
+    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:959:1: rule__OrExpr__Group_1__2 : rule__OrExpr__Group_1__2__Impl ;
     public final void rule__OrExpr__Group_1__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:897:1: ( rule__OrExpr__Group_1__2__Impl )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:898:2: rule__OrExpr__Group_1__2__Impl
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:963:1: ( rule__OrExpr__Group_1__2__Impl )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:964:2: rule__OrExpr__Group_1__2__Impl
             {
-            pushFollow(FOLLOW_rule__OrExpr__Group_1__2__Impl_in_rule__OrExpr__Group_1__21856);
+            pushFollow(FOLLOW_rule__OrExpr__Group_1__2__Impl_in_rule__OrExpr__Group_1__22009);
             rule__OrExpr__Group_1__2__Impl();
 
             state._fsp--;
@@ -2550,23 +2823,23 @@ public class InternalQueryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__OrExpr__Group_1__2__Impl"
-    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:904:1: rule__OrExpr__Group_1__2__Impl : ( ( rule__OrExpr__RightAssignment_1_2 ) ) ;
+    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:970:1: rule__OrExpr__Group_1__2__Impl : ( ( rule__OrExpr__RightAssignment_1_2 ) ) ;
     public final void rule__OrExpr__Group_1__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:908:1: ( ( ( rule__OrExpr__RightAssignment_1_2 ) ) )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:909:1: ( ( rule__OrExpr__RightAssignment_1_2 ) )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:974:1: ( ( ( rule__OrExpr__RightAssignment_1_2 ) ) )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:975:1: ( ( rule__OrExpr__RightAssignment_1_2 ) )
             {
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:909:1: ( ( rule__OrExpr__RightAssignment_1_2 ) )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:910:1: ( rule__OrExpr__RightAssignment_1_2 )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:975:1: ( ( rule__OrExpr__RightAssignment_1_2 ) )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:976:1: ( rule__OrExpr__RightAssignment_1_2 )
             {
              before(grammarAccess.getOrExprAccess().getRightAssignment_1_2()); 
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:911:1: ( rule__OrExpr__RightAssignment_1_2 )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:911:2: rule__OrExpr__RightAssignment_1_2
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:977:1: ( rule__OrExpr__RightAssignment_1_2 )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:977:2: rule__OrExpr__RightAssignment_1_2
             {
-            pushFollow(FOLLOW_rule__OrExpr__RightAssignment_1_2_in_rule__OrExpr__Group_1__2__Impl1883);
+            pushFollow(FOLLOW_rule__OrExpr__RightAssignment_1_2_in_rule__OrExpr__Group_1__2__Impl2036);
             rule__OrExpr__RightAssignment_1_2();
 
             state._fsp--;
@@ -2597,21 +2870,21 @@ public class InternalQueryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AndExpr__Group__0"
-    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:927:1: rule__AndExpr__Group__0 : rule__AndExpr__Group__0__Impl rule__AndExpr__Group__1 ;
+    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:993:1: rule__AndExpr__Group__0 : rule__AndExpr__Group__0__Impl rule__AndExpr__Group__1 ;
     public final void rule__AndExpr__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:931:1: ( rule__AndExpr__Group__0__Impl rule__AndExpr__Group__1 )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:932:2: rule__AndExpr__Group__0__Impl rule__AndExpr__Group__1
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:997:1: ( rule__AndExpr__Group__0__Impl rule__AndExpr__Group__1 )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:998:2: rule__AndExpr__Group__0__Impl rule__AndExpr__Group__1
             {
-            pushFollow(FOLLOW_rule__AndExpr__Group__0__Impl_in_rule__AndExpr__Group__01919);
+            pushFollow(FOLLOW_rule__AndExpr__Group__0__Impl_in_rule__AndExpr__Group__02072);
             rule__AndExpr__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__AndExpr__Group__1_in_rule__AndExpr__Group__01922);
+            pushFollow(FOLLOW_rule__AndExpr__Group__1_in_rule__AndExpr__Group__02075);
             rule__AndExpr__Group__1();
 
             state._fsp--;
@@ -2635,20 +2908,20 @@ public class InternalQueryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AndExpr__Group__0__Impl"
-    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:939:1: rule__AndExpr__Group__0__Impl : ( ruleCompEqExpr ) ;
+    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1005:1: rule__AndExpr__Group__0__Impl : ( ruleCompEqExpr ) ;
     public final void rule__AndExpr__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:943:1: ( ( ruleCompEqExpr ) )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:944:1: ( ruleCompEqExpr )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1009:1: ( ( ruleCompEqExpr ) )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1010:1: ( ruleCompEqExpr )
             {
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:944:1: ( ruleCompEqExpr )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:945:1: ruleCompEqExpr
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1010:1: ( ruleCompEqExpr )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1011:1: ruleCompEqExpr
             {
              before(grammarAccess.getAndExprAccess().getCompEqExprParserRuleCall_0()); 
-            pushFollow(FOLLOW_ruleCompEqExpr_in_rule__AndExpr__Group__0__Impl1949);
+            pushFollow(FOLLOW_ruleCompEqExpr_in_rule__AndExpr__Group__0__Impl2102);
             ruleCompEqExpr();
 
             state._fsp--;
@@ -2676,16 +2949,16 @@ public class InternalQueryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AndExpr__Group__1"
-    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:956:1: rule__AndExpr__Group__1 : rule__AndExpr__Group__1__Impl ;
+    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1022:1: rule__AndExpr__Group__1 : rule__AndExpr__Group__1__Impl ;
     public final void rule__AndExpr__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:960:1: ( rule__AndExpr__Group__1__Impl )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:961:2: rule__AndExpr__Group__1__Impl
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1026:1: ( rule__AndExpr__Group__1__Impl )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1027:2: rule__AndExpr__Group__1__Impl
             {
-            pushFollow(FOLLOW_rule__AndExpr__Group__1__Impl_in_rule__AndExpr__Group__11978);
+            pushFollow(FOLLOW_rule__AndExpr__Group__1__Impl_in_rule__AndExpr__Group__12131);
             rule__AndExpr__Group__1__Impl();
 
             state._fsp--;
@@ -2709,35 +2982,35 @@ public class InternalQueryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AndExpr__Group__1__Impl"
-    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:967:1: rule__AndExpr__Group__1__Impl : ( ( rule__AndExpr__Group_1__0 )* ) ;
+    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1033:1: rule__AndExpr__Group__1__Impl : ( ( rule__AndExpr__Group_1__0 )* ) ;
     public final void rule__AndExpr__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:971:1: ( ( ( rule__AndExpr__Group_1__0 )* ) )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:972:1: ( ( rule__AndExpr__Group_1__0 )* )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1037:1: ( ( ( rule__AndExpr__Group_1__0 )* ) )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1038:1: ( ( rule__AndExpr__Group_1__0 )* )
             {
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:972:1: ( ( rule__AndExpr__Group_1__0 )* )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:973:1: ( rule__AndExpr__Group_1__0 )*
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1038:1: ( ( rule__AndExpr__Group_1__0 )* )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1039:1: ( rule__AndExpr__Group_1__0 )*
             {
              before(grammarAccess.getAndExprAccess().getGroup_1()); 
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:974:1: ( rule__AndExpr__Group_1__0 )*
-            loop8:
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1040:1: ( rule__AndExpr__Group_1__0 )*
+            loop11:
             do {
-                int alt8=2;
-                int LA8_0 = input.LA(1);
+                int alt11=2;
+                int LA11_0 = input.LA(1);
 
-                if ( (LA8_0==18) ) {
-                    alt8=1;
+                if ( (LA11_0==18) ) {
+                    alt11=1;
                 }
 
 
-                switch (alt8) {
+                switch (alt11) {
             	case 1 :
-            	    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:974:2: rule__AndExpr__Group_1__0
+            	    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1040:2: rule__AndExpr__Group_1__0
             	    {
-            	    pushFollow(FOLLOW_rule__AndExpr__Group_1__0_in_rule__AndExpr__Group__1__Impl2005);
+            	    pushFollow(FOLLOW_rule__AndExpr__Group_1__0_in_rule__AndExpr__Group__1__Impl2158);
             	    rule__AndExpr__Group_1__0();
 
             	    state._fsp--;
@@ -2747,7 +3020,7 @@ public class InternalQueryParser extends AbstractInternalContentAssistParser {
             	    break;
 
             	default :
-            	    break loop8;
+            	    break loop11;
                 }
             } while (true);
 
@@ -2774,21 +3047,21 @@ public class InternalQueryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AndExpr__Group_1__0"
-    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:988:1: rule__AndExpr__Group_1__0 : rule__AndExpr__Group_1__0__Impl rule__AndExpr__Group_1__1 ;
+    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1054:1: rule__AndExpr__Group_1__0 : rule__AndExpr__Group_1__0__Impl rule__AndExpr__Group_1__1 ;
     public final void rule__AndExpr__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:992:1: ( rule__AndExpr__Group_1__0__Impl rule__AndExpr__Group_1__1 )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:993:2: rule__AndExpr__Group_1__0__Impl rule__AndExpr__Group_1__1
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1058:1: ( rule__AndExpr__Group_1__0__Impl rule__AndExpr__Group_1__1 )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1059:2: rule__AndExpr__Group_1__0__Impl rule__AndExpr__Group_1__1
             {
-            pushFollow(FOLLOW_rule__AndExpr__Group_1__0__Impl_in_rule__AndExpr__Group_1__02040);
+            pushFollow(FOLLOW_rule__AndExpr__Group_1__0__Impl_in_rule__AndExpr__Group_1__02193);
             rule__AndExpr__Group_1__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__AndExpr__Group_1__1_in_rule__AndExpr__Group_1__02043);
+            pushFollow(FOLLOW_rule__AndExpr__Group_1__1_in_rule__AndExpr__Group_1__02196);
             rule__AndExpr__Group_1__1();
 
             state._fsp--;
@@ -2812,21 +3085,21 @@ public class InternalQueryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AndExpr__Group_1__0__Impl"
-    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1000:1: rule__AndExpr__Group_1__0__Impl : ( () ) ;
+    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1066:1: rule__AndExpr__Group_1__0__Impl : ( () ) ;
     public final void rule__AndExpr__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1004:1: ( ( () ) )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1005:1: ( () )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1070:1: ( ( () ) )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1071:1: ( () )
             {
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1005:1: ( () )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1006:1: ()
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1071:1: ( () )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1072:1: ()
             {
              before(grammarAccess.getAndExprAccess().getAndExprLeftAction_1_0()); 
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1007:1: ()
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1009:1: 
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1073:1: ()
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1075:1: 
             {
             }
 
@@ -2849,21 +3122,21 @@ public class InternalQueryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AndExpr__Group_1__1"
-    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1019:1: rule__AndExpr__Group_1__1 : rule__AndExpr__Group_1__1__Impl rule__AndExpr__Group_1__2 ;
+    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1085:1: rule__AndExpr__Group_1__1 : rule__AndExpr__Group_1__1__Impl rule__AndExpr__Group_1__2 ;
     public final void rule__AndExpr__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1023:1: ( rule__AndExpr__Group_1__1__Impl rule__AndExpr__Group_1__2 )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1024:2: rule__AndExpr__Group_1__1__Impl rule__AndExpr__Group_1__2
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1089:1: ( rule__AndExpr__Group_1__1__Impl rule__AndExpr__Group_1__2 )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1090:2: rule__AndExpr__Group_1__1__Impl rule__AndExpr__Group_1__2
             {
-            pushFollow(FOLLOW_rule__AndExpr__Group_1__1__Impl_in_rule__AndExpr__Group_1__12101);
+            pushFollow(FOLLOW_rule__AndExpr__Group_1__1__Impl_in_rule__AndExpr__Group_1__12254);
             rule__AndExpr__Group_1__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__AndExpr__Group_1__2_in_rule__AndExpr__Group_1__12104);
+            pushFollow(FOLLOW_rule__AndExpr__Group_1__2_in_rule__AndExpr__Group_1__12257);
             rule__AndExpr__Group_1__2();
 
             state._fsp--;
@@ -2887,20 +3160,20 @@ public class InternalQueryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AndExpr__Group_1__1__Impl"
-    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1031:1: rule__AndExpr__Group_1__1__Impl : ( 'and' ) ;
+    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1097:1: rule__AndExpr__Group_1__1__Impl : ( 'and' ) ;
     public final void rule__AndExpr__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1035:1: ( ( 'and' ) )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1036:1: ( 'and' )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1101:1: ( ( 'and' ) )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1102:1: ( 'and' )
             {
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1036:1: ( 'and' )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1037:1: 'and'
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1102:1: ( 'and' )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1103:1: 'and'
             {
              before(grammarAccess.getAndExprAccess().getAndKeyword_1_1()); 
-            match(input,18,FOLLOW_18_in_rule__AndExpr__Group_1__1__Impl2132); 
+            match(input,18,FOLLOW_18_in_rule__AndExpr__Group_1__1__Impl2285); 
              after(grammarAccess.getAndExprAccess().getAndKeyword_1_1()); 
 
             }
@@ -2924,16 +3197,16 @@ public class InternalQueryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AndExpr__Group_1__2"
-    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1050:1: rule__AndExpr__Group_1__2 : rule__AndExpr__Group_1__2__Impl ;
+    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1116:1: rule__AndExpr__Group_1__2 : rule__AndExpr__Group_1__2__Impl ;
     public final void rule__AndExpr__Group_1__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1054:1: ( rule__AndExpr__Group_1__2__Impl )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1055:2: rule__AndExpr__Group_1__2__Impl
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1120:1: ( rule__AndExpr__Group_1__2__Impl )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1121:2: rule__AndExpr__Group_1__2__Impl
             {
-            pushFollow(FOLLOW_rule__AndExpr__Group_1__2__Impl_in_rule__AndExpr__Group_1__22163);
+            pushFollow(FOLLOW_rule__AndExpr__Group_1__2__Impl_in_rule__AndExpr__Group_1__22316);
             rule__AndExpr__Group_1__2__Impl();
 
             state._fsp--;
@@ -2957,23 +3230,23 @@ public class InternalQueryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AndExpr__Group_1__2__Impl"
-    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1061:1: rule__AndExpr__Group_1__2__Impl : ( ( rule__AndExpr__RightAssignment_1_2 ) ) ;
+    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1127:1: rule__AndExpr__Group_1__2__Impl : ( ( rule__AndExpr__RightAssignment_1_2 ) ) ;
     public final void rule__AndExpr__Group_1__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1065:1: ( ( ( rule__AndExpr__RightAssignment_1_2 ) ) )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1066:1: ( ( rule__AndExpr__RightAssignment_1_2 ) )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1131:1: ( ( ( rule__AndExpr__RightAssignment_1_2 ) ) )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1132:1: ( ( rule__AndExpr__RightAssignment_1_2 ) )
             {
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1066:1: ( ( rule__AndExpr__RightAssignment_1_2 ) )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1067:1: ( rule__AndExpr__RightAssignment_1_2 )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1132:1: ( ( rule__AndExpr__RightAssignment_1_2 ) )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1133:1: ( rule__AndExpr__RightAssignment_1_2 )
             {
              before(grammarAccess.getAndExprAccess().getRightAssignment_1_2()); 
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1068:1: ( rule__AndExpr__RightAssignment_1_2 )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1068:2: rule__AndExpr__RightAssignment_1_2
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1134:1: ( rule__AndExpr__RightAssignment_1_2 )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1134:2: rule__AndExpr__RightAssignment_1_2
             {
-            pushFollow(FOLLOW_rule__AndExpr__RightAssignment_1_2_in_rule__AndExpr__Group_1__2__Impl2190);
+            pushFollow(FOLLOW_rule__AndExpr__RightAssignment_1_2_in_rule__AndExpr__Group_1__2__Impl2343);
             rule__AndExpr__RightAssignment_1_2();
 
             state._fsp--;
@@ -3004,21 +3277,21 @@ public class InternalQueryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__CompEqExpr__Group__0"
-    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1084:1: rule__CompEqExpr__Group__0 : rule__CompEqExpr__Group__0__Impl rule__CompEqExpr__Group__1 ;
+    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1150:1: rule__CompEqExpr__Group__0 : rule__CompEqExpr__Group__0__Impl rule__CompEqExpr__Group__1 ;
     public final void rule__CompEqExpr__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1088:1: ( rule__CompEqExpr__Group__0__Impl rule__CompEqExpr__Group__1 )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1089:2: rule__CompEqExpr__Group__0__Impl rule__CompEqExpr__Group__1
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1154:1: ( rule__CompEqExpr__Group__0__Impl rule__CompEqExpr__Group__1 )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1155:2: rule__CompEqExpr__Group__0__Impl rule__CompEqExpr__Group__1
             {
-            pushFollow(FOLLOW_rule__CompEqExpr__Group__0__Impl_in_rule__CompEqExpr__Group__02226);
+            pushFollow(FOLLOW_rule__CompEqExpr__Group__0__Impl_in_rule__CompEqExpr__Group__02379);
             rule__CompEqExpr__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__CompEqExpr__Group__1_in_rule__CompEqExpr__Group__02229);
+            pushFollow(FOLLOW_rule__CompEqExpr__Group__1_in_rule__CompEqExpr__Group__02382);
             rule__CompEqExpr__Group__1();
 
             state._fsp--;
@@ -3042,20 +3315,20 @@ public class InternalQueryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__CompEqExpr__Group__0__Impl"
-    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1096:1: rule__CompEqExpr__Group__0__Impl : ( ruleCompExpr ) ;
+    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1162:1: rule__CompEqExpr__Group__0__Impl : ( ruleCompExpr ) ;
     public final void rule__CompEqExpr__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1100:1: ( ( ruleCompExpr ) )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1101:1: ( ruleCompExpr )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1166:1: ( ( ruleCompExpr ) )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1167:1: ( ruleCompExpr )
             {
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1101:1: ( ruleCompExpr )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1102:1: ruleCompExpr
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1167:1: ( ruleCompExpr )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1168:1: ruleCompExpr
             {
              before(grammarAccess.getCompEqExprAccess().getCompExprParserRuleCall_0()); 
-            pushFollow(FOLLOW_ruleCompExpr_in_rule__CompEqExpr__Group__0__Impl2256);
+            pushFollow(FOLLOW_ruleCompExpr_in_rule__CompEqExpr__Group__0__Impl2409);
             ruleCompExpr();
 
             state._fsp--;
@@ -3083,16 +3356,16 @@ public class InternalQueryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__CompEqExpr__Group__1"
-    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1113:1: rule__CompEqExpr__Group__1 : rule__CompEqExpr__Group__1__Impl ;
+    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1179:1: rule__CompEqExpr__Group__1 : rule__CompEqExpr__Group__1__Impl ;
     public final void rule__CompEqExpr__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1117:1: ( rule__CompEqExpr__Group__1__Impl )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1118:2: rule__CompEqExpr__Group__1__Impl
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1183:1: ( rule__CompEqExpr__Group__1__Impl )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1184:2: rule__CompEqExpr__Group__1__Impl
             {
-            pushFollow(FOLLOW_rule__CompEqExpr__Group__1__Impl_in_rule__CompEqExpr__Group__12285);
+            pushFollow(FOLLOW_rule__CompEqExpr__Group__1__Impl_in_rule__CompEqExpr__Group__12438);
             rule__CompEqExpr__Group__1__Impl();
 
             state._fsp--;
@@ -3116,35 +3389,35 @@ public class InternalQueryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__CompEqExpr__Group__1__Impl"
-    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1124:1: rule__CompEqExpr__Group__1__Impl : ( ( rule__CompEqExpr__Group_1__0 )* ) ;
+    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1190:1: rule__CompEqExpr__Group__1__Impl : ( ( rule__CompEqExpr__Group_1__0 )* ) ;
     public final void rule__CompEqExpr__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1128:1: ( ( ( rule__CompEqExpr__Group_1__0 )* ) )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1129:1: ( ( rule__CompEqExpr__Group_1__0 )* )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1194:1: ( ( ( rule__CompEqExpr__Group_1__0 )* ) )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1195:1: ( ( rule__CompEqExpr__Group_1__0 )* )
             {
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1129:1: ( ( rule__CompEqExpr__Group_1__0 )* )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1130:1: ( rule__CompEqExpr__Group_1__0 )*
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1195:1: ( ( rule__CompEqExpr__Group_1__0 )* )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1196:1: ( rule__CompEqExpr__Group_1__0 )*
             {
              before(grammarAccess.getCompEqExprAccess().getGroup_1()); 
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1131:1: ( rule__CompEqExpr__Group_1__0 )*
-            loop9:
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1197:1: ( rule__CompEqExpr__Group_1__0 )*
+            loop12:
             do {
-                int alt9=2;
-                int LA9_0 = input.LA(1);
+                int alt12=2;
+                int LA12_0 = input.LA(1);
 
-                if ( ((LA9_0>=11 && LA9_0<=12)) ) {
-                    alt9=1;
+                if ( ((LA12_0>=11 && LA12_0<=12)) ) {
+                    alt12=1;
                 }
 
 
-                switch (alt9) {
+                switch (alt12) {
             	case 1 :
-            	    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1131:2: rule__CompEqExpr__Group_1__0
+            	    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1197:2: rule__CompEqExpr__Group_1__0
             	    {
-            	    pushFollow(FOLLOW_rule__CompEqExpr__Group_1__0_in_rule__CompEqExpr__Group__1__Impl2312);
+            	    pushFollow(FOLLOW_rule__CompEqExpr__Group_1__0_in_rule__CompEqExpr__Group__1__Impl2465);
             	    rule__CompEqExpr__Group_1__0();
 
             	    state._fsp--;
@@ -3154,7 +3427,7 @@ public class InternalQueryParser extends AbstractInternalContentAssistParser {
             	    break;
 
             	default :
-            	    break loop9;
+            	    break loop12;
                 }
             } while (true);
 
@@ -3181,21 +3454,21 @@ public class InternalQueryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__CompEqExpr__Group_1__0"
-    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1145:1: rule__CompEqExpr__Group_1__0 : rule__CompEqExpr__Group_1__0__Impl rule__CompEqExpr__Group_1__1 ;
+    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1211:1: rule__CompEqExpr__Group_1__0 : rule__CompEqExpr__Group_1__0__Impl rule__CompEqExpr__Group_1__1 ;
     public final void rule__CompEqExpr__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1149:1: ( rule__CompEqExpr__Group_1__0__Impl rule__CompEqExpr__Group_1__1 )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1150:2: rule__CompEqExpr__Group_1__0__Impl rule__CompEqExpr__Group_1__1
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1215:1: ( rule__CompEqExpr__Group_1__0__Impl rule__CompEqExpr__Group_1__1 )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1216:2: rule__CompEqExpr__Group_1__0__Impl rule__CompEqExpr__Group_1__1
             {
-            pushFollow(FOLLOW_rule__CompEqExpr__Group_1__0__Impl_in_rule__CompEqExpr__Group_1__02347);
+            pushFollow(FOLLOW_rule__CompEqExpr__Group_1__0__Impl_in_rule__CompEqExpr__Group_1__02500);
             rule__CompEqExpr__Group_1__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__CompEqExpr__Group_1__1_in_rule__CompEqExpr__Group_1__02350);
+            pushFollow(FOLLOW_rule__CompEqExpr__Group_1__1_in_rule__CompEqExpr__Group_1__02503);
             rule__CompEqExpr__Group_1__1();
 
             state._fsp--;
@@ -3219,21 +3492,21 @@ public class InternalQueryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__CompEqExpr__Group_1__0__Impl"
-    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1157:1: rule__CompEqExpr__Group_1__0__Impl : ( () ) ;
+    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1223:1: rule__CompEqExpr__Group_1__0__Impl : ( () ) ;
     public final void rule__CompEqExpr__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1161:1: ( ( () ) )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1162:1: ( () )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1227:1: ( ( () ) )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1228:1: ( () )
             {
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1162:1: ( () )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1163:1: ()
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1228:1: ( () )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1229:1: ()
             {
              before(grammarAccess.getCompEqExprAccess().getCompEqExprLeftAction_1_0()); 
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1164:1: ()
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1166:1: 
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1230:1: ()
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1232:1: 
             {
             }
 
@@ -3256,21 +3529,21 @@ public class InternalQueryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__CompEqExpr__Group_1__1"
-    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1176:1: rule__CompEqExpr__Group_1__1 : rule__CompEqExpr__Group_1__1__Impl rule__CompEqExpr__Group_1__2 ;
+    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1242:1: rule__CompEqExpr__Group_1__1 : rule__CompEqExpr__Group_1__1__Impl rule__CompEqExpr__Group_1__2 ;
     public final void rule__CompEqExpr__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1180:1: ( rule__CompEqExpr__Group_1__1__Impl rule__CompEqExpr__Group_1__2 )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1181:2: rule__CompEqExpr__Group_1__1__Impl rule__CompEqExpr__Group_1__2
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1246:1: ( rule__CompEqExpr__Group_1__1__Impl rule__CompEqExpr__Group_1__2 )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1247:2: rule__CompEqExpr__Group_1__1__Impl rule__CompEqExpr__Group_1__2
             {
-            pushFollow(FOLLOW_rule__CompEqExpr__Group_1__1__Impl_in_rule__CompEqExpr__Group_1__12408);
+            pushFollow(FOLLOW_rule__CompEqExpr__Group_1__1__Impl_in_rule__CompEqExpr__Group_1__12561);
             rule__CompEqExpr__Group_1__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__CompEqExpr__Group_1__2_in_rule__CompEqExpr__Group_1__12411);
+            pushFollow(FOLLOW_rule__CompEqExpr__Group_1__2_in_rule__CompEqExpr__Group_1__12564);
             rule__CompEqExpr__Group_1__2();
 
             state._fsp--;
@@ -3294,23 +3567,23 @@ public class InternalQueryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__CompEqExpr__Group_1__1__Impl"
-    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1188:1: rule__CompEqExpr__Group_1__1__Impl : ( ( rule__CompEqExpr__OperatorAssignment_1_1 ) ) ;
+    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1254:1: rule__CompEqExpr__Group_1__1__Impl : ( ( rule__CompEqExpr__OperatorAssignment_1_1 ) ) ;
     public final void rule__CompEqExpr__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1192:1: ( ( ( rule__CompEqExpr__OperatorAssignment_1_1 ) ) )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1193:1: ( ( rule__CompEqExpr__OperatorAssignment_1_1 ) )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1258:1: ( ( ( rule__CompEqExpr__OperatorAssignment_1_1 ) ) )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1259:1: ( ( rule__CompEqExpr__OperatorAssignment_1_1 ) )
             {
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1193:1: ( ( rule__CompEqExpr__OperatorAssignment_1_1 ) )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1194:1: ( rule__CompEqExpr__OperatorAssignment_1_1 )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1259:1: ( ( rule__CompEqExpr__OperatorAssignment_1_1 ) )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1260:1: ( rule__CompEqExpr__OperatorAssignment_1_1 )
             {
              before(grammarAccess.getCompEqExprAccess().getOperatorAssignment_1_1()); 
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1195:1: ( rule__CompEqExpr__OperatorAssignment_1_1 )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1195:2: rule__CompEqExpr__OperatorAssignment_1_1
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1261:1: ( rule__CompEqExpr__OperatorAssignment_1_1 )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1261:2: rule__CompEqExpr__OperatorAssignment_1_1
             {
-            pushFollow(FOLLOW_rule__CompEqExpr__OperatorAssignment_1_1_in_rule__CompEqExpr__Group_1__1__Impl2438);
+            pushFollow(FOLLOW_rule__CompEqExpr__OperatorAssignment_1_1_in_rule__CompEqExpr__Group_1__1__Impl2591);
             rule__CompEqExpr__OperatorAssignment_1_1();
 
             state._fsp--;
@@ -3341,16 +3614,16 @@ public class InternalQueryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__CompEqExpr__Group_1__2"
-    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1205:1: rule__CompEqExpr__Group_1__2 : rule__CompEqExpr__Group_1__2__Impl ;
+    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1271:1: rule__CompEqExpr__Group_1__2 : rule__CompEqExpr__Group_1__2__Impl ;
     public final void rule__CompEqExpr__Group_1__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1209:1: ( rule__CompEqExpr__Group_1__2__Impl )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1210:2: rule__CompEqExpr__Group_1__2__Impl
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1275:1: ( rule__CompEqExpr__Group_1__2__Impl )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1276:2: rule__CompEqExpr__Group_1__2__Impl
             {
-            pushFollow(FOLLOW_rule__CompEqExpr__Group_1__2__Impl_in_rule__CompEqExpr__Group_1__22468);
+            pushFollow(FOLLOW_rule__CompEqExpr__Group_1__2__Impl_in_rule__CompEqExpr__Group_1__22621);
             rule__CompEqExpr__Group_1__2__Impl();
 
             state._fsp--;
@@ -3374,23 +3647,23 @@ public class InternalQueryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__CompEqExpr__Group_1__2__Impl"
-    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1216:1: rule__CompEqExpr__Group_1__2__Impl : ( ( rule__CompEqExpr__RightAssignment_1_2 ) ) ;
+    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1282:1: rule__CompEqExpr__Group_1__2__Impl : ( ( rule__CompEqExpr__RightAssignment_1_2 ) ) ;
     public final void rule__CompEqExpr__Group_1__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1220:1: ( ( ( rule__CompEqExpr__RightAssignment_1_2 ) ) )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1221:1: ( ( rule__CompEqExpr__RightAssignment_1_2 ) )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1286:1: ( ( ( rule__CompEqExpr__RightAssignment_1_2 ) ) )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1287:1: ( ( rule__CompEqExpr__RightAssignment_1_2 ) )
             {
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1221:1: ( ( rule__CompEqExpr__RightAssignment_1_2 ) )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1222:1: ( rule__CompEqExpr__RightAssignment_1_2 )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1287:1: ( ( rule__CompEqExpr__RightAssignment_1_2 ) )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1288:1: ( rule__CompEqExpr__RightAssignment_1_2 )
             {
              before(grammarAccess.getCompEqExprAccess().getRightAssignment_1_2()); 
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1223:1: ( rule__CompEqExpr__RightAssignment_1_2 )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1223:2: rule__CompEqExpr__RightAssignment_1_2
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1289:1: ( rule__CompEqExpr__RightAssignment_1_2 )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1289:2: rule__CompEqExpr__RightAssignment_1_2
             {
-            pushFollow(FOLLOW_rule__CompEqExpr__RightAssignment_1_2_in_rule__CompEqExpr__Group_1__2__Impl2495);
+            pushFollow(FOLLOW_rule__CompEqExpr__RightAssignment_1_2_in_rule__CompEqExpr__Group_1__2__Impl2648);
             rule__CompEqExpr__RightAssignment_1_2();
 
             state._fsp--;
@@ -3421,21 +3694,21 @@ public class InternalQueryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__CompExpr__Group__0"
-    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1239:1: rule__CompExpr__Group__0 : rule__CompExpr__Group__0__Impl rule__CompExpr__Group__1 ;
+    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1305:1: rule__CompExpr__Group__0 : rule__CompExpr__Group__0__Impl rule__CompExpr__Group__1 ;
     public final void rule__CompExpr__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1243:1: ( rule__CompExpr__Group__0__Impl rule__CompExpr__Group__1 )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1244:2: rule__CompExpr__Group__0__Impl rule__CompExpr__Group__1
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1309:1: ( rule__CompExpr__Group__0__Impl rule__CompExpr__Group__1 )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1310:2: rule__CompExpr__Group__0__Impl rule__CompExpr__Group__1
             {
-            pushFollow(FOLLOW_rule__CompExpr__Group__0__Impl_in_rule__CompExpr__Group__02531);
+            pushFollow(FOLLOW_rule__CompExpr__Group__0__Impl_in_rule__CompExpr__Group__02684);
             rule__CompExpr__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__CompExpr__Group__1_in_rule__CompExpr__Group__02534);
+            pushFollow(FOLLOW_rule__CompExpr__Group__1_in_rule__CompExpr__Group__02687);
             rule__CompExpr__Group__1();
 
             state._fsp--;
@@ -3459,20 +3732,20 @@ public class InternalQueryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__CompExpr__Group__0__Impl"
-    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1251:1: rule__CompExpr__Group__0__Impl : ( ruleUnaryExpr ) ;
+    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1317:1: rule__CompExpr__Group__0__Impl : ( ruleUnaryExpr ) ;
     public final void rule__CompExpr__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1255:1: ( ( ruleUnaryExpr ) )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1256:1: ( ruleUnaryExpr )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1321:1: ( ( ruleUnaryExpr ) )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1322:1: ( ruleUnaryExpr )
             {
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1256:1: ( ruleUnaryExpr )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1257:1: ruleUnaryExpr
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1322:1: ( ruleUnaryExpr )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1323:1: ruleUnaryExpr
             {
              before(grammarAccess.getCompExprAccess().getUnaryExprParserRuleCall_0()); 
-            pushFollow(FOLLOW_ruleUnaryExpr_in_rule__CompExpr__Group__0__Impl2561);
+            pushFollow(FOLLOW_ruleUnaryExpr_in_rule__CompExpr__Group__0__Impl2714);
             ruleUnaryExpr();
 
             state._fsp--;
@@ -3500,16 +3773,16 @@ public class InternalQueryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__CompExpr__Group__1"
-    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1268:1: rule__CompExpr__Group__1 : rule__CompExpr__Group__1__Impl ;
+    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1334:1: rule__CompExpr__Group__1 : rule__CompExpr__Group__1__Impl ;
     public final void rule__CompExpr__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1272:1: ( rule__CompExpr__Group__1__Impl )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1273:2: rule__CompExpr__Group__1__Impl
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1338:1: ( rule__CompExpr__Group__1__Impl )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1339:2: rule__CompExpr__Group__1__Impl
             {
-            pushFollow(FOLLOW_rule__CompExpr__Group__1__Impl_in_rule__CompExpr__Group__12590);
+            pushFollow(FOLLOW_rule__CompExpr__Group__1__Impl_in_rule__CompExpr__Group__12743);
             rule__CompExpr__Group__1__Impl();
 
             state._fsp--;
@@ -3533,35 +3806,35 @@ public class InternalQueryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__CompExpr__Group__1__Impl"
-    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1279:1: rule__CompExpr__Group__1__Impl : ( ( rule__CompExpr__Group_1__0 )* ) ;
+    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1345:1: rule__CompExpr__Group__1__Impl : ( ( rule__CompExpr__Group_1__0 )* ) ;
     public final void rule__CompExpr__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1283:1: ( ( ( rule__CompExpr__Group_1__0 )* ) )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1284:1: ( ( rule__CompExpr__Group_1__0 )* )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1349:1: ( ( ( rule__CompExpr__Group_1__0 )* ) )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1350:1: ( ( rule__CompExpr__Group_1__0 )* )
             {
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1284:1: ( ( rule__CompExpr__Group_1__0 )* )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1285:1: ( rule__CompExpr__Group_1__0 )*
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1350:1: ( ( rule__CompExpr__Group_1__0 )* )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1351:1: ( rule__CompExpr__Group_1__0 )*
             {
              before(grammarAccess.getCompExprAccess().getGroup_1()); 
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1286:1: ( rule__CompExpr__Group_1__0 )*
-            loop10:
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1352:1: ( rule__CompExpr__Group_1__0 )*
+            loop13:
             do {
-                int alt10=2;
-                int LA10_0 = input.LA(1);
+                int alt13=2;
+                int LA13_0 = input.LA(1);
 
-                if ( ((LA10_0>=13 && LA10_0<=16)) ) {
-                    alt10=1;
+                if ( ((LA13_0>=13 && LA13_0<=16)) ) {
+                    alt13=1;
                 }
 
 
-                switch (alt10) {
+                switch (alt13) {
             	case 1 :
-            	    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1286:2: rule__CompExpr__Group_1__0
+            	    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1352:2: rule__CompExpr__Group_1__0
             	    {
-            	    pushFollow(FOLLOW_rule__CompExpr__Group_1__0_in_rule__CompExpr__Group__1__Impl2617);
+            	    pushFollow(FOLLOW_rule__CompExpr__Group_1__0_in_rule__CompExpr__Group__1__Impl2770);
             	    rule__CompExpr__Group_1__0();
 
             	    state._fsp--;
@@ -3571,7 +3844,7 @@ public class InternalQueryParser extends AbstractInternalContentAssistParser {
             	    break;
 
             	default :
-            	    break loop10;
+            	    break loop13;
                 }
             } while (true);
 
@@ -3598,21 +3871,21 @@ public class InternalQueryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__CompExpr__Group_1__0"
-    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1300:1: rule__CompExpr__Group_1__0 : rule__CompExpr__Group_1__0__Impl rule__CompExpr__Group_1__1 ;
+    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1366:1: rule__CompExpr__Group_1__0 : rule__CompExpr__Group_1__0__Impl rule__CompExpr__Group_1__1 ;
     public final void rule__CompExpr__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1304:1: ( rule__CompExpr__Group_1__0__Impl rule__CompExpr__Group_1__1 )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1305:2: rule__CompExpr__Group_1__0__Impl rule__CompExpr__Group_1__1
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1370:1: ( rule__CompExpr__Group_1__0__Impl rule__CompExpr__Group_1__1 )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1371:2: rule__CompExpr__Group_1__0__Impl rule__CompExpr__Group_1__1
             {
-            pushFollow(FOLLOW_rule__CompExpr__Group_1__0__Impl_in_rule__CompExpr__Group_1__02652);
+            pushFollow(FOLLOW_rule__CompExpr__Group_1__0__Impl_in_rule__CompExpr__Group_1__02805);
             rule__CompExpr__Group_1__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__CompExpr__Group_1__1_in_rule__CompExpr__Group_1__02655);
+            pushFollow(FOLLOW_rule__CompExpr__Group_1__1_in_rule__CompExpr__Group_1__02808);
             rule__CompExpr__Group_1__1();
 
             state._fsp--;
@@ -3636,21 +3909,21 @@ public class InternalQueryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__CompExpr__Group_1__0__Impl"
-    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1312:1: rule__CompExpr__Group_1__0__Impl : ( () ) ;
+    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1378:1: rule__CompExpr__Group_1__0__Impl : ( () ) ;
     public final void rule__CompExpr__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1316:1: ( ( () ) )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1317:1: ( () )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1382:1: ( ( () ) )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1383:1: ( () )
             {
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1317:1: ( () )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1318:1: ()
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1383:1: ( () )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1384:1: ()
             {
              before(grammarAccess.getCompExprAccess().getCompExprLeftAction_1_0()); 
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1319:1: ()
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1321:1: 
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1385:1: ()
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1387:1: 
             {
             }
 
@@ -3673,21 +3946,21 @@ public class InternalQueryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__CompExpr__Group_1__1"
-    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1331:1: rule__CompExpr__Group_1__1 : rule__CompExpr__Group_1__1__Impl rule__CompExpr__Group_1__2 ;
+    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1397:1: rule__CompExpr__Group_1__1 : rule__CompExpr__Group_1__1__Impl rule__CompExpr__Group_1__2 ;
     public final void rule__CompExpr__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1335:1: ( rule__CompExpr__Group_1__1__Impl rule__CompExpr__Group_1__2 )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1336:2: rule__CompExpr__Group_1__1__Impl rule__CompExpr__Group_1__2
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1401:1: ( rule__CompExpr__Group_1__1__Impl rule__CompExpr__Group_1__2 )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1402:2: rule__CompExpr__Group_1__1__Impl rule__CompExpr__Group_1__2
             {
-            pushFollow(FOLLOW_rule__CompExpr__Group_1__1__Impl_in_rule__CompExpr__Group_1__12713);
+            pushFollow(FOLLOW_rule__CompExpr__Group_1__1__Impl_in_rule__CompExpr__Group_1__12866);
             rule__CompExpr__Group_1__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__CompExpr__Group_1__2_in_rule__CompExpr__Group_1__12716);
+            pushFollow(FOLLOW_rule__CompExpr__Group_1__2_in_rule__CompExpr__Group_1__12869);
             rule__CompExpr__Group_1__2();
 
             state._fsp--;
@@ -3711,23 +3984,23 @@ public class InternalQueryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__CompExpr__Group_1__1__Impl"
-    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1343:1: rule__CompExpr__Group_1__1__Impl : ( ( rule__CompExpr__OperatorAssignment_1_1 ) ) ;
+    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1409:1: rule__CompExpr__Group_1__1__Impl : ( ( rule__CompExpr__OperatorAssignment_1_1 ) ) ;
     public final void rule__CompExpr__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1347:1: ( ( ( rule__CompExpr__OperatorAssignment_1_1 ) ) )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1348:1: ( ( rule__CompExpr__OperatorAssignment_1_1 ) )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1413:1: ( ( ( rule__CompExpr__OperatorAssignment_1_1 ) ) )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1414:1: ( ( rule__CompExpr__OperatorAssignment_1_1 ) )
             {
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1348:1: ( ( rule__CompExpr__OperatorAssignment_1_1 ) )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1349:1: ( rule__CompExpr__OperatorAssignment_1_1 )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1414:1: ( ( rule__CompExpr__OperatorAssignment_1_1 ) )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1415:1: ( rule__CompExpr__OperatorAssignment_1_1 )
             {
              before(grammarAccess.getCompExprAccess().getOperatorAssignment_1_1()); 
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1350:1: ( rule__CompExpr__OperatorAssignment_1_1 )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1350:2: rule__CompExpr__OperatorAssignment_1_1
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1416:1: ( rule__CompExpr__OperatorAssignment_1_1 )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1416:2: rule__CompExpr__OperatorAssignment_1_1
             {
-            pushFollow(FOLLOW_rule__CompExpr__OperatorAssignment_1_1_in_rule__CompExpr__Group_1__1__Impl2743);
+            pushFollow(FOLLOW_rule__CompExpr__OperatorAssignment_1_1_in_rule__CompExpr__Group_1__1__Impl2896);
             rule__CompExpr__OperatorAssignment_1_1();
 
             state._fsp--;
@@ -3758,16 +4031,16 @@ public class InternalQueryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__CompExpr__Group_1__2"
-    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1360:1: rule__CompExpr__Group_1__2 : rule__CompExpr__Group_1__2__Impl ;
+    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1426:1: rule__CompExpr__Group_1__2 : rule__CompExpr__Group_1__2__Impl ;
     public final void rule__CompExpr__Group_1__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1364:1: ( rule__CompExpr__Group_1__2__Impl )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1365:2: rule__CompExpr__Group_1__2__Impl
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1430:1: ( rule__CompExpr__Group_1__2__Impl )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1431:2: rule__CompExpr__Group_1__2__Impl
             {
-            pushFollow(FOLLOW_rule__CompExpr__Group_1__2__Impl_in_rule__CompExpr__Group_1__22773);
+            pushFollow(FOLLOW_rule__CompExpr__Group_1__2__Impl_in_rule__CompExpr__Group_1__22926);
             rule__CompExpr__Group_1__2__Impl();
 
             state._fsp--;
@@ -3791,23 +4064,23 @@ public class InternalQueryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__CompExpr__Group_1__2__Impl"
-    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1371:1: rule__CompExpr__Group_1__2__Impl : ( ( rule__CompExpr__RightAssignment_1_2 ) ) ;
+    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1437:1: rule__CompExpr__Group_1__2__Impl : ( ( rule__CompExpr__RightAssignment_1_2 ) ) ;
     public final void rule__CompExpr__Group_1__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1375:1: ( ( ( rule__CompExpr__RightAssignment_1_2 ) ) )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1376:1: ( ( rule__CompExpr__RightAssignment_1_2 ) )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1441:1: ( ( ( rule__CompExpr__RightAssignment_1_2 ) ) )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1442:1: ( ( rule__CompExpr__RightAssignment_1_2 ) )
             {
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1376:1: ( ( rule__CompExpr__RightAssignment_1_2 ) )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1377:1: ( rule__CompExpr__RightAssignment_1_2 )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1442:1: ( ( rule__CompExpr__RightAssignment_1_2 ) )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1443:1: ( rule__CompExpr__RightAssignment_1_2 )
             {
              before(grammarAccess.getCompExprAccess().getRightAssignment_1_2()); 
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1378:1: ( rule__CompExpr__RightAssignment_1_2 )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1378:2: rule__CompExpr__RightAssignment_1_2
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1444:1: ( rule__CompExpr__RightAssignment_1_2 )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1444:2: rule__CompExpr__RightAssignment_1_2
             {
-            pushFollow(FOLLOW_rule__CompExpr__RightAssignment_1_2_in_rule__CompExpr__Group_1__2__Impl2800);
+            pushFollow(FOLLOW_rule__CompExpr__RightAssignment_1_2_in_rule__CompExpr__Group_1__2__Impl2953);
             rule__CompExpr__RightAssignment_1_2();
 
             state._fsp--;
@@ -3838,21 +4111,21 @@ public class InternalQueryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__UnaryExpr__Group_1__0"
-    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1394:1: rule__UnaryExpr__Group_1__0 : rule__UnaryExpr__Group_1__0__Impl rule__UnaryExpr__Group_1__1 ;
+    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1460:1: rule__UnaryExpr__Group_1__0 : rule__UnaryExpr__Group_1__0__Impl rule__UnaryExpr__Group_1__1 ;
     public final void rule__UnaryExpr__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1398:1: ( rule__UnaryExpr__Group_1__0__Impl rule__UnaryExpr__Group_1__1 )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1399:2: rule__UnaryExpr__Group_1__0__Impl rule__UnaryExpr__Group_1__1
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1464:1: ( rule__UnaryExpr__Group_1__0__Impl rule__UnaryExpr__Group_1__1 )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1465:2: rule__UnaryExpr__Group_1__0__Impl rule__UnaryExpr__Group_1__1
             {
-            pushFollow(FOLLOW_rule__UnaryExpr__Group_1__0__Impl_in_rule__UnaryExpr__Group_1__02836);
+            pushFollow(FOLLOW_rule__UnaryExpr__Group_1__0__Impl_in_rule__UnaryExpr__Group_1__02989);
             rule__UnaryExpr__Group_1__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__UnaryExpr__Group_1__1_in_rule__UnaryExpr__Group_1__02839);
+            pushFollow(FOLLOW_rule__UnaryExpr__Group_1__1_in_rule__UnaryExpr__Group_1__02992);
             rule__UnaryExpr__Group_1__1();
 
             state._fsp--;
@@ -3876,21 +4149,21 @@ public class InternalQueryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__UnaryExpr__Group_1__0__Impl"
-    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1406:1: rule__UnaryExpr__Group_1__0__Impl : ( () ) ;
+    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1472:1: rule__UnaryExpr__Group_1__0__Impl : ( () ) ;
     public final void rule__UnaryExpr__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1410:1: ( ( () ) )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1411:1: ( () )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1476:1: ( ( () ) )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1477:1: ( () )
             {
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1411:1: ( () )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1412:1: ()
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1477:1: ( () )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1478:1: ()
             {
              before(grammarAccess.getUnaryExprAccess().getUnaryExprAction_1_0()); 
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1413:1: ()
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1415:1: 
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1479:1: ()
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1481:1: 
             {
             }
 
@@ -3913,21 +4186,21 @@ public class InternalQueryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__UnaryExpr__Group_1__1"
-    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1425:1: rule__UnaryExpr__Group_1__1 : rule__UnaryExpr__Group_1__1__Impl rule__UnaryExpr__Group_1__2 ;
+    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1491:1: rule__UnaryExpr__Group_1__1 : rule__UnaryExpr__Group_1__1__Impl rule__UnaryExpr__Group_1__2 ;
     public final void rule__UnaryExpr__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1429:1: ( rule__UnaryExpr__Group_1__1__Impl rule__UnaryExpr__Group_1__2 )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1430:2: rule__UnaryExpr__Group_1__1__Impl rule__UnaryExpr__Group_1__2
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1495:1: ( rule__UnaryExpr__Group_1__1__Impl rule__UnaryExpr__Group_1__2 )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1496:2: rule__UnaryExpr__Group_1__1__Impl rule__UnaryExpr__Group_1__2
             {
-            pushFollow(FOLLOW_rule__UnaryExpr__Group_1__1__Impl_in_rule__UnaryExpr__Group_1__12897);
+            pushFollow(FOLLOW_rule__UnaryExpr__Group_1__1__Impl_in_rule__UnaryExpr__Group_1__13050);
             rule__UnaryExpr__Group_1__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__UnaryExpr__Group_1__2_in_rule__UnaryExpr__Group_1__12900);
+            pushFollow(FOLLOW_rule__UnaryExpr__Group_1__2_in_rule__UnaryExpr__Group_1__13053);
             rule__UnaryExpr__Group_1__2();
 
             state._fsp--;
@@ -3951,20 +4224,20 @@ public class InternalQueryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__UnaryExpr__Group_1__1__Impl"
-    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1437:1: rule__UnaryExpr__Group_1__1__Impl : ( 'not' ) ;
+    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1503:1: rule__UnaryExpr__Group_1__1__Impl : ( 'not' ) ;
     public final void rule__UnaryExpr__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1441:1: ( ( 'not' ) )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1442:1: ( 'not' )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1507:1: ( ( 'not' ) )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1508:1: ( 'not' )
             {
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1442:1: ( 'not' )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1443:1: 'not'
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1508:1: ( 'not' )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1509:1: 'not'
             {
              before(grammarAccess.getUnaryExprAccess().getNotKeyword_1_1()); 
-            match(input,19,FOLLOW_19_in_rule__UnaryExpr__Group_1__1__Impl2928); 
+            match(input,19,FOLLOW_19_in_rule__UnaryExpr__Group_1__1__Impl3081); 
              after(grammarAccess.getUnaryExprAccess().getNotKeyword_1_1()); 
 
             }
@@ -3988,16 +4261,16 @@ public class InternalQueryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__UnaryExpr__Group_1__2"
-    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1456:1: rule__UnaryExpr__Group_1__2 : rule__UnaryExpr__Group_1__2__Impl ;
+    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1522:1: rule__UnaryExpr__Group_1__2 : rule__UnaryExpr__Group_1__2__Impl ;
     public final void rule__UnaryExpr__Group_1__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1460:1: ( rule__UnaryExpr__Group_1__2__Impl )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1461:2: rule__UnaryExpr__Group_1__2__Impl
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1526:1: ( rule__UnaryExpr__Group_1__2__Impl )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1527:2: rule__UnaryExpr__Group_1__2__Impl
             {
-            pushFollow(FOLLOW_rule__UnaryExpr__Group_1__2__Impl_in_rule__UnaryExpr__Group_1__22959);
+            pushFollow(FOLLOW_rule__UnaryExpr__Group_1__2__Impl_in_rule__UnaryExpr__Group_1__23112);
             rule__UnaryExpr__Group_1__2__Impl();
 
             state._fsp--;
@@ -4021,23 +4294,23 @@ public class InternalQueryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__UnaryExpr__Group_1__2__Impl"
-    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1467:1: rule__UnaryExpr__Group_1__2__Impl : ( ( rule__UnaryExpr__ExprAssignment_1_2 ) ) ;
+    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1533:1: rule__UnaryExpr__Group_1__2__Impl : ( ( rule__UnaryExpr__ExprAssignment_1_2 ) ) ;
     public final void rule__UnaryExpr__Group_1__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1471:1: ( ( ( rule__UnaryExpr__ExprAssignment_1_2 ) ) )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1472:1: ( ( rule__UnaryExpr__ExprAssignment_1_2 ) )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1537:1: ( ( ( rule__UnaryExpr__ExprAssignment_1_2 ) ) )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1538:1: ( ( rule__UnaryExpr__ExprAssignment_1_2 ) )
             {
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1472:1: ( ( rule__UnaryExpr__ExprAssignment_1_2 ) )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1473:1: ( rule__UnaryExpr__ExprAssignment_1_2 )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1538:1: ( ( rule__UnaryExpr__ExprAssignment_1_2 ) )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1539:1: ( rule__UnaryExpr__ExprAssignment_1_2 )
             {
              before(grammarAccess.getUnaryExprAccess().getExprAssignment_1_2()); 
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1474:1: ( rule__UnaryExpr__ExprAssignment_1_2 )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1474:2: rule__UnaryExpr__ExprAssignment_1_2
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1540:1: ( rule__UnaryExpr__ExprAssignment_1_2 )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1540:2: rule__UnaryExpr__ExprAssignment_1_2
             {
-            pushFollow(FOLLOW_rule__UnaryExpr__ExprAssignment_1_2_in_rule__UnaryExpr__Group_1__2__Impl2986);
+            pushFollow(FOLLOW_rule__UnaryExpr__ExprAssignment_1_2_in_rule__UnaryExpr__Group_1__2__Impl3139);
             rule__UnaryExpr__ExprAssignment_1_2();
 
             state._fsp--;
@@ -4068,21 +4341,21 @@ public class InternalQueryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParenExpr__Group__0"
-    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1490:1: rule__ParenExpr__Group__0 : rule__ParenExpr__Group__0__Impl rule__ParenExpr__Group__1 ;
+    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1556:1: rule__ParenExpr__Group__0 : rule__ParenExpr__Group__0__Impl rule__ParenExpr__Group__1 ;
     public final void rule__ParenExpr__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1494:1: ( rule__ParenExpr__Group__0__Impl rule__ParenExpr__Group__1 )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1495:2: rule__ParenExpr__Group__0__Impl rule__ParenExpr__Group__1
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1560:1: ( rule__ParenExpr__Group__0__Impl rule__ParenExpr__Group__1 )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1561:2: rule__ParenExpr__Group__0__Impl rule__ParenExpr__Group__1
             {
-            pushFollow(FOLLOW_rule__ParenExpr__Group__0__Impl_in_rule__ParenExpr__Group__03022);
+            pushFollow(FOLLOW_rule__ParenExpr__Group__0__Impl_in_rule__ParenExpr__Group__03175);
             rule__ParenExpr__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__ParenExpr__Group__1_in_rule__ParenExpr__Group__03025);
+            pushFollow(FOLLOW_rule__ParenExpr__Group__1_in_rule__ParenExpr__Group__03178);
             rule__ParenExpr__Group__1();
 
             state._fsp--;
@@ -4106,20 +4379,20 @@ public class InternalQueryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParenExpr__Group__0__Impl"
-    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1502:1: rule__ParenExpr__Group__0__Impl : ( '(' ) ;
+    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1568:1: rule__ParenExpr__Group__0__Impl : ( '(' ) ;
     public final void rule__ParenExpr__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1506:1: ( ( '(' ) )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1507:1: ( '(' )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1572:1: ( ( '(' ) )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1573:1: ( '(' )
             {
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1507:1: ( '(' )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1508:1: '('
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1573:1: ( '(' )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1574:1: '('
             {
              before(grammarAccess.getParenExprAccess().getLeftParenthesisKeyword_0()); 
-            match(input,20,FOLLOW_20_in_rule__ParenExpr__Group__0__Impl3053); 
+            match(input,20,FOLLOW_20_in_rule__ParenExpr__Group__0__Impl3206); 
              after(grammarAccess.getParenExprAccess().getLeftParenthesisKeyword_0()); 
 
             }
@@ -4143,21 +4416,21 @@ public class InternalQueryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParenExpr__Group__1"
-    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1521:1: rule__ParenExpr__Group__1 : rule__ParenExpr__Group__1__Impl rule__ParenExpr__Group__2 ;
+    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1587:1: rule__ParenExpr__Group__1 : rule__ParenExpr__Group__1__Impl rule__ParenExpr__Group__2 ;
     public final void rule__ParenExpr__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1525:1: ( rule__ParenExpr__Group__1__Impl rule__ParenExpr__Group__2 )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1526:2: rule__ParenExpr__Group__1__Impl rule__ParenExpr__Group__2
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1591:1: ( rule__ParenExpr__Group__1__Impl rule__ParenExpr__Group__2 )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1592:2: rule__ParenExpr__Group__1__Impl rule__ParenExpr__Group__2
             {
-            pushFollow(FOLLOW_rule__ParenExpr__Group__1__Impl_in_rule__ParenExpr__Group__13084);
+            pushFollow(FOLLOW_rule__ParenExpr__Group__1__Impl_in_rule__ParenExpr__Group__13237);
             rule__ParenExpr__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__ParenExpr__Group__2_in_rule__ParenExpr__Group__13087);
+            pushFollow(FOLLOW_rule__ParenExpr__Group__2_in_rule__ParenExpr__Group__13240);
             rule__ParenExpr__Group__2();
 
             state._fsp--;
@@ -4181,21 +4454,21 @@ public class InternalQueryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParenExpr__Group__1__Impl"
-    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1533:1: rule__ParenExpr__Group__1__Impl : ( () ) ;
+    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1599:1: rule__ParenExpr__Group__1__Impl : ( () ) ;
     public final void rule__ParenExpr__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1537:1: ( ( () ) )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1538:1: ( () )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1603:1: ( ( () ) )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1604:1: ( () )
             {
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1538:1: ( () )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1539:1: ()
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1604:1: ( () )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1605:1: ()
             {
              before(grammarAccess.getParenExprAccess().getParenExprAction_1()); 
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1540:1: ()
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1542:1: 
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1606:1: ()
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1608:1: 
             {
             }
 
@@ -4218,21 +4491,21 @@ public class InternalQueryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParenExpr__Group__2"
-    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1552:1: rule__ParenExpr__Group__2 : rule__ParenExpr__Group__2__Impl rule__ParenExpr__Group__3 ;
+    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1618:1: rule__ParenExpr__Group__2 : rule__ParenExpr__Group__2__Impl rule__ParenExpr__Group__3 ;
     public final void rule__ParenExpr__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1556:1: ( rule__ParenExpr__Group__2__Impl rule__ParenExpr__Group__3 )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1557:2: rule__ParenExpr__Group__2__Impl rule__ParenExpr__Group__3
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1622:1: ( rule__ParenExpr__Group__2__Impl rule__ParenExpr__Group__3 )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1623:2: rule__ParenExpr__Group__2__Impl rule__ParenExpr__Group__3
             {
-            pushFollow(FOLLOW_rule__ParenExpr__Group__2__Impl_in_rule__ParenExpr__Group__23145);
+            pushFollow(FOLLOW_rule__ParenExpr__Group__2__Impl_in_rule__ParenExpr__Group__23298);
             rule__ParenExpr__Group__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__ParenExpr__Group__3_in_rule__ParenExpr__Group__23148);
+            pushFollow(FOLLOW_rule__ParenExpr__Group__3_in_rule__ParenExpr__Group__23301);
             rule__ParenExpr__Group__3();
 
             state._fsp--;
@@ -4256,23 +4529,23 @@ public class InternalQueryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParenExpr__Group__2__Impl"
-    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1564:1: rule__ParenExpr__Group__2__Impl : ( ( rule__ParenExpr__ExprAssignment_2 ) ) ;
+    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1630:1: rule__ParenExpr__Group__2__Impl : ( ( rule__ParenExpr__ExprAssignment_2 ) ) ;
     public final void rule__ParenExpr__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1568:1: ( ( ( rule__ParenExpr__ExprAssignment_2 ) ) )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1569:1: ( ( rule__ParenExpr__ExprAssignment_2 ) )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1634:1: ( ( ( rule__ParenExpr__ExprAssignment_2 ) ) )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1635:1: ( ( rule__ParenExpr__ExprAssignment_2 ) )
             {
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1569:1: ( ( rule__ParenExpr__ExprAssignment_2 ) )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1570:1: ( rule__ParenExpr__ExprAssignment_2 )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1635:1: ( ( rule__ParenExpr__ExprAssignment_2 ) )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1636:1: ( rule__ParenExpr__ExprAssignment_2 )
             {
              before(grammarAccess.getParenExprAccess().getExprAssignment_2()); 
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1571:1: ( rule__ParenExpr__ExprAssignment_2 )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1571:2: rule__ParenExpr__ExprAssignment_2
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1637:1: ( rule__ParenExpr__ExprAssignment_2 )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1637:2: rule__ParenExpr__ExprAssignment_2
             {
-            pushFollow(FOLLOW_rule__ParenExpr__ExprAssignment_2_in_rule__ParenExpr__Group__2__Impl3175);
+            pushFollow(FOLLOW_rule__ParenExpr__ExprAssignment_2_in_rule__ParenExpr__Group__2__Impl3328);
             rule__ParenExpr__ExprAssignment_2();
 
             state._fsp--;
@@ -4303,16 +4576,16 @@ public class InternalQueryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParenExpr__Group__3"
-    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1581:1: rule__ParenExpr__Group__3 : rule__ParenExpr__Group__3__Impl ;
+    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1647:1: rule__ParenExpr__Group__3 : rule__ParenExpr__Group__3__Impl ;
     public final void rule__ParenExpr__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1585:1: ( rule__ParenExpr__Group__3__Impl )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1586:2: rule__ParenExpr__Group__3__Impl
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1651:1: ( rule__ParenExpr__Group__3__Impl )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1652:2: rule__ParenExpr__Group__3__Impl
             {
-            pushFollow(FOLLOW_rule__ParenExpr__Group__3__Impl_in_rule__ParenExpr__Group__33205);
+            pushFollow(FOLLOW_rule__ParenExpr__Group__3__Impl_in_rule__ParenExpr__Group__33358);
             rule__ParenExpr__Group__3__Impl();
 
             state._fsp--;
@@ -4336,20 +4609,20 @@ public class InternalQueryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParenExpr__Group__3__Impl"
-    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1592:1: rule__ParenExpr__Group__3__Impl : ( ')' ) ;
+    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1658:1: rule__ParenExpr__Group__3__Impl : ( ')' ) ;
     public final void rule__ParenExpr__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1596:1: ( ( ')' ) )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1597:1: ( ')' )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1662:1: ( ( ')' ) )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1663:1: ( ')' )
             {
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1597:1: ( ')' )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1598:1: ')'
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1663:1: ( ')' )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1664:1: ')'
             {
              before(grammarAccess.getParenExprAccess().getRightParenthesisKeyword_3()); 
-            match(input,21,FOLLOW_21_in_rule__ParenExpr__Group__3__Impl3233); 
+            match(input,21,FOLLOW_21_in_rule__ParenExpr__Group__3__Impl3386); 
              after(grammarAccess.getParenExprAccess().getRightParenthesisKeyword_3()); 
 
             }
@@ -4373,21 +4646,21 @@ public class InternalQueryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ProjectReference__Group__0"
-    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1619:1: rule__ProjectReference__Group__0 : rule__ProjectReference__Group__0__Impl rule__ProjectReference__Group__1 ;
+    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1685:1: rule__ProjectReference__Group__0 : rule__ProjectReference__Group__0__Impl rule__ProjectReference__Group__1 ;
     public final void rule__ProjectReference__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1623:1: ( rule__ProjectReference__Group__0__Impl rule__ProjectReference__Group__1 )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1624:2: rule__ProjectReference__Group__0__Impl rule__ProjectReference__Group__1
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1689:1: ( rule__ProjectReference__Group__0__Impl rule__ProjectReference__Group__1 )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1690:2: rule__ProjectReference__Group__0__Impl rule__ProjectReference__Group__1
             {
-            pushFollow(FOLLOW_rule__ProjectReference__Group__0__Impl_in_rule__ProjectReference__Group__03272);
+            pushFollow(FOLLOW_rule__ProjectReference__Group__0__Impl_in_rule__ProjectReference__Group__03425);
             rule__ProjectReference__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__ProjectReference__Group__1_in_rule__ProjectReference__Group__03275);
+            pushFollow(FOLLOW_rule__ProjectReference__Group__1_in_rule__ProjectReference__Group__03428);
             rule__ProjectReference__Group__1();
 
             state._fsp--;
@@ -4411,20 +4684,20 @@ public class InternalQueryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ProjectReference__Group__0__Impl"
-    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1631:1: rule__ProjectReference__Group__0__Impl : ( 'project' ) ;
+    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1697:1: rule__ProjectReference__Group__0__Impl : ( 'project' ) ;
     public final void rule__ProjectReference__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1635:1: ( ( 'project' ) )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1636:1: ( 'project' )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1701:1: ( ( 'project' ) )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1702:1: ( 'project' )
             {
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1636:1: ( 'project' )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1637:1: 'project'
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1702:1: ( 'project' )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1703:1: 'project'
             {
              before(grammarAccess.getProjectReferenceAccess().getProjectKeyword_0()); 
-            match(input,22,FOLLOW_22_in_rule__ProjectReference__Group__0__Impl3303); 
+            match(input,22,FOLLOW_22_in_rule__ProjectReference__Group__0__Impl3456); 
              after(grammarAccess.getProjectReferenceAccess().getProjectKeyword_0()); 
 
             }
@@ -4448,21 +4721,21 @@ public class InternalQueryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ProjectReference__Group__1"
-    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1650:1: rule__ProjectReference__Group__1 : rule__ProjectReference__Group__1__Impl rule__ProjectReference__Group__2 ;
+    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1716:1: rule__ProjectReference__Group__1 : rule__ProjectReference__Group__1__Impl rule__ProjectReference__Group__2 ;
     public final void rule__ProjectReference__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1654:1: ( rule__ProjectReference__Group__1__Impl rule__ProjectReference__Group__2 )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1655:2: rule__ProjectReference__Group__1__Impl rule__ProjectReference__Group__2
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1720:1: ( rule__ProjectReference__Group__1__Impl rule__ProjectReference__Group__2 )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1721:2: rule__ProjectReference__Group__1__Impl rule__ProjectReference__Group__2
             {
-            pushFollow(FOLLOW_rule__ProjectReference__Group__1__Impl_in_rule__ProjectReference__Group__13334);
+            pushFollow(FOLLOW_rule__ProjectReference__Group__1__Impl_in_rule__ProjectReference__Group__13487);
             rule__ProjectReference__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__ProjectReference__Group__2_in_rule__ProjectReference__Group__13337);
+            pushFollow(FOLLOW_rule__ProjectReference__Group__2_in_rule__ProjectReference__Group__13490);
             rule__ProjectReference__Group__2();
 
             state._fsp--;
@@ -4486,20 +4759,20 @@ public class InternalQueryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ProjectReference__Group__1__Impl"
-    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1662:1: rule__ProjectReference__Group__1__Impl : ( ':' ) ;
+    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1728:1: rule__ProjectReference__Group__1__Impl : ( ':' ) ;
     public final void rule__ProjectReference__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1666:1: ( ( ':' ) )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1667:1: ( ':' )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1732:1: ( ( ':' ) )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1733:1: ( ':' )
             {
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1667:1: ( ':' )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1668:1: ':'
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1733:1: ( ':' )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1734:1: ':'
             {
              before(grammarAccess.getProjectReferenceAccess().getColonKeyword_1()); 
-            match(input,23,FOLLOW_23_in_rule__ProjectReference__Group__1__Impl3365); 
+            match(input,23,FOLLOW_23_in_rule__ProjectReference__Group__1__Impl3518); 
              after(grammarAccess.getProjectReferenceAccess().getColonKeyword_1()); 
 
             }
@@ -4523,16 +4796,16 @@ public class InternalQueryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ProjectReference__Group__2"
-    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1681:1: rule__ProjectReference__Group__2 : rule__ProjectReference__Group__2__Impl ;
+    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1747:1: rule__ProjectReference__Group__2 : rule__ProjectReference__Group__2__Impl ;
     public final void rule__ProjectReference__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1685:1: ( rule__ProjectReference__Group__2__Impl )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1686:2: rule__ProjectReference__Group__2__Impl
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1751:1: ( rule__ProjectReference__Group__2__Impl )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1752:2: rule__ProjectReference__Group__2__Impl
             {
-            pushFollow(FOLLOW_rule__ProjectReference__Group__2__Impl_in_rule__ProjectReference__Group__23396);
+            pushFollow(FOLLOW_rule__ProjectReference__Group__2__Impl_in_rule__ProjectReference__Group__23549);
             rule__ProjectReference__Group__2__Impl();
 
             state._fsp--;
@@ -4556,31 +4829,31 @@ public class InternalQueryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ProjectReference__Group__2__Impl"
-    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1692:1: rule__ProjectReference__Group__2__Impl : ( ( rule__ProjectReference__ValueAssignment_2 ) ) ;
+    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1758:1: rule__ProjectReference__Group__2__Impl : ( ( rule__ProjectReference__Alternatives_2 ) ) ;
     public final void rule__ProjectReference__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1696:1: ( ( ( rule__ProjectReference__ValueAssignment_2 ) ) )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1697:1: ( ( rule__ProjectReference__ValueAssignment_2 ) )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1762:1: ( ( ( rule__ProjectReference__Alternatives_2 ) ) )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1763:1: ( ( rule__ProjectReference__Alternatives_2 ) )
             {
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1697:1: ( ( rule__ProjectReference__ValueAssignment_2 ) )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1698:1: ( rule__ProjectReference__ValueAssignment_2 )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1763:1: ( ( rule__ProjectReference__Alternatives_2 ) )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1764:1: ( rule__ProjectReference__Alternatives_2 )
             {
-             before(grammarAccess.getProjectReferenceAccess().getValueAssignment_2()); 
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1699:1: ( rule__ProjectReference__ValueAssignment_2 )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1699:2: rule__ProjectReference__ValueAssignment_2
+             before(grammarAccess.getProjectReferenceAccess().getAlternatives_2()); 
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1765:1: ( rule__ProjectReference__Alternatives_2 )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1765:2: rule__ProjectReference__Alternatives_2
             {
-            pushFollow(FOLLOW_rule__ProjectReference__ValueAssignment_2_in_rule__ProjectReference__Group__2__Impl3423);
-            rule__ProjectReference__ValueAssignment_2();
+            pushFollow(FOLLOW_rule__ProjectReference__Alternatives_2_in_rule__ProjectReference__Group__2__Impl3576);
+            rule__ProjectReference__Alternatives_2();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getProjectReferenceAccess().getValueAssignment_2()); 
+             after(grammarAccess.getProjectReferenceAccess().getAlternatives_2()); 
 
             }
 
@@ -4603,21 +4876,21 @@ public class InternalQueryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TaskReference__Group__0"
-    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1715:1: rule__TaskReference__Group__0 : rule__TaskReference__Group__0__Impl rule__TaskReference__Group__1 ;
+    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1781:1: rule__TaskReference__Group__0 : rule__TaskReference__Group__0__Impl rule__TaskReference__Group__1 ;
     public final void rule__TaskReference__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1719:1: ( rule__TaskReference__Group__0__Impl rule__TaskReference__Group__1 )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1720:2: rule__TaskReference__Group__0__Impl rule__TaskReference__Group__1
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1785:1: ( rule__TaskReference__Group__0__Impl rule__TaskReference__Group__1 )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1786:2: rule__TaskReference__Group__0__Impl rule__TaskReference__Group__1
             {
-            pushFollow(FOLLOW_rule__TaskReference__Group__0__Impl_in_rule__TaskReference__Group__03459);
+            pushFollow(FOLLOW_rule__TaskReference__Group__0__Impl_in_rule__TaskReference__Group__03612);
             rule__TaskReference__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__TaskReference__Group__1_in_rule__TaskReference__Group__03462);
+            pushFollow(FOLLOW_rule__TaskReference__Group__1_in_rule__TaskReference__Group__03615);
             rule__TaskReference__Group__1();
 
             state._fsp--;
@@ -4641,20 +4914,20 @@ public class InternalQueryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TaskReference__Group__0__Impl"
-    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1727:1: rule__TaskReference__Group__0__Impl : ( 'task' ) ;
+    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1793:1: rule__TaskReference__Group__0__Impl : ( 'task' ) ;
     public final void rule__TaskReference__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1731:1: ( ( 'task' ) )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1732:1: ( 'task' )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1797:1: ( ( 'task' ) )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1798:1: ( 'task' )
             {
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1732:1: ( 'task' )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1733:1: 'task'
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1798:1: ( 'task' )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1799:1: 'task'
             {
              before(grammarAccess.getTaskReferenceAccess().getTaskKeyword_0()); 
-            match(input,24,FOLLOW_24_in_rule__TaskReference__Group__0__Impl3490); 
+            match(input,24,FOLLOW_24_in_rule__TaskReference__Group__0__Impl3643); 
              after(grammarAccess.getTaskReferenceAccess().getTaskKeyword_0()); 
 
             }
@@ -4678,21 +4951,21 @@ public class InternalQueryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TaskReference__Group__1"
-    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1746:1: rule__TaskReference__Group__1 : rule__TaskReference__Group__1__Impl rule__TaskReference__Group__2 ;
+    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1812:1: rule__TaskReference__Group__1 : rule__TaskReference__Group__1__Impl rule__TaskReference__Group__2 ;
     public final void rule__TaskReference__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1750:1: ( rule__TaskReference__Group__1__Impl rule__TaskReference__Group__2 )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1751:2: rule__TaskReference__Group__1__Impl rule__TaskReference__Group__2
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1816:1: ( rule__TaskReference__Group__1__Impl rule__TaskReference__Group__2 )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1817:2: rule__TaskReference__Group__1__Impl rule__TaskReference__Group__2
             {
-            pushFollow(FOLLOW_rule__TaskReference__Group__1__Impl_in_rule__TaskReference__Group__13521);
+            pushFollow(FOLLOW_rule__TaskReference__Group__1__Impl_in_rule__TaskReference__Group__13674);
             rule__TaskReference__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__TaskReference__Group__2_in_rule__TaskReference__Group__13524);
+            pushFollow(FOLLOW_rule__TaskReference__Group__2_in_rule__TaskReference__Group__13677);
             rule__TaskReference__Group__2();
 
             state._fsp--;
@@ -4716,20 +4989,20 @@ public class InternalQueryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TaskReference__Group__1__Impl"
-    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1758:1: rule__TaskReference__Group__1__Impl : ( ':' ) ;
+    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1824:1: rule__TaskReference__Group__1__Impl : ( ':' ) ;
     public final void rule__TaskReference__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1762:1: ( ( ':' ) )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1763:1: ( ':' )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1828:1: ( ( ':' ) )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1829:1: ( ':' )
             {
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1763:1: ( ':' )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1764:1: ':'
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1829:1: ( ':' )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1830:1: ':'
             {
              before(grammarAccess.getTaskReferenceAccess().getColonKeyword_1()); 
-            match(input,23,FOLLOW_23_in_rule__TaskReference__Group__1__Impl3552); 
+            match(input,23,FOLLOW_23_in_rule__TaskReference__Group__1__Impl3705); 
              after(grammarAccess.getTaskReferenceAccess().getColonKeyword_1()); 
 
             }
@@ -4753,16 +5026,16 @@ public class InternalQueryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TaskReference__Group__2"
-    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1777:1: rule__TaskReference__Group__2 : rule__TaskReference__Group__2__Impl ;
+    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1843:1: rule__TaskReference__Group__2 : rule__TaskReference__Group__2__Impl ;
     public final void rule__TaskReference__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1781:1: ( rule__TaskReference__Group__2__Impl )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1782:2: rule__TaskReference__Group__2__Impl
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1847:1: ( rule__TaskReference__Group__2__Impl )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1848:2: rule__TaskReference__Group__2__Impl
             {
-            pushFollow(FOLLOW_rule__TaskReference__Group__2__Impl_in_rule__TaskReference__Group__23583);
+            pushFollow(FOLLOW_rule__TaskReference__Group__2__Impl_in_rule__TaskReference__Group__23736);
             rule__TaskReference__Group__2__Impl();
 
             state._fsp--;
@@ -4786,31 +5059,31 @@ public class InternalQueryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TaskReference__Group__2__Impl"
-    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1788:1: rule__TaskReference__Group__2__Impl : ( ( rule__TaskReference__ValueAssignment_2 ) ) ;
+    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1854:1: rule__TaskReference__Group__2__Impl : ( ( rule__TaskReference__Alternatives_2 ) ) ;
     public final void rule__TaskReference__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1792:1: ( ( ( rule__TaskReference__ValueAssignment_2 ) ) )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1793:1: ( ( rule__TaskReference__ValueAssignment_2 ) )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1858:1: ( ( ( rule__TaskReference__Alternatives_2 ) ) )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1859:1: ( ( rule__TaskReference__Alternatives_2 ) )
             {
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1793:1: ( ( rule__TaskReference__ValueAssignment_2 ) )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1794:1: ( rule__TaskReference__ValueAssignment_2 )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1859:1: ( ( rule__TaskReference__Alternatives_2 ) )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1860:1: ( rule__TaskReference__Alternatives_2 )
             {
-             before(grammarAccess.getTaskReferenceAccess().getValueAssignment_2()); 
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1795:1: ( rule__TaskReference__ValueAssignment_2 )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1795:2: rule__TaskReference__ValueAssignment_2
+             before(grammarAccess.getTaskReferenceAccess().getAlternatives_2()); 
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1861:1: ( rule__TaskReference__Alternatives_2 )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1861:2: rule__TaskReference__Alternatives_2
             {
-            pushFollow(FOLLOW_rule__TaskReference__ValueAssignment_2_in_rule__TaskReference__Group__2__Impl3610);
-            rule__TaskReference__ValueAssignment_2();
+            pushFollow(FOLLOW_rule__TaskReference__Alternatives_2_in_rule__TaskReference__Group__2__Impl3763);
+            rule__TaskReference__Alternatives_2();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getTaskReferenceAccess().getValueAssignment_2()); 
+             after(grammarAccess.getTaskReferenceAccess().getAlternatives_2()); 
 
             }
 
@@ -4833,21 +5106,21 @@ public class InternalQueryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TextReference__Group__0"
-    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1811:1: rule__TextReference__Group__0 : rule__TextReference__Group__0__Impl rule__TextReference__Group__1 ;
+    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1877:1: rule__TextReference__Group__0 : rule__TextReference__Group__0__Impl rule__TextReference__Group__1 ;
     public final void rule__TextReference__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1815:1: ( rule__TextReference__Group__0__Impl rule__TextReference__Group__1 )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1816:2: rule__TextReference__Group__0__Impl rule__TextReference__Group__1
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1881:1: ( rule__TextReference__Group__0__Impl rule__TextReference__Group__1 )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1882:2: rule__TextReference__Group__0__Impl rule__TextReference__Group__1
             {
-            pushFollow(FOLLOW_rule__TextReference__Group__0__Impl_in_rule__TextReference__Group__03646);
+            pushFollow(FOLLOW_rule__TextReference__Group__0__Impl_in_rule__TextReference__Group__03799);
             rule__TextReference__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__TextReference__Group__1_in_rule__TextReference__Group__03649);
+            pushFollow(FOLLOW_rule__TextReference__Group__1_in_rule__TextReference__Group__03802);
             rule__TextReference__Group__1();
 
             state._fsp--;
@@ -4871,20 +5144,20 @@ public class InternalQueryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TextReference__Group__0__Impl"
-    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1823:1: rule__TextReference__Group__0__Impl : ( 'text' ) ;
+    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1889:1: rule__TextReference__Group__0__Impl : ( 'text' ) ;
     public final void rule__TextReference__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1827:1: ( ( 'text' ) )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1828:1: ( 'text' )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1893:1: ( ( 'text' ) )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1894:1: ( 'text' )
             {
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1828:1: ( 'text' )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1829:1: 'text'
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1894:1: ( 'text' )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1895:1: 'text'
             {
              before(grammarAccess.getTextReferenceAccess().getTextKeyword_0()); 
-            match(input,25,FOLLOW_25_in_rule__TextReference__Group__0__Impl3677); 
+            match(input,25,FOLLOW_25_in_rule__TextReference__Group__0__Impl3830); 
              after(grammarAccess.getTextReferenceAccess().getTextKeyword_0()); 
 
             }
@@ -4908,21 +5181,21 @@ public class InternalQueryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TextReference__Group__1"
-    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1842:1: rule__TextReference__Group__1 : rule__TextReference__Group__1__Impl rule__TextReference__Group__2 ;
+    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1908:1: rule__TextReference__Group__1 : rule__TextReference__Group__1__Impl rule__TextReference__Group__2 ;
     public final void rule__TextReference__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1846:1: ( rule__TextReference__Group__1__Impl rule__TextReference__Group__2 )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1847:2: rule__TextReference__Group__1__Impl rule__TextReference__Group__2
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1912:1: ( rule__TextReference__Group__1__Impl rule__TextReference__Group__2 )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1913:2: rule__TextReference__Group__1__Impl rule__TextReference__Group__2
             {
-            pushFollow(FOLLOW_rule__TextReference__Group__1__Impl_in_rule__TextReference__Group__13708);
+            pushFollow(FOLLOW_rule__TextReference__Group__1__Impl_in_rule__TextReference__Group__13861);
             rule__TextReference__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__TextReference__Group__2_in_rule__TextReference__Group__13711);
+            pushFollow(FOLLOW_rule__TextReference__Group__2_in_rule__TextReference__Group__13864);
             rule__TextReference__Group__2();
 
             state._fsp--;
@@ -4946,20 +5219,20 @@ public class InternalQueryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TextReference__Group__1__Impl"
-    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1854:1: rule__TextReference__Group__1__Impl : ( ':' ) ;
+    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1920:1: rule__TextReference__Group__1__Impl : ( ':' ) ;
     public final void rule__TextReference__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1858:1: ( ( ':' ) )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1859:1: ( ':' )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1924:1: ( ( ':' ) )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1925:1: ( ':' )
             {
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1859:1: ( ':' )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1860:1: ':'
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1925:1: ( ':' )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1926:1: ':'
             {
              before(grammarAccess.getTextReferenceAccess().getColonKeyword_1()); 
-            match(input,23,FOLLOW_23_in_rule__TextReference__Group__1__Impl3739); 
+            match(input,23,FOLLOW_23_in_rule__TextReference__Group__1__Impl3892); 
              after(grammarAccess.getTextReferenceAccess().getColonKeyword_1()); 
 
             }
@@ -4983,16 +5256,16 @@ public class InternalQueryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TextReference__Group__2"
-    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1873:1: rule__TextReference__Group__2 : rule__TextReference__Group__2__Impl ;
+    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1939:1: rule__TextReference__Group__2 : rule__TextReference__Group__2__Impl ;
     public final void rule__TextReference__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1877:1: ( rule__TextReference__Group__2__Impl )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1878:2: rule__TextReference__Group__2__Impl
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1943:1: ( rule__TextReference__Group__2__Impl )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1944:2: rule__TextReference__Group__2__Impl
             {
-            pushFollow(FOLLOW_rule__TextReference__Group__2__Impl_in_rule__TextReference__Group__23770);
+            pushFollow(FOLLOW_rule__TextReference__Group__2__Impl_in_rule__TextReference__Group__23923);
             rule__TextReference__Group__2__Impl();
 
             state._fsp--;
@@ -5016,31 +5289,31 @@ public class InternalQueryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TextReference__Group__2__Impl"
-    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1884:1: rule__TextReference__Group__2__Impl : ( ( rule__TextReference__ValueAssignment_2 ) ) ;
+    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1950:1: rule__TextReference__Group__2__Impl : ( ( rule__TextReference__Alternatives_2 ) ) ;
     public final void rule__TextReference__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1888:1: ( ( ( rule__TextReference__ValueAssignment_2 ) ) )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1889:1: ( ( rule__TextReference__ValueAssignment_2 ) )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1954:1: ( ( ( rule__TextReference__Alternatives_2 ) ) )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1955:1: ( ( rule__TextReference__Alternatives_2 ) )
             {
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1889:1: ( ( rule__TextReference__ValueAssignment_2 ) )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1890:1: ( rule__TextReference__ValueAssignment_2 )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1955:1: ( ( rule__TextReference__Alternatives_2 ) )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1956:1: ( rule__TextReference__Alternatives_2 )
             {
-             before(grammarAccess.getTextReferenceAccess().getValueAssignment_2()); 
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1891:1: ( rule__TextReference__ValueAssignment_2 )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1891:2: rule__TextReference__ValueAssignment_2
+             before(grammarAccess.getTextReferenceAccess().getAlternatives_2()); 
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1957:1: ( rule__TextReference__Alternatives_2 )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1957:2: rule__TextReference__Alternatives_2
             {
-            pushFollow(FOLLOW_rule__TextReference__ValueAssignment_2_in_rule__TextReference__Group__2__Impl3797);
-            rule__TextReference__ValueAssignment_2();
+            pushFollow(FOLLOW_rule__TextReference__Alternatives_2_in_rule__TextReference__Group__2__Impl3950);
+            rule__TextReference__Alternatives_2();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getTextReferenceAccess().getValueAssignment_2()); 
+             after(grammarAccess.getTextReferenceAccess().getAlternatives_2()); 
 
             }
 
@@ -5063,21 +5336,21 @@ public class InternalQueryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Words__Group__0"
-    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1907:1: rule__Words__Group__0 : rule__Words__Group__0__Impl rule__Words__Group__1 ;
+    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1973:1: rule__Words__Group__0 : rule__Words__Group__0__Impl rule__Words__Group__1 ;
     public final void rule__Words__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1911:1: ( rule__Words__Group__0__Impl rule__Words__Group__1 )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1912:2: rule__Words__Group__0__Impl rule__Words__Group__1
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1977:1: ( rule__Words__Group__0__Impl rule__Words__Group__1 )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1978:2: rule__Words__Group__0__Impl rule__Words__Group__1
             {
-            pushFollow(FOLLOW_rule__Words__Group__0__Impl_in_rule__Words__Group__03833);
+            pushFollow(FOLLOW_rule__Words__Group__0__Impl_in_rule__Words__Group__03986);
             rule__Words__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Words__Group__1_in_rule__Words__Group__03836);
+            pushFollow(FOLLOW_rule__Words__Group__1_in_rule__Words__Group__03989);
             rule__Words__Group__1();
 
             state._fsp--;
@@ -5101,23 +5374,23 @@ public class InternalQueryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Words__Group__0__Impl"
-    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1919:1: rule__Words__Group__0__Impl : ( ( rule__Words__ValuesAssignment_0 ) ) ;
+    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1985:1: rule__Words__Group__0__Impl : ( ( rule__Words__ValuesAssignment_0 ) ) ;
     public final void rule__Words__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1923:1: ( ( ( rule__Words__ValuesAssignment_0 ) ) )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1924:1: ( ( rule__Words__ValuesAssignment_0 ) )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1989:1: ( ( ( rule__Words__ValuesAssignment_0 ) ) )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1990:1: ( ( rule__Words__ValuesAssignment_0 ) )
             {
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1924:1: ( ( rule__Words__ValuesAssignment_0 ) )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1925:1: ( rule__Words__ValuesAssignment_0 )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1990:1: ( ( rule__Words__ValuesAssignment_0 ) )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1991:1: ( rule__Words__ValuesAssignment_0 )
             {
              before(grammarAccess.getWordsAccess().getValuesAssignment_0()); 
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1926:1: ( rule__Words__ValuesAssignment_0 )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1926:2: rule__Words__ValuesAssignment_0
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1992:1: ( rule__Words__ValuesAssignment_0 )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1992:2: rule__Words__ValuesAssignment_0
             {
-            pushFollow(FOLLOW_rule__Words__ValuesAssignment_0_in_rule__Words__Group__0__Impl3863);
+            pushFollow(FOLLOW_rule__Words__ValuesAssignment_0_in_rule__Words__Group__0__Impl4016);
             rule__Words__ValuesAssignment_0();
 
             state._fsp--;
@@ -5148,16 +5421,16 @@ public class InternalQueryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Words__Group__1"
-    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1936:1: rule__Words__Group__1 : rule__Words__Group__1__Impl ;
+    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2002:1: rule__Words__Group__1 : rule__Words__Group__1__Impl ;
     public final void rule__Words__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1940:1: ( rule__Words__Group__1__Impl )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1941:2: rule__Words__Group__1__Impl
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2006:1: ( rule__Words__Group__1__Impl )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2007:2: rule__Words__Group__1__Impl
             {
-            pushFollow(FOLLOW_rule__Words__Group__1__Impl_in_rule__Words__Group__13893);
+            pushFollow(FOLLOW_rule__Words__Group__1__Impl_in_rule__Words__Group__14046);
             rule__Words__Group__1__Impl();
 
             state._fsp--;
@@ -5181,26 +5454,26 @@ public class InternalQueryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Words__Group__1__Impl"
-    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1947:1: rule__Words__Group__1__Impl : ( ( ( rule__Words__ValuesAssignment_1 ) ) ( ( rule__Words__ValuesAssignment_1 )* ) ) ;
+    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2013:1: rule__Words__Group__1__Impl : ( ( ( rule__Words__ValuesAssignment_1 ) ) ( ( rule__Words__ValuesAssignment_1 )* ) ) ;
     public final void rule__Words__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1951:1: ( ( ( ( rule__Words__ValuesAssignment_1 ) ) ( ( rule__Words__ValuesAssignment_1 )* ) ) )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1952:1: ( ( ( rule__Words__ValuesAssignment_1 ) ) ( ( rule__Words__ValuesAssignment_1 )* ) )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2017:1: ( ( ( ( rule__Words__ValuesAssignment_1 ) ) ( ( rule__Words__ValuesAssignment_1 )* ) ) )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2018:1: ( ( ( rule__Words__ValuesAssignment_1 ) ) ( ( rule__Words__ValuesAssignment_1 )* ) )
             {
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1952:1: ( ( ( rule__Words__ValuesAssignment_1 ) ) ( ( rule__Words__ValuesAssignment_1 )* ) )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1953:1: ( ( rule__Words__ValuesAssignment_1 ) ) ( ( rule__Words__ValuesAssignment_1 )* )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2018:1: ( ( ( rule__Words__ValuesAssignment_1 ) ) ( ( rule__Words__ValuesAssignment_1 )* ) )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2019:1: ( ( rule__Words__ValuesAssignment_1 ) ) ( ( rule__Words__ValuesAssignment_1 )* )
             {
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1953:1: ( ( rule__Words__ValuesAssignment_1 ) )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1954:1: ( rule__Words__ValuesAssignment_1 )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2019:1: ( ( rule__Words__ValuesAssignment_1 ) )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2020:1: ( rule__Words__ValuesAssignment_1 )
             {
              before(grammarAccess.getWordsAccess().getValuesAssignment_1()); 
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1955:1: ( rule__Words__ValuesAssignment_1 )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1955:2: rule__Words__ValuesAssignment_1
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2021:1: ( rule__Words__ValuesAssignment_1 )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2021:2: rule__Words__ValuesAssignment_1
             {
-            pushFollow(FOLLOW_rule__Words__ValuesAssignment_1_in_rule__Words__Group__1__Impl3922);
+            pushFollow(FOLLOW_rule__Words__ValuesAssignment_1_in_rule__Words__Group__1__Impl4075);
             rule__Words__ValuesAssignment_1();
 
             state._fsp--;
@@ -5212,26 +5485,26 @@ public class InternalQueryParser extends AbstractInternalContentAssistParser {
 
             }
 
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1958:1: ( ( rule__Words__ValuesAssignment_1 )* )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1959:1: ( rule__Words__ValuesAssignment_1 )*
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2024:1: ( ( rule__Words__ValuesAssignment_1 )* )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2025:1: ( rule__Words__ValuesAssignment_1 )*
             {
              before(grammarAccess.getWordsAccess().getValuesAssignment_1()); 
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1960:1: ( rule__Words__ValuesAssignment_1 )*
-            loop11:
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2026:1: ( rule__Words__ValuesAssignment_1 )*
+            loop14:
             do {
-                int alt11=2;
-                int LA11_0 = input.LA(1);
+                int alt14=2;
+                int LA14_0 = input.LA(1);
 
-                if ( (LA11_0==RULE_ID) ) {
-                    alt11=1;
+                if ( (LA14_0==RULE_ID) ) {
+                    alt14=1;
                 }
 
 
-                switch (alt11) {
+                switch (alt14) {
             	case 1 :
-            	    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1960:2: rule__Words__ValuesAssignment_1
+            	    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2026:2: rule__Words__ValuesAssignment_1
             	    {
-            	    pushFollow(FOLLOW_rule__Words__ValuesAssignment_1_in_rule__Words__Group__1__Impl3934);
+            	    pushFollow(FOLLOW_rule__Words__ValuesAssignment_1_in_rule__Words__Group__1__Impl4087);
             	    rule__Words__ValuesAssignment_1();
 
             	    state._fsp--;
@@ -5241,7 +5514,7 @@ public class InternalQueryParser extends AbstractInternalContentAssistParser {
             	    break;
 
             	default :
-            	    break loop11;
+            	    break loop14;
                 }
             } while (true);
 
@@ -5271,21 +5544,21 @@ public class InternalQueryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TagReference__Group__0"
-    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1975:1: rule__TagReference__Group__0 : rule__TagReference__Group__0__Impl rule__TagReference__Group__1 ;
+    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2041:1: rule__TagReference__Group__0 : rule__TagReference__Group__0__Impl rule__TagReference__Group__1 ;
     public final void rule__TagReference__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1979:1: ( rule__TagReference__Group__0__Impl rule__TagReference__Group__1 )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1980:2: rule__TagReference__Group__0__Impl rule__TagReference__Group__1
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2045:1: ( rule__TagReference__Group__0__Impl rule__TagReference__Group__1 )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2046:2: rule__TagReference__Group__0__Impl rule__TagReference__Group__1
             {
-            pushFollow(FOLLOW_rule__TagReference__Group__0__Impl_in_rule__TagReference__Group__03971);
+            pushFollow(FOLLOW_rule__TagReference__Group__0__Impl_in_rule__TagReference__Group__04124);
             rule__TagReference__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__TagReference__Group__1_in_rule__TagReference__Group__03974);
+            pushFollow(FOLLOW_rule__TagReference__Group__1_in_rule__TagReference__Group__04127);
             rule__TagReference__Group__1();
 
             state._fsp--;
@@ -5309,20 +5582,20 @@ public class InternalQueryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TagReference__Group__0__Impl"
-    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1987:1: rule__TagReference__Group__0__Impl : ( '@' ) ;
+    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2053:1: rule__TagReference__Group__0__Impl : ( '@' ) ;
     public final void rule__TagReference__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1991:1: ( ( '@' ) )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1992:1: ( '@' )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2057:1: ( ( '@' ) )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2058:1: ( '@' )
             {
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1992:1: ( '@' )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:1993:1: '@'
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2058:1: ( '@' )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2059:1: '@'
             {
              before(grammarAccess.getTagReferenceAccess().getCommercialAtKeyword_0()); 
-            match(input,26,FOLLOW_26_in_rule__TagReference__Group__0__Impl4002); 
+            match(input,26,FOLLOW_26_in_rule__TagReference__Group__0__Impl4155); 
              after(grammarAccess.getTagReferenceAccess().getCommercialAtKeyword_0()); 
 
             }
@@ -5346,16 +5619,16 @@ public class InternalQueryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TagReference__Group__1"
-    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2006:1: rule__TagReference__Group__1 : rule__TagReference__Group__1__Impl ;
+    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2072:1: rule__TagReference__Group__1 : rule__TagReference__Group__1__Impl ;
     public final void rule__TagReference__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2010:1: ( rule__TagReference__Group__1__Impl )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2011:2: rule__TagReference__Group__1__Impl
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2076:1: ( rule__TagReference__Group__1__Impl )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2077:2: rule__TagReference__Group__1__Impl
             {
-            pushFollow(FOLLOW_rule__TagReference__Group__1__Impl_in_rule__TagReference__Group__14033);
+            pushFollow(FOLLOW_rule__TagReference__Group__1__Impl_in_rule__TagReference__Group__14186);
             rule__TagReference__Group__1__Impl();
 
             state._fsp--;
@@ -5379,23 +5652,23 @@ public class InternalQueryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TagReference__Group__1__Impl"
-    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2017:1: rule__TagReference__Group__1__Impl : ( ( rule__TagReference__ValueAssignment_1 ) ) ;
+    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2083:1: rule__TagReference__Group__1__Impl : ( ( rule__TagReference__ValueAssignment_1 ) ) ;
     public final void rule__TagReference__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2021:1: ( ( ( rule__TagReference__ValueAssignment_1 ) ) )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2022:1: ( ( rule__TagReference__ValueAssignment_1 ) )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2087:1: ( ( ( rule__TagReference__ValueAssignment_1 ) ) )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2088:1: ( ( rule__TagReference__ValueAssignment_1 ) )
             {
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2022:1: ( ( rule__TagReference__ValueAssignment_1 ) )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2023:1: ( rule__TagReference__ValueAssignment_1 )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2088:1: ( ( rule__TagReference__ValueAssignment_1 ) )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2089:1: ( rule__TagReference__ValueAssignment_1 )
             {
              before(grammarAccess.getTagReferenceAccess().getValueAssignment_1()); 
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2024:1: ( rule__TagReference__ValueAssignment_1 )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2024:2: rule__TagReference__ValueAssignment_1
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2090:1: ( rule__TagReference__ValueAssignment_1 )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2090:2: rule__TagReference__ValueAssignment_1
             {
-            pushFollow(FOLLOW_rule__TagReference__ValueAssignment_1_in_rule__TagReference__Group__1__Impl4060);
+            pushFollow(FOLLOW_rule__TagReference__ValueAssignment_1_in_rule__TagReference__Group__1__Impl4213);
             rule__TagReference__ValueAssignment_1();
 
             state._fsp--;
@@ -5426,20 +5699,20 @@ public class InternalQueryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Query__ExpressionAssignment_1"
-    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2039:1: rule__Query__ExpressionAssignment_1 : ( ruleOrExpr ) ;
+    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2105:1: rule__Query__ExpressionAssignment_1 : ( ruleOrExpr ) ;
     public final void rule__Query__ExpressionAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2043:1: ( ( ruleOrExpr ) )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2044:1: ( ruleOrExpr )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2109:1: ( ( ruleOrExpr ) )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2110:1: ( ruleOrExpr )
             {
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2044:1: ( ruleOrExpr )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2045:1: ruleOrExpr
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2110:1: ( ruleOrExpr )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2111:1: ruleOrExpr
             {
              before(grammarAccess.getQueryAccess().getExpressionOrExprParserRuleCall_1_0()); 
-            pushFollow(FOLLOW_ruleOrExpr_in_rule__Query__ExpressionAssignment_14099);
+            pushFollow(FOLLOW_ruleOrExpr_in_rule__Query__ExpressionAssignment_14252);
             ruleOrExpr();
 
             state._fsp--;
@@ -5467,20 +5740,20 @@ public class InternalQueryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__OrExpr__RightAssignment_1_2"
-    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2054:1: rule__OrExpr__RightAssignment_1_2 : ( ruleAndExpr ) ;
+    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2120:1: rule__OrExpr__RightAssignment_1_2 : ( ruleAndExpr ) ;
     public final void rule__OrExpr__RightAssignment_1_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2058:1: ( ( ruleAndExpr ) )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2059:1: ( ruleAndExpr )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2124:1: ( ( ruleAndExpr ) )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2125:1: ( ruleAndExpr )
             {
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2059:1: ( ruleAndExpr )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2060:1: ruleAndExpr
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2125:1: ( ruleAndExpr )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2126:1: ruleAndExpr
             {
              before(grammarAccess.getOrExprAccess().getRightAndExprParserRuleCall_1_2_0()); 
-            pushFollow(FOLLOW_ruleAndExpr_in_rule__OrExpr__RightAssignment_1_24130);
+            pushFollow(FOLLOW_ruleAndExpr_in_rule__OrExpr__RightAssignment_1_24283);
             ruleAndExpr();
 
             state._fsp--;
@@ -5508,20 +5781,20 @@ public class InternalQueryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__AndExpr__RightAssignment_1_2"
-    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2069:1: rule__AndExpr__RightAssignment_1_2 : ( ruleCompEqExpr ) ;
+    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2135:1: rule__AndExpr__RightAssignment_1_2 : ( ruleCompEqExpr ) ;
     public final void rule__AndExpr__RightAssignment_1_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2073:1: ( ( ruleCompEqExpr ) )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2074:1: ( ruleCompEqExpr )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2139:1: ( ( ruleCompEqExpr ) )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2140:1: ( ruleCompEqExpr )
             {
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2074:1: ( ruleCompEqExpr )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2075:1: ruleCompEqExpr
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2140:1: ( ruleCompEqExpr )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2141:1: ruleCompEqExpr
             {
              before(grammarAccess.getAndExprAccess().getRightCompEqExprParserRuleCall_1_2_0()); 
-            pushFollow(FOLLOW_ruleCompEqExpr_in_rule__AndExpr__RightAssignment_1_24161);
+            pushFollow(FOLLOW_ruleCompEqExpr_in_rule__AndExpr__RightAssignment_1_24314);
             ruleCompEqExpr();
 
             state._fsp--;
@@ -5549,20 +5822,20 @@ public class InternalQueryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__CompEqExpr__OperatorAssignment_1_1"
-    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2084:1: rule__CompEqExpr__OperatorAssignment_1_1 : ( ruleCompEqOperator ) ;
+    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2150:1: rule__CompEqExpr__OperatorAssignment_1_1 : ( ruleCompEqOperator ) ;
     public final void rule__CompEqExpr__OperatorAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2088:1: ( ( ruleCompEqOperator ) )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2089:1: ( ruleCompEqOperator )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2154:1: ( ( ruleCompEqOperator ) )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2155:1: ( ruleCompEqOperator )
             {
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2089:1: ( ruleCompEqOperator )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2090:1: ruleCompEqOperator
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2155:1: ( ruleCompEqOperator )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2156:1: ruleCompEqOperator
             {
              before(grammarAccess.getCompEqExprAccess().getOperatorCompEqOperatorEnumRuleCall_1_1_0()); 
-            pushFollow(FOLLOW_ruleCompEqOperator_in_rule__CompEqExpr__OperatorAssignment_1_14192);
+            pushFollow(FOLLOW_ruleCompEqOperator_in_rule__CompEqExpr__OperatorAssignment_1_14345);
             ruleCompEqOperator();
 
             state._fsp--;
@@ -5590,20 +5863,20 @@ public class InternalQueryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__CompEqExpr__RightAssignment_1_2"
-    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2099:1: rule__CompEqExpr__RightAssignment_1_2 : ( ruleCompExpr ) ;
+    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2165:1: rule__CompEqExpr__RightAssignment_1_2 : ( ruleCompExpr ) ;
     public final void rule__CompEqExpr__RightAssignment_1_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2103:1: ( ( ruleCompExpr ) )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2104:1: ( ruleCompExpr )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2169:1: ( ( ruleCompExpr ) )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2170:1: ( ruleCompExpr )
             {
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2104:1: ( ruleCompExpr )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2105:1: ruleCompExpr
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2170:1: ( ruleCompExpr )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2171:1: ruleCompExpr
             {
              before(grammarAccess.getCompEqExprAccess().getRightCompExprParserRuleCall_1_2_0()); 
-            pushFollow(FOLLOW_ruleCompExpr_in_rule__CompEqExpr__RightAssignment_1_24223);
+            pushFollow(FOLLOW_ruleCompExpr_in_rule__CompEqExpr__RightAssignment_1_24376);
             ruleCompExpr();
 
             state._fsp--;
@@ -5631,20 +5904,20 @@ public class InternalQueryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__CompExpr__OperatorAssignment_1_1"
-    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2114:1: rule__CompExpr__OperatorAssignment_1_1 : ( ruleCompOperator ) ;
+    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2180:1: rule__CompExpr__OperatorAssignment_1_1 : ( ruleCompOperator ) ;
     public final void rule__CompExpr__OperatorAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2118:1: ( ( ruleCompOperator ) )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2119:1: ( ruleCompOperator )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2184:1: ( ( ruleCompOperator ) )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2185:1: ( ruleCompOperator )
             {
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2119:1: ( ruleCompOperator )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2120:1: ruleCompOperator
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2185:1: ( ruleCompOperator )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2186:1: ruleCompOperator
             {
              before(grammarAccess.getCompExprAccess().getOperatorCompOperatorEnumRuleCall_1_1_0()); 
-            pushFollow(FOLLOW_ruleCompOperator_in_rule__CompExpr__OperatorAssignment_1_14254);
+            pushFollow(FOLLOW_ruleCompOperator_in_rule__CompExpr__OperatorAssignment_1_14407);
             ruleCompOperator();
 
             state._fsp--;
@@ -5672,20 +5945,20 @@ public class InternalQueryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__CompExpr__RightAssignment_1_2"
-    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2129:1: rule__CompExpr__RightAssignment_1_2 : ( ruleUnaryExpr ) ;
+    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2195:1: rule__CompExpr__RightAssignment_1_2 : ( ruleUnaryExpr ) ;
     public final void rule__CompExpr__RightAssignment_1_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2133:1: ( ( ruleUnaryExpr ) )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2134:1: ( ruleUnaryExpr )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2199:1: ( ( ruleUnaryExpr ) )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2200:1: ( ruleUnaryExpr )
             {
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2134:1: ( ruleUnaryExpr )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2135:1: ruleUnaryExpr
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2200:1: ( ruleUnaryExpr )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2201:1: ruleUnaryExpr
             {
              before(grammarAccess.getCompExprAccess().getRightUnaryExprParserRuleCall_1_2_0()); 
-            pushFollow(FOLLOW_ruleUnaryExpr_in_rule__CompExpr__RightAssignment_1_24285);
+            pushFollow(FOLLOW_ruleUnaryExpr_in_rule__CompExpr__RightAssignment_1_24438);
             ruleUnaryExpr();
 
             state._fsp--;
@@ -5713,20 +5986,20 @@ public class InternalQueryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__UnaryExpr__ExprAssignment_1_2"
-    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2144:1: rule__UnaryExpr__ExprAssignment_1_2 : ( ruleUnaryExpr ) ;
+    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2210:1: rule__UnaryExpr__ExprAssignment_1_2 : ( ruleUnaryExpr ) ;
     public final void rule__UnaryExpr__ExprAssignment_1_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2148:1: ( ( ruleUnaryExpr ) )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2149:1: ( ruleUnaryExpr )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2214:1: ( ( ruleUnaryExpr ) )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2215:1: ( ruleUnaryExpr )
             {
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2149:1: ( ruleUnaryExpr )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2150:1: ruleUnaryExpr
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2215:1: ( ruleUnaryExpr )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2216:1: ruleUnaryExpr
             {
              before(grammarAccess.getUnaryExprAccess().getExprUnaryExprParserRuleCall_1_2_0()); 
-            pushFollow(FOLLOW_ruleUnaryExpr_in_rule__UnaryExpr__ExprAssignment_1_24316);
+            pushFollow(FOLLOW_ruleUnaryExpr_in_rule__UnaryExpr__ExprAssignment_1_24469);
             ruleUnaryExpr();
 
             state._fsp--;
@@ -5754,20 +6027,20 @@ public class InternalQueryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParenExpr__ExprAssignment_2"
-    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2159:1: rule__ParenExpr__ExprAssignment_2 : ( ruleOrExpr ) ;
+    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2225:1: rule__ParenExpr__ExprAssignment_2 : ( ruleOrExpr ) ;
     public final void rule__ParenExpr__ExprAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2163:1: ( ( ruleOrExpr ) )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2164:1: ( ruleOrExpr )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2229:1: ( ( ruleOrExpr ) )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2230:1: ( ruleOrExpr )
             {
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2164:1: ( ruleOrExpr )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2165:1: ruleOrExpr
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2230:1: ( ruleOrExpr )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2231:1: ruleOrExpr
             {
              before(grammarAccess.getParenExprAccess().getExprOrExprParserRuleCall_2_0()); 
-            pushFollow(FOLLOW_ruleOrExpr_in_rule__ParenExpr__ExprAssignment_24347);
+            pushFollow(FOLLOW_ruleOrExpr_in_rule__ParenExpr__ExprAssignment_24500);
             ruleOrExpr();
 
             state._fsp--;
@@ -5794,22 +6067,22 @@ public class InternalQueryParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__ParenExpr__ExprAssignment_2"
 
 
-    // $ANTLR start "rule__ProjectReference__ValueAssignment_2"
-    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2174:1: rule__ProjectReference__ValueAssignment_2 : ( RULE_ID ) ;
-    public final void rule__ProjectReference__ValueAssignment_2() throws RecognitionException {
+    // $ANTLR start "rule__ProjectReference__ValueAssignment_2_0"
+    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2240:1: rule__ProjectReference__ValueAssignment_2_0 : ( RULE_ID ) ;
+    public final void rule__ProjectReference__ValueAssignment_2_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2178:1: ( ( RULE_ID ) )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2179:1: ( RULE_ID )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2244:1: ( ( RULE_ID ) )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2245:1: ( RULE_ID )
             {
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2179:1: ( RULE_ID )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2180:1: RULE_ID
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2245:1: ( RULE_ID )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2246:1: RULE_ID
             {
-             before(grammarAccess.getProjectReferenceAccess().getValueIDTerminalRuleCall_2_0()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__ProjectReference__ValueAssignment_24378); 
-             after(grammarAccess.getProjectReferenceAccess().getValueIDTerminalRuleCall_2_0()); 
+             before(grammarAccess.getProjectReferenceAccess().getValueIDTerminalRuleCall_2_0_0()); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__ProjectReference__ValueAssignment_2_04531); 
+             after(grammarAccess.getProjectReferenceAccess().getValueIDTerminalRuleCall_2_0_0()); 
 
             }
 
@@ -5828,25 +6101,25 @@ public class InternalQueryParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__ProjectReference__ValueAssignment_2"
+    // $ANTLR end "rule__ProjectReference__ValueAssignment_2_0"
 
 
-    // $ANTLR start "rule__TaskReference__ValueAssignment_2"
-    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2189:1: rule__TaskReference__ValueAssignment_2 : ( RULE_ID ) ;
-    public final void rule__TaskReference__ValueAssignment_2() throws RecognitionException {
+    // $ANTLR start "rule__ProjectReference__ValueAssignment_2_1"
+    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2255:1: rule__ProjectReference__ValueAssignment_2_1 : ( RULE_STRING ) ;
+    public final void rule__ProjectReference__ValueAssignment_2_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2193:1: ( ( RULE_ID ) )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2194:1: ( RULE_ID )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2259:1: ( ( RULE_STRING ) )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2260:1: ( RULE_STRING )
             {
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2194:1: ( RULE_ID )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2195:1: RULE_ID
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2260:1: ( RULE_STRING )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2261:1: RULE_STRING
             {
-             before(grammarAccess.getTaskReferenceAccess().getValueIDTerminalRuleCall_2_0()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__TaskReference__ValueAssignment_24409); 
-             after(grammarAccess.getTaskReferenceAccess().getValueIDTerminalRuleCall_2_0()); 
+             before(grammarAccess.getProjectReferenceAccess().getValueSTRINGTerminalRuleCall_2_1_0()); 
+            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__ProjectReference__ValueAssignment_2_14562); 
+             after(grammarAccess.getProjectReferenceAccess().getValueSTRINGTerminalRuleCall_2_1_0()); 
 
             }
 
@@ -5865,25 +6138,25 @@ public class InternalQueryParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__TaskReference__ValueAssignment_2"
+    // $ANTLR end "rule__ProjectReference__ValueAssignment_2_1"
 
 
-    // $ANTLR start "rule__TextReference__ValueAssignment_2"
-    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2204:1: rule__TextReference__ValueAssignment_2 : ( RULE_ID ) ;
-    public final void rule__TextReference__ValueAssignment_2() throws RecognitionException {
+    // $ANTLR start "rule__TaskReference__ValueAssignment_2_0"
+    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2270:1: rule__TaskReference__ValueAssignment_2_0 : ( RULE_ID ) ;
+    public final void rule__TaskReference__ValueAssignment_2_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2208:1: ( ( RULE_ID ) )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2209:1: ( RULE_ID )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2274:1: ( ( RULE_ID ) )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2275:1: ( RULE_ID )
             {
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2209:1: ( RULE_ID )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2210:1: RULE_ID
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2275:1: ( RULE_ID )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2276:1: RULE_ID
             {
-             before(grammarAccess.getTextReferenceAccess().getValueIDTerminalRuleCall_2_0()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__TextReference__ValueAssignment_24440); 
-             after(grammarAccess.getTextReferenceAccess().getValueIDTerminalRuleCall_2_0()); 
+             before(grammarAccess.getTaskReferenceAccess().getValueIDTerminalRuleCall_2_0_0()); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__TaskReference__ValueAssignment_2_04593); 
+             after(grammarAccess.getTaskReferenceAccess().getValueIDTerminalRuleCall_2_0_0()); 
 
             }
 
@@ -5902,24 +6175,135 @@ public class InternalQueryParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__TextReference__ValueAssignment_2"
+    // $ANTLR end "rule__TaskReference__ValueAssignment_2_0"
+
+
+    // $ANTLR start "rule__TaskReference__ValueAssignment_2_1"
+    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2285:1: rule__TaskReference__ValueAssignment_2_1 : ( RULE_STRING ) ;
+    public final void rule__TaskReference__ValueAssignment_2_1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2289:1: ( ( RULE_STRING ) )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2290:1: ( RULE_STRING )
+            {
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2290:1: ( RULE_STRING )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2291:1: RULE_STRING
+            {
+             before(grammarAccess.getTaskReferenceAccess().getValueSTRINGTerminalRuleCall_2_1_0()); 
+            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__TaskReference__ValueAssignment_2_14624); 
+             after(grammarAccess.getTaskReferenceAccess().getValueSTRINGTerminalRuleCall_2_1_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__TaskReference__ValueAssignment_2_1"
+
+
+    // $ANTLR start "rule__TextReference__ValueAssignment_2_0"
+    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2300:1: rule__TextReference__ValueAssignment_2_0 : ( RULE_ID ) ;
+    public final void rule__TextReference__ValueAssignment_2_0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2304:1: ( ( RULE_ID ) )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2305:1: ( RULE_ID )
+            {
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2305:1: ( RULE_ID )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2306:1: RULE_ID
+            {
+             before(grammarAccess.getTextReferenceAccess().getValueIDTerminalRuleCall_2_0_0()); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__TextReference__ValueAssignment_2_04655); 
+             after(grammarAccess.getTextReferenceAccess().getValueIDTerminalRuleCall_2_0_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__TextReference__ValueAssignment_2_0"
+
+
+    // $ANTLR start "rule__TextReference__ValueAssignment_2_1"
+    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2315:1: rule__TextReference__ValueAssignment_2_1 : ( RULE_STRING ) ;
+    public final void rule__TextReference__ValueAssignment_2_1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2319:1: ( ( RULE_STRING ) )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2320:1: ( RULE_STRING )
+            {
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2320:1: ( RULE_STRING )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2321:1: RULE_STRING
+            {
+             before(grammarAccess.getTextReferenceAccess().getValueSTRINGTerminalRuleCall_2_1_0()); 
+            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__TextReference__ValueAssignment_2_14686); 
+             after(grammarAccess.getTextReferenceAccess().getValueSTRINGTerminalRuleCall_2_1_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__TextReference__ValueAssignment_2_1"
 
 
     // $ANTLR start "rule__Words__ValuesAssignment_0"
-    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2219:1: rule__Words__ValuesAssignment_0 : ( RULE_ID ) ;
+    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2330:1: rule__Words__ValuesAssignment_0 : ( RULE_ID ) ;
     public final void rule__Words__ValuesAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2223:1: ( ( RULE_ID ) )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2224:1: ( RULE_ID )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2334:1: ( ( RULE_ID ) )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2335:1: ( RULE_ID )
             {
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2224:1: ( RULE_ID )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2225:1: RULE_ID
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2335:1: ( RULE_ID )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2336:1: RULE_ID
             {
              before(grammarAccess.getWordsAccess().getValuesIDTerminalRuleCall_0_0()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Words__ValuesAssignment_04471); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Words__ValuesAssignment_04717); 
              after(grammarAccess.getWordsAccess().getValuesIDTerminalRuleCall_0_0()); 
 
             }
@@ -5943,20 +6327,20 @@ public class InternalQueryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Words__ValuesAssignment_1"
-    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2234:1: rule__Words__ValuesAssignment_1 : ( RULE_ID ) ;
+    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2345:1: rule__Words__ValuesAssignment_1 : ( RULE_ID ) ;
     public final void rule__Words__ValuesAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2238:1: ( ( RULE_ID ) )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2239:1: ( RULE_ID )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2349:1: ( ( RULE_ID ) )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2350:1: ( RULE_ID )
             {
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2239:1: ( RULE_ID )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2240:1: RULE_ID
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2350:1: ( RULE_ID )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2351:1: RULE_ID
             {
              before(grammarAccess.getWordsAccess().getValuesIDTerminalRuleCall_1_0()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Words__ValuesAssignment_14502); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Words__ValuesAssignment_14748); 
              after(grammarAccess.getWordsAccess().getValuesIDTerminalRuleCall_1_0()); 
 
             }
@@ -5980,20 +6364,20 @@ public class InternalQueryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Word__ValueAssignment"
-    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2249:1: rule__Word__ValueAssignment : ( RULE_ID ) ;
+    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2360:1: rule__Word__ValueAssignment : ( RULE_ID ) ;
     public final void rule__Word__ValueAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2253:1: ( ( RULE_ID ) )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2254:1: ( RULE_ID )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2364:1: ( ( RULE_ID ) )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2365:1: ( RULE_ID )
             {
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2254:1: ( RULE_ID )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2255:1: RULE_ID
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2365:1: ( RULE_ID )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2366:1: RULE_ID
             {
              before(grammarAccess.getWordAccess().getValueIDTerminalRuleCall_0()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Word__ValueAssignment4533); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Word__ValueAssignment4779); 
              after(grammarAccess.getWordAccess().getValueIDTerminalRuleCall_0()); 
 
             }
@@ -6017,20 +6401,20 @@ public class InternalQueryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Phrase__ValueAssignment"
-    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2264:1: rule__Phrase__ValueAssignment : ( RULE_STRING ) ;
+    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2375:1: rule__Phrase__ValueAssignment : ( RULE_STRING ) ;
     public final void rule__Phrase__ValueAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2268:1: ( ( RULE_STRING ) )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2269:1: ( RULE_STRING )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2379:1: ( ( RULE_STRING ) )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2380:1: ( RULE_STRING )
             {
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2269:1: ( RULE_STRING )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2270:1: RULE_STRING
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2380:1: ( RULE_STRING )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2381:1: RULE_STRING
             {
              before(grammarAccess.getPhraseAccess().getValueSTRINGTerminalRuleCall_0()); 
-            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__Phrase__ValueAssignment4564); 
+            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__Phrase__ValueAssignment4810); 
              after(grammarAccess.getPhraseAccess().getValueSTRINGTerminalRuleCall_0()); 
 
             }
@@ -6054,20 +6438,20 @@ public class InternalQueryParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TagReference__ValueAssignment_1"
-    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2279:1: rule__TagReference__ValueAssignment_1 : ( RULE_ID ) ;
+    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2390:1: rule__TagReference__ValueAssignment_1 : ( RULE_ID ) ;
     public final void rule__TagReference__ValueAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2283:1: ( ( RULE_ID ) )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2284:1: ( RULE_ID )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2394:1: ( ( RULE_ID ) )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2395:1: ( RULE_ID )
             {
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2284:1: ( RULE_ID )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2285:1: RULE_ID
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2395:1: ( RULE_ID )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalQuery.g:2396:1: RULE_ID
             {
              before(grammarAccess.getTagReferenceAccess().getValueIDTerminalRuleCall_1_0()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__TagReference__ValueAssignment_14595); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__TagReference__ValueAssignment_14841); 
              after(grammarAccess.getTagReferenceAccess().getValueIDTerminalRuleCall_1_0()); 
 
             }
@@ -6155,132 +6539,141 @@ public class InternalQueryParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_ruleTagReference_in_rule__Value__Alternatives1269 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleTextReference_in_rule__Value__Alternatives1286 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleTaskReference_in_rule__Value__Alternatives1303 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_11_in_rule__CompEqOperator__Alternatives1336 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_12_in_rule__CompEqOperator__Alternatives1357 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_13_in_rule__CompOperator__Alternatives1393 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_14_in_rule__CompOperator__Alternatives1414 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_15_in_rule__CompOperator__Alternatives1435 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_16_in_rule__CompOperator__Alternatives1456 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Query__Group__0__Impl_in_rule__Query__Group__01489 = new BitSet(new long[]{0x0000000007580030L});
-    public static final BitSet FOLLOW_rule__Query__Group__1_in_rule__Query__Group__01492 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Query__Group__1__Impl_in_rule__Query__Group__11550 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Query__ExpressionAssignment_1_in_rule__Query__Group__1__Impl1577 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__OrExpr__Group__0__Impl_in_rule__OrExpr__Group__01612 = new BitSet(new long[]{0x0000000000020000L});
-    public static final BitSet FOLLOW_rule__OrExpr__Group__1_in_rule__OrExpr__Group__01615 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleAndExpr_in_rule__OrExpr__Group__0__Impl1642 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__OrExpr__Group__1__Impl_in_rule__OrExpr__Group__11671 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__OrExpr__Group_1__0_in_rule__OrExpr__Group__1__Impl1698 = new BitSet(new long[]{0x0000000000020002L});
-    public static final BitSet FOLLOW_rule__OrExpr__Group_1__0__Impl_in_rule__OrExpr__Group_1__01733 = new BitSet(new long[]{0x0000000000020000L});
-    public static final BitSet FOLLOW_rule__OrExpr__Group_1__1_in_rule__OrExpr__Group_1__01736 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__OrExpr__Group_1__1__Impl_in_rule__OrExpr__Group_1__11794 = new BitSet(new long[]{0x0000000007580030L});
-    public static final BitSet FOLLOW_rule__OrExpr__Group_1__2_in_rule__OrExpr__Group_1__11797 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_17_in_rule__OrExpr__Group_1__1__Impl1825 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__OrExpr__Group_1__2__Impl_in_rule__OrExpr__Group_1__21856 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__OrExpr__RightAssignment_1_2_in_rule__OrExpr__Group_1__2__Impl1883 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__AndExpr__Group__0__Impl_in_rule__AndExpr__Group__01919 = new BitSet(new long[]{0x0000000000040000L});
-    public static final BitSet FOLLOW_rule__AndExpr__Group__1_in_rule__AndExpr__Group__01922 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleCompEqExpr_in_rule__AndExpr__Group__0__Impl1949 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__AndExpr__Group__1__Impl_in_rule__AndExpr__Group__11978 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__AndExpr__Group_1__0_in_rule__AndExpr__Group__1__Impl2005 = new BitSet(new long[]{0x0000000000040002L});
-    public static final BitSet FOLLOW_rule__AndExpr__Group_1__0__Impl_in_rule__AndExpr__Group_1__02040 = new BitSet(new long[]{0x0000000000040000L});
-    public static final BitSet FOLLOW_rule__AndExpr__Group_1__1_in_rule__AndExpr__Group_1__02043 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__AndExpr__Group_1__1__Impl_in_rule__AndExpr__Group_1__12101 = new BitSet(new long[]{0x0000000007580030L});
-    public static final BitSet FOLLOW_rule__AndExpr__Group_1__2_in_rule__AndExpr__Group_1__12104 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_18_in_rule__AndExpr__Group_1__1__Impl2132 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__AndExpr__Group_1__2__Impl_in_rule__AndExpr__Group_1__22163 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__AndExpr__RightAssignment_1_2_in_rule__AndExpr__Group_1__2__Impl2190 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__CompEqExpr__Group__0__Impl_in_rule__CompEqExpr__Group__02226 = new BitSet(new long[]{0x0000000000001800L});
-    public static final BitSet FOLLOW_rule__CompEqExpr__Group__1_in_rule__CompEqExpr__Group__02229 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleCompExpr_in_rule__CompEqExpr__Group__0__Impl2256 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__CompEqExpr__Group__1__Impl_in_rule__CompEqExpr__Group__12285 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__CompEqExpr__Group_1__0_in_rule__CompEqExpr__Group__1__Impl2312 = new BitSet(new long[]{0x0000000000001802L});
-    public static final BitSet FOLLOW_rule__CompEqExpr__Group_1__0__Impl_in_rule__CompEqExpr__Group_1__02347 = new BitSet(new long[]{0x0000000000001800L});
-    public static final BitSet FOLLOW_rule__CompEqExpr__Group_1__1_in_rule__CompEqExpr__Group_1__02350 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__CompEqExpr__Group_1__1__Impl_in_rule__CompEqExpr__Group_1__12408 = new BitSet(new long[]{0x0000000007580030L});
-    public static final BitSet FOLLOW_rule__CompEqExpr__Group_1__2_in_rule__CompEqExpr__Group_1__12411 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__CompEqExpr__OperatorAssignment_1_1_in_rule__CompEqExpr__Group_1__1__Impl2438 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__CompEqExpr__Group_1__2__Impl_in_rule__CompEqExpr__Group_1__22468 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__CompEqExpr__RightAssignment_1_2_in_rule__CompEqExpr__Group_1__2__Impl2495 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__CompExpr__Group__0__Impl_in_rule__CompExpr__Group__02531 = new BitSet(new long[]{0x000000000001E000L});
-    public static final BitSet FOLLOW_rule__CompExpr__Group__1_in_rule__CompExpr__Group__02534 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleUnaryExpr_in_rule__CompExpr__Group__0__Impl2561 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__CompExpr__Group__1__Impl_in_rule__CompExpr__Group__12590 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__CompExpr__Group_1__0_in_rule__CompExpr__Group__1__Impl2617 = new BitSet(new long[]{0x000000000001E002L});
-    public static final BitSet FOLLOW_rule__CompExpr__Group_1__0__Impl_in_rule__CompExpr__Group_1__02652 = new BitSet(new long[]{0x000000000001E000L});
-    public static final BitSet FOLLOW_rule__CompExpr__Group_1__1_in_rule__CompExpr__Group_1__02655 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__CompExpr__Group_1__1__Impl_in_rule__CompExpr__Group_1__12713 = new BitSet(new long[]{0x0000000007580030L});
-    public static final BitSet FOLLOW_rule__CompExpr__Group_1__2_in_rule__CompExpr__Group_1__12716 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__CompExpr__OperatorAssignment_1_1_in_rule__CompExpr__Group_1__1__Impl2743 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__CompExpr__Group_1__2__Impl_in_rule__CompExpr__Group_1__22773 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__CompExpr__RightAssignment_1_2_in_rule__CompExpr__Group_1__2__Impl2800 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__UnaryExpr__Group_1__0__Impl_in_rule__UnaryExpr__Group_1__02836 = new BitSet(new long[]{0x0000000007580030L});
-    public static final BitSet FOLLOW_rule__UnaryExpr__Group_1__1_in_rule__UnaryExpr__Group_1__02839 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__UnaryExpr__Group_1__1__Impl_in_rule__UnaryExpr__Group_1__12897 = new BitSet(new long[]{0x0000000007580030L});
-    public static final BitSet FOLLOW_rule__UnaryExpr__Group_1__2_in_rule__UnaryExpr__Group_1__12900 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_19_in_rule__UnaryExpr__Group_1__1__Impl2928 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__UnaryExpr__Group_1__2__Impl_in_rule__UnaryExpr__Group_1__22959 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__UnaryExpr__ExprAssignment_1_2_in_rule__UnaryExpr__Group_1__2__Impl2986 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ParenExpr__Group__0__Impl_in_rule__ParenExpr__Group__03022 = new BitSet(new long[]{0x0000000007580030L});
-    public static final BitSet FOLLOW_rule__ParenExpr__Group__1_in_rule__ParenExpr__Group__03025 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_20_in_rule__ParenExpr__Group__0__Impl3053 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ParenExpr__Group__1__Impl_in_rule__ParenExpr__Group__13084 = new BitSet(new long[]{0x0000000007580030L});
-    public static final BitSet FOLLOW_rule__ParenExpr__Group__2_in_rule__ParenExpr__Group__13087 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ParenExpr__Group__2__Impl_in_rule__ParenExpr__Group__23145 = new BitSet(new long[]{0x0000000000200000L});
-    public static final BitSet FOLLOW_rule__ParenExpr__Group__3_in_rule__ParenExpr__Group__23148 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ParenExpr__ExprAssignment_2_in_rule__ParenExpr__Group__2__Impl3175 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ParenExpr__Group__3__Impl_in_rule__ParenExpr__Group__33205 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_21_in_rule__ParenExpr__Group__3__Impl3233 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ProjectReference__Group__0__Impl_in_rule__ProjectReference__Group__03272 = new BitSet(new long[]{0x0000000000800000L});
-    public static final BitSet FOLLOW_rule__ProjectReference__Group__1_in_rule__ProjectReference__Group__03275 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_22_in_rule__ProjectReference__Group__0__Impl3303 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ProjectReference__Group__1__Impl_in_rule__ProjectReference__Group__13334 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_rule__ProjectReference__Group__2_in_rule__ProjectReference__Group__13337 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_23_in_rule__ProjectReference__Group__1__Impl3365 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ProjectReference__Group__2__Impl_in_rule__ProjectReference__Group__23396 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ProjectReference__ValueAssignment_2_in_rule__ProjectReference__Group__2__Impl3423 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__TaskReference__Group__0__Impl_in_rule__TaskReference__Group__03459 = new BitSet(new long[]{0x0000000000800000L});
-    public static final BitSet FOLLOW_rule__TaskReference__Group__1_in_rule__TaskReference__Group__03462 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_24_in_rule__TaskReference__Group__0__Impl3490 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__TaskReference__Group__1__Impl_in_rule__TaskReference__Group__13521 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_rule__TaskReference__Group__2_in_rule__TaskReference__Group__13524 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_23_in_rule__TaskReference__Group__1__Impl3552 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__TaskReference__Group__2__Impl_in_rule__TaskReference__Group__23583 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__TaskReference__ValueAssignment_2_in_rule__TaskReference__Group__2__Impl3610 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__TextReference__Group__0__Impl_in_rule__TextReference__Group__03646 = new BitSet(new long[]{0x0000000000800000L});
-    public static final BitSet FOLLOW_rule__TextReference__Group__1_in_rule__TextReference__Group__03649 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_25_in_rule__TextReference__Group__0__Impl3677 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__TextReference__Group__1__Impl_in_rule__TextReference__Group__13708 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_rule__TextReference__Group__2_in_rule__TextReference__Group__13711 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_23_in_rule__TextReference__Group__1__Impl3739 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__TextReference__Group__2__Impl_in_rule__TextReference__Group__23770 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__TextReference__ValueAssignment_2_in_rule__TextReference__Group__2__Impl3797 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Words__Group__0__Impl_in_rule__Words__Group__03833 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_rule__Words__Group__1_in_rule__Words__Group__03836 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Words__ValuesAssignment_0_in_rule__Words__Group__0__Impl3863 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Words__Group__1__Impl_in_rule__Words__Group__13893 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Words__ValuesAssignment_1_in_rule__Words__Group__1__Impl3922 = new BitSet(new long[]{0x0000000000000012L});
-    public static final BitSet FOLLOW_rule__Words__ValuesAssignment_1_in_rule__Words__Group__1__Impl3934 = new BitSet(new long[]{0x0000000000000012L});
-    public static final BitSet FOLLOW_rule__TagReference__Group__0__Impl_in_rule__TagReference__Group__03971 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_rule__TagReference__Group__1_in_rule__TagReference__Group__03974 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_26_in_rule__TagReference__Group__0__Impl4002 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__TagReference__Group__1__Impl_in_rule__TagReference__Group__14033 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__TagReference__ValueAssignment_1_in_rule__TagReference__Group__1__Impl4060 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleOrExpr_in_rule__Query__ExpressionAssignment_14099 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleAndExpr_in_rule__OrExpr__RightAssignment_1_24130 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleCompEqExpr_in_rule__AndExpr__RightAssignment_1_24161 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleCompEqOperator_in_rule__CompEqExpr__OperatorAssignment_1_14192 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleCompExpr_in_rule__CompEqExpr__RightAssignment_1_24223 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleCompOperator_in_rule__CompExpr__OperatorAssignment_1_14254 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleUnaryExpr_in_rule__CompExpr__RightAssignment_1_24285 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleUnaryExpr_in_rule__UnaryExpr__ExprAssignment_1_24316 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleOrExpr_in_rule__ParenExpr__ExprAssignment_24347 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__ProjectReference__ValueAssignment_24378 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__TaskReference__ValueAssignment_24409 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__TextReference__ValueAssignment_24440 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__Words__ValuesAssignment_04471 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__Words__ValuesAssignment_14502 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__Word__ValueAssignment4533 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_STRING_in_rule__Phrase__ValueAssignment4564 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__TagReference__ValueAssignment_14595 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ProjectReference__ValueAssignment_2_0_in_rule__ProjectReference__Alternatives_21335 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ProjectReference__ValueAssignment_2_1_in_rule__ProjectReference__Alternatives_21353 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__TaskReference__ValueAssignment_2_0_in_rule__TaskReference__Alternatives_21386 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__TaskReference__ValueAssignment_2_1_in_rule__TaskReference__Alternatives_21404 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__TextReference__ValueAssignment_2_0_in_rule__TextReference__Alternatives_21437 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__TextReference__ValueAssignment_2_1_in_rule__TextReference__Alternatives_21455 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_11_in_rule__CompEqOperator__Alternatives1489 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_12_in_rule__CompEqOperator__Alternatives1510 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_13_in_rule__CompOperator__Alternatives1546 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_14_in_rule__CompOperator__Alternatives1567 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_15_in_rule__CompOperator__Alternatives1588 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_16_in_rule__CompOperator__Alternatives1609 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Query__Group__0__Impl_in_rule__Query__Group__01642 = new BitSet(new long[]{0x0000000007580030L});
+    public static final BitSet FOLLOW_rule__Query__Group__1_in_rule__Query__Group__01645 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Query__Group__1__Impl_in_rule__Query__Group__11703 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Query__ExpressionAssignment_1_in_rule__Query__Group__1__Impl1730 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__OrExpr__Group__0__Impl_in_rule__OrExpr__Group__01765 = new BitSet(new long[]{0x0000000000020000L});
+    public static final BitSet FOLLOW_rule__OrExpr__Group__1_in_rule__OrExpr__Group__01768 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleAndExpr_in_rule__OrExpr__Group__0__Impl1795 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__OrExpr__Group__1__Impl_in_rule__OrExpr__Group__11824 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__OrExpr__Group_1__0_in_rule__OrExpr__Group__1__Impl1851 = new BitSet(new long[]{0x0000000000020002L});
+    public static final BitSet FOLLOW_rule__OrExpr__Group_1__0__Impl_in_rule__OrExpr__Group_1__01886 = new BitSet(new long[]{0x0000000000020000L});
+    public static final BitSet FOLLOW_rule__OrExpr__Group_1__1_in_rule__OrExpr__Group_1__01889 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__OrExpr__Group_1__1__Impl_in_rule__OrExpr__Group_1__11947 = new BitSet(new long[]{0x0000000007580030L});
+    public static final BitSet FOLLOW_rule__OrExpr__Group_1__2_in_rule__OrExpr__Group_1__11950 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_17_in_rule__OrExpr__Group_1__1__Impl1978 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__OrExpr__Group_1__2__Impl_in_rule__OrExpr__Group_1__22009 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__OrExpr__RightAssignment_1_2_in_rule__OrExpr__Group_1__2__Impl2036 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__AndExpr__Group__0__Impl_in_rule__AndExpr__Group__02072 = new BitSet(new long[]{0x0000000000040000L});
+    public static final BitSet FOLLOW_rule__AndExpr__Group__1_in_rule__AndExpr__Group__02075 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleCompEqExpr_in_rule__AndExpr__Group__0__Impl2102 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__AndExpr__Group__1__Impl_in_rule__AndExpr__Group__12131 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__AndExpr__Group_1__0_in_rule__AndExpr__Group__1__Impl2158 = new BitSet(new long[]{0x0000000000040002L});
+    public static final BitSet FOLLOW_rule__AndExpr__Group_1__0__Impl_in_rule__AndExpr__Group_1__02193 = new BitSet(new long[]{0x0000000000040000L});
+    public static final BitSet FOLLOW_rule__AndExpr__Group_1__1_in_rule__AndExpr__Group_1__02196 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__AndExpr__Group_1__1__Impl_in_rule__AndExpr__Group_1__12254 = new BitSet(new long[]{0x0000000007580030L});
+    public static final BitSet FOLLOW_rule__AndExpr__Group_1__2_in_rule__AndExpr__Group_1__12257 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_18_in_rule__AndExpr__Group_1__1__Impl2285 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__AndExpr__Group_1__2__Impl_in_rule__AndExpr__Group_1__22316 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__AndExpr__RightAssignment_1_2_in_rule__AndExpr__Group_1__2__Impl2343 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__CompEqExpr__Group__0__Impl_in_rule__CompEqExpr__Group__02379 = new BitSet(new long[]{0x0000000000001800L});
+    public static final BitSet FOLLOW_rule__CompEqExpr__Group__1_in_rule__CompEqExpr__Group__02382 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleCompExpr_in_rule__CompEqExpr__Group__0__Impl2409 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__CompEqExpr__Group__1__Impl_in_rule__CompEqExpr__Group__12438 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__CompEqExpr__Group_1__0_in_rule__CompEqExpr__Group__1__Impl2465 = new BitSet(new long[]{0x0000000000001802L});
+    public static final BitSet FOLLOW_rule__CompEqExpr__Group_1__0__Impl_in_rule__CompEqExpr__Group_1__02500 = new BitSet(new long[]{0x0000000000001800L});
+    public static final BitSet FOLLOW_rule__CompEqExpr__Group_1__1_in_rule__CompEqExpr__Group_1__02503 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__CompEqExpr__Group_1__1__Impl_in_rule__CompEqExpr__Group_1__12561 = new BitSet(new long[]{0x0000000007580030L});
+    public static final BitSet FOLLOW_rule__CompEqExpr__Group_1__2_in_rule__CompEqExpr__Group_1__12564 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__CompEqExpr__OperatorAssignment_1_1_in_rule__CompEqExpr__Group_1__1__Impl2591 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__CompEqExpr__Group_1__2__Impl_in_rule__CompEqExpr__Group_1__22621 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__CompEqExpr__RightAssignment_1_2_in_rule__CompEqExpr__Group_1__2__Impl2648 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__CompExpr__Group__0__Impl_in_rule__CompExpr__Group__02684 = new BitSet(new long[]{0x000000000001E000L});
+    public static final BitSet FOLLOW_rule__CompExpr__Group__1_in_rule__CompExpr__Group__02687 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleUnaryExpr_in_rule__CompExpr__Group__0__Impl2714 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__CompExpr__Group__1__Impl_in_rule__CompExpr__Group__12743 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__CompExpr__Group_1__0_in_rule__CompExpr__Group__1__Impl2770 = new BitSet(new long[]{0x000000000001E002L});
+    public static final BitSet FOLLOW_rule__CompExpr__Group_1__0__Impl_in_rule__CompExpr__Group_1__02805 = new BitSet(new long[]{0x000000000001E000L});
+    public static final BitSet FOLLOW_rule__CompExpr__Group_1__1_in_rule__CompExpr__Group_1__02808 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__CompExpr__Group_1__1__Impl_in_rule__CompExpr__Group_1__12866 = new BitSet(new long[]{0x0000000007580030L});
+    public static final BitSet FOLLOW_rule__CompExpr__Group_1__2_in_rule__CompExpr__Group_1__12869 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__CompExpr__OperatorAssignment_1_1_in_rule__CompExpr__Group_1__1__Impl2896 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__CompExpr__Group_1__2__Impl_in_rule__CompExpr__Group_1__22926 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__CompExpr__RightAssignment_1_2_in_rule__CompExpr__Group_1__2__Impl2953 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__UnaryExpr__Group_1__0__Impl_in_rule__UnaryExpr__Group_1__02989 = new BitSet(new long[]{0x0000000007580030L});
+    public static final BitSet FOLLOW_rule__UnaryExpr__Group_1__1_in_rule__UnaryExpr__Group_1__02992 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__UnaryExpr__Group_1__1__Impl_in_rule__UnaryExpr__Group_1__13050 = new BitSet(new long[]{0x0000000007580030L});
+    public static final BitSet FOLLOW_rule__UnaryExpr__Group_1__2_in_rule__UnaryExpr__Group_1__13053 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_19_in_rule__UnaryExpr__Group_1__1__Impl3081 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__UnaryExpr__Group_1__2__Impl_in_rule__UnaryExpr__Group_1__23112 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__UnaryExpr__ExprAssignment_1_2_in_rule__UnaryExpr__Group_1__2__Impl3139 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ParenExpr__Group__0__Impl_in_rule__ParenExpr__Group__03175 = new BitSet(new long[]{0x0000000007580030L});
+    public static final BitSet FOLLOW_rule__ParenExpr__Group__1_in_rule__ParenExpr__Group__03178 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_20_in_rule__ParenExpr__Group__0__Impl3206 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ParenExpr__Group__1__Impl_in_rule__ParenExpr__Group__13237 = new BitSet(new long[]{0x0000000007580030L});
+    public static final BitSet FOLLOW_rule__ParenExpr__Group__2_in_rule__ParenExpr__Group__13240 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ParenExpr__Group__2__Impl_in_rule__ParenExpr__Group__23298 = new BitSet(new long[]{0x0000000000200000L});
+    public static final BitSet FOLLOW_rule__ParenExpr__Group__3_in_rule__ParenExpr__Group__23301 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ParenExpr__ExprAssignment_2_in_rule__ParenExpr__Group__2__Impl3328 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ParenExpr__Group__3__Impl_in_rule__ParenExpr__Group__33358 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_21_in_rule__ParenExpr__Group__3__Impl3386 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ProjectReference__Group__0__Impl_in_rule__ProjectReference__Group__03425 = new BitSet(new long[]{0x0000000000800000L});
+    public static final BitSet FOLLOW_rule__ProjectReference__Group__1_in_rule__ProjectReference__Group__03428 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_22_in_rule__ProjectReference__Group__0__Impl3456 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ProjectReference__Group__1__Impl_in_rule__ProjectReference__Group__13487 = new BitSet(new long[]{0x0000000000000030L});
+    public static final BitSet FOLLOW_rule__ProjectReference__Group__2_in_rule__ProjectReference__Group__13490 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_23_in_rule__ProjectReference__Group__1__Impl3518 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ProjectReference__Group__2__Impl_in_rule__ProjectReference__Group__23549 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ProjectReference__Alternatives_2_in_rule__ProjectReference__Group__2__Impl3576 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__TaskReference__Group__0__Impl_in_rule__TaskReference__Group__03612 = new BitSet(new long[]{0x0000000000800000L});
+    public static final BitSet FOLLOW_rule__TaskReference__Group__1_in_rule__TaskReference__Group__03615 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_24_in_rule__TaskReference__Group__0__Impl3643 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__TaskReference__Group__1__Impl_in_rule__TaskReference__Group__13674 = new BitSet(new long[]{0x0000000000000030L});
+    public static final BitSet FOLLOW_rule__TaskReference__Group__2_in_rule__TaskReference__Group__13677 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_23_in_rule__TaskReference__Group__1__Impl3705 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__TaskReference__Group__2__Impl_in_rule__TaskReference__Group__23736 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__TaskReference__Alternatives_2_in_rule__TaskReference__Group__2__Impl3763 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__TextReference__Group__0__Impl_in_rule__TextReference__Group__03799 = new BitSet(new long[]{0x0000000000800000L});
+    public static final BitSet FOLLOW_rule__TextReference__Group__1_in_rule__TextReference__Group__03802 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_25_in_rule__TextReference__Group__0__Impl3830 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__TextReference__Group__1__Impl_in_rule__TextReference__Group__13861 = new BitSet(new long[]{0x0000000000000030L});
+    public static final BitSet FOLLOW_rule__TextReference__Group__2_in_rule__TextReference__Group__13864 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_23_in_rule__TextReference__Group__1__Impl3892 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__TextReference__Group__2__Impl_in_rule__TextReference__Group__23923 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__TextReference__Alternatives_2_in_rule__TextReference__Group__2__Impl3950 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Words__Group__0__Impl_in_rule__Words__Group__03986 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__Words__Group__1_in_rule__Words__Group__03989 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Words__ValuesAssignment_0_in_rule__Words__Group__0__Impl4016 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Words__Group__1__Impl_in_rule__Words__Group__14046 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Words__ValuesAssignment_1_in_rule__Words__Group__1__Impl4075 = new BitSet(new long[]{0x0000000000000012L});
+    public static final BitSet FOLLOW_rule__Words__ValuesAssignment_1_in_rule__Words__Group__1__Impl4087 = new BitSet(new long[]{0x0000000000000012L});
+    public static final BitSet FOLLOW_rule__TagReference__Group__0__Impl_in_rule__TagReference__Group__04124 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__TagReference__Group__1_in_rule__TagReference__Group__04127 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_26_in_rule__TagReference__Group__0__Impl4155 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__TagReference__Group__1__Impl_in_rule__TagReference__Group__14186 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__TagReference__ValueAssignment_1_in_rule__TagReference__Group__1__Impl4213 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleOrExpr_in_rule__Query__ExpressionAssignment_14252 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleAndExpr_in_rule__OrExpr__RightAssignment_1_24283 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleCompEqExpr_in_rule__AndExpr__RightAssignment_1_24314 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleCompEqOperator_in_rule__CompEqExpr__OperatorAssignment_1_14345 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleCompExpr_in_rule__CompEqExpr__RightAssignment_1_24376 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleCompOperator_in_rule__CompExpr__OperatorAssignment_1_14407 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleUnaryExpr_in_rule__CompExpr__RightAssignment_1_24438 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleUnaryExpr_in_rule__UnaryExpr__ExprAssignment_1_24469 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleOrExpr_in_rule__ParenExpr__ExprAssignment_24500 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__ProjectReference__ValueAssignment_2_04531 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_STRING_in_rule__ProjectReference__ValueAssignment_2_14562 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__TaskReference__ValueAssignment_2_04593 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_STRING_in_rule__TaskReference__ValueAssignment_2_14624 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__TextReference__ValueAssignment_2_04655 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_STRING_in_rule__TextReference__ValueAssignment_2_14686 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__Words__ValuesAssignment_04717 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__Words__ValuesAssignment_14748 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__Word__ValueAssignment4779 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_STRING_in_rule__Phrase__ValueAssignment4810 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__TagReference__ValueAssignment_14841 = new BitSet(new long[]{0x0000000000000002L});
 
 }

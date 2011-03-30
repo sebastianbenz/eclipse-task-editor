@@ -51,30 +51,30 @@ public class HighlightingConfiguration extends DefaultHighlightingConfiguration 
 		acceptor.acceptDefaultHighlighting(TAG_ID, "Tags", tagTextStyle());
 	}
 
-	private TextStyle taskOpenTextStyle() {
+	public TextStyle taskOpenTextStyle() {
 		TextStyle textStyle = defaultTextStyle().copy();
 		return textStyle;
 	}
 
-	private TextStyle taskDoneTextStyle() {
+	public TextStyle taskDoneTextStyle() {
 		TextStyle textStyle = defaultTextStyle().copy();
 		textStyle.setStyle(TextAttribute.STRIKETHROUGH);
 		return textStyle;
 	}
 
-	private TextStyle project3TextStyle() {
+	public TextStyle project3TextStyle() {
 		TextStyle textStyle = defaultTextStyle().copy();
 		textStyle.setFontData(fontWithHeight(DEFAULT_FONT_SIZE + 1));
 		return textStyle;
 	}
 
-	private TextStyle project2TextStyle() {
+	public TextStyle project2TextStyle() {
 		TextStyle textStyle = defaultTextStyle().copy();
 		textStyle.setFontData(fontWithHeight(DEFAULT_FONT_SIZE + 2));
 		return textStyle;
 	}
 
-	private TextStyle project1TextStyle() {
+	public TextStyle project1TextStyle() {
 		TextStyle textStyle = defaultTextStyle().copy();
 		textStyle.setFontData(fontWithHeight(DEFAULT_FONT_SIZE + 3));
 		return textStyle;
@@ -84,13 +84,13 @@ public class HighlightingConfiguration extends DefaultHighlightingConfiguration 
 		return new FontData(JFaceResources.HEADER_FONT, height, SWT.BOLD);
 	}
 
-	private TextStyle urlTextStyle() {
+	public TextStyle urlTextStyle() {
 		TextStyle textStyle = nodeTextStyle().copy();
 		textStyle.setStyle(TextAttribute.UNDERLINE);
 		return textStyle;
 	}
 
-	private TextStyle nodeTextStyle() {
+	public TextStyle nodeTextStyle() {
 		TextStyle textStyle = defaultTextStyle().copy();
 		textStyle.setColor(grey());
 		return textStyle;

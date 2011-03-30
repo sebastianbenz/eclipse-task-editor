@@ -3,7 +3,6 @@ package de.sebastianbenz.task.ui.views;
 import static org.eclipse.emf.ecore.util.EcoreUtil.getURI;
 
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider;
 import org.eclipse.jface.action.Action;
 import org.eclipse.jface.action.IAction;
 import org.eclipse.jface.action.IMenuManager;
@@ -35,9 +34,7 @@ import org.eclipse.xtext.ui.editor.IURIEditorOpener;
 import com.google.inject.Inject;
 
 import de.sebastianbenz.task.Content;
-import de.sebastianbenz.task.provider.TaskItemProviderAdapterFactory;
 import de.sebastianbenz.task.ui.internal.TaskActivator;
-import de.sebastianbenz.task.ui.outline.TaskOutlineTreeProvider;
 
 public class TodoView extends ViewPart {
 
@@ -62,7 +59,8 @@ public class TodoView extends ViewPart {
 		}
 	}
 
-	private AdapterFactoryLabelProvider labelProvider  = new AdapterFactoryLabelProvider(new TaskItemProviderAdapterFactory());
+	@Inject
+	private TodoViewLabelProvider labelProvider;
 	
 	@Inject
 	private ContentProvider contentProvider;
@@ -137,6 +135,8 @@ public class TodoView extends ViewPart {
 		GridData gridData = new GridData(SWT.LEFT, SWT.TOP, true, false);
 		gridData.horizontalAlignment = GridData.FILL;
 		queryText.setLayoutData(gridData);
+		queryText.setText("Enter query (e.g. '@today')...");
+		queryText.setSelection(0, queryText.getText().length());
 		queryText.addModifyListener(queryBasedViewFilter);
 	}
 

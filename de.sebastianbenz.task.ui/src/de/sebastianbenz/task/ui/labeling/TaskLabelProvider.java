@@ -13,17 +13,16 @@
  */
 package de.sebastianbenz.task.ui.labeling;
 
-import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider;
-import org.eclipse.xtext.ui.label.DefaultEObjectLabelProvider;
+import org.eclipse.jface.viewers.StyledString;
+import org.eclipse.jface.viewers.StyledString.Styler;
+import org.eclipse.xtext.ui.label.DeclarativeLabelProvider;
+import org.eclipse.xtext.ui.label.InjectableAdapterFactoryLabelProvider;
+import org.eclipse.xtext.ui.label.StylerFactory;
 
 import com.google.inject.Inject;
 
-import de.sebastianbenz.task.Content;
-import de.sebastianbenz.task.Note;
-import de.sebastianbenz.task.Project;
-import de.sebastianbenz.task.Tag;
 import de.sebastianbenz.task.Task;
-import de.sebastianbenz.task.TaskModel;
+import de.sebastianbenz.task.ui.highlighting.HighlightingConfiguration;
 
 /**
  * Provides labels for a EObjects.
@@ -31,18 +30,38 @@ import de.sebastianbenz.task.TaskModel;
  * see
  * http://www.eclipse.org/Xtext/documentation/latest/xtext.html#labelProvider
  */
-public class TaskLabelProvider extends DefaultEObjectLabelProvider {
+public class TaskLabelProvider extends DeclarativeLabelProvider {
 
-	private final AdapterFactoryLabelProvider adapterFactoryLabelProvider;
+	private final StylerFactory stylerFactory;
+	private final HighlightingConfiguration configuration;
+	private final InjectableAdapterFactoryLabelProvider delegate;
 
 	@Inject
-	public TaskLabelProvider(AdapterFactoryLabelProvider delegate) {
+	public TaskLabelProvider(InjectableAdapterFactoryLabelProvider delegate, StylerFactory stylerFactory, HighlightingConfiguration configuration) {
 		super(delegate);
-		adapterFactoryLabelProvider = delegate;
+		this.delegate = delegate;
+		this.stylerFactory = stylerFactory;
+		this.configuration = configuration;
+	}
+
+	public Object text(Task task){
+		String text = delegate.getText(task);
+		if(task.isDone()){
+			Styler style = stylerFactory.createXtextStyleAdapterStyler(configuration.taskDoneTextStyle());
+			return new StyledString(text, style);
+		}else{
+			return text;
+		}
 	}
 	
-	@Override
-	protected Object doGetText(Object element) {
-		return adapterFactoryLabelProvider.getText(element);
+	
+	public StyledString getStyledText(Object element) {
+		if (element instanceof Task && ((Task)element).isDone()) {
+			Styler style = stylerFactory.createXtextStyleAdapterStyler(configuration.taskDoneTextStyle());
+			return new StyledString(getText(element), style );
+		}else{
+			return new StyledString(getText(element));
+		}
 	}
+	
 }

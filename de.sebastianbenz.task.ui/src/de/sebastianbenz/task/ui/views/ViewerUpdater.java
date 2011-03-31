@@ -1,13 +1,14 @@
 package de.sebastianbenz.task.ui.views;
 
 import java.util.List;
+import java.util.Set;
 
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.xtext.builder.IXtextBuilderParticipant;
 import org.eclipse.xtext.resource.IResourceDescription.Delta;
 
-import com.google.common.collect.Lists;
+import com.google.common.collect.Sets;
 import com.google.inject.Singleton;
 
 @Singleton
@@ -19,7 +20,7 @@ public class ViewerUpdater implements IXtextBuilderParticipant {
 		
 	}
 
-	private List<ResourceDescriptionsChangeListener> listeners = Lists.newArrayList();
+	private Set<ResourceDescriptionsChangeListener> listeners = Sets.newHashSet();
 	
 	
 	public void build(IBuildContext context, IProgressMonitor monitor)

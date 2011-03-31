@@ -221,6 +221,28 @@ public class QueryInterpreterTests extends AbstractTest {
 	}
 	
 	@Test
+	public void shouldSupportLessGreaterThanOnStrings() throws Exception {
+		model(  "- task1 @version(1.0.0)\n" +
+				"- task2 @version(1.0.1)\n" +
+				"- task3 @version(1.1.0)\n"); 
+
+		select("@version < 1.0.1");
+		assertThat(result, is("task1"));
+		
+		select("@version > 1.0.1");
+		assertThat(result, is("task3"));
+		
+		select("@version >= 1.0.1");
+		assertThat(result, is("task2, task3"));
+		
+		select("@version <= 1.0.1");
+		assertThat(result, is("task1, task2"));
+		
+		select("@version <= 1.0.1");
+		assertThat(result, is("task1, task2"));
+	}
+	
+	@Test
 	public void shouldSupportSelectingWordInContent() throws Exception {
 		model(  "- task hello @prio(1)\n" +
 				"- task world @prio(1)\n" +

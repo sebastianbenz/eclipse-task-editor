@@ -139,7 +139,7 @@ public class TodoView extends ViewPart {
 		GridData gridData = new GridData(SWT.LEFT, SWT.TOP, true, false);
 		gridData.horizontalAlignment = GridData.FILL;
 		queryText.setLayoutData(gridData);
-		queryText.setText("Enter query (e.g. '@today')...");
+		queryText.setToolTipText("Enter a task query...");
 		queryText.setSelection(0, queryText.getText().length());
 		queryText.addModifyListener(queryBasedViewFilter);
 		proposalProvider.configure(queryText);

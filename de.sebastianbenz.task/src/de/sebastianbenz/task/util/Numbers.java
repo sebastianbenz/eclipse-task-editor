@@ -5,6 +5,9 @@ import static java.lang.Character.digit;
 public class Numbers {
 
 	public static Number parse(String string) {
+		if(string == null || string.length() == 0){
+			return null;
+		}
 		StringBuilder b = new StringBuilder();
 		
 		boolean isDouble = false;

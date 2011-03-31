@@ -119,19 +119,43 @@ public class QueryInterpreter {
 		if (isNotValue(expr.getRight())) {
 			return false;
 		}
-		Number left = asNumber((Value) expr.getLeft(), task);
-		Number right = asNumber((Value) expr.getRight(), task);
-
+		String left = valueOf((Value) expr.getLeft(), task);
+		String right = valueOf((Value) expr.getRight(), task);
+		
 		switch (expr.getOperator()) {
 		case GREATER:
-			return Numbers.greater(left, right);
+			return left.compareTo(right) > 0;
 		case GREATER_EQUAL:
-			return Numbers.greaterEqual(left, right);
+			return left.compareTo(right) >= 0;
 		case LESS:
-			return Numbers.less(left, right);
+			return left.compareTo(right) < 0;
 		case LESS_EQUAL:
-			return Numbers.lessEqual(left, right);
+			return left.compareTo(right) <= 0;
 		}
+		
+//		try{
+//			Number left = asNumber((Value) expr.getLeft(), task);
+//			if(left == null){
+//				return false;
+//			}
+//			Number right = asNumber((Value) expr.getRight(), task);
+//			if(right == null){
+//				return false;
+//			}
+//		}catch (NumberFormatException e) {
+//			// TODO: handle exception
+//		}
+//		
+//		switch (expr.getOperator()) {
+//		case GREATER:
+//			return Numbers.greater(left, right);
+//		case GREATER_EQUAL:
+//			return Numbers.greaterEqual(left, right);
+//		case LESS:
+//			return Numbers.less(left, right);
+//		case LESS_EQUAL:
+//			return Numbers.lessEqual(left, right);
+//		}
 		return false;
 	}
 	
@@ -177,7 +201,7 @@ public class QueryInterpreter {
 	}
 
 	protected boolean isNotValue(Expression expr) {
-		return expr == null || !(expr instanceof Value) || ((Value)expr).getValue() == null;
+		return expr == null || !(expr instanceof Value) || ((Value)expr).getValue() == null || ((Value)expr).getValue() == "";
 	}
 
 	protected boolean _select(UnaryExpr expr, EObject object) {

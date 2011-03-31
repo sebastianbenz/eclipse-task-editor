@@ -78,11 +78,21 @@ public class QueryBasedFilter extends ViewerFilter implements ModifyListener{
 	private void updateQuery() {
 		query = queryParser.parse(text);
 		if(query == null || query.getExpression() == null){
-			return;
+			expand(1);
+		}else{
+			expandAll();
 		}
+	}
+
+	private void expand(int i) {
 		if (viewer instanceof TreeViewer) {
-			TreeViewer treeViewer = (TreeViewer) viewer;
-			treeViewer.expandAll();
+			((TreeViewer) viewer).expandToLevel(i);
+		}
+	}
+
+	protected void expandAll() {
+		if (viewer instanceof TreeViewer) {
+			((TreeViewer) viewer).expandAll();
 		}
 	}
 

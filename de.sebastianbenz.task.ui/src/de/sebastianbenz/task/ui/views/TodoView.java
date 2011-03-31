@@ -34,11 +34,10 @@ import org.eclipse.xtext.ui.editor.IURIEditorOpener;
 import com.google.inject.Inject;
 
 import de.sebastianbenz.task.Content;
+import de.sebastianbenz.task.ui.contentassist.TextProposalProvider;
 import de.sebastianbenz.task.ui.internal.TaskActivator;
 
 public class TodoView extends ViewPart {
-	
-	
 
 	/**
 	 * The ID of the view as specified by the extension.
@@ -56,16 +55,17 @@ public class TodoView extends ViewPart {
 			if (!(e2 instanceof Content)) {
 				return super.compare(viewer, e1, e2);
 			}
-			return ((Content)e1).getValue().compareTo(((Content)e2).getValue());
+			return ((Content) e1).getValue().compareTo(
+					((Content) e2).getValue());
 		}
 	}
 
 	@Inject
 	private TodoViewLabelProvider labelProvider;
-	
+
 	@Inject
 	private ContentProvider contentProvider;
-	
+
 	@Inject
 	private TextProposalProvider proposalProvider;
 
@@ -82,10 +82,10 @@ public class TodoView extends ViewPart {
 	private Action actionSort;
 
 	private Action openInEditor;
-	
+
 	@Inject
 	private IURIEditorOpener editorOpener;
-	
+
 	@Inject
 	private TreeState treeState;
 
@@ -96,7 +96,7 @@ public class TodoView extends ViewPart {
 	@Override
 	public void createPartControl(Composite parent) {
 		globalState.init();
-		
+
 		GridLayout layout = new GridLayout();
 		layout.numColumns = 1;
 		parent.setLayout(layout);
@@ -108,15 +108,16 @@ public class TodoView extends ViewPart {
 				.getWorkbench()
 				.getHelpSystem()
 				.setHelp(viewer.getControl(), "de.sebastianbenz.task.ui.viewer");
-		
+
 		restoreState();
 	}
-	
+
 	private void restoreState() {
-		if(memento == null){
+		if (memento == null) {
 			return;
 		}
-		viewer.setExpandedElements(treeState.restoreExpandedElements(memento, globalState));
+		viewer.setExpandedElements(treeState.restoreExpandedElements(memento,
+				globalState));
 		queryText.setText(treeState.restoreQuery(memento));
 	}
 
@@ -125,7 +126,7 @@ public class TodoView extends ViewPart {
 		super.init(site, memento);
 		this.memento = memento;
 	}
-	
+
 	@Override
 	public void saveState(IMemento memento) {
 		super.saveState(memento);
@@ -134,7 +135,7 @@ public class TodoView extends ViewPart {
 	}
 
 	protected void configureQueryField(Composite parent) {
-		queryText = new Text(parent,  SWT.SINGLE | SWT.BORDER | SWT.SEARCH
+		queryText = new Text(parent, SWT.SINGLE | SWT.BORDER | SWT.SEARCH
 				| SWT.ICON_CANCEL);
 		GridData gridData = new GridData(SWT.LEFT, SWT.TOP, true, false);
 		gridData.horizontalAlignment = GridData.FILL;
@@ -144,8 +145,6 @@ public class TodoView extends ViewPart {
 		queryText.addModifyListener(queryBasedViewFilter);
 		proposalProvider.configure(queryText);
 	}
-
-	
 
 	protected void configureTree(Composite parent) {
 		viewer = new TreeViewer(parent);
@@ -165,7 +164,7 @@ public class TodoView extends ViewPart {
 
 	protected void configureActions() {
 		makeActions();
-		IActionBars bars = ((IViewSite)getSite()).getActionBars();
+		IActionBars bars = ((IViewSite) getSite()).getActionBars();
 		fillLocalPullDown(bars.getMenuManager());
 		fillLocalToolBar(bars.getToolBarManager());
 		hookDoubleClickAction();
@@ -176,7 +175,7 @@ public class TodoView extends ViewPart {
 		manager.add(new Separator());
 		manager.add(actionSort);
 	}
-	
+
 	private void fillLocalToolBar(IToolBarManager manager) {
 		manager.add(actionCollapseAll);
 		manager.add(actionSort);
@@ -196,10 +195,11 @@ public class TodoView extends ViewPart {
 
 	}
 
-	
 	private ImageDescriptor image(String string) {
-		String pluginId = TaskActivator.getInstance().getBundle().getSymbolicName();
-		return TaskActivator.imageDescriptorFromPlugin(pluginId , "icons/" + string);
+		String pluginId = TaskActivator.getInstance().getBundle()
+				.getSymbolicName();
+		return TaskActivator.imageDescriptorFromPlugin(pluginId, "icons/"
+				+ string);
 	}
 
 	private Action createActionCollapseAll() {
@@ -231,7 +231,8 @@ public class TodoView extends ViewPart {
 			@Override
 			public void run() {
 				ISelection selection = viewer.getSelection();
-				Object obj = ((IStructuredSelection) selection).getFirstElement();
+				Object obj = ((IStructuredSelection) selection)
+						.getFirstElement();
 				if (obj instanceof EObject) {
 					editorOpener.open(getURI((EObject) obj), true);
 				}
@@ -251,7 +252,6 @@ public class TodoView extends ViewPart {
 		return viewer;
 	}
 
-
 	/**
 	 * Passing the focus request to the viewer's control.
 	 */
@@ -262,7 +262,7 @@ public class TodoView extends ViewPart {
 	public GlobalStateManager getGlobaState() {
 		return globalState;
 	}
-	
+
 	@Override
 	public void dispose() {
 		super.dispose();

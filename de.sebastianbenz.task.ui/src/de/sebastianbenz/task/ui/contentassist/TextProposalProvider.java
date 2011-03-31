@@ -1,4 +1,4 @@
-package de.sebastianbenz.task.ui.views;
+package de.sebastianbenz.task.ui.contentassist;
 
 import org.eclipse.jface.bindings.keys.KeyStroke;
 import org.eclipse.jface.bindings.keys.ParseException;
@@ -18,6 +18,7 @@ import org.eclipse.swt.widgets.Text;
 import org.eclipse.xtext.resource.XtextResource;
 import org.eclipse.xtext.ui.editor.XtextSourceViewer;
 import org.eclipse.xtext.ui.editor.XtextSourceViewerConfiguration;
+import org.eclipse.xtext.ui.editor.contentassist.ConfigurableCompletionProposal;
 import org.eclipse.xtext.ui.editor.model.DocumentPartitioner;
 import org.eclipse.xtext.ui.editor.model.IXtextDocument;
 import org.eclipse.xtext.ui.editor.model.XtextDocument;
@@ -46,6 +47,9 @@ public class TextProposalProvider implements IContentProposalProvider {
 
 	@Inject
 	private Provider<DocumentPartitioner> partitionerProvider;
+	
+	@Inject
+	private SimplePrefixMatcher prefixMatcher;
 
 	public ICompletionProposal[] computeCompletionProposals(
 			String currentModelToParse, int cursorPosition) {
@@ -103,9 +107,8 @@ public class TextProposalProvider implements IContentProposalProvider {
 
 
 	public void configure(final Text text) {
-		KeyStroke ks;
 		try {
-			ks = KeyStroke.getInstance(KEY_PRESS);
+			KeyStroke ks = KeyStroke.getInstance(KEY_PRESS);
 			ContentProposalAdapter adapter = new ContentProposalAdapter(text,
 					new TextContentAdapter(), this, ks, null);
 			adapter.setProposalAcceptanceStyle(ContentProposalAdapter.PROPOSAL_INSERT);
@@ -120,10 +123,14 @@ public class TextProposalProvider implements IContentProposalProvider {
 		IContentProposal[] result = new IContentProposal[proposals.length];
 		int i = 0;
 		for (ICompletionProposal completionProposal : proposals) {
-			result[i] = new ContentProposal(
-					completionProposal.getDisplayString());
+			String description = "";
+			String label = completionProposal.getDisplayString();
+			String content = prefixMatcher.apply(contents, position, label);
+			result[i] = new ContentProposal(content, label, description);
 			i++;
 		}
 		return result;
 	}
+
+	
 }

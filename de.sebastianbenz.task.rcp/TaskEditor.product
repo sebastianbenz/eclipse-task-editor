@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?pde version="3.5"?>
 
-<product name="%productName" id="de.sebastianbenz.task.rcp.product" application="de.sebastianbenz.task.rcp.application" version="1.0.0.qualifier" useFeatures="true" includeLaunchers="true">
+<product name="Task Editor" uid="de.sebastianbenz.task.application.taskeditor.id" id="de.sebastianbenz.task.application.taskeditor" application="de.sebastianbenz.task.application.application" version="1.0.0.qualifier" useFeatures="true" includeLaunchers="true">
 
    <aboutInfo>
-      <image path="icons/eclipse_lg.gif"/>
+      <image path="/de.sebastianbenz.task.application/icons/eclipse_lg.gif"/>
       <text>
          A simple textual TODO editor.
       </text>
@@ -17,14 +17,14 @@
       <vmArgsMac>-XstartOnFirstThread -Dorg.eclipse.swt.internal.carbon.smallFonts</vmArgsMac>
    </launcherArgs>
 
-   <windowImages i16="/de.sebastianbenz.task.rcp/icons/TodoFile.png" i32="/de.sebastianbenz.task.rcp/icons/TodoEditor_32.gif" i48="/de.sebastianbenz.task.rcp/icons/TodoEditor_48.gif" i64="/de.sebastianbenz.task.rcp/icons/TodoEditor_64.gif" i128="/de.sebastianbenz.task.rcp/icons/TodoEditor_128.gif"/>
+   <windowImages i16="/de.sebastianbenz.task.application/icons/TodoFile.png" i32="/de.sebastianbenz.task.application/icons/TodoEditor_32.gif" i48="/de.sebastianbenz.task.application/icons/TodoEditor_48.gif" i64="/de.sebastianbenz.task.application/icons/TodoEditor_64.gif" i128="/de.sebastianbenz.task.application/icons/TodoEditor_128.gif"/>
 
 
    <launcher name="taskeditor">
-      <macosx icon="/de.sebastianbenz.task.rcp/icons/Icon.icns"/>
+      <macosx icon="/de.sebastianbenz.task.application/icons/Icon.icns"/>
       <solaris/>
       <win useIco="true">
-         <ico path="/de.sebastianbenz.task.rcp/icons/Icon.ico"/>
+         <ico path="/de.sebastianbenz.task.application/icons/Icon.ico"/>
          <bmp/>
       </win>
    </launcher>
@@ -33,14 +33,13 @@
    <vm>
    </vm>
 
-
    <plugins>
    </plugins>
 
    <features>
       <feature id="de.sebastianbenz.task" version="1.0.0.qualifier"/>
-      <feature id="de.sebastianbenz.task.rcp" version="1.0.0.qualifier"/>
       <feature id="de.sebastianbenz.task.platform" version="1.0.0.qualifier"/>
+      <feature id="de.sebastianbenz.task.rcp" version="1.0.0.qualifier"/>
    </features>
 
 

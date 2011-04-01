@@ -2,28 +2,6 @@
 <?eclipse version="3.0"?>
 <plugin>
 
-   
-   <extension
-         id="product"
-         point="org.eclipse.core.runtime.products">
-      <product
-            description="%productDescription"
-            name="%productName"
-            application="de.sebastianbenz.task.rcp.application">
-         <property
-               name="appName"
-               value="%productName"/>
-         <property
-               name="windowImages"
-               value="icons/TodoFile.png,icons/TodoEditor_32.gif,icons/TodoEditor_48.gif,icons/TodoEditor_64.gif,icons/TodoEditor_128.gif"/>
-         <property
-               name="aboutText"
-               value="A simple textual TODO editor."/>
-         <property
-               name="aboutImage"
-               value="icons/eclipse_lg.gif"/>
-      </product>
-   </extension>
 
    <extension
          id="application"
@@ -108,5 +86,29 @@
                tooltip="%openFile.tooltip">
          </action>
       </actionSet>
+   </extension>
+   <extension
+         id="taskeditor"
+         point="org.eclipse.core.runtime.products">
+      <product
+            application="de.sebastianbenz.task.application.application"
+            name="Task Editor">
+         <property
+               name="windowImages"
+               value="icons/TodoFile.png,icons/TodoEditor_32.gif,icons/TodoEditor_48.gif,icons/TodoEditor_64.gif,icons/TodoEditor_128.gif">
+         </property>
+         <property
+               name="aboutText"
+               value="A simple textual TODO editor.">
+         </property>
+         <property
+               name="aboutImage"
+               value="icons/eclipse_lg.gif">
+         </property>
+         <property
+               name="appName"
+               value="Task Editor">
+         </property>
+      </product>
    </extension>
 </plugin>

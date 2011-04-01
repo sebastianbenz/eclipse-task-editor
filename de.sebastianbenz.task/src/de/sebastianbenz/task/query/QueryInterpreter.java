@@ -113,12 +113,6 @@ public class QueryInterpreter {
 	}
 
 	protected boolean _select(CompExpr expr, Task task) {
-		if (isNotValue(expr.getLeft())) {
-			return false;
-		}
-		if (isNotValue(expr.getRight())) {
-			return false;
-		}
 		String left = valueOf((Value) expr.getLeft(), task);
 		String right = valueOf((Value) expr.getRight(), task);
 		
@@ -201,7 +195,7 @@ public class QueryInterpreter {
 	}
 
 	protected boolean isNotValue(Expression expr) {
-		return expr == null || !(expr instanceof Value) || ((Value)expr).getValue() == null || ((Value)expr).getValue() == "";
+		return expr == null || !(expr instanceof Value) || ((Value)expr).getValue() == null;
 	}
 
 	protected boolean _select(UnaryExpr expr, EObject object) {

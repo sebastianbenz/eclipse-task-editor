@@ -6,6 +6,7 @@
 package de.sebastianbenz.task.provider;
 
 
+import de.sebastianbenz.task.Note;
 import java.util.Collection;
 import java.util.List;
 
@@ -53,8 +54,7 @@ public class NoteItemProvider
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object)
 	{
-		if (itemPropertyDescriptors == null)
-		{
+		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
 		}

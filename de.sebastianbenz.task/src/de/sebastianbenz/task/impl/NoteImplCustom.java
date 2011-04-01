@@ -10,10 +10,4 @@ package de.sebastianbenz.task.impl;
 
 public class NoteImplCustom extends de.sebastianbenz.task.impl.NoteImpl {
 
-	
-	@Override
-	public String getValue() {
-		return getText().trim();
-	}
-	
 }

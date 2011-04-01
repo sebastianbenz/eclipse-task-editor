@@ -107,6 +107,7 @@ public class TaskSwitch<T>
 			{
 				Content content = (Content)theEObject;
 				T result = caseContent(content);
+				if (result == null) result = caseContainer(content);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -115,6 +116,7 @@ public class TaskSwitch<T>
 				Task task = (Task)theEObject;
 				T result = caseTask(task);
 				if (result == null) result = caseContent(task);
+				if (result == null) result = caseContainer(task);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -123,6 +125,7 @@ public class TaskSwitch<T>
 				Note note = (Note)theEObject;
 				T result = caseNote(note);
 				if (result == null) result = caseContent(note);
+				if (result == null) result = caseContainer(note);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -142,18 +145,18 @@ public class TaskSwitch<T>
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case TaskPackage.CONTAINER:
-			{
-				Container container = (Container)theEObject;
-				T result = caseContainer(container);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case TaskPackage.GLOBAL_TASK_MODEL:
 			{
 				GlobalTaskModel globalTaskModel = (GlobalTaskModel)theEObject;
 				T result = caseGlobalTaskModel(globalTaskModel);
 				if (result == null) result = caseContainer(globalTaskModel);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case TaskPackage.CONTAINER:
+			{
+				Container container = (Container)theEObject;
+				T result = caseContainer(container);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -258,22 +261,6 @@ public class TaskSwitch<T>
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Container</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Container</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseContainer(Container object)
-	{
-		return null;
-	}
-
-	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Global Task Model</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -285,6 +272,22 @@ public class TaskSwitch<T>
 	 * @generated
 	 */
 	public T caseGlobalTaskModel(GlobalTaskModel object)
+	{
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Container</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Container</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseContainer(Container object)
 	{
 		return null;
 	}

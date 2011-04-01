@@ -42,8 +42,7 @@ public final class TaskEditPlugin extends EMFPlugin
 	public TaskEditPlugin()
 	{
 		super
-		  (new ResourceLocator [] 
-		   {
+		  (new ResourceLocator [] {
 		   });
 	}
 

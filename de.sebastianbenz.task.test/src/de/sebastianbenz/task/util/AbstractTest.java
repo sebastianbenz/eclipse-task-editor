@@ -25,6 +25,7 @@ import junit.framework.Assert;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.Resource.Diagnostic;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.xtext.Constants;
 import org.eclipse.xtext.junit4.InjectWith;
 import org.eclipse.xtext.junit4.XtextRunner;
@@ -113,6 +114,7 @@ public abstract class AbstractTest {
 		Resource resource = resourceSet.createResource(createURI(format("TaskTest" + resourceSet.getResources().size() + "." + extension)));
 		try {
 			resource.load(new StringInputStream(input), null);
+			EcoreUtil.resolveAll(resource);
 		} catch (IOException e) {
 			e.printStackTrace();
 			Assert.fail(e.getMessage());

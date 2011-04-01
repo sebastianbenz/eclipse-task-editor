@@ -19,62 +19,9 @@ import de.sebastianbenz.task.tagging.Tags;
 
 public class TaskImplCustom extends de.sebastianbenz.task.impl.TaskImpl {
 
-	private static final int SPACE = 1;
-
-	private enum DoneStatus {
-		UNKNOWN, OPEN, COMPLETED
-	}
-
-	public static final String TAG_PATTERN = " @(\\w+)(\\((.*?)\\))?";
-	private Pattern pattern = Pattern.compile(TAG_PATTERN, Pattern.DOTALL);
-	private String formattedText;
-	private DoneStatus isDone = DoneStatus.UNKNOWN;
 
 	@Override
-	public EList<Tag> getTags() {
-		if (tags == null) {
-			tags = new EObjectContainmentEList<Tag>(Tag.class, this,
-					TaskPackage.TASK__TAGS);
-			if(text != null){
-				parseTags();
-			}
-		}
-		return tags;
-	}
-
-	protected void parseTags() {
-		Matcher matcher = pattern.matcher(text);
-		while (matcher.find()) {
-			String name = matcher.group(1);
-			String value = matcher.group(3);
-			int offset = matcher.start(0) + SPACE;
-			int length = matcher.end(0) - offset;
-			getTags().add(Tags.create(name, value, offset, length));
-		}
-	}
-
-	@Override
-	public void setText(String newText) {
-		tags = null;
-		formattedText = null;
-		isDone = DoneStatus.UNKNOWN;
-		super.setText(newText);
-	}
-
-	@Override
-	public String getValue() {
-		if (formattedText == null) {
-			formattedText = removeLeadingHypen(text.trim());
-			formattedText = removeTags();
-		}
-		return formattedText;
-	}
-
-	protected String removeTags() {
-		return formattedText.replaceAll(TAG_PATTERN, "").trim().replaceAll("  ", " ");
-	}
-
-	protected String removeLeadingHypen(String string) {
+	protected String cleanText(String string) {
 		if (string.startsWith("- ")) {
 			string = string.substring(2, string.length());
 		} else if (string.startsWith("-")) {
@@ -83,23 +30,5 @@ public class TaskImplCustom extends de.sebastianbenz.task.impl.TaskImpl {
 		return string;
 	}
 
-	private static final String DONE_TAG = "done";
-
-	@Override
-	public boolean isDone() {
-		if (isDone == DoneStatus.UNKNOWN) {
-			isDone = resolveStatus();
-		}
-		return isDone == DoneStatus.COMPLETED;
-	}
-
-	protected DoneStatus resolveStatus() {
-		for (Tag tag : getTags()) {
-			if (tag.getName().equals(DONE_TAG)) {
-				return DoneStatus.COMPLETED;
-			}
-		}
-		return DoneStatus.OPEN;
-	}
 
 }

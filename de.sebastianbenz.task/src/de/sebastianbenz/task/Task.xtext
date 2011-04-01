@@ -19,7 +19,7 @@ Content:
 	Project |
 	Task |  
 	Note 
-	;
+	;  
 
 Task:
 	(intend+=WS)* text=TASK_TEXT;

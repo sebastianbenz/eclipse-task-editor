@@ -26,7 +26,6 @@ import org.eclipse.xtext.ui.editor.syntaxcoloring.ISemanticHighlightingCalculato
 import de.sebastianbenz.task.Content;
 import de.sebastianbenz.task.Project;
 import de.sebastianbenz.task.Tag;
-import de.sebastianbenz.task.Task;
 import de.sebastianbenz.task.util.TaskSwitch;
 
 public class SemanticHighlightingCalculator implements ISemanticHighlightingCalculator{
@@ -40,19 +39,19 @@ public class SemanticHighlightingCalculator implements ISemanticHighlightingCalc
 		}
 
 		@Override
-		public Boolean caseTask(Task task) {
-			Iterable<Tag> allTags = task.getTags();
-			if(task.isDone()){
-				highlightText(task, allTags);
+		public Boolean caseContent(Content content) {
+			Iterable<Tag> allTags = content.getTags();
+			if(content.isDone()){
+				highlightText(content, allTags);
 			}
-			highlightTags(task, allTags);
+			highlightTags(content, allTags);
 			return Boolean.TRUE;
 		}
 		
-		private void highlightText(Task task, Iterable<Tag> allTags) {
-			int begin = getStartPosition(task);
+		private void highlightText(Content content, Iterable<Tag> allTags) {
+			int begin = getStartPosition(content);
 			int lastTagEnd = 0;
-			int taskOffset = offset(task);
+			int taskOffset = offset(content);
 			for (Tag tag : allTags) {
 				int length = tag.getOffset() - begin - 1;
 				if(length > 0){
@@ -63,35 +62,35 @@ public class SemanticHighlightingCalculator implements ISemanticHighlightingCalc
 				begin = tag.getOffset() + tag.getLength() + 1;
 			}
 			
-			int taskLength = length(task);
+			int taskLength = length(content);
 			if(lastTagEnd < taskOffset + taskLength){
 				acceptor.addPosition(lastTagEnd + 2, taskLength-begin, HighlightingConfiguration.TASK_DONE_ID);
 			}
 		}
 
-		protected int getStartPosition(Task task) {
-			String text = task.getText();
-			for(int i = 1; i < text.length(); i++){
-				if(text.charAt(i) != ' '){
+		protected int getStartPosition(Content content) {
+			String text = content.getText();
+			for(int i = 0; i < text.length(); i++){
+				if(text.charAt(i) != '-' && text.charAt(i) != ' '){
 					return i;
 				}
 			}
 			return 1;
 		}
 
-		private void highlightTags(Task task, Iterable<Tag> allTags) {
+		private void highlightTags(Content content, Iterable<Tag> allTags) {
 			for (Tag tag : allTags) {
-				acceptor.addPosition(offset(task) + tag.getOffset(), tag.getLength(), TAG_ID);
+				acceptor.addPosition(offset(content) + tag.getOffset(), tag.getLength(), TAG_ID);
 			}
 		}
 
-		private int offset(Task task) {
-			ICompositeNode node = NodeModelUtils.getNode(task);
-			return node.getOffset() + task.getIntend().size();
+		private int offset(Content content) {
+			ICompositeNode node = NodeModelUtils.getNode(content);
+			return node.getOffset() + content.getIntend().size();
 		}
 		
-		private int length(Task task) {
-			ICompositeNode node = NodeModelUtils.getNode(task);
+		private int length(Content content) {
+			ICompositeNode node = NodeModelUtils.getNode(content);
 			return node.getLength();
 		}
 

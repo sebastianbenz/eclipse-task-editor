@@ -61,8 +61,7 @@ public class TagItemProvider
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object)
 	{
-		if (itemPropertyDescriptors == null)
-		{
+		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
 			addNamePropertyDescriptor(object);
@@ -201,8 +200,7 @@ public class TagItemProvider
 	{
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(Tag.class))
-		{
+		switch (notification.getFeatureID(Tag.class)) {
 			case TaskPackage.TAG__NAME:
 			case TaskPackage.TAG__VALUE:
 			case TaskPackage.TAG__OFFSET:

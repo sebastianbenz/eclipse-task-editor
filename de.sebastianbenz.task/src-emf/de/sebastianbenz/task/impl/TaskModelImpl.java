@@ -18,10 +18,7 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
-import org.eclipse.emf.ecore.impl.EObjectImpl;
-
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
-import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
@@ -31,25 +28,14 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link de.sebastianbenz.task.impl.TaskModelImpl#getChildren <em>Children</em>}</li>
  *   <li>{@link de.sebastianbenz.task.impl.TaskModelImpl#getContents <em>Contents</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class TaskModelImpl extends EObjectImpl implements TaskModel
+public class TaskModelImpl extends ContainerImplCustom implements TaskModel
 {
-	/**
-	 * The cached value of the '{@link #getChildren() <em>Children</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getChildren()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Content> children;
-
 	/**
 	 * The cached value of the '{@link #getContents() <em>Contents</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -86,20 +72,6 @@ public class TaskModelImpl extends EObjectImpl implements TaskModel
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Content> getChildren()
-	{
-		if (children == null)
-		{
-			children = new EObjectWithInverseResolvingEList<Content>(Content.class, this, TaskPackage.TASK_MODEL__CHILDREN, TaskPackage.CONTENT__PARENT);
-		}
-		return children;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EList<Content> getContents()
 	{
 		if (contents == null)
@@ -120,8 +92,6 @@ public class TaskModelImpl extends EObjectImpl implements TaskModel
 	{
 		switch (featureID)
 		{
-			case TaskPackage.TASK_MODEL__CHILDREN:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getChildren()).basicAdd(otherEnd, msgs);
 			case TaskPackage.TASK_MODEL__CONTENTS:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getContents()).basicAdd(otherEnd, msgs);
 		}
@@ -138,8 +108,6 @@ public class TaskModelImpl extends EObjectImpl implements TaskModel
 	{
 		switch (featureID)
 		{
-			case TaskPackage.TASK_MODEL__CHILDREN:
-				return ((InternalEList<?>)getChildren()).basicRemove(otherEnd, msgs);
 			case TaskPackage.TASK_MODEL__CONTENTS:
 				return ((InternalEList<?>)getContents()).basicRemove(otherEnd, msgs);
 		}
@@ -156,8 +124,6 @@ public class TaskModelImpl extends EObjectImpl implements TaskModel
 	{
 		switch (featureID)
 		{
-			case TaskPackage.TASK_MODEL__CHILDREN:
-				return getChildren();
 			case TaskPackage.TASK_MODEL__CONTENTS:
 				return getContents();
 		}
@@ -175,10 +141,6 @@ public class TaskModelImpl extends EObjectImpl implements TaskModel
 	{
 		switch (featureID)
 		{
-			case TaskPackage.TASK_MODEL__CHILDREN:
-				getChildren().clear();
-				getChildren().addAll((Collection<? extends Content>)newValue);
-				return;
 			case TaskPackage.TASK_MODEL__CONTENTS:
 				getContents().clear();
 				getContents().addAll((Collection<? extends Content>)newValue);
@@ -197,9 +159,6 @@ public class TaskModelImpl extends EObjectImpl implements TaskModel
 	{
 		switch (featureID)
 		{
-			case TaskPackage.TASK_MODEL__CHILDREN:
-				getChildren().clear();
-				return;
 			case TaskPackage.TASK_MODEL__CONTENTS:
 				getContents().clear();
 				return;
@@ -217,8 +176,6 @@ public class TaskModelImpl extends EObjectImpl implements TaskModel
 	{
 		switch (featureID)
 		{
-			case TaskPackage.TASK_MODEL__CHILDREN:
-				return children != null && !children.isEmpty();
 			case TaskPackage.TASK_MODEL__CONTENTS:
 				return contents != null && !contents.isEmpty();
 		}

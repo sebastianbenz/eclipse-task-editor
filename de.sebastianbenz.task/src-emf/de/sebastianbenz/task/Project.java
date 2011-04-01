@@ -16,6 +16,6 @@ package de.sebastianbenz.task;
  * @model
  * @generated
  */
-public interface Project extends Content, Container
+public interface Project extends Content
 {
 } // Project

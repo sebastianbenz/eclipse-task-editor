@@ -60,14 +60,14 @@ public interface TaskPackage extends EPackage
 	TaskPackage eINSTANCE = de.sebastianbenz.task.impl.TaskPackageImpl.init();
 
 	/**
-	 * The meta object id for the '{@link de.sebastianbenz.task.Container <em>Container</em>}' class.
+	 * The meta object id for the '{@link de.sebastianbenz.task.impl.ContainerImpl <em>Container</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see de.sebastianbenz.task.Container
+	 * @see de.sebastianbenz.task.impl.ContainerImpl
 	 * @see de.sebastianbenz.task.impl.TaskPackageImpl#getContainer()
 	 * @generated
 	 */
-	int CONTAINER = 6;
+	int CONTAINER = 7;
 
 	/**
 	 * The feature id for the '<em><b>Children</b></em>' reference list.
@@ -135,13 +135,22 @@ public interface TaskPackage extends EPackage
 	int CONTENT = 1;
 
 	/**
+	 * The feature id for the '<em><b>Children</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTENT__CHILDREN = CONTAINER__CHILDREN;
+
+	/**
 	 * The feature id for the '<em><b>Intend</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTENT__INTEND = 0;
+	int CONTENT__INTEND = CONTAINER_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Text</b></em>' attribute.
@@ -150,7 +159,7 @@ public interface TaskPackage extends EPackage
 	 * @generated
 	 * @ordered
 	 */
-	int CONTENT__TEXT = 1;
+	int CONTENT__TEXT = CONTAINER_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Parent</b></em>' reference.
@@ -159,7 +168,7 @@ public interface TaskPackage extends EPackage
 	 * @generated
 	 * @ordered
 	 */
-	int CONTENT__PARENT = 2;
+	int CONTENT__PARENT = CONTAINER_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Task Model</b></em>' container reference.
@@ -168,7 +177,16 @@ public interface TaskPackage extends EPackage
 	 * @generated
 	 * @ordered
 	 */
-	int CONTENT__TASK_MODEL = 3;
+	int CONTENT__TASK_MODEL = CONTAINER_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Tags</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTENT__TAGS = CONTAINER_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of structural features of the '<em>Content</em>' class.
@@ -177,7 +195,7 @@ public interface TaskPackage extends EPackage
 	 * @generated
 	 * @ordered
 	 */
-	int CONTENT_FEATURE_COUNT = 4;
+	int CONTENT_FEATURE_COUNT = CONTAINER_FEATURE_COUNT + 5;
 
 	/**
 	 * The meta object id for the '{@link de.sebastianbenz.task.impl.TaskImpl <em>Task</em>}' class.
@@ -188,6 +206,15 @@ public interface TaskPackage extends EPackage
 	 * @generated
 	 */
 	int TASK = 2;
+
+	/**
+	 * The feature id for the '<em><b>Children</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TASK__CHILDREN = CONTENT__CHILDREN;
 
 	/**
 	 * The feature id for the '<em><b>Intend</b></em>' attribute list.
@@ -232,7 +259,7 @@ public interface TaskPackage extends EPackage
 	 * @generated
 	 * @ordered
 	 */
-	int TASK__TAGS = CONTENT_FEATURE_COUNT + 0;
+	int TASK__TAGS = CONTENT__TAGS;
 
 	/**
 	 * The number of structural features of the '<em>Task</em>' class.
@@ -241,7 +268,7 @@ public interface TaskPackage extends EPackage
 	 * @generated
 	 * @ordered
 	 */
-	int TASK_FEATURE_COUNT = CONTENT_FEATURE_COUNT + 1;
+	int TASK_FEATURE_COUNT = CONTENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link de.sebastianbenz.task.impl.NoteImpl <em>Note</em>}' class.
@@ -252,6 +279,15 @@ public interface TaskPackage extends EPackage
 	 * @generated
 	 */
 	int NOTE = 3;
+
+	/**
+	 * The feature id for the '<em><b>Children</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NOTE__CHILDREN = CONTENT__CHILDREN;
 
 	/**
 	 * The feature id for the '<em><b>Intend</b></em>' attribute list.
@@ -290,6 +326,15 @@ public interface TaskPackage extends EPackage
 	int NOTE__TASK_MODEL = CONTENT__TASK_MODEL;
 
 	/**
+	 * The feature id for the '<em><b>Tags</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NOTE__TAGS = CONTENT__TAGS;
+
+	/**
 	 * The number of structural features of the '<em>Note</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -307,6 +352,15 @@ public interface TaskPackage extends EPackage
 	 * @generated
 	 */
 	int PROJECT = 4;
+
+	/**
+	 * The feature id for the '<em><b>Children</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROJECT__CHILDREN = CONTENT__CHILDREN;
 
 	/**
 	 * The feature id for the '<em><b>Intend</b></em>' attribute list.
@@ -345,13 +399,13 @@ public interface TaskPackage extends EPackage
 	int PROJECT__TASK_MODEL = CONTENT__TASK_MODEL;
 
 	/**
-	 * The feature id for the '<em><b>Children</b></em>' reference list.
+	 * The feature id for the '<em><b>Tags</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROJECT__CHILDREN = CONTENT_FEATURE_COUNT + 0;
+	int PROJECT__TAGS = CONTENT__TAGS;
 
 	/**
 	 * The number of structural features of the '<em>Project</em>' class.
@@ -360,7 +414,7 @@ public interface TaskPackage extends EPackage
 	 * @generated
 	 * @ordered
 	 */
-	int PROJECT_FEATURE_COUNT = CONTENT_FEATURE_COUNT + 1;
+	int PROJECT_FEATURE_COUNT = CONTENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link de.sebastianbenz.task.impl.TagImpl <em>Tag</em>}' class.
@@ -409,13 +463,22 @@ public interface TaskPackage extends EPackage
 	int TAG__LENGTH = 3;
 
 	/**
+	 * The feature id for the '<em><b>Content</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TAG__CONTENT = 4;
+
+	/**
 	 * The number of structural features of the '<em>Tag</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TAG_FEATURE_COUNT = 4;
+	int TAG_FEATURE_COUNT = 5;
 
 	/**
 	 * The meta object id for the '{@link de.sebastianbenz.task.impl.GlobalTaskModelImpl <em>Global Task Model</em>}' class.
@@ -425,7 +488,7 @@ public interface TaskPackage extends EPackage
 	 * @see de.sebastianbenz.task.impl.TaskPackageImpl#getGlobalTaskModel()
 	 * @generated
 	 */
-	int GLOBAL_TASK_MODEL = 7;
+	int GLOBAL_TASK_MODEL = 6;
 
 	/**
 	 * The feature id for the '<em><b>Children</b></em>' reference list.
@@ -522,6 +585,17 @@ public interface TaskPackage extends EPackage
 	EReference getContent_TaskModel();
 
 	/**
+	 * Returns the meta object for the containment reference list '{@link de.sebastianbenz.task.Content#getTags <em>Tags</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Tags</em>'.
+	 * @see de.sebastianbenz.task.Content#getTags()
+	 * @see #getContent()
+	 * @generated
+	 */
+	EReference getContent_Tags();
+
+	/**
 	 * Returns the meta object for class '{@link de.sebastianbenz.task.Task <em>Task</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -530,17 +604,6 @@ public interface TaskPackage extends EPackage
 	 * @generated
 	 */
 	EClass getTask();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link de.sebastianbenz.task.Task#getTags <em>Tags</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Tags</em>'.
-	 * @see de.sebastianbenz.task.Task#getTags()
-	 * @see #getTask()
-	 * @generated
-	 */
-	EReference getTask_Tags();
 
 	/**
 	 * Returns the meta object for class '{@link de.sebastianbenz.task.Note <em>Note</em>}'.
@@ -617,6 +680,27 @@ public interface TaskPackage extends EPackage
 	EAttribute getTag_Length();
 
 	/**
+	 * Returns the meta object for the container reference '{@link de.sebastianbenz.task.Tag#getContent <em>Content</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>Content</em>'.
+	 * @see de.sebastianbenz.task.Tag#getContent()
+	 * @see #getTag()
+	 * @generated
+	 */
+	EReference getTag_Content();
+
+	/**
+	 * Returns the meta object for class '{@link de.sebastianbenz.task.GlobalTaskModel <em>Global Task Model</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Global Task Model</em>'.
+	 * @see de.sebastianbenz.task.GlobalTaskModel
+	 * @generated
+	 */
+	EClass getGlobalTaskModel();
+
+	/**
 	 * Returns the meta object for class '{@link de.sebastianbenz.task.Container <em>Container</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -636,16 +720,6 @@ public interface TaskPackage extends EPackage
 	 * @generated
 	 */
 	EReference getContainer_Children();
-
-	/**
-	 * Returns the meta object for class '{@link de.sebastianbenz.task.GlobalTaskModel <em>Global Task Model</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Global Task Model</em>'.
-	 * @see de.sebastianbenz.task.GlobalTaskModel
-	 * @generated
-	 */
-	EClass getGlobalTaskModel();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -731,6 +805,14 @@ public interface TaskPackage extends EPackage
 		EReference CONTENT__TASK_MODEL = eINSTANCE.getContent_TaskModel();
 
 		/**
+		 * The meta object literal for the '<em><b>Tags</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CONTENT__TAGS = eINSTANCE.getContent_Tags();
+
+		/**
 		 * The meta object literal for the '{@link de.sebastianbenz.task.impl.TaskImpl <em>Task</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -739,14 +821,6 @@ public interface TaskPackage extends EPackage
 		 * @generated
 		 */
 		EClass TASK = eINSTANCE.getTask();
-
-		/**
-		 * The meta object literal for the '<em><b>Tags</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference TASK__TAGS = eINSTANCE.getTask_Tags();
 
 		/**
 		 * The meta object literal for the '{@link de.sebastianbenz.task.impl.NoteImpl <em>Note</em>}' class.
@@ -811,10 +885,28 @@ public interface TaskPackage extends EPackage
 		EAttribute TAG__LENGTH = eINSTANCE.getTag_Length();
 
 		/**
-		 * The meta object literal for the '{@link de.sebastianbenz.task.Container <em>Container</em>}' class.
+		 * The meta object literal for the '<em><b>Content</b></em>' container reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see de.sebastianbenz.task.Container
+		 * @generated
+		 */
+		EReference TAG__CONTENT = eINSTANCE.getTag_Content();
+
+		/**
+		 * The meta object literal for the '{@link de.sebastianbenz.task.impl.GlobalTaskModelImpl <em>Global Task Model</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.sebastianbenz.task.impl.GlobalTaskModelImpl
+		 * @see de.sebastianbenz.task.impl.TaskPackageImpl#getGlobalTaskModel()
+		 * @generated
+		 */
+		EClass GLOBAL_TASK_MODEL = eINSTANCE.getGlobalTaskModel();
+
+		/**
+		 * The meta object literal for the '{@link de.sebastianbenz.task.impl.ContainerImpl <em>Container</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.sebastianbenz.task.impl.ContainerImpl
 		 * @see de.sebastianbenz.task.impl.TaskPackageImpl#getContainer()
 		 * @generated
 		 */
@@ -827,16 +919,6 @@ public interface TaskPackage extends EPackage
 		 * @generated
 		 */
 		EReference CONTAINER__CHILDREN = eINSTANCE.getContainer_Children();
-
-		/**
-		 * The meta object literal for the '{@link de.sebastianbenz.task.impl.GlobalTaskModelImpl <em>Global Task Model</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see de.sebastianbenz.task.impl.GlobalTaskModelImpl
-		 * @see de.sebastianbenz.task.impl.TaskPackageImpl#getGlobalTaskModel()
-		 * @generated
-		 */
-		EClass GLOBAL_TASK_MODEL = eINSTANCE.getGlobalTaskModel();
 
 	}
 

@@ -16,9 +16,9 @@ import org.eclipse.xtext.resource.IEObjectDescription;
 import org.eclipse.xtext.resource.impl.DefaultResourceDescriptionStrategy;
 import org.eclipse.xtext.util.IAcceptor;
 
+import de.sebastianbenz.task.Content;
 import de.sebastianbenz.task.Project;
 import de.sebastianbenz.task.Tag;
-import de.sebastianbenz.task.Task;
 import de.sebastianbenz.task.util.TaskSwitch;
 
 public class TaskResourceDescriptionStrategy extends
@@ -39,8 +39,8 @@ public class TaskResourceDescriptionStrategy extends
 		}
 
 		@Override
-		public Boolean caseTask(Task task) {
-			EList<Tag> tags = task.getTags();
+		public Boolean caseContent(Content content) {
+			EList<Tag> tags = content.getTags();
 			Map<String, String> userData = newHashMapWithExpectedSize(1);
 			List<String> tagData = newArrayListWithExpectedSize(tags.size());
 			for (Tag tag : tags) {
@@ -48,7 +48,7 @@ public class TaskResourceDescriptionStrategy extends
 				tagData.add(tag.getName());
 			}
 			userData.put(Descriptions.TAG_KEY, on(Descriptions.SEPARATOR).join(tagData));
-			IEObjectDescription description = create(nameOf(task), task, userData);
+			IEObjectDescription description = create(nameOf(content), content, userData);
 			acceptor.accept(description);
 			return Boolean.TRUE;
 		}

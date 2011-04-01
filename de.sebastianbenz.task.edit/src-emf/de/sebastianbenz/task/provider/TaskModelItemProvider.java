@@ -33,7 +33,7 @@ import de.sebastianbenz.task.TaskPackage;
  * @generated
  */
 public class TaskModelItemProvider
-	extends ItemProviderAdapter
+	extends ContainerItemProvider
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
@@ -61,8 +61,7 @@ public class TaskModelItemProvider
 	@Override
 	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object)
 	{
-		if (itemPropertyDescriptors == null)
-		{
+		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
 		}
@@ -75,16 +74,13 @@ public class TaskModelItemProvider
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object)
 	{
-		if (childrenFeatures == null)
-		{
+		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(TaskPackage.Literals.CONTAINER__CHILDREN);
-			childrenFeatures.add(TaskPackage.Literals.TASK_MODEL__CONTENTS);
 		}
 		return childrenFeatures;
 	}
@@ -139,9 +135,7 @@ public class TaskModelItemProvider
 	{
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(TaskModel.class))
-		{
-			case TaskPackage.TASK_MODEL__CHILDREN:
+		switch (notification.getFeatureID(TaskModel.class)) {
 			case TaskPackage.TASK_MODEL__CONTENTS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
@@ -160,21 +154,6 @@ public class TaskModelItemProvider
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object)
 	{
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-
-		newChildDescriptors.add
-			(createChildParameter
-				(TaskPackage.Literals.CONTAINER__CHILDREN,
-				 TaskFactory.eINSTANCE.createTask()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(TaskPackage.Literals.CONTAINER__CHILDREN,
-				 TaskFactory.eINSTANCE.createNote()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(TaskPackage.Literals.CONTAINER__CHILDREN,
-				 TaskFactory.eINSTANCE.createProject()));
 
 		newChildDescriptors.add
 			(createChildParameter
@@ -199,8 +178,7 @@ public class TaskModelItemProvider
 	 * @generated
 	 */
 	@Override
-	public String getCreateChildText(Object owner, Object feature, Object child, Collection<?> selection)
-	{
+	public String getCreateChildText(Object owner, Object feature, Object child, Collection<?> selection) {
 		Object childFeature = feature;
 		Object childObject = child;
 
@@ -208,25 +186,12 @@ public class TaskModelItemProvider
 			childFeature == TaskPackage.Literals.CONTAINER__CHILDREN ||
 			childFeature == TaskPackage.Literals.TASK_MODEL__CONTENTS;
 
-		if (qualify)
-		{
+		if (qualify) {
 			return getString
 				("_UI_CreateChild_text2",
 				 new Object[] { getTypeText(childObject), getFeatureText(childFeature), getTypeText(owner) });
 		}
 		return super.getCreateChildText(owner, feature, child, selection);
-	}
-
-	/**
-	 * Return the resource locator for this item provider's resources.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public ResourceLocator getResourceLocator()
-	{
-		return TaskEditPlugin.INSTANCE;
 	}
 
 }

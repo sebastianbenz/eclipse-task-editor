@@ -108,14 +108,14 @@ public class TaskAdapterFactory extends AdapterFactoryImpl
 				return createTagAdapter();
 			}
 			@Override
-			public Adapter caseContainer(Container object)
-			{
-				return createContainerAdapter();
-			}
-			@Override
 			public Adapter caseGlobalTaskModel(GlobalTaskModel object)
 			{
 				return createGlobalTaskModelAdapter();
+			}
+			@Override
+			public Adapter caseContainer(Container object)
+			{
+				return createContainerAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object)
@@ -230,21 +230,6 @@ public class TaskAdapterFactory extends AdapterFactoryImpl
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.sebastianbenz.task.Container <em>Container</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see de.sebastianbenz.task.Container
-	 * @generated
-	 */
-	public Adapter createContainerAdapter()
-	{
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link de.sebastianbenz.task.GlobalTaskModel <em>Global Task Model</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -255,6 +240,21 @@ public class TaskAdapterFactory extends AdapterFactoryImpl
 	 * @generated
 	 */
 	public Adapter createGlobalTaskModelAdapter()
+	{
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.sebastianbenz.task.Container <em>Container</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.sebastianbenz.task.Container
+	 * @generated
+	 */
+	public Adapter createContainerAdapter()
 	{
 		return null;
 	}

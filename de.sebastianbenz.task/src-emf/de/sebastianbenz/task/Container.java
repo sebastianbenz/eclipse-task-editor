@@ -22,7 +22,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  *
  * @see de.sebastianbenz.task.TaskPackage#getContainer()
- * @model interface="true" abstract="true"
+ * @model abstract="true"
  * @generated
  */
 public interface Container extends EObject

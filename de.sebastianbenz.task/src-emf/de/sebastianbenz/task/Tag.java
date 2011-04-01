@@ -19,6 +19,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link de.sebastianbenz.task.Tag#getValue <em>Value</em>}</li>
  *   <li>{@link de.sebastianbenz.task.Tag#getOffset <em>Offset</em>}</li>
  *   <li>{@link de.sebastianbenz.task.Tag#getLength <em>Length</em>}</li>
+ *   <li>{@link de.sebastianbenz.task.Tag#getContent <em>Content</em>}</li>
  * </ul>
  * </p>
  *
@@ -131,5 +132,33 @@ public interface Tag extends EObject
 	 * @generated
 	 */
 	void setLength(int value);
+
+	/**
+	 * Returns the value of the '<em><b>Content</b></em>' container reference.
+	 * It is bidirectional and its opposite is '{@link de.sebastianbenz.task.Content#getTags <em>Tags</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Content</em>' container reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Content</em>' container reference.
+	 * @see #setContent(Content)
+	 * @see de.sebastianbenz.task.TaskPackage#getTag_Content()
+	 * @see de.sebastianbenz.task.Content#getTags
+	 * @model opposite="tags" transient="false"
+	 * @generated
+	 */
+	Content getContent();
+
+	/**
+	 * Sets the value of the '{@link de.sebastianbenz.task.Tag#getContent <em>Content</em>}' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Content</em>' container reference.
+	 * @see #getContent()
+	 * @generated
+	 */
+	void setContent(Content value);
 
 } // Tag

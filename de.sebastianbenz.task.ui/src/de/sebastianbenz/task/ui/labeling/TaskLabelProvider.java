@@ -21,6 +21,7 @@ import org.eclipse.xtext.ui.label.StylerFactory;
 
 import com.google.inject.Inject;
 
+import de.sebastianbenz.task.Content;
 import de.sebastianbenz.task.Task;
 import de.sebastianbenz.task.ui.highlighting.HighlightingConfiguration;
 
@@ -56,7 +57,7 @@ public class TaskLabelProvider extends DeclarativeLabelProvider {
 	
 	
 	public StyledString getStyledText(Object element) {
-		if (element instanceof Task && ((Task)element).isDone()) {
+		if (element instanceof Content && ((Content)element).isDone()) {
 			Styler style = stylerFactory.createXtextStyleAdapterStyler(configuration.taskDoneTextStyle());
 			return new StyledString(getText(element), style );
 		}else{

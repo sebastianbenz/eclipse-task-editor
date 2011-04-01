@@ -18,10 +18,8 @@ import org.eclipse.xtext.ui.editor.outline.impl.DefaultOutlineTreeProvider;
 import org.eclipse.xtext.ui.editor.outline.impl.DocumentRootNode;
 import org.eclipse.xtext.ui.editor.outline.impl.EObjectNode;
 
+import de.sebastianbenz.task.Container;
 import de.sebastianbenz.task.Content;
-import de.sebastianbenz.task.Project;
-import de.sebastianbenz.task.Tag;
-import de.sebastianbenz.task.Task;
 import de.sebastianbenz.task.TaskModel;
 
 /**
@@ -39,22 +37,12 @@ public class TaskOutlineTreeProvider extends DefaultOutlineTreeProvider {
 		}
 	}
 
-	protected int levelOf(Content content) {
-		return content.getIntend().size();
-	}
 
 	protected void _createChildren(AbstractOutlineNode parentNode,
-			Project project) {
-		for (Content content : project.getChildren()) {
-			EObjectNode child = createEObjectNode(parentNode, content);
-			createChildrenDispatcher.invoke(child, content);
-		}
-	}
-	
-	protected void _createChildren(AbstractOutlineNode parentNode,
-			Task task) {
-		for (Tag tag : task.getTags()) {
-			createEObjectNode(parentNode, tag);
+			Container content) {
+		for (Content child : content.getChildren()) {
+			EObjectNode childNode = createEObjectNode(parentNode, child);
+			createChildrenDispatcher.invoke(childNode, child);
 		}
 	}
 

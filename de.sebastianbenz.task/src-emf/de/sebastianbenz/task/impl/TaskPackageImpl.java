@@ -77,14 +77,14 @@ public class TaskPackageImpl extends EPackageImpl implements TaskPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass containerEClass = null;
+	private EClass globalTaskModelEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass globalTaskModelEClass = null;
+	private EClass containerEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -224,9 +224,9 @@ public class TaskPackageImpl extends EPackageImpl implements TaskPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getTask()
+	public EReference getContent_Tags()
 	{
-		return taskEClass;
+		return (EReference)contentEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -234,9 +234,9 @@ public class TaskPackageImpl extends EPackageImpl implements TaskPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getTask_Tags()
+	public EClass getTask()
 	{
-		return (EReference)taskEClass.getEStructuralFeatures().get(0);
+		return taskEClass;
 	}
 
 	/**
@@ -314,6 +314,26 @@ public class TaskPackageImpl extends EPackageImpl implements TaskPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getTag_Content()
+	{
+		return (EReference)tagEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getGlobalTaskModel()
+	{
+		return globalTaskModelEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getContainer()
 	{
 		return containerEClass;
@@ -327,16 +347,6 @@ public class TaskPackageImpl extends EPackageImpl implements TaskPackage
 	public EReference getContainer_Children()
 	{
 		return (EReference)containerEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getGlobalTaskModel()
-	{
-		return globalTaskModelEClass;
 	}
 
 	/**
@@ -377,9 +387,9 @@ public class TaskPackageImpl extends EPackageImpl implements TaskPackage
 		createEAttribute(contentEClass, CONTENT__TEXT);
 		createEReference(contentEClass, CONTENT__PARENT);
 		createEReference(contentEClass, CONTENT__TASK_MODEL);
+		createEReference(contentEClass, CONTENT__TAGS);
 
 		taskEClass = createEClass(TASK);
-		createEReference(taskEClass, TASK__TAGS);
 
 		noteEClass = createEClass(NOTE);
 
@@ -390,11 +400,12 @@ public class TaskPackageImpl extends EPackageImpl implements TaskPackage
 		createEAttribute(tagEClass, TAG__VALUE);
 		createEAttribute(tagEClass, TAG__OFFSET);
 		createEAttribute(tagEClass, TAG__LENGTH);
+		createEReference(tagEClass, TAG__CONTENT);
+
+		globalTaskModelEClass = createEClass(GLOBAL_TASK_MODEL);
 
 		containerEClass = createEClass(CONTAINER);
 		createEReference(containerEClass, CONTAINER__CHILDREN);
-
-		globalTaskModelEClass = createEClass(GLOBAL_TASK_MODEL);
 	}
 
 	/**
@@ -427,10 +438,10 @@ public class TaskPackageImpl extends EPackageImpl implements TaskPackage
 
 		// Add supertypes to classes
 		taskModelEClass.getESuperTypes().add(this.getContainer());
+		contentEClass.getESuperTypes().add(this.getContainer());
 		taskEClass.getESuperTypes().add(this.getContent());
 		noteEClass.getESuperTypes().add(this.getContent());
 		projectEClass.getESuperTypes().add(this.getContent());
-		projectEClass.getESuperTypes().add(this.getContainer());
 		globalTaskModelEClass.getESuperTypes().add(this.getContainer());
 
 		// Initialize classes and features; add operations and parameters
@@ -442,15 +453,15 @@ public class TaskPackageImpl extends EPackageImpl implements TaskPackage
 		initEAttribute(getContent_Text(), ecorePackage.getEString(), "text", null, 0, 1, Content.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getContent_Parent(), this.getContainer(), this.getContainer_Children(), "parent", null, 0, 1, Content.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEReference(getContent_TaskModel(), this.getTaskModel(), this.getTaskModel_Contents(), "taskModel", null, 0, 1, Content.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getContent_Tags(), this.getTag(), this.getTag_Content(), "tags", null, 0, -1, Content.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		addEOperation(contentEClass, ecorePackage.getEInt(), "getLevel", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		addEOperation(contentEClass, ecorePackage.getEString(), "getValue", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		initEClass(taskEClass, Task.class, "Task", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getTask_Tags(), this.getTag(), null, "tags", null, 0, -1, Task.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		addEOperation(contentEClass, ecorePackage.getEBoolean(), "isDone", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(taskEClass, ecorePackage.getEBoolean(), "isDone", 0, 1, IS_UNIQUE, IS_ORDERED);
+		initEClass(taskEClass, Task.class, "Task", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(noteEClass, Note.class, "Note", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -461,11 +472,12 @@ public class TaskPackageImpl extends EPackageImpl implements TaskPackage
 		initEAttribute(getTag_Value(), ecorePackage.getEString(), "value", null, 0, 1, Tag.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTag_Offset(), ecorePackage.getEInt(), "offset", null, 0, 1, Tag.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTag_Length(), ecorePackage.getEInt(), "length", null, 0, 1, Tag.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(containerEClass, de.sebastianbenz.task.Container.class, "Container", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getContainer_Children(), this.getContent(), this.getContent_Parent(), "children", null, 0, -1, de.sebastianbenz.task.Container.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getTag_Content(), this.getContent(), this.getContent_Tags(), "content", null, 0, 1, Tag.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(globalTaskModelEClass, GlobalTaskModel.class, "GlobalTaskModel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(containerEClass, de.sebastianbenz.task.Container.class, "Container", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getContainer_Children(), this.getContent(), this.getContent_Parent(), "children", null, 0, -1, de.sebastianbenz.task.Container.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

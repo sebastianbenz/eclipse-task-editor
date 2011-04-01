@@ -845,7 +845,7 @@ public class QueryGrammarAccess extends AbstractGrammarElementFinder {
 
 	//terminal ID:
 	//	!("@" | "=" | "<" | ">" | "!" | "(" | ")" | ":" | " " | "\t" | "\r" | "\n" | "\"" | "\'" | "&" | "|") !(" " | "\t" |
-	//	"\r" | "\n" | ":" | "&" | "|" | "!")*;
+	//	"\r" | "\n" | ":")*;
 	public TerminalRule getIDRule() {
 		return (tID != null) ? tID : (tID = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "ID"));
 	} 

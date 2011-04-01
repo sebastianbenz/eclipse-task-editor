@@ -31,7 +31,7 @@ public class TaskResourceDescriptionTest extends AbstractTest{
 						"- task \n" +
 						"- task2 \n" +
 						"note\n";
-		assertThat(resourceDescription(input), is("project, task, task2"));
+		assertThat(resourceDescription(input), is("project, task, task2, note"));
 	}
 	
 	@Test

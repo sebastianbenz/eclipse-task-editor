@@ -13,6 +13,7 @@ package de.sebastianbenz.task;
 import static com.google.common.collect.Iterables.transform;
 import static com.google.common.collect.Lists.newArrayList;
 import static org.hamcrest.core.Is.is;
+import static org.junit.Assert.*;
 import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertThat;
 
@@ -63,6 +64,12 @@ public class ContentProviderTest extends AbstractTest{
 	  			  			  "note\n"), is(array("project1", "project2", "note")));
 	}
 
+	@Test
+	public void shouldReturnSubTasks() throws Exception {
+		assertThat(contentsOf("- task1\n" +
+								"	- task2\n"), is(array("task1")));
+	}
+	
 	@Test
 	public void shouldReturnChildProjects() throws Exception {
 		assertThat(contentsOf(	" project1:\n" +

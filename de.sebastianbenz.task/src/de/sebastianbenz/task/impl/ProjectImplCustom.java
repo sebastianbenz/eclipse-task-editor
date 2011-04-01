@@ -9,23 +9,9 @@ package de.sebastianbenz.task.impl;
 
 
 public class ProjectImplCustom extends de.sebastianbenz.task.impl.ProjectImpl {
-
-	private String value = null;
-	
 	@Override
-	public String getValue() {
-		if(value == null){
-			value = text.trim();
-			if(value.endsWith(":")){
-				value = value.substring(0, value.length() - 1);
-			}
-		}
-		return value;
+	protected String cleanText(String text) {
+		return text.substring(0, text.length()-1);
 	}
 	
-	@Override
-	public void setText(String newText) {
-		value = null;
-		super.setText(newText);
-	}
 }

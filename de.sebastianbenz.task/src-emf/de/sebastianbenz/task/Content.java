@@ -7,8 +7,6 @@ package de.sebastianbenz.task;
 
 import org.eclipse.emf.common.util.EList;
 
-import org.eclipse.emf.ecore.EObject;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Content</b></em>'.
@@ -21,6 +19,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link de.sebastianbenz.task.Content#getText <em>Text</em>}</li>
  *   <li>{@link de.sebastianbenz.task.Content#getParent <em>Parent</em>}</li>
  *   <li>{@link de.sebastianbenz.task.Content#getTaskModel <em>Task Model</em>}</li>
+ *   <li>{@link de.sebastianbenz.task.Content#getTags <em>Tags</em>}</li>
  * </ul>
  * </p>
  *
@@ -28,7 +27,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model abstract="true"
  * @generated
  */
-public interface Content extends EObject
+public interface Content extends Container
 {
 	/**
 	 * Returns the value of the '<em><b>Intend</b></em>' attribute list.
@@ -129,6 +128,24 @@ public interface Content extends EObject
 	void setTaskModel(TaskModel value);
 
 	/**
+	 * Returns the value of the '<em><b>Tags</b></em>' containment reference list.
+	 * The list contents are of type {@link de.sebastianbenz.task.Tag}.
+	 * It is bidirectional and its opposite is '{@link de.sebastianbenz.task.Tag#getContent <em>Content</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Tags</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Tags</em>' containment reference list.
+	 * @see de.sebastianbenz.task.TaskPackage#getContent_Tags()
+	 * @see de.sebastianbenz.task.Tag#getContent
+	 * @model opposite="content" containment="true" derived="true"
+	 * @generated
+	 */
+	EList<Tag> getTags();
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @model kind="operation"
@@ -143,5 +160,13 @@ public interface Content extends EObject
 	 * @generated
 	 */
 	String getValue();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model kind="operation"
+	 * @generated
+	 */
+	boolean isDone();
 
 } // Content

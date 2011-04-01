@@ -92,8 +92,7 @@ public class TaskItemProviderAdapterFactory extends TaskAdapterFactory implement
 	@Override
 	public Adapter createTaskModelAdapter()
 	{
-		if (taskModelItemProvider == null)
-		{
+		if (taskModelItemProvider == null) {
 			taskModelItemProvider = new TaskModelItemProvider(this);
 		}
 
@@ -117,8 +116,7 @@ public class TaskItemProviderAdapterFactory extends TaskAdapterFactory implement
 	@Override
 	public Adapter createTaskAdapter()
 	{
-		if (taskItemProvider == null)
-		{
+		if (taskItemProvider == null) {
 			taskItemProvider = new TaskItemProvider(this);
 		}
 
@@ -142,8 +140,7 @@ public class TaskItemProviderAdapterFactory extends TaskAdapterFactory implement
 	@Override
 	public Adapter createNoteAdapter()
 	{
-		if (noteItemProvider == null)
-		{
+		if (noteItemProvider == null) {
 			noteItemProvider = new NoteItemProvider(this);
 		}
 
@@ -167,8 +164,7 @@ public class TaskItemProviderAdapterFactory extends TaskAdapterFactory implement
 	@Override
 	public Adapter createProjectAdapter()
 	{
-		if (projectItemProvider == null)
-		{
+		if (projectItemProvider == null) {
 			projectItemProvider = new ProjectItemProvider(this);
 		}
 
@@ -192,8 +188,7 @@ public class TaskItemProviderAdapterFactory extends TaskAdapterFactory implement
 	@Override
 	public Adapter createTagAdapter()
 	{
-		if (tagItemProvider == null)
-		{
+		if (tagItemProvider == null) {
 			tagItemProvider = new TagItemProvider(this);
 		}
 
@@ -217,8 +212,7 @@ public class TaskItemProviderAdapterFactory extends TaskAdapterFactory implement
 	@Override
 	public Adapter createGlobalTaskModelAdapter()
 	{
-		if (globalTaskModelItemProvider == null)
-		{
+		if (globalTaskModelItemProvider == null) {
 			globalTaskModelItemProvider = new GlobalTaskModelItemProvider(this);
 		}
 
@@ -278,11 +272,9 @@ public class TaskItemProviderAdapterFactory extends TaskAdapterFactory implement
 	@Override
 	public Object adapt(Object object, Object type)
 	{
-		if (isFactoryForType(type))
-		{
+		if (isFactoryForType(type)) {
 			Object adapter = super.adapt(object, type);
-			if (!(type instanceof Class<?>) || (((Class<?>)type).isInstance(adapter)))
-			{
+			if (!(type instanceof Class<?>) || (((Class<?>)type).isInstance(adapter))) {
 				return adapter;
 			}
 		}
@@ -322,8 +314,7 @@ public class TaskItemProviderAdapterFactory extends TaskAdapterFactory implement
 	{
 		changeNotifier.fireNotifyChanged(notification);
 
-		if (parentAdapterFactory != null)
-		{
+		if (parentAdapterFactory != null) {
 			parentAdapterFactory.fireNotifyChanged(notification);
 		}
 	}

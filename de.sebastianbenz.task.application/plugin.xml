@@ -95,7 +95,7 @@
             name="Task Editor">
          <property
                name="windowImages"
-               value="icons/TodoFile.png,icons/TodoEditor_32.gif,icons/TodoEditor_48.gif,icons/TodoEditor_64.gif,icons/TodoEditor_128.gif">
+               value="icons/Icon_16.png,icons/Icon_32.png,icons/Icon_48.png,icons/Icon_64.png,icons/Icon_128.png">
          </property>
          <property
                name="aboutText"

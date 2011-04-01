@@ -171,26 +171,26 @@ public class TodoView extends ViewPart {
 	}
 
 	private void fillLocalPullDown(IMenuManager manager) {
-		manager.add(actionCollapseAll);
-		manager.add(new Separator());
-		manager.add(actionSort);
+//		manager.add(actionCollapseAll);
+//		manager.add(new Separator());
+//		manager.add(actionSort);
 	}
 
 	private void fillLocalToolBar(IToolBarManager manager) {
-		manager.add(actionCollapseAll);
-		manager.add(actionSort);
-		manager.add(new Separator());
-		drillDownAdapter.addNavigationActions(manager);
+//		manager.add(actionCollapseAll);
+//		manager.add(actionSort);
+//		manager.add(new Separator());
+//		drillDownAdapter.addNavigationActions(manager);
 	}
 
 	private void makeActions() {
-		actionCollapseAll = createActionCollapseAll();
-		actionCollapseAll.setText("Collapse all");
-		actionCollapseAll.setImageDescriptor(image("collapseall.gif"));
-
-		actionSort = createActionSort();
-		actionSort.setText("Sort");
-		actionSort.setImageDescriptor(image("sort.gif"));
+//		actionCollapseAll = createActionCollapseAll();
+//		actionCollapseAll.setText("Collapse all");
+//		actionCollapseAll.setImageDescriptor(image("collapseall.gif"));
+//
+//		actionSort = createActionSort();
+//		actionSort.setText("Sort");
+//		actionSort.setImageDescriptor(image("sort.gif"));
 		openInEditor = createActionJumpToElement();
 
 	}

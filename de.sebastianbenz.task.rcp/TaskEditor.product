@@ -17,17 +17,7 @@
       <vmArgsMac>-XstartOnFirstThread -Dorg.eclipse.swt.internal.carbon.smallFonts</vmArgsMac>
    </launcherArgs>
 
-   <windowImages i16="/de.sebastianbenz.task.application/icons/TodoFile.png" i32="/de.sebastianbenz.task.application/icons/TodoEditor_32.gif" i48="/de.sebastianbenz.task.application/icons/TodoEditor_48.gif" i64="/de.sebastianbenz.task.application/icons/TodoEditor_64.gif" i128="/de.sebastianbenz.task.application/icons/TodoEditor_128.gif"/>
-
-
-   <launcher name="taskeditor">
-      <macosx icon="/de.sebastianbenz.task.application/icons/Icon.icns"/>
-      <solaris/>
-      <win useIco="true">
-         <ico path="/de.sebastianbenz.task.application/icons/Icon.ico"/>
-         <bmp/>
-      </win>
-   </launcher>
+   <windowImages i16="/de.sebastianbenz.task.application/icons/Icon_16.png" i32="/de.sebastianbenz.task.application/icons/Icon_32.png" i48="/de.sebastianbenz.task.application/icons/Icon_48.png" i64="/de.sebastianbenz.task.application/icons/Icon_64.png" i128="/de.sebastianbenz.task.application/icons/Icon_128.png"/>
 
 
    <vm>

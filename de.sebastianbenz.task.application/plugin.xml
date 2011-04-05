@@ -9,7 +9,7 @@
          point="org.eclipse.core.runtime.applications">
       <application
             icon="icons/TodoFile.png">
-         <run class="de.sebastianbenz.task.app.TextEditorApplication"/>
+         <run class="de.sebastianbenz.task.app.TaskEditorApplication"/>
       </application>
    </extension>
    
@@ -19,10 +19,10 @@
          point="org.eclipse.ui.perspectives">
       <perspective
             icon="icons/TodoFile.png"
-            class="de.sebastianbenz.task.app.TextEditorPerspective"
+            class="de.sebastianbenz.task.app.TaskPerspective"
             fixed="true"
             name="%perspectiveName"
-            id="de.sebastianbenz.task.app.TextEditorPerspective"/>
+            id="de.sebastianbenz.task.app.TaskPerspective"/>
    </extension>
    
    <extension

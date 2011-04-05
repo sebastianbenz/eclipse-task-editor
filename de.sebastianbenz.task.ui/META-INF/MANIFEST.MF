@@ -23,5 +23,6 @@ Export-Package: de.sebastianbenz.task.ui.contentassist,
  de.sebastianbenz.task.ui.contentassist.antlr,
  de.sebastianbenz.task.ui.editor,
  de.sebastianbenz.task.ui.highlighting,
- de.sebastianbenz.task.ui.internal
+ de.sebastianbenz.task.ui.internal,
+ de.sebastianbenz.task.ui.views
 Bundle-Activator: de.sebastianbenz.task.ui.internal.TaskActivator

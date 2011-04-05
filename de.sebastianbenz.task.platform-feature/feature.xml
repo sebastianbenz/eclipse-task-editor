@@ -25,13 +25,6 @@
          unpack="false"/>
 
    <plugin
-         id="org.eclipse.core.net"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
          id="org.eclipse.emf.common"
          download-size="0"
          install-size="0"
@@ -382,13 +375,6 @@
          unpack="false"/>
 
    <plugin
-         id="javax.servlet"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
          id="org.eclipse.ui.views.properties.tabbed"
          download-size="0"
          install-size="0"
@@ -446,13 +432,6 @@
 
    <plugin
          id="org.apache.log4j"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.eclipse.ecf.provider.filetransfer"
          download-size="0"
          install-size="0"
          version="0.0.0"
@@ -690,28 +669,26 @@
          unpack="false"/>
 
    <plugin
-         id="org.eclipse.osgi.util"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
          id="org.eclipse.debug.core"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
-
-   <plugin
-         id="org.eclipse.ui.workbench.compatibility"
+  <plugin
+         id="org.eclipse.osgi.util"
          download-size="0"
          install-size="0"
          version="0.0.0"
-         fragment="true"/>
-
+         unpack="false"/>
    <plugin
          id="org.eclipse.core.runtime.compatibility"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+<plugin
+         id="org.eclipse.ecf.provider.filetransfer"
          download-size="0"
          install-size="0"
          version="0.0.0"
@@ -725,13 +702,6 @@
          unpack="false"/>
 
    <plugin
-         id="org.eclipse.core.runtime.compatibility.registry"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         fragment="true"/>
-
-   <plugin
          id="org.eclipse.core.filebuffers"
          download-size="0"
          install-size="0"
@@ -739,7 +709,10 @@
          unpack="false"/>
 
    <plugin
-         id="org.eclipse.core.filesystem.macosx"
+         id="org.eclipse.swt.cocoa.macosx.x86"
+         os="macosx"
+         ws="cocoa"
+         arch="x86"
          download-size="0"
          install-size="0"
          version="0.0.0"
@@ -747,18 +720,56 @@
          unpack="false"/>
 
    <plugin
-         id="org.eclipse.equinox.launcher.cocoa.macosx.x86_64"
+         id="org.eclipse.swt.gtk.linux.x86"
+         os="linux"
+         ws="gtk"
+         arch="x86"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         fragment="true"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.swt.win32.win32.x86"
+         os="win32"
+         ws="win32"
+         arch="x86"
          download-size="0"
          install-size="0"
          version="0.0.0"
          fragment="true"/>
 
    <plugin
-         id="org.eclipse.swt.cocoa.macosx.x86_64"
+         id="org.eclipse.equinox.launcher.cocoa.macosx.x86"
+         os="macosx"
+         ws="cocoa"
+         arch="x86"
          download-size="0"
          install-size="0"
          version="0.0.0"
-         fragment="true"
-         unpack="false"/>
+         fragment="true"/>
+
+
+   <plugin
+         id="org.eclipse.equinox.launcher.win32.win32.x86"
+         os="win32"
+         ws="win32"
+         arch="x86"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         fragment="true"/>
+         
+  <plugin
+         id="org.eclipse.equinox.launcher.gtk.linux.x86"
+         os="linux"
+         ws="gtk"
+         arch="x86"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         fragment="true"/>
+
 
 </feature>

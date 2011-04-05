@@ -131,7 +131,8 @@ public class ExtLinkedFileHelper {
 			int dash = r.getName().indexOf("-");
 			if(dash < 0)
 				continue;
-			int sequence = Integer.valueOf(r.getName().substring(dash + 1, r.getName().length() - 3));
+			String substring = r.getName().substring(dash + 1, r.getName().length() - 5);
+			int sequence = Integer.valueOf(substring);
 			result = sequence > result
 					? sequence
 					: result;

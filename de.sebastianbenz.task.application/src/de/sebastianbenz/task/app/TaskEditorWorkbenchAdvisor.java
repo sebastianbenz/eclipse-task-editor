@@ -26,7 +26,7 @@ public class TaskEditorWorkbenchAdvisor extends WorkbenchAdvisor {
 	}
 
 	public String getInitialWindowPerspectiveId() {
-		return "de.sebastianbenz.task.app.TextEditorPerspective"; //$NON-NLS-1$
+		return "de.sebastianbenz.task.app.TaskPerspective"; //$NON-NLS-1$
 	}
 
 	public WorkbenchWindowAdvisor createWorkbenchWindowAdvisor(
@@ -75,6 +75,7 @@ public class TaskEditorWorkbenchAdvisor extends WorkbenchAdvisor {
 	public void initialize(IWorkbenchConfigurer configurer) {
 		super.initialize(configurer);
 		configurer.setSaveAndRestore(true);
+		
 	}
 
 	@Override
@@ -94,7 +95,7 @@ public class TaskEditorWorkbenchAdvisor extends WorkbenchAdvisor {
 						persistable.getFactoryId());
 				persistable.saveState(inputMem);
 			} catch (PartInitException e) {
-				new Status(IStatus.ERROR, "de.sebastianbenz.task.rcp",
+				new Status(IStatus.ERROR, "de.sebastianbenz.task.application",
 						"Exception while saving editors", e);
 			}
 		}

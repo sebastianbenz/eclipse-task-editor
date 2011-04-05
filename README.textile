@@ -1,7 +1,8 @@
-h1. A simple textual todo editor for Eclipse
+h1. An easy to use textual task editor for Eclipse
+
+
 
 !http://sebastianbenz.github.com/eclipse-task-editor/images/Screenshot.png(Screenshot)!
-
 
 h2. Installation
 
@@ -9,11 +10,24 @@ The editor can be installed via the following update site:
 
 http://sebastianbenz.github.com/eclipse-task-editor/updatesite/interim
 
-Please note: the eclipse task editor is based on Xtext 2.0, for which currently only nightly builds are available (http://download.eclipse.org/modeling/tmf/updates/nightly).
+Please note: the editor is based on Xtext 2.0, for which currently only milestone builds are available (http://download.eclipse.org/modeling/tmf/updates/milestones).
+
+h2. Usage
+
+The eclipse task editor can be used to create and manage textual todo files. The syntax is based on TaskPaper, an excellent to-do list manager "TaskPaper":http://www.hogbaysoftware.com/products/taskpaper for Mac OS X.
+
+h3. Task Editor
+
+A todo file consists of four elements: Tasks, Notes, Projects, and Tags. 
+
+* *Tasks:* Something that needs to be done. 
+* *Notes:* 
+* *Projects:* Projects can be used to structure tasks.
+* *Tags:* can be used to categorize tasks. For example, 
+
+h3. Query View
+
 
 h2. License
 
 Copyright (C) 2010 Sebastian Benz. Distributed under the Eclipse Public License.
-
-
-

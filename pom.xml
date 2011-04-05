@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <version>1.0.0-SNAPSHOT</version>
+  <groupId>de.sebastianbenz.task</groupId>
+  <artifactId>parent</artifactId>
+  <packaging>pom</packaging>
+  <name>RCP Parent</name>
+
+  <properties>
+   <tycho-version>0.10.0</tycho-version>
+    <tycho-groupid>org.sonatype.tycho</tycho-groupid>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <platform-version-name>indigo</platform-version-name>
+    <eclipse-site>http://download.eclipse.org/releases/${platform-version-name}</eclipse-site>
+ 
+  </properties>
+
+  <modules>
+     <module>de.sebastianbenz.task.target</module>
+    <module>de.sebastianbenz.task-feature</module>
+    <module>de.sebastianbenz.task</module>
+    <module>de.sebastianbenz.task.application</module>
+    <module>de.sebastianbenz.task.edit</module>
+    <module>de.sebastianbenz.task.ui</module>
+    <module>de.sebastianbenz.task.platform-feature</module>
+    <module>de.sebastianbenz.task.rcp</module>
+    <module>de.sebastianbenz.task.rcp-feature</module>
+  </modules>
+
+<repositories>
+    <repository>
+      <id>indigo</id>
+      <layout>p2</layout>
+      <url>${eclipse-site}</url>
+    </repository>
+  </repositories>
+
+  <profiles>
+    <profile>
+      <id>platform-indigo</id>
+      <activation>
+        <property>
+          <name>platform-version-name</name>
+          <value>indigo</value>
+        </property>
+      </activation>
+      <properties>
+        <eclipse-site>http://download.eclipse.org/releases/indigo</eclipse-site>
+        <platform-version>[3.7,3.8)</platform-version>
+      </properties>
+    </profile>
+  </profiles> 
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>${tycho-groupid}</groupId>
+        <artifactId>target-platform-configuration</artifactId>
+        <version>${tycho-version}</version>
+        <configuration>
+          <resolver>p2</resolver>
+          <target>
+            <artifact>
+              <groupId>de.sebastianbenz.task</groupId>
+              <artifactId>de.sebastianbenz.task.target</artifactId>
+              <version>1.0.0-SNAPSHOT</version>
+              <classifier>indigo</classifier>
+            </artifact>
+          </target>
+          <ignoreTychoRepositories>true</ignoreTychoRepositories>
+          <environments>
+             <environment>
+              <os>macosx</os>
+              <ws>cocoa</ws>
+              <arch>x86_64</arch>
+            </environment>
+            <environment>
+              <os>win32</os>
+              <ws>win32</ws>
+              <arch>x86</arch>
+            </environment>
+            <environment>
+              <os>win32</os>
+              <ws>win32</ws>
+              <arch>x86_64</arch>
+            </environment>
+            <environment>
+              <os>linux</os>
+              <ws>gtk</ws>
+              <arch>x86</arch>
+            </environment>
+          </environments>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>${tycho-groupid}</groupId>
+        <artifactId>tycho-maven-plugin</artifactId>
+        <version>${tycho-version}</version>
+        <extensions>true</extensions>
+      </plugin>
+    </plugins>
+  </build>
+</project>

@@ -13,6 +13,7 @@ import org.eclipse.xtext.util.SimpleCache;
 import org.eclipse.xtext.util.Tuples;
 
 import com.google.common.base.Function;
+import com.google.common.base.Joiner;
 
 import de.sebastianbenz.task.Container;
 import de.sebastianbenz.task.Content;
@@ -113,8 +114,9 @@ public class QueryInterpreter {
 	}
 
 	protected boolean _select(CompExpr expr, Task task) {
-		String left = valueOf((Value) expr.getLeft(), task);
-		String right = valueOf((Value) expr.getRight(), task);
+		// FIXME left / right might be words
+		String left = valueOf(expr.getLeft(), task);
+		String right = valueOf(expr.getRight(), task);
 		
 		switch (expr.getOperator()) {
 		case GREATER:
@@ -176,21 +178,22 @@ public class QueryInterpreter {
 		return content.getValue().contains(string);
 	}
 
-	private Number asNumber(Value value, Task task) {
-		String string = valueOf(value, task);
-		return Numbers.parse(string);
-	}
-
-	private String valueOf(Value value, Task task) {
+	private String valueOf(Expression value, Task task) {
 		if (value instanceof TagReference) {
 			for (Tag tag : task.getTags()) {
-				if (tag.getName().equals(value.getValue())) {
+				TagReference tagReference = (TagReference)value;
+				if (tag.getName().equals(tagReference.getValue())) {
 					return tag.getValue();
 				}
 			}
 			return "";
-		} else {
-			return value.getValue();
+		} else if (value instanceof Value) {
+			return ((Value) value).getValue();
+		}else if (value instanceof Words) {
+			Words words = (Words) value;
+			return Joiner.on(" ").join(words.getValues());
+		}else{
+			return "";
 		}
 	}
 

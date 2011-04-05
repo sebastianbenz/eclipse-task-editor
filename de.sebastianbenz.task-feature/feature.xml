@@ -18,7 +18,7 @@ http://www.eclipse.org/legal/epl-v10.html.
    </copyright>
 
    <url>
-      <update url="http://github.com/sebastianbenz/eclipse-task-editor/tree/gh-pages/updatesite"/>
+      <update label="Task Editor Interim" url="http://sebastianbenz.github.com/eclipse-task-editor/updatesite/interim"/>
       <discovery label="Xtext Nightly" url="http://download.eclipse.org/modeling/tmf/updates/nightly"/>
    </url>
 

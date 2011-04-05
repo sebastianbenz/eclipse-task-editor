@@ -103,7 +103,7 @@
          </property>
          <property
                name="aboutImage"
-               value="icons/eclipse_lg.gif">
+               value="icons/Icon_128.png">
          </property>
          <property
                name="appName"

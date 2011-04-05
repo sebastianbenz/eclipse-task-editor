@@ -4,16 +4,24 @@
 <product name="Task Editor" uid="de.sebastianbenz.task.application.taskeditor.id" id="de.sebastianbenz.task.application.taskeditor" application="de.sebastianbenz.task.application.application" version="1.0.0.qualifier" useFeatures="true" includeLaunchers="true">
 
    <aboutInfo>
-      <image path="/de.sebastianbenz.task.application/icons/eclipse_lg.gif"/>
+      <image path="/de.sebastianbenz.task.application/icons/Icon_64.png"/>
       <text>
          A simple textual TODO editor.
       </text>
    </aboutInfo>
 
+   <configIni>
+   </configIni>
+
    <launcherArgs>
    </launcherArgs>
 
    <windowImages i16="/de.sebastianbenz.task.application/icons/Icon_16.png" i32="/de.sebastianbenz.task.application/icons/Icon_32.png" i48="/de.sebastianbenz.task.application/icons/Icon_48.png" i64="/de.sebastianbenz.task.application/icons/Icon_64.png" i128="/de.sebastianbenz.task.application/icons/Icon_128.png"/>
+
+
+   <launcher>
+   </launcher>
+
 
    <vm>
    </vm>

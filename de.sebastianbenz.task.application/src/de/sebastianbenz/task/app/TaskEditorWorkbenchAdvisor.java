@@ -38,6 +38,7 @@ public class TaskEditorWorkbenchAdvisor extends WorkbenchAdvisor {
 				wc.setInitialSize(new Point(600, 450));
 				wc.setShowCoolBar(true);
 				wc.setShowStatusLine(true);
+				wc.setShowProgressIndicator(true);
 			}
 
 			/*
@@ -53,6 +54,7 @@ public class TaskEditorWorkbenchAdvisor extends WorkbenchAdvisor {
 				IWorkbenchPage[] pages = wc.getWindow().getPages();
 				for (int i = 0; i < pages.length; i++) {
 					pages[i].hideActionSet("org.eclipse.ui.edit.text.actionSet.openExternalFile");
+					pages[i].hideActionSet("org.eclipse.search.menu");
 					// pages[i].hideActionSet("org.eclipse.ui.edit.text.actionSet.annotationNavigation");
 					// pages[i].hideActionSet("org.eclipse.ui.edit.text.actionSet.navigation");
 				}

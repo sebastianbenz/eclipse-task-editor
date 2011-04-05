@@ -16,7 +16,6 @@ import org.eclipse.ui.actions.ContributionItemFactory;
 import org.eclipse.ui.application.ActionBarAdvisor;
 import org.eclipse.ui.application.IActionBarConfigurer;
 
-
 /**
  * Adds actions to a workbench window.
  */
@@ -25,60 +24,81 @@ public final class TextEditorActionBarAdvisor extends ActionBarAdvisor {
 	/**
 	 * Constructs a new action builder.
 	 * 
-	 * @param actionBarConfigurer the configurer
+	 * @param actionBarConfigurer
+	 *            the configurer
 	 */
 	public TextEditorActionBarAdvisor(IActionBarConfigurer actionBarConfigurer) {
 		super(actionBarConfigurer);
 	}
 
-    /*
-     * @see org.eclipse.ui.application.ActionBarAdvisor#fillCoolBar(org.eclipse.jface.action.ICoolBarManager)
-     */
-    protected void fillCoolBar(ICoolBarManager cbManager) {
+	/*
+	 * @see
+	 * org.eclipse.ui.application.ActionBarAdvisor#fillCoolBar(org.eclipse.jface
+	 * .action.ICoolBarManager)
+	 */
+	protected void fillCoolBar(ICoolBarManager cbManager) {
 		cbManager.add(new GroupMarker("group.file")); //$NON-NLS-1$
 		{ // File Group
-			IToolBarManager fileToolBar = new ToolBarManager(cbManager.getStyle());
+			IToolBarManager fileToolBar = new ToolBarManager(
+					cbManager.getStyle());
 			fileToolBar.add(new Separator(IWorkbenchActionConstants.NEW_GROUP));
-			fileToolBar.add(new GroupMarker(IWorkbenchActionConstants.OPEN_EXT));
-			fileToolBar.add(new GroupMarker(IWorkbenchActionConstants.SAVE_GROUP));
+			fileToolBar
+					.add(new GroupMarker(IWorkbenchActionConstants.OPEN_EXT));
+			fileToolBar.add(new GroupMarker(
+					IWorkbenchActionConstants.SAVE_GROUP));
 			fileToolBar.add(getAction(ActionFactory.SAVE.getId()));
-			
+
 			// Add to the cool bar manager
-			cbManager.add(new ToolBarContributionItem(fileToolBar,IWorkbenchActionConstants.TOOLBAR_FILE));
+			cbManager.add(new ToolBarContributionItem(fileToolBar,
+					IWorkbenchActionConstants.TOOLBAR_FILE));
 		}
-		
+
 		cbManager.add(new GroupMarker(IWorkbenchActionConstants.MB_ADDITIONS));
-		
+
 		cbManager.add(new GroupMarker(IWorkbenchActionConstants.GROUP_EDITOR));
 	}
-	
+
 	/*
-	 * @see org.eclipse.ui.application.ActionBarAdvisor#fillMenuBar(org.eclipse.jface.action.IMenuManager)
+	 * @see
+	 * org.eclipse.ui.application.ActionBarAdvisor#fillMenuBar(org.eclipse.jface
+	 * .action.IMenuManager)
 	 */
-    protected void fillMenuBar(IMenuManager menubar) {
+	protected void fillMenuBar(IMenuManager menubar) {
 		menubar.add(createFileMenu());
 		menubar.add(createEditMenu());
+		menubar.add(createHelpMenu());
 	}
-	
+
+	private MenuManager createHelpMenu() {
+		MenuManager helpMenu = new MenuManager("&Help",
+				IWorkbenchActionConstants.M_HELP);
+		helpMenu.add(new GroupMarker(IWorkbenchActionConstants.MB_ADDITIONS));
+		helpMenu.add(new Separator());
+
+		return helpMenu;
+	}
+
 	/**
 	 * Creates and returns the 'File' menu.
 	 */
 	private MenuManager createFileMenu() {
-		MenuManager menu = new MenuManager("&File", IWorkbenchActionConstants.M_FILE); //$NON-NLS-1$
+		MenuManager menu = new MenuManager(
+				"&File", IWorkbenchActionConstants.M_FILE); //$NON-NLS-1$
 		menu.add(new GroupMarker(IWorkbenchActionConstants.FILE_START));
 
 		menu.add(new GroupMarker(IWorkbenchActionConstants.NEW_EXT));
 		menu.add(getAction(ActionFactory.CLOSE.getId()));
 		menu.add(getAction(ActionFactory.CLOSE_ALL.getId()));
-		//		menu.add(closeAllSavedAction);
+		// menu.add(closeAllSavedAction);
 		menu.add(new GroupMarker(IWorkbenchActionConstants.CLOSE_EXT));
 		menu.add(new Separator());
 		menu.add(getAction(ActionFactory.SAVE.getId()));
 		menu.add(getAction(ActionFactory.SAVE_AS.getId()));
 		menu.add(getAction(ActionFactory.SAVE_ALL.getId()));
 		menu.add(getAction(ActionFactory.REVERT.getId()));
-		menu.add(getAction(ActionFactory.PREFERENCES.getId()));
-		menu.add(ContributionItemFactory.REOPEN_EDITORS.create(getActionBarConfigurer().getWindowConfigurer().getWindow()));
+		menu.add(ContributionItemFactory.REOPEN_EDITORS
+				.create(getActionBarConfigurer().getWindowConfigurer()
+						.getWindow()));
 		menu.add(new GroupMarker(IWorkbenchActionConstants.MRU));
 		menu.add(new Separator());
 		menu.add(getAction(ActionFactory.QUIT.getId()));
@@ -91,7 +111,8 @@ public final class TextEditorActionBarAdvisor extends ActionBarAdvisor {
 	 * Creates and returns the 'Edit' menu.
 	 */
 	private MenuManager createEditMenu() {
-		MenuManager menu = new MenuManager("&Edit", IWorkbenchActionConstants.M_EDIT); //$NON-NLS-1$
+		MenuManager menu = new MenuManager(
+				"&Edit", IWorkbenchActionConstants.M_EDIT); //$NON-NLS-1$
 		menu.add(new GroupMarker(IWorkbenchActionConstants.EDIT_START));
 
 		menu.add(getAction(ActionFactory.UNDO.getId()));
@@ -116,10 +137,12 @@ public final class TextEditorActionBarAdvisor extends ActionBarAdvisor {
 		return menu;
 	}
 
-    /*
-     * @see org.eclipse.ui.application.ActionBarAdvisor#makeActions(org.eclipse.ui.IWorkbenchWindow)
-     */
-    protected void makeActions(IWorkbenchWindow window) {
+	/*
+	 * @see
+	 * org.eclipse.ui.application.ActionBarAdvisor#makeActions(org.eclipse.ui
+	 * .IWorkbenchWindow)
+	 */
+	protected void makeActions(IWorkbenchWindow window) {
 		registerAsGlobal(ActionFactory.SAVE.create(window));
 		registerAsGlobal(ActionFactory.SAVE_AS.create(window));
 		registerAsGlobal(ActionFactory.ABOUT.create(window));
@@ -138,11 +161,12 @@ public final class TextEditorActionBarAdvisor extends ActionBarAdvisor {
 		registerAsGlobal(ActionFactory.PREFERENCES.create(window));
 		registerAsGlobal(ActionFactory.QUIT.create(window));
 	}
-	
+
 	/**
 	 * Registers the action as global action and registers it for disposal.
 	 * 
-	 * @param action the action to register
+	 * @param action
+	 *            the action to register
 	 */
 	private void registerAsGlobal(IAction action) {
 		getActionBarConfigurer().registerGlobalAction(action);

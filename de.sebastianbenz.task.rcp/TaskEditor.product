@@ -10,15 +10,10 @@
       </text>
    </aboutInfo>
 
-   <configIni use="default">
-   </configIni>
-
    <launcherArgs>
-      <vmArgsMac>-XstartOnFirstThread -Dorg.eclipse.swt.internal.carbon.smallFonts</vmArgsMac>
    </launcherArgs>
 
    <windowImages i16="/de.sebastianbenz.task.application/icons/Icon_16.png" i32="/de.sebastianbenz.task.application/icons/Icon_32.png" i48="/de.sebastianbenz.task.application/icons/Icon_48.png" i64="/de.sebastianbenz.task.application/icons/Icon_64.png" i128="/de.sebastianbenz.task.application/icons/Icon_128.png"/>
-
 
    <vm>
    </vm>
@@ -28,9 +23,26 @@
 
    <features>
       <feature id="de.sebastianbenz.task" version="1.0.0.qualifier"/>
-      <feature id="de.sebastianbenz.task.platform" version="1.0.0.qualifier"/>
       <feature id="de.sebastianbenz.task.rcp" version="1.0.0.qualifier"/>
+      <feature id="de.sebastianbenz.task.platform" version="1.0.0.qualifier"/>
+      <feature id="org.eclipse.emf" version="2.7.0.v20110310-1804"/>
+      <feature id="org.eclipse.emf.common" version="2.7.0.v20110310-1642"/>
+      <feature id="org.eclipse.emf.common.ui" version="2.6.0.v20110310-1804"/>
+      <feature id="org.eclipse.emf.ecore" version="2.7.0.v20110310-1642"/>
+      <feature id="org.eclipse.emf.edit" version="2.7.0.v20110310-1804"/>
+      <feature id="org.eclipse.emf.edit.ui" version="2.6.0.v20110310-1804"/>
+      <feature id="org.eclipse.xtext.runtime" version="2.0.0.v201103151224"/>
+      <feature id="org.eclipse.xtext.ui" version="2.0.0.v201103151224"/>
    </features>
 
+   <configurations>
+      <plugin id="org.eclipse.core.runtime" autoStart="true" startLevel="4" />
+      <plugin id="org.eclipse.equinox.common" autoStart="true" startLevel="2" />
+      <plugin id="org.eclipse.equinox.ds" autoStart="true" startLevel="2" />
+      <plugin id="org.eclipse.equinox.p2.reconciler.dropins" autoStart="true" startLevel="4" />
+      <plugin id="org.eclipse.equinox.simpleconfigurator" autoStart="true" startLevel="1" />
+      <plugin id="org.eclipse.update.configurator" autoStart="true" startLevel="4" />
+      <property name="org.eclipse.update.reconcile" value="false" />
+   </configurations>
 
 </product>

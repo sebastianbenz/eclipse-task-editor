@@ -111,4 +111,17 @@
          </property>
       </product>
    </extension>
+   
+   <extension
+         id="activities"
+         point="org.eclipse.ui.activities">
+<activity
+description="Disable Activities"
+name="Disable"
+id="de.sebastianbenz.task.disabled">
+</activity> <activityPatternBinding
+activityId="de.sebastianbenz.task.disabled"
+pattern=".*/org.eclipse.search.*">
+</activityPatternBinding>
+</extension>
 </plugin>

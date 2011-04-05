@@ -76,12 +76,13 @@ public final class TextEditorActionBarAdvisor extends ActionBarAdvisor {
 		menu.add(getAction(ActionFactory.SAVE.getId()));
 		menu.add(getAction(ActionFactory.SAVE_AS.getId()));
 		menu.add(getAction(ActionFactory.SAVE_ALL.getId()));
-
 		menu.add(getAction(ActionFactory.REVERT.getId()));
+		menu.add(getAction(ActionFactory.PREFERENCES.getId()));
 		menu.add(ContributionItemFactory.REOPEN_EDITORS.create(getActionBarConfigurer().getWindowConfigurer().getWindow()));
 		menu.add(new GroupMarker(IWorkbenchActionConstants.MRU));
 		menu.add(new Separator());
 		menu.add(getAction(ActionFactory.QUIT.getId()));
+		menu.add(new GroupMarker(IWorkbenchActionConstants.FILE_END));
 		menu.add(new GroupMarker(IWorkbenchActionConstants.FILE_END));
 		return menu;
 	}
@@ -134,6 +135,7 @@ public final class TextEditorActionBarAdvisor extends ActionBarAdvisor {
 		registerAsGlobal(ActionFactory.CLOSE_ALL.create(window));
 		registerAsGlobal(ActionFactory.CLOSE_ALL_SAVED.create(window));
 		registerAsGlobal(ActionFactory.REVERT.create(window));
+		registerAsGlobal(ActionFactory.PREFERENCES.create(window));
 		registerAsGlobal(ActionFactory.QUIT.create(window));
 	}
 	

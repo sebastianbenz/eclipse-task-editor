@@ -10,7 +10,6 @@
 </location>
 <location includeAllPlatforms="true" includeMode="planner" includeSource="true" type="InstallableUnit">
 <unit id="org.eclipse.sdk.ide" version="3.7.0.I20110310-1119"/>
-<unit id="org.eclipse.equinox.p2.user.ui.feature.group" version="2.1.0.v20110122-2355-8A7RFtsFeDnQ5lZf7tez0TQA"/>
 </location>
 </locations>
 </target>

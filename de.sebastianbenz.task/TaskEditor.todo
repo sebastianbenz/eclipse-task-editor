@@ -28,7 +28,7 @@ Query View:
 	- equal/not-equal query by tag value  @done
 	- and or queries  @done
 	- if values are numbers enable greater less than  @done 
-	- View should keep expanded elements when model is updated
+	- View should keep expanded elements when model is updated @done
 	- Look into whether it is possible to let the outline view show the dirty state
 
 RCP:

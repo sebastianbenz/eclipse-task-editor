@@ -155,6 +155,7 @@ public class TodoView extends ViewPart {
 		viewer.setAutoExpandLevel(1);
 		viewer.setSorter(new ContentSorter());
 		viewer.setLabelProvider(labelProvider);
+		contentProvider.init(globalState);
 		viewer.setContentProvider(contentProvider);
 		viewer.setUseHashlookup(true);
 		viewer.setFilters(new ViewerFilter[] { queryBasedViewFilter });

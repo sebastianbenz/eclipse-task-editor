@@ -24,8 +24,10 @@ import org.eclipse.xtext.ui.editor.syntaxcoloring.IHighlightedPositionAcceptor;
 import org.eclipse.xtext.ui.editor.syntaxcoloring.ISemanticHighlightingCalculator;
 
 import de.sebastianbenz.task.Content;
+import de.sebastianbenz.task.Note;
 import de.sebastianbenz.task.Project;
 import de.sebastianbenz.task.Tag;
+import de.sebastianbenz.task.Task;
 import de.sebastianbenz.task.util.TaskSwitch;
 
 public class SemanticHighlightingCalculator implements ISemanticHighlightingCalculator{
@@ -39,33 +41,58 @@ public class SemanticHighlightingCalculator implements ISemanticHighlightingCalc
 		}
 
 		@Override
-		public Boolean caseContent(Content content) {
+		public Boolean caseTask(Task content) {
+			return applyHighlighting(content, HighlightingConfiguration.TASK_DONE_ID);
+		}
+
+		private Boolean applyHighlighting(Content content, String doneStyle) {
 			Iterable<Tag> allTags = content.getTags();
 			if(content.isDone()){
-				highlightText(content, allTags);
+				highlightText(content, allTags, doneStyle);
 			}
 			highlightTags(content, allTags);
 			return Boolean.TRUE;
 		}
 		
-		private void highlightText(Content content, Iterable<Tag> allTags) {
+		@Override
+		public Boolean caseNote(Note content) {
+			return applyHighlighting(content, HighlightingConfiguration.NOTE_DONE_ID);
+		}
+		
+		private void highlightText(Content content, Iterable<Tag> allTags, String doneStyle) {
 			int begin = getStartPosition(content);
 			int lastTagEnd = 0;
 			int taskOffset = offset(content);
 			for (Tag tag : allTags) {
-				int length = tag.getOffset() - begin - 1;
+				int length = tag.getOffset() - begin - whiteSpaces(content, tag.getOffset());
 				if(length > 0){
 					int offset = taskOffset + begin;
-					acceptor.addPosition(offset, length, HighlightingConfiguration.TASK_DONE_ID);
+					if(isNotWhiteSpace(content, taskOffset, length, offset)){
+						acceptor.addPosition(offset, length, doneStyle);
+					}
 					lastTagEnd = offset + length + tag.getLength();
 				}
 				begin = tag.getOffset() + tag.getLength() + 1;
 			}
 			
-			int taskLength = length(content);
+			int taskLength = content.getText().trim().length();
 			if(lastTagEnd < taskOffset + taskLength){
-				acceptor.addPosition(lastTagEnd + 2, taskLength-begin, HighlightingConfiguration.TASK_DONE_ID);
+				acceptor.addPosition(lastTagEnd + 2, taskLength-begin, doneStyle);
 			}
+		}
+
+		private int whiteSpaces(Content content, int offset) {
+			int whiteSpaceCount = 1;
+			for(int i = offset-1; content.getText().charAt(i) == ' '; i--){
+				whiteSpaceCount++;
+			}
+			return whiteSpaceCount;
+		}
+
+		private boolean isNotWhiteSpace(Content content, int taskOffset,
+				int length, int offset) {
+			int beginIndex = offset - taskOffset;
+			return content.getText().substring(beginIndex, beginIndex + length).trim().length() > 0;
 		}
 
 		protected int getStartPosition(Content content) {

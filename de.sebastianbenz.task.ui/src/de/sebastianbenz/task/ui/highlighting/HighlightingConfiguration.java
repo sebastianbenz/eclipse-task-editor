@@ -23,6 +23,7 @@ public class HighlightingConfiguration extends DefaultHighlightingConfiguration 
 	
 	private static final int DEFAULT_FONT_SIZE = JFaceResources.getDefaultFontDescriptor().getFontData()[0].getHeight();
 	public static final String NOTE_ID = "node";
+	public static final String NOTE_DONE_ID = "node_done";
 	public static final String URL_ID = "url";
 	public static final String PROJECT1_ID = "project1";
 	public static final String PROJECT2_ID = "project2";
@@ -41,6 +42,8 @@ public class HighlightingConfiguration extends DefaultHighlightingConfiguration 
 		acceptor.acceptDefaultHighlighting(INVALID_TOKEN_ID, "Invalid Symbol", errorTextStyle());
 		
 		acceptor.acceptDefaultHighlighting(NOTE_ID, "Note", nodeTextStyle());
+		acceptor.acceptDefaultHighlighting(NOTE_DONE_ID, "Note done", nodeDoneTextStyle());
+		
 		acceptor.acceptDefaultHighlighting(URL_ID, "Url", urlTextStyle());
 		acceptor.acceptDefaultHighlighting(PROJECT1_ID, "Project1", project1TextStyle());
 		acceptor.acceptDefaultHighlighting(PROJECT2_ID, "Project2", project2TextStyle());
@@ -57,7 +60,10 @@ public class HighlightingConfiguration extends DefaultHighlightingConfiguration 
 	}
 
 	public TextStyle taskDoneTextStyle() {
-		TextStyle textStyle = defaultTextStyle().copy();
+		return strikethrough(defaultTextStyle().copy());
+	}
+
+	private TextStyle strikethrough(TextStyle textStyle) {
 		textStyle.setStyle(TextAttribute.STRIKETHROUGH);
 		return textStyle;
 	}
@@ -94,6 +100,10 @@ public class HighlightingConfiguration extends DefaultHighlightingConfiguration 
 		TextStyle textStyle = defaultTextStyle().copy();
 		textStyle.setColor(grey());
 		return textStyle;
+	}
+	
+	public TextStyle nodeDoneTextStyle() {
+		return strikethrough(nodeTextStyle());
 	}
 
 	protected RGB grey() {

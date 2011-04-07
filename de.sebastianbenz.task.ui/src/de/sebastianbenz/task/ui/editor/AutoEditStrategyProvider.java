@@ -78,6 +78,26 @@ public class AutoEditStrategyProvider extends DefaultAutoEditStrategyProvider {
 		}
 	}
 
+	protected static class IntendationInserter extends AbstractEditStrategy {
+
+		@Override
+		protected void internalCustomizeDocumentCommand(IDocument document,
+				DocumentCommand command) throws BadLocationException {
+			if (!isIntend(document, command)) {
+				return;
+			}
+			IRegion region = document.getLineInformationOfOffset(command.offset);
+			document.replace(region.getOffset(), 0, "\t");
+			command.text = "";
+		}
+
+		private boolean isIntend(IDocument document, DocumentCommand command) {
+			String text = command.text;
+			return text.startsWith("\t");
+		}
+
+	}
+
 	@Inject
 	protected Provider<ShortCutEditStrategy> shortCut;
 
@@ -85,6 +105,8 @@ public class AutoEditStrategyProvider extends DefaultAutoEditStrategyProvider {
 	protected void configure(IEditStrategyAcceptor acceptor) {
 		super.configure(acceptor);
 		acceptor.accept(shortCut.get().configure("-", "- "),
+				IDocument.DEFAULT_CONTENT_TYPE);
+		acceptor.accept(new IntendationInserter(),
 				IDocument.DEFAULT_CONTENT_TYPE);
 	}
 

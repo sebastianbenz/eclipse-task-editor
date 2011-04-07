@@ -203,17 +203,17 @@ public class ContentItemProvider
 	 * that can be created under this object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object)
 	{
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add
-			(createChildParameter
-				(TaskPackage.Literals.CONTENT__TAGS,
-				 TaskFactory.eINSTANCE.createTag()));
+//		newChildDescriptors.add
+//			(createChildParameter
+//				(TaskPackage.Literals.CONTENT__TAGS,
+//				 TaskFactory.eINSTANCE.createTag()));
 	}
 
 }

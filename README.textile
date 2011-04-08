@@ -14,19 +14,20 @@ Please note: the editor is based on Xtext 2.0, for which currently only mileston
 
 h2. Usage
 
-The eclipse task editor can be used to create and manage textual todo files. The syntax is based on TaskPaper, an excellent to-do list manager "TaskPaper":http://www.hogbaysoftware.com/products/taskpaper for Mac OS X.
+The eclipse task editor can be used to create and manage textual todo files. The syntax is based on "TaskPaper":http://www.hogbaysoftware.com/products/taskpaper, an excellent to-do list manager  for Mac OS X.
 
 h3. Task Editor
 
 A todo file consists of four elements: Tasks, Notes, Projects, and Tags. 
 
-* *Tasks:* Something that needs to be done. 
-* *Notes:* 
-* *Projects:* Projects can be used to structure tasks.
-* *Tags:* can be used to categorize tasks. For example, 
+* *Tasks:* Something that needs to be done. A task is preceeded by '-'.
+* *Notes:* Arbitrary text.
+* *Projects:* Projects can be used to structure tasks. Projects are followed by ':' and a linebreak.
+* *Tags:* can be used to categorize tasks. Tags start with '@'. 
 
 h3. Query View
 
+tbd
 
 h2. License
 

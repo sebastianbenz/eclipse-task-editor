@@ -103,7 +103,7 @@
          </property>
          <property
                name="aboutImage"
-               value="icons/Icon_128.png">
+               value="icons/Icon_64.png">
          </property>
          <property
                name="appName"

@@ -15,6 +15,7 @@ package de.sebastianbenz.task.ui.contentassist;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtext.Assignment;
+import org.eclipse.xtext.RuleCall;
 import org.eclipse.xtext.ui.editor.contentassist.ContentAssistContext;
 import org.eclipse.xtext.ui.editor.contentassist.ICompletionProposalAcceptor;
 
@@ -40,6 +41,12 @@ public class TaskProposalProvider extends AbstractTaskProposalProvider {
 		for (Tag tag : tagProvider.in(model.eResource())) {
 			createProposal(model, context, acceptor, tag);
 		}
+	}
+	
+	@Override
+	public void complete_PROJECT_(EObject model, RuleCall ruleCall,
+			ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+		super.complete_PROJECT_(model, ruleCall, context, acceptor);
 	}
 	
 

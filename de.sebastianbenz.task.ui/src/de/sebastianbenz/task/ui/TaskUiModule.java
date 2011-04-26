@@ -17,6 +17,7 @@ import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.eclipse.xtext.ui.editor.XtextEditor;
 import org.eclipse.xtext.ui.editor.XtextSourceViewerConfiguration;
 import org.eclipse.xtext.ui.editor.autoedit.AbstractEditStrategyProvider;
+import org.eclipse.xtext.ui.editor.contentassist.ITemplateProposalProvider;
 import org.eclipse.xtext.ui.editor.folding.IFoldingRegionProvider;
 import org.eclipse.xtext.ui.editor.syntaxcoloring.AbstractAntlrTokenToAttributeIdMapper;
 import org.eclipse.xtext.ui.editor.syntaxcoloring.IHighlightingConfiguration;
@@ -67,7 +68,10 @@ public class TaskUiModule extends de.sebastianbenz.task.ui.AbstractTaskUiModule 
 		return SourceViewerConfiguration.class;
 	}
 	
-	
+	@Override
+	public Class<? extends ITemplateProposalProvider> bindITemplateProposalProvider() {
+		return TaskTemplateProvider.class;
+	}
 	
 	
 }

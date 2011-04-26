@@ -87,6 +87,10 @@ public class AutoEditStrategyProvider extends DefaultAutoEditStrategyProvider {
 				return;
 			}
 			IRegion region = document.getLineInformationOfOffset(command.offset);
+			String line = document.get(region.getOffset(), region.getLength());
+			if(line.trim().length() == 0){
+				return;
+			}
 			document.replace(region.getOffset(), 0, "\t");
 			command.text = "";
 		}

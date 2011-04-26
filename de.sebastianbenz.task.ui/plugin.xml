@@ -360,5 +360,43 @@
             class="de.sebastianbenz.task.ui.QueryExecutableExtensionFactory:de.sebastianbenz.task.ui.views.ViewerUpdater">
       </participant>
    </extension>
-
+   <!-- Custom handlers -->
+   <extension
+		point="org.eclipse.ui.commands">
+		<command
+			description="Clear all done tasks."
+			id="de.sebastianbenz.task.removedone"
+			name="Clear done tasks">
+		</command>
+	</extension>
+ <extension point="org.eclipse.ui.menus">
+		<menuContribution locationURI="popup:#TextEditorContext?endof=group.find">
+			<command commandId="de.sebastianbenz.task.removedone">
+				<visibleWhen checkEnabled="false">
+                	<reference definitionId="de.sebastianbenz.task.Task.Editor.opened">
+                	</reference>
+            	</visibleWhen>
+			</command>
+		</menuContribution>
+	</extension>
+	<extension point="org.eclipse.ui.handlers">
+	    <handler
+            class="de.sebastianbenz.task.ui.TaskExecutableExtensionFactory:de.sebastianbenz.task.ui.editor.handler.RemoveDoneTasks"
+            commandId="de.sebastianbenz.task.removedone">
+            <activeWhen>
+                <reference
+                    definitionId="de.sebastianbenz.task.Task.Editor.opened">
+                </reference>
+            </activeWhen>
+        </handler>
+    </extension>  
+       <extension
+         point="org.eclipse.ui.bindings">
+      <key
+            commandId="de.sebastianbenz.task.removedone"
+            contextId="org.eclipse.ui.textEditorScope"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+            sequence="M1+R">
+      </key>
+   </extension>
 </plugin>

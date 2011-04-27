@@ -2,6 +2,7 @@
  * <copyright>
  * </copyright>
  *
+
  */
 package de.sebastianbenz.task.impl;
 
@@ -73,6 +74,7 @@ public class TaskFactoryImpl extends EFactoryImpl implements TaskFactory
 			case TaskPackage.PROJECT: return createProject();
 			case TaskPackage.TAG: return createTag();
 			case TaskPackage.GLOBAL_TASK_MODEL: return createGlobalTaskModel();
+			case TaskPackage.EMPTY_LINE: return createEmptyLine();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -142,6 +144,17 @@ public class TaskFactoryImpl extends EFactoryImpl implements TaskFactory
 	{
 		GlobalTaskModelImplCustom globalTaskModel = new GlobalTaskModelImplCustom();
 		return globalTaskModel;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EmptyLine createEmptyLine()
+	{
+		EmptyLineImplCustom emptyLine = new EmptyLineImplCustom();
+		return emptyLine;
 	}
 
 	/**

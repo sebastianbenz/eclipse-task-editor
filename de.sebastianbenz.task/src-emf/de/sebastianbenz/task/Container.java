@@ -2,6 +2,7 @@
  * <copyright>
  * </copyright>
  *
+
  */
 package de.sebastianbenz.task;
 
@@ -40,7 +41,7 @@ public interface Container extends EObject
 	 * @return the value of the '<em>Children</em>' reference list.
 	 * @see de.sebastianbenz.task.TaskPackage#getContainer_Children()
 	 * @see de.sebastianbenz.task.Content#getParent
-	 * @model opposite="parent" derived="true"
+	 * @model opposite="parent" transient="true" derived="true"
 	 * @generated
 	 */
 	EList<Content> getChildren();

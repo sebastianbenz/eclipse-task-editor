@@ -13,10 +13,9 @@ import java.util.regex.Pattern;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 
-import com.google.common.base.Joiner;
-
 import de.sebastianbenz.task.Container;
 import de.sebastianbenz.task.Content;
+import de.sebastianbenz.task.EmptyLine;
 import de.sebastianbenz.task.Tag;
 import de.sebastianbenz.task.TaskPackage;
 import de.sebastianbenz.task.tagging.Tags;
@@ -74,9 +73,13 @@ public class ContentImplCustom extends de.sebastianbenz.task.impl.ContentImpl {
 
 	protected Container resolveContainer() {
 		EList<Content> allContents = getTaskModel().getContents();
-		for (int i = allContents.indexOf(this) - 1; i >= 0; i--) {
+		int index = allContents.indexOf(this);
+		if(index == 0){
+			return getTaskModel();
+		}
+		for (int i = index - 1; i >= 0; i--) {
 			Content candidate = allContents.get(i);
-			if (candidate.getLevel() < getLevel()) {
+			if (!(candidate instanceof EmptyLine) && candidate.getLevel() < getLevel()) {
 				return (Container) candidate;
 			}
 		}

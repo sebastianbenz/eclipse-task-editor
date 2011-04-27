@@ -2,6 +2,7 @@
  * <copyright>
  * </copyright>
  *
+
  */
 package de.sebastianbenz.task.util;
 
@@ -116,6 +117,11 @@ public class TaskAdapterFactory extends AdapterFactoryImpl
 			public Adapter caseContainer(Container object)
 			{
 				return createContainerAdapter();
+			}
+			@Override
+			public Adapter caseEmptyLine(EmptyLine object)
+			{
+				return createEmptyLineAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object)
@@ -255,6 +261,21 @@ public class TaskAdapterFactory extends AdapterFactoryImpl
 	 * @generated
 	 */
 	public Adapter createContainerAdapter()
+	{
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.sebastianbenz.task.EmptyLine <em>Empty Line</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.sebastianbenz.task.EmptyLine
+	 * @generated
+	 */
+	public Adapter createEmptyLineAdapter()
 	{
 		return null;
 	}

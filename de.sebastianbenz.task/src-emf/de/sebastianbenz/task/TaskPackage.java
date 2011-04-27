@@ -2,6 +2,7 @@
  * <copyright>
  * </copyright>
  *
+
  */
 package de.sebastianbenz.task;
 
@@ -508,6 +509,79 @@ public interface TaskPackage extends EPackage
 	 */
 	int GLOBAL_TASK_MODEL_FEATURE_COUNT = CONTAINER_FEATURE_COUNT + 0;
 
+	/**
+	 * The meta object id for the '{@link de.sebastianbenz.task.impl.EmptyLineImpl <em>Empty Line</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.sebastianbenz.task.impl.EmptyLineImpl
+	 * @see de.sebastianbenz.task.impl.TaskPackageImpl#getEmptyLine()
+	 * @generated
+	 */
+	int EMPTY_LINE = 8;
+
+	/**
+	 * The feature id for the '<em><b>Children</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EMPTY_LINE__CHILDREN = CONTENT__CHILDREN;
+
+	/**
+	 * The feature id for the '<em><b>Intend</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EMPTY_LINE__INTEND = CONTENT__INTEND;
+
+	/**
+	 * The feature id for the '<em><b>Text</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EMPTY_LINE__TEXT = CONTENT__TEXT;
+
+	/**
+	 * The feature id for the '<em><b>Parent</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EMPTY_LINE__PARENT = CONTENT__PARENT;
+
+	/**
+	 * The feature id for the '<em><b>Task Model</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EMPTY_LINE__TASK_MODEL = CONTENT__TASK_MODEL;
+
+	/**
+	 * The feature id for the '<em><b>Tags</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EMPTY_LINE__TAGS = CONTENT__TAGS;
+
+	/**
+	 * The number of structural features of the '<em>Empty Line</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EMPTY_LINE_FEATURE_COUNT = CONTENT_FEATURE_COUNT + 0;
+
 
 	/**
 	 * Returns the meta object for class '{@link de.sebastianbenz.task.TaskModel <em>Model</em>}'.
@@ -722,6 +796,16 @@ public interface TaskPackage extends EPackage
 	EReference getContainer_Children();
 
 	/**
+	 * Returns the meta object for class '{@link de.sebastianbenz.task.EmptyLine <em>Empty Line</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Empty Line</em>'.
+	 * @see de.sebastianbenz.task.EmptyLine
+	 * @generated
+	 */
+	EClass getEmptyLine();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -919,6 +1003,16 @@ public interface TaskPackage extends EPackage
 		 * @generated
 		 */
 		EReference CONTAINER__CHILDREN = eINSTANCE.getContainer_Children();
+
+		/**
+		 * The meta object literal for the '{@link de.sebastianbenz.task.impl.EmptyLineImpl <em>Empty Line</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.sebastianbenz.task.impl.EmptyLineImpl
+		 * @see de.sebastianbenz.task.impl.TaskPackageImpl#getEmptyLine()
+		 * @generated
+		 */
+		EClass EMPTY_LINE = eINSTANCE.getEmptyLine();
 
 	}
 

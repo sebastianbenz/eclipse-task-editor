@@ -107,22 +107,22 @@ public class InternalTaskParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleTaskModel"
-    // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:76:1: ruleTaskModel returns [EObject current=null] : ( () ( ( (lv_contents_1_0= ruleContent ) ) | ruleSpaces )* (this_WS_3= RULE_WS )* ) ;
+    // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:76:1: ruleTaskModel returns [EObject current=null] : ( () ( (lv_contents_1_0= ruleContent ) )* (this_WS_2= RULE_WS )* ) ;
     public final EObject ruleTaskModel() throws RecognitionException {
         EObject current = null;
 
-        Token this_WS_3=null;
+        Token this_WS_2=null;
         EObject lv_contents_1_0 = null;
 
 
          enterRule(); 
             
         try {
-            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:79:28: ( ( () ( ( (lv_contents_1_0= ruleContent ) ) | ruleSpaces )* (this_WS_3= RULE_WS )* ) )
-            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:80:1: ( () ( ( (lv_contents_1_0= ruleContent ) ) | ruleSpaces )* (this_WS_3= RULE_WS )* )
+            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:79:28: ( ( () ( (lv_contents_1_0= ruleContent ) )* (this_WS_2= RULE_WS )* ) )
+            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:80:1: ( () ( (lv_contents_1_0= ruleContent ) )* (this_WS_2= RULE_WS )* )
             {
-            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:80:1: ( () ( ( (lv_contents_1_0= ruleContent ) ) | ruleSpaces )* (this_WS_3= RULE_WS )* )
-            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:80:2: () ( ( (lv_contents_1_0= ruleContent ) ) | ruleSpaces )* (this_WS_3= RULE_WS )*
+            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:80:1: ( () ( (lv_contents_1_0= ruleContent ) )* (this_WS_2= RULE_WS )* )
+            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:80:2: () ( (lv_contents_1_0= ruleContent ) )* (this_WS_2= RULE_WS )*
             {
             // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:80:2: ()
             // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:81:5: 
@@ -135,25 +135,22 @@ public class InternalTaskParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:86:2: ( ( (lv_contents_1_0= ruleContent ) ) | ruleSpaces )*
+            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:86:2: ( (lv_contents_1_0= ruleContent ) )*
             loop1:
             do {
-                int alt1=3;
+                int alt1=2;
                 alt1 = dfa1.predict(input);
                 switch (alt1) {
             	case 1 :
-            	    // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:86:3: ( (lv_contents_1_0= ruleContent ) )
-            	    {
-            	    // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:86:3: ( (lv_contents_1_0= ruleContent ) )
             	    // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:87:1: (lv_contents_1_0= ruleContent )
             	    {
             	    // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:87:1: (lv_contents_1_0= ruleContent )
             	    // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:88:3: lv_contents_1_0= ruleContent
             	    {
             	     
-            	    	        newCompositeNode(grammarAccess.getTaskModelAccess().getContentsContentParserRuleCall_1_0_0()); 
+            	    	        newCompositeNode(grammarAccess.getTaskModelAccess().getContentsContentParserRuleCall_1_0()); 
             	    	    
-            	    pushFollow(FOLLOW_ruleContent_in_ruleTaskModel141);
+            	    pushFollow(FOLLOW_ruleContent_in_ruleTaskModel140);
             	    lv_contents_1_0=ruleContent();
 
             	    state._fsp--;
@@ -174,26 +171,6 @@ public class InternalTaskParser extends AbstractInternalAntlrParser {
 
 
             	    }
-
-
-            	    }
-            	    break;
-            	case 2 :
-            	    // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:106:5: ruleSpaces
-            	    {
-            	     
-            	            newCompositeNode(grammarAccess.getTaskModelAccess().getSpacesParserRuleCall_1_1()); 
-            	        
-            	    pushFollow(FOLLOW_ruleSpaces_in_ruleTaskModel163);
-            	    ruleSpaces();
-
-            	    state._fsp--;
-
-            	     
-            	            afterParserOrEnumRuleCall();
-            	        
-
-            	    }
             	    break;
 
             	default :
@@ -201,7 +178,7 @@ public class InternalTaskParser extends AbstractInternalAntlrParser {
                 }
             } while (true);
 
-            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:113:3: (this_WS_3= RULE_WS )*
+            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:104:3: (this_WS_2= RULE_WS )*
             loop2:
             do {
                 int alt2=2;
@@ -214,11 +191,11 @@ public class InternalTaskParser extends AbstractInternalAntlrParser {
 
                 switch (alt2) {
             	case 1 :
-            	    // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:113:4: this_WS_3= RULE_WS
+            	    // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:104:4: this_WS_2= RULE_WS
             	    {
-            	    this_WS_3=(Token)match(input,RULE_WS,FOLLOW_RULE_WS_in_ruleTaskModel176); 
+            	    this_WS_2=(Token)match(input,RULE_WS,FOLLOW_RULE_WS_in_ruleTaskModel153); 
             	     
-            	        newLeafNode(this_WS_3, grammarAccess.getTaskModelAccess().getWSTerminalRuleCall_2()); 
+            	        newLeafNode(this_WS_2, grammarAccess.getTaskModelAccess().getWSTerminalRuleCall_2()); 
             	        
 
             	    }
@@ -250,7 +227,7 @@ public class InternalTaskParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleContent"
-    // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:125:1: entryRuleContent returns [EObject current=null] : iv_ruleContent= ruleContent EOF ;
+    // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:116:1: entryRuleContent returns [EObject current=null] : iv_ruleContent= ruleContent EOF ;
     public final EObject entryRuleContent() throws RecognitionException {
         EObject current = null;
 
@@ -258,17 +235,17 @@ public class InternalTaskParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:126:2: (iv_ruleContent= ruleContent EOF )
-            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:127:2: iv_ruleContent= ruleContent EOF
+            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:117:2: (iv_ruleContent= ruleContent EOF )
+            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:118:2: iv_ruleContent= ruleContent EOF
             {
              newCompositeNode(grammarAccess.getContentRule()); 
-            pushFollow(FOLLOW_ruleContent_in_entryRuleContent213);
+            pushFollow(FOLLOW_ruleContent_in_entryRuleContent190);
             iv_ruleContent=ruleContent();
 
             state._fsp--;
 
              current =iv_ruleContent; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleContent223); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleContent200); 
 
             }
 
@@ -286,7 +263,7 @@ public class InternalTaskParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleContent"
-    // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:134:1: ruleContent returns [EObject current=null] : (this_Project_0= ruleProject | this_Task_1= ruleTask | this_Note_2= ruleNote ) ;
+    // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:125:1: ruleContent returns [EObject current=null] : (this_Project_0= ruleProject | this_Task_1= ruleTask | this_Note_2= ruleNote | this_EmptyLine_3= ruleEmptyLine ) ;
     public final EObject ruleContent() throws RecognitionException {
         EObject current = null;
 
@@ -296,24 +273,26 @@ public class InternalTaskParser extends AbstractInternalAntlrParser {
 
         EObject this_Note_2 = null;
 
+        EObject this_EmptyLine_3 = null;
+
 
          enterRule(); 
             
         try {
-            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:137:28: ( (this_Project_0= ruleProject | this_Task_1= ruleTask | this_Note_2= ruleNote ) )
-            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:138:1: (this_Project_0= ruleProject | this_Task_1= ruleTask | this_Note_2= ruleNote )
+            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:128:28: ( (this_Project_0= ruleProject | this_Task_1= ruleTask | this_Note_2= ruleNote | this_EmptyLine_3= ruleEmptyLine ) )
+            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:129:1: (this_Project_0= ruleProject | this_Task_1= ruleTask | this_Note_2= ruleNote | this_EmptyLine_3= ruleEmptyLine )
             {
-            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:138:1: (this_Project_0= ruleProject | this_Task_1= ruleTask | this_Note_2= ruleNote )
-            int alt3=3;
+            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:129:1: (this_Project_0= ruleProject | this_Task_1= ruleTask | this_Note_2= ruleNote | this_EmptyLine_3= ruleEmptyLine )
+            int alt3=4;
             alt3 = dfa3.predict(input);
             switch (alt3) {
                 case 1 :
-                    // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:139:5: this_Project_0= ruleProject
+                    // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:130:5: this_Project_0= ruleProject
                     {
                      
                             newCompositeNode(grammarAccess.getContentAccess().getProjectParserRuleCall_0()); 
                         
-                    pushFollow(FOLLOW_ruleProject_in_ruleContent270);
+                    pushFollow(FOLLOW_ruleProject_in_ruleContent247);
                     this_Project_0=ruleProject();
 
                     state._fsp--;
@@ -326,12 +305,12 @@ public class InternalTaskParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:149:5: this_Task_1= ruleTask
+                    // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:140:5: this_Task_1= ruleTask
                     {
                      
                             newCompositeNode(grammarAccess.getContentAccess().getTaskParserRuleCall_1()); 
                         
-                    pushFollow(FOLLOW_ruleTask_in_ruleContent297);
+                    pushFollow(FOLLOW_ruleTask_in_ruleContent274);
                     this_Task_1=ruleTask();
 
                     state._fsp--;
@@ -344,18 +323,36 @@ public class InternalTaskParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:159:5: this_Note_2= ruleNote
+                    // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:150:5: this_Note_2= ruleNote
                     {
                      
                             newCompositeNode(grammarAccess.getContentAccess().getNoteParserRuleCall_2()); 
                         
-                    pushFollow(FOLLOW_ruleNote_in_ruleContent324);
+                    pushFollow(FOLLOW_ruleNote_in_ruleContent301);
                     this_Note_2=ruleNote();
 
                     state._fsp--;
 
                      
                             current = this_Note_2; 
+                            afterParserOrEnumRuleCall();
+                        
+
+                    }
+                    break;
+                case 4 :
+                    // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:160:5: this_EmptyLine_3= ruleEmptyLine
+                    {
+                     
+                            newCompositeNode(grammarAccess.getContentAccess().getEmptyLineParserRuleCall_3()); 
+                        
+                    pushFollow(FOLLOW_ruleEmptyLine_in_ruleContent328);
+                    this_EmptyLine_3=ruleEmptyLine();
+
+                    state._fsp--;
+
+                     
+                            current = this_EmptyLine_3; 
                             afterParserOrEnumRuleCall();
                         
 
@@ -382,7 +379,7 @@ public class InternalTaskParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleTask"
-    // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:175:1: entryRuleTask returns [EObject current=null] : iv_ruleTask= ruleTask EOF ;
+    // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:176:1: entryRuleTask returns [EObject current=null] : iv_ruleTask= ruleTask EOF ;
     public final EObject entryRuleTask() throws RecognitionException {
         EObject current = null;
 
@@ -390,17 +387,17 @@ public class InternalTaskParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:176:2: (iv_ruleTask= ruleTask EOF )
-            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:177:2: iv_ruleTask= ruleTask EOF
+            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:177:2: (iv_ruleTask= ruleTask EOF )
+            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:178:2: iv_ruleTask= ruleTask EOF
             {
              newCompositeNode(grammarAccess.getTaskRule()); 
-            pushFollow(FOLLOW_ruleTask_in_entryRuleTask359);
+            pushFollow(FOLLOW_ruleTask_in_entryRuleTask363);
             iv_ruleTask=ruleTask();
 
             state._fsp--;
 
              current =iv_ruleTask; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleTask369); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleTask373); 
 
             }
 
@@ -418,7 +415,7 @@ public class InternalTaskParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleTask"
-    // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:184:1: ruleTask returns [EObject current=null] : ( ( (lv_intend_0_0= RULE_WS ) )* ( (lv_text_1_0= RULE_TASK_TEXT ) ) ) ;
+    // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:185:1: ruleTask returns [EObject current=null] : ( ( (lv_intend_0_0= RULE_WS ) )* ( (lv_text_1_0= RULE_TASK_TEXT ) ) ) ;
     public final EObject ruleTask() throws RecognitionException {
         EObject current = null;
 
@@ -428,13 +425,13 @@ public class InternalTaskParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:187:28: ( ( ( (lv_intend_0_0= RULE_WS ) )* ( (lv_text_1_0= RULE_TASK_TEXT ) ) ) )
-            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:188:1: ( ( (lv_intend_0_0= RULE_WS ) )* ( (lv_text_1_0= RULE_TASK_TEXT ) ) )
+            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:188:28: ( ( ( (lv_intend_0_0= RULE_WS ) )* ( (lv_text_1_0= RULE_TASK_TEXT ) ) ) )
+            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:189:1: ( ( (lv_intend_0_0= RULE_WS ) )* ( (lv_text_1_0= RULE_TASK_TEXT ) ) )
             {
-            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:188:1: ( ( (lv_intend_0_0= RULE_WS ) )* ( (lv_text_1_0= RULE_TASK_TEXT ) ) )
-            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:188:2: ( (lv_intend_0_0= RULE_WS ) )* ( (lv_text_1_0= RULE_TASK_TEXT ) )
+            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:189:1: ( ( (lv_intend_0_0= RULE_WS ) )* ( (lv_text_1_0= RULE_TASK_TEXT ) ) )
+            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:189:2: ( (lv_intend_0_0= RULE_WS ) )* ( (lv_text_1_0= RULE_TASK_TEXT ) )
             {
-            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:188:2: ( (lv_intend_0_0= RULE_WS ) )*
+            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:189:2: ( (lv_intend_0_0= RULE_WS ) )*
             loop4:
             do {
                 int alt4=2;
@@ -447,12 +444,12 @@ public class InternalTaskParser extends AbstractInternalAntlrParser {
 
                 switch (alt4) {
             	case 1 :
-            	    // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:189:1: (lv_intend_0_0= RULE_WS )
+            	    // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:190:1: (lv_intend_0_0= RULE_WS )
             	    {
-            	    // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:189:1: (lv_intend_0_0= RULE_WS )
-            	    // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:190:3: lv_intend_0_0= RULE_WS
+            	    // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:190:1: (lv_intend_0_0= RULE_WS )
+            	    // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:191:3: lv_intend_0_0= RULE_WS
             	    {
-            	    lv_intend_0_0=(Token)match(input,RULE_WS,FOLLOW_RULE_WS_in_ruleTask411); 
+            	    lv_intend_0_0=(Token)match(input,RULE_WS,FOLLOW_RULE_WS_in_ruleTask415); 
 
             	    			newLeafNode(lv_intend_0_0, grammarAccess.getTaskAccess().getIntendWSTerminalRuleCall_0_0()); 
             	    		
@@ -478,13 +475,13 @@ public class InternalTaskParser extends AbstractInternalAntlrParser {
                 }
             } while (true);
 
-            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:206:3: ( (lv_text_1_0= RULE_TASK_TEXT ) )
-            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:207:1: (lv_text_1_0= RULE_TASK_TEXT )
+            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:207:3: ( (lv_text_1_0= RULE_TASK_TEXT ) )
+            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:208:1: (lv_text_1_0= RULE_TASK_TEXT )
             {
-            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:207:1: (lv_text_1_0= RULE_TASK_TEXT )
-            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:208:3: lv_text_1_0= RULE_TASK_TEXT
+            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:208:1: (lv_text_1_0= RULE_TASK_TEXT )
+            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:209:3: lv_text_1_0= RULE_TASK_TEXT
             {
-            lv_text_1_0=(Token)match(input,RULE_TASK_TEXT,FOLLOW_RULE_TASK_TEXT_in_ruleTask434); 
+            lv_text_1_0=(Token)match(input,RULE_TASK_TEXT,FOLLOW_RULE_TASK_TEXT_in_ruleTask438); 
 
             			newLeafNode(lv_text_1_0, grammarAccess.getTaskAccess().getTextTASK_TEXTTerminalRuleCall_1_0()); 
             		
@@ -525,7 +522,7 @@ public class InternalTaskParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleNote"
-    // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:232:1: entryRuleNote returns [EObject current=null] : iv_ruleNote= ruleNote EOF ;
+    // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:233:1: entryRuleNote returns [EObject current=null] : iv_ruleNote= ruleNote EOF ;
     public final EObject entryRuleNote() throws RecognitionException {
         EObject current = null;
 
@@ -533,17 +530,17 @@ public class InternalTaskParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:233:2: (iv_ruleNote= ruleNote EOF )
-            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:234:2: iv_ruleNote= ruleNote EOF
+            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:234:2: (iv_ruleNote= ruleNote EOF )
+            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:235:2: iv_ruleNote= ruleNote EOF
             {
              newCompositeNode(grammarAccess.getNoteRule()); 
-            pushFollow(FOLLOW_ruleNote_in_entryRuleNote475);
+            pushFollow(FOLLOW_ruleNote_in_entryRuleNote479);
             iv_ruleNote=ruleNote();
 
             state._fsp--;
 
              current =iv_ruleNote; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleNote485); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleNote489); 
 
             }
 
@@ -561,7 +558,7 @@ public class InternalTaskParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleNote"
-    // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:241:1: ruleNote returns [EObject current=null] : ( ( (lv_intend_0_0= RULE_WS ) )* ( (lv_text_1_0= RULE_TEXT ) ) ) ;
+    // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:242:1: ruleNote returns [EObject current=null] : ( ( (lv_intend_0_0= RULE_WS ) )* ( (lv_text_1_0= RULE_TEXT ) ) ) ;
     public final EObject ruleNote() throws RecognitionException {
         EObject current = null;
 
@@ -571,13 +568,13 @@ public class InternalTaskParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:244:28: ( ( ( (lv_intend_0_0= RULE_WS ) )* ( (lv_text_1_0= RULE_TEXT ) ) ) )
-            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:245:1: ( ( (lv_intend_0_0= RULE_WS ) )* ( (lv_text_1_0= RULE_TEXT ) ) )
+            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:245:28: ( ( ( (lv_intend_0_0= RULE_WS ) )* ( (lv_text_1_0= RULE_TEXT ) ) ) )
+            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:246:1: ( ( (lv_intend_0_0= RULE_WS ) )* ( (lv_text_1_0= RULE_TEXT ) ) )
             {
-            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:245:1: ( ( (lv_intend_0_0= RULE_WS ) )* ( (lv_text_1_0= RULE_TEXT ) ) )
-            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:245:2: ( (lv_intend_0_0= RULE_WS ) )* ( (lv_text_1_0= RULE_TEXT ) )
+            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:246:1: ( ( (lv_intend_0_0= RULE_WS ) )* ( (lv_text_1_0= RULE_TEXT ) ) )
+            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:246:2: ( (lv_intend_0_0= RULE_WS ) )* ( (lv_text_1_0= RULE_TEXT ) )
             {
-            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:245:2: ( (lv_intend_0_0= RULE_WS ) )*
+            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:246:2: ( (lv_intend_0_0= RULE_WS ) )*
             loop5:
             do {
                 int alt5=2;
@@ -590,12 +587,12 @@ public class InternalTaskParser extends AbstractInternalAntlrParser {
 
                 switch (alt5) {
             	case 1 :
-            	    // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:246:1: (lv_intend_0_0= RULE_WS )
+            	    // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:247:1: (lv_intend_0_0= RULE_WS )
             	    {
-            	    // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:246:1: (lv_intend_0_0= RULE_WS )
-            	    // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:247:3: lv_intend_0_0= RULE_WS
+            	    // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:247:1: (lv_intend_0_0= RULE_WS )
+            	    // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:248:3: lv_intend_0_0= RULE_WS
             	    {
-            	    lv_intend_0_0=(Token)match(input,RULE_WS,FOLLOW_RULE_WS_in_ruleNote527); 
+            	    lv_intend_0_0=(Token)match(input,RULE_WS,FOLLOW_RULE_WS_in_ruleNote531); 
 
             	    			newLeafNode(lv_intend_0_0, grammarAccess.getNoteAccess().getIntendWSTerminalRuleCall_0_0()); 
             	    		
@@ -621,13 +618,13 @@ public class InternalTaskParser extends AbstractInternalAntlrParser {
                 }
             } while (true);
 
-            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:263:3: ( (lv_text_1_0= RULE_TEXT ) )
-            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:264:1: (lv_text_1_0= RULE_TEXT )
+            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:264:3: ( (lv_text_1_0= RULE_TEXT ) )
+            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:265:1: (lv_text_1_0= RULE_TEXT )
             {
-            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:264:1: (lv_text_1_0= RULE_TEXT )
-            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:265:3: lv_text_1_0= RULE_TEXT
+            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:265:1: (lv_text_1_0= RULE_TEXT )
+            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:266:3: lv_text_1_0= RULE_TEXT
             {
-            lv_text_1_0=(Token)match(input,RULE_TEXT,FOLLOW_RULE_TEXT_in_ruleNote550); 
+            lv_text_1_0=(Token)match(input,RULE_TEXT,FOLLOW_RULE_TEXT_in_ruleNote554); 
 
             			newLeafNode(lv_text_1_0, grammarAccess.getNoteAccess().getTextTEXTTerminalRuleCall_1_0()); 
             		
@@ -668,7 +665,7 @@ public class InternalTaskParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleProject"
-    // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:289:1: entryRuleProject returns [EObject current=null] : iv_ruleProject= ruleProject EOF ;
+    // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:290:1: entryRuleProject returns [EObject current=null] : iv_ruleProject= ruleProject EOF ;
     public final EObject entryRuleProject() throws RecognitionException {
         EObject current = null;
 
@@ -676,17 +673,17 @@ public class InternalTaskParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:290:2: (iv_ruleProject= ruleProject EOF )
-            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:291:2: iv_ruleProject= ruleProject EOF
+            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:291:2: (iv_ruleProject= ruleProject EOF )
+            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:292:2: iv_ruleProject= ruleProject EOF
             {
              newCompositeNode(grammarAccess.getProjectRule()); 
-            pushFollow(FOLLOW_ruleProject_in_entryRuleProject591);
+            pushFollow(FOLLOW_ruleProject_in_entryRuleProject595);
             iv_ruleProject=ruleProject();
 
             state._fsp--;
 
              current =iv_ruleProject; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleProject601); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleProject605); 
 
             }
 
@@ -704,7 +701,7 @@ public class InternalTaskParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleProject"
-    // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:298:1: ruleProject returns [EObject current=null] : ( ( (lv_intend_0_0= RULE_WS ) )* ( (lv_text_1_0= RULE_PROJECT_ ) ) ) ;
+    // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:299:1: ruleProject returns [EObject current=null] : ( ( (lv_intend_0_0= RULE_WS ) )* ( (lv_text_1_0= RULE_PROJECT_ ) ) ) ;
     public final EObject ruleProject() throws RecognitionException {
         EObject current = null;
 
@@ -714,13 +711,13 @@ public class InternalTaskParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:301:28: ( ( ( (lv_intend_0_0= RULE_WS ) )* ( (lv_text_1_0= RULE_PROJECT_ ) ) ) )
-            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:302:1: ( ( (lv_intend_0_0= RULE_WS ) )* ( (lv_text_1_0= RULE_PROJECT_ ) ) )
+            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:302:28: ( ( ( (lv_intend_0_0= RULE_WS ) )* ( (lv_text_1_0= RULE_PROJECT_ ) ) ) )
+            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:303:1: ( ( (lv_intend_0_0= RULE_WS ) )* ( (lv_text_1_0= RULE_PROJECT_ ) ) )
             {
-            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:302:1: ( ( (lv_intend_0_0= RULE_WS ) )* ( (lv_text_1_0= RULE_PROJECT_ ) ) )
-            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:302:2: ( (lv_intend_0_0= RULE_WS ) )* ( (lv_text_1_0= RULE_PROJECT_ ) )
+            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:303:1: ( ( (lv_intend_0_0= RULE_WS ) )* ( (lv_text_1_0= RULE_PROJECT_ ) ) )
+            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:303:2: ( (lv_intend_0_0= RULE_WS ) )* ( (lv_text_1_0= RULE_PROJECT_ ) )
             {
-            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:302:2: ( (lv_intend_0_0= RULE_WS ) )*
+            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:303:2: ( (lv_intend_0_0= RULE_WS ) )*
             loop6:
             do {
                 int alt6=2;
@@ -733,12 +730,12 @@ public class InternalTaskParser extends AbstractInternalAntlrParser {
 
                 switch (alt6) {
             	case 1 :
-            	    // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:303:1: (lv_intend_0_0= RULE_WS )
+            	    // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:304:1: (lv_intend_0_0= RULE_WS )
             	    {
-            	    // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:303:1: (lv_intend_0_0= RULE_WS )
-            	    // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:304:3: lv_intend_0_0= RULE_WS
+            	    // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:304:1: (lv_intend_0_0= RULE_WS )
+            	    // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:305:3: lv_intend_0_0= RULE_WS
             	    {
-            	    lv_intend_0_0=(Token)match(input,RULE_WS,FOLLOW_RULE_WS_in_ruleProject643); 
+            	    lv_intend_0_0=(Token)match(input,RULE_WS,FOLLOW_RULE_WS_in_ruleProject647); 
 
             	    			newLeafNode(lv_intend_0_0, grammarAccess.getProjectAccess().getIntendWSTerminalRuleCall_0_0()); 
             	    		
@@ -764,13 +761,13 @@ public class InternalTaskParser extends AbstractInternalAntlrParser {
                 }
             } while (true);
 
-            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:320:3: ( (lv_text_1_0= RULE_PROJECT_ ) )
-            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:321:1: (lv_text_1_0= RULE_PROJECT_ )
+            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:321:3: ( (lv_text_1_0= RULE_PROJECT_ ) )
+            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:322:1: (lv_text_1_0= RULE_PROJECT_ )
             {
-            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:321:1: (lv_text_1_0= RULE_PROJECT_ )
-            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:322:3: lv_text_1_0= RULE_PROJECT_
+            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:322:1: (lv_text_1_0= RULE_PROJECT_ )
+            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:323:3: lv_text_1_0= RULE_PROJECT_
             {
-            lv_text_1_0=(Token)match(input,RULE_PROJECT_,FOLLOW_RULE_PROJECT__in_ruleProject666); 
+            lv_text_1_0=(Token)match(input,RULE_PROJECT_,FOLLOW_RULE_PROJECT__in_ruleProject670); 
 
             			newLeafNode(lv_text_1_0, grammarAccess.getProjectAccess().getTextPROJECT_TerminalRuleCall_1_0()); 
             		
@@ -810,8 +807,106 @@ public class InternalTaskParser extends AbstractInternalAntlrParser {
     // $ANTLR end "ruleProject"
 
 
+    // $ANTLR start "entryRuleEmptyLine"
+    // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:347:1: entryRuleEmptyLine returns [EObject current=null] : iv_ruleEmptyLine= ruleEmptyLine EOF ;
+    public final EObject entryRuleEmptyLine() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleEmptyLine = null;
+
+
+        try {
+            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:348:2: (iv_ruleEmptyLine= ruleEmptyLine EOF )
+            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:349:2: iv_ruleEmptyLine= ruleEmptyLine EOF
+            {
+             newCompositeNode(grammarAccess.getEmptyLineRule()); 
+            pushFollow(FOLLOW_ruleEmptyLine_in_entryRuleEmptyLine711);
+            iv_ruleEmptyLine=ruleEmptyLine();
+
+            state._fsp--;
+
+             current =iv_ruleEmptyLine; 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleEmptyLine721); 
+
+            }
+
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleEmptyLine"
+
+
+    // $ANTLR start "ruleEmptyLine"
+    // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:356:1: ruleEmptyLine returns [EObject current=null] : ( (lv_text_0_0= ruleSpaces ) ) ;
+    public final EObject ruleEmptyLine() throws RecognitionException {
+        EObject current = null;
+
+        AntlrDatatypeRuleToken lv_text_0_0 = null;
+
+
+         enterRule(); 
+            
+        try {
+            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:359:28: ( ( (lv_text_0_0= ruleSpaces ) ) )
+            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:360:1: ( (lv_text_0_0= ruleSpaces ) )
+            {
+            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:360:1: ( (lv_text_0_0= ruleSpaces ) )
+            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:361:1: (lv_text_0_0= ruleSpaces )
+            {
+            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:361:1: (lv_text_0_0= ruleSpaces )
+            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:362:3: lv_text_0_0= ruleSpaces
+            {
+             
+            	        newCompositeNode(grammarAccess.getEmptyLineAccess().getTextSpacesParserRuleCall_0()); 
+            	    
+            pushFollow(FOLLOW_ruleSpaces_in_ruleEmptyLine766);
+            lv_text_0_0=ruleSpaces();
+
+            state._fsp--;
+
+
+            	        if (current==null) {
+            	            current = createModelElementForParent(grammarAccess.getEmptyLineRule());
+            	        }
+                   		set(
+                   			current, 
+                   			"text",
+                    		lv_text_0_0, 
+                    		"Spaces");
+            	        afterParserOrEnumRuleCall();
+            	    
+
+            }
+
+
+            }
+
+
+            }
+
+             leaveRule(); 
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleEmptyLine"
+
+
     // $ANTLR start "entryRuleSpaces"
-    // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:346:1: entryRuleSpaces returns [String current=null] : iv_ruleSpaces= ruleSpaces EOF ;
+    // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:386:1: entryRuleSpaces returns [String current=null] : iv_ruleSpaces= ruleSpaces EOF ;
     public final String entryRuleSpaces() throws RecognitionException {
         String current = null;
 
@@ -819,17 +914,17 @@ public class InternalTaskParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:347:2: (iv_ruleSpaces= ruleSpaces EOF )
-            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:348:2: iv_ruleSpaces= ruleSpaces EOF
+            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:387:2: (iv_ruleSpaces= ruleSpaces EOF )
+            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:388:2: iv_ruleSpaces= ruleSpaces EOF
             {
              newCompositeNode(grammarAccess.getSpacesRule()); 
-            pushFollow(FOLLOW_ruleSpaces_in_entryRuleSpaces708);
+            pushFollow(FOLLOW_ruleSpaces_in_entryRuleSpaces802);
             iv_ruleSpaces=ruleSpaces();
 
             state._fsp--;
 
              current =iv_ruleSpaces.getText(); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleSpaces719); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleSpaces813); 
 
             }
 
@@ -847,7 +942,7 @@ public class InternalTaskParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleSpaces"
-    // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:355:1: ruleSpaces returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : ( (this_WS_0= RULE_WS )* this_NL_1= RULE_NL ) ;
+    // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:395:1: ruleSpaces returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : ( (this_WS_0= RULE_WS )* this_NL_1= RULE_NL ) ;
     public final AntlrDatatypeRuleToken ruleSpaces() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -857,13 +952,13 @@ public class InternalTaskParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:358:28: ( ( (this_WS_0= RULE_WS )* this_NL_1= RULE_NL ) )
-            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:359:1: ( (this_WS_0= RULE_WS )* this_NL_1= RULE_NL )
+            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:398:28: ( ( (this_WS_0= RULE_WS )* this_NL_1= RULE_NL ) )
+            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:399:1: ( (this_WS_0= RULE_WS )* this_NL_1= RULE_NL )
             {
-            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:359:1: ( (this_WS_0= RULE_WS )* this_NL_1= RULE_NL )
-            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:359:2: (this_WS_0= RULE_WS )* this_NL_1= RULE_NL
+            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:399:1: ( (this_WS_0= RULE_WS )* this_NL_1= RULE_NL )
+            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:399:2: (this_WS_0= RULE_WS )* this_NL_1= RULE_NL
             {
-            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:359:2: (this_WS_0= RULE_WS )*
+            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:399:2: (this_WS_0= RULE_WS )*
             loop7:
             do {
                 int alt7=2;
@@ -876,9 +971,9 @@ public class InternalTaskParser extends AbstractInternalAntlrParser {
 
                 switch (alt7) {
             	case 1 :
-            	    // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:359:7: this_WS_0= RULE_WS
+            	    // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalTask.g:399:7: this_WS_0= RULE_WS
             	    {
-            	    this_WS_0=(Token)match(input,RULE_WS,FOLLOW_RULE_WS_in_ruleSpaces760); 
+            	    this_WS_0=(Token)match(input,RULE_WS,FOLLOW_RULE_WS_in_ruleSpaces854); 
 
             	    		current.merge(this_WS_0);
             	        
@@ -894,7 +989,7 @@ public class InternalTaskParser extends AbstractInternalAntlrParser {
                 }
             } while (true);
 
-            this_NL_1=(Token)match(input,RULE_NL,FOLLOW_RULE_NL_in_ruleSpaces782); 
+            this_NL_1=(Token)match(input,RULE_NL,FOLLOW_RULE_NL_in_ruleSpaces876); 
 
             		current.merge(this_NL_1);
                 
@@ -926,21 +1021,20 @@ public class InternalTaskParser extends AbstractInternalAntlrParser {
     protected DFA1 dfa1 = new DFA1(this);
     protected DFA3 dfa3 = new DFA3(this);
     static final String DFA1_eotS =
-        "\5\uffff";
+        "\4\uffff";
     static final String DFA1_eofS =
-        "\2\2\3\uffff";
+        "\2\2\2\uffff";
     static final String DFA1_minS =
-        "\2\4\3\uffff";
+        "\2\4\2\uffff";
     static final String DFA1_maxS =
-        "\2\10\3\uffff";
+        "\2\10\2\uffff";
     static final String DFA1_acceptS =
-        "\2\uffff\1\3\1\1\1\2";
+        "\2\uffff\1\2\1\1";
     static final String DFA1_specialS =
-        "\5\uffff}>";
+        "\4\uffff}>";
     static final String[] DFA1_transitionS = {
-            "\1\1\3\3\1\4",
-            "\1\1\3\3\1\4",
-            "",
+            "\1\1\4\3",
+            "\1\1\4\3",
             "",
             ""
     };
@@ -975,24 +1069,25 @@ public class InternalTaskParser extends AbstractInternalAntlrParser {
             this.transition = DFA1_transition;
         }
         public String getDescription() {
-            return "()* loopback of 86:2: ( ( (lv_contents_1_0= ruleContent ) ) | ruleSpaces )*";
+            return "()* loopback of 86:2: ( (lv_contents_1_0= ruleContent ) )*";
         }
     }
     static final String DFA3_eotS =
-        "\5\uffff";
+        "\6\uffff";
     static final String DFA3_eofS =
-        "\5\uffff";
+        "\6\uffff";
     static final String DFA3_minS =
-        "\2\4\3\uffff";
+        "\2\4\4\uffff";
     static final String DFA3_maxS =
-        "\2\7\3\uffff";
+        "\2\10\4\uffff";
     static final String DFA3_acceptS =
-        "\2\uffff\1\1\1\2\1\3";
+        "\2\uffff\1\1\1\2\1\3\1\4";
     static final String DFA3_specialS =
-        "\5\uffff}>";
+        "\6\uffff}>";
     static final String[] DFA3_transitionS = {
-            "\1\1\1\3\1\4\1\2",
-            "\1\1\1\3\1\4\1\2",
+            "\1\1\1\3\1\4\1\2\1\5",
+            "\1\1\1\3\1\4\1\2\1\5",
+            "",
             "",
             "",
             ""
@@ -1028,36 +1123,39 @@ public class InternalTaskParser extends AbstractInternalAntlrParser {
             this.transition = DFA3_transition;
         }
         public String getDescription() {
-            return "138:1: (this_Project_0= ruleProject | this_Task_1= ruleTask | this_Note_2= ruleNote )";
+            return "129:1: (this_Project_0= ruleProject | this_Task_1= ruleTask | this_Note_2= ruleNote | this_EmptyLine_3= ruleEmptyLine )";
         }
     }
  
 
     public static final BitSet FOLLOW_ruleTaskModel_in_entryRuleTaskModel75 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleTaskModel85 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleContent_in_ruleTaskModel141 = new BitSet(new long[]{0x00000000000001F2L});
-    public static final BitSet FOLLOW_ruleSpaces_in_ruleTaskModel163 = new BitSet(new long[]{0x00000000000001F2L});
-    public static final BitSet FOLLOW_RULE_WS_in_ruleTaskModel176 = new BitSet(new long[]{0x0000000000000012L});
-    public static final BitSet FOLLOW_ruleContent_in_entryRuleContent213 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleContent223 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleProject_in_ruleContent270 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleTask_in_ruleContent297 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleNote_in_ruleContent324 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleTask_in_entryRuleTask359 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleTask369 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_WS_in_ruleTask411 = new BitSet(new long[]{0x0000000000000030L});
-    public static final BitSet FOLLOW_RULE_TASK_TEXT_in_ruleTask434 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleNote_in_entryRuleNote475 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleNote485 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_WS_in_ruleNote527 = new BitSet(new long[]{0x0000000000000050L});
-    public static final BitSet FOLLOW_RULE_TEXT_in_ruleNote550 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleProject_in_entryRuleProject591 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleProject601 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_WS_in_ruleProject643 = new BitSet(new long[]{0x0000000000000090L});
-    public static final BitSet FOLLOW_RULE_PROJECT__in_ruleProject666 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSpaces_in_entryRuleSpaces708 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleSpaces719 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_WS_in_ruleSpaces760 = new BitSet(new long[]{0x0000000000000110L});
-    public static final BitSet FOLLOW_RULE_NL_in_ruleSpaces782 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleContent_in_ruleTaskModel140 = new BitSet(new long[]{0x00000000000001F2L});
+    public static final BitSet FOLLOW_RULE_WS_in_ruleTaskModel153 = new BitSet(new long[]{0x0000000000000012L});
+    public static final BitSet FOLLOW_ruleContent_in_entryRuleContent190 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleContent200 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleProject_in_ruleContent247 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleTask_in_ruleContent274 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleNote_in_ruleContent301 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleEmptyLine_in_ruleContent328 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleTask_in_entryRuleTask363 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleTask373 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_WS_in_ruleTask415 = new BitSet(new long[]{0x0000000000000030L});
+    public static final BitSet FOLLOW_RULE_TASK_TEXT_in_ruleTask438 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleNote_in_entryRuleNote479 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleNote489 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_WS_in_ruleNote531 = new BitSet(new long[]{0x0000000000000050L});
+    public static final BitSet FOLLOW_RULE_TEXT_in_ruleNote554 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleProject_in_entryRuleProject595 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleProject605 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_WS_in_ruleProject647 = new BitSet(new long[]{0x0000000000000090L});
+    public static final BitSet FOLLOW_RULE_PROJECT__in_ruleProject670 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleEmptyLine_in_entryRuleEmptyLine711 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleEmptyLine721 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSpaces_in_ruleEmptyLine766 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSpaces_in_entryRuleSpaces802 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleSpaces813 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_WS_in_ruleSpaces854 = new BitSet(new long[]{0x0000000000000110L});
+    public static final BitSet FOLLOW_RULE_NL_in_ruleSpaces876 = new BitSet(new long[]{0x0000000000000002L});
 
 }

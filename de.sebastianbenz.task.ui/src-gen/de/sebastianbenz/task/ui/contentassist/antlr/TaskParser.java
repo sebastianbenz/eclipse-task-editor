@@ -37,20 +37,20 @@ public class TaskParser extends AbstractContentAssistParser {
 			nameMappings = new HashMap<AbstractElement, String>() {
 				private static final long serialVersionUID = 1L;
 				{
-					put(grammarAccess.getTaskModelAccess().getAlternatives_1(), "rule__TaskModel__Alternatives_1");
 					put(grammarAccess.getContentAccess().getAlternatives(), "rule__Content__Alternatives");
 					put(grammarAccess.getTaskModelAccess().getGroup(), "rule__TaskModel__Group__0");
 					put(grammarAccess.getTaskAccess().getGroup(), "rule__Task__Group__0");
 					put(grammarAccess.getNoteAccess().getGroup(), "rule__Note__Group__0");
 					put(grammarAccess.getProjectAccess().getGroup(), "rule__Project__Group__0");
 					put(grammarAccess.getSpacesAccess().getGroup(), "rule__Spaces__Group__0");
-					put(grammarAccess.getTaskModelAccess().getContentsAssignment_1_0(), "rule__TaskModel__ContentsAssignment_1_0");
+					put(grammarAccess.getTaskModelAccess().getContentsAssignment_1(), "rule__TaskModel__ContentsAssignment_1");
 					put(grammarAccess.getTaskAccess().getIntendAssignment_0(), "rule__Task__IntendAssignment_0");
 					put(grammarAccess.getTaskAccess().getTextAssignment_1(), "rule__Task__TextAssignment_1");
 					put(grammarAccess.getNoteAccess().getIntendAssignment_0(), "rule__Note__IntendAssignment_0");
 					put(grammarAccess.getNoteAccess().getTextAssignment_1(), "rule__Note__TextAssignment_1");
 					put(grammarAccess.getProjectAccess().getIntendAssignment_0(), "rule__Project__IntendAssignment_0");
 					put(grammarAccess.getProjectAccess().getTextAssignment_1(), "rule__Project__TextAssignment_1");
+					put(grammarAccess.getEmptyLineAccess().getTextAssignment(), "rule__EmptyLine__TextAssignment");
 				}
 			};
 		}

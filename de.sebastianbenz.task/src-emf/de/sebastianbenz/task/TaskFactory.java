@@ -2,6 +2,7 @@
  * <copyright>
  * </copyright>
  *
+
  */
 package de.sebastianbenz.task;
 
@@ -78,6 +79,15 @@ public interface TaskFactory extends EFactory
 	 * @generated
 	 */
 	GlobalTaskModel createGlobalTaskModel();
+
+	/**
+	 * Returns a new object of class '<em>Empty Line</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Empty Line</em>'.
+	 * @generated
+	 */
+	EmptyLine createEmptyLine();
 
 	/**
 	 * Returns the package supported by this factory.

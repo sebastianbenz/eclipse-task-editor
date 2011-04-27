@@ -20,33 +20,25 @@ public class TaskGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "TaskModel");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cTaskModelAction_0 = (Action)cGroup.eContents().get(0);
-		private final Alternatives cAlternatives_1 = (Alternatives)cGroup.eContents().get(1);
-		private final Assignment cContentsAssignment_1_0 = (Assignment)cAlternatives_1.eContents().get(0);
-		private final RuleCall cContentsContentParserRuleCall_1_0_0 = (RuleCall)cContentsAssignment_1_0.eContents().get(0);
-		private final RuleCall cSpacesParserRuleCall_1_1 = (RuleCall)cAlternatives_1.eContents().get(1);
+		private final Assignment cContentsAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cContentsContentParserRuleCall_1_0 = (RuleCall)cContentsAssignment_1.eContents().get(0);
 		private final RuleCall cWSTerminalRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
 		
 		//TaskModel:
-		//	{TaskModel} (contents+=Content | Spaces)* WS*;
+		//	{TaskModel} contents+=Content* WS*;
 		public ParserRule getRule() { return rule; }
 
-		//{TaskModel} (contents+=Content | Spaces)* WS*
+		//{TaskModel} contents+=Content* WS*
 		public Group getGroup() { return cGroup; }
 
 		//{TaskModel}
 		public Action getTaskModelAction_0() { return cTaskModelAction_0; }
 
-		//(contents+=Content | Spaces)*
-		public Alternatives getAlternatives_1() { return cAlternatives_1; }
-
-		//contents+=Content
-		public Assignment getContentsAssignment_1_0() { return cContentsAssignment_1_0; }
+		//contents+=Content*
+		public Assignment getContentsAssignment_1() { return cContentsAssignment_1; }
 
 		//Content
-		public RuleCall getContentsContentParserRuleCall_1_0_0() { return cContentsContentParserRuleCall_1_0_0; }
-
-		//Spaces
-		public RuleCall getSpacesParserRuleCall_1_1() { return cSpacesParserRuleCall_1_1; }
+		public RuleCall getContentsContentParserRuleCall_1_0() { return cContentsContentParserRuleCall_1_0; }
 
 		//WS*
 		public RuleCall getWSTerminalRuleCall_2() { return cWSTerminalRuleCall_2; }
@@ -58,18 +50,25 @@ public class TaskGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cProjectParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cTaskParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		private final RuleCall cNoteParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		private final RuleCall cEmptyLineParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
 		
 		/// *
+		//
 		//Project
+		//
 		//WS TASK
+		//
 		//WS PROJECT
+		//
 		//WS WS TASK
+		//
 		//WS WS PROJECT 
+		//
 		// * / Content:
-		//	Project | Task | Note;
+		//	Project | Task | Note | EmptyLine;
 		public ParserRule getRule() { return rule; }
 
-		//Project | Task | Note
+		//Project | Task | Note | EmptyLine
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//Project
@@ -80,6 +79,9 @@ public class TaskGrammarAccess extends AbstractGrammarElementFinder {
 
 		//Note
 		public RuleCall getNoteParserRuleCall_2() { return cNoteParserRuleCall_2; }
+
+		//EmptyLine
+		public RuleCall getEmptyLineParserRuleCall_3() { return cEmptyLineParserRuleCall_3; }
 	}
 
 	public class TaskElements extends AbstractParserRuleElementFinder {
@@ -166,13 +168,29 @@ public class TaskGrammarAccess extends AbstractGrammarElementFinder {
 		public RuleCall getTextPROJECT_TerminalRuleCall_1_0() { return cTextPROJECT_TerminalRuleCall_1_0; }
 	}
 
+	public class EmptyLineElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "EmptyLine");
+		private final Assignment cTextAssignment = (Assignment)rule.eContents().get(1);
+		private final RuleCall cTextSpacesParserRuleCall_0 = (RuleCall)cTextAssignment.eContents().get(0);
+		
+		//EmptyLine:
+		//	text=Spaces;
+		public ParserRule getRule() { return rule; }
+
+		//text=Spaces
+		public Assignment getTextAssignment() { return cTextAssignment; }
+
+		//Spaces
+		public RuleCall getTextSpacesParserRuleCall_0() { return cTextSpacesParserRuleCall_0; }
+	}
+
 	public class SpacesElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Spaces");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final RuleCall cWSTerminalRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
 		private final RuleCall cNLTerminalRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
 		
-		//Spaces:
+		//Spaces returns ecore::EString:
 		//	WS* NL;
 		public ParserRule getRule() { return rule; }
 
@@ -192,6 +210,7 @@ public class TaskGrammarAccess extends AbstractGrammarElementFinder {
 	private TaskElements pTask;
 	private NoteElements pNote;
 	private ProjectElements pProject;
+	private EmptyLineElements pEmptyLine;
 	private SpacesElements pSpaces;
 	private TerminalRule tWS;
 	private TerminalRule tNL;
@@ -215,7 +234,7 @@ public class TaskGrammarAccess extends AbstractGrammarElementFinder {
 
 	
 	//TaskModel:
-	//	{TaskModel} (contents+=Content | Spaces)* WS*;
+	//	{TaskModel} contents+=Content* WS*;
 	public TaskModelElements getTaskModelAccess() {
 		return (pTaskModel != null) ? pTaskModel : (pTaskModel = new TaskModelElements());
 	}
@@ -225,13 +244,19 @@ public class TaskGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	/// *
+	//
 	//Project
+	//
 	//WS TASK
+	//
 	//WS PROJECT
+	//
 	//WS WS TASK
+	//
 	//WS WS PROJECT 
+	//
 	// * / Content:
-	//	Project | Task | Note;
+	//	Project | Task | Note | EmptyLine;
 	public ContentElements getContentAccess() {
 		return (pContent != null) ? pContent : (pContent = new ContentElements());
 	}
@@ -270,7 +295,17 @@ public class TaskGrammarAccess extends AbstractGrammarElementFinder {
 		return getProjectAccess().getRule();
 	}
 
-	//Spaces:
+	//EmptyLine:
+	//	text=Spaces;
+	public EmptyLineElements getEmptyLineAccess() {
+		return (pEmptyLine != null) ? pEmptyLine : (pEmptyLine = new EmptyLineElements());
+	}
+	
+	public ParserRule getEmptyLineRule() {
+		return getEmptyLineAccess().getRule();
+	}
+
+	//Spaces returns ecore::EString:
 	//	WS* NL;
 	public SpacesElements getSpacesAccess() {
 		return (pSpaces != null) ? pSpaces : (pSpaces = new SpacesElements());

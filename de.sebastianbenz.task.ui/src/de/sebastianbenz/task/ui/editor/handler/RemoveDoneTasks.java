@@ -8,6 +8,7 @@ import java.util.List;
 import org.eclipse.core.commands.AbstractHandler;
 import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.jface.text.BadLocationException;
 import org.eclipse.jface.text.IRegion;
 import org.eclipse.xtext.nodemodel.ICompositeNode;
@@ -53,8 +54,9 @@ public class RemoveDoneTasks extends AbstractHandler {
 
 	private void deleteLine(final IXtextDocument document, Task task)
 			throws BadLocationException {
-		ICompositeNode node = NodeModelUtils.getNode(task);
-		IRegion line = document.getLineInformationOfOffset(node.getOffset());
-		document.replace(line.getOffset(), line.getLength(), "");
+//		ICompositeNode node = NodeModelUtils.getNode(task);
+//		IRegion line = document.getLineInformationOfOffset(node.getOffset());
+//		document.replace(line.getOffset(), line.getLength(), "");
+		EcoreUtil.delete(task);
 	}
 }

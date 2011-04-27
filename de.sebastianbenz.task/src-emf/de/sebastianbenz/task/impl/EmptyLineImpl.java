@@ -6,28 +6,28 @@
  */
 package de.sebastianbenz.task.impl;
 
-import de.sebastianbenz.task.Project;
+import de.sebastianbenz.task.EmptyLine;
 import de.sebastianbenz.task.TaskPackage;
 
 import org.eclipse.emf.ecore.EClass;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Project</b></em>'.
+ * An implementation of the model object '<em><b>Empty Line</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * </p>
  *
  * @generated
  */
-public class ProjectImpl extends ContentImplCustom implements Project
+public class EmptyLineImpl extends ContentImplCustom implements EmptyLine
 {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ProjectImpl()
+	protected EmptyLineImpl()
 	{
 		super();
 	}
@@ -40,7 +40,7 @@ public class ProjectImpl extends ContentImplCustom implements Project
 	@Override
 	protected EClass eStaticClass()
 	{
-		return TaskPackage.Literals.PROJECT;
+		return TaskPackage.Literals.EMPTY_LINE;
 	}
 
-} //ProjectImpl
+} //EmptyLineImpl

@@ -2,10 +2,12 @@
  * <copyright>
  * </copyright>
  *
+
  */
 package de.sebastianbenz.task.impl;
 
 import de.sebastianbenz.task.Content;
+import de.sebastianbenz.task.EmptyLine;
 import de.sebastianbenz.task.GlobalTaskModel;
 import de.sebastianbenz.task.Note;
 import de.sebastianbenz.task.Project;
@@ -85,6 +87,13 @@ public class TaskPackageImpl extends EPackageImpl implements TaskPackage
 	 * @generated
 	 */
 	private EClass containerEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass emptyLineEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -354,6 +363,16 @@ public class TaskPackageImpl extends EPackageImpl implements TaskPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getEmptyLine()
+	{
+		return emptyLineEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public TaskFactory getTaskFactory()
 	{
 		return (TaskFactory)getEFactoryInstance();
@@ -406,6 +425,8 @@ public class TaskPackageImpl extends EPackageImpl implements TaskPackage
 
 		containerEClass = createEClass(CONTAINER);
 		createEReference(containerEClass, CONTAINER__CHILDREN);
+
+		emptyLineEClass = createEClass(EMPTY_LINE);
 	}
 
 	/**
@@ -443,6 +464,7 @@ public class TaskPackageImpl extends EPackageImpl implements TaskPackage
 		noteEClass.getESuperTypes().add(this.getContent());
 		projectEClass.getESuperTypes().add(this.getContent());
 		globalTaskModelEClass.getESuperTypes().add(this.getContainer());
+		emptyLineEClass.getESuperTypes().add(this.getContent());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(taskModelEClass, TaskModel.class, "TaskModel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -451,7 +473,7 @@ public class TaskPackageImpl extends EPackageImpl implements TaskPackage
 		initEClass(contentEClass, Content.class, "Content", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getContent_Intend(), ecorePackage.getEString(), "intend", null, 0, -1, Content.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getContent_Text(), ecorePackage.getEString(), "text", null, 0, 1, Content.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getContent_Parent(), this.getContainer(), this.getContainer_Children(), "parent", null, 0, 1, Content.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getContent_Parent(), this.getContainer(), this.getContainer_Children(), "parent", null, 0, 1, Content.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEReference(getContent_TaskModel(), this.getTaskModel(), this.getTaskModel_Contents(), "taskModel", null, 0, 1, Content.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getContent_Tags(), this.getTag(), this.getTag_Content(), "tags", null, 0, -1, Content.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
@@ -477,7 +499,9 @@ public class TaskPackageImpl extends EPackageImpl implements TaskPackage
 		initEClass(globalTaskModelEClass, GlobalTaskModel.class, "GlobalTaskModel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(containerEClass, de.sebastianbenz.task.Container.class, "Container", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getContainer_Children(), this.getContent(), this.getContent_Parent(), "children", null, 0, -1, de.sebastianbenz.task.Container.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getContainer_Children(), this.getContent(), this.getContent_Parent(), "children", null, 0, -1, de.sebastianbenz.task.Container.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+
+		initEClass(emptyLineEClass, EmptyLine.class, "EmptyLine", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		// Create resource
 		createResource(eNS_URI);

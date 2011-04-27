@@ -2,6 +2,7 @@
  * <copyright>
  * </copyright>
  *
+
  */
 package de.sebastianbenz.task;
 
@@ -84,7 +85,7 @@ public interface Content extends Container
 	 * @see #setParent(Container)
 	 * @see de.sebastianbenz.task.TaskPackage#getContent_Parent()
 	 * @see de.sebastianbenz.task.Container#getChildren
-	 * @model opposite="children" derived="true"
+	 * @model opposite="children" transient="true" derived="true"
 	 * @generated
 	 */
 	Container getParent();

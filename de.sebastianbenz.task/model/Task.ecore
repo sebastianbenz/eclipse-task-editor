@@ -15,7 +15,7 @@
         upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="text" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="parent" eType="#//Container"
-        derived="true" eOpposite="#//Container/children"/>
+        transient="true" derived="true" eOpposite="#//Container/children"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="taskModel" eType="#//TaskModel"
         eOpposite="#//TaskModel/contents"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="tags" upperBound="-1" eType="#//Tag"
@@ -35,6 +35,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="GlobalTaskModel" eSuperTypes="#//Container"/>
   <eClassifiers xsi:type="ecore:EClass" name="Container" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EReference" name="children" upperBound="-1"
-        eType="#//Content" derived="true" eOpposite="#//Content/parent"/>
+        eType="#//Content" transient="true" derived="true" eOpposite="#//Content/parent"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EmptyLine" eSuperTypes="#//Content"/>
 </ecore:EPackage>

@@ -83,10 +83,10 @@ ruleTaskModel returns [EObject current=null]
             grammarAccess.getTaskModelAccess().getTaskModelAction_0(),
             $current);
     }
-)((
+)(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getTaskModelAccess().getContentsContentParserRuleCall_1_0_0()); 
+	        newCompositeNode(grammarAccess.getTaskModelAccess().getContentsContentParserRuleCall_1_0()); 
 	    }
 		lv_contents_1_0=ruleContent		{
 	        if ($current==null) {
@@ -101,18 +101,9 @@ ruleTaskModel returns [EObject current=null]
 	    }
 
 )
-)
-    |
+)*(this_WS_2=RULE_WS
     { 
-        newCompositeNode(grammarAccess.getTaskModelAccess().getSpacesParserRuleCall_1_1()); 
-    }
-ruleSpaces
-    { 
-        afterParserOrEnumRuleCall();
-    }
-)*(this_WS_3=RULE_WS
-    { 
-    newLeafNode(this_WS_3, grammarAccess.getTaskModelAccess().getWSTerminalRuleCall_2()); 
+    newLeafNode(this_WS_2, grammarAccess.getTaskModelAccess().getWSTerminalRuleCall_2()); 
     }
 )*)
 ;
@@ -162,6 +153,16 @@ ruleContent returns [EObject current=null]
     this_Note_2=ruleNote
     { 
         $current = $this_Note_2.current; 
+        afterParserOrEnumRuleCall();
+    }
+
+    |
+    { 
+        newCompositeNode(grammarAccess.getContentAccess().getEmptyLineParserRuleCall_3()); 
+    }
+    this_EmptyLine_3=ruleEmptyLine
+    { 
+        $current = $this_EmptyLine_3.current; 
         afterParserOrEnumRuleCall();
     }
 )
@@ -336,6 +337,45 @@ ruleProject returns [EObject current=null]
 
 )
 ))
+;
+
+
+
+
+
+// Entry rule entryRuleEmptyLine
+entryRuleEmptyLine returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getEmptyLineRule()); }
+	 iv_ruleEmptyLine=ruleEmptyLine 
+	 { $current=$iv_ruleEmptyLine.current; } 
+	 EOF 
+;
+
+// Rule EmptyLine
+ruleEmptyLine returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getEmptyLineAccess().getTextSpacesParserRuleCall_0()); 
+	    }
+		lv_text_0_0=ruleSpaces		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getEmptyLineRule());
+	        }
+       		set(
+       			$current, 
+       			"text",
+        		lv_text_0_0, 
+        		"Spaces");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)
 ;
 
 

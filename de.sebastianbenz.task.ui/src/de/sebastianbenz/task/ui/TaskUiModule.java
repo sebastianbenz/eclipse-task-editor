@@ -24,6 +24,7 @@ import org.eclipse.xtext.ui.editor.syntaxcoloring.IHighlightingConfiguration;
 
 import com.google.inject.Binder;
 
+import de.sebastianbenz.task.ui.contentassist.TaskTemplateProvider;
 import de.sebastianbenz.task.ui.editor.AutoEditStrategyProvider;
 import de.sebastianbenz.task.ui.editor.FoldingRegionProvider;
 import de.sebastianbenz.task.ui.editor.SourceViewerConfiguration;

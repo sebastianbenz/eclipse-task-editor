@@ -86,11 +86,11 @@ public class ParserTest extends AbstractTest {
 
 	@Test
 	public void parseEmptyLines() throws Exception {
-		assertThat(parse("\nProject:\n"), are(Project.class));
-		assertThat(parse("	\nProject:\n"), are(Project.class));
-		assertThat(parse("Project:\n  \n"), are(Project.class));
+		assertThat(parse("\nProject:\n"), are(EmptyLine.class, Project.class));
+		assertThat(parse("	\nProject:\n"), are(EmptyLine.class, Project.class));
+		assertThat(parse("Project:\n  \n"), are(Project.class, EmptyLine.class));
 		assertThat(parse("Project:\n\n\nProject:\n"),
-				are(Project.class, Project.class));
+				are(Project.class, EmptyLine.class, EmptyLine.class, Project.class));
 	}
 	
 	@Test

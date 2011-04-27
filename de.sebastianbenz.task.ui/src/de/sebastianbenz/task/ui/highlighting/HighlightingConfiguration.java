@@ -121,8 +121,9 @@ public class HighlightingConfiguration extends DefaultHighlightingConfiguration 
 	public TextStyle defaultTextStyle() {
 		TextStyle result = super.defaultTextStyle().copy();
 		FontData fontData = new FontData();
-		fontData.name = JFaceResources.DIALOG_FONT;
-		result.setFontData(fontData);
+		fontData.setName(JFaceResources.TEXT_FONT);
+		fontData.setHeight(DEFAULT_FONT_SIZE);
+		result.setFontData(fontData);  
 		return result;
 	}
 }

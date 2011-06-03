@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <site>
-   <feature url="features/de.sebastianbenz.task_1.0.0.201105122124.jar" id="de.sebastianbenz.task" version="1.0.0.201105122124">
+   <feature url="features/de.sebastianbenz.task_1.0.0.201106031659.jar" id="de.sebastianbenz.task" version="1.0.0.201106031659">
       <category name="Task editor"/>
    </feature>
    <category-def name="Task editor" label="Task editor"/>

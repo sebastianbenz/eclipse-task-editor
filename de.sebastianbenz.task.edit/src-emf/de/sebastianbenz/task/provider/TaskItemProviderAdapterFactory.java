@@ -220,6 +220,29 @@ public class TaskItemProviderAdapterFactory extends TaskAdapterFactory implement
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link de.sebastianbenz.task.EmptyLine} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected EmptyLineItemProvider emptyLineItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link de.sebastianbenz.task.EmptyLine}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createEmptyLineAdapter() {
+		if (emptyLineItemProvider == null) {
+			emptyLineItemProvider = new EmptyLineItemProvider(this);
+		}
+
+		return emptyLineItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -333,6 +356,7 @@ public class TaskItemProviderAdapterFactory extends TaskAdapterFactory implement
 		if (projectItemProvider != null) projectItemProvider.dispose();
 		if (tagItemProvider != null) tagItemProvider.dispose();
 		if (globalTaskModelItemProvider != null) globalTaskModelItemProvider.dispose();
+		if (emptyLineItemProvider != null) emptyLineItemProvider.dispose();
 	}
 
 }

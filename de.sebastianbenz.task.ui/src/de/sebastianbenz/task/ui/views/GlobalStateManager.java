@@ -16,7 +16,6 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.xtext.resource.IResourceDescription;
 import org.eclipse.xtext.resource.IResourceDescription.Delta;
 import org.eclipse.xtext.resource.IResourceDescriptions;
-import org.eclipse.xtext.resource.SynchronizedXtextResourceSet;
 
 import com.google.common.collect.Maps;
 import com.google.inject.Inject;
@@ -45,7 +44,7 @@ public class GlobalStateManager  implements ResourceDescriptionsChangeListener{
 	private GlobalTaskModel root = TaskFactory.eINSTANCE.createGlobalTaskModel();
 	
 	public ResourceSet createResourceSet() {
-		ResourceSetImpl resourceSet = new SynchronizedXtextResourceSet();
+		ResourceSetImpl resourceSet = new ResourceSetImpl();
 		resourceSet.setURIResourceMap(Maps.<URI, Resource>newHashMap());
 		return resourceSet;
 	}

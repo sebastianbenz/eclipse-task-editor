@@ -14,6 +14,9 @@ var runtimeProject = "../${projectName}"
 Workflow {
     bean = StandaloneSetup {
 		platformUri = "${runtimeProject}/.."
+		registerGeneratedEPackage = "de.sebastianbenz.task.TaskPackage"
+		scanClassPath = true
+		//registerGenModelFile = "platform:/resource/de.sebastianbenz.task/model/Task.genmodel"
 	}
 
 	component = DirectoryCleaner {
@@ -24,7 +27,7 @@ Workflow {
 		directory = "${runtimeProject}.ui/src-gen"
 	}
 	
-	component = DirectoryCleaner {
+	component = DirectoryCleaner { 
 		directory = "${runtimeProject}.ui/src-emf"
 	}
 	
@@ -127,7 +130,6 @@ Workflow {
 
 			// generates Java API for the generated EPackages 
 			fragment = ecore.EcoreGeneratorFragment {
-			 referencedGenModels = "platform:/resource/${projectName}/model/Task.genmodel"
 			}
 
 			// the serialization component

@@ -58,14 +58,7 @@ public class OpenFileAction extends Action implements IWorkbenchWindowActionDele
     public void run() {
 		File file= queryFile();
 		if (file != null) {
-			IWorkbenchPage page= fWindow.getActivePage();
-			try {
-//				TaskActivator.getInstance().getClass();
-				IFileStore fileStore= EFS.getStore(file.toURI());
-				IDE.openEditor(page, new FileStoreEditorInput(fileStore),  "de.sebastianbenz.task.Task");
-			} catch (CoreException e) {
-				e.printStackTrace();
-			}
+			EditorOpener.open(fWindow, file);
 		} else if (file != null) {
 			String msg = MessageFormat.format("File is null: {0}", new String[] { file.getName() }); //$NON-NLS-1$
 			MessageDialog.openWarning(fWindow.getShell(), "Problem", msg); //$NON-NLS-1$

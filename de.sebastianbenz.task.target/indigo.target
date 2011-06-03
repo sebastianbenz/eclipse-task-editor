@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <?pde version="3.6"?>
 
-<target includeMode="feature" name="TaskEditor" sequenceNumber="23">
+<target includeMode="feature" name="TaskEditor" sequenceNumber="25">
 <locations>
-<location includeAllPlatforms="true" includeMode="planner" includeSource="true" type="InstallableUnit">
-<unit id="org.eclipse.emf.sdk.feature.group" version="2.7.0.v20110310-1804"/>
-<unit id="org.eclipse.xtext.sdk.feature.group" version="2.0.0.v201105030849"/>
+<location includeAllPlatforms="false" includeMode="planner" includeSource="true" type="InstallableUnit">
+<unit id="org.eclipse.emf.sdk.feature.group" version="2.7.0.v20110523-0846"/>
+<unit id="org.eclipse.xtext.sdk.feature.group" version="2.0.0.v201105240502"/>
 <repository location="http://download.eclipse.org/releases/indigo"/>
 </location>
 <location includeAllPlatforms="true" includeMode="planner" includeSource="true" type="InstallableUnit">
-<unit id="org.eclipse.sdk.ide" version="3.7.0.I20110310-1119"/>
+<unit id="org.eclipse.sdk.ide" version="3.7.0.I20110519-1138"/>
+<unit id="org.eclipse.equinox.p2.user.ui.feature.group" version="2.1.1.v20110502-1955-6-Bg9JXOePwKUTU7X-ueTpHsz00-"/>
 </location>
 </locations>
 </target>

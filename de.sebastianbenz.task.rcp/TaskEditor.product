@@ -18,6 +18,12 @@
 
    <windowImages i16="/de.sebastianbenz.task.application/icons/Icon_16.png" i32="/de.sebastianbenz.task.application/icons/Icon_32.png" i48="/de.sebastianbenz.task.application/icons/Icon_48.png" i64="/de.sebastianbenz.task.application/icons/Icon_64.png" i128="/de.sebastianbenz.task.application/icons/Icon_128.png"/>
 
+   <launcher>
+      <solaris/>
+      <win useIco="false">
+         <bmp/>
+      </win>
+   </launcher>
 
    <vm>
    </vm>
@@ -29,14 +35,6 @@
       <feature id="de.sebastianbenz.task" version="1.0.0.qualifier"/>
       <feature id="de.sebastianbenz.task.rcp" version="1.0.0.qualifier"/>
       <feature id="de.sebastianbenz.task.platform" version="1.0.0.qualifier"/>
-      <feature id="org.eclipse.emf" />
-      <feature id="org.eclipse.emf.common"/>
-      <feature id="org.eclipse.emf.common.ui"/>
-      <feature id="org.eclipse.emf.ecore"/>
-      <feature id="org.eclipse.emf.edit"/>
-      <feature id="org.eclipse.emf.edit.ui"/>
-      <feature id="org.eclipse.xtext.runtime"/>
-      <feature id="org.eclipse.xtext.ui"/>
    </features>
 
    <configurations>

@@ -6,14 +6,14 @@ import static org.eclipse.emf.common.util.URI.createURI;
 import java.io.IOException;
 
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
-import org.eclipse.xtext.resource.SynchronizedXtextResourceSet;
-import org.eclipse.xtext.resource.XtextResourceSet;
 import org.eclipse.xtext.util.StringInputStream;
 
 public class QueryStringParser {
 
-	private XtextResourceSet resourceSet = createResourceSet();
+	private ResourceSet resourceSet = createResourceSet();
 	
 	public Query parse(String input){
 		resourceSet.getResources().clear();
@@ -27,8 +27,8 @@ public class QueryStringParser {
 		return filter(resource.getContents(), Query.class).iterator().next();
 	}
 
-	private XtextResourceSet createResourceSet() {
-		XtextResourceSet resourceSet = new SynchronizedXtextResourceSet();
+	private ResourceSet createResourceSet() {
+		ResourceSet resourceSet = new ResourceSetImpl();
 		return resourceSet;
 	}
 	

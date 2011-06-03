@@ -6,7 +6,7 @@
     modelPluginID="de.sebastianbenz.task" forceOverwrite="true" modelName="Query"
     updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
     complianceLevel="5.0" copyrightFields="false" editPluginID="de.sebastianbenz.task.edit"
-    editorPluginID="de.sebastianbenz.task.editor" usedGenPackages="platform:/resource/de.sebastianbenz.task/model/Task.genmodel#//task">
+    editorPluginID="de.sebastianbenz.task.editor">
   <genPackages prefix="Query" basePackage="de.sebastianbenz.task" disposableProviderFactory="true"
       ecorePackage="platform:/resource/de.sebastianbenz.task/src-gen/de/sebastianbenz/task/Query.ecore#/">
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="platform:/resource/de.sebastianbenz.task/src-gen/de/sebastianbenz/task/Query.ecore#//CompEqOperator">

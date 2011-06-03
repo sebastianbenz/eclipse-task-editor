@@ -1,5 +1,7 @@
 package de.sebastianbenz.task.app;
 
+import java.io.File;
+
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.swt.graphics.Point;
@@ -18,11 +20,15 @@ import org.eclipse.ui.application.WorkbenchAdvisor;
 import org.eclipse.ui.application.WorkbenchWindowAdvisor;
 import org.eclipse.ui.internal.IWorkbenchConstants;
 
+import de.sebastianbenz.task.app.actions.EditorOpener;
 import de.sebastianbenz.task.app.actions.TextEditorActionBarAdvisor;
 import de.sebastianbenz.task.ui.internal.TaskActivator;
 
 public class TaskEditorWorkbenchAdvisor extends WorkbenchAdvisor {
-	public TaskEditorWorkbenchAdvisor() {
+	private final String[] args;
+
+	public TaskEditorWorkbenchAdvisor(String[] args) {
+		this.args = args;
 	}
 
 	public String getInitialWindowPerspectiveId() {
@@ -70,6 +76,17 @@ public class TaskEditorWorkbenchAdvisor extends WorkbenchAdvisor {
 					IActionBarConfigurer abConfigurer) {
 				return new TextEditorActionBarAdvisor(abConfigurer);
 			}
+			
+			@Override
+			public void postWindowOpen() {
+				for (String arg : args) {
+					File file = new File(arg);
+					if(file.exists() && (file.getName().endsWith(".todo") || file.getName().endsWith(".taskpaper"))){
+						EditorOpener.open(getWindowConfigurer().getWindow(), file);
+					}
+				}
+			}
+			
 		};
 	}
 
@@ -103,4 +120,5 @@ public class TaskEditorWorkbenchAdvisor extends WorkbenchAdvisor {
 		}
 		return Status.OK_STATUS;
 	}
+	
 }

@@ -2,10 +2,9 @@
  * <copyright>
  * </copyright>
  *
+
  */
 package de.sebastianbenz.task.query.impl;
-
-import de.sebastianbenz.task.TaskPackage;
 
 import de.sebastianbenz.task.query.AndExpr;
 import de.sebastianbenz.task.query.Atom;
@@ -225,9 +224,6 @@ public class QueryPackageImpl extends EPackageImpl implements QueryPackage
     QueryPackageImpl theQueryPackage = (QueryPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof QueryPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new QueryPackageImpl());
 
     isInited = true;
-
-    // Initialize simple dependencies
-    TaskPackage.eINSTANCE.eClass();
 
     // Create package meta-data objects
     theQueryPackage.createPackageContents();

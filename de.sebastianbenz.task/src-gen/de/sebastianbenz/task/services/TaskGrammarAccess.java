@@ -328,19 +328,19 @@ public class TaskGrammarAccess extends AbstractGrammarElementFinder {
 	} 
 
 	//terminal TASK_TEXT:
-	//	HYPHEN !("\n" | "\r")* NL;
+	//	HYPHEN !("\n" | "\r")* NL?;
 	public TerminalRule getTASK_TEXTRule() {
 		return (tTASK_TEXT != null) ? tTASK_TEXT : (tTASK_TEXT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "TASK_TEXT"));
 	} 
 
 	//terminal TEXT:
-	//	(!(HYPHEN | COLON | "\n" | "\r" | WS) | !(HYPHEN | "\n" | "\r" | WS) !("\n" | "\r")* !(COLON | "\n" | "\r")) NL;
+	//	(!(HYPHEN | COLON | "\n" | "\r" | WS) | !(HYPHEN | "\n" | "\r" | WS) !("\n" | "\r")* !(COLON | "\n" | "\r")) NL?;
 	public TerminalRule getTEXTRule() {
 		return (tTEXT != null) ? tTEXT : (tTEXT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "TEXT"));
 	} 
 
 	//terminal PROJECT_:
-	//	!("\n" | "\r" | HYPHEN | WS) !("\n" | "\r")* COLON NL;
+	//	!("\n" | "\r" | HYPHEN | WS) !("\n" | "\r")* COLON NL?;
 	public TerminalRule getPROJECT_Rule() {
 		return (tPROJECT_ != null) ? tPROJECT_ : (tPROJECT_ = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "PROJECT_"));
 	} 

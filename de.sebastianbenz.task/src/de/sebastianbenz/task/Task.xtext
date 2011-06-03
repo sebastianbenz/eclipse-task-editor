@@ -43,9 +43,9 @@ Spaces returns ecore::EString :
 terminal WS				:	' ' | '\t';
 terminal NL				:	'\r'? '\n';
 	
-terminal TASK_TEXT		: HYPHEN !('\n'|'\r')* NL;
-terminal TEXT			:  (!(HYPHEN | COLON | '\n'|'\r' | WS) | !(HYPHEN|'\n'|'\r' | WS) !('\n'|'\r')* !(COLON | '\n'|'\r')) NL;
-terminal PROJECT_		: !('\n'|'\r'|HYPHEN|WS) !('\n'|'\r')* COLON NL;		
+terminal TASK_TEXT		: HYPHEN !('\n'|'\r')* NL?;
+terminal TEXT			:  (!(HYPHEN | COLON | '\n'|'\r' | WS) | !(HYPHEN|'\n'|'\r' | WS) !('\n'|'\r')* !(COLON | '\n'|'\r')) NL?;
+terminal PROJECT_		: !('\n'|'\r'|HYPHEN|WS) !('\n'|'\r')* COLON NL?;		
 
 terminal fragment COLON : ':';
 

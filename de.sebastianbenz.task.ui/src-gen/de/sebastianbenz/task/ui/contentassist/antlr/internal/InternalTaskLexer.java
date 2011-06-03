@@ -105,8 +105,8 @@ public class InternalTaskLexer extends Lexer {
         try {
             int _type = RULE_TASK_TEXT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalTask.g:757:16: ( RULE_HYPHEN (~ ( ( '\\n' | '\\r' ) ) )* RULE_NL )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalTask.g:757:18: RULE_HYPHEN (~ ( ( '\\n' | '\\r' ) ) )* RULE_NL
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalTask.g:757:16: ( RULE_HYPHEN (~ ( ( '\\n' | '\\r' ) ) )* ( RULE_NL )? )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalTask.g:757:18: RULE_HYPHEN (~ ( ( '\\n' | '\\r' ) ) )* ( RULE_NL )?
             {
             mRULE_HYPHEN(); 
             // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalTask.g:757:30: (~ ( ( '\\n' | '\\r' ) ) )*
@@ -142,7 +142,24 @@ public class InternalTaskLexer extends Lexer {
                 }
             } while (true);
 
-            mRULE_NL(); 
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalTask.g:757:46: ( RULE_NL )?
+            int alt3=2;
+            int LA3_0 = input.LA(1);
+
+            if ( (LA3_0=='\n'||LA3_0=='\r') ) {
+                alt3=1;
+            }
+            switch (alt3) {
+                case 1 :
+                    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalTask.g:757:46: RULE_NL
+                    {
+                    mRULE_NL(); 
+
+                    }
+                    break;
+
+            }
+
 
             }
 
@@ -159,39 +176,32 @@ public class InternalTaskLexer extends Lexer {
         try {
             int _type = RULE_TEXT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalTask.g:759:11: ( (~ ( ( RULE_HYPHEN | RULE_COLON | '\\n' | '\\r' | RULE_WS ) ) | ~ ( ( RULE_HYPHEN | '\\n' | '\\r' | RULE_WS ) ) (~ ( ( '\\n' | '\\r' ) ) )* ~ ( ( RULE_COLON | '\\n' | '\\r' ) ) ) RULE_NL )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalTask.g:759:13: (~ ( ( RULE_HYPHEN | RULE_COLON | '\\n' | '\\r' | RULE_WS ) ) | ~ ( ( RULE_HYPHEN | '\\n' | '\\r' | RULE_WS ) ) (~ ( ( '\\n' | '\\r' ) ) )* ~ ( ( RULE_COLON | '\\n' | '\\r' ) ) ) RULE_NL
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalTask.g:759:11: ( (~ ( ( RULE_HYPHEN | RULE_COLON | '\\n' | '\\r' | RULE_WS ) ) | ~ ( ( RULE_HYPHEN | '\\n' | '\\r' | RULE_WS ) ) (~ ( ( '\\n' | '\\r' ) ) )* ~ ( ( RULE_COLON | '\\n' | '\\r' ) ) ) ( RULE_NL )? )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalTask.g:759:13: (~ ( ( RULE_HYPHEN | RULE_COLON | '\\n' | '\\r' | RULE_WS ) ) | ~ ( ( RULE_HYPHEN | '\\n' | '\\r' | RULE_WS ) ) (~ ( ( '\\n' | '\\r' ) ) )* ~ ( ( RULE_COLON | '\\n' | '\\r' ) ) ) ( RULE_NL )?
             {
             // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalTask.g:759:13: (~ ( ( RULE_HYPHEN | RULE_COLON | '\\n' | '\\r' | RULE_WS ) ) | ~ ( ( RULE_HYPHEN | '\\n' | '\\r' | RULE_WS ) ) (~ ( ( '\\n' | '\\r' ) ) )* ~ ( ( RULE_COLON | '\\n' | '\\r' ) ) )
-            int alt4=2;
-            int LA4_0 = input.LA(1);
+            int alt5=2;
+            int LA5_0 = input.LA(1);
 
-            if ( ((LA4_0>='\u0000' && LA4_0<='\b')||(LA4_0>='\u000B' && LA4_0<='\f')||(LA4_0>='\u000E' && LA4_0<='\u001F')||(LA4_0>='!' && LA4_0<=',')||(LA4_0>='.' && LA4_0<='9')||(LA4_0>=';' && LA4_0<='\uFFFF')) ) {
-                int LA4_1 = input.LA(2);
+            if ( ((LA5_0>='\u0000' && LA5_0<='\b')||(LA5_0>='\u000B' && LA5_0<='\f')||(LA5_0>='\u000E' && LA5_0<='\u001F')||(LA5_0>='!' && LA5_0<=',')||(LA5_0>='.' && LA5_0<='9')||(LA5_0>=';' && LA5_0<='\uFFFF')) ) {
+                int LA5_1 = input.LA(2);
 
-                if ( (LA4_1=='\n'||LA4_1=='\r') ) {
-                    alt4=1;
-                }
-                else if ( ((LA4_1>='\u0000' && LA4_1<='\t')||(LA4_1>='\u000B' && LA4_1<='\f')||(LA4_1>='\u000E' && LA4_1<='\uFFFF')) ) {
-                    alt4=2;
+                if ( ((LA5_1>='\u0000' && LA5_1<='\t')||(LA5_1>='\u000B' && LA5_1<='\f')||(LA5_1>='\u000E' && LA5_1<='\uFFFF')) ) {
+                    alt5=2;
                 }
                 else {
-                    NoViableAltException nvae =
-                        new NoViableAltException("", 4, 1, input);
-
-                    throw nvae;
-                }
+                    alt5=1;}
             }
-            else if ( (LA4_0==':') ) {
-                alt4=2;
+            else if ( (LA5_0==':') ) {
+                alt5=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 4, 0, input);
+                    new NoViableAltException("", 5, 0, input);
 
                 throw nvae;
             }
-            switch (alt4) {
+            switch (alt5) {
                 case 1 :
                     // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalTask.g:759:14: ~ ( ( RULE_HYPHEN | RULE_COLON | '\\n' | '\\r' | RULE_WS ) )
                     {
@@ -220,26 +230,26 @@ public class InternalTaskLexer extends Lexer {
                         throw mse;}
 
                     // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalTask.g:759:95: (~ ( ( '\\n' | '\\r' ) ) )*
-                    loop3:
+                    loop4:
                     do {
-                        int alt3=2;
-                        int LA3_0 = input.LA(1);
+                        int alt4=2;
+                        int LA4_0 = input.LA(1);
 
-                        if ( ((LA3_0>='\u0000' && LA3_0<='\t')||(LA3_0>='\u000B' && LA3_0<='\f')||(LA3_0>='\u000E' && LA3_0<='9')||(LA3_0>=';' && LA3_0<='\uFFFF')) ) {
-                            int LA3_1 = input.LA(2);
+                        if ( ((LA4_0>='\u0000' && LA4_0<='\t')||(LA4_0>='\u000B' && LA4_0<='\f')||(LA4_0>='\u000E' && LA4_0<='9')||(LA4_0>=';' && LA4_0<='\uFFFF')) ) {
+                            int LA4_1 = input.LA(2);
 
-                            if ( ((LA3_1>='\u0000' && LA3_1<='\t')||(LA3_1>='\u000B' && LA3_1<='\f')||(LA3_1>='\u000E' && LA3_1<='\uFFFF')) ) {
-                                alt3=1;
+                            if ( ((LA4_1>='\u0000' && LA4_1<='\t')||(LA4_1>='\u000B' && LA4_1<='\f')||(LA4_1>='\u000E' && LA4_1<='\uFFFF')) ) {
+                                alt4=1;
                             }
 
 
                         }
-                        else if ( (LA3_0==':') ) {
-                            alt3=1;
+                        else if ( (LA4_0==':') ) {
+                            alt4=1;
                         }
 
 
-                        switch (alt3) {
+                        switch (alt4) {
                     	case 1 :
                     	    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalTask.g:759:95: ~ ( ( '\\n' | '\\r' ) )
                     	    {
@@ -257,7 +267,7 @@ public class InternalTaskLexer extends Lexer {
                     	    break;
 
                     	default :
-                    	    break loop3;
+                    	    break loop4;
                         }
                     } while (true);
 
@@ -276,7 +286,24 @@ public class InternalTaskLexer extends Lexer {
 
             }
 
-            mRULE_NL(); 
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalTask.g:759:138: ( RULE_NL )?
+            int alt6=2;
+            int LA6_0 = input.LA(1);
+
+            if ( (LA6_0=='\n'||LA6_0=='\r') ) {
+                alt6=1;
+            }
+            switch (alt6) {
+                case 1 :
+                    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalTask.g:759:138: RULE_NL
+                    {
+                    mRULE_NL(); 
+
+                    }
+                    break;
+
+            }
+
 
             }
 
@@ -293,8 +320,8 @@ public class InternalTaskLexer extends Lexer {
         try {
             int _type = RULE_PROJECT_;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalTask.g:761:15: (~ ( ( '\\n' | '\\r' | RULE_HYPHEN | RULE_WS ) ) (~ ( ( '\\n' | '\\r' ) ) )* RULE_COLON RULE_NL )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalTask.g:761:17: ~ ( ( '\\n' | '\\r' | RULE_HYPHEN | RULE_WS ) ) (~ ( ( '\\n' | '\\r' ) ) )* RULE_COLON RULE_NL
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalTask.g:761:15: (~ ( ( '\\n' | '\\r' | RULE_HYPHEN | RULE_WS ) ) (~ ( ( '\\n' | '\\r' ) ) )* RULE_COLON ( RULE_NL )? )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalTask.g:761:17: ~ ( ( '\\n' | '\\r' | RULE_HYPHEN | RULE_WS ) ) (~ ( ( '\\n' | '\\r' ) ) )* RULE_COLON ( RULE_NL )?
             {
             if ( (input.LA(1)>='\u0000' && input.LA(1)<='\b')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\u001F')||(input.LA(1)>='!' && input.LA(1)<=',')||(input.LA(1)>='.' && input.LA(1)<='\uFFFF') ) {
                 input.consume();
@@ -306,26 +333,26 @@ public class InternalTaskLexer extends Lexer {
                 throw mse;}
 
             // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalTask.g:761:52: (~ ( ( '\\n' | '\\r' ) ) )*
-            loop5:
+            loop7:
             do {
-                int alt5=2;
-                int LA5_0 = input.LA(1);
+                int alt7=2;
+                int LA7_0 = input.LA(1);
 
-                if ( (LA5_0==':') ) {
-                    int LA5_1 = input.LA(2);
+                if ( (LA7_0==':') ) {
+                    int LA7_1 = input.LA(2);
 
-                    if ( ((LA5_1>='\u0000' && LA5_1<='\t')||(LA5_1>='\u000B' && LA5_1<='\f')||(LA5_1>='\u000E' && LA5_1<='\uFFFF')) ) {
-                        alt5=1;
+                    if ( ((LA7_1>='\u0000' && LA7_1<='\t')||(LA7_1>='\u000B' && LA7_1<='\f')||(LA7_1>='\u000E' && LA7_1<='\uFFFF')) ) {
+                        alt7=1;
                     }
 
 
                 }
-                else if ( ((LA5_0>='\u0000' && LA5_0<='\t')||(LA5_0>='\u000B' && LA5_0<='\f')||(LA5_0>='\u000E' && LA5_0<='9')||(LA5_0>=';' && LA5_0<='\uFFFF')) ) {
-                    alt5=1;
+                else if ( ((LA7_0>='\u0000' && LA7_0<='\t')||(LA7_0>='\u000B' && LA7_0<='\f')||(LA7_0>='\u000E' && LA7_0<='9')||(LA7_0>=';' && LA7_0<='\uFFFF')) ) {
+                    alt7=1;
                 }
 
 
-                switch (alt5) {
+                switch (alt7) {
             	case 1 :
             	    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalTask.g:761:52: ~ ( ( '\\n' | '\\r' ) )
             	    {
@@ -343,12 +370,29 @@ public class InternalTaskLexer extends Lexer {
             	    break;
 
             	default :
-            	    break loop5;
+            	    break loop7;
                 }
             } while (true);
 
             mRULE_COLON(); 
-            mRULE_NL(); 
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalTask.g:761:79: ( RULE_NL )?
+            int alt8=2;
+            int LA8_0 = input.LA(1);
+
+            if ( (LA8_0=='\n'||LA8_0=='\r') ) {
+                alt8=1;
+            }
+            switch (alt8) {
+                case 1 :
+                    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalTask.g:761:79: RULE_NL
+                    {
+                    mRULE_NL(); 
+
+                    }
+                    break;
+
+            }
+
 
             }
 
@@ -394,9 +438,9 @@ public class InternalTaskLexer extends Lexer {
 
     public void mTokens() throws RecognitionException {
         // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalTask.g:1:8: ( RULE_WS | RULE_NL | RULE_TASK_TEXT | RULE_TEXT | RULE_PROJECT_ )
-        int alt6=5;
-        alt6 = dfa6.predict(input);
-        switch (alt6) {
+        int alt9=5;
+        alt9 = dfa9.predict(input);
+        switch (alt9) {
             case 1 :
                 // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalTask.g:1:10: RULE_WS
                 {
@@ -438,60 +482,60 @@ public class InternalTaskLexer extends Lexer {
     }
 
 
-    protected DFA6 dfa6 = new DFA6(this);
-    static final String DFA6_eotS =
+    protected DFA9 dfa9 = new DFA9(this);
+    static final String DFA9_eotS =
+        "\4\uffff\1\10\1\uffff\1\10\1\11\2\uffff";
+    static final String DFA9_eofS =
         "\12\uffff";
-    static final String DFA6_eofS =
-        "\12\uffff";
-    static final String DFA6_minS =
-        "\1\0\3\uffff\2\0\1\uffff\2\0\1\uffff";
-    static final String DFA6_maxS =
-        "\1\uffff\3\uffff\2\uffff\1\uffff\2\uffff\1\uffff";
-    static final String DFA6_acceptS =
-        "\1\uffff\1\1\1\2\1\3\2\uffff\1\4\2\uffff\1\5";
-    static final String DFA6_specialS =
-        "\1\2\3\uffff\1\4\1\0\1\uffff\1\1\1\3\1\uffff}>";
-    static final String[] DFA6_transitionS = {
+    static final String DFA9_minS =
+        "\1\0\3\uffff\4\0\2\uffff";
+    static final String DFA9_maxS =
+        "\1\uffff\3\uffff\4\uffff\2\uffff";
+    static final String DFA9_acceptS =
+        "\1\uffff\1\1\1\2\1\3\4\uffff\1\4\1\5";
+    static final String DFA9_specialS =
+        "\1\0\3\uffff\1\1\1\4\1\2\1\3\2\uffff}>";
+    static final String[] DFA9_transitionS = {
             "\11\4\1\1\1\2\2\4\1\2\22\4\1\1\14\4\1\3\14\4\1\5\uffc5\4",
             "",
             "",
             "",
-            "\12\7\1\6\2\7\1\6\54\7\1\10\uffc5\7",
-            "\12\7\1\uffff\2\7\1\uffff\54\7\1\10\uffc5\7",
+            "\12\6\1\uffff\2\6\1\uffff\54\6\1\7\uffc5\6",
+            "\12\6\1\uffff\2\6\1\uffff\54\6\1\7\uffc5\6",
+            "\12\6\1\uffff\2\6\1\uffff\54\6\1\7\uffc5\6",
+            "\12\6\1\uffff\2\6\1\uffff\54\6\1\7\uffc5\6",
             "",
-            "\12\7\1\6\2\7\1\6\54\7\1\10\uffc5\7",
-            "\12\7\1\11\2\7\1\11\54\7\1\10\uffc5\7",
             ""
     };
 
-    static final short[] DFA6_eot = DFA.unpackEncodedString(DFA6_eotS);
-    static final short[] DFA6_eof = DFA.unpackEncodedString(DFA6_eofS);
-    static final char[] DFA6_min = DFA.unpackEncodedStringToUnsignedChars(DFA6_minS);
-    static final char[] DFA6_max = DFA.unpackEncodedStringToUnsignedChars(DFA6_maxS);
-    static final short[] DFA6_accept = DFA.unpackEncodedString(DFA6_acceptS);
-    static final short[] DFA6_special = DFA.unpackEncodedString(DFA6_specialS);
-    static final short[][] DFA6_transition;
+    static final short[] DFA9_eot = DFA.unpackEncodedString(DFA9_eotS);
+    static final short[] DFA9_eof = DFA.unpackEncodedString(DFA9_eofS);
+    static final char[] DFA9_min = DFA.unpackEncodedStringToUnsignedChars(DFA9_minS);
+    static final char[] DFA9_max = DFA.unpackEncodedStringToUnsignedChars(DFA9_maxS);
+    static final short[] DFA9_accept = DFA.unpackEncodedString(DFA9_acceptS);
+    static final short[] DFA9_special = DFA.unpackEncodedString(DFA9_specialS);
+    static final short[][] DFA9_transition;
 
     static {
-        int numStates = DFA6_transitionS.length;
-        DFA6_transition = new short[numStates][];
+        int numStates = DFA9_transitionS.length;
+        DFA9_transition = new short[numStates][];
         for (int i=0; i<numStates; i++) {
-            DFA6_transition[i] = DFA.unpackEncodedString(DFA6_transitionS[i]);
+            DFA9_transition[i] = DFA.unpackEncodedString(DFA9_transitionS[i]);
         }
     }
 
-    class DFA6 extends DFA {
+    class DFA9 extends DFA {
 
-        public DFA6(BaseRecognizer recognizer) {
+        public DFA9(BaseRecognizer recognizer) {
             this.recognizer = recognizer;
-            this.decisionNumber = 6;
-            this.eot = DFA6_eot;
-            this.eof = DFA6_eof;
-            this.min = DFA6_min;
-            this.max = DFA6_max;
-            this.accept = DFA6_accept;
-            this.special = DFA6_special;
-            this.transition = DFA6_transition;
+            this.decisionNumber = 9;
+            this.eot = DFA9_eot;
+            this.eof = DFA9_eof;
+            this.min = DFA9_min;
+            this.max = DFA9_max;
+            this.accept = DFA9_accept;
+            this.special = DFA9_special;
+            this.transition = DFA9_transition;
         }
         public String getDescription() {
             return "1:1: Tokens : ( RULE_WS | RULE_NL | RULE_TASK_TEXT | RULE_TEXT | RULE_PROJECT_ );";
@@ -501,70 +545,70 @@ public class InternalTaskLexer extends Lexer {
         	int _s = s;
             switch ( s ) {
                     case 0 : 
-                        int LA6_5 = input.LA(1);
+                        int LA9_0 = input.LA(1);
 
                         s = -1;
-                        if ( ((LA6_5>='\u0000' && LA6_5<='\t')||(LA6_5>='\u000B' && LA6_5<='\f')||(LA6_5>='\u000E' && LA6_5<='9')||(LA6_5>=';' && LA6_5<='\uFFFF')) ) {s = 7;}
+                        if ( (LA9_0=='\t'||LA9_0==' ') ) {s = 1;}
 
-                        else if ( (LA6_5==':') ) {s = 8;}
+                        else if ( (LA9_0=='\n'||LA9_0=='\r') ) {s = 2;}
+
+                        else if ( (LA9_0=='-') ) {s = 3;}
+
+                        else if ( ((LA9_0>='\u0000' && LA9_0<='\b')||(LA9_0>='\u000B' && LA9_0<='\f')||(LA9_0>='\u000E' && LA9_0<='\u001F')||(LA9_0>='!' && LA9_0<=',')||(LA9_0>='.' && LA9_0<='9')||(LA9_0>=';' && LA9_0<='\uFFFF')) ) {s = 4;}
+
+                        else if ( (LA9_0==':') ) {s = 5;}
 
                         if ( s>=0 ) return s;
                         break;
                     case 1 : 
-                        int LA6_7 = input.LA(1);
+                        int LA9_4 = input.LA(1);
 
                         s = -1;
-                        if ( (LA6_7==':') ) {s = 8;}
+                        if ( ((LA9_4>='\u0000' && LA9_4<='\t')||(LA9_4>='\u000B' && LA9_4<='\f')||(LA9_4>='\u000E' && LA9_4<='9')||(LA9_4>=';' && LA9_4<='\uFFFF')) ) {s = 6;}
 
-                        else if ( ((LA6_7>='\u0000' && LA6_7<='\t')||(LA6_7>='\u000B' && LA6_7<='\f')||(LA6_7>='\u000E' && LA6_7<='9')||(LA6_7>=';' && LA6_7<='\uFFFF')) ) {s = 7;}
+                        else if ( (LA9_4==':') ) {s = 7;}
 
-                        else if ( (LA6_7=='\n'||LA6_7=='\r') ) {s = 6;}
+                        else s = 8;
 
                         if ( s>=0 ) return s;
                         break;
                     case 2 : 
-                        int LA6_0 = input.LA(1);
+                        int LA9_6 = input.LA(1);
 
                         s = -1;
-                        if ( (LA6_0=='\t'||LA6_0==' ') ) {s = 1;}
+                        if ( (LA9_6==':') ) {s = 7;}
 
-                        else if ( (LA6_0=='\n'||LA6_0=='\r') ) {s = 2;}
+                        else if ( ((LA9_6>='\u0000' && LA9_6<='\t')||(LA9_6>='\u000B' && LA9_6<='\f')||(LA9_6>='\u000E' && LA9_6<='9')||(LA9_6>=';' && LA9_6<='\uFFFF')) ) {s = 6;}
 
-                        else if ( (LA6_0=='-') ) {s = 3;}
-
-                        else if ( ((LA6_0>='\u0000' && LA6_0<='\b')||(LA6_0>='\u000B' && LA6_0<='\f')||(LA6_0>='\u000E' && LA6_0<='\u001F')||(LA6_0>='!' && LA6_0<=',')||(LA6_0>='.' && LA6_0<='9')||(LA6_0>=';' && LA6_0<='\uFFFF')) ) {s = 4;}
-
-                        else if ( (LA6_0==':') ) {s = 5;}
+                        else s = 8;
 
                         if ( s>=0 ) return s;
                         break;
                     case 3 : 
-                        int LA6_8 = input.LA(1);
+                        int LA9_7 = input.LA(1);
 
                         s = -1;
-                        if ( (LA6_8=='\n'||LA6_8=='\r') ) {s = 9;}
+                        if ( (LA9_7==':') ) {s = 7;}
 
-                        else if ( (LA6_8==':') ) {s = 8;}
+                        else if ( ((LA9_7>='\u0000' && LA9_7<='\t')||(LA9_7>='\u000B' && LA9_7<='\f')||(LA9_7>='\u000E' && LA9_7<='9')||(LA9_7>=';' && LA9_7<='\uFFFF')) ) {s = 6;}
 
-                        else if ( ((LA6_8>='\u0000' && LA6_8<='\t')||(LA6_8>='\u000B' && LA6_8<='\f')||(LA6_8>='\u000E' && LA6_8<='9')||(LA6_8>=';' && LA6_8<='\uFFFF')) ) {s = 7;}
+                        else s = 9;
 
                         if ( s>=0 ) return s;
                         break;
                     case 4 : 
-                        int LA6_4 = input.LA(1);
+                        int LA9_5 = input.LA(1);
 
                         s = -1;
-                        if ( (LA6_4=='\n'||LA6_4=='\r') ) {s = 6;}
+                        if ( ((LA9_5>='\u0000' && LA9_5<='\t')||(LA9_5>='\u000B' && LA9_5<='\f')||(LA9_5>='\u000E' && LA9_5<='9')||(LA9_5>=';' && LA9_5<='\uFFFF')) ) {s = 6;}
 
-                        else if ( ((LA6_4>='\u0000' && LA6_4<='\t')||(LA6_4>='\u000B' && LA6_4<='\f')||(LA6_4>='\u000E' && LA6_4<='9')||(LA6_4>=';' && LA6_4<='\uFFFF')) ) {s = 7;}
-
-                        else if ( (LA6_4==':') ) {s = 8;}
+                        else if ( (LA9_5==':') ) {s = 7;}
 
                         if ( s>=0 ) return s;
                         break;
             }
             NoViableAltException nvae =
-                new NoViableAltException(getDescription(), 6, _s, input);
+                new NoViableAltException(getDescription(), 9, _s, input);
             error(nvae);
             throw nvae;
         }

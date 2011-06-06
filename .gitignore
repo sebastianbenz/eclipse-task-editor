@@ -2,3 +2,4 @@ bin
 workspace
 runtime-TaskEditor.product
 target
+runtime-EclipseApplication

@@ -45,7 +45,7 @@
 				<configuration>
 					<products>
 						<product>
-							<id>de.sebastianbenz.task.application.taskeditor.id</id>
+							<id>task-editor</id>
 						</product>
 					</products>
 				</configuration>

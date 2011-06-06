@@ -10,8 +10,8 @@
   <name>RCP Parent</name>
 
   <properties>
-   <tycho-version>0.10.0</tycho-version>
-    <tycho-groupid>org.sonatype.tycho</tycho-groupid>
+   <tycho-version>0.12.0</tycho-version>
+    <tycho-groupid>org.eclipse.tycho</tycho-groupid>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <platform-version-name>indigo</platform-version-name>
     <eclipse-site>http://download.eclipse.org/releases/${platform-version-name}</eclipse-site>
@@ -81,6 +81,11 @@
               <os>win32</os>
               <ws>win32</ws>
               <arch>x86</arch>
+            </environment>
+            <environment>
+              <os>win32</os>
+              <ws>win32</ws>
+              <arch>x86_64</arch>
             </environment>
             <environment>
               <os>linux</os>

@@ -27,19 +27,19 @@ class ConfluenceGenerator implements de.sebastianbenz.task.generator.TaskGenerat
 	
 	def dispatch generate(Note note){
 		'''
-		«note.value»
+		«escape(note.value)»
 		'''
 	}
 	
 	def dispatch generate(Task task){
 		'''
-		* «task.value»
+		* «escape(task.value)»
 		'''
 	}
 	
 	def dispatch generate(Project project){
 		'''
-		h«project.level + 1». «project.value»
+		h«project.level + 1». «escape(project.value)»
 		'''
 	}
 	
@@ -47,6 +47,10 @@ class ConfluenceGenerator implements de.sebastianbenz.task.generator.TaskGenerat
 		'''
 		
 		'''
+	}
+	
+	def escape(String string){
+		return string.replaceAll("\\{", "\\\\{").replaceAll("\\}", "\\\\}")
 	}
 }
  

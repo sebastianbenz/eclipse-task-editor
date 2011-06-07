@@ -194,6 +194,25 @@
       </markerResolutionGenerator>
    </extension>
 
+  <extension point="org.eclipse.compare.contentViewers">
+    <viewer id="de.sebastianbenz.task.Task.compare.contentViewers"
+            class="de.sebastianbenz.task.ui.TaskExecutableExtensionFactory:org.eclipse.xtext.ui.compare.InjectableViewerCreator"
+            extensions="todo,taskpaper">
+    </viewer>
+  </extension>
+  <extension point="org.eclipse.compare.contentMergeViewers">
+    <viewer id="de.sebastianbenz.task.Task.compare.contentMergeViewers"
+            class="de.sebastianbenz.task.ui.TaskExecutableExtensionFactory:org.eclipse.xtext.ui.compare.InjectableViewerCreator"
+            extensions="todo,taskpaper" label="Task Compare">
+     </viewer>
+  </extension>
+  <extension point="org.eclipse.ui.editors.documentProviders">
+    <provider id="de.sebastianbenz.task.Task.editors.documentProviders"
+            class="de.sebastianbenz.task.ui.TaskExecutableExtensionFactory:org.eclipse.xtext.ui.editor.model.XtextDocumentProvider"
+            extensions="todo,taskpaper">
+    </provider>
+  </extension>
+
     <extension
             point="org.eclipse.ui.editors">
         <editor

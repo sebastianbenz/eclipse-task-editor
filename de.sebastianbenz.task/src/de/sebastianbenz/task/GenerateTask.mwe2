@@ -120,6 +120,11 @@ Workflow {
 			// 		generatorProjectName = "${projectName}.generator" 
 			//		modelFileExtension = file.extensions
 			// }
+			
+			// provides a compare view
+            fragment = compare.CompareFragment {
+                fileExtensions = file.extensions
+            }
 		}
 		language = {
 			uri = grammarURI2

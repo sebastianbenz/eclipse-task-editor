@@ -33,7 +33,7 @@ class MarkdownGenerator implements de.sebastianbenz.task.generator.TaskGenerator
 	
 	def dispatch generate(Task task){
 		'''
-		* «task.value»
+		* «task.text.substring(1)»
 		'''
 	} 
 	

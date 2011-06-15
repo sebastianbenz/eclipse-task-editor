@@ -20,27 +20,24 @@ class ConfluenceGenerator implements de.sebastianbenz.task.generator.TaskGenerat
 	override StringConcatenation generate(TaskModel taskModel){
 		'''
 		«FOR content : taskModel.contents»
-			«generate(content)»
+			«generate(content)»«FOR tag : content.tags»{color:gray}«tag»{color} «ENDFOR»
 		«ENDFOR»
 		''' 
 	}  
 	
 	def dispatch generate(Note note){
 		'''
-		«escape(note.value)»
-		'''
+		{color:gray}«escape(note.value)»{color}'''
 	}
 	
 	def dispatch generate(Task task){
 		'''
-		* «escape(task.value)»
-		'''
+		*  «IF task.done»-«ENDIF»«escape(task.value.trim())» «IF task.done»-«ENDIF»'''
 	}
 	
 	def dispatch generate(Project project){
 		'''
-		h«project.level + 1». «escape(project.value)»
-		'''
+		h«project.level + 1». «escape(project.value)»'''
 	}
 	
 	def dispatch generate(EmptyLine emptyLine){

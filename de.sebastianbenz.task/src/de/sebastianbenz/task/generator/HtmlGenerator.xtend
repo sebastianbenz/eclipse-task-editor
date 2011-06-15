@@ -23,6 +23,33 @@ class HtmlGenerator implements de.sebastianbenz.task.generator.TaskGenerator {
 		<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
 		<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
 		<head> 
+		<style type="text/css">
+			.done {
+				text-decoration: line-through;
+			}
+			.tag {
+				color: gray;
+			}
+			body {
+			  font-family: "Helvetica Neue", helvetica, arial, sans-serif;
+			  font-size: 14px;
+			  line-height: 1.4em;
+			  color: #333333;
+			}
+			ul{
+				list-style: none;
+				margin-left: 0;
+				padding-left: 0em;
+				text-indent: 0em;
+			}
+			ul li:before {
+				content: "\2D";	
+				margin-right: 0.5em;
+			}
+			.note{
+				color: gray;
+			}
+		</style
 		</head> 
 		<body> 
 		«FOR content : taskModel.contents»
@@ -34,20 +61,20 @@ class HtmlGenerator implements de.sebastianbenz.task.generator.TaskGenerator {
 	
 	def dispatch generate(Note note){
 		'''
-		<p>«note.value»</p>
+		<p class="note">«note.value»«generateTags(note)»</p>
 		'''
 	}
 	
 	def dispatch generate(Task task){
 		'''
-		<ul><li>«task.value»</li></ul>
+		<ul><li«IF task.done» class="done"«ENDIF»>«task.value.trim()»«generateTags(task)»</li></ul>		
 		'''
 	}
 	
 	def dispatch generate(Project project){
 		var level = project.level + 1
 		'''
-		<h«level»>«project.value»</h«level»>
+		<h«level»>«project.value»«generateTags(project)»</h«level»>
 		'''
 	}
 	
@@ -55,6 +82,10 @@ class HtmlGenerator implements de.sebastianbenz.task.generator.TaskGenerator {
 		'''
 		
 		'''
+	}
+	
+	def generateTags(Content content){
+		'''«FOR tag : content.tags»<span class="tag">«tag»</span> «ENDFOR»'''
 	}
 }
  

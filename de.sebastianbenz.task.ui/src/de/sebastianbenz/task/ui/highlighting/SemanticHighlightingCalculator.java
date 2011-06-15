@@ -116,11 +116,6 @@ public class SemanticHighlightingCalculator implements ISemanticHighlightingCalc
 			return node.getOffset() + content.getIntend().size();
 		}
 		
-		private int length(Content content) {
-			ICompositeNode node = NodeModelUtils.getNode(content);
-			return node.getLength();
-		}
-
 		@Override
 		public Boolean caseProject(Project project) {
 			int level = project.getIntend().size();

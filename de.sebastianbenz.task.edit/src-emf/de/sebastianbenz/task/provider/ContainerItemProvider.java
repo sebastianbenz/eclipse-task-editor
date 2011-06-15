@@ -149,6 +149,11 @@ public class ContainerItemProvider
 			(createChildParameter
 				(TaskPackage.Literals.CONTAINER__CHILDREN,
 				 TaskFactory.eINSTANCE.createEmptyLine()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(TaskPackage.Literals.CONTAINER__CHILDREN,
+				 TaskFactory.eINSTANCE.createCode()));
 	}
 
 	/**

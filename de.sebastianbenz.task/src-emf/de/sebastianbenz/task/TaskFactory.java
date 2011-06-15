@@ -90,6 +90,15 @@ public interface TaskFactory extends EFactory
 	EmptyLine createEmptyLine();
 
 	/**
+	 * Returns a new object of class '<em>Code</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Code</em>'.
+	 * @generated
+	 */
+	Code createCode();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

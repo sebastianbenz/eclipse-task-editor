@@ -124,6 +124,11 @@ public class TaskAdapterFactory extends AdapterFactoryImpl
 				return createEmptyLineAdapter();
 			}
 			@Override
+			public Adapter caseCode(Code object)
+			{
+				return createCodeAdapter();
+			}
+			@Override
 			public Adapter defaultCase(EObject object)
 			{
 				return createEObjectAdapter();
@@ -276,6 +281,21 @@ public class TaskAdapterFactory extends AdapterFactoryImpl
 	 * @generated
 	 */
 	public Adapter createEmptyLineAdapter()
+	{
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.sebastianbenz.task.Code <em>Code</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.sebastianbenz.task.Code
+	 * @generated
+	 */
+	public Adapter createCodeAdapter()
 	{
 		return null;
 	}

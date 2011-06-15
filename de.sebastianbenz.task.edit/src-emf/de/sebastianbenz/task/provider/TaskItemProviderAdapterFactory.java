@@ -243,6 +243,29 @@ public class TaskItemProviderAdapterFactory extends TaskAdapterFactory implement
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link de.sebastianbenz.task.Code} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected CodeItemProvider codeItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link de.sebastianbenz.task.Code}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createCodeAdapter() {
+		if (codeItemProvider == null) {
+			codeItemProvider = new CodeItemProvider(this);
+		}
+
+		return codeItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -357,6 +380,7 @@ public class TaskItemProviderAdapterFactory extends TaskAdapterFactory implement
 		if (tagItemProvider != null) tagItemProvider.dispose();
 		if (globalTaskModelItemProvider != null) globalTaskModelItemProvider.dispose();
 		if (emptyLineItemProvider != null) emptyLineItemProvider.dispose();
+		if (codeItemProvider != null) codeItemProvider.dispose();
 	}
 
 }

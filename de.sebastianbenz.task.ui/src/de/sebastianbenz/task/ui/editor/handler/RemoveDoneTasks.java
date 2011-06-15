@@ -54,9 +54,6 @@ public class RemoveDoneTasks extends AbstractHandler {
 
 	private void deleteLine(final IXtextDocument document, Task task)
 			throws BadLocationException {
-//		ICompositeNode node = NodeModelUtils.getNode(task);
-//		IRegion line = document.getLineInformationOfOffset(node.getOffset());
-//		document.replace(line.getOffset(), line.getLength(), "");
 		EcoreUtil.delete(task);
 	}
 }

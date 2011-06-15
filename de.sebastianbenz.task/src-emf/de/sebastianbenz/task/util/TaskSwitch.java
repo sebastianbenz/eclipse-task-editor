@@ -170,6 +170,15 @@ public class TaskSwitch<T>
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case TaskPackage.CODE:
+			{
+				Code code = (Code)theEObject;
+				T result = caseCode(code);
+				if (result == null) result = caseContent(code);
+				if (result == null) result = caseContainer(code);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -314,6 +323,22 @@ public class TaskSwitch<T>
 	 * @generated
 	 */
 	public T caseEmptyLine(EmptyLine object)
+	{
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Code</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Code</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseCode(Code object)
 	{
 		return null;
 	}

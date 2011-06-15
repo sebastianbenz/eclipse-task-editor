@@ -100,12 +100,20 @@ public class ParserTest extends AbstractTest {
 		assertThat(parse(" n \nProject:\n"), are(Note.class, Project.class));
 	}
 	
-//	@Test
-//	public void noSyntaxErrorWhenLastLineHasNoLineBreak() throws Exception {
-//		assertThat(parse("a project:"), are(Project.class));
-//		assertThat(parse("- a task"), are(Task.class));
-//		assertThat(parse("text"), are(Note.class));
-//	}
+	@Test
+	public void noSyntaxErrorWhenLastLineHasNoLineBreak() throws Exception {
+		assertThat(parse("a project:"), are(Project.class));
+		assertThat(parse("- a task"), are(Task.class));
+		assertThat(parse("text"), are(Note.class));
+	}
+	
+	@Test
+	public void parsesCode() throws Exception {
+		assertThat(parse("'''Here is some code'''"), are(Code.class));
+		assertThat(parse("'''\n" +
+						 "  multiline code" +
+						 "'''\n"), are(Code.class));
+	}
 	
 	
 }

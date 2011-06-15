@@ -174,6 +174,11 @@ public class TaskModelItemProvider
 			(createChildParameter
 				(TaskPackage.Literals.TASK_MODEL__CONTENTS,
 				 TaskFactory.eINSTANCE.createEmptyLine()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(TaskPackage.Literals.TASK_MODEL__CONTENTS,
+				 TaskFactory.eINSTANCE.createCode()));
 	}
 
 	/**

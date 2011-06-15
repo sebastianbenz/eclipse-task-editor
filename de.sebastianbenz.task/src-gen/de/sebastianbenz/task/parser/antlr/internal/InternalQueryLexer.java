@@ -1143,9 +1143,9 @@ public class InternalQueryLexer extends Lexer {
     static final String DFA11_eofS =
         "\107\uffff";
     static final String DFA11_minS =
-        "\1\0\1\162\1\174\1\156\1\46\1\157\1\75\2\uffff\1\162\1\uffff\1"+
-        "\141\2\uffff\2\75\1\60\1\52\2\0\2\uffff\1\0\3\uffff\1\144\1\uffff"+
-        "\1\164\4\uffff\1\157\1\uffff\1\163\1\170\6\uffff\1\60\2\0\3\uffff"+
+        "\1\0\1\162\1\174\1\156\1\46\1\157\1\75\2\uffff\1\162\1\uffff\1\141"+
+        "\2\uffff\2\75\1\60\1\52\2\0\2\uffff\1\0\3\uffff\1\144\1\uffff\1"+
+        "\164\4\uffff\1\157\1\uffff\1\163\1\170\6\uffff\1\60\2\0\3\uffff"+
         "\2\0\1\152\1\153\1\164\2\0\1\uffff\1\0\3\uffff\1\145\3\0\1\143\2"+
         "\uffff\1\164\1\0\1\uffff";
     static final String DFA11_maxS =
@@ -1161,8 +1161,8 @@ public class InternalQueryLexer extends Lexer {
         "\1\31\1\1\7\uffff\1\27\1\uffff\1\30\1\3\1\5\5\uffff\1\13\1\14\2"+
         "\uffff\1\11";
     static final String DFA11_specialS =
-        "\1\15\21\uffff\1\6\1\0\2\uffff\1\1\25\uffff\1\14\1\7\3\uffff\1"+
-        "\4\1\12\3\uffff\1\10\1\2\1\uffff\1\16\4\uffff\1\11\1\5\1\13\4\uffff"+
+        "\1\15\21\uffff\1\6\1\0\2\uffff\1\1\25\uffff\1\14\1\7\3\uffff\1\4"+
+        "\1\12\3\uffff\1\10\1\2\1\uffff\1\16\4\uffff\1\11\1\5\1\13\4\uffff"+
         "\1\3\1\uffff}>";
     static final String[] DFA11_transitionS = {
             "\11\24\2\25\2\24\1\25\22\24\1\25\1\6\1\22\3\24\1\4\1\23\1\7"+
@@ -1225,8 +1225,8 @@ public class InternalQueryLexer extends Lexer {
             "\1\75",
             "\1\76",
             "\1\77",
-            "\11\67\2\70\2\67\1\70\22\67\1\70\11\67\1\66\4\67\1\100\12"+
-            "\67\1\70\uffc5\67",
+            "\11\67\2\70\2\67\1\70\22\67\1\70\11\67\1\66\4\67\1\100\12\67"+
+            "\1\70\uffc5\67",
             "\11\67\2\70\2\67\1\70\22\67\1\70\11\67\1\66\17\67\1\70\uffc5"+
             "\67",
             "",

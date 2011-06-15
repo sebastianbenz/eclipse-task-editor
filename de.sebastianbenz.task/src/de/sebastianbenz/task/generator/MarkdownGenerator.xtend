@@ -10,6 +10,7 @@ import static com.google.common.collect.Iterables.*
 import de.sebastianbenz.task.TaskModel
 import de.sebastianbenz.task.Content
 import de.sebastianbenz.task.Task
+import de.sebastianbenz.task.Code
 import de.sebastianbenz.task.Note
 import de.sebastianbenz.task.Project
 import de.sebastianbenz.task.EmptyLine
@@ -20,7 +21,7 @@ class MarkdownGenerator implements de.sebastianbenz.task.generator.TaskGenerator
 	override StringConcatenation generate(TaskModel taskModel){
 		'''
 		«FOR content : taskModel.contents»
-			«generate(content)»
+		«generate(content)»
 		«ENDFOR»
 		'''
 	} 
@@ -36,6 +37,12 @@ class MarkdownGenerator implements de.sebastianbenz.task.generator.TaskGenerator
 		* «task.text.substring(1)»
 		'''
 	} 
+	
+	def dispatch generate(Code code){
+		var lines = code.value.split("\n");
+		'''«FOR line : lines»«'    ' + line»«ENDFOR»
+		'''
+	}
 	
 	def dispatch generate(Project project){
 		var i = 0;

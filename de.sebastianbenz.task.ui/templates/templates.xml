@@ -1,2 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<templates><template autoinsert="false" context="de.sebastianbenz.task.Task.Content" id="project" deleted="false" description="Create a new project" enabled="true" name="Project">${title}:${cursor}</template><template id="task" autoinsert="false" context="de.sebastianbenz.task.Task.Content" deleted="false" description="Create a new task" enabled="true" name="Task">- ${description}${cursor}</template></templates>
+<templates>
+	<template autoinsert="false" context="de.sebastianbenz.task.Task.Content"
+		id="project" deleted="false" description="Create a new project"
+		enabled="true" name="Project">${title}:${cursor}</template>
+	<template id="task" autoinsert="false"
+		context="de.sebastianbenz.task.Task.Content" deleted="false"
+		description="Create a new task" enabled="true" name="Task">-
+		${description}${cursor}</template>
+	<template id="code" autoinsert="false"
+		context="de.sebastianbenz.task.Task.Code" deleted="false"
+		description="Create a new code listing" enabled="true" name="Code">-
+		'''${cursor}'''</template>
+</templates>

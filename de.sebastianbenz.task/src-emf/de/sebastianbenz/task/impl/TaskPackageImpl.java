@@ -6,6 +6,7 @@
  */
 package de.sebastianbenz.task.impl;
 
+import de.sebastianbenz.task.Code;
 import de.sebastianbenz.task.Content;
 import de.sebastianbenz.task.EmptyLine;
 import de.sebastianbenz.task.GlobalTaskModel;
@@ -94,6 +95,13 @@ public class TaskPackageImpl extends EPackageImpl implements TaskPackage
 	 * @generated
 	 */
 	private EClass emptyLineEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass codeEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -373,6 +381,16 @@ public class TaskPackageImpl extends EPackageImpl implements TaskPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getCode()
+	{
+		return codeEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public TaskFactory getTaskFactory()
 	{
 		return (TaskFactory)getEFactoryInstance();
@@ -427,6 +445,8 @@ public class TaskPackageImpl extends EPackageImpl implements TaskPackage
 		createEReference(containerEClass, CONTAINER__CHILDREN);
 
 		emptyLineEClass = createEClass(EMPTY_LINE);
+
+		codeEClass = createEClass(CODE);
 	}
 
 	/**
@@ -465,6 +485,7 @@ public class TaskPackageImpl extends EPackageImpl implements TaskPackage
 		projectEClass.getESuperTypes().add(this.getContent());
 		globalTaskModelEClass.getESuperTypes().add(this.getContainer());
 		emptyLineEClass.getESuperTypes().add(this.getContent());
+		codeEClass.getESuperTypes().add(this.getContent());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(taskModelEClass, TaskModel.class, "TaskModel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -502,6 +523,8 @@ public class TaskPackageImpl extends EPackageImpl implements TaskPackage
 		initEReference(getContainer_Children(), this.getContent(), this.getContent_Parent(), "children", null, 0, -1, de.sebastianbenz.task.Container.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(emptyLineEClass, EmptyLine.class, "EmptyLine", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(codeEClass, Code.class, "Code", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		// Create resource
 		createResource(eNS_URI);

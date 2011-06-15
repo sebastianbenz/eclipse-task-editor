@@ -38,4 +38,5 @@
         eType="#//Content" transient="true" derived="true" eOpposite="#//Content/parent"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EmptyLine" eSuperTypes="#//Content"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Code" eSuperTypes="#//Content"/>
 </ecore:EPackage>

@@ -165,6 +165,16 @@ ruleContent returns [EObject current=null]
         $current = $this_EmptyLine_3.current; 
         afterParserOrEnumRuleCall();
     }
+
+    |
+    { 
+        newCompositeNode(grammarAccess.getContentAccess().getCodeParserRuleCall_4()); 
+    }
+    this_Code_4=ruleCode
+    { 
+        $current = $this_Code_4.current; 
+        afterParserOrEnumRuleCall();
+    }
 )
 ;
 
@@ -343,6 +353,63 @@ ruleProject returns [EObject current=null]
 
 
 
+// Entry rule entryRuleCode
+entryRuleCode returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getCodeRule()); }
+	 iv_ruleCode=ruleCode 
+	 { $current=$iv_ruleCode.current; } 
+	 EOF 
+;
+
+// Rule Code
+ruleCode returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+((
+(
+		lv_intend_0_0=RULE_WS
+		{
+			newLeafNode(lv_intend_0_0, grammarAccess.getCodeAccess().getIntendWSTerminalRuleCall_0_0()); 
+		}
+		{
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getCodeRule());
+	        }
+       		addWithLastConsumed(
+       			$current, 
+       			"intend",
+        		lv_intend_0_0, 
+        		"WS");
+	    }
+
+)
+)*(
+(
+		lv_text_1_0=RULE_CODE_
+		{
+			newLeafNode(lv_text_1_0, grammarAccess.getCodeAccess().getTextCODE_TerminalRuleCall_1_0()); 
+		}
+		{
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getCodeRule());
+	        }
+       		setWithLastConsumed(
+       			$current, 
+       			"text",
+        		lv_text_1_0, 
+        		"CODE_");
+	    }
+
+)
+))
+;
+
+
+
+
+
 // Entry rule entryRuleEmptyLine
 entryRuleEmptyLine returns [EObject current=null] 
 	:
@@ -420,6 +487,8 @@ ruleSpaces returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
 RULE_WS : (' '|'\t');
 
 RULE_NL : '\r'? '\n';
+
+RULE_CODE_ : '\'\'\'' ( options {greedy=false;} : . )*'\'\'\'' RULE_NL?;
 
 RULE_TASK_TEXT : RULE_HYPHEN ~(('\n'|'\r'))* RULE_NL?;
 

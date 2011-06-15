@@ -10,6 +10,7 @@ import static com.google.common.collect.Iterables.*
 import de.sebastianbenz.task.TaskModel
 import de.sebastianbenz.task.Content
 import de.sebastianbenz.task.Task
+import de.sebastianbenz.task.Code
 import de.sebastianbenz.task.Note
 import de.sebastianbenz.task.Project
 import de.sebastianbenz.task.EmptyLine
@@ -43,6 +44,14 @@ class ConfluenceGenerator implements de.sebastianbenz.task.generator.TaskGenerat
 	def dispatch generate(EmptyLine emptyLine){
 		'''
 		
+		'''
+	}
+	
+	def dispatch generate(Code code){
+		''' 
+		{code}
+		«code.value»
+		{code}
 		'''
 	}
 	

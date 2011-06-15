@@ -51,6 +51,7 @@ public class TaskGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cTaskParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		private final RuleCall cNoteParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
 		private final RuleCall cEmptyLineParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
+		private final RuleCall cCodeParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
 		
 		/// *
 		//
@@ -65,10 +66,10 @@ public class TaskGrammarAccess extends AbstractGrammarElementFinder {
 		//WS WS PROJECT 
 		//
 		// * / Content:
-		//	Project | Task | Note | EmptyLine;
+		//	Project | Task | Note | EmptyLine | Code;
 		public ParserRule getRule() { return rule; }
 
-		//Project | Task | Note | EmptyLine
+		//Project | Task | Note | EmptyLine | Code
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//Project
@@ -82,6 +83,9 @@ public class TaskGrammarAccess extends AbstractGrammarElementFinder {
 
 		//EmptyLine
 		public RuleCall getEmptyLineParserRuleCall_3() { return cEmptyLineParserRuleCall_3; }
+
+		//Code
+		public RuleCall getCodeParserRuleCall_4() { return cCodeParserRuleCall_4; }
 	}
 
 	public class TaskElements extends AbstractParserRuleElementFinder {
@@ -168,6 +172,34 @@ public class TaskGrammarAccess extends AbstractGrammarElementFinder {
 		public RuleCall getTextPROJECT_TerminalRuleCall_1_0() { return cTextPROJECT_TerminalRuleCall_1_0; }
 	}
 
+	public class CodeElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Code");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cIntendAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cIntendWSTerminalRuleCall_0_0 = (RuleCall)cIntendAssignment_0.eContents().get(0);
+		private final Assignment cTextAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cTextCODE_TerminalRuleCall_1_0 = (RuleCall)cTextAssignment_1.eContents().get(0);
+		
+		//Code:
+		//	intend+=WS* text=CODE_;
+		public ParserRule getRule() { return rule; }
+
+		//intend+=WS* text=CODE_
+		public Group getGroup() { return cGroup; }
+
+		//intend+=WS*
+		public Assignment getIntendAssignment_0() { return cIntendAssignment_0; }
+
+		//WS
+		public RuleCall getIntendWSTerminalRuleCall_0_0() { return cIntendWSTerminalRuleCall_0_0; }
+
+		//text=CODE_
+		public Assignment getTextAssignment_1() { return cTextAssignment_1; }
+
+		//CODE_
+		public RuleCall getTextCODE_TerminalRuleCall_1_0() { return cTextCODE_TerminalRuleCall_1_0; }
+	}
+
 	public class EmptyLineElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "EmptyLine");
 		private final Assignment cTextAssignment = (Assignment)rule.eContents().get(1);
@@ -210,10 +242,12 @@ public class TaskGrammarAccess extends AbstractGrammarElementFinder {
 	private TaskElements pTask;
 	private NoteElements pNote;
 	private ProjectElements pProject;
+	private CodeElements pCode;
 	private EmptyLineElements pEmptyLine;
 	private SpacesElements pSpaces;
 	private TerminalRule tWS;
 	private TerminalRule tNL;
+	private TerminalRule tCODE_;
 	private TerminalRule tTASK_TEXT;
 	private TerminalRule tTEXT;
 	private TerminalRule tPROJECT_;
@@ -256,7 +290,7 @@ public class TaskGrammarAccess extends AbstractGrammarElementFinder {
 	//WS WS PROJECT 
 	//
 	// * / Content:
-	//	Project | Task | Note | EmptyLine;
+	//	Project | Task | Note | EmptyLine | Code;
 	public ContentElements getContentAccess() {
 		return (pContent != null) ? pContent : (pContent = new ContentElements());
 	}
@@ -295,6 +329,16 @@ public class TaskGrammarAccess extends AbstractGrammarElementFinder {
 		return getProjectAccess().getRule();
 	}
 
+	//Code:
+	//	intend+=WS* text=CODE_;
+	public CodeElements getCodeAccess() {
+		return (pCode != null) ? pCode : (pCode = new CodeElements());
+	}
+	
+	public ParserRule getCodeRule() {
+		return getCodeAccess().getRule();
+	}
+
 	//EmptyLine:
 	//	text=Spaces;
 	public EmptyLineElements getEmptyLineAccess() {
@@ -325,6 +369,12 @@ public class TaskGrammarAccess extends AbstractGrammarElementFinder {
 	//	"\r"? "\n";
 	public TerminalRule getNLRule() {
 		return (tNL != null) ? tNL : (tNL = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "NL"));
+	} 
+
+	//terminal CODE_:
+	//	"\'\'\'"->"\'\'\'" NL?;
+	public TerminalRule getCODE_Rule() {
+		return (tCODE_ != null) ? tCODE_ : (tCODE_ = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "CODE_"));
 	} 
 
 	//terminal TASK_TEXT:

@@ -28,6 +28,9 @@ public class TokenHighlightingConfiguration extends
 		if ("RULE_PROJECT_".equals(tokenName)) {
 			return HighlightingConfiguration.PROJECT1_ID;
 		}
+		if ("RULE_CODE_".equals(tokenName)) {
+			return HighlightingConfiguration.CODE_ID;
+		}
 		return super.calculateId(tokenName, tokenType);
 	}
 

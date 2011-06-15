@@ -11,6 +11,7 @@ import de.sebastianbenz.task.TaskModel
 import de.sebastianbenz.task.Content
 import de.sebastianbenz.task.Task
 import de.sebastianbenz.task.Note
+import de.sebastianbenz.task.Code
 import de.sebastianbenz.task.Project
 import de.sebastianbenz.task.EmptyLine
 import org.eclipse.xtext.xtend2.lib.StringConcatenation
@@ -83,6 +84,15 @@ class HtmlGenerator implements de.sebastianbenz.task.generator.TaskGenerator {
 		
 		'''
 	}
+	
+	def dispatch generate(Code code){
+		''' 
+		<pre><code>
+		«code.value»
+		<pre><code>
+		'''
+	}
+	
 	
 	def generateTags(Content content){
 		'''«FOR tag : content.tags»<span class="tag">«tag»</span> «ENDFOR»'''

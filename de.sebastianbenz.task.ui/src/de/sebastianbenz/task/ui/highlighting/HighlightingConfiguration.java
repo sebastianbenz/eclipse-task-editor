@@ -31,6 +31,7 @@ public class HighlightingConfiguration extends DefaultHighlightingConfiguration 
 	public static final String TASK_DONE_ID = "taskDone";
 	public static final String TASK_OPEN_ID = "taskOpen";
 	public static final String TAG_ID = "tag";
+	public static final String CODE_ID = "code";
 
 	public void configure(IHighlightingConfigurationAcceptor acceptor) {
 		acceptor.acceptDefaultHighlighting(KEYWORD_ID, "Keyword", defaultTextStyle());
@@ -52,6 +53,7 @@ public class HighlightingConfiguration extends DefaultHighlightingConfiguration 
 		acceptor.acceptDefaultHighlighting(TASK_DONE_ID, "Task closed", taskDoneTextStyle());
 		acceptor.acceptDefaultHighlighting(TASK_OPEN_ID, "Task open", taskOpenTextStyle());
 		acceptor.acceptDefaultHighlighting(TAG_ID, "Tags", tagTextStyle());
+		acceptor.acceptDefaultHighlighting(CODE_ID, "Code", codeTextStyle());
 	}
 
 	public TextStyle taskOpenTextStyle() {
@@ -115,6 +117,12 @@ public class HighlightingConfiguration extends DefaultHighlightingConfiguration 
 		textStyle.setStyle(TextAttribute.UNDERLINE);
 		textStyle.setColor(grey());
 		return textStyle;
+	}
+	
+	public TextStyle codeTextStyle() {
+		TextStyle result = super.defaultTextStyle().copy();
+		result.setColor(new RGB(42, 0, 255));
+		return result;
 	}
 	
 	@Override

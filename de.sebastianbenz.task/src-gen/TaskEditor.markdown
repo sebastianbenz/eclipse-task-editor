@@ -1,0 +1,48 @@
+# Simple Task Editor
+		
+## Task Editor
+		
+All tasks related to the editor components.
+		
+*  Enable folding 
+*  Show structure in outline view @done
+*  Reduce tabsize to 2 @done
+*  Automatic line wrap in editor should be aware of the intendation 
+*  Strip tags from label provider  @done
+*  Look into whether it is possible to automatically increase the space after a heading.
+*  make linebreak after last task / text / project not required  @done
+*  pressing enter after a task should automatically create a new task @done
+*  pressing enter after a project declaration should automatically intend the next line @done
+*  enable single character text @done
+*  Currently email addresses are recognized as tags -> tags should have a whitespace as prefix @done
+*  Add support for subtasks @done
+*  do not strikethrough spaces after done task, e.g. "-  task_____@done" @done 
+		
+## Query View
+		
+All tasks related to the query view.
+		
+*  view should show result tree @done
+*  view should show text field for queries  @done
+*  should store last entered search @done
+*  equal/not-equal query by project  @done
+*  equal/not-equal query by tag  @done 
+*  equal/not-equal query by tag value  @done
+*  and or queries  @done
+*  if values are numbers enable greater less than  @done 
+*  View should keep expanded elements when model is updated @done
+*  Look into whether it is possible to let the outline view show the dirty state
+		
+## RCP
+		
+All tasks related to the RCP application.
+		
+*   enable drag and drop
+*   store open todos files @done
+*   Ctr + T should create a new todo file @done
+*   change title @done
+*   add icons @done
+*   setup build @done
+*   remove java from menu <-  after next xtext milestone @done
+*   add file wizard @done
+		

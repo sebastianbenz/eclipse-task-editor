@@ -582,6 +582,79 @@ public interface TaskPackage extends EPackage
 	 */
 	int EMPTY_LINE_FEATURE_COUNT = CONTENT_FEATURE_COUNT + 0;
 
+	/**
+	 * The meta object id for the '{@link de.sebastianbenz.task.impl.CodeImpl <em>Code</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.sebastianbenz.task.impl.CodeImpl
+	 * @see de.sebastianbenz.task.impl.TaskPackageImpl#getCode()
+	 * @generated
+	 */
+	int CODE = 9;
+
+	/**
+	 * The feature id for the '<em><b>Children</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CODE__CHILDREN = CONTENT__CHILDREN;
+
+	/**
+	 * The feature id for the '<em><b>Intend</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CODE__INTEND = CONTENT__INTEND;
+
+	/**
+	 * The feature id for the '<em><b>Text</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CODE__TEXT = CONTENT__TEXT;
+
+	/**
+	 * The feature id for the '<em><b>Parent</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CODE__PARENT = CONTENT__PARENT;
+
+	/**
+	 * The feature id for the '<em><b>Task Model</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CODE__TASK_MODEL = CONTENT__TASK_MODEL;
+
+	/**
+	 * The feature id for the '<em><b>Tags</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CODE__TAGS = CONTENT__TAGS;
+
+	/**
+	 * The number of structural features of the '<em>Code</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CODE_FEATURE_COUNT = CONTENT_FEATURE_COUNT + 0;
+
 
 	/**
 	 * Returns the meta object for class '{@link de.sebastianbenz.task.TaskModel <em>Model</em>}'.
@@ -806,6 +879,16 @@ public interface TaskPackage extends EPackage
 	EClass getEmptyLine();
 
 	/**
+	 * Returns the meta object for class '{@link de.sebastianbenz.task.Code <em>Code</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Code</em>'.
+	 * @see de.sebastianbenz.task.Code
+	 * @generated
+	 */
+	EClass getCode();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1013,6 +1096,16 @@ public interface TaskPackage extends EPackage
 		 * @generated
 		 */
 		EClass EMPTY_LINE = eINSTANCE.getEmptyLine();
+
+		/**
+		 * The meta object literal for the '{@link de.sebastianbenz.task.impl.CodeImpl <em>Code</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.sebastianbenz.task.impl.CodeImpl
+		 * @see de.sebastianbenz.task.impl.TaskPackageImpl#getCode()
+		 * @generated
+		 */
+		EClass CODE = eINSTANCE.getCode();
 
 	}
 

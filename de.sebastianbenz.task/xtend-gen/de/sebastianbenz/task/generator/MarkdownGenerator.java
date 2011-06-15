@@ -1,5 +1,6 @@
 package de.sebastianbenz.task.generator;
 
+import de.sebastianbenz.task.Code;
 import de.sebastianbenz.task.Content;
 import de.sebastianbenz.task.EmptyLine;
 import de.sebastianbenz.task.Note;
@@ -40,10 +41,30 @@ public class MarkdownGenerator implements TaskGenerator {
   protected StringConcatenation _generate(final Task task) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("* ");
-    String _value = task.getValue();
-    _builder.append(_value, "");
+    String _text = task.getText();
+    String _substring = _text.substring(1);
+    _builder.append(_substring, "");
     _builder.newLineIfNotEmpty();
     return _builder;
+  }
+  
+  protected StringConcatenation _generate(final Code code) {
+    StringConcatenation _xblockexpression = null;
+    {
+      String _value = code.getValue();
+      String[] _split = _value.split("\n");
+      String[] lines = _split;
+      StringConcatenation _builder = new StringConcatenation();
+      {
+        for(String line : lines) {
+          String _operator_plus = StringExtensions.operator_plus("    ", line);
+          _builder.append(_operator_plus, "");
+        }
+      }
+      _builder.newLineIfNotEmpty();
+      _xblockexpression = (_builder);
+    }
+    return _xblockexpression;
   }
   
   protected StringConcatenation _generate(final Project project) {
@@ -78,17 +99,20 @@ public class MarkdownGenerator implements TaskGenerator {
     return _builder;
   }
   
-  public StringConcatenation generate(final Content emptyLine) {
-    if ((emptyLine instanceof EmptyLine)) {
-      return _generate((EmptyLine)emptyLine);
-    } else if ((emptyLine instanceof Note)) {
-      return _generate((Note)emptyLine);
-    } else if ((emptyLine instanceof Project)) {
-      return _generate((Project)emptyLine);
-    } else if ((emptyLine instanceof Task)) {
-      return _generate((Task)emptyLine);
+  public StringConcatenation generate(final Content code) {
+    if ((code instanceof Code)) {
+      return _generate((Code)code);
+    } else if ((code instanceof EmptyLine)) {
+      return _generate((EmptyLine)code);
+    } else if ((code instanceof Note)) {
+      return _generate((Note)code);
+    } else if ((code instanceof Project)) {
+      return _generate((Project)code);
+    } else if ((code instanceof Task)) {
+      return _generate((Task)code);
     } else {
-      throw new IllegalArgumentException();
+      throw new IllegalArgumentException("Unhandled parameter types: " +
+        java.util.Arrays.<Object>asList(code).toString());
     }
   }
 }

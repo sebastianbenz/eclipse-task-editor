@@ -1,22 +1,14 @@
 package de.sebastianbenz.task.app.actions;
 
 import java.io.File;
-import java.text.MessageFormat;
 
-import org.eclipse.core.filesystem.EFS;
-import org.eclipse.core.filesystem.IFileStore;
-import org.eclipse.core.runtime.CoreException;
 import org.eclipse.jface.action.Action;
 import org.eclipse.jface.action.IAction;
-import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.FileDialog;
-import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.IWorkbenchWindowActionDelegate;
-import org.eclipse.ui.ide.FileStoreEditorInput;
-import org.eclipse.ui.ide.IDE;
 
 
 public class OpenFileAction extends Action implements IWorkbenchWindowActionDelegate {
@@ -59,9 +51,6 @@ public class OpenFileAction extends Action implements IWorkbenchWindowActionDele
 		File file= queryFile();
 		if (file != null) {
 			EditorOpener.open(fWindow, file.toString());
-		} else if (file != null) {
-			String msg = MessageFormat.format("File is null: {0}", new String[] { file.getName() }); //$NON-NLS-1$
-			MessageDialog.openWarning(fWindow.getShell(), "Problem", msg); //$NON-NLS-1$
-		}
+		} 
 	}
 }

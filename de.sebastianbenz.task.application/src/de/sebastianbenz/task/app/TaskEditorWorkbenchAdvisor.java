@@ -1,7 +1,5 @@
 package de.sebastianbenz.task.app;
 
-import java.io.File;
-
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.swt.graphics.Point;

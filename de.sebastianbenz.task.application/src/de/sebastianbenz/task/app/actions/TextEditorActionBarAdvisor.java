@@ -104,6 +104,8 @@ public final class TextEditorActionBarAdvisor extends ActionBarAdvisor {
 		menu.add(getAction(ActionFactory.QUIT.getId()));
 		menu.add(new GroupMarker(IWorkbenchActionConstants.FILE_END));
 		menu.add(new GroupMarker(IWorkbenchActionConstants.FILE_END));
+		
+		menu.add(getAction(ActionFactory.PREFERENCES.getId()));
 		return menu;
 	}
 

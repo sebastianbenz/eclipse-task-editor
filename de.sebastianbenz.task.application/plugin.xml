@@ -106,9 +106,18 @@
                value="icons/Icon_64.png">
          </property>
          <property
+               name="startupProgressRect"
+               value="80,290,390,15"/>
+         <property
+               name="startupForegroundColor"
+               value="000000"/>
+         <property
                name="appName"
                value="Task Editor">
          </property>
+         <property
+               name="preferenceCustomization"
+               value="plugin_customization.ini"/>
       </product>
    </extension>
    

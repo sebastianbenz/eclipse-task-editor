@@ -15,17 +15,18 @@
 
    <launcherArgs>
       <programArgs>-data @user.home/.task-editor</programArgs>
-      <programArgsLin>-data @eclipse.home.location/workspace</programArgsLin>
       <vmArgs>-Xms128m -Xmx768m -Xss4m -XX:MaxPermSize=256m</vmArgs>
    </launcherArgs>
 
    <windowImages i16="/de.sebastianbenz.task.application/icons/Icon_16.png" i32="/de.sebastianbenz.task.application/icons/Icon_32.png" i48="/de.sebastianbenz.task.application/icons/Icon_48.png" i64="/de.sebastianbenz.task.application/icons/Icon_64.png" i128="/de.sebastianbenz.task.application/icons/Icon_128.png"/>
 
-   <launcher>
+   <splash
+      location="de.sebastianbenz.task.application" />
+   <launcher name="eclipse">
       <macosx icon="../../../../de.sebastianbenz.task.application/icons/Icon.icns"/>
       <solaris/>
       <win useIco="true">
-         <ico path="../../../../de.sebastianbenz.task.application/icons/Icon.ico"/>
+         <ico path="../../../../de.sebastianbenz.task.application/icons/icon.ico"/>
          <bmp
             winSmallHigh="/de.sebastianbenz.task.application/icons/icon16.bmp"
             winMediumHigh="/de.sebastianbenz.task.application/icons/icon32.bmp"

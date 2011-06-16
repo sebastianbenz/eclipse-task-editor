@@ -93,5 +93,9 @@ public class TaskUiModule extends de.sebastianbenz.task.ui.AbstractTaskUiModule 
 	public com.google.inject.Provider<org.eclipse.xtext.resource.containers.IAllContainersState> provideIAllContainersState() {
 		return org.eclipse.xtext.ui.shared.Access.getWorkspaceProjectsState();
 	}
+	
+	@org.eclipse.xtext.service.SingletonBinding(eager=true)	public Class<? extends de.sebastianbenz.task.validation.TaskJavaValidator> bindTaskJavaValidator() {
+		return de.sebastianbenz.task.ui.validation.SpellingValidator.class;
+	}
 
 }

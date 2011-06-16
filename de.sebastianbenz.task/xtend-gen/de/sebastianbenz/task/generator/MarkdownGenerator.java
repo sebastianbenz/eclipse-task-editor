@@ -111,8 +111,7 @@ public class MarkdownGenerator implements TaskGenerator {
     } else if ((code instanceof Task)) {
       return _generate((Task)code);
     } else {
-      throw new IllegalArgumentException("Unhandled parameter types: " +
-        java.util.Arrays.<Object>asList(code).toString());
+      throw new IllegalArgumentException();
     }
   }
 }

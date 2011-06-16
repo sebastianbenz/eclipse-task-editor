@@ -193,13 +193,6 @@
          unpack="false"/>
 
    <plugin
-         id="org.eclipse.ltk.ui.refactoring"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
          id="org.eclipse.compare"
          download-size="0"
          install-size="0"
@@ -208,13 +201,6 @@
 
    <plugin
          id="org.eclipse.ui.navigator"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.eclipse.ui.navigator.resources"
          download-size="0"
          install-size="0"
          version="0.0.0"
@@ -418,13 +404,6 @@
 
    <plugin
          id="org.eclipse.equinox.launcher"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.eclipse.search"
          download-size="0"
          install-size="0"
          version="0.0.0"
@@ -740,6 +719,20 @@
 
    <plugin
          id="org.eclipse.ui.ide"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.xtext.xbase.lib"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.xtext.xtend2.lib"
          download-size="0"
          install-size="0"
          version="0.0.0"

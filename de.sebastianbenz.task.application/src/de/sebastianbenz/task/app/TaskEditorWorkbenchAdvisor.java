@@ -76,17 +76,14 @@ public class TaskEditorWorkbenchAdvisor extends WorkbenchAdvisor {
 					IActionBarConfigurer abConfigurer) {
 				return new TextEditorActionBarAdvisor(abConfigurer);
 			}
-			
+
 			@Override
 			public void postWindowOpen() {
 				for (String arg : args) {
-					File file = new File(arg);
-					if(file.exists() && (file.getName().endsWith(".todo") || file.getName().endsWith(".taskpaper"))){
-						EditorOpener.open(getWindowConfigurer().getWindow(), file);
-					}
+					EditorOpener.open(getWindowConfigurer().getWindow(), arg);
 				}
 			}
-			
+
 		};
 	}
 
@@ -94,7 +91,7 @@ public class TaskEditorWorkbenchAdvisor extends WorkbenchAdvisor {
 	public void initialize(IWorkbenchConfigurer configurer) {
 		super.initialize(configurer);
 		configurer.setSaveAndRestore(true);
-		
+
 	}
 
 	@Override
@@ -120,5 +117,5 @@ public class TaskEditorWorkbenchAdvisor extends WorkbenchAdvisor {
 		}
 		return Status.OK_STATUS;
 	}
-	
+
 }

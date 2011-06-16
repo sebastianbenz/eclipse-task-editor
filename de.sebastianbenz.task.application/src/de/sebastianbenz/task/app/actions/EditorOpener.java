@@ -12,26 +12,32 @@ import org.eclipse.ui.ide.IDE;
 
 public class EditorOpener {
 
-	private final File file;
+	private final String filePath;
 	private final IWorkbenchWindow window;
 
-	public EditorOpener(IWorkbenchWindow fWindow, File file) {
+	public EditorOpener(IWorkbenchWindow fWindow, String file) {
 		this.window = fWindow;
-		this.file = file;
+		this.filePath = file;
 	}
 
-	public static void open(IWorkbenchWindow window, File file) {
-		new EditorOpener(window, file).open();		
+	public static void open(IWorkbenchWindow window, String file) {
+		new EditorOpener(window, file).open();
 	}
 
 	public void open() {
-		IWorkbenchPage page= window.getActivePage();
-		try {
-//			TaskActivator.getInstance().getClass();
-			IFileStore fileStore= EFS.getStore(file.toURI());
-			IDE.openEditor(page, new FileStoreEditorInput(fileStore),  "de.sebastianbenz.task.Task");
-		} catch (CoreException e) {
-			e.printStackTrace();
+		File file = new File(filePath);
+		if (file.exists()
+				&& (file.getName().endsWith(".todo") || file.getName()
+						.endsWith(".taskpaper"))) {
+			IWorkbenchPage page = window.getActivePage();
+			try {
+				// TaskActivator.getInstance().getClass();
+				IFileStore fileStore = EFS.getStore(file.toURI());
+				IDE.openEditor(page, new FileStoreEditorInput(fileStore),
+						"de.sebastianbenz.task.Task");
+			} catch (CoreException e) {
+				e.printStackTrace();
+			}
 		}
 	}
 

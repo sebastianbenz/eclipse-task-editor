@@ -23,4 +23,5 @@ public class TaskEditor extends ExtLinkedXtextEditor{
 		result.getTextWidget().setWordWrap(true);
 		return result;
 	}
+	
 }

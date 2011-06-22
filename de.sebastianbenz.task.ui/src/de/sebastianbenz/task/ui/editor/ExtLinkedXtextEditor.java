@@ -29,7 +29,6 @@ import org.eclipse.ui.IFileEditorInput;
 import org.eclipse.ui.IURIEditorInput;
 import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.ide.FileStoreEditorInput;
-import org.eclipse.ui.internal.editors.text.EditorsPlugin;
 import org.eclipse.ui.part.FileEditorInput;
 import org.eclipse.ui.texteditor.IDocumentProvider;
 import org.eclipse.xtext.ui.editor.XtextEditor;
@@ -285,7 +284,6 @@ public class ExtLinkedXtextEditor extends XtextEditor {
 				fileStore = EFS.getStore(localFile.toURI());
 			}
 			catch(CoreException ex) {
-				EditorsPlugin.log(ex.getStatus());
 				String title = "Problems During Save As...";
 				String msg = "Save could not be completed. " + ex.getMessage();
 				MessageDialog.openError(shell, title, msg);

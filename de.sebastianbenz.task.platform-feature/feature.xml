@@ -9,8 +9,8 @@
       The required features for the Task Editor RCP Application.
    </description>
 
-   <license url="">
-      [Enter License Description here.]
+   <license url="http://www.eclipse.org/legal/epl-v10.html">
+      Eclipse EPL - v 1.0
    </license>
 
    <includes

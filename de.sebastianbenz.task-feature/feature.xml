@@ -8,6 +8,10 @@
    <description>
       This features installs the runtime and UI components of the eclipse task editor.
    </description>
+   
+   <license url="http://www.eclipse.org/legal/epl-v10.html">
+      Eclipse EPL - v 1.0
+   </license>
 
    <copyright>
       Copyright (c) 2011 Sebastian Benz and others.
@@ -18,8 +22,8 @@ http://www.eclipse.org/legal/epl-v10.html.
    </copyright>
 
    <url>
-      <update label="Task Editor Interim" url="http://sebastianbenz.github.com/eclipse-task-editor/updatesite/interim"/>
-      <discovery label="Xtext Nightly" url="http://download.eclipse.org/modeling/tmf/updates/nightly"/>
+      <update label="Task Editor" url="http://sebastianbenz.github.com/eclipse-task-editor/updatesite/release/"/>
+      <discovery label="Indigo" url="http://download.eclipse.org/releases/indigo"/>
    </url>
 
    <requires>

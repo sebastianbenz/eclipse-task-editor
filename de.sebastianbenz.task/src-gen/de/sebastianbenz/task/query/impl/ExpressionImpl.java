@@ -5,12 +5,11 @@
  */
 package de.sebastianbenz.task.query.impl;
 
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
 import de.sebastianbenz.task.query.Expression;
 import de.sebastianbenz.task.query.QueryPackage;
-
-import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->

@@ -1,5 +1,11 @@
 package de.sebastianbenz.task.generator;
 
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.xtext.xbase.lib.ComparableExtensions;
+import org.eclipse.xtext.xbase.lib.IntegerExtensions;
+import org.eclipse.xtext.xbase.lib.StringExtensions;
+import org.eclipse.xtext.xtend2.lib.StringConcatenation;
+
 import de.sebastianbenz.task.Code;
 import de.sebastianbenz.task.Content;
 import de.sebastianbenz.task.EmptyLine;
@@ -7,12 +13,6 @@ import de.sebastianbenz.task.Note;
 import de.sebastianbenz.task.Project;
 import de.sebastianbenz.task.Task;
 import de.sebastianbenz.task.TaskModel;
-import de.sebastianbenz.task.generator.TaskGenerator;
-import org.eclipse.emf.common.util.EList;
-import org.eclipse.xtext.xbase.lib.ComparableExtensions;
-import org.eclipse.xtext.xbase.lib.IntegerExtensions;
-import org.eclipse.xtext.xbase.lib.StringExtensions;
-import org.eclipse.xtext.xtend2.lib.StringConcatenation;
 
 @SuppressWarnings("all")
 public class MarkdownGenerator implements TaskGenerator {

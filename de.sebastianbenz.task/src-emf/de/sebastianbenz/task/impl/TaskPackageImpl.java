@@ -6,6 +6,14 @@
  */
 package de.sebastianbenz.task.impl;
 
+import static de.sebastianbenz.task.TaskPackage.CONTAINER;
+
+import org.eclipse.emf.ecore.EAttribute;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.ecore.impl.EPackageImpl;
+
 import de.sebastianbenz.task.Code;
 import de.sebastianbenz.task.Content;
 import de.sebastianbenz.task.EmptyLine;
@@ -17,13 +25,6 @@ import de.sebastianbenz.task.Task;
 import de.sebastianbenz.task.TaskFactory;
 import de.sebastianbenz.task.TaskModel;
 import de.sebastianbenz.task.TaskPackage;
-
-import org.eclipse.emf.ecore.EAttribute;
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EPackage;
-import org.eclipse.emf.ecore.EReference;
-
-import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 /**
  * <!-- begin-user-doc -->

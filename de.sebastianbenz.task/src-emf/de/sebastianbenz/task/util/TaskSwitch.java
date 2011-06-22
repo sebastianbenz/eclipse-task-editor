@@ -6,12 +6,22 @@
  */
 package de.sebastianbenz.task.util;
 
-import de.sebastianbenz.task.*;
-
 import java.util.List;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
+
+import de.sebastianbenz.task.Code;
+import de.sebastianbenz.task.Container;
+import de.sebastianbenz.task.Content;
+import de.sebastianbenz.task.EmptyLine;
+import de.sebastianbenz.task.GlobalTaskModel;
+import de.sebastianbenz.task.Note;
+import de.sebastianbenz.task.Project;
+import de.sebastianbenz.task.Tag;
+import de.sebastianbenz.task.Task;
+import de.sebastianbenz.task.TaskModel;
+import de.sebastianbenz.task.TaskPackage;
 
 /**
  * <!-- begin-user-doc -->

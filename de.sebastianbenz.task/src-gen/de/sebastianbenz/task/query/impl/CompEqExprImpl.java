@@ -5,18 +5,16 @@
  */
 package de.sebastianbenz.task.query.impl;
 
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
 import de.sebastianbenz.task.query.CompEqExpr;
 import de.sebastianbenz.task.query.CompEqOperator;
 import de.sebastianbenz.task.query.Expression;
 import de.sebastianbenz.task.query.QueryPackage;
-
-import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
-
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->

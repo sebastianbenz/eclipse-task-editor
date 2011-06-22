@@ -5,16 +5,14 @@
  */
 package de.sebastianbenz.task.query.impl;
 
-import de.sebastianbenz.task.query.QueryPackage;
-import de.sebastianbenz.task.query.Words;
-
 import java.util.Collection;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.util.EDataTypeEList;
+
+import de.sebastianbenz.task.query.QueryPackage;
+import de.sebastianbenz.task.query.Words;
 
 /**
  * <!-- begin-user-doc -->

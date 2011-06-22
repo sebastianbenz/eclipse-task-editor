@@ -7,15 +7,6 @@
  *******************************************************************************/
 package de.sebastianbenz.task.impl;
 
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
-import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-
-import de.sebastianbenz.task.Tag;
-import de.sebastianbenz.task.TaskPackage;
-import de.sebastianbenz.task.tagging.Tags;
 
 public class TaskImplCustom extends de.sebastianbenz.task.impl.TaskImpl {
 

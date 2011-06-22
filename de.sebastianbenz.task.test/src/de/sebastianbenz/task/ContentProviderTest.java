@@ -13,7 +13,6 @@ package de.sebastianbenz.task;
 import static com.google.common.collect.Iterables.transform;
 import static com.google.common.collect.Lists.newArrayList;
 import static org.hamcrest.core.Is.is;
-import static org.junit.Assert.*;
 import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertThat;
 

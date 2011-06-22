@@ -14,8 +14,6 @@ import static org.hamcrest.CoreMatchers.anyOf;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 
-import java.util.Arrays;
-
 import org.junit.Test;
 
 import com.google.common.base.Joiner;

@@ -4,8 +4,8 @@
  */
 package de.sebastianbenz.task.ui;
 
-import org.eclipse.xtext.ui.DefaultUiModule;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
+import org.eclipse.xtext.ui.DefaultUiModule;
 
 /**
  * Manual modifications go to {de.sebastianbenz.task.ui.QueryUiModule}

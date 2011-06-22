@@ -5,10 +5,10 @@
  */
 package de.sebastianbenz.task.impl;
 
+import org.eclipse.emf.ecore.EClass;
+
 import de.sebastianbenz.task.Code;
 import de.sebastianbenz.task.TaskPackage;
-
-import org.eclipse.emf.ecore.EClass;
 
 /**
  * <!-- begin-user-doc -->

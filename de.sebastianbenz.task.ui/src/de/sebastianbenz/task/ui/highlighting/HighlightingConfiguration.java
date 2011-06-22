@@ -121,7 +121,7 @@ public class HighlightingConfiguration extends DefaultHighlightingConfiguration 
 	
 	public TextStyle codeTextStyle() {
 		TextStyle result = super.defaultTextStyle().copy();
-		result.setColor(new RGB(42, 0, 255));
+		result.setColor(new RGB(0, 0, 209));
 		return result;
 	}
 	

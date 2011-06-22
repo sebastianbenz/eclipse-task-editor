@@ -22,7 +22,7 @@
 
    <splash
       location="de.sebastianbenz.task.application" />
-   <launcher name="eclipse">
+   <launcher>
       <macosx icon="../../../../de.sebastianbenz.task.application/icons/Icon.icns"/>
       <solaris/>
       <win useIco="true">

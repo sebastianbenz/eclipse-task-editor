@@ -80,7 +80,7 @@ public class CodeItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		return super.getText(object);
+		return super.getText(object).trim();
 	}
 
 	/**

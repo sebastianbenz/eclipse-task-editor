@@ -1,0 +1,1 @@
+instructions.configure=org.eclipse.equinox.p2.touchpoint.eclipse.addRepository(location:http${#58}//sebastianbenz.github.com/eclipse-task-editor/updatesite/release/,type:0,name:Task Editor,enabled:true);

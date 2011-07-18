@@ -11,10 +11,11 @@ The editor can be installed via the following update site:
 http://sebastianbenz.github.com/eclipse-task-editor/updates
 
 The editor is also available as a standalone Eclipse RCP application. The application runs on windows, linux and mac. You can build the application via:
-		git clone git://github.com/sebastianbenz/eclipse-task-editor.git
-		git checkout v1.0.0
-		cd eclipse-task-editor
-		mvn clean install
+
+	git clone git://github.com/sebastianbenz/eclipse-task-editor.git
+	git checkout v1.0.0
+	cd eclipse-task-editor
+	mvn clean install
 
 The zipped applications can be found in de.sebastianbenz.task.rcp/target/products/task-editor-*.zip
 

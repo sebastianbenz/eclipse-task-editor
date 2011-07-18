@@ -21,7 +21,7 @@ The zipped applications can be found in de.sebastianbenz.task.rcp/target/product
 
 #Usage
 
-The eclipse task editor can be used to create and manage textual todo files. The syntax is based on "TaskPaper":http://www.hogbaysoftware.com/products/taskpaper, an excellent to-do list manager  for Mac OS X.
+The eclipse task editor can be used to create and manage textual todo files. The syntax is based on [TaskPaper](http://www.hogbaysoftware.com/products/taskpaper), an excellent to-do list manager  for Mac OS X.
 
 A todo file consists of four elements: Tasks, Notes, Projects, and Tags. 
 

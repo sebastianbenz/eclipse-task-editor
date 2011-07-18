@@ -152,7 +152,7 @@ public class TodoView extends ViewPart {
 		gridData.verticalAlignment = GridData.FILL;
 		viewer.getTree().setLayoutData(gridData);
 		viewer.setAutoExpandLevel(1);
-		viewer.setSorter(new ContentSorter());
+		//viewer.setSorter(new ContentSorter());
 		viewer.setLabelProvider(labelProvider);
 		contentProvider.init(globalState);
 		viewer.setContentProvider(contentProvider);

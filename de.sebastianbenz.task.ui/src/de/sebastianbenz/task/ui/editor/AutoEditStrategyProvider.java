@@ -108,8 +108,8 @@ public class AutoEditStrategyProvider extends DefaultAutoEditStrategyProvider {
 	@Override
 	protected void configure(IEditStrategyAcceptor acceptor) {
 		super.configure(acceptor);
-		acceptor.accept(shortCut.get().configure("-", "- "),
-				IDocument.DEFAULT_CONTENT_TYPE);
+//		acceptor.accept(shortCut.get().configure("-", "- "),
+//				IDocument.DEFAULT_CONTENT_TYPE);
 		acceptor.accept(new IntendationInserter(),
 				IDocument.DEFAULT_CONTENT_TYPE);
 	}

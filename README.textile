@@ -8,9 +8,16 @@ h2. Installation
 
 The editor can be installed via the following update site:
 
-http://sebastianbenz.github.com/eclipse-task-editor/updatesite/interim
+http://sebastianbenz.github.com/eclipse-task-editor/updates
 
-Please note: the editor is based on Xtext 2.0, for which currently only milestone builds are available (http://download.eclipse.org/modeling/tmf/updates/milestones).
+The editor is also available as a standalone Eclipse RCP application. The application runs on windows, linux and mac. You can build the application via:
+bc. <script>
+git clone git://github.com/sebastianbenz/eclipse-task-editor.git
+git checkout v1.0.0
+cd eclipse-task-editor
+mvn clean install
+</script>
+The zipped applications can be found in de.sebastianbenz.task.rcp/target/products/task-editor-*.zip
 
 h2. Usage
 
@@ -24,10 +31,6 @@ A todo file consists of four elements: Tasks, Notes, Projects, and Tags.
 * *Notes:* Arbitrary text.
 * *Projects:* Projects can be used to structure tasks. Projects are followed by ':' and a linebreak.
 * *Tags:* can be used to categorize tasks. Tags start with '@'. 
-
-h3. Query View
-
-tbd
 
 h2. License
 

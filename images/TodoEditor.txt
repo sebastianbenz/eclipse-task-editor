@@ -1,0 +1,69 @@
+<markdown>
+
+# A simple TODO editor for Eclipse
+
+While developing I like to keep track of small todos that come up over time. A duplication to remove or a missing test for a corner case. All these small things for which you don’t really want to open new bug, but which are still annoying if you forget them. There exists a plethora of TODO editors, with varying degree of complexity. Unfortunately, I never found one that I kept using for a longer period of time. So I ended up writing my TODOs in a simple text file (I tend to lose anything that I write on paper, so pen and paper never really was an alternative). 
+
+At least, this was the case until I discovered [Taskpaper](http://www.hogbaysoftware.com/products/taskpaper). Taskpaper is a text editor with custom syntax highlighting support for managing todo lists. While Taskpaper is really great, it is only available for Mac OSX. At work I am still struck with windows, which is why I decided to create a TODO editor that provides the effectiveness of Taskpaper and also is fully integrated into Eclipse. 
+
+I have been using it for several month now and it has turned from just a TODO list editor to my favorite every day note taking application, because of its ability to structure text in a really efficient way.
+
+## How does it work?
+
+The editor provides elements to structure your todo list files that make it really easy to create todo list. 
+
+### Todos
+
+A todo is everything that starts with a hyphen. Todos can be marked as done by adding the ‘@done’ tag. Done tasks are written in strike through.
+
+-> Todo example
+
+### Projects
+
+You can use projects to structure your todo lists. Declare a project by append a colon at the end. Projects are hierarchical. You can attach content to a project by intending it with a tabulator or two spaces. Project names are automatically highlighted by a bigger font. 
+
+-> Project example
+
+
+### Code
+
+If you want to keep source code snipplets you can enclose these within ‘’’ ‘’’. The text in between will be written in a fixed width font.
+
+### Tags
+
+One of the most powerful features of the editor are tags. You can use tags to annotate any element in your file. You have already seen the @done tag earlier. It is used to mark todos as done. But you can use your own tags as well. Tags can have additional parameters, written in parentheses. 
+
+### Note
+
+Any text that you write in your text file is treated as a note. Notes are highlighted in gray. 
+
+
+## Queries
+
+The editor provides a query view which you can use for searching all todo files in your workspace. You can enter queries via the query view: 
+
+“Window -> Show View -> Others -> Todos -> Query” 
+
+The query language supports searching for phrases by enclosing the phrases in quotes:
+
+  “a phrase” - returns all elements that contains the specified phrase
+
+You can search for specific tags:
+
+  @done - returns all elements with the tag done
+
+…and for specific tag values:
+
+  @prio = 1 - will return all elements with the tag @prio(1)
+
+Queries can be combined:
+
+  “a phrase” and not @done - will return all open elements that contain the specified phrase
+
+By the way, the query language is also implemented in Xtext. The search box is a little Xtext editor  that provides even code completion. 
+
+## Standalone RCP application
+ 
+There is also a standalone todo editor available. It is still a little rough around the edges but completely usable. You can find the instructions on how to build the RCP application on the Github page. 
+
+-> Standalone Editor 

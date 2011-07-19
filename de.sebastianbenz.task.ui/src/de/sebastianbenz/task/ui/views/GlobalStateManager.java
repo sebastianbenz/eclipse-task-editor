@@ -7,6 +7,7 @@ import static java.util.Collections.emptyList;
 import java.util.Iterator;
 import java.util.List;
 
+import org.apache.log4j.Logger;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
@@ -27,6 +28,8 @@ import de.sebastianbenz.task.TaskModel;
 import de.sebastianbenz.task.ui.views.ViewerUpdater.ResourceDescriptionsChangeListener;
 
 public class GlobalStateManager  implements ResourceDescriptionsChangeListener{
+
+	private static final Logger LOGGER = Logger.getLogger(GlobalStateManager.class);
 
 	@Inject
 	private IResourceDescriptions descriptions;
@@ -138,7 +141,12 @@ public class GlobalStateManager  implements ResourceDescriptionsChangeListener{
 
 
 	public EObject get(URI uri) {
-		return resourceSet.getEObject(uri, true);
+		try{
+			return resourceSet.getEObject(uri, true);
+		}catch (Exception e) {
+			LOGGER.error(e.getMessage(), e);
+			return null;
+		}
 	}
 	
 	

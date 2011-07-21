@@ -19,7 +19,7 @@ import com.google.inject.Inject;
 
 public class ExtLinkedFileHelper {
 	// TODO: Should be configurable
-	public static final String AUTOLINK_PROJECT_NAME = "Default_Project";
+	public static final String AUTOLINK_PROJECT_NAME = ".todoProject";
 
 	public static final String ENCODING_UTF8 = "utf-8";
 	

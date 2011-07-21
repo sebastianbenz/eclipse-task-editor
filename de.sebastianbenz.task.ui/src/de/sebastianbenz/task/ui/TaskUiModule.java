@@ -13,13 +13,18 @@
  */
 package de.sebastianbenz.task.ui;
 
+import java.util.Collection;
+import java.util.Collections;
+
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.eclipse.xtext.ui.editor.XtextEditor;
 import org.eclipse.xtext.ui.editor.XtextSourceViewerConfiguration;
 import org.eclipse.xtext.ui.editor.autoedit.AbstractEditStrategyProvider;
 import org.eclipse.xtext.ui.editor.contentassist.ITemplateProposalProvider;
+import org.eclipse.xtext.ui.editor.folding.FoldedPosition;
 import org.eclipse.xtext.ui.editor.folding.IFoldingRegionProvider;
 import org.eclipse.xtext.ui.editor.model.IResourceForEditorInputFactory;
+import org.eclipse.xtext.ui.editor.model.IXtextDocument;
 import org.eclipse.xtext.ui.editor.model.ResourceForIEditorInputFactory;
 import org.eclipse.xtext.ui.editor.syntaxcoloring.AbstractAntlrTokenToAttributeIdMapper;
 import org.eclipse.xtext.ui.editor.syntaxcoloring.IHighlightingConfiguration;
@@ -30,7 +35,6 @@ import com.google.inject.Binder;
 
 import de.sebastianbenz.task.ui.contentassist.TaskTemplateProvider;
 import de.sebastianbenz.task.ui.editor.AutoEditStrategyProvider;
-import de.sebastianbenz.task.ui.editor.FoldingRegionProvider;
 import de.sebastianbenz.task.ui.editor.SourceViewerConfiguration;
 import de.sebastianbenz.task.ui.editor.TaskEditor;
 import de.sebastianbenz.task.ui.highlighting.HighlightingConfiguration;
@@ -41,6 +45,15 @@ import de.sebastianbenz.task.ui.highlighting.TokenHighlightingConfiguration;
  * Use this class to register components to be used within the IDE.
  */
 public class TaskUiModule extends de.sebastianbenz.task.ui.AbstractTaskUiModule {
+	public static class NoFolding implements IFoldingRegionProvider {
+
+		public Collection<FoldedPosition> getFoldingRegions(
+				IXtextDocument xtextDocument) {
+			return Collections.emptyList();
+		}
+
+	}
+
 	public TaskUiModule(AbstractUIPlugin plugin) {
 		super(plugin);
 	}
@@ -49,10 +62,12 @@ public class TaskUiModule extends de.sebastianbenz.task.ui.AbstractTaskUiModule 
 	public void configure(Binder binder) {
 		super.configure(binder);
 		binder.bind(XtextEditor.class).to(TaskEditor.class);
-		binder.bind(IFoldingRegionProvider.class).to(
-				FoldingRegionProvider.class);
 	}
 
+	public Class<? extends IFoldingRegionProvider> bindIFoldingRegionProvider(){
+		return NoFolding.class;
+	}
+	
 	public Class<? extends org.eclipse.xtext.ui.editor.syntaxcoloring.ISemanticHighlightingCalculator> bindISemanticHighlightingCalculator() {
 		return SemanticHighlightingCalculator.class;
 	}

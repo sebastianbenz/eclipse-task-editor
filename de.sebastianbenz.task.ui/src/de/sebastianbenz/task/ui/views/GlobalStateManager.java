@@ -84,10 +84,14 @@ public class GlobalStateManager  implements ResourceDescriptionsChangeListener{
 		if(ignore(description)){
 			return;
 		}
+		try{
 		Resource resource = resourceSet.getResource(description.getURI(), true);
-		EcoreUtil.resolveAll(resource);
-		for (TaskModel taskModel : taskModelsIn(resource)) {
-			root.getChildren().addAll(taskModel.getChildren());
+			EcoreUtil.resolveAll(resource);
+			for (TaskModel taskModel : taskModelsIn(resource)) {
+				root.getChildren().addAll(taskModel.getChildren());
+			}
+		}catch (Exception e) {
+			// file does not exist anymore
 		}
 	}
 

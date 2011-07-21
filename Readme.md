@@ -32,4 +32,4 @@ A todo file consists of four elements: Tasks, Notes, Projects, and Tags.
 
 #License
 
-Copyright (C) 2010 Sebastian Benz. Distributed under the Eclipse Public License.
+© 2010 Sebastian Benz. Distributed under the Eclipse Public License.

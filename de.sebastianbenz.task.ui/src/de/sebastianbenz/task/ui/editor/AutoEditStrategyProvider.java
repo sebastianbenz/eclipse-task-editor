@@ -43,6 +43,10 @@ public class AutoEditStrategyProvider extends DefaultAutoEditStrategyProvider {
 			if (isEmpty(line)) {
 				return;
 			}
+			if(isEmptyTask(line)){
+				removeSingleHyphen(document, command, line);
+				return;
+			}
 
 			defaultStrategy.customizeDocumentCommand(document, command);
 			if (isNewProject(line)) {
@@ -50,6 +54,17 @@ public class AutoEditStrategyProvider extends DefaultAutoEditStrategyProvider {
 			} else if (isTask(line)) {
 				command.text = command.text + "- ";
 			}
+		}
+
+		private void removeSingleHyphen(IDocument document,
+				DocumentCommand command, String line)
+				throws BadLocationException {
+			int hyphenPosition = command.offset-line.length()+1;
+			document.replace(hyphenPosition, 1, " ");
+		}
+
+		private boolean isEmptyTask(String line) {
+			return "-".equals(line.trim());
 		}
 
 		private boolean isEmpty(String line) {
@@ -66,10 +81,15 @@ public class AutoEditStrategyProvider extends DefaultAutoEditStrategyProvider {
 
 		private String currentLine(IDocument document, DocumentCommand command)
 				throws BadLocationException {
-			IRegion region = document
-					.getLineInformationOfOffset(command.offset);
+			IRegion region = activeRegion(document, command);
 			String line = document.get(region.getOffset(), region.getLength());
 			return line;
+		}
+
+		private IRegion activeRegion(IDocument document, DocumentCommand command)
+				throws BadLocationException {
+			return document
+					.getLineInformationOfOffset(command.offset);
 		}
 
 		private boolean isLineBreak(IDocument document, DocumentCommand command) {
@@ -93,6 +113,7 @@ public class AutoEditStrategyProvider extends DefaultAutoEditStrategyProvider {
 			}
 			document.replace(region.getOffset(), 0, "\t");
 			command.text = "";
+			command.shiftsCaret = true;
 		}
 
 		private boolean isIntend(IDocument document, DocumentCommand command) {

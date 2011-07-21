@@ -1,17 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
       id="de.sebastianbenz.task"
-      label="Task editor"
+      label="Todo editor"
       version="1.0.0.qualifier"
       provider-name="Sebastian Benz">
 
    <description>
       This features installs the runtime and UI components of the eclipse task editor.
    </description>
-   
-   <license url="http://www.eclipse.org/legal/epl-v10.html">
-      Eclipse EPL - v 1.0
-   </license>
 
    <copyright>
       Copyright (c) 2011 Sebastian Benz and others.
@@ -21,8 +17,12 @@ v1.0 which accompanies this distribution, and is available at
 http://www.eclipse.org/legal/epl-v10.html.
    </copyright>
 
+   <license url="http://www.eclipse.org/legal/epl-v10.html">
+      Eclipse EPL - v 1.0
+   </license>
+
    <url>
-      <update label="Task Editor" url="http://sebastianbenz.github.com/eclipse-task-editor/updatesite/release/"/>
+      <update label="Todo Editor" url="http://sebastianbenz.github.com/eclipse-task-editor/updates/"/>
       <discovery label="Indigo" url="http://download.eclipse.org/releases/indigo"/>
    </url>
 

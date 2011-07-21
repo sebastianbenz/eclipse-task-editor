@@ -79,11 +79,11 @@
                icon="icons/TodoFile.png"
                id="de.sebastianbenz.task.app.actions.NewTodo"
                label="%newTodo.label"
+               tooltip="%newTodo.tooltip"
                menubarPath="file/new.ext"
                state="false"
                style="push"
-               toolbarPath="org.eclipse.ui.workbench.file/open.ext"
-               tooltip="%openFile.tooltip">
+               toolbarPath="org.eclipse.ui.workbench.file/open.ext">
          </action>
       </actionSet>
    </extension>

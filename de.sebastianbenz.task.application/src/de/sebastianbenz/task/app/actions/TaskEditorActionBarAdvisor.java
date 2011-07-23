@@ -1,5 +1,7 @@
 package de.sebastianbenz.task.app.actions;
 
+import org.eclipse.jface.action.Action;
+import org.eclipse.jface.action.ActionContributionItem;
 import org.eclipse.jface.action.GroupMarker;
 import org.eclipse.jface.action.IAction;
 import org.eclipse.jface.action.ICoolBarManager;
@@ -9,6 +11,7 @@ import org.eclipse.jface.action.MenuManager;
 import org.eclipse.jface.action.Separator;
 import org.eclipse.jface.action.ToolBarContributionItem;
 import org.eclipse.jface.action.ToolBarManager;
+import org.eclipse.jface.util.Util;
 import org.eclipse.ui.IWorkbenchActionConstants;
 import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.actions.ActionFactory;
@@ -19,7 +22,7 @@ import org.eclipse.ui.application.IActionBarConfigurer;
 /**
  * Adds actions to a workbench window.
  */
-public final class TextEditorActionBarAdvisor extends ActionBarAdvisor {
+public final class TaskEditorActionBarAdvisor extends ActionBarAdvisor {
 
 	/**
 	 * Constructs a new action builder.
@@ -27,7 +30,7 @@ public final class TextEditorActionBarAdvisor extends ActionBarAdvisor {
 	 * @param actionBarConfigurer
 	 *            the configurer
 	 */
-	public TextEditorActionBarAdvisor(IActionBarConfigurer actionBarConfigurer) {
+	public TaskEditorActionBarAdvisor(IActionBarConfigurer actionBarConfigurer) {
 		super(actionBarConfigurer);
 	}
 
@@ -74,7 +77,11 @@ public final class TextEditorActionBarAdvisor extends ActionBarAdvisor {
 				IWorkbenchActionConstants.M_HELP);
 		helpMenu.add(new GroupMarker(IWorkbenchActionConstants.MB_ADDITIONS));
 		helpMenu.add(new Separator());
-
+		ActionContributionItem aboutAction = new ActionContributionItem(getAction(ActionFactory.ABOUT.getId()));
+		helpMenu.add(aboutAction);
+		if(Util.isMac()) {
+			aboutAction.setVisible(false);
+        }
 		return helpMenu;
 	}
 
@@ -101,11 +108,19 @@ public final class TextEditorActionBarAdvisor extends ActionBarAdvisor {
 						.getWindow()));
 		menu.add(new GroupMarker(IWorkbenchActionConstants.MRU));
 		menu.add(new Separator());
-		menu.add(getAction(ActionFactory.QUIT.getId()));
 		menu.add(new GroupMarker(IWorkbenchActionConstants.FILE_END));
 		menu.add(new GroupMarker(IWorkbenchActionConstants.FILE_END));
 		
-		menu.add(getAction(ActionFactory.PREFERENCES.getId()));
+		ActionContributionItem preferencesAction = new ActionContributionItem(getAction(ActionFactory.PREFERENCES.getId()));
+		menu.add(preferencesAction);
+		
+		ActionContributionItem exitAction = new ActionContributionItem(getAction(ActionFactory.QUIT.getId()));
+		menu.add(exitAction);
+		
+		if(Util.isMac()) {
+			exitAction.setVisible(false);
+        }
+		
 		return menu;
 	}
 
@@ -145,6 +160,7 @@ public final class TextEditorActionBarAdvisor extends ActionBarAdvisor {
 	 * .IWorkbenchWindow)
 	 */
 	protected void makeActions(IWorkbenchWindow window) {
+		registerAsGlobal(ActionFactory.PREFERENCES.create(window));
 		registerAsGlobal(ActionFactory.SAVE.create(window));
 		registerAsGlobal(ActionFactory.SAVE_AS.create(window));
 		registerAsGlobal(ActionFactory.ABOUT.create(window));
@@ -160,7 +176,6 @@ public final class TextEditorActionBarAdvisor extends ActionBarAdvisor {
 		registerAsGlobal(ActionFactory.CLOSE_ALL.create(window));
 		registerAsGlobal(ActionFactory.CLOSE_ALL_SAVED.create(window));
 		registerAsGlobal(ActionFactory.REVERT.create(window));
-		registerAsGlobal(ActionFactory.PREFERENCES.create(window));
 		registerAsGlobal(ActionFactory.QUIT.create(window));
 	}
 

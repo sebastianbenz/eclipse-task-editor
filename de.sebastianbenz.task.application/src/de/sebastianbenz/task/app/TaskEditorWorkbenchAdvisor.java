@@ -19,7 +19,7 @@ import org.eclipse.ui.application.WorkbenchWindowAdvisor;
 import org.eclipse.ui.internal.IWorkbenchConstants;
 
 import de.sebastianbenz.task.app.actions.EditorOpener;
-import de.sebastianbenz.task.app.actions.TextEditorActionBarAdvisor;
+import de.sebastianbenz.task.app.actions.TaskEditorActionBarAdvisor;
 import de.sebastianbenz.task.ui.internal.TaskActivator;
 
 public class TaskEditorWorkbenchAdvisor extends WorkbenchAdvisor {
@@ -72,7 +72,7 @@ public class TaskEditorWorkbenchAdvisor extends WorkbenchAdvisor {
 			 */
 			public ActionBarAdvisor createActionBarAdvisor(
 					IActionBarConfigurer abConfigurer) {
-				return new TextEditorActionBarAdvisor(abConfigurer);
+				return new TaskEditorActionBarAdvisor(abConfigurer);
 			}
 
 			@Override

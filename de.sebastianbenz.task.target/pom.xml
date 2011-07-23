@@ -11,7 +11,7 @@
 	<parent>
 		<artifactId>parent</artifactId>
 		<groupId>de.sebastianbenz.task</groupId>
-		<version>1.0.0-SNAPSHOT</version>
+		<version>1.0.1-SNAPSHOT</version>
 	</parent>
 
 	<build>

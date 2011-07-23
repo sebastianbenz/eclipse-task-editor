@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?pde version="3.5"?>
 
-<product name="Task Editor" uid="task-editor" id="de.sebastianbenz.task.application.taskeditor" application="de.sebastianbenz.task.application.application" version="1.0.0.qualifier" useFeatures="true" includeLaunchers="true">
+<product name="Todo Editor" uid="task-editor" id="de.sebastianbenz.task.application.product" application="de.sebastianbenz.task.application.application" version="1.0.1.qualifier" useFeatures="true" includeLaunchers="true">
 
    <aboutInfo>
-      <image path="/de.sebastianbenz.task.application/icons/Icon_64.png"/>
+      <image path="/de.sebastianbenz.task.application/product_lg.gif"/>
       <text>
          A simple textual TODO editor.
       </text>
@@ -18,10 +18,13 @@
       <vmArgs>-Xms128m -Xmx768m -Xss4m -XX:MaxPermSize=256m</vmArgs>
    </launcherArgs>
 
-   <windowImages i16="/de.sebastianbenz.task.application/icons/Icon_16.png" i32="/de.sebastianbenz.task.application/icons/Icon_32.png" i48="/de.sebastianbenz.task.application/icons/Icon_48.png" i64="/de.sebastianbenz.task.application/icons/Icon_64.png" i128="/de.sebastianbenz.task.application/icons/Icon_128.png"/>
+   <windowImages i16="/de.sebastianbenz.task.application/icons/TodoEditor_16.gif" i32="/de.sebastianbenz.task.application/icons/TodoEditor_32.gif" i48="/de.sebastianbenz.task.application/icons/TodoEditor_48.gif" i64="/de.sebastianbenz.task.application/icons/TodoEditor_64.gif" i128="/de.sebastianbenz.task.application/icons/TodoEditor_128.gif"/>
 
    <splash
-      location="de.sebastianbenz.task.application" />
+      location="de.sebastianbenz.task.application"
+      startupProgressRect="20,275,445,15"
+      startupMessageRect="20,252,445,20"
+      startupForegroundColor="7F7F7F" />
    <launcher>
       <macosx icon="../../../../de.sebastianbenz.task.application/icons/Icon.icns"/>
       <solaris/>
@@ -33,6 +36,7 @@
             winLargeHigh="/de.sebastianbenz.task.application/icons/icon48.bmp"/>
       </win>
    </launcher>
+
 
    <vm>
    </vm>
@@ -92,9 +96,9 @@ This Agreement is governed by the laws of the State of New York and the intellec
    </plugins>
 
    <features>
-      <feature id="de.sebastianbenz.task" version="1.0.0.qualifier"/>
-      <feature id="de.sebastianbenz.task.rcp" version="1.0.0.qualifier"/>
-      <feature id="de.sebastianbenz.task.platform" version="1.0.0.qualifier"/>
+      <feature id="de.sebastianbenz.task" version="1.0.1.qualifier"/>
+      <feature id="de.sebastianbenz.task.rcp" version="1.0.1.qualifier"/>
+      <feature id="de.sebastianbenz.task.platform" version="1.0.1.qualifier"/>
    </features>
 
    <configurations>

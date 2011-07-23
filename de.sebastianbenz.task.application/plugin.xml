@@ -88,14 +88,14 @@
       </actionSet>
    </extension>
    <extension
-         id="taskeditor"
+         id="product"
          point="org.eclipse.core.runtime.products">
       <product
             application="de.sebastianbenz.task.application.application"
-            name="Task Editor">
+            name="Todo Editor">
          <property
                name="windowImages"
-               value="icons/Icon_16.png,icons/Icon_32.png,icons/Icon_48.png,icons/Icon_64.png,icons/Icon_128.png">
+               value="icons/TodoEditor_16.gif,icons/TodoEditor_32.gif,icons/TodoEditor_48.gif,icons/TodoEditor_64.gif,icons/TodoEditor_128.gif">
          </property>
          <property
                name="aboutText"
@@ -103,21 +103,27 @@
          </property>
          <property
                name="aboutImage"
-               value="icons/Icon_64.png">
+               value="product_lg.gif">
          </property>
          <property
                name="appName"
-               value="Task Editor">
+               value="Todo Editor">
          </property>
-          <property
-               name="startupProgressRect"
-               value="80,290,390,15"/>
-         <property
-               name="startupForegroundColor"
-               value="000000"/>
          <property
                name="preferenceCustomization"
                value="plugin_customization.ini"/>
+         <property
+               name="startupForegroundColor"
+               value="7F7F7F">
+         </property>
+         <property
+               name="startupMessageRect"
+               value="20,252,445,20">
+         </property>
+         <property
+               name="startupProgressRect"
+               value="20,275,445,15">
+         </property>
       </product>
    </extension>
    

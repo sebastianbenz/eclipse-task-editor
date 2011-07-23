@@ -1,6 +1,8 @@
 package de.sebastianbenz.task.query;
 
+import static com.google.common.collect.Lists.newArrayList;
 import static org.hamcrest.CoreMatchers.is;
+import static org.junit.Assert.*;
 import static org.junit.Assert.assertThat;
 
 import java.util.List;
@@ -10,8 +12,8 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import com.google.common.base.Joiner;
+import com.google.common.collect.Lists;
 import com.google.inject.Inject;
-import com.google.inject.internal.Lists;
 
 import de.sebastianbenz.task.Content;
 import de.sebastianbenz.task.QueryStandaloneSetup;
@@ -246,8 +248,8 @@ public class QueryInterpreterTests extends AbstractTest {
 	public void shouldSupportSelectingWordInContent() throws Exception {
 		model(  "- task hello @prio(1)\n" +
 				"- task world @prio(1)\n" +
-				" note hello\n" +
-				" note world\n" +
+				"note hello\n" +
+				"note world\n" +
 				"project hello:\n"+
 				"project world:\n"); 
 
@@ -259,8 +261,8 @@ public class QueryInterpreterTests extends AbstractTest {
 	public void shouldSupportSelectingMultipleWordsInContent() throws Exception {
 		model(  "- task hello aaa world @prio(1)\n" +
 				"- task aaaa @prio(1)\n" +
-				" note hello aaa world \n" +
-				" note world\n" +
+				"note hello aaa world \n" +
+				"note world\n" +
 				"project hello aaa world:\n"+
 				"project world:\n"); 
 
@@ -272,8 +274,8 @@ public class QueryInterpreterTests extends AbstractTest {
 	public void shouldSupportSelectingPhrases() throws Exception {
 		model(  "- task hello world @prio(1)\n" +
 				"- task hello a world @prio(1)\n" +
-				" note hello world \n" +
-				" note hello a world\n" +
+				"note hello world \n" +
+				"note hello a world\n" +
 				"project hello world:\n"+
 				"project hello a world:\n"); 
 
@@ -281,10 +283,20 @@ public class QueryInterpreterTests extends AbstractTest {
 		assertThat(result, is("task hello world, note hello world, project hello world"));
 	}
 	
+	@Test
+	public void shouldSupportNestedTasks() throws Exception {
+		model(  "- task2\n"+
+				"	- task21\n" + 
+				"		- task211\n"); 
+
+		select("task211");
+		assertThat(result, is("task2, task21, task211"));
+	}
+	
 	private void select(String queryString) {
 		Query query = query(queryString);
 
-		List<String> results = Lists.newArrayList();
+		List<String> results = newArrayList();
 		for (Content content : allInstancesOf(Content.class)) {
 			if (fixture.select(query, content)){
 				results.add(content.getValue().toString());
@@ -302,6 +314,7 @@ public class QueryInterpreterTests extends AbstractTest {
 
 	private void model(String... taskModels) {
 		for (String string : taskModels) {
+			System.out.println(string);
 			parse(string);
 		}
 	}

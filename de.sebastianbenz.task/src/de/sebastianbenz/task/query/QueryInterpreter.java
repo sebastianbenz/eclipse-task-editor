@@ -1,11 +1,5 @@
 package de.sebastianbenz.task.query;
 
-import static com.google.common.collect.Iterables.concat;
-import static com.google.common.collect.Iterables.filter;
-
-import java.util.Collections;
-
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtext.util.Pair;
 import org.eclipse.xtext.util.PolymorphicDispatcher;
@@ -28,9 +22,18 @@ public class QueryInterpreter {
 			.createForSingleTarget("_select", 2, 2, this);
 
 	
-	private SimpleCache<Pair<Expression, EObject>, Boolean> selectionCache = new SimpleCache<Pair<Expression,EObject>, Boolean>(new Function<Pair<Expression, EObject>, Boolean>() {
-		public Boolean apply(Pair<Expression, EObject> args) {
-			return selectDispatcher.invoke(args.getFirst(), args.getSecond());
+	private SimpleCache<Pair<Query, EObject>, Boolean> selectionCache = new SimpleCache<Pair<Query,EObject>, Boolean>(new Function<Pair<Query, EObject>, Boolean>() {
+		public Boolean apply(Pair<Query, EObject> args) {
+			Query query = args.getFirst();
+			EObject element = args.getSecond();
+			if (element instanceof Container) {
+				for (Content child : ((Container)element).getChildren()) {
+					if(select(query, child)){
+						return true;
+					}
+				}
+			}
+			return internalSelect(query.getExpression(), element);
 		}
 	});
 	
@@ -42,33 +45,14 @@ public class QueryInterpreter {
 		if (query.getExpression() == null) {
 			return true;
 		}
-		if (element instanceof Project) {
-			for (Content content : allContents((Project) element,
-					Collections.<Content> emptyList())) {
-				if (internalSelect(query.getExpression(), content)) {
-					return true;
-				}
-			}
-		}
-		return internalSelect(query.getExpression(), element);
-	}
-
-	private Iterable<Content> allContents(Project project,
-			Iterable<Content> contents) {
-		EList<Content> children = project.getChildren();
-		contents = concat(contents, filter(children, Note.class));
-		contents = concat(contents, filter(children, Task.class));
-		for (Project subProject : filter(children, Project.class)) {
-			contents = concat(contents, allContents(subProject, contents));
-		}
-		return contents;
+		return selectionCache.get(Tuples.create(query, element));
 	}
 
 	protected boolean internalSelect(Expression expr, EObject target) {
 		if (expr == null || target == null) {
 			return true;
 		}
-		return selectionCache.get(Tuples.create(expr, target));
+		return selectDispatcher.invoke(expr, target); 	
 	}
 
 	protected boolean _select(EObject expr, EObject object) {

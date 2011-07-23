@@ -43,13 +43,13 @@ public class AutoEditStrategyProvider extends DefaultAutoEditStrategyProvider {
 			if (isEmpty(line)) {
 				return;
 			}
-			if(isEmptyTask(line)){
-				removeSingleHyphen(document, command, line);
-				return;
-			}
-
 			defaultStrategy.customizeDocumentCommand(document, command);
-			if (isNewProject(line)) {
+
+			if(!atEndOfLineInput(document, command.offset)){
+				return;
+			}else if(isEmptyTask(line)){
+				removeSingleHyphen(document, command, line);
+			}else if (isNewProject(line)) {
 				command.text = command.text + '\t';
 			} else if (isTask(line)) {
 				command.text = command.text + "- ";
@@ -59,10 +59,20 @@ public class AutoEditStrategyProvider extends DefaultAutoEditStrategyProvider {
 		private void removeSingleHyphen(IDocument document,
 				DocumentCommand command, String line)
 				throws BadLocationException {
-			int hyphenPosition = command.offset-line.length()+1;
-			document.replace(hyphenPosition, 1, " ");
+			int lineNr = document.getLineOfOffset(command.offset);
+			int lineOffset = document.getLineOffset(lineNr);
+			int index = line.indexOf("-");
+			int hyphenPosition = index + lineOffset;
+			int toDelete = line.length() - index;
+			document.replace(hyphenPosition, toDelete, "");
+			command.offset = command.offset - toDelete;
 		}
 
+		protected boolean atEndOfLineInput(IDocument document, int offset) throws BadLocationException {
+			IRegion line = document.getLineInformation(document.getLineOfOffset(offset));
+			return document.get(offset, line.getOffset() + line.getLength() - offset).trim().length() == 0;
+		}
+		
 		private boolean isEmptyTask(String line) {
 			return "-".equals(line.trim());
 		}
@@ -98,30 +108,6 @@ public class AutoEditStrategyProvider extends DefaultAutoEditStrategyProvider {
 		}
 	}
 
-	protected static class IntendationInserter extends AbstractEditStrategy {
-
-		@Override
-		protected void internalCustomizeDocumentCommand(IDocument document,
-				DocumentCommand command) throws BadLocationException {
-			if (!isIntend(document, command)) {
-				return;
-			}
-			IRegion region = document.getLineInformationOfOffset(command.offset);
-			String line = document.get(region.getOffset(), region.getLength());
-			if(line.trim().length() == 0){
-				return;
-			}
-			document.replace(region.getOffset(), 0, "\t");
-			command.text = "";
-			command.shiftsCaret = true;
-		}
-
-		private boolean isIntend(IDocument document, DocumentCommand command) {
-			String text = command.text;
-			return text.startsWith("\t");
-		}
-
-	}
 
 	@Inject
 	protected Provider<ShortCutEditStrategy> shortCut;
@@ -129,10 +115,6 @@ public class AutoEditStrategyProvider extends DefaultAutoEditStrategyProvider {
 	@Override
 	protected void configure(IEditStrategyAcceptor acceptor) {
 		super.configure(acceptor);
-//		acceptor.accept(shortCut.get().configure("-", "- "),
-//				IDocument.DEFAULT_CONTENT_TYPE);
-		acceptor.accept(new IntendationInserter(),
-				IDocument.DEFAULT_CONTENT_TYPE);
 	}
 
 	@Override

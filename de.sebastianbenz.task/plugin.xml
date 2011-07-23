@@ -15,7 +15,7 @@
 
   <extension point="org.eclipse.emf.ecore.generated_package">
     <package 
-       uri = "http://www.sebastianbenz.de/task/2011" 
+       uri = "http://www.sebastianbenz.de/task/2011/" 
        class = "de.sebastianbenz.task.TaskPackage"
        genModel = "model/Task.genmodel" /> 
 	

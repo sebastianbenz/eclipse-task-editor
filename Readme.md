@@ -16,12 +16,11 @@ The editor is also available as a standalone Eclipse RCP application. The applic
 	cd eclipse-task-editor
 	mvn clean install
 
-The zipped applications can be found in de.sebastianbenz.task.rcp/target/products/task-editor-*.zip
+The zipped applications can be found in de.sebastianbenz.task.rcp/target/products/task-editor-*.zip and a zipped update site is located in de.sebastianbenz.task.update-site/target/site.zip.
 
 #Usage
 
-The eclipse task editor can be used to create and manage textual todo files. The syntax is based on [TaskPaper](http://www.hogbaysoftware.com/products/taskpaper), an excellent to-do list manager  for Mac OS X.
-
+The eclipse task editor can be used to create and manage textual todo files. The syntax is based on [TaskPaper](http://www.hogbaysoftware.com/products/taskpaper), an excellent to-do list manager  for Mac OS X./
 A todo file consists of four elements: Tasks, Notes, Projects, and Tags. 
 
 * *Tasks:* Something that needs to be done. A task is preceeded by '-'.

@@ -27,6 +27,7 @@
     <module>de.sebastianbenz.task.ui</module>
     <module>de.sebastianbenz.task.platform-feature</module>
 	<module>de.sebastianbenz.task.test</module>
+	<module>de.sebastianbenz.task.update-site</module>
     <module>de.sebastianbenz.task.rcp</module>
     <module>de.sebastianbenz.task.rcp-feature</module>
   </modules>

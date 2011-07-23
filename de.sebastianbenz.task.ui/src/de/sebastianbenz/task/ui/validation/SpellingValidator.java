@@ -31,6 +31,7 @@ import de.sebastianbenz.task.Project;
 import de.sebastianbenz.task.Task;
 import de.sebastianbenz.task.validation.TaskJavaValidator;
 
+@SuppressWarnings("restriction")
 public class SpellingValidator extends TaskJavaValidator {
 
 	private final class DocumentResolver implements Runnable {

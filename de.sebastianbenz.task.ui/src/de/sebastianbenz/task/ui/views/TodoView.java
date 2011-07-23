@@ -134,7 +134,7 @@ public class TodoView extends ViewPart {
 	}
 
 	protected void configureQueryField(Composite parent) {
-		queryText = new Text(parent, SWT.SINGLE | SWT.BORDER | SWT.SEARCH
+		queryText = new Text(parent, SWT.SINGLE | SWT.BORDER | SWT.ICON_SEARCH | SWT.SEARCH
 				| SWT.ICON_CANCEL);
 		GridData gridData = new GridData(SWT.LEFT, SWT.TOP, true, false);
 		gridData.horizontalAlignment = GridData.FILL;

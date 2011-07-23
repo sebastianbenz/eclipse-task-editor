@@ -344,7 +344,7 @@
             class="de.sebastianbenz.task.ui.QueryExecutableExtensionFactory:de.sebastianbenz.task.ui.views.TodoView"
             icon="icons/TodoFile.png"
             id="de.sebastianbenz.task.ui.views.TodoView"
-            name="Query"
+            name="Todos"
             restorable="true">
       </view>
    </extension>

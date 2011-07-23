@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature url="features/de.sebastianbenz.task_1.0.1.qualifier.jar" id="de.sebastianbenz.task" version="1.0.1.qualifier">
+      <category name="Todo editor"/>
+   </feature>
+   <category-def name="Todo editor" label="Todo editor"/>
+</site>

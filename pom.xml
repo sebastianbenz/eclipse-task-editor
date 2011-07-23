@@ -19,13 +19,14 @@
   </properties>
 
   <modules>
-     <module>de.sebastianbenz.task.target</module>
+    <module>de.sebastianbenz.task.target</module>
     <module>de.sebastianbenz.task-feature</module>
     <module>de.sebastianbenz.task</module>
     <module>de.sebastianbenz.task.application</module>
     <module>de.sebastianbenz.task.edit</module>
     <module>de.sebastianbenz.task.ui</module>
     <module>de.sebastianbenz.task.platform-feature</module>
+	<module>de.sebastianbenz.task.test</module>
     <module>de.sebastianbenz.task.rcp</module>
     <module>de.sebastianbenz.task.rcp-feature</module>
   </modules>

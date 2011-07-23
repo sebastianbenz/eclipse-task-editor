@@ -4,14 +4,53 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<version>1.0.0-SNAPSHOT</version>
-	<artifactId>de.sebastianbenz.task</artifactId>
-	<packaging>eclipse-plugin</packaging>
-	<name>Task Editor Runtime</name>
+	<artifactId>de.sebastianbenz.task.test</artifactId>
+	 <packaging>eclipse-test-plugin</packaging>
+	<name>Task Editor Tests</name>
 
 	<parent>
 		<version>1.0.0-SNAPSHOT</version>
 		<groupId>de.sebastianbenz.task</groupId>
 		<artifactId>parent</artifactId>
 	</parent>
+	
+	 <build>
+    <plugins>
+      <plugin>
+        <groupId>org.eclipse.tycho</groupId>
+        <artifactId>tycho-surefire-plugin</artifactId>
+        <version>${tycho-version}</version>
+        <configuration>
+          <useUIHarness>true</useUIHarness>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
 
+  <profiles>
+    <profile>
+      <id>osx</id>
+      <activation>
+        <property>
+          <name>java.vendor.url</name>
+          <value>http://www.apple.com/</value>
+        </property>
+      </activation>
+      <build>
+        <pluginManagement>
+          <plugins>
+            <plugin>
+              <groupId>org.eclipse.tycho</groupId>
+              <artifactId>tycho-surefire-plugin</artifactId>
+              <version>${tycho-version}</version>
+              <configuration>
+                <argLine>-XstartOnFirstThread</argLine>
+              </configuration>
+            </plugin>
+          </plugins>
+        </pluginManagement>
+      </build>
+    </profile>
+  </profiles>
+	
 </project>

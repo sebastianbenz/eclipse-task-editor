@@ -13,7 +13,6 @@ http://sebastianbenz.github.com/eclipse-task-editor/updates
 The editor is also available as a standalone Eclipse RCP application. The application runs on windows, linux and mac. You can build the application via:
 
 	git clone git://github.com/sebastianbenz/eclipse-task-editor.git
-	git checkout v1.0.0
 	cd eclipse-task-editor
 	mvn clean install
 
@@ -29,6 +28,8 @@ A todo file consists of four elements: Tasks, Notes, Projects, and Tags.
 * *Notes:* Arbitrary text.
 * *Projects:* Projects can be used to structure tasks. Projects are followed by ':' and a linebreak.
 * *Tags:* can be used to categorize tasks. Tags start with '@'. 
+
+[more](http://sebastianbenz.de/a-simple-text-based-todo-editor-for-eclipse)
 
 #License
 

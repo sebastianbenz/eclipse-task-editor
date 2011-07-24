@@ -108,7 +108,7 @@ public class QueryInterpreterTests extends AbstractTest {
 			  "project2:\n" +
 				" - task2\n");
 
-		select("project : project1");
+		select("project: project1");
 
 		assertThat(result, is("project1, task1"));
 	}
@@ -120,10 +120,23 @@ public class QueryInterpreterTests extends AbstractTest {
 				" project1_1:\n" +
 				"  - task1\n"); 
 
-		select("project : project1");
+		select("project: project1");
 
 		assertThat(result, is("project1, project1_1, task1"));
 	}
+	
+	@Test
+	public void shouldExecuteQueriesWithinProjectScope() throws Exception {
+		model("project:\n" +
+			"	project1:\n" + 
+			"		shouldNotBeSelected\n" +
+			"	project2:\n" + 
+			"		shouldBeSelected\n" +
+			"		shouldNotBeSelected @done\n");
+		select("project:project2 and not @done");
+		assertThat(result, is("project, project2, shouldBeSelected"));
+	}
+	
 	
 	@Test
 	public void shouldFilterTasks() throws Exception {

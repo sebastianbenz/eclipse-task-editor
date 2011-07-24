@@ -188,9 +188,9 @@ public class QueryInterpreter {
 		return !internalSelect(expr.getExpr(), object);
 	}
 
-	protected boolean _select(TagReference tagReference, Task task) {
+	protected boolean _select(TagReference tagReference, Content content) {
 		String tag = tagReference.getValue();
-		for (Tag current : task.getTags()) {
+		for (Tag current : content.getTags()) {
 			if (current.getName().startsWith(tag)) {
 				return true;
 			}
@@ -214,26 +214,21 @@ public class QueryInterpreter {
 		if(project.getValue() == null){
 			return false;
 		}
-		boolean isProject = project.getValue().startsWith(projectName);
-		if (isProject) {
+		if (project.getValue().startsWith(projectName)) {
 			return true;
 		}
-		Container parentProject = project.getParent();
-		if (parentProject instanceof Project) {
-			return internalSelect(projectReference, parentProject);
-		}
-		return false;
+		return internalSelect(projectReference, project.getParent());
 	}
 
 	protected boolean _select(ProjectReference projectReference, Content content) {
 		Container parent = content.getParent();
 		while (parent != null) {
-			if (internalSelect(projectReference, parent)) {
+			if (parent instanceof  Project && internalSelect(projectReference, parent)) {
 				return true;
 			}
-			if (parent instanceof Project) {
-				parent = ((Project) parent).getParent();
-			} else {
+			if (parent instanceof Content) {
+				parent = ((Content) parent).getParent();
+			}else{
 				parent = null;
 			}
 		}

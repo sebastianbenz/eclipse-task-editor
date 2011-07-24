@@ -132,7 +132,7 @@ public class SemanticHighlightingCalculator implements ISemanticHighlightingCalc
 			if(node == null){
 				return;
 			}
-			int offset = node.getOffset() + content.getIntend().size();
+			int offset = node.getOffset();
 			int length = node.getLength();
 			acceptor.addPosition(offset, length, id);
 		}

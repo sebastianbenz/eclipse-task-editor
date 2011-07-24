@@ -129,7 +129,7 @@ public class SemanticHighlightingCalculator implements ISemanticHighlightingCalc
 
 		protected void highlight(Content content, String id) {
 			ICompositeNode node = NodeModelUtils.getNode(content);
-			if(node == null){
+			if(node == null){ 
 				return;
 			}
 			int offset = node.getOffset();

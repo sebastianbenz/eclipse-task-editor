@@ -1,3 +1,13 @@
+/*******************************************************************************
+ * Copyright (c) 2011 Sebastian.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ * 
+ * Contributors:
+ *     Sebastian - initial API and implementation
+ ******************************************************************************/
 package de.sebastianbenz.task.ui.views;
 
 import static org.eclipse.emf.ecore.util.EcoreUtil.getURI;
@@ -139,7 +149,7 @@ public class TodoView extends ViewPart {
 		GridData gridData = new GridData(SWT.LEFT, SWT.TOP, true, false);
 		gridData.horizontalAlignment = GridData.FILL;
 		queryText.setLayoutData(gridData);
-		queryText.setToolTipText("Enter a task query...");
+		queryText.setToolTipText("Enter a query...");
 		queryText.setSelection(0, queryText.getText().length());
 		queryText.addModifyListener(queryBasedViewFilter);
 		proposalProvider.configure(queryText);

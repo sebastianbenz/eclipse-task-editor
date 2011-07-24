@@ -15,9 +15,7 @@ import org.eclipse.xtext.xtend2.lib.StringConcatenation
 
 class HtmlGenerator implements de.sebastianbenz.task.generator.TaskGenerator {
 	   
-	override StringConcatenation generate(TaskModel taskModel){
-		
-		'''
+	override StringConcatenation generate(TaskModel taskModel)'''
 		<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
 		<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
 		<head> 
@@ -55,19 +53,14 @@ class HtmlGenerator implements de.sebastianbenz.task.generator.TaskGenerator {
 		«ENDFOR»
 		</body>
 		''' 
-	} 
 	
-	def dispatch generate(Note note){
-		'''
+	def dispatch generate(Note note)'''
 		<p class="note">«note.value»«generateTags(note)»</p>
-		'''
-	}
+	'''
 	
-	def dispatch generate(Task task){
-		'''
+	def dispatch generate(Task task)'''
 		<ul><li«IF task.done» class="done"«ENDIF»>«task.value.trim()»«generateTags(task)»</li></ul>		
-		'''
-	}
+	'''
 	
 	def dispatch generate(Project project){
 		var level = project.level + 1
@@ -76,19 +69,17 @@ class HtmlGenerator implements de.sebastianbenz.task.generator.TaskGenerator {
 		'''
 	}
 	
-	def dispatch generate(EmptyLine emptyLine){
+	def dispatch generate(EmptyLine emptyLine)
 		'''
 		
 		'''
-	}
 	
-	def dispatch generate(Code code){
+	def dispatch generate(Code code)
 		''' 
 		<pre><code>
 		«code.value»
 		<pre><code>
 		'''
-	}
 	
 	
 	def generateTags(Content content){

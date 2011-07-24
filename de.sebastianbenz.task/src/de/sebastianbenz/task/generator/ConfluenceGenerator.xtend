@@ -15,42 +15,36 @@ import org.eclipse.xtext.xtend2.lib.StringConcatenation
 
 class ConfluenceGenerator implements de.sebastianbenz.task.generator.TaskGenerator {
 	   
-	override StringConcatenation generate(TaskModel taskModel){
+	override StringConcatenation generate(TaskModel taskModel)
 		'''
 		«FOR content : taskModel.contents»
 			«generate(content)»«FOR tag : content.tags»{color:gray}«tag»{color} «ENDFOR»
 		«ENDFOR»
 		''' 
-	}  
 	
-	def dispatch generate(Note note){
+	def dispatch generate(Note note)
 		'''
 		{color:gray}«escape(note.value)»{color}'''
-	}
 	
-	def dispatch generate(Task task){
+	def dispatch generate(Task task)
 		'''
 		*  «IF task.done»-«ENDIF»«escape(task.value.trim())» «IF task.done»-«ENDIF»'''
-	}
 	
-	def dispatch generate(Project project){
+	def dispatch generate(Project project)
 		'''
 		h«project.level + 1». «escape(project.value)»'''
-	}
 	
-	def dispatch generate(EmptyLine emptyLine){
+	def dispatch generate(EmptyLine emptyLine)
 		'''
 		
 		'''
-	}
 	
-	def dispatch generate(Code code){
+	def dispatch generate(Code code)
 		''' 
 		{code}
 		«code.value»
 		{code}
 		'''
-	}
 	
 	def escape(String string){
 		return string.replaceAll("\\{", "\\\\{").replaceAll("\\}", "\\\\}")

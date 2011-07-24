@@ -1,8 +1,7 @@
 bin
 workspace
-runtime-TaskEditor.product
 target
-runtime-EclipseApplication
+runtime-*
 .DS_Store
 junit-workspace
 

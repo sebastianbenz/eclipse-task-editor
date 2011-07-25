@@ -10,11 +10,13 @@
  ******************************************************************************/
 package de.sebastianbenz.task.ui.highlighting;
 
+import static com.google.common.collect.Lists.newLinkedList;
 import static de.sebastianbenz.task.ui.highlighting.HighlightingConfiguration.PROJECT2_ID;
 import static de.sebastianbenz.task.ui.highlighting.HighlightingConfiguration.PROJECT3_ID;
 import static de.sebastianbenz.task.ui.highlighting.HighlightingConfiguration.TAG_ID;
 
 import java.util.Iterator;
+import java.util.LinkedList;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtext.nodemodel.ICompositeNode;
@@ -23,6 +25,9 @@ import org.eclipse.xtext.resource.XtextResource;
 import org.eclipse.xtext.ui.editor.syntaxcoloring.IHighlightedPositionAcceptor;
 import org.eclipse.xtext.ui.editor.syntaxcoloring.ISemanticHighlightingCalculator;
 
+import com.google.inject.Inject;
+
+import de.sebastianbenz.task.Code;
 import de.sebastianbenz.task.Content;
 import de.sebastianbenz.task.Note;
 import de.sebastianbenz.task.Project;
@@ -31,8 +36,62 @@ import de.sebastianbenz.task.Task;
 import de.sebastianbenz.task.util.TaskSwitch;
 
 public class SemanticHighlightingCalculator implements ISemanticHighlightingCalculator{
+	
+	private static class Position{
+		
+		public final int offset;
+		public final int length;
+		public final String[] id;
+		
+		public Position(int offset, int length, String[] id) {
+			this.offset = offset;
+			this.length = length;
+			this.id = id;
+		}
+		
+	}
 
 	private class Implementation extends TaskSwitch<Boolean>{
+
+		private static final int CODE_SEPARATOR = 3;
+
+		private final class FilteringAcceptor
+				implements IHighlightedPositionAcceptor {
+			
+			private final int baseOffset;
+			private LinkedList<Position> matches = newLinkedList();
+			
+			private FilteringAcceptor(int base) {
+				this.baseOffset = base;
+			}
+
+			public void addPosition(int offset, int length, String... id) {
+				matches.add(new Position(offset, length, id));
+			}
+
+			public void flush() {
+				Iterator<Position> iterator = matches.iterator();
+				while (iterator.hasNext()) {
+					Position current = iterator.next();
+					if(isInsideOtherMatch(current)){
+						iterator.remove();
+					}
+				}
+				
+				for (Position match : matches) {
+					acceptor.addPosition(baseOffset + match.offset, match.length, match.id);
+				}
+			}
+
+			private boolean isInsideOtherMatch(Position current) {
+				for (Position other : matches) {
+					if((current.offset > other.offset) && (current.offset < other.offset + other.length)){
+						return true;
+					}
+				}
+				return false;
+			}
+		}
 
 		private final IHighlightedPositionAcceptor acceptor;
 
@@ -136,9 +195,36 @@ public class SemanticHighlightingCalculator implements ISemanticHighlightingCalc
 			int length = node.getLength();
 			acceptor.addPosition(offset, length, id);
 		}
+		
+		@Override
+		public Boolean caseCode(Code code) {
+			String key = firstWord(code.getValue());
+			Configuration configuration = configurationRegistry.get(key);
+			FilteringAcceptor filter = new FilteringAcceptor(offset(code) + CODE_SEPARATOR);
+			String text = code.getText();
+			configuration.apply(text.substring(CODE_SEPARATOR, text.length()-CODE_SEPARATOR), filter);
+			filter.flush();
+			return Boolean.TRUE;
+		}
+
+		private String firstWord(String s) {
+			for(int i = 0; i < s.length(); i++){
+				char c = s.charAt(i);
+				if(c == ' ' || c == '\t' || c == '\r' || c == '\n'){
+					return s.substring(0, i);
+				}
+			}
+			return s;
+		}
 	}
 	
+	@Inject
+	public SemanticHighlightingCalculator(ConfigurationRegistry configurationRegistry){
+		this.configurationRegistry = configurationRegistry;
+	}
 	
+	private final ConfigurationRegistry configurationRegistry;
+
 	public void provideHighlightingFor(XtextResource resource,
 			IHighlightedPositionAcceptor acceptor) {
 		if (noNodeModel(resource)){

@@ -60,8 +60,8 @@ public class ContentImplCustom extends de.sebastianbenz.task.impl.ContentImpl {
 		while (matcher.find()) {
 			String name = matcher.group(1);
 			String value = matcher.group(3);
-			int offset = matcher.start(0) + SPACE;
-			int length = matcher.end(0) - offset;
+			int offset = matcher.start() + SPACE;
+			int length = matcher.end() - offset;
 			getTags().add(Tags.create(name, value, offset, length));
 		}
 	}

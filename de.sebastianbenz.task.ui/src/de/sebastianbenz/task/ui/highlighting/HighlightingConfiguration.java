@@ -32,9 +32,10 @@ public class HighlightingConfiguration extends DefaultHighlightingConfiguration 
 	public static final String TASK_OPEN_ID = "taskOpen";
 	public static final String TAG_ID = "tag";
 	public static final String CODE_ID = "code";
+	public static final String CODE_ANNOTATION_ID = "code annotation";
 
 	public void configure(IHighlightingConfigurationAcceptor acceptor) {
-		acceptor.acceptDefaultHighlighting(KEYWORD_ID, "Keyword", defaultTextStyle());
+		acceptor.acceptDefaultHighlighting(KEYWORD_ID, "Keyword", keywordTextStyle());
 		acceptor.acceptDefaultHighlighting(PUNCTUATION_ID, "Punctuation character", punctuationTextStyle());
 		acceptor.acceptDefaultHighlighting(COMMENT_ID, "Comment", commentTextStyle());
 		acceptor.acceptDefaultHighlighting(STRING_ID, "String", stringTextStyle());
@@ -54,6 +55,7 @@ public class HighlightingConfiguration extends DefaultHighlightingConfiguration 
 		acceptor.acceptDefaultHighlighting(TASK_OPEN_ID, "Task open", taskOpenTextStyle());
 		acceptor.acceptDefaultHighlighting(TAG_ID, "Tags", tagTextStyle());
 		acceptor.acceptDefaultHighlighting(CODE_ID, "Code", codeTextStyle());
+		acceptor.acceptDefaultHighlighting(CODE_ANNOTATION_ID, "Code Annotation", codeAnnotationTextStyle());
 	}
 
 	public TextStyle taskOpenTextStyle() {
@@ -121,8 +123,14 @@ public class HighlightingConfiguration extends DefaultHighlightingConfiguration 
 	
 	public TextStyle codeTextStyle() {
 		TextStyle result = super.defaultTextStyle().copy();
-		result.setColor(new RGB(0, 0, 209));
+		//result.setColor(new RGB(0, 0, 209));
 		return result;
+	}
+	
+	public TextStyle codeAnnotationTextStyle() {
+		TextStyle textStyle = super.defaultTextStyle().copy();
+		textStyle.setColor(grey());
+		return textStyle;
 	}
 	
 	@Override

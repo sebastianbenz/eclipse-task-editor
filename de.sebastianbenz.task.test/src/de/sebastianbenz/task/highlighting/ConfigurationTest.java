@@ -6,18 +6,11 @@ import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertTrue;
 
 import java.util.HashSet;
-import java.util.Set;
 
 import org.eclipse.xtext.ui.editor.syntaxcoloring.IHighlightedPositionAcceptor;
-import org.eclipse.xtext.util.Pair;
-import org.eclipse.xtext.util.Tuples;
-import org.hamcrest.core.Is;
 import org.junit.After;
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-
-import com.google.common.collect.Sets;
 
 import de.sebastianbenz.task.ui.highlighting.Configuration.Mapping;
 
@@ -43,11 +36,7 @@ public class ConfigurationTest {
 	
 	@Before
 	public void setup(){
-<<<<<<< HEAD
 		keywords("public static if");
-=======
-		keywords("public static");
->>>>>>> 7cf26d592945134a29fcd9f0848f8b8e485479aa
 	}
 
 	@Test
@@ -55,10 +44,7 @@ public class ConfigurationTest {
 		highlight("01234 public", 1);
 		highlight("static public", 2);
 		highlight("'asdfdsa'\n 		static void", 1);
-<<<<<<< HEAD
 		highlight("in de if ad public", 2);
-=======
->>>>>>> 7cf26d592945134a29fcd9f0848f8b8e485479aa
 	}
 	
 	@After

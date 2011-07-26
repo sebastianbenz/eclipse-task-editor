@@ -133,6 +133,13 @@ public class HighlightingConfiguration extends DefaultHighlightingConfiguration 
 		return textStyle;
 	}
 	
+	public TextStyle keywordTextStyle() {
+		TextStyle textStyle = super.defaultTextStyle().copy();
+		textStyle.setColor(new RGB(127, 0, 85));
+		textStyle.setStyle(SWT.BOLD);
+		return textStyle;
+	}
+	
 	@Override
 	public TextStyle defaultTextStyle() {
 		TextStyle result = super.defaultTextStyle().copy();
@@ -141,5 +148,23 @@ public class HighlightingConfiguration extends DefaultHighlightingConfiguration 
 		fontData.setHeight(DEFAULT_FONT_SIZE);
 		result.setFontData(fontData);  
 		return result;
+	}
+	
+	public TextStyle numberTextStyle() {
+		TextStyle textStyle = super.defaultTextStyle().copy();
+		textStyle.setColor(new RGB(125, 125, 125));
+		return textStyle;
+	}
+
+	public TextStyle stringTextStyle() {
+		TextStyle textStyle = super.defaultTextStyle().copy();
+		textStyle.setColor(new RGB(42, 0, 255));
+		return textStyle;
+	}
+
+	public TextStyle commentTextStyle() {
+		TextStyle textStyle = super.defaultTextStyle().copy();
+		textStyle.setColor(new RGB(63, 127, 95));
+		return textStyle;
 	}
 }

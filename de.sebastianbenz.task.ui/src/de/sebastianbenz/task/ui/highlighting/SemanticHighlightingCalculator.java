@@ -70,7 +70,6 @@ public class SemanticHighlightingCalculator implements ISemanticHighlightingCalc
 			}
 
 			public void flush() {
-<<<<<<< HEAD
 				filterHiddenMatches();
 				
 				for (Position match : matches) {
@@ -79,8 +78,6 @@ public class SemanticHighlightingCalculator implements ISemanticHighlightingCalc
 			}
 
 			private void filterHiddenMatches() {
-=======
->>>>>>> 7cf26d592945134a29fcd9f0848f8b8e485479aa
 				Iterator<Position> iterator = matches.iterator();
 				while (iterator.hasNext()) {
 					Position current = iterator.next();
@@ -88,13 +85,6 @@ public class SemanticHighlightingCalculator implements ISemanticHighlightingCalc
 						iterator.remove();
 					}
 				}
-<<<<<<< HEAD
-=======
-				
-				for (Position match : matches) {
-					acceptor.addPosition(baseOffset + match.offset, match.length, match.id);
-				}
->>>>>>> 7cf26d592945134a29fcd9f0848f8b8e485479aa
 			}
 
 			private boolean isInsideOtherMatch(Position current) {

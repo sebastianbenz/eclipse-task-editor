@@ -16,6 +16,7 @@ package de.sebastianbenz.task.ui;
 import java.util.Collection;
 import java.util.Collections;
 
+import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.eclipse.xtext.ui.editor.XtextEditor;
 import org.eclipse.xtext.ui.editor.XtextSourceViewerConfiguration;
@@ -24,6 +25,7 @@ import org.eclipse.xtext.ui.editor.contentassist.ITemplateProposalProvider;
 import org.eclipse.xtext.ui.editor.folding.FoldedPosition;
 import org.eclipse.xtext.ui.editor.folding.IFoldingRegionProvider;
 import org.eclipse.xtext.ui.editor.model.IResourceForEditorInputFactory;
+import org.eclipse.xtext.ui.editor.model.ITokenTypeToPartitionTypeMapper;
 import org.eclipse.xtext.ui.editor.model.IXtextDocument;
 import org.eclipse.xtext.ui.editor.model.ResourceForIEditorInputFactory;
 import org.eclipse.xtext.ui.editor.syntaxcoloring.AbstractAntlrTokenToAttributeIdMapper;
@@ -112,5 +114,8 @@ public class TaskUiModule extends de.sebastianbenz.task.ui.AbstractTaskUiModule 
 	@org.eclipse.xtext.service.SingletonBinding(eager=true)	public Class<? extends de.sebastianbenz.task.validation.TaskJavaValidator> bindTaskJavaValidator() {
 		return de.sebastianbenz.task.ui.validation.SpellingValidator.class;
 	}
-
+	
+	public Class<? extends ITokenTypeToPartitionTypeMapper> bindITokenTypeToPartitionTypeMapper(){
+		return TaskTokenTypeToPartitionTypeMapper.class;
+	}
 }

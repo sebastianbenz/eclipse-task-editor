@@ -22,6 +22,7 @@ import org.eclipse.xtext.ui.editor.utils.TextStyle;
 public class HighlightingConfiguration extends DefaultHighlightingConfiguration {
 	
 	private static final int DEFAULT_FONT_SIZE = JFaceResources.getDefaultFontDescriptor().getFontData()[0].getHeight();
+	
 	public static final String NOTE_ID = "node";
 	public static final String NOTE_DONE_ID = "node_done";
 	public static final String URL_ID = "url";
@@ -123,19 +124,19 @@ public class HighlightingConfiguration extends DefaultHighlightingConfiguration 
 	
 	public TextStyle codeTextStyle() {
 		TextStyle result = super.defaultTextStyle().copy();
-		//result.setColor(new RGB(0, 0, 209));
+		result.setColor(SolarizedDark.CODE);
 		return result;
 	}
 	
 	public TextStyle codeAnnotationTextStyle() {
 		TextStyle textStyle = super.defaultTextStyle().copy();
-		textStyle.setColor(grey());
+		textStyle.setColor(SolarizedDark.ANNOTATION);
 		return textStyle;
 	}
 	
 	public TextStyle keywordTextStyle() {
 		TextStyle textStyle = super.defaultTextStyle().copy();
-		textStyle.setColor(new RGB(127, 0, 85));
+		textStyle.setColor(SolarizedDark.KEYWORD);
 		textStyle.setStyle(SWT.BOLD);
 		return textStyle;
 	}
@@ -152,19 +153,19 @@ public class HighlightingConfiguration extends DefaultHighlightingConfiguration 
 	
 	public TextStyle numberTextStyle() {
 		TextStyle textStyle = super.defaultTextStyle().copy();
-		textStyle.setColor(new RGB(125, 125, 125));
+		textStyle.setColor(SolarizedDark.NUMBER);
 		return textStyle;
 	}
 
 	public TextStyle stringTextStyle() {
 		TextStyle textStyle = super.defaultTextStyle().copy();
-		textStyle.setColor(new RGB(42, 0, 255));
+		textStyle.setColor(SolarizedDark.STRING);
 		return textStyle;
 	}
 
 	public TextStyle commentTextStyle() {
 		TextStyle textStyle = super.defaultTextStyle().copy();
-		textStyle.setColor(new RGB(63, 127, 95));
+		textStyle.setColor(SolarizedDark.COMMENT);
 		return textStyle;
 	}
 }

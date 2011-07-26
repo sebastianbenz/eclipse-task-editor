@@ -2,8 +2,7 @@ package de.sebastianbenz.task.ui.highlighting;
 
 import static com.google.common.collect.Lists.newArrayListWithExpectedSize;
 import static java.util.Arrays.asList;
-import static org.eclipse.xtext.ui.editor.syntaxcoloring.DefaultHighlightingConfiguration.KEYWORD_ID;
-
+import static de.sebastianbenz.task.ui.highlighting.HighlightingConfiguration.*;
 import java.util.List;
 
 import de.sebastianbenz.task.ui.highlighting.Configuration.Mapping;
@@ -36,6 +35,7 @@ public class ConfigurationBuilder {
 		List<Mapping> mappingsList = newArrayListWithExpectedSize(mappings.length + 1);
 		mappingsList.addAll(asList(mappings));
 		mappingsList.add(Mapping.keywords(keywords).style(KEYWORD_ID));
+		mappingsList.add(Mapping.pattern("'''").style(CODE_ID));
 		return new Configuration(name, mappingsList);
 	}
 	

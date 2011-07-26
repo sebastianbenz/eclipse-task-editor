@@ -45,7 +45,8 @@ public class QueryBasedFilter extends ViewerFilter implements ModifyListener{
 			Display.getDefault().asyncExec(new Runnable() {
 				
 				public void run() {
-					viewer.refresh();
+					if(!viewer.getControl().isDisposed())
+						viewer.refresh();
 				}
 			});
 			return Status.OK_STATUS;

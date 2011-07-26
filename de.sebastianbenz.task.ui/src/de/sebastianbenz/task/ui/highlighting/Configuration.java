@@ -1,7 +1,15 @@
 package de.sebastianbenz.task.ui.highlighting;
 
+<<<<<<< HEAD
 import java.util.Collections;
 import java.util.List;
+=======
+import static java.util.Collections.emptyList;
+
+import java.util.Collections;
+import java.util.List;
+import java.util.Set;
+>>>>>>> 7cf26d592945134a29fcd9f0848f8b8e485479aa
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -57,6 +65,7 @@ public class Configuration {
 		
 	}
 
+<<<<<<< HEAD
 	public static Configuration EMPTY_CONFIGURATION = new Configuration("", Collections.<Mapping>emptyList()); 
 	
 	private final String name;
@@ -64,6 +73,17 @@ public class Configuration {
 	
 	public Configuration(String name, List<Mapping> mappings) {
 		this.name = name;
+=======
+	public static Configuration EMPTY_CONFIGURATION = new Configuration("", "", Collections.<Mapping>emptyList()); 
+	
+	private final String name;
+	private final String keywords;
+	private final List<Mapping> mappings;
+	
+	public Configuration(String name, String keywords, List<Mapping> mappings) {
+		this.name = name;
+		this.keywords = keywords;
+>>>>>>> 7cf26d592945134a29fcd9f0848f8b8e485479aa
 		this.mappings = mappings;
 	}
 

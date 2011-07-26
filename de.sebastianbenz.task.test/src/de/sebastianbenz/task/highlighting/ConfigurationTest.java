@@ -43,7 +43,11 @@ public class ConfigurationTest {
 	
 	@Before
 	public void setup(){
+<<<<<<< HEAD
 		keywords("public static if");
+=======
+		keywords("public static");
+>>>>>>> 7cf26d592945134a29fcd9f0848f8b8e485479aa
 	}
 
 	@Test
@@ -51,7 +55,10 @@ public class ConfigurationTest {
 		highlight("01234 public", 1);
 		highlight("static public", 2);
 		highlight("'asdfdsa'\n 		static void", 1);
+<<<<<<< HEAD
 		highlight("in de if ad public", 2);
+=======
+>>>>>>> 7cf26d592945134a29fcd9f0848f8b8e485479aa
 	}
 	
 	@After

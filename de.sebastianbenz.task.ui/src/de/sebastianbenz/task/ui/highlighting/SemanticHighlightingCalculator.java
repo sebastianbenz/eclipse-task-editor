@@ -202,13 +202,30 @@ public class SemanticHighlightingCalculator implements ISemanticHighlightingCalc
 		
 		@Override
 		public Boolean caseCode(Code code) {
-			String key = firstWord(code.getValue());
-			Configuration configuration = configurationRegistry.get(key);
-			FilteringAcceptor filter = new FilteringAcceptor(offset(code) + CODE_SEPARATOR);
-			String text = code.getText();
-			configuration.apply(text.substring(CODE_SEPARATOR, text.length()-CODE_SEPARATOR), filter);
-			filter.flush();
+			applyBrushes(code);
 			return Boolean.TRUE;
+		}
+
+		protected void applyBrushes(Code code) {
+			FilteringAcceptor filter = new FilteringAcceptor(codeOffset(code));
+			Brush brush = brushFor(code);
+			brush.apply(textOf(code), filter);
+			filter.flush();
+		}
+
+		protected String textOf(Code code) {
+			String text = code.getText();
+			return text.substring(CODE_SEPARATOR, text.length()-CODE_SEPARATOR);
+		}
+
+		protected Brush brushFor(Code code) {
+			String key = firstWord(code.getValue());
+			Brush configuration = configurationRegistry.get(key);
+			return configuration;
+		}
+
+		protected int codeOffset(Code code) {
+			return offset(code) + CODE_SEPARATOR;
 		}
 
 		private String firstWord(String s) {
@@ -223,11 +240,11 @@ public class SemanticHighlightingCalculator implements ISemanticHighlightingCalc
 	}
 	
 	@Inject
-	public SemanticHighlightingCalculator(ConfigurationRegistry configurationRegistry){
+	public SemanticHighlightingCalculator(BrushRegistry configurationRegistry){
 		this.configurationRegistry = configurationRegistry;
 	}
 	
-	private final ConfigurationRegistry configurationRegistry;
+	private final BrushRegistry configurationRegistry;
 
 	public void provideHighlightingFor(XtextResource resource,
 			IHighlightedPositionAcceptor acceptor) {

@@ -59,6 +59,8 @@ public class HighlightingConfiguration extends DefaultHighlightingConfiguration 
 		acceptor.acceptDefaultHighlighting(CODE_ANNOTATION_ID, "Code Annotation", codeAnnotationTextStyle());
 	}
 
+	
+
 	public TextStyle taskOpenTextStyle() {
 		TextStyle textStyle = defaultTextStyle().copy();
 		return textStyle;
@@ -124,19 +126,19 @@ public class HighlightingConfiguration extends DefaultHighlightingConfiguration 
 	
 	public TextStyle codeTextStyle() {
 		TextStyle result = super.defaultTextStyle().copy();
-		result.setColor(SolarizedDark.CODE);
+		result.setColor(ColorScheme.CODE);
 		return result;
 	}
 	
 	public TextStyle codeAnnotationTextStyle() {
 		TextStyle textStyle = super.defaultTextStyle().copy();
-		textStyle.setColor(SolarizedDark.ANNOTATION);
+		textStyle.setColor(ColorScheme.ANNOTATION);
 		return textStyle;
 	}
 	
 	public TextStyle keywordTextStyle() {
 		TextStyle textStyle = super.defaultTextStyle().copy();
-		textStyle.setColor(SolarizedDark.KEYWORD);
+		textStyle.setColor(ColorScheme.KEYWORD);
 		textStyle.setStyle(SWT.BOLD);
 		return textStyle;
 	}
@@ -153,19 +155,19 @@ public class HighlightingConfiguration extends DefaultHighlightingConfiguration 
 	
 	public TextStyle numberTextStyle() {
 		TextStyle textStyle = super.defaultTextStyle().copy();
-		textStyle.setColor(SolarizedDark.NUMBER);
+		textStyle.setColor(ColorScheme.NUMBER);
 		return textStyle;
 	}
 
 	public TextStyle stringTextStyle() {
 		TextStyle textStyle = super.defaultTextStyle().copy();
-		textStyle.setColor(SolarizedDark.STRING);
+		textStyle.setColor(ColorScheme.STRING);
 		return textStyle;
 	}
 
 	public TextStyle commentTextStyle() {
 		TextStyle textStyle = super.defaultTextStyle().copy();
-		textStyle.setColor(SolarizedDark.COMMENT);
+		textStyle.setColor(ColorScheme.COMMENT);
 		return textStyle;
 	}
 }

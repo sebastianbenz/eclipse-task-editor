@@ -10,60 +10,88 @@
  ******************************************************************************/
 package de.sebastianbenz.task.ui.editor;
 
+import static de.sebastianbenz.task.ui.TaskTokenTypeToPartitionTypeMapper.CODE_PARTITION;
+import static org.eclipse.jface.text.IDocumentExtension3.DEFAULT_PARTITIONING;
 import static org.eclipse.jface.text.TextUtilities.getContentType;
 
 import org.apache.log4j.Logger;
 import org.eclipse.jface.text.BadLocationException;
-import org.eclipse.jface.text.IDocumentExtension3;
 import org.eclipse.jface.text.source.ISourceViewer;
 import org.eclipse.jface.text.source.IVerticalRuler;
 import org.eclipse.swt.custom.LineBackgroundEvent;
 import org.eclipse.swt.custom.LineBackgroundListener;
-import org.eclipse.swt.custom.StyledText;
 import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Display;
 
-import de.sebastianbenz.task.ui.TaskTokenTypeToPartitionTypeMapper;
-import de.sebastianbenz.task.ui.highlighting.SolarizedDark;
+import de.sebastianbenz.task.ui.highlighting.ColorScheme;
 
-public class TaskEditor extends ExtLinkedXtextEditor{
-	
+public class TaskEditor extends ExtLinkedXtextEditor {
 	private static final Logger LOG = Logger.getLogger(TaskEditor.class);
-
-	private Color background;
 	
-	private StyledText textWidget;
+	public class CodeBackgroundColorizer implements LineBackgroundListener {
+		private Color background;
 
-	
+		public void lineGetBackground(LineBackgroundEvent event) {
+			int previousLine = event.lineOffset - 1;
+			if (!isCode(previousLine)) {
+				return;
+			}
+
+			int leftContentType = event.lineOffset;
+			if (!isCode(leftContentType)) {
+				return;
+			}
+			int rightContentType = event.lineOffset + event.lineText.length();
+			if (!isCode(rightContentType)) {
+				return;
+			}
+			event.lineBackground = getBackgroundColor();
+		}
+
+		private Color getBackgroundColor() {
+			if (background == null) {
+				background = new Color(Display.getDefault(), ColorScheme.BACKGROUND);
+			}
+			return background;
+		}
+
+		private boolean isCode(int offset) {
+			if (offset <= 0) {
+				return false;
+			}
+			try {
+				String contentType = getContentType(getDocument(), DEFAULT_PARTITIONING,	offset, false);
+				return CODE_PARTITION.equals(contentType);
+			} catch (BadLocationException e) {
+				LOG.error(e.getMessage(), e);
+				return false;
+			}
+		}
+
+		public void dispose() {
+			getBackgroundColor().dispose();
+			background = null;
+		}
+	}
+
 	@Override
 	protected ISourceViewer createSourceViewer(Composite parent,
 			IVerticalRuler ruler, int styles) {
 		ISourceViewer result = super.createSourceViewer(parent, ruler, styles);
 		result.getTextWidget().setWordWrap(true);
-		textWidget = result.getTextWidget();
-		background = new Color(parent.getDisplay(), SolarizedDark.BACKGROUND);
-		
-		textWidget.addLineBackgroundListener(new LineBackgroundListener() {
-			
-			public void lineGetBackground(LineBackgroundEvent event) {
-				try {
-					String contentType = getContentType(getDocument(), IDocumentExtension3.DEFAULT_PARTITIONING, event.lineOffset + event.lineText.length(), false);
-					if(TaskTokenTypeToPartitionTypeMapper.CODE_PARTITION.equals(contentType)){
-						event.lineBackground = background;
-					}
-				} catch (BadLocationException e) {
-					LOG.error(e.getMessage(), e);
-				}
-			}
-		});
+		result.getTextWidget().addLineBackgroundListener(createBackgroundColorizer());
 		return result;
 	}
-	
+
+	protected CodeBackgroundColorizer createBackgroundColorizer() {
+		return new CodeBackgroundColorizer();
+	}
+
 	@Override
 	public void dispose() {
 		super.dispose();
-		background.dispose();
+		createBackgroundColorizer().dispose();
 	}
-	
-	
+
 }

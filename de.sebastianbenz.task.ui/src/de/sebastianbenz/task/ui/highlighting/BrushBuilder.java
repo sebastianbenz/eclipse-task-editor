@@ -5,38 +5,38 @@ import static java.util.Arrays.asList;
 import static de.sebastianbenz.task.ui.highlighting.HighlightingConfiguration.*;
 import java.util.List;
 
-import de.sebastianbenz.task.ui.highlighting.Configuration.Mapping;
+import de.sebastianbenz.task.ui.highlighting.Brush.Mapping;
 
-public class ConfigurationBuilder {
+public class BrushBuilder {
 
 	private final String name;
-	private String keywords;
-	private Mapping[] mappings;
+	private String keywords = "";
+	private Mapping[] mappings = new Mapping[0];
 
-	public ConfigurationBuilder(String name) {
+	public BrushBuilder(String name) {
 		this.name = name;
 	}
 
-	public static ConfigurationBuilder lang(String name) {
-		return new ConfigurationBuilder(name);
+	public static BrushBuilder lang(String name) {
+		return new BrushBuilder(name);
 	}
 
-	public ConfigurationBuilder keywords(String keywords) {
+	public BrushBuilder keywords(String keywords) {
 		this.keywords = keywords;
 		return this;
 	}
 
-	public ConfigurationBuilder mapping(Mapping...mappings) {
+	public BrushBuilder mapping(Mapping...mappings) {
 		this.mappings = mappings;
 		return this;
 	}
 
-	public Configuration build() {
+	public Brush build() {
 		List<Mapping> mappingsList = newArrayListWithExpectedSize(mappings.length + 1);
 		mappingsList.addAll(asList(mappings));
 		mappingsList.add(Mapping.keywords(keywords).style(KEYWORD_ID));
 		mappingsList.add(Mapping.pattern("'''").style(CODE_ID));
-		return new Configuration(name, mappingsList);
+		return new Brush(name, mappingsList);
 	}
 	
 

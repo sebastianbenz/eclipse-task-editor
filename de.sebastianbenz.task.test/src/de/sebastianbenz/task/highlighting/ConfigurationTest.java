@@ -12,7 +12,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import de.sebastianbenz.task.ui.highlighting.Configuration.Mapping;
+import de.sebastianbenz.task.ui.highlighting.Brush.Mapping;
 
 public class ConfigurationTest {
 

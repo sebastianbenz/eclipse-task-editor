@@ -1,13 +1,12 @@
 package de.sebastianbenz.task.ui.highlighting;
 
-import java.util.Collections;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import org.eclipse.xtext.ui.editor.syntaxcoloring.IHighlightedPositionAcceptor;
 
-public class Configuration {
+public class Brush {
 	
 	public static class MappingBuilder {
 
@@ -57,12 +56,11 @@ public class Configuration {
 		
 	}
 
-	public static Configuration EMPTY_CONFIGURATION = new Configuration("", Collections.<Mapping>emptyList()); 
 	
 	private final String name;
 	private final List<Mapping> mappings;
 	
-	public Configuration(String name, List<Mapping> mappings) {
+	public Brush(String name, List<Mapping> mappings) {
 		this.name = name;
 		this.mappings = mappings;
 	}

@@ -1,0 +1,92 @@
+Syntaxhighlighting for code blocks:
+	
+There is syntax highlighting support available for code blocks. The following languages are planned to be supported: 
+	
+	- Java @done
+	- Javascript @done
+	- C @done  
+	- C++ @done
+	- Ruby  @done
+	- XML  @done 
+	- Scala @done
+
+'''ruby
+class HelloWorld
+   def initialize(name)
+      @name = name.capitalize
+   end
+   def sayHi
+      puts "Hello #{@name}!"
+   end
+end
+'''
+
+'''python
+# a comment	
+import re
+for test_string in ['555-1212', 'ILL-EGAL']:
+    if re.match(r'^\d{3}-\d{4}$', test_string):
+        print test_string, 'is a valid US local phone number'
+    else:
+        print test_string, 'rejected'
+'''
+
+
+'''cpp
+/*
+ * Block comment
+ */
+#include <iostream>
+
+using namespace std;
+
+int main(int argc, char *argv[])
+{
+	cout << "Hello World !!!" << endl; // comment
+	
+	return 0;
+}
+''' 
+ 
+'''xml
+<!-- asdffasdfds -->
+<?xml />
+<element value="afdasdf">Test</element>
+''' 
+ 
+'''java
+package MyPackage;
+
+import java.util.List; 
+
+/*
+ * This is a comment
+ */
+@Inject
+public class HelloWorld{
+	// This is another comment
+	System.out.println("Hello World");
+	int theAnswer = 42;
+			
+}
+'''                   
+	
+'''js 
+/* comment */
+function hw_function()           
+{                                
+  alert("Hello World!");        
+}    
+'''		    
+
+'''scala
+/*
+ * Block comment
+ */
+object HelloWorld {
+	// comment
+  def main(args: Array[String]) = {
+    Console.println("Hello, world!");
+  }
+}
+'''

@@ -109,7 +109,7 @@ public class HtmlGenerator implements TaskGenerator {
     _builder.newLine();
     {
       EList<Content> _contents = taskModel.getContents();
-      for(final Content content : _contents) {
+      for(Content content : _contents) {
         StringConcatenation _generate = this.generate(content);
         _builder.append(_generate, "");
         _builder.newLineIfNotEmpty();
@@ -198,7 +198,7 @@ public class HtmlGenerator implements TaskGenerator {
     StringConcatenation _builder = new StringConcatenation();
     {
       EList<Tag> _tags = content.getTags();
-      for(final Tag tag : _tags) {
+      for(Tag tag : _tags) {
         _builder.append("<span class=\"tag\">");
         _builder.append(tag, "");
         _builder.append("</span> ");

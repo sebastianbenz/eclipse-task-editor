@@ -147,7 +147,7 @@ public class SemanticHighlightingCalculator implements ISemanticHighlightingCalc
 		}
 
 		private int whiteSpaces(Content content, int offset) {
-			int whiteSpaceCount = 1;
+			int whiteSpaceCount = 0;
 			for(int i = offset-1; content.getText().charAt(i) == ' '; i--){
 				whiteSpaceCount++;
 			}

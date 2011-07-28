@@ -20,12 +20,12 @@ public class ConfluenceGenerator implements TaskGenerator {
     StringConcatenation _builder = new StringConcatenation();
     {
       EList<Content> _contents = taskModel.getContents();
-      for(final Content content : _contents) {
+      for(Content content : _contents) {
         StringConcatenation _generate = this.generate(content);
         _builder.append(_generate, "");
         {
           EList<Tag> _tags = content.getTags();
-          for(final Tag tag : _tags) {
+          for(Tag tag : _tags) {
             _builder.append("{color:gray}");
             _builder.append(tag, "");
             _builder.append("{color} ");

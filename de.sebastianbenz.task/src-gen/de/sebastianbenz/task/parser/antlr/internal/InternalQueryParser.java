@@ -1,38 +1,41 @@
 package de.sebastianbenz.task.parser.antlr.internal; 
 
-import org.antlr.runtime.BitSet;
-import org.antlr.runtime.EarlyExitException;
-import org.antlr.runtime.NoViableAltException;
-import org.antlr.runtime.RecognitionException;
-import org.antlr.runtime.RecognizerSharedState;
-import org.antlr.runtime.Token;
-import org.antlr.runtime.TokenStream;
-import org.eclipse.emf.common.util.Enumerator;
+import org.eclipse.xtext.*;
+import org.eclipse.xtext.parser.*;
+import org.eclipse.xtext.parser.impl.*;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.common.util.Enumerator;
 import org.eclipse.xtext.parser.antlr.AbstractInternalAntlrParser;
-
+import org.eclipse.xtext.parser.antlr.XtextTokenStream;
+import org.eclipse.xtext.parser.antlr.XtextTokenStream.HiddenTokens;
+import org.eclipse.xtext.parser.antlr.AntlrDatatypeRuleToken;
 import de.sebastianbenz.task.services.QueryGrammarAccess;
+
+
+
+import org.antlr.runtime.*;
+import java.util.Stack;
+import java.util.List;
+import java.util.ArrayList;
 
 @SuppressWarnings("all")
 public class InternalQueryParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_STRING", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'or'", "'||'", "'and'", "'&&'", "'not'", "'!'", "'('", "')'", "'project'", "':'", "'task'", "'text'", "'@'", "'='", "'!='", "'<='", "'<'", "'>='", "'>'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_STRING", "RULE_WS", "RULE_ANY_OTHER", "'or'", "'||'", "'and'", "'&&'", "'not'", "'!'", "'('", "')'", "'project'", "':'", "'task'", "'text'", "'@'", "'='", "'!='", "'<='", "'<'", "'>='", "'>'"
     };
     public static final int RULE_ID=4;
-    public static final int T__29=29;
-    public static final int T__28=28;
-    public static final int T__27=27;
     public static final int T__26=26;
     public static final int T__25=25;
     public static final int T__24=24;
     public static final int T__23=23;
     public static final int T__22=22;
-    public static final int RULE_ANY_OTHER=10;
+    public static final int RULE_ANY_OTHER=7;
     public static final int T__21=21;
     public static final int T__20=20;
-    public static final int RULE_SL_COMMENT=8;
     public static final int EOF=-1;
-    public static final int RULE_ML_COMMENT=7;
+    public static final int T__9=9;
+    public static final int T__8=8;
     public static final int T__19=19;
     public static final int RULE_STRING=5;
     public static final int T__16=16;
@@ -43,8 +46,8 @@ public class InternalQueryParser extends AbstractInternalAntlrParser {
     public static final int T__11=11;
     public static final int T__14=14;
     public static final int T__13=13;
-    public static final int RULE_INT=6;
-    public static final int RULE_WS=9;
+    public static final int T__10=10;
+    public static final int RULE_WS=6;
 
     // delegates
     // delegators
@@ -152,7 +155,7 @@ public class InternalQueryParser extends AbstractInternalAntlrParser {
             int alt1=2;
             int LA1_0 = input.LA(1);
 
-            if ( ((LA1_0>=RULE_ID && LA1_0<=RULE_STRING)||(LA1_0>=15 && LA1_0<=17)||LA1_0==19||(LA1_0>=21 && LA1_0<=23)) ) {
+            if ( ((LA1_0>=RULE_ID && LA1_0<=RULE_STRING)||(LA1_0>=12 && LA1_0<=14)||LA1_0==16||(LA1_0>=18 && LA1_0<=20)) ) {
                 alt1=1;
             }
             switch (alt1) {
@@ -285,7 +288,7 @@ public class InternalQueryParser extends AbstractInternalAntlrParser {
                 int alt3=2;
                 int LA3_0 = input.LA(1);
 
-                if ( ((LA3_0>=11 && LA3_0<=12)) ) {
+                if ( ((LA3_0>=8 && LA3_0<=9)) ) {
                     alt3=1;
                 }
 
@@ -309,10 +312,10 @@ public class InternalQueryParser extends AbstractInternalAntlrParser {
             	    int alt2=2;
             	    int LA2_0 = input.LA(1);
 
-            	    if ( (LA2_0==11) ) {
+            	    if ( (LA2_0==8) ) {
             	        alt2=1;
             	    }
-            	    else if ( (LA2_0==12) ) {
+            	    else if ( (LA2_0==9) ) {
             	        alt2=2;
             	    }
             	    else {
@@ -325,7 +328,7 @@ public class InternalQueryParser extends AbstractInternalAntlrParser {
             	        case 1 :
             	            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:141:4: otherlv_2= 'or'
             	            {
-            	            otherlv_2=(Token)match(input,11,FOLLOW_11_in_ruleOrExpr256); 
+            	            otherlv_2=(Token)match(input,8,FOLLOW_8_in_ruleOrExpr256); 
 
             	                	newLeafNode(otherlv_2, grammarAccess.getOrExprAccess().getOrKeyword_1_1_0());
             	                
@@ -335,7 +338,7 @@ public class InternalQueryParser extends AbstractInternalAntlrParser {
             	        case 2 :
             	            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:146:7: otherlv_3= '||'
             	            {
-            	            otherlv_3=(Token)match(input,12,FOLLOW_12_in_ruleOrExpr274); 
+            	            otherlv_3=(Token)match(input,9,FOLLOW_9_in_ruleOrExpr274); 
 
             	                	newLeafNode(otherlv_3, grammarAccess.getOrExprAccess().getVerticalLineVerticalLineKeyword_1_1_1());
             	                
@@ -480,7 +483,7 @@ public class InternalQueryParser extends AbstractInternalAntlrParser {
                 int alt5=2;
                 int LA5_0 = input.LA(1);
 
-                if ( ((LA5_0>=13 && LA5_0<=14)) ) {
+                if ( ((LA5_0>=10 && LA5_0<=11)) ) {
                     alt5=1;
                 }
 
@@ -504,10 +507,10 @@ public class InternalQueryParser extends AbstractInternalAntlrParser {
             	    int alt4=2;
             	    int LA4_0 = input.LA(1);
 
-            	    if ( (LA4_0==13) ) {
+            	    if ( (LA4_0==10) ) {
             	        alt4=1;
             	    }
-            	    else if ( (LA4_0==14) ) {
+            	    else if ( (LA4_0==11) ) {
             	        alt4=2;
             	    }
             	    else {
@@ -520,7 +523,7 @@ public class InternalQueryParser extends AbstractInternalAntlrParser {
             	        case 1 :
             	            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:204:4: otherlv_2= 'and'
             	            {
-            	            otherlv_2=(Token)match(input,13,FOLLOW_13_in_ruleAndExpr413); 
+            	            otherlv_2=(Token)match(input,10,FOLLOW_10_in_ruleAndExpr413); 
 
             	                	newLeafNode(otherlv_2, grammarAccess.getAndExprAccess().getAndKeyword_1_1_0());
             	                
@@ -530,7 +533,7 @@ public class InternalQueryParser extends AbstractInternalAntlrParser {
             	        case 2 :
             	            // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:209:7: otherlv_3= '&&'
             	            {
-            	            otherlv_3=(Token)match(input,14,FOLLOW_14_in_ruleAndExpr431); 
+            	            otherlv_3=(Token)match(input,11,FOLLOW_11_in_ruleAndExpr431); 
 
             	                	newLeafNode(otherlv_3, grammarAccess.getAndExprAccess().getAmpersandAmpersandKeyword_1_1_1());
             	                
@@ -675,7 +678,7 @@ public class InternalQueryParser extends AbstractInternalAntlrParser {
                 int alt6=2;
                 int LA6_0 = input.LA(1);
 
-                if ( ((LA6_0>=24 && LA6_0<=25)) ) {
+                if ( ((LA6_0>=21 && LA6_0<=22)) ) {
                     alt6=1;
                 }
 
@@ -861,7 +864,7 @@ public class InternalQueryParser extends AbstractInternalAntlrParser {
                 int alt7=2;
                 int LA7_0 = input.LA(1);
 
-                if ( ((LA7_0>=26 && LA7_0<=29)) ) {
+                if ( ((LA7_0>=23 && LA7_0<=26)) ) {
                     alt7=1;
                 }
 
@@ -1030,10 +1033,10 @@ public class InternalQueryParser extends AbstractInternalAntlrParser {
             int alt9=2;
             int LA9_0 = input.LA(1);
 
-            if ( ((LA9_0>=RULE_ID && LA9_0<=RULE_STRING)||LA9_0==17||LA9_0==19||(LA9_0>=21 && LA9_0<=23)) ) {
+            if ( ((LA9_0>=RULE_ID && LA9_0<=RULE_STRING)||LA9_0==14||LA9_0==16||(LA9_0>=18 && LA9_0<=20)) ) {
                 alt9=1;
             }
-            else if ( ((LA9_0>=15 && LA9_0<=16)) ) {
+            else if ( ((LA9_0>=12 && LA9_0<=13)) ) {
                 alt9=2;
             }
             else {
@@ -1082,10 +1085,10 @@ public class InternalQueryParser extends AbstractInternalAntlrParser {
                     int alt8=2;
                     int LA8_0 = input.LA(1);
 
-                    if ( (LA8_0==15) ) {
+                    if ( (LA8_0==12) ) {
                         alt8=1;
                     }
-                    else if ( (LA8_0==16) ) {
+                    else if ( (LA8_0==13) ) {
                         alt8=2;
                     }
                     else {
@@ -1098,7 +1101,7 @@ public class InternalQueryParser extends AbstractInternalAntlrParser {
                         case 1 :
                             // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:412:4: otherlv_2= 'not'
                             {
-                            otherlv_2=(Token)match(input,15,FOLLOW_15_in_ruleUnaryExpr868); 
+                            otherlv_2=(Token)match(input,12,FOLLOW_12_in_ruleUnaryExpr868); 
 
                                 	newLeafNode(otherlv_2, grammarAccess.getUnaryExprAccess().getNotKeyword_1_1_0());
                                 
@@ -1108,7 +1111,7 @@ public class InternalQueryParser extends AbstractInternalAntlrParser {
                         case 2 :
                             // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:417:7: otherlv_3= '!'
                             {
-                            otherlv_3=(Token)match(input,16,FOLLOW_16_in_ruleUnaryExpr886); 
+                            otherlv_3=(Token)match(input,13,FOLLOW_13_in_ruleUnaryExpr886); 
 
                                 	newLeafNode(otherlv_3, grammarAccess.getUnaryExprAccess().getExclamationMarkKeyword_1_1_1());
                                 
@@ -1233,10 +1236,10 @@ public class InternalQueryParser extends AbstractInternalAntlrParser {
             int alt10=3;
             switch ( input.LA(1) ) {
             case RULE_STRING:
+            case 16:
+            case 18:
             case 19:
-            case 21:
-            case 22:
-            case 23:
+            case 20:
                 {
                 alt10=1;
                 }
@@ -1245,7 +1248,7 @@ public class InternalQueryParser extends AbstractInternalAntlrParser {
                 {
                 int LA10_2 = input.LA(2);
 
-                if ( (LA10_2==EOF||(LA10_2>=11 && LA10_2<=14)||LA10_2==18||(LA10_2>=24 && LA10_2<=29)) ) {
+                if ( (LA10_2==EOF||(LA10_2>=8 && LA10_2<=11)||LA10_2==15||(LA10_2>=21 && LA10_2<=26)) ) {
                     alt10=1;
                 }
                 else if ( (LA10_2==RULE_ID) ) {
@@ -1259,7 +1262,7 @@ public class InternalQueryParser extends AbstractInternalAntlrParser {
                 }
                 }
                 break;
-            case 17:
+            case 14:
                 {
                 alt10=3;
                 }
@@ -1409,7 +1412,7 @@ public class InternalQueryParser extends AbstractInternalAntlrParser {
             // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:510:1: (this_ProjectReference_0= ruleProjectReference | this_Word_1= ruleWord | this_Phrase_2= rulePhrase | this_TagReference_3= ruleTagReference | this_TextReference_4= ruleTextReference | this_TaskReference_5= ruleTaskReference )
             int alt11=6;
             switch ( input.LA(1) ) {
-            case 19:
+            case 16:
                 {
                 alt11=1;
                 }
@@ -1424,17 +1427,17 @@ public class InternalQueryParser extends AbstractInternalAntlrParser {
                 alt11=3;
                 }
                 break;
-            case 23:
+            case 20:
                 {
                 alt11=4;
                 }
                 break;
-            case 22:
+            case 19:
                 {
                 alt11=5;
                 }
                 break;
-            case 21:
+            case 18:
                 {
                 alt11=6;
                 }
@@ -1630,7 +1633,7 @@ public class InternalQueryParser extends AbstractInternalAntlrParser {
             // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:590:1: (otherlv_0= '(' () ( (lv_expr_2_0= ruleOrExpr ) ) otherlv_3= ')' )
             // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:590:3: otherlv_0= '(' () ( (lv_expr_2_0= ruleOrExpr ) ) otherlv_3= ')'
             {
-            otherlv_0=(Token)match(input,17,FOLLOW_17_in_ruleParenExpr1365); 
+            otherlv_0=(Token)match(input,14,FOLLOW_14_in_ruleParenExpr1365); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getParenExprAccess().getLeftParenthesisKeyword_0());
                 
@@ -1676,7 +1679,7 @@ public class InternalQueryParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,18,FOLLOW_18_in_ruleParenExpr1407); 
+            otherlv_3=(Token)match(input,15,FOLLOW_15_in_ruleParenExpr1407); 
 
                 	newLeafNode(otherlv_3, grammarAccess.getParenExprAccess().getRightParenthesisKeyword_3());
                 
@@ -1755,11 +1758,11 @@ public class InternalQueryParser extends AbstractInternalAntlrParser {
             // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:643:1: (otherlv_0= 'project' otherlv_1= ':' ( ( (lv_value_2_0= RULE_ID ) ) | ( (lv_value_3_0= RULE_STRING ) ) ) )
             // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:643:3: otherlv_0= 'project' otherlv_1= ':' ( ( (lv_value_2_0= RULE_ID ) ) | ( (lv_value_3_0= RULE_STRING ) ) )
             {
-            otherlv_0=(Token)match(input,19,FOLLOW_19_in_ruleProjectReference1490); 
+            otherlv_0=(Token)match(input,16,FOLLOW_16_in_ruleProjectReference1490); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getProjectReferenceAccess().getProjectKeyword_0());
                 
-            otherlv_1=(Token)match(input,20,FOLLOW_20_in_ruleProjectReference1502); 
+            otherlv_1=(Token)match(input,17,FOLLOW_17_in_ruleProjectReference1502); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getProjectReferenceAccess().getColonKeyword_1());
                 
@@ -1922,11 +1925,11 @@ public class InternalQueryParser extends AbstractInternalAntlrParser {
             // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:709:1: (otherlv_0= 'task' otherlv_1= ':' ( ( (lv_value_2_0= RULE_ID ) ) | ( (lv_value_3_0= RULE_STRING ) ) ) )
             // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:709:3: otherlv_0= 'task' otherlv_1= ':' ( ( (lv_value_2_0= RULE_ID ) ) | ( (lv_value_3_0= RULE_STRING ) ) )
             {
-            otherlv_0=(Token)match(input,21,FOLLOW_21_in_ruleTaskReference1637); 
+            otherlv_0=(Token)match(input,18,FOLLOW_18_in_ruleTaskReference1637); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getTaskReferenceAccess().getTaskKeyword_0());
                 
-            otherlv_1=(Token)match(input,20,FOLLOW_20_in_ruleTaskReference1649); 
+            otherlv_1=(Token)match(input,17,FOLLOW_17_in_ruleTaskReference1649); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getTaskReferenceAccess().getColonKeyword_1());
                 
@@ -2089,11 +2092,11 @@ public class InternalQueryParser extends AbstractInternalAntlrParser {
             // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:775:1: (otherlv_0= 'text' otherlv_1= ':' ( ( (lv_value_2_0= RULE_ID ) ) | ( (lv_value_3_0= RULE_STRING ) ) ) )
             // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:775:3: otherlv_0= 'text' otherlv_1= ':' ( ( (lv_value_2_0= RULE_ID ) ) | ( (lv_value_3_0= RULE_STRING ) ) )
             {
-            otherlv_0=(Token)match(input,22,FOLLOW_22_in_ruleTextReference1784); 
+            otherlv_0=(Token)match(input,19,FOLLOW_19_in_ruleTextReference1784); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getTextReferenceAccess().getTextKeyword_0());
                 
-            otherlv_1=(Token)match(input,20,FOLLOW_20_in_ruleTextReference1796); 
+            otherlv_1=(Token)match(input,17,FOLLOW_17_in_ruleTextReference1796); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getTextReferenceAccess().getColonKeyword_1());
                 
@@ -2586,7 +2589,7 @@ public class InternalQueryParser extends AbstractInternalAntlrParser {
             // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:976:1: (otherlv_0= '@' ( (lv_value_1_0= RULE_ID ) ) )
             // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:976:3: otherlv_0= '@' ( (lv_value_1_0= RULE_ID ) )
             {
-            otherlv_0=(Token)match(input,23,FOLLOW_23_in_ruleTagReference2229); 
+            otherlv_0=(Token)match(input,20,FOLLOW_20_in_ruleTagReference2229); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getTagReferenceAccess().getCommercialAtKeyword_0());
                 
@@ -2653,10 +2656,10 @@ public class InternalQueryParser extends AbstractInternalAntlrParser {
             int alt16=2;
             int LA16_0 = input.LA(1);
 
-            if ( (LA16_0==24) ) {
+            if ( (LA16_0==21) ) {
                 alt16=1;
             }
-            else if ( (LA16_0==25) ) {
+            else if ( (LA16_0==22) ) {
                 alt16=2;
             }
             else {
@@ -2672,7 +2675,7 @@ public class InternalQueryParser extends AbstractInternalAntlrParser {
                     // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:1009:2: (enumLiteral_0= '=' )
                     // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:1009:4: enumLiteral_0= '='
                     {
-                    enumLiteral_0=(Token)match(input,24,FOLLOW_24_in_ruleCompEqOperator2301); 
+                    enumLiteral_0=(Token)match(input,21,FOLLOW_21_in_ruleCompEqOperator2301); 
 
                             current = grammarAccess.getCompEqOperatorAccess().getEQUALEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_0, grammarAccess.getCompEqOperatorAccess().getEQUALEnumLiteralDeclaration_0()); 
@@ -2689,7 +2692,7 @@ public class InternalQueryParser extends AbstractInternalAntlrParser {
                     // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:1015:6: (enumLiteral_1= '!=' )
                     // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:1015:8: enumLiteral_1= '!='
                     {
-                    enumLiteral_1=(Token)match(input,25,FOLLOW_25_in_ruleCompEqOperator2318); 
+                    enumLiteral_1=(Token)match(input,22,FOLLOW_22_in_ruleCompEqOperator2318); 
 
                             current = grammarAccess.getCompEqOperatorAccess().getNOT_EQUALEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_1, grammarAccess.getCompEqOperatorAccess().getNOT_EQUALEnumLiteralDeclaration_1()); 
@@ -2738,22 +2741,22 @@ public class InternalQueryParser extends AbstractInternalAntlrParser {
             // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:1028:1: ( (enumLiteral_0= '<=' ) | (enumLiteral_1= '<' ) | (enumLiteral_2= '>=' ) | (enumLiteral_3= '>' ) )
             int alt17=4;
             switch ( input.LA(1) ) {
-            case 26:
+            case 23:
                 {
                 alt17=1;
                 }
                 break;
-            case 27:
+            case 24:
                 {
                 alt17=2;
                 }
                 break;
-            case 28:
+            case 25:
                 {
                 alt17=3;
                 }
                 break;
-            case 29:
+            case 26:
                 {
                 alt17=4;
                 }
@@ -2772,7 +2775,7 @@ public class InternalQueryParser extends AbstractInternalAntlrParser {
                     // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:1028:2: (enumLiteral_0= '<=' )
                     // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:1028:4: enumLiteral_0= '<='
                     {
-                    enumLiteral_0=(Token)match(input,26,FOLLOW_26_in_ruleCompOperator2363); 
+                    enumLiteral_0=(Token)match(input,23,FOLLOW_23_in_ruleCompOperator2363); 
 
                             current = grammarAccess.getCompOperatorAccess().getLESS_EQUALEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_0, grammarAccess.getCompOperatorAccess().getLESS_EQUALEnumLiteralDeclaration_0()); 
@@ -2789,7 +2792,7 @@ public class InternalQueryParser extends AbstractInternalAntlrParser {
                     // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:1034:6: (enumLiteral_1= '<' )
                     // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:1034:8: enumLiteral_1= '<'
                     {
-                    enumLiteral_1=(Token)match(input,27,FOLLOW_27_in_ruleCompOperator2380); 
+                    enumLiteral_1=(Token)match(input,24,FOLLOW_24_in_ruleCompOperator2380); 
 
                             current = grammarAccess.getCompOperatorAccess().getLESSEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_1, grammarAccess.getCompOperatorAccess().getLESSEnumLiteralDeclaration_1()); 
@@ -2806,7 +2809,7 @@ public class InternalQueryParser extends AbstractInternalAntlrParser {
                     // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:1040:6: (enumLiteral_2= '>=' )
                     // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:1040:8: enumLiteral_2= '>='
                     {
-                    enumLiteral_2=(Token)match(input,28,FOLLOW_28_in_ruleCompOperator2397); 
+                    enumLiteral_2=(Token)match(input,25,FOLLOW_25_in_ruleCompOperator2397); 
 
                             current = grammarAccess.getCompOperatorAccess().getGREATER_EQUALEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_2, grammarAccess.getCompOperatorAccess().getGREATER_EQUALEnumLiteralDeclaration_2()); 
@@ -2823,7 +2826,7 @@ public class InternalQueryParser extends AbstractInternalAntlrParser {
                     // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:1046:6: (enumLiteral_3= '>' )
                     // ../de.sebastianbenz.task/src-gen/de/sebastianbenz/task/parser/antlr/internal/InternalQuery.g:1046:8: enumLiteral_3= '>'
                     {
-                    enumLiteral_3=(Token)match(input,29,FOLLOW_29_in_ruleCompOperator2414); 
+                    enumLiteral_3=(Token)match(input,26,FOLLOW_26_in_ruleCompOperator2414); 
 
                             current = grammarAccess.getCompOperatorAccess().getGREATEREnumLiteralDeclaration_3().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_3, grammarAccess.getCompOperatorAccess().getGREATEREnumLiteralDeclaration_3()); 
@@ -2863,31 +2866,31 @@ public class InternalQueryParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_ruleOrExpr_in_ruleQuery140 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleOrExpr_in_entryRuleOrExpr177 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleOrExpr187 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleAndExpr_in_ruleOrExpr234 = new BitSet(new long[]{0x0000000000001802L});
-    public static final BitSet FOLLOW_11_in_ruleOrExpr256 = new BitSet(new long[]{0x0000000000EB8030L});
-    public static final BitSet FOLLOW_12_in_ruleOrExpr274 = new BitSet(new long[]{0x0000000000EB8030L});
-    public static final BitSet FOLLOW_ruleAndExpr_in_ruleOrExpr296 = new BitSet(new long[]{0x0000000000001802L});
+    public static final BitSet FOLLOW_ruleAndExpr_in_ruleOrExpr234 = new BitSet(new long[]{0x0000000000000302L});
+    public static final BitSet FOLLOW_8_in_ruleOrExpr256 = new BitSet(new long[]{0x00000000001D7030L});
+    public static final BitSet FOLLOW_9_in_ruleOrExpr274 = new BitSet(new long[]{0x00000000001D7030L});
+    public static final BitSet FOLLOW_ruleAndExpr_in_ruleOrExpr296 = new BitSet(new long[]{0x0000000000000302L});
     public static final BitSet FOLLOW_ruleAndExpr_in_entryRuleAndExpr334 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleAndExpr344 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleCompEqExpr_in_ruleAndExpr391 = new BitSet(new long[]{0x0000000000006002L});
-    public static final BitSet FOLLOW_13_in_ruleAndExpr413 = new BitSet(new long[]{0x0000000000EB8030L});
-    public static final BitSet FOLLOW_14_in_ruleAndExpr431 = new BitSet(new long[]{0x0000000000EB8030L});
-    public static final BitSet FOLLOW_ruleCompEqExpr_in_ruleAndExpr453 = new BitSet(new long[]{0x0000000000006002L});
+    public static final BitSet FOLLOW_ruleCompEqExpr_in_ruleAndExpr391 = new BitSet(new long[]{0x0000000000000C02L});
+    public static final BitSet FOLLOW_10_in_ruleAndExpr413 = new BitSet(new long[]{0x00000000001D7030L});
+    public static final BitSet FOLLOW_11_in_ruleAndExpr431 = new BitSet(new long[]{0x00000000001D7030L});
+    public static final BitSet FOLLOW_ruleCompEqExpr_in_ruleAndExpr453 = new BitSet(new long[]{0x0000000000000C02L});
     public static final BitSet FOLLOW_ruleCompEqExpr_in_entryRuleCompEqExpr491 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleCompEqExpr501 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleCompExpr_in_ruleCompEqExpr548 = new BitSet(new long[]{0x0000000003000002L});
-    public static final BitSet FOLLOW_ruleCompEqOperator_in_ruleCompEqExpr578 = new BitSet(new long[]{0x0000000000EB8030L});
-    public static final BitSet FOLLOW_ruleCompExpr_in_ruleCompEqExpr599 = new BitSet(new long[]{0x0000000003000002L});
+    public static final BitSet FOLLOW_ruleCompExpr_in_ruleCompEqExpr548 = new BitSet(new long[]{0x0000000000600002L});
+    public static final BitSet FOLLOW_ruleCompEqOperator_in_ruleCompEqExpr578 = new BitSet(new long[]{0x00000000001D7030L});
+    public static final BitSet FOLLOW_ruleCompExpr_in_ruleCompEqExpr599 = new BitSet(new long[]{0x0000000000600002L});
     public static final BitSet FOLLOW_ruleCompExpr_in_entryRuleCompExpr637 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleCompExpr647 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleUnaryExpr_in_ruleCompExpr694 = new BitSet(new long[]{0x000000003C000002L});
-    public static final BitSet FOLLOW_ruleCompOperator_in_ruleCompExpr724 = new BitSet(new long[]{0x0000000000EB8030L});
-    public static final BitSet FOLLOW_ruleUnaryExpr_in_ruleCompExpr745 = new BitSet(new long[]{0x000000003C000002L});
+    public static final BitSet FOLLOW_ruleUnaryExpr_in_ruleCompExpr694 = new BitSet(new long[]{0x0000000007800002L});
+    public static final BitSet FOLLOW_ruleCompOperator_in_ruleCompExpr724 = new BitSet(new long[]{0x00000000001D7030L});
+    public static final BitSet FOLLOW_ruleUnaryExpr_in_ruleCompExpr745 = new BitSet(new long[]{0x0000000007800002L});
     public static final BitSet FOLLOW_ruleUnaryExpr_in_entryRuleUnaryExpr783 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleUnaryExpr793 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleAtom_in_ruleUnaryExpr840 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_15_in_ruleUnaryExpr868 = new BitSet(new long[]{0x0000000000EB8030L});
-    public static final BitSet FOLLOW_16_in_ruleUnaryExpr886 = new BitSet(new long[]{0x0000000000EB8030L});
+    public static final BitSet FOLLOW_12_in_ruleUnaryExpr868 = new BitSet(new long[]{0x00000000001D7030L});
+    public static final BitSet FOLLOW_13_in_ruleUnaryExpr886 = new BitSet(new long[]{0x00000000001D7030L});
     public static final BitSet FOLLOW_ruleUnaryExpr_in_ruleUnaryExpr908 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleAtom_in_entryRuleAtom945 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleAtom955 = new BitSet(new long[]{0x0000000000000002L});
@@ -2904,25 +2907,25 @@ public class InternalQueryParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_ruleTaskReference_in_ruleValue1283 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleParenExpr_in_entryRuleParenExpr1318 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleParenExpr1328 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_17_in_ruleParenExpr1365 = new BitSet(new long[]{0x0000000000EB8030L});
-    public static final BitSet FOLLOW_ruleOrExpr_in_ruleParenExpr1395 = new BitSet(new long[]{0x0000000000040000L});
-    public static final BitSet FOLLOW_18_in_ruleParenExpr1407 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_14_in_ruleParenExpr1365 = new BitSet(new long[]{0x00000000001D7030L});
+    public static final BitSet FOLLOW_ruleOrExpr_in_ruleParenExpr1395 = new BitSet(new long[]{0x0000000000008000L});
+    public static final BitSet FOLLOW_15_in_ruleParenExpr1407 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleProjectReference_in_entryRuleProjectReference1443 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleProjectReference1453 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_19_in_ruleProjectReference1490 = new BitSet(new long[]{0x0000000000100000L});
-    public static final BitSet FOLLOW_20_in_ruleProjectReference1502 = new BitSet(new long[]{0x0000000000000030L});
+    public static final BitSet FOLLOW_16_in_ruleProjectReference1490 = new BitSet(new long[]{0x0000000000020000L});
+    public static final BitSet FOLLOW_17_in_ruleProjectReference1502 = new BitSet(new long[]{0x0000000000000030L});
     public static final BitSet FOLLOW_RULE_ID_in_ruleProjectReference1520 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_RULE_STRING_in_ruleProjectReference1548 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleTaskReference_in_entryRuleTaskReference1590 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleTaskReference1600 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_21_in_ruleTaskReference1637 = new BitSet(new long[]{0x0000000000100000L});
-    public static final BitSet FOLLOW_20_in_ruleTaskReference1649 = new BitSet(new long[]{0x0000000000000030L});
+    public static final BitSet FOLLOW_18_in_ruleTaskReference1637 = new BitSet(new long[]{0x0000000000020000L});
+    public static final BitSet FOLLOW_17_in_ruleTaskReference1649 = new BitSet(new long[]{0x0000000000000030L});
     public static final BitSet FOLLOW_RULE_ID_in_ruleTaskReference1667 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_RULE_STRING_in_ruleTaskReference1695 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleTextReference_in_entryRuleTextReference1737 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleTextReference1747 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_22_in_ruleTextReference1784 = new BitSet(new long[]{0x0000000000100000L});
-    public static final BitSet FOLLOW_20_in_ruleTextReference1796 = new BitSet(new long[]{0x0000000000000030L});
+    public static final BitSet FOLLOW_19_in_ruleTextReference1784 = new BitSet(new long[]{0x0000000000020000L});
+    public static final BitSet FOLLOW_17_in_ruleTextReference1796 = new BitSet(new long[]{0x0000000000000030L});
     public static final BitSet FOLLOW_RULE_ID_in_ruleTextReference1814 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_RULE_STRING_in_ruleTextReference1842 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleWords_in_entryRuleWords1884 = new BitSet(new long[]{0x0000000000000000L});
@@ -2937,13 +2940,13 @@ public class InternalQueryParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_RULE_STRING_in_rulePhrase2142 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleTagReference_in_entryRuleTagReference2182 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleTagReference2192 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_23_in_ruleTagReference2229 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_20_in_ruleTagReference2229 = new BitSet(new long[]{0x0000000000000010L});
     public static final BitSet FOLLOW_RULE_ID_in_ruleTagReference2246 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_24_in_ruleCompEqOperator2301 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_25_in_ruleCompEqOperator2318 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_26_in_ruleCompOperator2363 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_27_in_ruleCompOperator2380 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_28_in_ruleCompOperator2397 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_29_in_ruleCompOperator2414 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_21_in_ruleCompEqOperator2301 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_22_in_ruleCompEqOperator2318 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_23_in_ruleCompOperator2363 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_24_in_ruleCompOperator2380 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_25_in_ruleCompOperator2397 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_26_in_ruleCompOperator2414 = new BitSet(new long[]{0x0000000000000002L});
 
 }

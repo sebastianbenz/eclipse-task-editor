@@ -9,15 +9,15 @@
  *     Sebastian Benz - initial API and implementation
  ******************************************************************************/
 package de.sebastianbenz.task.validation;
+
+import org.eclipse.xtext.util.Strings;
+import org.eclipse.xtext.validation.Check;
+
+import com.google.inject.Inject;
+
+import de.sebastianbenz.task.Code;
  
 
 public class TaskJavaValidator extends AbstractTaskJavaValidator {
-
-//	@Check
-//	public void checkGreetingStartsWithCapital(Greeting greeting) {
-//		if (!Character.isUpperCase(greeting.getName().charAt(0))) {
-//			warning("Name should start with a capital", MyDslPackage.GREETING__NAME);
-//		}
-//	}
 
 }

@@ -33,10 +33,13 @@ import de.sebastianbenz.task.Note;
 import de.sebastianbenz.task.Project;
 import de.sebastianbenz.task.Tag;
 import de.sebastianbenz.task.Task;
+import de.sebastianbenz.task.impl.CodeImplCustom;
 import de.sebastianbenz.task.util.TaskSwitch;
 
 public class SemanticHighlightingCalculator implements ISemanticHighlightingCalculator{
 	
+	private static final int CODE_SEPARATOR = CodeImplCustom.PREFIX.length();
+
 	private static class Position{
 		
 		public final int offset;
@@ -53,7 +56,6 @@ public class SemanticHighlightingCalculator implements ISemanticHighlightingCalc
 
 	private class Implementation extends TaskSwitch<Boolean>{
 
-		private static final int CODE_SEPARATOR = 3;
 
 		private final class FilteringAcceptor
 				implements IHighlightedPositionAcceptor {
@@ -219,8 +221,7 @@ public class SemanticHighlightingCalculator implements ISemanticHighlightingCalc
 		}
 
 		protected Brush brushFor(Code code) {
-			String key = firstWord(code.getValue());
-			Brush configuration = configurationRegistry.get(key);
+			Brush configuration = configurationRegistry.get(code.getLang());
 			return configuration;
 		}
 
@@ -228,15 +229,6 @@ public class SemanticHighlightingCalculator implements ISemanticHighlightingCalc
 			return offset(code) + CODE_SEPARATOR;
 		}
 
-		private String firstWord(String s) {
-			for(int i = 0; i < s.length(); i++){
-				char c = s.charAt(i);
-				if(c == ' ' || c == '\t' || c == '\r' || c == '\n'){
-					return s.substring(0, i);
-				}
-			}
-			return s;
-		}
 	}
 	
 	@Inject

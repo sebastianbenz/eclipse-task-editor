@@ -1,13 +1,3 @@
-/*******************************************************************************
- * Copyright (c) 2011 Sebastian Benz.
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
- * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
- * 
- * Contributors:
- *     Sebastian Benz - initial API and implementation
- ******************************************************************************/
 /**
  * <copyright>
  * </copyright>
@@ -657,13 +647,22 @@ public interface TaskPackage extends EPackage
 	int CODE__TAGS = CONTENT__TAGS;
 
 	/**
+	 * The feature id for the '<em><b>Lang</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CODE__LANG = CONTENT_FEATURE_COUNT + 0;
+
+	/**
 	 * The number of structural features of the '<em>Code</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CODE_FEATURE_COUNT = CONTENT_FEATURE_COUNT + 0;
+	int CODE_FEATURE_COUNT = CONTENT_FEATURE_COUNT + 1;
 
 
 	/**
@@ -899,6 +898,17 @@ public interface TaskPackage extends EPackage
 	EClass getCode();
 
 	/**
+	 * Returns the meta object for the attribute '{@link de.sebastianbenz.task.Code#getLang <em>Lang</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Lang</em>'.
+	 * @see de.sebastianbenz.task.Code#getLang()
+	 * @see #getCode()
+	 * @generated
+	 */
+	EAttribute getCode_Lang();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1116,6 +1126,14 @@ public interface TaskPackage extends EPackage
 		 * @generated
 		 */
 		EClass CODE = eINSTANCE.getCode();
+
+		/**
+		 * The meta object literal for the '<em><b>Lang</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CODE__LANG = eINSTANCE.getCode_Lang();
 
 	}
 

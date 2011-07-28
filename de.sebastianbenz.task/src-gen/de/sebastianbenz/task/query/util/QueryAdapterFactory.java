@@ -2,32 +2,18 @@
  * <copyright>
  * </copyright>
  *
+
  */
 package de.sebastianbenz.task.query.util;
 
+import de.sebastianbenz.task.query.*;
+
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
-import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
-import org.eclipse.emf.ecore.EObject;
 
-import de.sebastianbenz.task.query.AndExpr;
-import de.sebastianbenz.task.query.Atom;
-import de.sebastianbenz.task.query.CompEqExpr;
-import de.sebastianbenz.task.query.CompExpr;
-import de.sebastianbenz.task.query.Expression;
-import de.sebastianbenz.task.query.OrExpr;
-import de.sebastianbenz.task.query.ParenExpr;
-import de.sebastianbenz.task.query.Phrase;
-import de.sebastianbenz.task.query.ProjectReference;
-import de.sebastianbenz.task.query.Query;
-import de.sebastianbenz.task.query.QueryPackage;
-import de.sebastianbenz.task.query.TagReference;
-import de.sebastianbenz.task.query.TaskReference;
-import de.sebastianbenz.task.query.TextReference;
-import de.sebastianbenz.task.query.UnaryExpr;
-import de.sebastianbenz.task.query.Value;
-import de.sebastianbenz.task.query.Word;
-import de.sebastianbenz.task.query.Words;
+import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
+
+import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->

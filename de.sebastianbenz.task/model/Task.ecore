@@ -38,5 +38,8 @@
         eType="#//Content" transient="true" derived="true" eOpposite="#//Content/parent"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EmptyLine" eSuperTypes="#//Content"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Code" eSuperTypes="#//Content"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Code" eSuperTypes="#//Content">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="lang" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        volatile="true" transient="true" unsettable="true"/>
+  </eClassifiers>
 </ecore:EPackage>

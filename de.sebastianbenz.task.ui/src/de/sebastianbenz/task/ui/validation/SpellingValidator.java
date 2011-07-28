@@ -33,12 +33,17 @@ import org.eclipse.xtext.nodemodel.ICompositeNode;
 import org.eclipse.xtext.nodemodel.util.NodeModelUtils;
 import org.eclipse.xtext.ui.editor.model.IXtextDocument;
 import org.eclipse.xtext.ui.editor.model.XtextDocumentUtil;
+import org.eclipse.xtext.util.Strings;
 import org.eclipse.xtext.validation.Check;
 
+import com.google.inject.Inject;
+
+import de.sebastianbenz.task.Code;
 import de.sebastianbenz.task.Content;
 import de.sebastianbenz.task.Note;
 import de.sebastianbenz.task.Project;
 import de.sebastianbenz.task.Task;
+import de.sebastianbenz.task.ui.highlighting.BrushRegistry;
 import de.sebastianbenz.task.validation.TaskJavaValidator;
 
 @SuppressWarnings("restriction")
@@ -70,6 +75,21 @@ public class SpellingValidator extends TaskJavaValidator {
 			.getContentType(IContentTypeManager.CT_TEXT);
 
 	private SpellingService spellingService;
+	
+	@Inject
+	private BrushRegistry brushes;
+	
+	@Check
+	public void checkCodeLangIsRegistered(Code code) {
+		String lang = code.getLang();
+		if(Strings.isEmpty(lang)){
+			return;
+		}
+		if(!brushes.getLanguages().contains(lang)){
+			acceptWarning("Unknown language", code, NodeModelUtils.getNode(code).getOffset() + 3, lang.length(), "UnknownLanguage");
+		}
+	}
+
 
 	@Check
 	public void checkSpelling(Task task) {

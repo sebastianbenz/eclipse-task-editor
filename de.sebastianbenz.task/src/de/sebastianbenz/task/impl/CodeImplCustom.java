@@ -10,11 +10,25 @@
  ******************************************************************************/
 package de.sebastianbenz.task.impl;
 
+import de.sebastianbenz.task.util.Strings2;
+
 
 public class CodeImplCustom extends de.sebastianbenz.task.impl.CodeImpl {
 
+	public static final String PREFIX = "'''";
+	private String lang;
+
 	@Override
-	protected String cleanText(String string) {
-		return string.replaceAll("'''", "");
+	protected String cleanText(String text) {
+		text = text.replaceAll(PREFIX, "").trim();
+		return text;
+	}
+	
+	@Override
+	public String getLang() {
+		if(lang == null){
+			lang = Strings2.firstWord(getValue());
+		}
+		return lang;
 	}
 }

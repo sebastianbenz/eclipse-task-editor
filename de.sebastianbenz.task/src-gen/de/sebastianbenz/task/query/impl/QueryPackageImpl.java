@@ -2,15 +2,9 @@
  * <copyright>
  * </copyright>
  *
+
  */
 package de.sebastianbenz.task.query.impl;
-
-import org.eclipse.emf.ecore.EAttribute;
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EEnum;
-import org.eclipse.emf.ecore.EPackage;
-import org.eclipse.emf.ecore.EReference;
-import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import de.sebastianbenz.task.query.AndExpr;
 import de.sebastianbenz.task.query.Atom;
@@ -33,6 +27,14 @@ import de.sebastianbenz.task.query.UnaryExpr;
 import de.sebastianbenz.task.query.Value;
 import de.sebastianbenz.task.query.Word;
 import de.sebastianbenz.task.query.Words;
+
+import org.eclipse.emf.ecore.EAttribute;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EEnum;
+import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EReference;
+
+import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 /**
  * <!-- begin-user-doc -->

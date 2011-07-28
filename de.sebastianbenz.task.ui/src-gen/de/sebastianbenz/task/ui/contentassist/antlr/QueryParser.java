@@ -4,8 +4,8 @@
 package de.sebastianbenz.task.ui.contentassist.antlr;
 
 import java.util.Collection;
-import java.util.HashMap;
 import java.util.Map;
+import java.util.HashMap;
 
 import org.antlr.runtime.RecognitionException;
 import org.eclipse.xtext.AbstractElement;
@@ -103,7 +103,7 @@ public class QueryParser extends AbstractContentAssistParser {
 	
 	@Override
 	protected String[] getInitialHiddenTokens() {
-		return new String[] { "RULE_WS", "RULE_ML_COMMENT", "RULE_SL_COMMENT" };
+		return new String[] { "RULE_WS" };
 	}
 	
 	public QueryGrammarAccess getGrammarAccess() {

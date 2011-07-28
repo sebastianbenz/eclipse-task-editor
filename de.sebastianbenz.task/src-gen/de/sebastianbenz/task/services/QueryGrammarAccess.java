@@ -4,24 +4,13 @@
 
 package de.sebastianbenz.task.services;
 
-import org.eclipse.xtext.Action;
-import org.eclipse.xtext.Alternatives;
-import org.eclipse.xtext.Assignment;
-import org.eclipse.xtext.EnumLiteralDeclaration;
-import org.eclipse.xtext.EnumRule;
-import org.eclipse.xtext.Grammar;
-import org.eclipse.xtext.GrammarUtil;
-import org.eclipse.xtext.Group;
-import org.eclipse.xtext.Keyword;
-import org.eclipse.xtext.ParserRule;
-import org.eclipse.xtext.RuleCall;
-import org.eclipse.xtext.TerminalRule;
-import org.eclipse.xtext.common.services.TerminalsGrammarAccess;
-import org.eclipse.xtext.service.AbstractElementFinder.AbstractGrammarElementFinder;
-import org.eclipse.xtext.service.GrammarProvider;
-
-import com.google.inject.Inject;
 import com.google.inject.Singleton;
+import com.google.inject.Inject;
+
+import org.eclipse.xtext.*;
+import org.eclipse.xtext.service.GrammarProvider;
+import org.eclipse.xtext.service.AbstractElementFinder.*;
+
 
 @Singleton
 public class QueryGrammarAccess extends AbstractGrammarElementFinder {
@@ -650,27 +639,22 @@ public class QueryGrammarAccess extends AbstractGrammarElementFinder {
 	private TagReferenceElements pTagReference;
 	private CompEqOperatorElements unknownRuleCompEqOperator;
 	private CompOperatorElements unknownRuleCompOperator;
+	private TerminalRule tSTRING;
 	private TerminalRule tID;
+	private TerminalRule tWS;
+	private TerminalRule tANY_OTHER;
 	
 	private final GrammarProvider grammarProvider;
 
-	private TerminalsGrammarAccess gaTerminals;
-
 	@Inject
-	public QueryGrammarAccess(GrammarProvider grammarProvider,
-		TerminalsGrammarAccess gaTerminals) {
+	public QueryGrammarAccess(GrammarProvider grammarProvider) {
 		this.grammarProvider = grammarProvider;
-		this.gaTerminals = gaTerminals;
 	}
 	
 	public Grammar getGrammar() {	
 		return grammarProvider.getGrammar(this);
 	}
 	
-
-	public TerminalsGrammarAccess getTerminalsGrammarAccess() {
-		return gaTerminals;
-	}
 
 	
 	//Query:
@@ -853,6 +837,13 @@ public class QueryGrammarAccess extends AbstractGrammarElementFinder {
 		return getCompOperatorAccess().getRule();
 	}
 
+	//terminal STRING:
+	//	"\"" ("\\" ("b" | "t" | "n" | "f" | "r" | "u" | "\"" | "\'" | "\\") | !("\\" | "\""))* "\"" | "\'" ("\\" ("b" | "t" |
+	//	"n" | "f" | "r" | "u" | "\"" | "\'" | "\\") | !("\\" | "\'"))* "\'";
+	public TerminalRule getSTRINGRule() {
+		return (tSTRING != null) ? tSTRING : (tSTRING = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "STRING"));
+	} 
+
 	//terminal ID:
 	//	!("@" | "=" | "<" | ">" | "!" | "(" | ")" | ":" | " " | "\t" | "\r" | "\n" | "\"" | "\'" | "&" | "|") !(" " | "\t" |
 	//	"\r" | "\n" | ":")*;
@@ -860,40 +851,15 @@ public class QueryGrammarAccess extends AbstractGrammarElementFinder {
 		return (tID != null) ? tID : (tID = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "ID"));
 	} 
 
-	//terminal INT returns ecore::EInt:
-	//	"0".."9"+;
-	public TerminalRule getINTRule() {
-		return gaTerminals.getINTRule();
-	} 
-
-	//terminal STRING:
-	//	"\"" ("\\" ("b" | "t" | "n" | "f" | "r" | "u" | "\"" | "\'" | "\\") | !("\\" | "\""))* "\"" | "\'" ("\\" ("b" | "t" |
-	//	"n" | "f" | "r" | "u" | "\"" | "\'" | "\\") | !("\\" | "\'"))* "\'";
-	public TerminalRule getSTRINGRule() {
-		return gaTerminals.getSTRINGRule();
-	} 
-
-	//terminal ML_COMMENT:
-	//	"/ *"->"* /";
-	public TerminalRule getML_COMMENTRule() {
-		return gaTerminals.getML_COMMENTRule();
-	} 
-
-	//terminal SL_COMMENT:
-	//	"//" !("\n" | "\r")* ("\r"? "\n")?;
-	public TerminalRule getSL_COMMENTRule() {
-		return gaTerminals.getSL_COMMENTRule();
-	} 
-
 	//terminal WS:
 	//	(" " | "\t" | "\r" | "\n")+;
 	public TerminalRule getWSRule() {
-		return gaTerminals.getWSRule();
+		return (tWS != null) ? tWS : (tWS = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "WS"));
 	} 
 
 	//terminal ANY_OTHER:
 	//	.;
 	public TerminalRule getANY_OTHERRule() {
-		return gaTerminals.getANY_OTHERRule();
+		return (tANY_OTHER != null) ? tANY_OTHER : (tANY_OTHER = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "ANY_OTHER"));
 	} 
 }

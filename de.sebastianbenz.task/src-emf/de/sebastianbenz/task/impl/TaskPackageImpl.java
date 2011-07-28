@@ -1,13 +1,3 @@
-/*******************************************************************************
- * Copyright (c) 2011 Sebastian Benz.
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
- * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
- * 
- * Contributors:
- *     Sebastian Benz - initial API and implementation
- ******************************************************************************/
 /**
  * <copyright>
  * </copyright>
@@ -15,14 +5,6 @@
 
  */
 package de.sebastianbenz.task.impl;
-
-import static de.sebastianbenz.task.TaskPackage.CONTAINER;
-
-import org.eclipse.emf.ecore.EAttribute;
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EPackage;
-import org.eclipse.emf.ecore.EReference;
-import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import de.sebastianbenz.task.Code;
 import de.sebastianbenz.task.Content;
@@ -35,6 +17,13 @@ import de.sebastianbenz.task.Task;
 import de.sebastianbenz.task.TaskFactory;
 import de.sebastianbenz.task.TaskModel;
 import de.sebastianbenz.task.TaskPackage;
+
+import org.eclipse.emf.ecore.EAttribute;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EReference;
+
+import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -402,6 +391,16 @@ public class TaskPackageImpl extends EPackageImpl implements TaskPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getCode_Lang()
+	{
+		return (EAttribute)codeEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public TaskFactory getTaskFactory()
 	{
 		return (TaskFactory)getEFactoryInstance();
@@ -458,6 +457,7 @@ public class TaskPackageImpl extends EPackageImpl implements TaskPackage
 		emptyLineEClass = createEClass(EMPTY_LINE);
 
 		codeEClass = createEClass(CODE);
+		createEAttribute(codeEClass, CODE__LANG);
 	}
 
 	/**
@@ -536,6 +536,7 @@ public class TaskPackageImpl extends EPackageImpl implements TaskPackage
 		initEClass(emptyLineEClass, EmptyLine.class, "EmptyLine", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(codeEClass, Code.class, "Code", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getCode_Lang(), ecorePackage.getEString(), "lang", null, 0, 1, Code.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

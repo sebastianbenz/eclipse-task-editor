@@ -2,13 +2,14 @@
  * <copyright>
  * </copyright>
  *
+
  */
 package de.sebastianbenz.task.query.impl;
 
-import org.eclipse.emf.ecore.EClass;
-
 import de.sebastianbenz.task.query.ProjectReference;
 import de.sebastianbenz.task.query.QueryPackage;
+
+import org.eclipse.emf.ecore.EClass;
 
 /**
  * <!-- begin-user-doc -->

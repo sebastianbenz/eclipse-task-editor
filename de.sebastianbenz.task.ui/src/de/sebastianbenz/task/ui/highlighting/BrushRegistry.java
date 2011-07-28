@@ -9,11 +9,12 @@ import static org.eclipse.xtext.ui.editor.syntaxcoloring.DefaultHighlightingConf
 import static org.eclipse.xtext.ui.editor.syntaxcoloring.DefaultHighlightingConfiguration.STRING_ID;
 
 import java.util.Map;
+import java.util.Set;
 import java.util.regex.Pattern;
 
 public class BrushRegistry {
 	
-	private static final String DEFAULT_CONFIGURATION = "default";
+	public static final String DEFAULT_CONFIGURATION = "default";
 	public static final Pattern MULTILINE_LINE_COMMENT = Pattern.compile("/\\*[\\s\\S]*\\*/", Pattern.MULTILINE);
 	public static final Pattern SINGLE_LINE_COMMENT = Pattern.compile("//.*$", Pattern.MULTILINE);
 	public static final Pattern DOUBLE_QUOTED_STRING = Pattern.compile("\"(?:\\.|(\\\\\\\")|[^\\\"\"\\n])*\"");
@@ -84,6 +85,10 @@ public class BrushRegistry {
 			configuration = configurations.get(DEFAULT_CONFIGURATION);
 		}
 		return configuration;
+	}
+
+	public Set<String> getLanguages() {
+		return configurations.keySet();
 	}
 
 

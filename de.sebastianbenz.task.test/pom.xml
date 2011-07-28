@@ -3,13 +3,13 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<version>1.0.1-SNAPSHOT</version>
+	<version>1.0.2-SNAPSHOT</version>
 	<artifactId>de.sebastianbenz.task.test</artifactId>
 	 <packaging>eclipse-test-plugin</packaging>
 	<name>Task Editor Tests</name>
 
 	<parent>
-		<version>1.0.1-SNAPSHOT</version>
+		<version>1.0.2-SNAPSHOT</version>
 		<groupId>de.sebastianbenz.task</groupId>
 		<artifactId>parent</artifactId>
 	</parent>

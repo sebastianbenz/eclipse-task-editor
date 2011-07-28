@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?pde version="3.5"?>
 
-<product name="Todo Editor" uid="task-editor" id="de.sebastianbenz.task.application.product" application="de.sebastianbenz.task.application.application" version="1.0.1.qualifier" useFeatures="true" includeLaunchers="true">
+<product name="Todo Editor" uid="task-editor" id="de.sebastianbenz.task.application.product" application="de.sebastianbenz.task.application.application" version="1.0.2.qualifier" useFeatures="true" includeLaunchers="true">
 
    <aboutInfo>
       <image path="/de.sebastianbenz.task.application/product_lg.gif"/>
@@ -96,9 +96,9 @@ This Agreement is governed by the laws of the State of New York and the intellec
    </plugins>
 
    <features>
-      <feature id="de.sebastianbenz.task" version="1.0.1.qualifier"/>
-      <feature id="de.sebastianbenz.task.rcp" version="1.0.1.qualifier"/>
-      <feature id="de.sebastianbenz.task.platform" version="1.0.1.qualifier"/>
+      <feature id="de.sebastianbenz.task" version="1.0.2.qualifier"/>
+      <feature id="de.sebastianbenz.task.rcp" version="1.0.2.qualifier"/>
+      <feature id="de.sebastianbenz.task.platform" version="1.0.2.qualifier"/>
    </features>
 
    <configurations>

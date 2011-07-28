@@ -2,7 +2,7 @@
 <feature
       id="de.sebastianbenz.task.rcp"
       label="Task Editor RCP Feature"
-      version="1.0.1.qualifier"
+      version="1.0.2.qualifier"
       provider-name="Sebastian Benz">
 
    <description>

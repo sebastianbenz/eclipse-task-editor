@@ -2,7 +2,7 @@
 <feature
       id="de.sebastianbenz.task"
       label="Todo editor"
-      version="1.0.1.qualifier"
+      version="1.0.2.qualifier"
       provider-name="Sebastian Benz">
 
    <description>
@@ -76,19 +76,22 @@ This Agreement is governed by the laws of the State of New York and the intellec
       <import plugin="org.antlr.runtime"/>
       <import plugin="org.apache.commons.logging"/>
       <import plugin="org.apache.log4j"/>
+      <import plugin="org.eclipse.xtext.xbase.lib"/>
+      <import plugin="org.eclipse.xtext.xtend2.lib"/>
       <import plugin="org.eclipse.ui.editors" version="3.5.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.ui.ide" version="3.5.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.ui"/>
       <import plugin="org.eclipse.core.runtime"/>
       <import plugin="org.eclipse.core.filesystem"/>
-      <import plugin="org.eclipse.emf.edit"/>
       <import plugin="org.eclipse.compare"/>
       <import plugin="org.eclipse.core.resources"/>
-      <import plugin="org.eclipse.ui.workbench.texteditor" version="3.6.0" match="greaterOrEqual"/>
-      <import feature="org.eclipse.xtext.runtime" version="2.0.0.v201106070531"/>
-      <import feature="org.eclipse.xtext.ui" version="2.0.0.v201106070531"/>
-      <import plugin="org.eclipse.xtext.xbase.lib"/>
-      <import plugin="org.eclipse.xtext.xtend2.lib"/>
+      <import plugin="org.eclipse.emf.edit"/>
+      <import plugin="org.eclipse.xtext" version="2.0.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.xtext.util"/>
+      <import plugin="org.eclipse.xtext.ui"/>
+      <import plugin="org.eclipse.xtext.ui.shared"/>
+      <import plugin="org.eclipse.xtext.builder"/>
+      <import plugin="org.eclipse.ui.workbench.texteditor" version="3.7.0" match="greaterOrEqual"/>
    </requires>
 
    <plugin

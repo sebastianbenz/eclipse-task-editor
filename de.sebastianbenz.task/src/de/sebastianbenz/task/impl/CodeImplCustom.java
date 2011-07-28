@@ -27,7 +27,7 @@ public class CodeImplCustom extends de.sebastianbenz.task.impl.CodeImpl {
 	@Override
 	public String getLang() {
 		if(lang == null){
-			lang = Strings2.firstWord(getValue());
+			lang = Strings2.firstWord(getText().substring(PREFIX.length()));
 		}
 		return lang;
 	}

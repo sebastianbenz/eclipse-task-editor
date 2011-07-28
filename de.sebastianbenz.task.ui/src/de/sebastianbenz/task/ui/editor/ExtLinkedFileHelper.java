@@ -27,6 +27,7 @@ import org.eclipse.xtext.builder.nature.ToggleXtextNatureAction;
 
 import com.google.inject.Inject;
 
+@SuppressWarnings("restriction")
 public class ExtLinkedFileHelper {
 	// TODO: Should be configurable
 	public static final String AUTOLINK_PROJECT_NAME = ".todoProject";

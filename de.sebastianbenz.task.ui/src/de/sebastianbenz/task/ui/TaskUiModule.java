@@ -16,7 +16,6 @@ package de.sebastianbenz.task.ui;
 import java.util.Collection;
 import java.util.Collections;
 
-import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.eclipse.xtext.ui.editor.XtextEditor;
 import org.eclipse.xtext.ui.editor.XtextSourceViewerConfiguration;
@@ -39,6 +38,7 @@ import de.sebastianbenz.task.ui.contentassist.TaskTemplateProvider;
 import de.sebastianbenz.task.ui.editor.AutoEditStrategyProvider;
 import de.sebastianbenz.task.ui.editor.SourceViewerConfiguration;
 import de.sebastianbenz.task.ui.editor.TaskEditor;
+import de.sebastianbenz.task.ui.editor.TaskTokenTypeToPartitionTypeMapper;
 import de.sebastianbenz.task.ui.highlighting.HighlightingConfiguration;
 import de.sebastianbenz.task.ui.highlighting.SemanticHighlightingCalculator;
 import de.sebastianbenz.task.ui.highlighting.TokenHighlightingConfiguration;
@@ -118,4 +118,5 @@ public class TaskUiModule extends de.sebastianbenz.task.ui.AbstractTaskUiModule 
 	public Class<? extends ITokenTypeToPartitionTypeMapper> bindITokenTypeToPartitionTypeMapper(){
 		return TaskTokenTypeToPartitionTypeMapper.class;
 	}
+	
 }

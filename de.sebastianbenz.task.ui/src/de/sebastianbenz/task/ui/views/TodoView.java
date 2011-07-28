@@ -55,19 +55,19 @@ public class TodoView extends ViewPart {
 
 	private TreeViewer viewer;
 
-	private static class ContentSorter extends ViewerSorter {
-		@Override
-		public int compare(Viewer viewer, Object e1, Object e2) {
-			if (!(e1 instanceof Content)) {
-				return super.compare(viewer, e1, e2);
-			}
-			if (!(e2 instanceof Content)) {
-				return super.compare(viewer, e1, e2);
-			}
-			return ((Content) e1).getValue().compareTo(
-					((Content) e2).getValue());
-		}
-	}
+//	private static class ContentSorter extends ViewerSorter {
+//		@Override
+//		public int compare(Viewer viewer, Object e1, Object e2) {
+//			if (!(e1 instanceof Content)) {
+//				return super.compare(viewer, e1, e2);
+//			}
+//			if (!(e2 instanceof Content)) {
+//				return super.compare(viewer, e1, e2);
+//			}
+//			return ((Content) e1).getValue().compareTo(
+//					((Content) e2).getValue());
+//		}
+//	}
 
 	@Inject
 	private TodoViewLabelProvider labelProvider;
@@ -86,9 +86,9 @@ public class TodoView extends ViewPart {
 
 	private Text queryText;
 
-	private Action actionCollapseAll;
-
-	private Action actionSort;
+//	private Action actionCollapseAll;
+//
+//	private Action actionSort;
 
 	private Action openInEditor;
 
@@ -98,7 +98,7 @@ public class TodoView extends ViewPart {
 	@Inject
 	private TreeState treeState;
 
-	private DrillDownAdapter drillDownAdapter;
+//	private DrillDownAdapter drillDownAdapter;
 
 	private IMemento memento;
 
@@ -168,7 +168,7 @@ public class TodoView extends ViewPart {
 		viewer.setContentProvider(contentProvider);
 		viewer.setUseHashlookup(true);
 		viewer.setFilters(new ViewerFilter[] { queryBasedViewFilter });
-		drillDownAdapter = new DrillDownAdapter(viewer);
+//		drillDownAdapter = new DrillDownAdapter(viewer);
 		viewer.setInput(globalState.getRoot());
 	}
 
@@ -205,36 +205,36 @@ public class TodoView extends ViewPart {
 
 	}
 
-	private ImageDescriptor image(String string) {
-		String pluginId = TaskActivator.getInstance().getBundle()
-				.getSymbolicName();
-		return TaskActivator.imageDescriptorFromPlugin(pluginId, "icons/"
-				+ string);
-	}
-
-	private Action createActionCollapseAll() {
-		return new Action() {
-			@Override
-			public void run() {
-				viewer.collapseAll();
-			}
-		};
-	}
-
-	private Action createActionSort() {
-		return new Action("Sort", IAction.AS_CHECK_BOX) {
-			@Override
-			public void run() {
-
-				if (isChecked()) {
-					viewer.setSorter(new ContentSorter());
-				} else {
-					viewer.setSorter(null);
-				}
-				viewer.refresh();
-			}
-		};
-	}
+//	private ImageDescriptor image(String string) {
+//		String pluginId = TaskActivator.getInstance().getBundle()
+//				.getSymbolicName();
+//		return TaskActivator.imageDescriptorFromPlugin(pluginId, "icons/"
+//				+ string);
+//	}
+//
+//	private Action createActionCollapseAll() {
+//		return new Action() {
+//			@Override
+//			public void run() {
+//				viewer.collapseAll();
+//			}
+//		};
+//	}
+//
+//	private Action createActionSort() {
+//		return new Action("Sort", IAction.AS_CHECK_BOX) {
+//			@Override
+//			public void run() {
+//
+//				if (isChecked()) {
+//					viewer.setSorter(new ContentSorter());
+//				} else {
+//					viewer.setSorter(null);
+//				}
+//				viewer.refresh();
+//			}
+//		};
+//	}
 
 	private Action createActionJumpToElement() {
 		return new Action() {

@@ -1,4 +1,4 @@
-package de.sebastianbenz.task.ui;
+package de.sebastianbenz.task.ui.editor;
 
 import org.eclipse.jface.text.IDocument;
 import org.eclipse.xtext.ui.editor.model.TerminalsTokenTypeToPartitionMapper;

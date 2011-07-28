@@ -1,8 +1,10 @@
 package de.sebastianbenz.task.ui.highlighting;
 
 import static com.google.common.collect.Lists.newArrayListWithExpectedSize;
+import static de.sebastianbenz.task.ui.highlighting.HighlightingConfiguration.CODE_ID;
 import static java.util.Arrays.asList;
-import static de.sebastianbenz.task.ui.highlighting.HighlightingConfiguration.*;
+import static org.eclipse.xtext.ui.editor.syntaxcoloring.DefaultHighlightingConfiguration.KEYWORD_ID;
+
 import java.util.List;
 
 import de.sebastianbenz.task.ui.highlighting.Brush.Mapping;

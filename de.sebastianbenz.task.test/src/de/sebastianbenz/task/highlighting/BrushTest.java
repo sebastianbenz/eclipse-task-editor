@@ -59,10 +59,10 @@ public class BrushTest {
 				"// singleline",
 				"public static class HelloWorld{",
 					"String greeting = \"Hello\";",
-					"String char = 'c';",
+					"char char = 'c';",
 					"int value = 0;");
 		
-		assertThat(styles("package", "static", "class","public"), each(is(KEYWORD_ID)));
+		assertThat(styles("package", "static", "class","public", "int"), each(is(KEYWORD_ID)));
 		assertThat(style("\"Hello\""), is(STRING_ID));
 		assertThat(style("/*\n" +
 						 " * A block comment\n" +
@@ -70,6 +70,31 @@ public class BrushTest {
 						 is(COMMENT_ID));
 		assertThat(style("@annotation"), is(CODE_ANNOTATION_ID));
 		assertThat(style("'c'"), is(STRING_ID));
+		assertThat(style("0"), is(NUMBER_ID));
+		assertThat(style("// singleline"), is(COMMENT_ID));
+	}
+	
+	@Test
+	public void javaScriptSyntaxHighlighting() throws Exception {
+		language("js");
+		highlight(
+				"/*",
+				" * A block comment",
+				" */",
+				"// singleline",
+				 "function Hello (){",
+				 "  if(true > 0)",
+				 "		alert(\"Hello\")",
+				 "  else",
+				 "		alert('Hello')",
+				 "}");
+		
+		assertThat(styles("function", "if", "else"), each(is(KEYWORD_ID)));
+		assertThat(styles("\"Hello\"", "'Hello'"), each(is(STRING_ID)));
+		assertThat(style("/*\n" +
+						 " * A block comment\n" +
+						 " */"), 
+						 is(COMMENT_ID));
 		assertThat(style("0"), is(NUMBER_ID));
 		assertThat(style("// singleline"), is(COMMENT_ID));
 	}

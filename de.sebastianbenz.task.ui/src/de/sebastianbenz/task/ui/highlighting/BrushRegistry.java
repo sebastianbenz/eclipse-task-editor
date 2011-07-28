@@ -56,7 +56,7 @@ public class BrushRegistry {
 					
 			lang("js")
 				.keywords(  "break case catch continue " +
-	                        "default delete do else false  " +
+	                        "default delete do else false " +
 	                        "for function if in instanceof " +
 	                        "new null return super switch " +
 	                        "this throw true try typeof var while with")
@@ -65,7 +65,8 @@ public class BrushRegistry {
 					pattern(SINGLE_LINE_COMMENT).style(COMMENT_ID),
 					pattern(DOUBLE_QUOTED_STRING).style(STRING_ID),
 					pattern(SINGLE_QUOTED_STRING).style(STRING_ID),
-					pattern("\\s*#.*").style(CODE_ANNOTATION_ID))
+					pattern("\\s*#.*").style(CODE_ANNOTATION_ID),
+					pattern("\\b([\\d]+(\\.[\\d]+)?|0x[a-f0-9]+)\\b").style(NUMBER_ID))
 		);
 				
 	}

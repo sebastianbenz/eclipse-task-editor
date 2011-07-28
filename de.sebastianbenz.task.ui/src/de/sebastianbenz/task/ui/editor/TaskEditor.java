@@ -10,7 +10,7 @@
  ******************************************************************************/
 package de.sebastianbenz.task.ui.editor;
 
-import static de.sebastianbenz.task.ui.TaskTokenTypeToPartitionTypeMapper.CODE_PARTITION;
+import static de.sebastianbenz.task.ui.editor.TaskTokenTypeToPartitionTypeMapper.CODE_PARTITION;
 import static org.eclipse.jface.text.IDocumentExtension3.DEFAULT_PARTITIONING;
 import static org.eclipse.jface.text.TextUtilities.getContentType;
 
@@ -42,8 +42,9 @@ public class TaskEditor extends ExtLinkedXtextEditor {
 			if (!isCode(leftContentType)) {
 				return;
 			}
-			int rightContentType = event.lineOffset + event.lineText.length();
-			if (!isCode(rightContentType)) {
+			
+			int nextLine = event.lineOffset + event.lineText.length() + 2;
+			if (!isCode(nextLine)) {
 				return;
 			}
 			event.lineBackground = getBackgroundColor();
@@ -57,7 +58,7 @@ public class TaskEditor extends ExtLinkedXtextEditor {
 		}
 
 		private boolean isCode(int offset) {
-			if (offset <= 0) {
+			if (offset <= 0  || offset > getDocument().getLength()) {
 				return false;
 			}
 			try {

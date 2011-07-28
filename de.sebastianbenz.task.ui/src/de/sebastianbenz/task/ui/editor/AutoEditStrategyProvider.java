@@ -10,6 +10,10 @@
  ******************************************************************************/
 package de.sebastianbenz.task.ui.editor;
 
+import static de.sebastianbenz.task.ui.editor.TaskTokenTypeToPartitionTypeMapper.CODE_PARTITION;
+import static org.eclipse.jface.text.IDocument.DEFAULT_CONTENT_TYPE;
+import static org.eclipse.xtext.ui.editor.model.TerminalsTokenTypeToPartitionMapper.STRING_LITERAL_PARTITION;
+
 import org.eclipse.jface.text.BadLocationException;
 import org.eclipse.jface.text.DocumentCommand;
 import org.eclipse.jface.text.IAutoEditStrategy;
@@ -111,26 +115,77 @@ public class AutoEditStrategyProvider extends DefaultAutoEditStrategyProvider {
 
 	@Inject
 	protected Provider<ShortCutEditStrategy> shortCut;
+	private String[] defaultContentTypes = {DEFAULT_CONTENT_TYPE, CODE_PARTITION};
+
 
 	@Override
 	protected void configure(IEditStrategyAcceptor acceptor) {
 		super.configure(acceptor);
+		configureAngleBracket(acceptor);
+		
+		acceptor.accept(singleLineTerminals.newInstance("'''", "\n'''"),DEFAULT_CONTENT_TYPE);
 	}
 
-	@Override
-	protected void configureCurlyBracesBlock(IEditStrategyAcceptor acceptor) {
+	private void configureAngleBracket(IEditStrategyAcceptor acceptor) {
+		for(String contentType : defaultContentTypes ){
+			acceptor.accept(singleLineTerminals.newInstance("<", ">"),contentType);
+		}
 	}
-
-	@Override
-	protected void configureMultilineComments(IEditStrategyAcceptor acceptor) {
-	}
-
+	
 	@Override
 	protected void configureIndentationEditStrategy(
 			IEditStrategyAcceptor acceptor) {
-		acceptor.accept(
-				new LineBreakInserter(defaultIndentLineAutoEditStrategy.get()),
-				IDocument.DEFAULT_CONTENT_TYPE);
+		for(String contentType : defaultContentTypes ){
+			acceptor.accept(
+					new LineBreakInserter(defaultIndentLineAutoEditStrategy.get()),
+					contentType);
+		}
+	}
+	
+	protected void configureCompoundBracesBlocks(IEditStrategyAcceptor acceptor) {
+		for(String contentType : defaultContentTypes ){
+			acceptor.accept(compoundMultiLineTerminals.newInstanceFor("{", "}").and("[", "]").and("(", ")"), contentType);
+		}
+	}
+
+	protected void configureMultilineComments(IEditStrategyAcceptor acceptor) {
+		for(String contentType : defaultContentTypes ){
+			acceptor.accept(singleLineTerminals.newInstance("/*", " */"), contentType);
+			acceptor.accept(multiLineTerminals.newInstance("/*"," * ", " */"), contentType);
+		}
+	}
+
+	protected void configureCurlyBracesBlock(IEditStrategyAcceptor acceptor) {
+		for(String contentType : defaultContentTypes ){
+			acceptor.accept(singleLineTerminals.newInstance("{", "}"),contentType);
+		}
+	}
+
+	protected void configureSquareBrackets(IEditStrategyAcceptor acceptor) {
+		for(String contentType : defaultContentTypes ){
+			acceptor.accept(singleLineTerminals.newInstance("[", "]"),contentType);
+		}
+	}
+
+	protected void configureParenthesis(IEditStrategyAcceptor acceptor) {
+		for(String contentType : defaultContentTypes ){
+			acceptor.accept(singleLineTerminals.newInstance("(", ")"),contentType);
+		}
+	}
+	
+	protected void configureStringLiteral(IEditStrategyAcceptor acceptor) {
+		for(String contentType : defaultContentTypes ){
+			// The following two are registered for the default content type, because on deletion 
+			// the command.offset is cursor-1, which is outside the partition of terminals.length = 1.
+			// How crude is that?
+			// Note that in case you have two string literals following each other directly, the deletion strategy wouldn't apply.
+			// One could add the same strategy for the STRING partition in addition to solve this
+			acceptor.accept(partitionDeletion.newInstance("\"","\""),contentType);
+			acceptor.accept(partitionDeletion.newInstance("'","'"),contentType);
+		}
+		acceptor.accept(partitionInsert.newInstance("\"","\""),STRING_LITERAL_PARTITION);
+		acceptor.accept(partitionInsert.newInstance("'","'"),STRING_LITERAL_PARTITION);
+		acceptor.accept(partitionEndSkippingEditStrategy.get(),STRING_LITERAL_PARTITION);
 	}
 
 }

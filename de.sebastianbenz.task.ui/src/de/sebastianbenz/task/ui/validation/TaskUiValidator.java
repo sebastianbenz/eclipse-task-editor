@@ -47,7 +47,7 @@ import de.sebastianbenz.task.ui.highlighting.BrushRegistry;
 import de.sebastianbenz.task.validation.TaskJavaValidator;
 
 @SuppressWarnings("restriction")
-public class SpellingValidator extends TaskJavaValidator {
+public class TaskUiValidator extends TaskJavaValidator {
 
 	private final class DocumentResolver implements Runnable {
 		private final Content content;

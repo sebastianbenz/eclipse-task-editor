@@ -112,7 +112,7 @@ public class TaskUiModule extends de.sebastianbenz.task.ui.AbstractTaskUiModule 
 	}
 	
 	@org.eclipse.xtext.service.SingletonBinding(eager=true)	public Class<? extends de.sebastianbenz.task.validation.TaskJavaValidator> bindTaskJavaValidator() {
-		return de.sebastianbenz.task.ui.validation.SpellingValidator.class;
+		return de.sebastianbenz.task.ui.validation.TaskUiValidator.class;
 	}
 	
 	public Class<? extends ITokenTypeToPartitionTypeMapper> bindITokenTypeToPartitionTypeMapper(){

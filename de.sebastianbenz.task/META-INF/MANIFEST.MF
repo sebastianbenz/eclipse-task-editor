@@ -15,13 +15,15 @@ Require-Bundle: org.eclipse.xtext;bundle-version="2.0.0",
  org.eclipse.xtext.util,
  org.eclipse.emf.ecore,
  org.eclipse.emf.common,
- org.antlr.runtime
+ org.antlr.runtime,
+ org.apache.commons.lang
 Import-Package: org.apache.commons.logging,
  org.apache.log4j,
  org.eclipse.xtext.xbase.lib,
  org.eclipse.xtext.xtend2.lib
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
 Export-Package: de.sebastianbenz.task;uses:="org.eclipse.xtext,org.eclipse.xtext.service,com.google.inject",
+ de.sebastianbenz.task.generator,
  de.sebastianbenz.task.impl;
   x-friends:="de.sebastianbenz.task.test,
    de.sebastianbenz.task.ui";

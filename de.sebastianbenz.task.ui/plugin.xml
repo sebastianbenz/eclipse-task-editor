@@ -368,6 +368,20 @@
 			id="de.sebastianbenz.task.removedone"
 			name="Clear done tasks">
 		</command>
+		<command
+            categoryId="de.sebastianbenz.task.ui.commands.category"
+            id="de.sebastianbenz.task.ui.commands.exportHtml"
+            name="Export to HTML">
+            </command>
+		<command	
+            categoryId="de.sebastianbenz.task.ui.commands.category"
+            id="de.sebastianbenz.task.ui.commands.exportConfluence"
+            name="Export to Confluence">
+      </command>
+      <category
+            id="de.sebastianbenz.task.ui.commands.category"
+            name="Export">
+      </category>
 	</extension>
  <extension point="org.eclipse.ui.menus">
 		<menuContribution locationURI="popup:#TextEditorContext?endof=group.find">
@@ -378,10 +392,26 @@
             	</visibleWhen>
 			</command>
 		</menuContribution>
+		<menuContribution locationURI="popup:#TextEditorContext?endof=group.find">
+			<command commandId="de.sebastianbenz.task.ui.commands.exportHtml">
+				<visibleWhen checkEnabled="false">
+                	<reference definitionId="de.sebastianbenz.task.Task.Editor.opened">
+                	</reference>
+            	</visibleWhen>
+			</command>
+		</menuContribution>
+		<menuContribution locationURI="popup:#TextEditorContext?endof=group.find">
+			<command commandId="de.sebastianbenz.task.ui.commands.exportConfluence">
+				<visibleWhen checkEnabled="false">
+                	<reference definitionId="de.sebastianbenz.task.Task.Editor.opened">
+                	</reference>
+            	</visibleWhen>
+			</command>
+		</menuContribution>
 	</extension>
 	<extension point="org.eclipse.ui.handlers">
 	    <handler
-            class="de.sebastianbenz.task.ui.TaskExecutableExtensionFactory:de.sebastianbenz.task.ui.editor.handler.RemoveDoneTasks"
+            class="de.sebastianbenz.task.ui.TaskExecutableExtensionFactory:de.sebastianbenz.task.ui.handlers.RemoveDoneTasks"
             commandId="de.sebastianbenz.task.removedone">
             <activeWhen>
                 <reference
@@ -389,6 +419,24 @@
                 </reference>
             </activeWhen>
         </handler>
+		<handler
+              class="de.sebastianbenz.task.ui.TaskExecutableExtensionFactory:de.sebastianbenz.task.ui.handlers.HtmlExportHandler"
+              commandId="de.sebastianbenz.task.ui.commands.exportHtml">
+              <activeWhen>
+                <reference
+                    definitionId="de.sebastianbenz.task.Task.Editor.opened">
+                </reference>
+            </activeWhen>
+        </handler>        
+        <handler
+              class="de.sebastianbenz.task.ui.TaskExecutableExtensionFactory:de.sebastianbenz.task.ui.handlers.ConfluenceExportHandler"
+              commandId="de.sebastianbenz.task.ui.commands.exportConfluence">
+              <activeWhen>
+                <reference
+                    definitionId="de.sebastianbenz.task.Task.Editor.opened">
+                </reference>
+            </activeWhen>
+        </handler>        
     </extension>  
        <extension
          point="org.eclipse.ui.bindings">
@@ -397,6 +445,18 @@
             contextId="org.eclipse.ui.textEditorScope"
             schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
             sequence="M1+R">
+      </key>
+      <key
+            commandId="de.sebastianbenz.task.ui.commands.exportHtml"
+            contextId="org.eclipse.ui.textEditorScope"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+            sequence="M1+6">
+      </key>
+      <key
+            commandId="de.sebastianbenz.task.ui.commands.exportConfluence"
+            contextId="org.eclipse.ui.textEditorScope"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+            sequence="M1+6">
       </key>
    </extension>
 </plugin>

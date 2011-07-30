@@ -11,7 +11,7 @@ public class Strings2 extends Strings{
 				return s.substring(0, i);
 			}
 		}
-		return s;
+		return "";
 	}
 	
 }

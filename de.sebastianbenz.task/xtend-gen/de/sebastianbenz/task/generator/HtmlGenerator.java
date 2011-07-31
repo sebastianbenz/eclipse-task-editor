@@ -13,6 +13,7 @@ import de.sebastianbenz.task.generator.TaskGenerator;
 import org.apache.commons.lang.StringEscapeUtils;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.xtext.xbase.lib.IntegerExtensions;
+import org.eclipse.xtext.xbase.lib.ObjectExtensions;
 import org.eclipse.xtext.xtend2.lib.StringConcatenation;
 
 @SuppressWarnings("all")
@@ -77,10 +78,7 @@ public class HtmlGenerator implements TaskGenerator {
     _builder.append("margin-left: 0;");
     _builder.newLine();
     _builder.append("\t\t");
-    _builder.append("padding-left: 0em;");
-    _builder.newLine();
-    _builder.append("\t\t");
-    _builder.append("text-indent: 0em;");
+    _builder.append("text-indent: -2em;");
     _builder.newLine();
     _builder.append("\t");
     _builder.append("}");
@@ -264,18 +262,23 @@ public class HtmlGenerator implements TaskGenerator {
     StringConcatenation _generateTags = this.generateTags(note);
     _builder.append(_generateTags, "");
     _builder.newLineIfNotEmpty();
-    _builder.append("</p>");
-    _builder.newLine();
     StringConcatenation _generateChildren = this.generateChildren(note);
     _builder.append(_generateChildren, "");
     _builder.newLineIfNotEmpty();
+    _builder.append("</p>");
+    _builder.newLine();
     return _builder;
   }
   
   protected StringConcatenation _generate(final Task task) {
     StringConcatenation _builder = new StringConcatenation();
-    _builder.append("<ul>");
-    _builder.newLine();
+    {
+      boolean _isFirst = this.isFirst(task);
+      if (_isFirst) {
+        _builder.append("<ul>");
+        _builder.newLine();
+      }
+    }
     _builder.append("\t");
     _builder.append("<li");
     {
@@ -290,15 +293,43 @@ public class HtmlGenerator implements TaskGenerator {
     _builder.append(_trim, "	");
     StringConcatenation _generateTags = this.generateTags(task);
     _builder.append(_generateTags, "	");
-    _builder.append("</li>");
     _builder.newLineIfNotEmpty();
     _builder.append("\t");
     StringConcatenation _generateChildren = this.generateChildren(task);
     _builder.append(_generateChildren, "	");
     _builder.newLineIfNotEmpty();
-    _builder.append("</ul>\t\t");
+    _builder.append("\t");
+    _builder.append("</li>");
     _builder.newLine();
+    {
+      boolean _isLast = this.isLast(task);
+      if (_isLast) {
+        _builder.append("</ul>\t\t");
+        _builder.newLine();
+      }
+    }
     return _builder;
+  }
+  
+  public boolean isFirst(final Task task) {
+    Container _parent = task.getParent();
+    EList<Content> _children = _parent.getChildren();
+    Content _get = _children.get(0);
+    boolean _operator_equals = ObjectExtensions.operator_equals(_get, task);
+    return _operator_equals;
+  }
+  
+  public boolean isLast(final Task task) {
+    {
+      Container _parent = task.getParent();
+      EList<Content> _children = _parent.getChildren();
+      EList<Content> siblings = _children;
+      int _size = siblings.size();
+      int _operator_minus = IntegerExtensions.operator_minus(((Integer)_size), ((Integer)1));
+      Content _get = siblings.get(_operator_minus);
+      boolean _operator_equals = ObjectExtensions.operator_equals(_get, task);
+      return _operator_equals;
+    }
   }
   
   protected StringConcatenation _generate(final Project project) {

@@ -38,8 +38,7 @@ class HtmlGenerator implements de.sebastianbenz.task.generator.TaskGenerator {
 			ul{
 				list-style: none;
 				margin-left: 0;
-				padding-left: 0em;
-				text-indent: 0em;
+				text-indent: -2em;
 			}
 			ul li:before {
 				content: "\2D";	
@@ -110,16 +109,29 @@ class HtmlGenerator implements de.sebastianbenz.task.generator.TaskGenerator {
 	
 	def dispatch generate(Note note)'''
 		<p class="note">«note.value»«generateTags(note)»
-		</p>
 		«generateChildren(note)»
+		</p>
 	'''
 	
 	def dispatch generate(Task task)'''
+		«IF isFirst(task)»
 		<ul>
-			<li«IF task.done» class="done"«ENDIF»>«task.value.trim()»«generateTags(task)»</li>
+		«ENDIF»
+			<li«IF task.done» class="done"«ENDIF»>«task.value.trim()»«generateTags(task)»
 			«generateChildren(task)»
+			</li>
+		«IF isLast(task)»
 		</ul>		
+		«ENDIF»
 	'''
+	
+	def isFirst(Task task){
+		return task.parent.children.get(0) == task
+	}
+	def isLast(Task task){
+		var siblings = task.parent.children
+		return siblings.get(siblings.size - 1) == task
+	}
 	
 	def dispatch generate(Project project){
 		var level = project.level + 1

@@ -72,7 +72,7 @@ public class BrushRegistry {
 					pattern("\\s*#.*").style(CODE_ANNOTATION_ID),
 					pattern("\\b([\\d]+(\\.[\\d]+)?|0x[a-f0-9]+)\\b").style(NUMBER_ID)),
 					
-			lang("xml, html")
+			lang("xml", "html")
 				.mapping(
 					pattern("(</?[a-z]*)\\s?>?").style(COMMENT_ID),
 					pattern("(/>)").style(COMMENT_ID),
@@ -137,7 +137,7 @@ public class BrushRegistry {
 						pattern("\\b([\\d]+(\\.[\\d]+)?|0x[a-f0-9]+)\\b").style(NUMBER_ID))
 			,
 			// Copyright 2006 Shin, YoungJin
-			lang("cpp, c")
+			lang("cpp", "c")
 				.keywords(	// datatypes
 						"ATOM BOOL BOOLEAN BYTE CHAR COLORREF DWORD DWORDLONG DWORD_PTR " +
                         "DWORD32 DWORD64 FLOAT HACCEL HALF_PTR HANDLE HBITMAP HBRUSH " +

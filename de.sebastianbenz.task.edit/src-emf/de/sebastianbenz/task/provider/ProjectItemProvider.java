@@ -16,6 +16,7 @@
 package de.sebastianbenz.task.provider;
 
 
+import de.sebastianbenz.task.Project;
 import java.util.Collection;
 import java.util.List;
 

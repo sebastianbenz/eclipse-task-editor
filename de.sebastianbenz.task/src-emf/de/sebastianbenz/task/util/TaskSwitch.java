@@ -143,6 +143,7 @@ public class TaskSwitch<T>
 			{
 				Tag tag = (Tag)theEObject;
 				T result = caseTag(tag);
+				if (result == null) result = caseEmbeddedElement(tag);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -176,6 +177,21 @@ public class TaskSwitch<T>
 				T result = caseCode(code);
 				if (result == null) result = caseContent(code);
 				if (result == null) result = caseContainer(code);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case TaskPackage.EMBEDDED_ELEMENT:
+			{
+				EmbeddedElement embeddedElement = (EmbeddedElement)theEObject;
+				T result = caseEmbeddedElement(embeddedElement);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case TaskPackage.LINK:
+			{
+				Link link = (Link)theEObject;
+				T result = caseLink(link);
+				if (result == null) result = caseEmbeddedElement(link);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -339,6 +355,38 @@ public class TaskSwitch<T>
 	 * @generated
 	 */
 	public T caseCode(Code object)
+	{
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Embedded Element</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Embedded Element</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEmbeddedElement(EmbeddedElement object)
+	{
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Link</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Link</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseLink(Link object)
 	{
 		return null;
 	}

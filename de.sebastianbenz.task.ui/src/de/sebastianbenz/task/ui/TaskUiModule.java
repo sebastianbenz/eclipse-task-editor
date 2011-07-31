@@ -23,6 +23,7 @@ import org.eclipse.xtext.ui.editor.autoedit.AbstractEditStrategyProvider;
 import org.eclipse.xtext.ui.editor.contentassist.ITemplateProposalProvider;
 import org.eclipse.xtext.ui.editor.folding.FoldedPosition;
 import org.eclipse.xtext.ui.editor.folding.IFoldingRegionProvider;
+import org.eclipse.xtext.ui.editor.hyperlinking.IHyperlinkHelper;
 import org.eclipse.xtext.ui.editor.model.IResourceForEditorInputFactory;
 import org.eclipse.xtext.ui.editor.model.ITokenTypeToPartitionTypeMapper;
 import org.eclipse.xtext.ui.editor.model.IXtextDocument;
@@ -38,6 +39,7 @@ import de.sebastianbenz.task.ui.contentassist.TaskTemplateProvider;
 import de.sebastianbenz.task.ui.editor.AutoEditStrategyProvider;
 import de.sebastianbenz.task.ui.editor.SourceViewerConfiguration;
 import de.sebastianbenz.task.ui.editor.TaskEditor;
+import de.sebastianbenz.task.ui.editor.TaskHyperLinkHelper;
 import de.sebastianbenz.task.ui.editor.TaskTokenTypeToPartitionTypeMapper;
 import de.sebastianbenz.task.ui.highlighting.HighlightingConfiguration;
 import de.sebastianbenz.task.ui.highlighting.SemanticHighlightingCalculator;
@@ -117,6 +119,10 @@ public class TaskUiModule extends de.sebastianbenz.task.ui.AbstractTaskUiModule 
 	
 	public Class<? extends ITokenTypeToPartitionTypeMapper> bindITokenTypeToPartitionTypeMapper(){
 		return TaskTokenTypeToPartitionTypeMapper.class;
+	}
+	
+	public Class<? extends IHyperlinkHelper> bindIHyperlinkHelper() {
+		return TaskHyperLinkHelper.class;
 	}
 	
 }

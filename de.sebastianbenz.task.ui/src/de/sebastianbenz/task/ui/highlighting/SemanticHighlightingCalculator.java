@@ -11,9 +11,14 @@
 package de.sebastianbenz.task.ui.highlighting;
 
 import static com.google.common.collect.Lists.newLinkedList;
+import static de.sebastianbenz.task.ui.highlighting.HighlightingConfiguration.NOTE_DONE_ID;
 import static de.sebastianbenz.task.ui.highlighting.HighlightingConfiguration.PROJECT2_ID;
 import static de.sebastianbenz.task.ui.highlighting.HighlightingConfiguration.PROJECT3_ID;
 import static de.sebastianbenz.task.ui.highlighting.HighlightingConfiguration.TAG_ID;
+import static de.sebastianbenz.task.ui.highlighting.HighlightingConfiguration.TASK_DONE_ID;
+import static de.sebastianbenz.task.ui.highlighting.HighlightingConfiguration.TASK_URL_ID;
+import static de.sebastianbenz.task.util.Contents.offset;
+import static org.eclipse.xtext.util.Strings.isEmpty;
 
 import java.util.Iterator;
 import java.util.LinkedList;
@@ -29,11 +34,13 @@ import com.google.inject.Inject;
 
 import de.sebastianbenz.task.Code;
 import de.sebastianbenz.task.Content;
+import de.sebastianbenz.task.Link;
 import de.sebastianbenz.task.Note;
 import de.sebastianbenz.task.Project;
 import de.sebastianbenz.task.Tag;
 import de.sebastianbenz.task.Task;
 import de.sebastianbenz.task.impl.CodeImplCustom;
+import de.sebastianbenz.task.util.Contents;
 import de.sebastianbenz.task.util.TaskSwitch;
 
 public class SemanticHighlightingCalculator implements ISemanticHighlightingCalculator{
@@ -107,24 +114,43 @@ public class SemanticHighlightingCalculator implements ISemanticHighlightingCalc
 
 		@Override
 		public Boolean caseTask(Task content) {
-			return applyHighlighting(content, HighlightingConfiguration.TASK_DONE_ID);
+			return applyHighlighting(content, TASK_DONE_ID, TASK_URL_ID);
 		}
 
-		private Boolean applyHighlighting(Content content, String doneStyle) {
+		private Boolean applyHighlighting(Content content, String doneStyle, String urlStyle) {
 			Iterable<Tag> allTags = content.getTags();
 			if(content.isDone()){
-				highlightText(content, allTags, doneStyle);
+				markAsDone(content, allTags, doneStyle);
+			}else{
+				highlightUrls(content, urlStyle);
 			}
 			highlightTags(content, allTags);
 			return Boolean.TRUE;
 		}
 		
+		private void highlightUrls(Content content, String style) {
+			int offset = offset(content);
+			for (Link link : content.getLinks()) {
+				int linkOffset;
+				int linkLength;
+				if(isEmpty(link.getDescription())){
+					linkOffset = offset + link.getOffset();
+					linkLength = link.getLength();
+				}else{
+					int descriptionLength = link.getDescription().length();
+					linkOffset = offset + link.getOffset() + descriptionLength + 3;
+					linkLength = link.getLength() - descriptionLength - 4;
+				}
+				acceptor.addPosition(linkOffset, linkLength, style);
+			}
+		}
+
 		@Override
 		public Boolean caseNote(Note content) {
-			return applyHighlighting(content, HighlightingConfiguration.NOTE_DONE_ID);
+			return applyHighlighting(content, NOTE_DONE_ID, HighlightingConfiguration.NOTE_URL_ID);
 		}
 		
-		private void highlightText(Content content, Iterable<Tag> allTags, String doneStyle) {
+		private void markAsDone(Content content, Iterable<Tag> allTags, String doneStyle) {
 			int begin = getStartPosition(content);
 			int lastTagEnd = 0;
 			int taskOffset = offset(content);
@@ -176,10 +202,7 @@ public class SemanticHighlightingCalculator implements ISemanticHighlightingCalc
 			}
 		}
 
-		private int offset(Content content) {
-			ICompositeNode node = NodeModelUtils.getNode(content);
-			return node.getOffset() + content.getIntend().size();
-		}
+		
 		
 		@Override
 		public Boolean caseProject(Project project) {

@@ -584,17 +584,17 @@ public class InternalTaskLexer extends Lexer {
     static final String DFA11_eofS =
         "\31\uffff";
     static final String DFA11_minS =
-        "\1\0\2\uffff\1\0\1\uffff\5\0\1\uffff\1\0\1\uffff\5\0\1\uffff\5"+
-        "\0\1\uffff";
+        "\1\0\2\uffff\1\0\1\uffff\5\0\1\uffff\1\0\1\uffff\5\0\1\uffff\5\0"+
+        "\1\uffff";
     static final String DFA11_maxS =
         "\1\uffff\2\uffff\1\uffff\1\uffff\5\uffff\1\uffff\1\uffff\1\uffff"+
         "\5\uffff\1\uffff\5\uffff\1\uffff";
     static final String DFA11_acceptS =
-        "\1\uffff\1\1\1\2\1\uffff\1\4\5\uffff\1\5\1\uffff\1\6\5\uffff\1"+
-        "\3\5\uffff\1\3";
+        "\1\uffff\1\1\1\2\1\uffff\1\4\5\uffff\1\5\1\uffff\1\6\5\uffff\1\3"+
+        "\5\uffff\1\3";
     static final String DFA11_specialS =
-        "\1\17\2\uffff\1\12\1\uffff\1\1\1\13\1\20\1\7\1\11\1\uffff\1\14"+
-        "\1\uffff\1\6\1\5\1\15\1\3\1\16\1\uffff\1\10\1\0\1\21\1\2\1\4\1\uffff}>";
+        "\1\17\2\uffff\1\12\1\uffff\1\1\1\13\1\20\1\7\1\11\1\uffff\1\14\1"+
+        "\uffff\1\6\1\5\1\15\1\3\1\16\1\uffff\1\10\1\0\1\21\1\2\1\4\1\uffff}>";
     static final String[] DFA11_transitionS = {
             "\11\5\1\1\1\2\2\5\1\2\22\5\1\1\6\5\1\3\5\5\1\4\14\5\1\6\uffc5"+
             "\5",

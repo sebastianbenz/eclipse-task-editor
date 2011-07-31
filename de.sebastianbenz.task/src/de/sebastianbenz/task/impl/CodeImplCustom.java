@@ -13,6 +13,7 @@ package de.sebastianbenz.task.impl;
 import org.eclipse.emf.common.util.ECollections;
 import org.eclipse.emf.common.util.EList;
 
+import de.sebastianbenz.task.Link;
 import de.sebastianbenz.task.Tag;
 import de.sebastianbenz.task.util.Strings2;
 
@@ -38,6 +39,11 @@ public class CodeImplCustom extends de.sebastianbenz.task.impl.CodeImpl {
 	
 	@Override
 	public EList<Tag> getTags() {
+		return ECollections.emptyEList();
+	}
+	
+	@Override
+	public EList<Link> getLinks() {
 		return ECollections.emptyEList();
 	}
 }

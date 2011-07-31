@@ -76,6 +76,7 @@ public class TaskFactoryImpl extends EFactoryImpl implements TaskFactory
 			case TaskPackage.GLOBAL_TASK_MODEL: return createGlobalTaskModel();
 			case TaskPackage.EMPTY_LINE: return createEmptyLine();
 			case TaskPackage.CODE: return createCode();
+			case TaskPackage.LINK: return createLink();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -167,6 +168,17 @@ public class TaskFactoryImpl extends EFactoryImpl implements TaskFactory
 	{
 		CodeImplCustom code = new CodeImplCustom();
 		return code;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Link createLink()
+	{
+		LinkImplCustom link = new LinkImplCustom();
+		return link;
 	}
 
 	/**

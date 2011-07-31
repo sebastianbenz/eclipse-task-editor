@@ -19,7 +19,7 @@ import org.junit.Test;
 import com.google.common.base.Joiner;
 
 @SuppressWarnings("unchecked")
-public class TagProcessorTest {
+public class TagParserTest {
 	
 
 	@Test
@@ -28,12 +28,6 @@ public class TagProcessorTest {
 		assertThat(newTask("").getTags().isEmpty(), is(true));
 	}
 
-	protected Task newTask(String text) {
-		Task task = TaskFactory.eINSTANCE.createTask();
-		task.setText(text);
-		return task;
-	}
-	
 	@Test
 	public void shouldParseSimpleTags() throws Exception {
 		assertThat(tagsIn(" @today"), is("@today"));
@@ -62,6 +56,12 @@ public class TagProcessorTest {
 
 	private String tagsIn(String string) {
 		return Joiner.on(", ").join(newTask(string).getTags());
+	}
+
+	protected Task newTask(String text) {
+		Task task = TaskFactory.eINSTANCE.createTask();
+		task.setText(text);
+		return task;
 	}
 
 }

@@ -129,6 +129,16 @@ public class TaskAdapterFactory extends AdapterFactoryImpl
 				return createCodeAdapter();
 			}
 			@Override
+			public Adapter caseEmbeddedElement(EmbeddedElement object)
+			{
+				return createEmbeddedElementAdapter();
+			}
+			@Override
+			public Adapter caseLink(Link object)
+			{
+				return createLinkAdapter();
+			}
+			@Override
 			public Adapter defaultCase(EObject object)
 			{
 				return createEObjectAdapter();
@@ -296,6 +306,36 @@ public class TaskAdapterFactory extends AdapterFactoryImpl
 	 * @generated
 	 */
 	public Adapter createCodeAdapter()
+	{
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.sebastianbenz.task.EmbeddedElement <em>Embedded Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.sebastianbenz.task.EmbeddedElement
+	 * @generated
+	 */
+	public Adapter createEmbeddedElementAdapter()
+	{
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.sebastianbenz.task.Link <em>Link</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.sebastianbenz.task.Link
+	 * @generated
+	 */
+	public Adapter createLinkAdapter()
 	{
 		return null;
 	}

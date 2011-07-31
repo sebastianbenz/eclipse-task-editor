@@ -24,42 +24,17 @@ Import-Package: org.apache.commons.logging,
 Bundle-RequiredExecutionEnvironment: J2SE-1.5
 Export-Package: de.sebastianbenz.task;uses:="org.eclipse.xtext,org.eclipse.xtext.service,com.google.inject",
  de.sebastianbenz.task.generator,
- de.sebastianbenz.task.impl;
-  x-friends:="de.sebastianbenz.task.test,
-   de.sebastianbenz.task.ui";
-  uses:="de.sebastianbenz.task,
-   org.eclipse.emf.common.util",
+ de.sebastianbenz.task.impl; x-friends:="de.sebastianbenz.task.test,  de.sebastianbenz.task.ui"; uses:="de.sebastianbenz.task,  org.eclipse.emf.common.util",
  de.sebastianbenz.task.model;uses:="org.eclipse.xtext.diagnostics,org.eclipse.xtext.linking.impl,org.eclipse.emf.ecore",
  de.sebastianbenz.task.parseTreeConstruction;uses:="org.eclipse.xtext,org.eclipse.xtext.parsetree.reconstr,org.eclipse.xtext.parsetree.reconstr.impl",
  de.sebastianbenz.task.parser.antlr;uses:="de.sebastianbenz.task.parser.antlr.internal,org.eclipse.xtext.parser.antlr,de.sebastianbenz.task.services",
- de.sebastianbenz.task.parser.antlr.internal;
-  uses:="org.eclipse.emf.ecore,
-   org.eclipse.emf.common.util,
-   org.antlr.runtime,
-   org.eclipse.xtext.parser.antlr,
-   de.sebastianbenz.task.services",
+ de.sebastianbenz.task.parser.antlr.internal; uses:="org.eclipse.emf.ecore,  org.eclipse.emf.common.util,  org.antlr.runtime,  org.eclipse.xtext.parser.antlr,  de.sebastianbenz.task.services",
  de.sebastianbenz.task.query;uses:="org.eclipse.emf.ecore,org.eclipse.emf.common.util",
- de.sebastianbenz.task.query.impl;
-  uses:="org.eclipse.emf.ecore,
-   org.eclipse.emf.common.util,
-   de.sebastianbenz.task.query,
-   org.eclipse.emf.ecore.impl,
-   org.eclipse.emf.common.notify",
- de.sebastianbenz.task.query.util;
-  uses:="org.eclipse.emf.ecore.util,
-   org.eclipse.emf.ecore,
-   org.eclipse.emf.common.notify.impl,
-   de.sebastianbenz.task.query,
-   org.eclipse.emf.common.notify",
- de.sebastianbenz.task.resource;
-  uses:="org.eclipse.emf.ecore,
-   de.sebastianbenz.task,
-   org.eclipse.xtext.util,
-   org.eclipse.xtext.naming,
-   org.eclipse.xtext.resource.impl,
-   org.eclipse.xtext.resource,
-   de.sebastianbenz.task.util",
+ de.sebastianbenz.task.query.impl; uses:="org.eclipse.emf.ecore,  org.eclipse.emf.common.util,  de.sebastianbenz.task.query,  org.eclipse.emf.ecore.impl,  org.eclipse.emf.common.notify",
+ de.sebastianbenz.task.query.util; uses:="org.eclipse.emf.ecore.util,  org.eclipse.emf.ecore,  org.eclipse.emf.common.notify.impl,  de.sebastianbenz.task.query,  org.eclipse.emf.common.notify",
+ de.sebastianbenz.task.resource; uses:="org.eclipse.emf.ecore,  de.sebastianbenz.task,  org.eclipse.xtext.util,  org.eclipse.xtext.naming,  org.eclipse.xtext.resource.impl,  org.eclipse.xtext.resource,  de.sebastianbenz.task.util",
  de.sebastianbenz.task.services;uses:="org.eclipse.xtext,org.eclipse.xtext.service",
  de.sebastianbenz.task.tagging;uses:="org.eclipse.emf.ecore.resource,de.sebastianbenz.task",
  de.sebastianbenz.task.util;uses:="de.sebastianbenz.task,org.eclipse.xtext.util,org.eclipse.xtext.naming",
  de.sebastianbenz.task.validation;uses:="org.eclipse.xtext.validation"
+

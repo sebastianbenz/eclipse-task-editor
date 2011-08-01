@@ -78,10 +78,10 @@ public class BrushRegistry {
 			lang("xml", "html", "xhtml", "xslt")
 				.mapping(
 					pattern("<\\?.*\\?>").style(CODE_ANNOTATION_ID),
-					pattern("</?[a-zA-Z-]*").style(COMMENT_ID),
+					pattern("</?[a-zA-Z-_0-9]*").style(COMMENT_ID),
 					pattern("(/>|>)").style(COMMENT_ID),
 					pattern("(<!--.*-->)").style(STRING_ID),
-					pattern("\\s(\\w*)\\=").style(HighlightingConfiguration.KEYWORD_ID),
+					pattern("\\s([a-zA-Z0-9-_]*)\\=").style(HighlightingConfiguration.KEYWORD_ID),
 					pattern(DOUBLE_QUOTED_STRING).style(STRING_ID),
 					pattern(SINGLE_QUOTED_STRING).style(STRING_ID)
 				),

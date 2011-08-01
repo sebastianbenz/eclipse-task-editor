@@ -14,6 +14,8 @@ import com.google.inject.Inject;
 
 import de.sebastianbenz.task.Content;
 import de.sebastianbenz.task.Link;
+import de.sebastianbenz.task.Tag;
+import de.sebastianbenz.task.TextSegment;
 import de.sebastianbenz.task.util.Contents;
 
 public class TaskHyperLinkHelper extends HyperlinkHelper {
@@ -29,17 +31,38 @@ public class TaskHyperLinkHelper extends HyperlinkHelper {
 		if(current == null){
 			return;
 		}
-		if (!(current instanceof Content)) {
-			return;
+		if (current instanceof Content){
+			findLinksIn((Content) current, offset, acceptor);
 		}
-		Content content = (Content) current;
+	}
+
+	private void findLinksIn(Content content, int offset,
+			IHyperlinkAcceptor acceptor) {
 		int contentOffset = Contents.offset(content);
 		for (Link link : content.getLinks()) {
 			int linkOffset = contentOffset + link.getOffset();
-			if(offset >= linkOffset && offset < linkOffset + link.getLength()){
+			if(isInRegion(offset, contentOffset, link)){
 				acceptor.accept(create(linkOffset, link));
+				return;
 			}
 		}
+		for (Tag tag : content.getTags()) {
+			int tagOffset = contentOffset + tag.getOffset();
+			if(isInRegion(offset, contentOffset, tag)){
+				acceptor.accept(create(tagOffset, tag));
+			}
+		}
+	}
+
+	private boolean isInRegion(int offset, int contentOffset, TextSegment segment) {
+		int tagOffset = contentOffset + segment.getOffset();
+		return offset >= tagOffset && offset < tagOffset + segment.getLength();
+	}
+
+	private IHyperlink create(int offset, Tag tag) {
+		IRegion region = new Region(offset, tag.getLength());
+		return new TagHyperLink(region, tag);
+		
 	}
 
 	private IHyperlink create(int offset, Link link) {

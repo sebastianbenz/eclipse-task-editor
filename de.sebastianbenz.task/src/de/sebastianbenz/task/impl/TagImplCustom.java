@@ -13,9 +13,11 @@ package de.sebastianbenz.task.impl;
 
 public class TagImplCustom extends de.sebastianbenz.task.impl.TagImpl {
 
+	public static final String PREFIX = "@";
+
 	@Override
 	public String toString() {
 		String valueString = value != null ? "(" + value + ")" : "";
-		return "@" + name + valueString;
+		return PREFIX + name + valueString;
 	}
 }

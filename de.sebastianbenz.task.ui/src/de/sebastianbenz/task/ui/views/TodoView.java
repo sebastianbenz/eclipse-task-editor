@@ -271,4 +271,11 @@ public class TodoView extends ViewPart {
 		super.dispose();
 		globalState.dispose();
 	}
+
+	public void setQuery(String query) {
+		String currentText = queryText.getText();
+		if(currentText != null && !currentText.trim().equals(query.trim())){
+			queryText.setText(query);
+		}
+	}
 }

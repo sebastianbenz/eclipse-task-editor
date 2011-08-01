@@ -10,13 +10,18 @@
  ******************************************************************************/
 package de.sebastianbenz.task.ui.highlighting;
 
+import static com.google.common.collect.Iterables.toArray;
 import static com.google.common.collect.Lists.newLinkedList;
 import static de.sebastianbenz.task.ui.highlighting.HighlightingConfiguration.PROJECT2_ID;
 import static de.sebastianbenz.task.ui.highlighting.HighlightingConfiguration.PROJECT3_ID;
 import static de.sebastianbenz.task.ui.highlighting.HighlightingConfiguration.TAG_ID;
+import static java.util.Collections.sort;
 
+import java.util.Collections;
 import java.util.Iterator;
-import java.util.LinkedList;
+import java.util.List;
+import java.util.Set;
+import java.util.TreeSet;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtext.nodemodel.ICompositeNode;
@@ -25,6 +30,9 @@ import org.eclipse.xtext.resource.XtextResource;
 import org.eclipse.xtext.ui.editor.syntaxcoloring.IHighlightedPositionAcceptor;
 import org.eclipse.xtext.ui.editor.syntaxcoloring.ISemanticHighlightingCalculator;
 
+import com.google.common.collect.Iterables;
+import com.google.common.collect.Lists;
+import com.google.common.collect.Sets;
 import com.google.inject.Inject;
 
 import de.sebastianbenz.task.Code;
@@ -40,7 +48,7 @@ public class SemanticHighlightingCalculator implements ISemanticHighlightingCalc
 	
 	private static final int CODE_SEPARATOR = CodeImplCustom.PREFIX.length();
 
-	private static class Position{
+	private static class Position implements Comparable<Position>{
 		
 		public final int offset;
 		public final int length;
@@ -51,53 +59,67 @@ public class SemanticHighlightingCalculator implements ISemanticHighlightingCalc
 			this.length = length;
 			this.id = id;
 		}
+
+		public int compareTo(Position other) {
+			return this.offset < other.offset ? -1 : this.offset == other.offset ? 0 : 1;
+		}
 		
+		@Override
+		public String toString() {
+			return offset + "-" + length + " " + id;
+		}
+		
+	}
+
+	public static class FilteringAcceptor implements IHighlightedPositionAcceptor {
+		
+		private final int baseOffset;
+		private List<Position> matches = Lists.newArrayList();
+		private final IHighlightedPositionAcceptor acceptor;
+		
+		private FilteringAcceptor(IHighlightedPositionAcceptor acceptor, int base) {
+			this.acceptor = acceptor;
+			this.baseOffset = base;
+		}
+	
+		public void addPosition(int offset, int length, String... id) {
+			matches.add(new Position(offset, length, id));
+		}
+	
+		public void flush() {
+			Position[] positions = filterHiddenMatches();
+			for (Position match : positions) {
+				if(match != null){
+					acceptor.addPosition(baseOffset + match.offset, match.length, match.id);
+				}
+			}
+		}
+	
+		private Position[] filterHiddenMatches() {
+			sort(matches);
+			Position[] positions = toArray(matches, Position.class);
+			for(int i = 0; i < positions.length; i++){
+				Position current = positions[i];
+				if(isInsideOtherMatch(positions, current, i)){
+					 positions[i] = null;
+				}
+			}
+			return positions;
+		}
+	
+		private boolean isInsideOtherMatch(Position[] positions, Position current, int i) {
+			for(int j = 0; j < i; j++){
+				Position other =  positions[j];
+				if(other != null && current.offset < other.offset + other.length){
+					return true;
+				}
+			}
+			return false;
+		}
 	}
 
 	private class Implementation extends TaskSwitch<Boolean>{
 
-
-		private final class FilteringAcceptor
-				implements IHighlightedPositionAcceptor {
-			
-			private final int baseOffset;
-			private LinkedList<Position> matches = newLinkedList();
-			
-			private FilteringAcceptor(int base) {
-				this.baseOffset = base;
-			}
-
-			public void addPosition(int offset, int length, String... id) {
-				matches.add(new Position(offset, length, id));
-			}
-
-			public void flush() {
-				filterHiddenMatches();
-				
-				for (Position match : matches) {
-					acceptor.addPosition(baseOffset + match.offset, match.length, match.id);
-				}
-			}
-
-			private void filterHiddenMatches() {
-				Iterator<Position> iterator = matches.iterator();
-				while (iterator.hasNext()) {
-					Position current = iterator.next();
-					if(isInsideOtherMatch(current)){
-						iterator.remove();
-					}
-				}
-			}
-
-			private boolean isInsideOtherMatch(Position current) {
-				for (Position other : matches) {
-					if((current.offset > other.offset) && (current.offset < other.offset + other.length)){
-						return true;
-					}
-				}
-				return false;
-			}
-		}
 
 		private final IHighlightedPositionAcceptor acceptor;
 
@@ -209,7 +231,7 @@ public class SemanticHighlightingCalculator implements ISemanticHighlightingCalc
 		}
 
 		protected void applyBrushes(Code code) {
-			FilteringAcceptor filter = new FilteringAcceptor(codeOffset(code));
+			FilteringAcceptor filter = new FilteringAcceptor(acceptor, codeOffset(code));
 			Brush brush = brushFor(code);
 			brush.apply(textOf(code), filter);
 			filter.flush();

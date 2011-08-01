@@ -13,11 +13,14 @@ import java.util.Map;
 import java.util.Set;
 import java.util.regex.Pattern;
 
+import com.google.inject.Singleton;
+
+@Singleton
 public class BrushRegistry {
 	
 	private static final Pattern PERL_SINGLE_LINE_COMMENT = Pattern.compile("#.*$", Pattern.MULTILINE);
 	public static final String DEFAULT_CONFIGURATION = "default";
-	public static final Pattern MULTILINE_LINE_COMMENT = Pattern.compile("/\\*[\\s\\S]*\\*/", Pattern.MULTILINE);
+	public static final Pattern MULTILINE_LINE_COMMENT = Pattern.compile("/\\*.*\\*/", Pattern.DOTALL);
 	public static final Pattern SINGLE_LINE_COMMENT = Pattern.compile("//.*$", Pattern.MULTILINE);
 	public static final Pattern DOUBLE_QUOTED_STRING = Pattern.compile("\"(?:\\.|(\\\\\\\")|[^\\\"\"\\n])*\"");
 	public static final Pattern SINGLE_QUOTED_STRING = Pattern.compile("'(?:\\.|(\\\\\\')|[^\\''\\n])*'");
@@ -39,7 +42,7 @@ public class BrushRegistry {
 					pattern("\\b([\\d]+(\\.[\\d]+)?|0x[a-f0-9]+)\\b").style(NUMBER_ID),
 					pattern("(?!\\@interface\\b)\\@[\\$\\w]+\\b").style(CODE_ANNOTATION_ID)
 				),
-			// copyright Alex Gorbatchev
+			// Copyright Alex Gorbatchev
 			lang("java")
 				.keywords(  "abstract assert boolean break byte case catch char class const " +
 			                "continue default do double else enum extends " +
@@ -56,7 +59,7 @@ public class BrushRegistry {
 					
 					pattern("\\b([\\d]+(\\.[\\d]+)?|0x[a-f0-9]+)\\b").style(NUMBER_ID),
 					pattern("(?!\\@interface\\b)\\@[\\$\\w]+\\b").style(CODE_ANNOTATION_ID)),
-			// copyright Alex Gorbatchev
+			// Copyright Alex Gorbatchev
 			lang("js")
 				.keywords(  "break case catch continue " +
 	                        "default delete do else false " +
@@ -73,13 +76,15 @@ public class BrushRegistry {
 					
 			lang("xml")
 				.mapping(
-					pattern("(</?[a-z]*)\\s?>?").style(COMMENT_ID),
-					pattern("(/>)").style(COMMENT_ID),
+					pattern("<\\?.*\\?>").style(CODE_ANNOTATION_ID),
+					pattern("</?[a-zA-Z-]*").style(COMMENT_ID),
+					pattern("(/>|>)").style(COMMENT_ID),
 					pattern("(<!--.*-->)").style(STRING_ID),
 					pattern("\\s(\\w*)\\=").style(HighlightingConfiguration.KEYWORD_ID),
-					pattern("[a-z-]*\\=(\"[^\"]*\")").style(STRING_ID)
+					pattern(DOUBLE_QUOTED_STRING).style(STRING_ID),
+					pattern(SINGLE_QUOTED_STRING).style(STRING_ID)
 				),
-			// copyright Alex Gorbatchev
+			// Copyright Alex Gorbatchev
 			lang("scala")
 				.keywords("val sealed case def true trait implicit forSome import match object null finally super " +
                         "override try lazy for var catch throw type extends class while with new final yield abstract " +
@@ -91,7 +96,7 @@ public class BrushRegistry {
 					pattern(SINGLE_QUOTED_STRING).style(STRING_ID),
 					pattern("\\b([\\d]+(\\.[\\d]+)?|0x[a-f0-9]+)\\b").style(NUMBER_ID)
 				),
-			// copyright Erik Peterson.
+			// Copyright Erik Peterson.
 			lang("ruby")
 				.keywords("alias and BEGIN begin break case class def define_method defined do each else elsif " +
                         "END end ensure false for if in module new next nil not or raise redo rescue retry return " +
@@ -108,7 +113,7 @@ public class BrushRegistry {
 						pattern(":[a-z][A-Za-z0-9_]*").style(KEYWORD_ID), // symbols
 						pattern("\b[A-Z0-9_]+\b").style(KEYWORD_ID) // constants
 				),
-			// Alex Gorbatchev
+			// Copyright Alex Gorbatchev
 			lang("python")
 				.keywords(
 						"and assert break class continue def del elif else " +

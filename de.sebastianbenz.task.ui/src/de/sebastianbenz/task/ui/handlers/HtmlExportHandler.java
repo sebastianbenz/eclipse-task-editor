@@ -6,6 +6,8 @@ import de.sebastianbenz.task.generator.HtmlGenerator;
 
 public class HtmlExportHandler extends AbstractExportHandler {
 
+	private static final String EXT = "html";
+
 	@Inject
 	public HtmlExportHandler(HtmlGenerator generator){
 		super(generator);
@@ -13,6 +15,11 @@ public class HtmlExportHandler extends AbstractExportHandler {
 
 	@Override
 	protected String[] fileExtensions() {
-		return new String[] { "html", "htm" };
+		return new String[] { EXT, "htm" };
+	}
+
+	@Override
+	protected String getFileExtension() {
+		return EXT;
 	}
 }

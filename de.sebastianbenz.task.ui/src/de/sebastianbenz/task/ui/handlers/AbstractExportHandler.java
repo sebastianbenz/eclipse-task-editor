@@ -53,9 +53,11 @@ public abstract class AbstractExportHandler extends AbstractEditorHandler {
 		fileDialog.setFilterExtensions(fileExtensions());
 		fileDialog.setText("Select target file");
 		fileDialog.setFileName(resource.getURI().trimFileExtension()
-				.lastSegment());
+				.lastSegment() + "." + getFileExtension());
 		String result = fileDialog.open();
 		return result;
 	}
+
+	protected abstract String getFileExtension();
 
 }

@@ -9,6 +9,7 @@ import static org.eclipse.xtext.ui.editor.syntaxcoloring.DefaultHighlightingConf
 import static org.eclipse.xtext.ui.editor.syntaxcoloring.DefaultHighlightingConfiguration.NUMBER_ID;
 import static org.eclipse.xtext.ui.editor.syntaxcoloring.DefaultHighlightingConfiguration.STRING_ID;
 
+import java.util.Collection;
 import java.util.Map;
 import java.util.Set;
 import java.util.regex.Pattern;
@@ -59,8 +60,8 @@ public class BrushRegistry {
 					
 					pattern("\\b([\\d]+(\\.[\\d]+)?|0x[a-f0-9]+)\\b").style(NUMBER_ID),
 					pattern("(?!\\@interface\\b)\\@[\\$\\w]+\\b").style(CODE_ANNOTATION_ID)),
-			// Copyright Alex Gorbatchev
-			lang("js")
+			// copyright Alex Gorbatchev
+			lang("js", "javascript")
 				.keywords(  "break case catch continue " +
 	                        "default delete do else false " +
 	                        "for function if in instanceof " +
@@ -74,7 +75,7 @@ public class BrushRegistry {
 					pattern("\\s*#.*").style(CODE_ANNOTATION_ID),
 					pattern("\\b([\\d]+(\\.[\\d]+)?|0x[a-f0-9]+)\\b").style(NUMBER_ID)),
 					
-			lang("xml")
+			lang("xml", "html")
 				.mapping(
 					pattern("<\\?.*\\?>").style(CODE_ANNOTATION_ID),
 					pattern("</?[a-zA-Z-]*").style(COMMENT_ID),
@@ -141,7 +142,7 @@ public class BrushRegistry {
 						pattern("\\b([\\d]+(\\.[\\d]+)?|0x[a-f0-9]+)\\b").style(NUMBER_ID))
 			,
 			// Copyright 2006 Shin, YoungJin
-			lang("cpp")
+			lang("cpp", "c")
 				.keywords(	// datatypes
 						"ATOM BOOL BOOLEAN BYTE CHAR COLORREF DWORD DWORDLONG DWORD_PTR " +
                         "DWORD32 DWORD64 FLOAT HACCEL HALF_PTR HANDLE HBITMAP HBRUSH " +
@@ -206,8 +207,10 @@ public class BrushRegistry {
 
 	private void register(BrushBuilder... builders) {
 		for (BrushBuilder builder : builders) {
-			Brush c = builder.build();
-			configurations.put(c.getName(), c);
+			Collection<Brush> brushes = builder.build();
+			for (Brush brush : brushes) {
+				configurations.put(brush.getName(), brush);
+			}
 		}
 	}
 

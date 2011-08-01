@@ -43,7 +43,7 @@ import de.sebastianbenz.task.TaskPackage;
  * @generated
  */
 public class TagItemProvider
-	extends ItemProviderAdapter
+	extends EmbeddedElementItemProvider
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,
@@ -76,8 +76,6 @@ public class TagItemProvider
 
 			addNamePropertyDescriptor(object);
 			addValuePropertyDescriptor(object);
-			addOffsetPropertyDescriptor(object);
-			addLengthPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -129,52 +127,6 @@ public class TagItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Offset feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addOffsetPropertyDescriptor(Object object)
-	{
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Tag_offset_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Tag_offset_feature", "_UI_Tag_type"),
-				 TaskPackage.Literals.TAG__OFFSET,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Length feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addLengthPropertyDescriptor(Object object)
-	{
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Tag_length_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Tag_length_feature", "_UI_Tag_type"),
-				 TaskPackage.Literals.TAG__LENGTH,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
 	 * This returns Tag.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -213,8 +165,6 @@ public class TagItemProvider
 		switch (notification.getFeatureID(Tag.class)) {
 			case TaskPackage.TAG__NAME:
 			case TaskPackage.TAG__VALUE:
-			case TaskPackage.TAG__OFFSET:
-			case TaskPackage.TAG__LENGTH:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}
@@ -232,18 +182,6 @@ public class TagItemProvider
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object)
 	{
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-	}
-
-	/**
-	 * Return the resource locator for this item provider's resources.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public ResourceLocator getResourceLocator()
-	{
-		return TaskEditPlugin.INSTANCE;
 	}
 
 }

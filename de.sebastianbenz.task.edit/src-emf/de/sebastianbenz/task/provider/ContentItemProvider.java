@@ -33,6 +33,7 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import de.sebastianbenz.task.Content;
+import de.sebastianbenz.task.TaskFactory;
 import de.sebastianbenz.task.TaskPackage;
 
 /**
@@ -199,6 +200,7 @@ public class ContentItemProvider
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case TaskPackage.CONTENT__TAGS:
+			case TaskPackage.CONTENT__LINKS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}

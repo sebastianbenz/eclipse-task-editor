@@ -8,6 +8,7 @@ package de.sebastianbenz.task.impl;
 
 import de.sebastianbenz.task.Container;
 import de.sebastianbenz.task.Content;
+import de.sebastianbenz.task.Link;
 import de.sebastianbenz.task.Tag;
 import de.sebastianbenz.task.TaskModel;
 import de.sebastianbenz.task.TaskPackage;
@@ -25,7 +26,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.emf.ecore.util.EDataTypeEList;
-import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -41,6 +42,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link de.sebastianbenz.task.impl.ContentImpl#getParent <em>Parent</em>}</li>
  *   <li>{@link de.sebastianbenz.task.impl.ContentImpl#getTaskModel <em>Task Model</em>}</li>
  *   <li>{@link de.sebastianbenz.task.impl.ContentImpl#getTags <em>Tags</em>}</li>
+ *   <li>{@link de.sebastianbenz.task.impl.ContentImpl#getLinks <em>Links</em>}</li>
  * </ul>
  * </p>
  *
@@ -97,6 +99,16 @@ public abstract class ContentImpl extends ContainerImplCustom implements Content
 	 * @ordered
 	 */
 	protected EList<Tag> tags;
+
+	/**
+	 * The cached value of the '{@link #getLinks() <em>Links</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLinks()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Link> links;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -278,9 +290,23 @@ public abstract class ContentImpl extends ContainerImplCustom implements Content
 	{
 		if (tags == null)
 		{
-			tags = new EObjectContainmentWithInverseEList<Tag>(Tag.class, this, TaskPackage.CONTENT__TAGS, TaskPackage.TAG__CONTENT);
+			tags = new EObjectContainmentEList<Tag>(Tag.class, this, TaskPackage.CONTENT__TAGS);
 		}
 		return tags;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<Link> getLinks()
+	{
+		if (links == null)
+		{
+			links = new EObjectContainmentEList<Link>(Link.class, this, TaskPackage.CONTENT__LINKS);
+		}
+		return links;
 	}
 
 	/**
@@ -324,7 +350,6 @@ public abstract class ContentImpl extends ContainerImplCustom implements Content
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs)
 	{
@@ -338,8 +363,6 @@ public abstract class ContentImpl extends ContainerImplCustom implements Content
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
 				return basicSetTaskModel((TaskModel)otherEnd, msgs);
-			case TaskPackage.CONTENT__TAGS:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getTags()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -360,6 +383,8 @@ public abstract class ContentImpl extends ContainerImplCustom implements Content
 				return basicSetTaskModel(null, msgs);
 			case TaskPackage.CONTENT__TAGS:
 				return ((InternalEList<?>)getTags()).basicRemove(otherEnd, msgs);
+			case TaskPackage.CONTENT__LINKS:
+				return ((InternalEList<?>)getLinks()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -401,6 +426,8 @@ public abstract class ContentImpl extends ContainerImplCustom implements Content
 				return getTaskModel();
 			case TaskPackage.CONTENT__TAGS:
 				return getTags();
+			case TaskPackage.CONTENT__LINKS:
+				return getLinks();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -433,6 +460,10 @@ public abstract class ContentImpl extends ContainerImplCustom implements Content
 				getTags().clear();
 				getTags().addAll((Collection<? extends Tag>)newValue);
 				return;
+			case TaskPackage.CONTENT__LINKS:
+				getLinks().clear();
+				getLinks().addAll((Collection<? extends Link>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -462,6 +493,9 @@ public abstract class ContentImpl extends ContainerImplCustom implements Content
 			case TaskPackage.CONTENT__TAGS:
 				getTags().clear();
 				return;
+			case TaskPackage.CONTENT__LINKS:
+				getLinks().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -486,6 +520,8 @@ public abstract class ContentImpl extends ContainerImplCustom implements Content
 				return getTaskModel() != null;
 			case TaskPackage.CONTENT__TAGS:
 				return tags != null && !tags.isEmpty();
+			case TaskPackage.CONTENT__LINKS:
+				return links != null && !links.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

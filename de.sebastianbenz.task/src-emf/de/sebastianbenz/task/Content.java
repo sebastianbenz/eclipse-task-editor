@@ -21,6 +21,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link de.sebastianbenz.task.Content#getParent <em>Parent</em>}</li>
  *   <li>{@link de.sebastianbenz.task.Content#getTaskModel <em>Task Model</em>}</li>
  *   <li>{@link de.sebastianbenz.task.Content#getTags <em>Tags</em>}</li>
+ *   <li>{@link de.sebastianbenz.task.Content#getLinks <em>Links</em>}</li>
  * </ul>
  * </p>
  *
@@ -131,7 +132,6 @@ public interface Content extends Container
 	/**
 	 * Returns the value of the '<em><b>Tags</b></em>' containment reference list.
 	 * The list contents are of type {@link de.sebastianbenz.task.Tag}.
-	 * It is bidirectional and its opposite is '{@link de.sebastianbenz.task.Tag#getContent <em>Content</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Tags</em>' containment reference list isn't clear,
@@ -140,11 +140,26 @@ public interface Content extends Container
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Tags</em>' containment reference list.
 	 * @see de.sebastianbenz.task.TaskPackage#getContent_Tags()
-	 * @see de.sebastianbenz.task.Tag#getContent
-	 * @model opposite="content" containment="true" derived="true"
+	 * @model containment="true" derived="true"
 	 * @generated
 	 */
 	EList<Tag> getTags();
+
+	/**
+	 * Returns the value of the '<em><b>Links</b></em>' containment reference list.
+	 * The list contents are of type {@link de.sebastianbenz.task.Link}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Links</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Links</em>' containment reference list.
+	 * @see de.sebastianbenz.task.TaskPackage#getContent_Links()
+	 * @model containment="true" derived="true"
+	 * @generated
+	 */
+	EList<Link> getLinks();
 
 	/**
 	 * <!-- begin-user-doc -->

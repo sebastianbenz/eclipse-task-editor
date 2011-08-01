@@ -19,18 +19,16 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="taskModel" eType="#//TaskModel"
         eOpposite="#//TaskModel/contents"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="tags" upperBound="-1" eType="#//Tag"
-        derived="true" containment="true" eOpposite="#//Tag/content"/>
+        derived="true" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="links" upperBound="-1"
+        eType="#//Link" derived="true" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Task" eSuperTypes="#//Content"/>
   <eClassifiers xsi:type="ecore:EClass" name="Note" eSuperTypes="#//Content"/>
   <eClassifiers xsi:type="ecore:EClass" name="Project" eSuperTypes="#//Content"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Tag">
+  <eClassifiers xsi:type="ecore:EClass" name="Tag" eSuperTypes="#//EmbeddedElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="offset" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="length" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="content" eType="#//Content"
-        eOpposite="#//Content/tags"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="GlobalTaskModel" eSuperTypes="#//Container"/>
   <eClassifiers xsi:type="ecore:EClass" name="Container" abstract="true">
@@ -41,5 +39,14 @@
   <eClassifiers xsi:type="ecore:EClass" name="Code" eSuperTypes="#//Content">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="lang" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         volatile="true" transient="true" unsettable="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EmbeddedElement" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="offset" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="length" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="content" eType="#//Content"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Link" eSuperTypes="#//EmbeddedElement">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="url" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
 </ecore:EPackage>

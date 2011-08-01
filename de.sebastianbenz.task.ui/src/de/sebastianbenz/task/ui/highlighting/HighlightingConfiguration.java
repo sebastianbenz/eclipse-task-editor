@@ -25,7 +25,7 @@ public class HighlightingConfiguration extends DefaultHighlightingConfiguration 
 	
 	public static final String NOTE_ID = "node";
 	public static final String NOTE_DONE_ID = "node_done";
-	public static final String URL_ID = "url";
+	public static final String NOTE_URL_ID = "url";
 	public static final String PROJECT1_ID = "project1";
 	public static final String PROJECT2_ID = "project2";
 	public static final String PROJECT3_ID = "project3";
@@ -34,6 +34,8 @@ public class HighlightingConfiguration extends DefaultHighlightingConfiguration 
 	public static final String TAG_ID = "tag";
 	public static final String CODE_ID = "code";
 	public static final String CODE_ANNOTATION_ID = "code annotation";
+
+	public static final String TASK_URL_ID = "taskUrl";
 
 	public void configure(IHighlightingConfigurationAcceptor acceptor) {
 		acceptor.acceptDefaultHighlighting(KEYWORD_ID, "Keyword", keywordTextStyle());
@@ -46,20 +48,29 @@ public class HighlightingConfiguration extends DefaultHighlightingConfiguration 
 		
 		acceptor.acceptDefaultHighlighting(NOTE_ID, "Note", nodeTextStyle());
 		acceptor.acceptDefaultHighlighting(NOTE_DONE_ID, "Note done", nodeDoneTextStyle());
+		acceptor.acceptDefaultHighlighting(NOTE_URL_ID, "Note URL", noteUrlTextStyle());
 		
-		acceptor.acceptDefaultHighlighting(URL_ID, "Url", urlTextStyle());
 		acceptor.acceptDefaultHighlighting(PROJECT1_ID, "Project1", project1TextStyle());
 		acceptor.acceptDefaultHighlighting(PROJECT2_ID, "Project2", project2TextStyle());
 		acceptor.acceptDefaultHighlighting(PROJECT3_ID, "Project3", project3TextStyle());
 		
 		acceptor.acceptDefaultHighlighting(TASK_DONE_ID, "Task closed", taskDoneTextStyle());
 		acceptor.acceptDefaultHighlighting(TASK_OPEN_ID, "Task open", taskOpenTextStyle());
+		acceptor.acceptDefaultHighlighting(TASK_URL_ID, "Task URL", taskUrlTextStyle());
+		
+		
 		acceptor.acceptDefaultHighlighting(TAG_ID, "Tags", tagTextStyle());
 		acceptor.acceptDefaultHighlighting(CODE_ID, "Code", codeTextStyle());
 		acceptor.acceptDefaultHighlighting(CODE_ANNOTATION_ID, "Code Annotation", codeAnnotationTextStyle());
 	}
 
 	
+
+	public TextStyle taskUrlTextStyle() {
+		TextStyle textStyle = taskOpenTextStyle().copy();
+		textStyle.setStyle(TextAttribute.UNDERLINE);
+		return textStyle;
+	}
 
 	public TextStyle taskOpenTextStyle() {
 		TextStyle textStyle = defaultTextStyle().copy();
@@ -97,7 +108,7 @@ public class HighlightingConfiguration extends DefaultHighlightingConfiguration 
 		return new FontData(JFaceResources.HEADER_FONT, height, SWT.BOLD);
 	}
 
-	public TextStyle urlTextStyle() {
+	public TextStyle noteUrlTextStyle() {
 		TextStyle textStyle = nodeTextStyle().copy();
 		textStyle.setStyle(TextAttribute.UNDERLINE);
 		return textStyle;

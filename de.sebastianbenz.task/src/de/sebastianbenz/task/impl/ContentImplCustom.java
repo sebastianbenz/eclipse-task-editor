@@ -19,9 +19,11 @@ import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import de.sebastianbenz.task.Container;
 import de.sebastianbenz.task.Content;
 import de.sebastianbenz.task.EmptyLine;
+import de.sebastianbenz.task.Link;
 import de.sebastianbenz.task.Tag;
 import de.sebastianbenz.task.TaskPackage;
 import de.sebastianbenz.task.tagging.Tags;
+import de.sebastianbenz.task.util.Links;
 
 public class ContentImplCustom extends de.sebastianbenz.task.impl.ContentImpl {
 
@@ -38,8 +40,11 @@ public class ContentImplCustom extends de.sebastianbenz.task.impl.ContentImpl {
 		UNKNOWN, OPEN, COMPLETED
 	}
 
-	public static final String TAG_PATTERN = " @(\\w+)(\\((.*?)\\))?";
-	private Pattern pattern = Pattern.compile(TAG_PATTERN, Pattern.DOTALL);
+	public static final String TAG = " @(\\w+)(\\((.*?)\\))?";
+	
+	private static final Pattern TAG_PATTERN = Pattern.compile(TAG, Pattern.DOTALL);
+	private static final Pattern URL_DESCRIPTION_PATTERN = Pattern.compile("\\[(.+)\\]\\((.+)\\)|\\(?\\b(http://|www[.])[-A-Za-z0-9+&@#/%?=~_()|!:,.;]*[-A-Za-z0-9+&@#/%=~_()|]");
+
 	private DoneStatus isDone = DoneStatus.UNKNOWN;
 	private String value;
 
@@ -48,22 +53,9 @@ public class ContentImplCustom extends de.sebastianbenz.task.impl.ContentImpl {
 		if (tags == null) {
 			tags = new EObjectContainmentEList<Tag>(Tag.class, this,
 					TaskPackage.TASK__TAGS);
-			if (text != null) {
-				parseTags();
-			}
+			parseTags();
 		}
 		return tags;
-	}
-
-	protected void parseTags() {
-		Matcher matcher = pattern.matcher(text);
-		while (matcher.find()) {
-			String name = matcher.group(1);
-			String value = matcher.group(3);
-			int offset = matcher.start() + SPACE;
-			int length = matcher.end() - offset;
-			getTags().add(Tags.create(name, value, offset, length));
-		}
 	}
 
 	@Override
@@ -130,10 +122,59 @@ public class ContentImplCustom extends de.sebastianbenz.task.impl.ContentImpl {
 	}
 
 	protected String removeTags(String string) {
-		return string.replaceAll(TAG_PATTERN, "").trim().replaceAll("  ", " ");
+		return string.replaceAll(TAG, "").trim().replaceAll("  ", " ");
 	}
 
 	protected String cleanText(String text){
 		return text;
+	}
+	
+	@Override
+	public EList<Link> getLinks() {
+		if(links == null){
+			links = new EObjectContainmentEList<Link>(Link.class, this,
+					TaskPackage.CONTENT__LINKS);
+			parseLinks();
+			
+		}
+		return links;
+	}
+
+	protected void parseTags() {
+		if(text == null){
+			return;
+		}
+		Matcher matcher = TAG_PATTERN.matcher(text);
+		while (matcher.find()) {
+			String name = matcher.group(1);
+			String value = matcher.group(3);
+			int offset = matcher.start() + SPACE;
+			int length = matcher.end() - offset;
+			getTags().add(Tags.create(name, value, offset, length));
+		}
+	}
+
+	private void parseLinks() {
+		if (text == null) {
+			return;
+		}
+		Matcher matcher = URL_DESCRIPTION_PATTERN.matcher(text);
+		while (matcher.find()) {
+			String description = "";
+			String url;
+			if(isLinkWithDescription(matcher)){
+				description = matcher.group(1);
+				url = matcher.group(2);
+			}else{
+				url = matcher.group();
+			}
+			int offset = matcher.start();
+			int length = matcher.end() - offset;
+			links.add(Links.create(description, url, offset, length));
+		}
+	}
+
+	private boolean isLinkWithDescription(Matcher matcher) {
+		return matcher.group(1) != null && matcher.group(2) != null;
 	}
 }

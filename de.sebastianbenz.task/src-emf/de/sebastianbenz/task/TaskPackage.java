@@ -190,13 +190,22 @@ public interface TaskPackage extends EPackage
 	int CONTENT__TAGS = CONTAINER_FEATURE_COUNT + 4;
 
 	/**
+	 * The feature id for the '<em><b>Links</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTENT__LINKS = CONTAINER_FEATURE_COUNT + 5;
+
+	/**
 	 * The number of structural features of the '<em>Content</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTENT_FEATURE_COUNT = CONTAINER_FEATURE_COUNT + 5;
+	int CONTENT_FEATURE_COUNT = CONTAINER_FEATURE_COUNT + 6;
 
 	/**
 	 * The meta object id for the '{@link de.sebastianbenz.task.impl.TaskImpl <em>Task</em>}' class.
@@ -261,6 +270,15 @@ public interface TaskPackage extends EPackage
 	 * @ordered
 	 */
 	int TASK__TAGS = CONTENT__TAGS;
+
+	/**
+	 * The feature id for the '<em><b>Links</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TASK__LINKS = CONTENT__LINKS;
 
 	/**
 	 * The number of structural features of the '<em>Task</em>' class.
@@ -336,6 +354,15 @@ public interface TaskPackage extends EPackage
 	int NOTE__TAGS = CONTENT__TAGS;
 
 	/**
+	 * The feature id for the '<em><b>Links</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NOTE__LINKS = CONTENT__LINKS;
+
+	/**
 	 * The number of structural features of the '<em>Note</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -409,6 +436,15 @@ public interface TaskPackage extends EPackage
 	int PROJECT__TAGS = CONTENT__TAGS;
 
 	/**
+	 * The feature id for the '<em><b>Links</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROJECT__LINKS = CONTENT__LINKS;
+
+	/**
 	 * The number of structural features of the '<em>Project</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -416,6 +452,52 @@ public interface TaskPackage extends EPackage
 	 * @ordered
 	 */
 	int PROJECT_FEATURE_COUNT = CONTENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link de.sebastianbenz.task.impl.EmbeddedElementImpl <em>Embedded Element</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.sebastianbenz.task.impl.EmbeddedElementImpl
+	 * @see de.sebastianbenz.task.impl.TaskPackageImpl#getEmbeddedElement()
+	 * @generated
+	 */
+	int EMBEDDED_ELEMENT = 10;
+
+	/**
+	 * The feature id for the '<em><b>Offset</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EMBEDDED_ELEMENT__OFFSET = 0;
+
+	/**
+	 * The feature id for the '<em><b>Length</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EMBEDDED_ELEMENT__LENGTH = 1;
+
+	/**
+	 * The feature id for the '<em><b>Content</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EMBEDDED_ELEMENT__CONTENT = 2;
+
+	/**
+	 * The number of structural features of the '<em>Embedded Element</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EMBEDDED_ELEMENT_FEATURE_COUNT = 3;
 
 	/**
 	 * The meta object id for the '{@link de.sebastianbenz.task.impl.TagImpl <em>Tag</em>}' class.
@@ -428,31 +510,13 @@ public interface TaskPackage extends EPackage
 	int TAG = 5;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TAG__NAME = 0;
-
-	/**
-	 * The feature id for the '<em><b>Value</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TAG__VALUE = 1;
-
-	/**
 	 * The feature id for the '<em><b>Offset</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TAG__OFFSET = 2;
+	int TAG__OFFSET = EMBEDDED_ELEMENT__OFFSET;
 
 	/**
 	 * The feature id for the '<em><b>Length</b></em>' attribute.
@@ -461,16 +525,34 @@ public interface TaskPackage extends EPackage
 	 * @generated
 	 * @ordered
 	 */
-	int TAG__LENGTH = 3;
+	int TAG__LENGTH = EMBEDDED_ELEMENT__LENGTH;
 
 	/**
-	 * The feature id for the '<em><b>Content</b></em>' container reference.
+	 * The feature id for the '<em><b>Content</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TAG__CONTENT = 4;
+	int TAG__CONTENT = EMBEDDED_ELEMENT__CONTENT;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TAG__NAME = EMBEDDED_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TAG__VALUE = EMBEDDED_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Tag</em>' class.
@@ -479,7 +561,7 @@ public interface TaskPackage extends EPackage
 	 * @generated
 	 * @ordered
 	 */
-	int TAG_FEATURE_COUNT = 5;
+	int TAG_FEATURE_COUNT = EMBEDDED_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link de.sebastianbenz.task.impl.GlobalTaskModelImpl <em>Global Task Model</em>}' class.
@@ -574,6 +656,15 @@ public interface TaskPackage extends EPackage
 	int EMPTY_LINE__TAGS = CONTENT__TAGS;
 
 	/**
+	 * The feature id for the '<em><b>Links</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EMPTY_LINE__LINKS = CONTENT__LINKS;
+
+	/**
 	 * The number of structural features of the '<em>Empty Line</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -647,6 +738,15 @@ public interface TaskPackage extends EPackage
 	int CODE__TAGS = CONTENT__TAGS;
 
 	/**
+	 * The feature id for the '<em><b>Links</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CODE__LINKS = CONTENT__LINKS;
+
+	/**
 	 * The feature id for the '<em><b>Lang</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -663,6 +763,70 @@ public interface TaskPackage extends EPackage
 	 * @ordered
 	 */
 	int CODE_FEATURE_COUNT = CONTENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The meta object id for the '{@link de.sebastianbenz.task.impl.LinkImpl <em>Link</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.sebastianbenz.task.impl.LinkImpl
+	 * @see de.sebastianbenz.task.impl.TaskPackageImpl#getLink()
+	 * @generated
+	 */
+	int LINK = 11;
+
+	/**
+	 * The feature id for the '<em><b>Offset</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LINK__OFFSET = EMBEDDED_ELEMENT__OFFSET;
+
+	/**
+	 * The feature id for the '<em><b>Length</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LINK__LENGTH = EMBEDDED_ELEMENT__LENGTH;
+
+	/**
+	 * The feature id for the '<em><b>Content</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LINK__CONTENT = EMBEDDED_ELEMENT__CONTENT;
+
+	/**
+	 * The feature id for the '<em><b>Url</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LINK__URL = EMBEDDED_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LINK__DESCRIPTION = EMBEDDED_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Link</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LINK_FEATURE_COUNT = EMBEDDED_ELEMENT_FEATURE_COUNT + 2;
 
 
 	/**
@@ -752,6 +916,17 @@ public interface TaskPackage extends EPackage
 	EReference getContent_Tags();
 
 	/**
+	 * Returns the meta object for the containment reference list '{@link de.sebastianbenz.task.Content#getLinks <em>Links</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Links</em>'.
+	 * @see de.sebastianbenz.task.Content#getLinks()
+	 * @see #getContent()
+	 * @generated
+	 */
+	EReference getContent_Links();
+
+	/**
 	 * Returns the meta object for class '{@link de.sebastianbenz.task.Task <em>Task</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -814,39 +989,6 @@ public interface TaskPackage extends EPackage
 	EAttribute getTag_Value();
 
 	/**
-	 * Returns the meta object for the attribute '{@link de.sebastianbenz.task.Tag#getOffset <em>Offset</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Offset</em>'.
-	 * @see de.sebastianbenz.task.Tag#getOffset()
-	 * @see #getTag()
-	 * @generated
-	 */
-	EAttribute getTag_Offset();
-
-	/**
-	 * Returns the meta object for the attribute '{@link de.sebastianbenz.task.Tag#getLength <em>Length</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Length</em>'.
-	 * @see de.sebastianbenz.task.Tag#getLength()
-	 * @see #getTag()
-	 * @generated
-	 */
-	EAttribute getTag_Length();
-
-	/**
-	 * Returns the meta object for the container reference '{@link de.sebastianbenz.task.Tag#getContent <em>Content</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the container reference '<em>Content</em>'.
-	 * @see de.sebastianbenz.task.Tag#getContent()
-	 * @see #getTag()
-	 * @generated
-	 */
-	EReference getTag_Content();
-
-	/**
 	 * Returns the meta object for class '{@link de.sebastianbenz.task.GlobalTaskModel <em>Global Task Model</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -907,6 +1049,81 @@ public interface TaskPackage extends EPackage
 	 * @generated
 	 */
 	EAttribute getCode_Lang();
+
+	/**
+	 * Returns the meta object for class '{@link de.sebastianbenz.task.EmbeddedElement <em>Embedded Element</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Embedded Element</em>'.
+	 * @see de.sebastianbenz.task.EmbeddedElement
+	 * @generated
+	 */
+	EClass getEmbeddedElement();
+
+	/**
+	 * Returns the meta object for the attribute '{@link de.sebastianbenz.task.EmbeddedElement#getOffset <em>Offset</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Offset</em>'.
+	 * @see de.sebastianbenz.task.EmbeddedElement#getOffset()
+	 * @see #getEmbeddedElement()
+	 * @generated
+	 */
+	EAttribute getEmbeddedElement_Offset();
+
+	/**
+	 * Returns the meta object for the attribute '{@link de.sebastianbenz.task.EmbeddedElement#getLength <em>Length</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Length</em>'.
+	 * @see de.sebastianbenz.task.EmbeddedElement#getLength()
+	 * @see #getEmbeddedElement()
+	 * @generated
+	 */
+	EAttribute getEmbeddedElement_Length();
+
+	/**
+	 * Returns the meta object for the reference '{@link de.sebastianbenz.task.EmbeddedElement#getContent <em>Content</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Content</em>'.
+	 * @see de.sebastianbenz.task.EmbeddedElement#getContent()
+	 * @see #getEmbeddedElement()
+	 * @generated
+	 */
+	EReference getEmbeddedElement_Content();
+
+	/**
+	 * Returns the meta object for class '{@link de.sebastianbenz.task.Link <em>Link</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Link</em>'.
+	 * @see de.sebastianbenz.task.Link
+	 * @generated
+	 */
+	EClass getLink();
+
+	/**
+	 * Returns the meta object for the attribute '{@link de.sebastianbenz.task.Link#getUrl <em>Url</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Url</em>'.
+	 * @see de.sebastianbenz.task.Link#getUrl()
+	 * @see #getLink()
+	 * @generated
+	 */
+	EAttribute getLink_Url();
+
+	/**
+	 * Returns the meta object for the attribute '{@link de.sebastianbenz.task.Link#getDescription <em>Description</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Description</em>'.
+	 * @see de.sebastianbenz.task.Link#getDescription()
+	 * @see #getLink()
+	 * @generated
+	 */
+	EAttribute getLink_Description();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -1000,6 +1217,14 @@ public interface TaskPackage extends EPackage
 		EReference CONTENT__TAGS = eINSTANCE.getContent_Tags();
 
 		/**
+		 * The meta object literal for the '<em><b>Links</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CONTENT__LINKS = eINSTANCE.getContent_Links();
+
+		/**
 		 * The meta object literal for the '{@link de.sebastianbenz.task.impl.TaskImpl <em>Task</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1056,30 +1281,6 @@ public interface TaskPackage extends EPackage
 		EAttribute TAG__VALUE = eINSTANCE.getTag_Value();
 
 		/**
-		 * The meta object literal for the '<em><b>Offset</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute TAG__OFFSET = eINSTANCE.getTag_Offset();
-
-		/**
-		 * The meta object literal for the '<em><b>Length</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute TAG__LENGTH = eINSTANCE.getTag_Length();
-
-		/**
-		 * The meta object literal for the '<em><b>Content</b></em>' container reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference TAG__CONTENT = eINSTANCE.getTag_Content();
-
-		/**
 		 * The meta object literal for the '{@link de.sebastianbenz.task.impl.GlobalTaskModelImpl <em>Global Task Model</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1134,6 +1335,66 @@ public interface TaskPackage extends EPackage
 		 * @generated
 		 */
 		EAttribute CODE__LANG = eINSTANCE.getCode_Lang();
+
+		/**
+		 * The meta object literal for the '{@link de.sebastianbenz.task.impl.EmbeddedElementImpl <em>Embedded Element</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.sebastianbenz.task.impl.EmbeddedElementImpl
+		 * @see de.sebastianbenz.task.impl.TaskPackageImpl#getEmbeddedElement()
+		 * @generated
+		 */
+		EClass EMBEDDED_ELEMENT = eINSTANCE.getEmbeddedElement();
+
+		/**
+		 * The meta object literal for the '<em><b>Offset</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute EMBEDDED_ELEMENT__OFFSET = eINSTANCE.getEmbeddedElement_Offset();
+
+		/**
+		 * The meta object literal for the '<em><b>Length</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute EMBEDDED_ELEMENT__LENGTH = eINSTANCE.getEmbeddedElement_Length();
+
+		/**
+		 * The meta object literal for the '<em><b>Content</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference EMBEDDED_ELEMENT__CONTENT = eINSTANCE.getEmbeddedElement_Content();
+
+		/**
+		 * The meta object literal for the '{@link de.sebastianbenz.task.impl.LinkImpl <em>Link</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.sebastianbenz.task.impl.LinkImpl
+		 * @see de.sebastianbenz.task.impl.TaskPackageImpl#getLink()
+		 * @generated
+		 */
+		EClass LINK = eINSTANCE.getLink();
+
+		/**
+		 * The meta object literal for the '<em><b>Url</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute LINK__URL = eINSTANCE.getLink_Url();
+
+		/**
+		 * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute LINK__DESCRIPTION = eINSTANCE.getLink_Description();
 
 	}
 

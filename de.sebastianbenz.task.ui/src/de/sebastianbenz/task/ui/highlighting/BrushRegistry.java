@@ -75,7 +75,7 @@ public class BrushRegistry {
 					pattern("\\s*#.*").style(CODE_ANNOTATION_ID),
 					pattern("\\b([\\d]+(\\.[\\d]+)?|0x[a-f0-9]+)\\b").style(NUMBER_ID)),
 					
-			lang("xml", "html")
+			lang("xml", "html", "xhtml", "xslt")
 				.mapping(
 					pattern("<\\?.*\\?>").style(CODE_ANNOTATION_ID),
 					pattern("</?[a-zA-Z-]*").style(COMMENT_ID),
@@ -115,7 +115,7 @@ public class BrushRegistry {
 						pattern("\b[A-Z0-9_]+\b").style(KEYWORD_ID) // constants
 				),
 			// Copyright Alex Gorbatchev
-			lang("python")
+			lang("py", "python")
 				.keywords(
 						"and assert break class continue def del elif else " +
                         "except exec finally for from global if import in is " +

@@ -10,18 +10,25 @@
  ******************************************************************************/
 package de.sebastianbenz.task.impl;
 
+import java.util.TreeMap;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+
+import com.google.common.collect.Maps;
 
 import de.sebastianbenz.task.Container;
 import de.sebastianbenz.task.Content;
 import de.sebastianbenz.task.EmptyLine;
 import de.sebastianbenz.task.Link;
 import de.sebastianbenz.task.Tag;
+import de.sebastianbenz.task.TaskFactory;
 import de.sebastianbenz.task.TaskPackage;
+import de.sebastianbenz.task.Text;
+import de.sebastianbenz.task.TextSegment;
 import de.sebastianbenz.task.tagging.Tags;
 import de.sebastianbenz.task.util.Links;
 
@@ -39,8 +46,8 @@ public class ContentImplCustom extends de.sebastianbenz.task.impl.ContentImpl {
 	private enum DoneStatus {
 		UNKNOWN, OPEN, COMPLETED
 	}
-
-	public static final String TAG = " @(\\w+)(\\((.*?)\\))?";
+	
+	public static final String TAG = "[ \t]@(\\w+)(\\((.*?)\\))?";
 	
 	private static final Pattern TAG_PATTERN = Pattern.compile(TAG, Pattern.DOTALL);
 	private static final Pattern URL_DESCRIPTION_PATTERN = Pattern.compile("\\[(.+)\\]\\((.+)\\)|\\(?\\b(http://|www[.])[-A-Za-z0-9+&@#/%?=~_()|!:,.;]*[-A-Za-z0-9+&@#/%=~_()|]");
@@ -177,4 +184,59 @@ public class ContentImplCustom extends de.sebastianbenz.task.impl.ContentImpl {
 	private boolean isLinkWithDescription(Matcher matcher) {
 		return matcher.group(1) != null && matcher.group(2) != null;
 	}
+	
+	@Override
+	public EList<TextSegment> getSegments() {
+		if(segments == null){
+			segments = new EObjectResolvingEList<TextSegment>(TextSegment.class, this,
+					TaskPackage.CONTENT__SEGMENTS);
+			calculateSegments(segments);
+		}
+		return super.getSegments();
+	}
+
+	private void calculateSegments(EList<TextSegment> segments) {
+		TreeMap<Integer, TextSegment> offsets = Maps.newTreeMap();
+		add(offsets, getLinks());
+		add(offsets, getTags());
+
+		if(offsets.isEmpty()){
+			addTextSegment(segments, 0, getText().length());
+			return;
+		}
+		
+		int begin = 0;
+		for (TextSegment segment : offsets.values()) {
+			int newOffset = segment.getOffset();
+			if(newOffset > begin){
+				addTextSegment(segments, begin, newOffset);
+			}
+			segments.add(segment);
+			begin = newOffset + segment.getLength();
+		}
+		addTextSegment(segments, begin, getText().length());
+	}
+
+	private void addTextSegment(EList<TextSegment> segments, int begin,
+			int end) {
+		if(begin >= end){
+			return;
+		}
+		if(begin == end){
+			return;
+		}
+		Text text = TaskFactory.eINSTANCE.createText();
+		int textLength = end - begin;
+		text.setOffset(begin);
+		text.setLength(textLength);
+		text.setValue(getText().substring(begin, begin + textLength));
+		segments.add(text);
+	}
+
+	private void add(TreeMap<Integer, TextSegment> offsets, EList<? extends TextSegment> segments) {
+		for (TextSegment s : segments) {
+			offsets.put(s.getOffset(), s);
+		}
+	}
+
 }

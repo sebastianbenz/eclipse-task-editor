@@ -63,15 +63,6 @@ public interface TaskFactory extends EFactory
 	Project createProject();
 
 	/**
-	 * Returns a new object of class '<em>Tag</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Tag</em>'.
-	 * @generated
-	 */
-	Tag createTag();
-
-	/**
 	 * Returns a new object of class '<em>Global Task Model</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -99,6 +90,15 @@ public interface TaskFactory extends EFactory
 	Code createCode();
 
 	/**
+	 * Returns a new object of class '<em>Tag</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Tag</em>'.
+	 * @generated
+	 */
+	Tag createTag();
+
+	/**
 	 * Returns a new object of class '<em>Link</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -106,6 +106,15 @@ public interface TaskFactory extends EFactory
 	 * @generated
 	 */
 	Link createLink();
+
+	/**
+	 * Returns a new object of class '<em>Text</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Text</em>'.
+	 * @generated
+	 */
+	Text createText();
 
 	/**
 	 * Returns the package supported by this factory.

@@ -7,8 +7,8 @@
 package de.sebastianbenz.task.provider;
 
 
-import de.sebastianbenz.task.EmbeddedElement;
 import de.sebastianbenz.task.TaskPackage;
+import de.sebastianbenz.task.TextSegment;
 
 import java.util.Collection;
 import java.util.List;
@@ -30,12 +30,12 @@ import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
- * This is the item provider adapter for a {@link de.sebastianbenz.task.EmbeddedElement} object.
+ * This is the item provider adapter for a {@link de.sebastianbenz.task.TextSegment} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class EmbeddedElementItemProvider
+public class TextSegmentItemProvider
 	extends ItemProviderAdapter
 	implements
 		IEditingDomainItemProvider,
@@ -49,7 +49,7 @@ public class EmbeddedElementItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EmbeddedElementItemProvider(AdapterFactory adapterFactory) {
+	public TextSegmentItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -82,9 +82,9 @@ public class EmbeddedElementItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_EmbeddedElement_offset_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_EmbeddedElement_offset_feature", "_UI_EmbeddedElement_type"),
-				 TaskPackage.Literals.EMBEDDED_ELEMENT__OFFSET,
+				 getString("_UI_TextSegment_offset_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_TextSegment_offset_feature", "_UI_TextSegment_type"),
+				 TaskPackage.Literals.TEXT_SEGMENT__OFFSET,
 				 true,
 				 false,
 				 false,
@@ -104,9 +104,9 @@ public class EmbeddedElementItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_EmbeddedElement_length_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_EmbeddedElement_length_feature", "_UI_EmbeddedElement_type"),
-				 TaskPackage.Literals.EMBEDDED_ELEMENT__LENGTH,
+				 getString("_UI_TextSegment_length_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_TextSegment_length_feature", "_UI_TextSegment_type"),
+				 TaskPackage.Literals.TEXT_SEGMENT__LENGTH,
 				 true,
 				 false,
 				 false,
@@ -126,9 +126,9 @@ public class EmbeddedElementItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_EmbeddedElement_content_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_EmbeddedElement_content_feature", "_UI_EmbeddedElement_type"),
-				 TaskPackage.Literals.EMBEDDED_ELEMENT__CONTENT,
+				 getString("_UI_TextSegment_content_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_TextSegment_content_feature", "_UI_TextSegment_type"),
+				 TaskPackage.Literals.TEXT_SEGMENT__CONTENT,
 				 true,
 				 false,
 				 true,
@@ -145,8 +145,8 @@ public class EmbeddedElementItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		EmbeddedElement embeddedElement = (EmbeddedElement)object;
-		return getString("_UI_EmbeddedElement_type") + " " + embeddedElement.getOffset();
+		TextSegment textSegment = (TextSegment)object;
+		return getString("_UI_TextSegment_type") + " " + textSegment.getOffset();
 	}
 
 	/**
@@ -160,9 +160,9 @@ public class EmbeddedElementItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(EmbeddedElement.class)) {
-			case TaskPackage.EMBEDDED_ELEMENT__OFFSET:
-			case TaskPackage.EMBEDDED_ELEMENT__LENGTH:
+		switch (notification.getFeatureID(TextSegment.class)) {
+			case TaskPackage.TEXT_SEGMENT__OFFSET:
+			case TaskPackage.TEXT_SEGMENT__LENGTH:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

@@ -8,7 +8,7 @@
  * Contributors:
  *     Sebastian Benz - initial API and implementation
  ******************************************************************************/
-package de.sebastianbenz.task;
+package de.sebastianbenz.task.resource;
 
 import static com.google.common.collect.Iterables.transform;
 import static org.hamcrest.core.Is.is;
@@ -26,7 +26,7 @@ import com.google.common.base.Function;
 import com.google.common.base.Joiner;
 import com.google.inject.Inject;
 
-import de.sebastianbenz.task.resource.Descriptions;
+import de.sebastianbenz.task.TaskPackage;
 import de.sebastianbenz.task.util.AbstractTest;
 
 public class TaskResourceDescriptionTest extends AbstractTest{

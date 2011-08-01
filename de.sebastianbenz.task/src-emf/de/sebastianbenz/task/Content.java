@@ -22,6 +22,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link de.sebastianbenz.task.Content#getTaskModel <em>Task Model</em>}</li>
  *   <li>{@link de.sebastianbenz.task.Content#getTags <em>Tags</em>}</li>
  *   <li>{@link de.sebastianbenz.task.Content#getLinks <em>Links</em>}</li>
+ *   <li>{@link de.sebastianbenz.task.Content#getSegments <em>Segments</em>}</li>
  * </ul>
  * </p>
  *
@@ -140,7 +141,7 @@ public interface Content extends Container
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Tags</em>' containment reference list.
 	 * @see de.sebastianbenz.task.TaskPackage#getContent_Tags()
-	 * @model containment="true" derived="true"
+	 * @model containment="true" transient="true" derived="true"
 	 * @generated
 	 */
 	EList<Tag> getTags();
@@ -156,10 +157,26 @@ public interface Content extends Container
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Links</em>' containment reference list.
 	 * @see de.sebastianbenz.task.TaskPackage#getContent_Links()
-	 * @model containment="true" derived="true"
+	 * @model containment="true" transient="true" derived="true"
 	 * @generated
 	 */
 	EList<Link> getLinks();
+
+	/**
+	 * Returns the value of the '<em><b>Segments</b></em>' containment reference list.
+	 * The list contents are of type {@link de.sebastianbenz.task.TextSegment}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Segments</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Segments</em>' containment reference list.
+	 * @see de.sebastianbenz.task.TaskPackage#getContent_Segments()
+	 * @model containment="true" transient="true" derived="true"
+	 * @generated
+	 */
+	EList<TextSegment> getSegments();
 
 	/**
 	 * <!-- begin-user-doc -->

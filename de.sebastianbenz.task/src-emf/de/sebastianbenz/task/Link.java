@@ -24,7 +24,7 @@ package de.sebastianbenz.task;
  * @model
  * @generated
  */
-public interface Link extends EmbeddedElement
+public interface Link extends TextSegment
 {
 	/**
 	 * Returns the value of the '<em><b>Url</b></em>' attribute.

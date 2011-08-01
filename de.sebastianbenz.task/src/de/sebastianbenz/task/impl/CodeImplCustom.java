@@ -15,6 +15,7 @@ import org.eclipse.emf.common.util.EList;
 
 import de.sebastianbenz.task.Link;
 import de.sebastianbenz.task.Tag;
+import de.sebastianbenz.task.TextSegment;
 import de.sebastianbenz.task.util.Strings2;
 
 
@@ -44,6 +45,11 @@ public class CodeImplCustom extends de.sebastianbenz.task.impl.CodeImpl {
 	
 	@Override
 	public EList<Link> getLinks() {
+		return ECollections.emptyEList();
+	}
+	
+	@Override
+	public EList<TextSegment> getSegments() {
 		return ECollections.emptyEList();
 	}
 }

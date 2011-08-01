@@ -8,8 +8,9 @@
  * Contributors:
  *     Sebastian Benz - initial API and implementation
  ******************************************************************************/
-package de.sebastianbenz.task;
+package de.sebastianbenz.task.model;
 
+import static de.sebastianbenz.task.util.Tasks.newTask;
 import static org.hamcrest.CoreMatchers.anyOf;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
@@ -17,6 +18,8 @@ import static org.junit.Assert.assertThat;
 import org.junit.Test;
 
 import com.google.common.base.Joiner;
+
+import de.sebastianbenz.task.Tag;
 
 @SuppressWarnings("unchecked")
 public class TagParserTest {
@@ -56,12 +59,6 @@ public class TagParserTest {
 
 	private String tagsIn(String string) {
 		return Joiner.on(", ").join(newTask(string).getTags());
-	}
-
-	protected Task newTask(String text) {
-		Task task = TaskFactory.eINSTANCE.createTask();
-		task.setText(text);
-		return task;
 	}
 
 }

@@ -72,11 +72,12 @@ public class TaskFactoryImpl extends EFactoryImpl implements TaskFactory
 			case TaskPackage.TASK: return createTask();
 			case TaskPackage.NOTE: return createNote();
 			case TaskPackage.PROJECT: return createProject();
-			case TaskPackage.TAG: return createTag();
 			case TaskPackage.GLOBAL_TASK_MODEL: return createGlobalTaskModel();
 			case TaskPackage.EMPTY_LINE: return createEmptyLine();
 			case TaskPackage.CODE: return createCode();
+			case TaskPackage.TAG: return createTag();
 			case TaskPackage.LINK: return createLink();
+			case TaskPackage.TEXT: return createText();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -131,17 +132,6 @@ public class TaskFactoryImpl extends EFactoryImpl implements TaskFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Tag createTag()
-	{
-		TagImplCustom tag = new TagImplCustom();
-		return tag;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public GlobalTaskModel createGlobalTaskModel()
 	{
 		GlobalTaskModelImplCustom globalTaskModel = new GlobalTaskModelImplCustom();
@@ -175,10 +165,32 @@ public class TaskFactoryImpl extends EFactoryImpl implements TaskFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Tag createTag()
+	{
+		TagImplCustom tag = new TagImplCustom();
+		return tag;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public Link createLink()
 	{
 		LinkImplCustom link = new LinkImplCustom();
 		return link;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Text createText()
+	{
+		TextImplCustom text = new TextImplCustom();
+		return text;
 	}
 
 	/**

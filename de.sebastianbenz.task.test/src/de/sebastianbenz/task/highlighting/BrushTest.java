@@ -3,29 +3,26 @@ package de.sebastianbenz.task.highlighting;
 import static com.google.common.collect.Iterables.transform;
 import static com.google.common.collect.Lists.newArrayList;
 import static com.google.common.collect.Maps.newHashMap;
-import static com.google.common.collect.Sets.newHashSet;
+import static de.sebastianbenz.task.ui.highlighting.HighlightingConfiguration.CODE_ANNOTATION_ID;
 import static java.util.Arrays.asList;
+import static org.eclipse.xtext.ui.editor.syntaxcoloring.DefaultHighlightingConfiguration.COMMENT_ID;
+import static org.eclipse.xtext.ui.editor.syntaxcoloring.DefaultHighlightingConfiguration.KEYWORD_ID;
+import static org.eclipse.xtext.ui.editor.syntaxcoloring.DefaultHighlightingConfiguration.NUMBER_ID;
+import static org.eclipse.xtext.ui.editor.syntaxcoloring.DefaultHighlightingConfiguration.STRING_ID;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
-import static org.junit.Assert.assertTrue;
 import static org.junit.internal.matchers.Each.each;
 
-import java.util.Arrays;
-import java.util.HashSet;
 import java.util.Map;
 
 import org.eclipse.xtext.ui.editor.syntaxcoloring.IHighlightedPositionAcceptor;
-import org.junit.Before;
 import org.junit.Test;
-import org.junit.internal.matchers.Each;
 
 import com.google.common.base.Function;
 import com.google.common.base.Joiner;
 
 import de.sebastianbenz.task.tagging.Region;
-import de.sebastianbenz.task.ui.highlighting.Brush.Mapping;
 import de.sebastianbenz.task.ui.highlighting.BrushRegistry;
-import static de.sebastianbenz.task.ui.highlighting.HighlightingConfiguration.*;
 
 @SuppressWarnings("restriction")
 public class BrushTest {

@@ -139,14 +139,6 @@ public class TaskSwitch<T>
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case TaskPackage.TAG:
-			{
-				Tag tag = (Tag)theEObject;
-				T result = caseTag(tag);
-				if (result == null) result = caseEmbeddedElement(tag);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case TaskPackage.GLOBAL_TASK_MODEL:
 			{
 				GlobalTaskModel globalTaskModel = (GlobalTaskModel)theEObject;
@@ -180,10 +172,18 @@ public class TaskSwitch<T>
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case TaskPackage.EMBEDDED_ELEMENT:
+			case TaskPackage.TEXT_SEGMENT:
 			{
-				EmbeddedElement embeddedElement = (EmbeddedElement)theEObject;
-				T result = caseEmbeddedElement(embeddedElement);
+				TextSegment textSegment = (TextSegment)theEObject;
+				T result = caseTextSegment(textSegment);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case TaskPackage.TAG:
+			{
+				Tag tag = (Tag)theEObject;
+				T result = caseTag(tag);
+				if (result == null) result = caseTextSegment(tag);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -191,7 +191,15 @@ public class TaskSwitch<T>
 			{
 				Link link = (Link)theEObject;
 				T result = caseLink(link);
-				if (result == null) result = caseEmbeddedElement(link);
+				if (result == null) result = caseTextSegment(link);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case TaskPackage.TEXT:
+			{
+				Text text = (Text)theEObject;
+				T result = caseText(text);
+				if (result == null) result = caseTextSegment(text);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -280,22 +288,6 @@ public class TaskSwitch<T>
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Tag</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Tag</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseTag(Tag object)
-	{
-		return null;
-	}
-
-	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Global Task Model</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -360,17 +352,33 @@ public class TaskSwitch<T>
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Embedded Element</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Text Segment</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Embedded Element</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Text Segment</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseEmbeddedElement(EmbeddedElement object)
+	public T caseTextSegment(TextSegment object)
+	{
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Tag</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Tag</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseTag(Tag object)
 	{
 		return null;
 	}
@@ -387,6 +395,22 @@ public class TaskSwitch<T>
 	 * @generated
 	 */
 	public T caseLink(Link object)
+	{
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Text</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Text</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseText(Text object)
 	{
 		return null;
 	}

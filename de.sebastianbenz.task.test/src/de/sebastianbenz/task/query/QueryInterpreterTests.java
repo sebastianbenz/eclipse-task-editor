@@ -12,7 +12,6 @@ package de.sebastianbenz.task.query;
 
 import static com.google.common.collect.Lists.newArrayList;
 import static org.hamcrest.CoreMatchers.is;
-import static org.junit.Assert.*;
 import static org.junit.Assert.assertThat;
 
 import java.util.List;
@@ -22,7 +21,6 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import com.google.common.base.Joiner;
-import com.google.common.collect.Lists;
 import com.google.inject.Inject;
 
 import de.sebastianbenz.task.Content;

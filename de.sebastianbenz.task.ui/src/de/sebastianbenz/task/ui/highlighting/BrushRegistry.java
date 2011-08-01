@@ -21,7 +21,7 @@ public class BrushRegistry {
 	
 	private static final Pattern PERL_SINGLE_LINE_COMMENT = Pattern.compile("#.*$", Pattern.MULTILINE);
 	public static final String DEFAULT_CONFIGURATION = "default";
-	public static final Pattern MULTILINE_LINE_COMMENT = Pattern.compile("/\\*.*\\*/", Pattern.DOTALL);
+	public static final Pattern MULTILINE_LINE_COMMENT = Pattern.compile("/\\*[\\s\\S]*?\\*/", Pattern.MULTILINE);
 	public static final Pattern SINGLE_LINE_COMMENT = Pattern.compile("//.*$", Pattern.MULTILINE);
 	public static final Pattern DOUBLE_QUOTED_STRING = Pattern.compile("\"(?:\\.|(\\\\\\\")|[^\\\"\"\\n])*\"");
 	public static final Pattern SINGLE_QUOTED_STRING = Pattern.compile("'(?:\\.|(\\\\\\')|[^\\''\\n])*'");

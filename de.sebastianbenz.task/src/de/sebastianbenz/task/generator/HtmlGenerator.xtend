@@ -14,6 +14,10 @@ import de.sebastianbenz.task.EmptyLine
 import org.eclipse.xtext.xtend2.lib.StringConcatenation
 import de.sebastianbenz.task.Container
 import org.apache.commons.lang.StringEscapeUtils
+import de.sebastianbenz.task.TextSegment
+import de.sebastianbenz.task.Link
+import de.sebastianbenz.task.Tag
+import de.sebastianbenz.task.Text
 
 class HtmlGenerator implements de.sebastianbenz.task.generator.TaskGenerator {
 	   
@@ -41,6 +45,7 @@ class HtmlGenerator implements de.sebastianbenz.task.generator.TaskGenerator {
 				text-indent: -2em;
 			}
 			ul li:before {
+				list-style: none;
 				content: "\2D";	
 				margin-right: 0.5em;
 			}
@@ -92,7 +97,7 @@ class HtmlGenerator implements de.sebastianbenz.task.generator.TaskGenerator {
 	'''
 	
 	def dispatch generate(Note note)'''
-		<p class="note">«note.value»«generateTags(note)»
+		<p class="note">«write(note)»
 		«generateChildren(note)»
 		</p>
 	'''
@@ -101,7 +106,7 @@ class HtmlGenerator implements de.sebastianbenz.task.generator.TaskGenerator {
 		«IF isFirst(task)»
 		<ul>
 		«ENDIF»
-			<li«IF task.done» class="done"«ENDIF»>«task.value.trim()»«generateTags(task)»
+			<li«IF task.done» class="done"«ENDIF»>«write(task)»
 			«generateChildren(task)»
 			</li>
 		«IF isLast(task)»
@@ -120,27 +125,46 @@ class HtmlGenerator implements de.sebastianbenz.task.generator.TaskGenerator {
 	def dispatch generate(Project project){
 		var level = project.level + 1
 		'''
-		<h«level»>«project.value»«generateTags(project)»</h«level»>
+		<h«level»>«write(project)»</h«level»>
 		«generateChildren(project)»
 		'''
 	}
 	
-	def dispatch generate(EmptyLine emptyLine)
-		'''
+	def dispatch generate(EmptyLine emptyLine)'''
 		«generateChildren(emptyLine)»
-		'''
+	'''
 	
-	def dispatch generate(Code code)
-		''' 
+	def dispatch generate(Code code)''' 
 		<pre class="brush: «code.lang»">
 		«StringEscapeUtils::escapeHtml(code.value)»
 		</pre>
 		«generateChildren(code)»
-		'''
+	'''
 	
+	def write(Content content)'''
+		«FOR s : content.segments»«write(s)»«ENDFOR»	
+	'''
 	
-	def generateTags(Content content){
-		'''«FOR tag : content.tags»<span class="tag">«tag»</span> «ENDFOR»'''
+	def dispatch write(Text text){
+		return text.value
 	}
+	
+	def dispatch write(Link link){
+		var url = link.url
+		if(!url.startsWith("http://")){
+			url = "http://" + url;
+		}
+		var description = ""
+		if(link.description == ""){
+			description = link.url 
+		}else{
+			description = link.description
+		}
+		return '<a href="' + url + '">' + description + '</a>' 
+	}	
+	def dispatch write(Tag tag)'''
+		<span class="tag">«tag»</span>
+	'''
+	
 }
  

@@ -33,7 +33,7 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
  * @generated
  */
 public class LinkItemProvider
-	extends EmbeddedElementItemProvider
+	extends TextSegmentItemProvider
 	implements
 		IEditingDomainItemProvider,
 		IStructuredItemContentProvider,

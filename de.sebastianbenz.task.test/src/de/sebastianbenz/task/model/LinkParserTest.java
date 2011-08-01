@@ -8,9 +8,9 @@
  * Contributors:
  *     Sebastian Benz - initial API and implementation
  ******************************************************************************/
-package de.sebastianbenz.task;
+package de.sebastianbenz.task.model;
 
-import static org.hamcrest.CoreMatchers.anyOf;
+import static de.sebastianbenz.task.util.Tasks.newTask;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 
@@ -43,10 +43,6 @@ public class LinkParserTest {
 		return Joiner.on(", ").join(newTask(string).getLinks());
 	}
 
-	protected Task newTask(String text) {
-		Task task = TaskFactory.eINSTANCE.createTask();
-		task.setText(text);
-		return task;
-	}
+	
 
 }

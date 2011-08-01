@@ -299,6 +299,29 @@ public class TaskItemProviderAdapterFactory extends TaskAdapterFactory implement
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link de.sebastianbenz.task.Text} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected TextItemProvider textItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link de.sebastianbenz.task.Text}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createTextAdapter() {
+		if (textItemProvider == null) {
+			textItemProvider = new TextItemProvider(this);
+		}
+
+		return textItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -410,11 +433,12 @@ public class TaskItemProviderAdapterFactory extends TaskAdapterFactory implement
 		if (taskItemProvider != null) taskItemProvider.dispose();
 		if (noteItemProvider != null) noteItemProvider.dispose();
 		if (projectItemProvider != null) projectItemProvider.dispose();
-		if (tagItemProvider != null) tagItemProvider.dispose();
 		if (globalTaskModelItemProvider != null) globalTaskModelItemProvider.dispose();
 		if (emptyLineItemProvider != null) emptyLineItemProvider.dispose();
 		if (codeItemProvider != null) codeItemProvider.dispose();
+		if (tagItemProvider != null) tagItemProvider.dispose();
 		if (linkItemProvider != null) linkItemProvider.dispose();
+		if (textItemProvider != null) textItemProvider.dispose();
 	}
 
 }

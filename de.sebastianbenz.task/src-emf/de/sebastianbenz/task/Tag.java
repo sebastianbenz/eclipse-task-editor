@@ -24,7 +24,7 @@ package de.sebastianbenz.task;
  * @model
  * @generated
  */
-public interface Tag extends EmbeddedElement
+public interface Tag extends TextSegment
 {
 	/**
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.

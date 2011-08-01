@@ -8,7 +8,6 @@ package de.sebastianbenz.task.impl;
 
 import de.sebastianbenz.task.Code;
 import de.sebastianbenz.task.Content;
-import de.sebastianbenz.task.EmbeddedElement;
 import de.sebastianbenz.task.EmptyLine;
 import de.sebastianbenz.task.GlobalTaskModel;
 import de.sebastianbenz.task.Link;
@@ -19,6 +18,8 @@ import de.sebastianbenz.task.Task;
 import de.sebastianbenz.task.TaskFactory;
 import de.sebastianbenz.task.TaskModel;
 import de.sebastianbenz.task.TaskPackage;
+import de.sebastianbenz.task.Text;
+import de.sebastianbenz.task.TextSegment;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
@@ -75,13 +76,6 @@ public class TaskPackageImpl extends EPackageImpl implements TaskPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass tagEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	private EClass globalTaskModelEClass = null;
 
 	/**
@@ -110,7 +104,14 @@ public class TaskPackageImpl extends EPackageImpl implements TaskPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass embeddedElementEClass = null;
+	private EClass textSegmentEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass tagEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -118,6 +119,13 @@ public class TaskPackageImpl extends EPackageImpl implements TaskPackage
 	 * @generated
 	 */
 	private EClass linkEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass textEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -277,6 +285,16 @@ public class TaskPackageImpl extends EPackageImpl implements TaskPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getContent_Segments()
+	{
+		return (EReference)contentEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getTask()
 	{
 		return taskEClass;
@@ -300,36 +318,6 @@ public class TaskPackageImpl extends EPackageImpl implements TaskPackage
 	public EClass getProject()
 	{
 		return projectEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getTag()
-	{
-		return tagEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getTag_Name()
-	{
-		return (EAttribute)tagEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getTag_Value()
-	{
-		return (EAttribute)tagEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -397,9 +385,9 @@ public class TaskPackageImpl extends EPackageImpl implements TaskPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getEmbeddedElement()
+	public EClass getTextSegment()
 	{
-		return embeddedElementEClass;
+		return textSegmentEClass;
 	}
 
 	/**
@@ -407,9 +395,9 @@ public class TaskPackageImpl extends EPackageImpl implements TaskPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getEmbeddedElement_Offset()
+	public EAttribute getTextSegment_Offset()
 	{
-		return (EAttribute)embeddedElementEClass.getEStructuralFeatures().get(0);
+		return (EAttribute)textSegmentEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -417,9 +405,9 @@ public class TaskPackageImpl extends EPackageImpl implements TaskPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getEmbeddedElement_Length()
+	public EAttribute getTextSegment_Length()
 	{
-		return (EAttribute)embeddedElementEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)textSegmentEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -427,9 +415,39 @@ public class TaskPackageImpl extends EPackageImpl implements TaskPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getEmbeddedElement_Content()
+	public EReference getTextSegment_Content()
 	{
-		return (EReference)embeddedElementEClass.getEStructuralFeatures().get(2);
+		return (EReference)textSegmentEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getTag()
+	{
+		return tagEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getTag_Name()
+	{
+		return (EAttribute)tagEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getTag_Value()
+	{
+		return (EAttribute)tagEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -460,6 +478,26 @@ public class TaskPackageImpl extends EPackageImpl implements TaskPackage
 	public EAttribute getLink_Description()
 	{
 		return (EAttribute)linkEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getText()
+	{
+		return textEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getText_Value()
+	{
+		return (EAttribute)textEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -502,16 +540,13 @@ public class TaskPackageImpl extends EPackageImpl implements TaskPackage
 		createEReference(contentEClass, CONTENT__TASK_MODEL);
 		createEReference(contentEClass, CONTENT__TAGS);
 		createEReference(contentEClass, CONTENT__LINKS);
+		createEReference(contentEClass, CONTENT__SEGMENTS);
 
 		taskEClass = createEClass(TASK);
 
 		noteEClass = createEClass(NOTE);
 
 		projectEClass = createEClass(PROJECT);
-
-		tagEClass = createEClass(TAG);
-		createEAttribute(tagEClass, TAG__NAME);
-		createEAttribute(tagEClass, TAG__VALUE);
 
 		globalTaskModelEClass = createEClass(GLOBAL_TASK_MODEL);
 
@@ -523,14 +558,21 @@ public class TaskPackageImpl extends EPackageImpl implements TaskPackage
 		codeEClass = createEClass(CODE);
 		createEAttribute(codeEClass, CODE__LANG);
 
-		embeddedElementEClass = createEClass(EMBEDDED_ELEMENT);
-		createEAttribute(embeddedElementEClass, EMBEDDED_ELEMENT__OFFSET);
-		createEAttribute(embeddedElementEClass, EMBEDDED_ELEMENT__LENGTH);
-		createEReference(embeddedElementEClass, EMBEDDED_ELEMENT__CONTENT);
+		textSegmentEClass = createEClass(TEXT_SEGMENT);
+		createEAttribute(textSegmentEClass, TEXT_SEGMENT__OFFSET);
+		createEAttribute(textSegmentEClass, TEXT_SEGMENT__LENGTH);
+		createEReference(textSegmentEClass, TEXT_SEGMENT__CONTENT);
+
+		tagEClass = createEClass(TAG);
+		createEAttribute(tagEClass, TAG__NAME);
+		createEAttribute(tagEClass, TAG__VALUE);
 
 		linkEClass = createEClass(LINK);
 		createEAttribute(linkEClass, LINK__URL);
 		createEAttribute(linkEClass, LINK__DESCRIPTION);
+
+		textEClass = createEClass(TEXT);
+		createEAttribute(textEClass, TEXT__VALUE);
 	}
 
 	/**
@@ -567,11 +609,12 @@ public class TaskPackageImpl extends EPackageImpl implements TaskPackage
 		taskEClass.getESuperTypes().add(this.getContent());
 		noteEClass.getESuperTypes().add(this.getContent());
 		projectEClass.getESuperTypes().add(this.getContent());
-		tagEClass.getESuperTypes().add(this.getEmbeddedElement());
 		globalTaskModelEClass.getESuperTypes().add(this.getContainer());
 		emptyLineEClass.getESuperTypes().add(this.getContent());
 		codeEClass.getESuperTypes().add(this.getContent());
-		linkEClass.getESuperTypes().add(this.getEmbeddedElement());
+		tagEClass.getESuperTypes().add(this.getTextSegment());
+		linkEClass.getESuperTypes().add(this.getTextSegment());
+		textEClass.getESuperTypes().add(this.getTextSegment());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(taskModelEClass, TaskModel.class, "TaskModel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -582,8 +625,9 @@ public class TaskPackageImpl extends EPackageImpl implements TaskPackage
 		initEAttribute(getContent_Text(), ecorePackage.getEString(), "text", null, 0, 1, Content.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getContent_Parent(), this.getContainer(), this.getContainer_Children(), "parent", null, 0, 1, Content.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEReference(getContent_TaskModel(), this.getTaskModel(), this.getTaskModel_Contents(), "taskModel", null, 0, 1, Content.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getContent_Tags(), this.getTag(), null, "tags", null, 0, -1, Content.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
-		initEReference(getContent_Links(), this.getLink(), null, "links", null, 0, -1, Content.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getContent_Tags(), this.getTag(), null, "tags", null, 0, -1, Content.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getContent_Links(), this.getLink(), null, "links", null, 0, -1, Content.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getContent_Segments(), this.getTextSegment(), null, "segments", null, 0, -1, Content.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		addEOperation(contentEClass, ecorePackage.getEInt(), "getLevel", 0, 1, IS_UNIQUE, IS_ORDERED);
 
@@ -597,10 +641,6 @@ public class TaskPackageImpl extends EPackageImpl implements TaskPackage
 
 		initEClass(projectEClass, Project.class, "Project", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(tagEClass, Tag.class, "Tag", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getTag_Name(), ecorePackage.getEString(), "name", null, 0, 1, Tag.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getTag_Value(), ecorePackage.getEString(), "value", null, 0, 1, Tag.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
 		initEClass(globalTaskModelEClass, GlobalTaskModel.class, "GlobalTaskModel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(containerEClass, de.sebastianbenz.task.Container.class, "Container", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -611,14 +651,21 @@ public class TaskPackageImpl extends EPackageImpl implements TaskPackage
 		initEClass(codeEClass, Code.class, "Code", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getCode_Lang(), ecorePackage.getEString(), "lang", null, 0, 1, Code.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(embeddedElementEClass, EmbeddedElement.class, "EmbeddedElement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getEmbeddedElement_Offset(), ecorePackage.getEInt(), "offset", null, 0, 1, EmbeddedElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getEmbeddedElement_Length(), ecorePackage.getEInt(), "length", null, 0, 1, EmbeddedElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getEmbeddedElement_Content(), this.getContent(), null, "content", null, 0, 1, EmbeddedElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(textSegmentEClass, TextSegment.class, "TextSegment", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getTextSegment_Offset(), ecorePackage.getEInt(), "offset", null, 0, 1, TextSegment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTextSegment_Length(), ecorePackage.getEInt(), "length", null, 0, 1, TextSegment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTextSegment_Content(), this.getContent(), null, "content", null, 0, 1, TextSegment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(tagEClass, Tag.class, "Tag", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getTag_Name(), ecorePackage.getEString(), "name", null, 0, 1, Tag.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTag_Value(), ecorePackage.getEString(), "value", null, 0, 1, Tag.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(linkEClass, Link.class, "Link", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getLink_Url(), ecorePackage.getEString(), "url", null, 0, 1, Link.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getLink_Description(), ecorePackage.getEString(), "description", null, 0, 1, Link.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(textEClass, Text.class, "Text", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getText_Value(), ecorePackage.getEString(), "value", null, 0, 1, Text.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

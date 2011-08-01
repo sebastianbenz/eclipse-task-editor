@@ -4,16 +4,21 @@ import de.sebastianbenz.task.Code;
 import de.sebastianbenz.task.Container;
 import de.sebastianbenz.task.Content;
 import de.sebastianbenz.task.EmptyLine;
+import de.sebastianbenz.task.Link;
 import de.sebastianbenz.task.Note;
 import de.sebastianbenz.task.Project;
 import de.sebastianbenz.task.Tag;
 import de.sebastianbenz.task.Task;
 import de.sebastianbenz.task.TaskModel;
+import de.sebastianbenz.task.Text;
+import de.sebastianbenz.task.TextSegment;
 import de.sebastianbenz.task.generator.TaskGenerator;
 import org.apache.commons.lang.StringEscapeUtils;
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.xtext.xbase.lib.BooleanExtensions;
 import org.eclipse.xtext.xbase.lib.IntegerExtensions;
 import org.eclipse.xtext.xbase.lib.ObjectExtensions;
+import org.eclipse.xtext.xbase.lib.StringExtensions;
 import org.eclipse.xtext.xtend2.lib.StringConcatenation;
 
 @SuppressWarnings("all")
@@ -85,6 +90,9 @@ public class HtmlGenerator implements TaskGenerator {
     _builder.newLine();
     _builder.append("\t");
     _builder.append("ul li:before {");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append("list-style: none;");
     _builder.newLine();
     _builder.append("\t\t");
     _builder.append("content: \"\\2D\";\t");
@@ -209,10 +217,8 @@ public class HtmlGenerator implements TaskGenerator {
   protected StringConcatenation _generate(final Note note) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("<p class=\"note\">");
-    String _value = note.getValue();
-    _builder.append(_value, "");
-    StringConcatenation _generateTags = this.generateTags(note);
-    _builder.append(_generateTags, "");
+    StringConcatenation _write = this.write(note);
+    _builder.append(_write, "");
     _builder.newLineIfNotEmpty();
     StringConcatenation _generateChildren = this.generateChildren(note);
     _builder.append(_generateChildren, "");
@@ -240,11 +246,8 @@ public class HtmlGenerator implements TaskGenerator {
       }
     }
     _builder.append(">");
-    String _value = task.getValue();
-    String _trim = _value.trim();
-    _builder.append(_trim, "	");
-    StringConcatenation _generateTags = this.generateTags(task);
-    _builder.append(_generateTags, "	");
+    StringConcatenation _write = this.write(task);
+    _builder.append(_write, "	");
     _builder.newLineIfNotEmpty();
     _builder.append("\t");
     StringConcatenation _generateChildren = this.generateChildren(task);
@@ -294,10 +297,8 @@ public class HtmlGenerator implements TaskGenerator {
       _builder.append("<h");
       _builder.append(level, "");
       _builder.append(">");
-      String _value = project.getValue();
-      _builder.append(_value, "");
-      StringConcatenation _generateTags = this.generateTags(project);
-      _builder.append(_generateTags, "");
+      StringConcatenation _write = this.write(project);
+      _builder.append(_write, "");
       _builder.append("</h");
       _builder.append(level, "");
       _builder.append(">");
@@ -337,16 +338,59 @@ public class HtmlGenerator implements TaskGenerator {
     return _builder;
   }
   
-  public StringConcatenation generateTags(final Content content) {
+  public StringConcatenation write(final Content content) {
     StringConcatenation _builder = new StringConcatenation();
     {
-      EList<Tag> _tags = content.getTags();
-      for(final Tag tag : _tags) {
-        _builder.append("<span class=\"tag\">");
-        _builder.append(tag, "");
-        _builder.append("</span> ");
+      EList<TextSegment> _segments = content.getSegments();
+      for(final TextSegment s : _segments) {
+        CharSequence _write = this.write(s);
+        _builder.append(_write, "");
       }
     }
+    _builder.append("\t");
+    _builder.newLineIfNotEmpty();
+    return _builder;
+  }
+  
+  protected CharSequence _write(final Text text) {
+    String _value = text.getValue();
+    return _value;
+  }
+  
+  protected CharSequence _write(final Link link) {
+    {
+      String _url = link.getUrl();
+      String url = _url;
+      boolean _startsWith = url.startsWith("http://");
+      boolean _operator_not = BooleanExtensions.operator_not(_startsWith);
+      if (_operator_not) {
+        String _operator_plus = StringExtensions.operator_plus("http://", url);
+        url = _operator_plus;
+      }
+      String description = "";
+      String _description = link.getDescription();
+      boolean _operator_equals = ObjectExtensions.operator_equals(_description, "");
+      if (_operator_equals) {
+        String _url_1 = link.getUrl();
+        description = _url_1;
+      } else {
+        String _description_1 = link.getDescription();
+        description = _description_1;
+      }
+      String _operator_plus_1 = StringExtensions.operator_plus("<a href=\"", url);
+      String _operator_plus_2 = StringExtensions.operator_plus(_operator_plus_1, "\">");
+      String _operator_plus_3 = StringExtensions.operator_plus(_operator_plus_2, description);
+      String _operator_plus_4 = StringExtensions.operator_plus(_operator_plus_3, "</a>");
+      return _operator_plus_4;
+    }
+  }
+  
+  protected CharSequence _write(final Tag tag) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("<span class=\"tag\">");
+    _builder.append(tag, "");
+    _builder.append("</span>");
+    _builder.newLineIfNotEmpty();
     return _builder;
   }
   
@@ -364,6 +408,19 @@ public class HtmlGenerator implements TaskGenerator {
     } else {
       throw new IllegalArgumentException("Unhandled parameter types: " +
         java.util.Arrays.<Object>asList(code).toString());
+    }
+  }
+  
+  public CharSequence write(final TextSegment link) {
+    if ((link instanceof Link)) {
+      return _write((Link)link);
+    } else if ((link instanceof Tag)) {
+      return _write((Tag)link);
+    } else if ((link instanceof Text)) {
+      return _write((Text)link);
+    } else {
+      throw new IllegalArgumentException("Unhandled parameter types: " +
+        java.util.Arrays.<Object>asList(link).toString());
     }
   }
 }

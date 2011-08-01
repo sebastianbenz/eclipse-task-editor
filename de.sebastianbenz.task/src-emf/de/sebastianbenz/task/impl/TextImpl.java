@@ -6,8 +6,8 @@
  */
 package de.sebastianbenz.task.impl;
 
-import de.sebastianbenz.task.Tag;
 import de.sebastianbenz.task.TaskPackage;
+import de.sebastianbenz.task.Text;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -17,40 +17,19 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Tag</b></em>'.
+ * An implementation of the model object '<em><b>Text</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link de.sebastianbenz.task.impl.TagImpl#getName <em>Name</em>}</li>
- *   <li>{@link de.sebastianbenz.task.impl.TagImpl#getValue <em>Value</em>}</li>
+ *   <li>{@link de.sebastianbenz.task.impl.TextImpl#getValue <em>Value</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class TagImpl extends TextSegmentImplCustom implements Tag
+public class TextImpl extends TextSegmentImplCustom implements Text
 {
-	/**
-	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getName()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String NAME_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getName()
-	 * @generated
-	 * @ordered
-	 */
-	protected String name = NAME_EDEFAULT;
-
 	/**
 	 * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -76,7 +55,7 @@ public class TagImpl extends TextSegmentImplCustom implements Tag
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected TagImpl()
+	protected TextImpl()
 	{
 		super();
 	}
@@ -89,30 +68,7 @@ public class TagImpl extends TextSegmentImplCustom implements Tag
 	@Override
 	protected EClass eStaticClass()
 	{
-		return TaskPackage.Literals.TAG;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String getName()
-	{
-		return name;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setName(String newName)
-	{
-		String oldName = name;
-		name = newName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TaskPackage.TAG__NAME, oldName, name));
+		return TaskPackage.Literals.TEXT;
 	}
 
 	/**
@@ -135,7 +91,7 @@ public class TagImpl extends TextSegmentImplCustom implements Tag
 		String oldValue = value;
 		value = newValue;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TaskPackage.TAG__VALUE, oldValue, value));
+			eNotify(new ENotificationImpl(this, Notification.SET, TaskPackage.TEXT__VALUE, oldValue, value));
 	}
 
 	/**
@@ -148,9 +104,7 @@ public class TagImpl extends TextSegmentImplCustom implements Tag
 	{
 		switch (featureID)
 		{
-			case TaskPackage.TAG__NAME:
-				return getName();
-			case TaskPackage.TAG__VALUE:
+			case TaskPackage.TEXT__VALUE:
 				return getValue();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -166,10 +120,7 @@ public class TagImpl extends TextSegmentImplCustom implements Tag
 	{
 		switch (featureID)
 		{
-			case TaskPackage.TAG__NAME:
-				setName((String)newValue);
-				return;
-			case TaskPackage.TAG__VALUE:
+			case TaskPackage.TEXT__VALUE:
 				setValue((String)newValue);
 				return;
 		}
@@ -186,10 +137,7 @@ public class TagImpl extends TextSegmentImplCustom implements Tag
 	{
 		switch (featureID)
 		{
-			case TaskPackage.TAG__NAME:
-				setName(NAME_EDEFAULT);
-				return;
-			case TaskPackage.TAG__VALUE:
+			case TaskPackage.TEXT__VALUE:
 				setValue(VALUE_EDEFAULT);
 				return;
 		}
@@ -206,9 +154,7 @@ public class TagImpl extends TextSegmentImplCustom implements Tag
 	{
 		switch (featureID)
 		{
-			case TaskPackage.TAG__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case TaskPackage.TAG__VALUE:
+			case TaskPackage.TEXT__VALUE:
 				return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
 		}
 		return super.eIsSet(featureID);
@@ -225,12 +171,10 @@ public class TagImpl extends TextSegmentImplCustom implements Tag
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (name: ");
-		result.append(name);
-		result.append(", value: ");
+		result.append(" (value: ");
 		result.append(value);
 		result.append(')');
 		return result.toString();
 	}
 
-} //TagImpl
+} //TextImpl

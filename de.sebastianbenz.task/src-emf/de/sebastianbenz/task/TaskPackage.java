@@ -68,7 +68,7 @@ public interface TaskPackage extends EPackage
 	 * @see de.sebastianbenz.task.impl.TaskPackageImpl#getContainer()
 	 * @generated
 	 */
-	int CONTAINER = 7;
+	int CONTAINER = 6;
 
 	/**
 	 * The feature id for the '<em><b>Children</b></em>' reference list.
@@ -199,13 +199,22 @@ public interface TaskPackage extends EPackage
 	int CONTENT__LINKS = CONTAINER_FEATURE_COUNT + 5;
 
 	/**
+	 * The feature id for the '<em><b>Segments</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTENT__SEGMENTS = CONTAINER_FEATURE_COUNT + 6;
+
+	/**
 	 * The number of structural features of the '<em>Content</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTENT_FEATURE_COUNT = CONTAINER_FEATURE_COUNT + 6;
+	int CONTENT_FEATURE_COUNT = CONTAINER_FEATURE_COUNT + 7;
 
 	/**
 	 * The meta object id for the '{@link de.sebastianbenz.task.impl.TaskImpl <em>Task</em>}' class.
@@ -279,6 +288,15 @@ public interface TaskPackage extends EPackage
 	 * @ordered
 	 */
 	int TASK__LINKS = CONTENT__LINKS;
+
+	/**
+	 * The feature id for the '<em><b>Segments</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TASK__SEGMENTS = CONTENT__SEGMENTS;
 
 	/**
 	 * The number of structural features of the '<em>Task</em>' class.
@@ -363,6 +381,15 @@ public interface TaskPackage extends EPackage
 	int NOTE__LINKS = CONTENT__LINKS;
 
 	/**
+	 * The feature id for the '<em><b>Segments</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NOTE__SEGMENTS = CONTENT__SEGMENTS;
+
+	/**
 	 * The number of structural features of the '<em>Note</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -445,6 +472,15 @@ public interface TaskPackage extends EPackage
 	int PROJECT__LINKS = CONTENT__LINKS;
 
 	/**
+	 * The feature id for the '<em><b>Segments</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROJECT__SEGMENTS = CONTENT__SEGMENTS;
+
+	/**
 	 * The number of structural features of the '<em>Project</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -454,116 +490,6 @@ public interface TaskPackage extends EPackage
 	int PROJECT_FEATURE_COUNT = CONTENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link de.sebastianbenz.task.impl.EmbeddedElementImpl <em>Embedded Element</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see de.sebastianbenz.task.impl.EmbeddedElementImpl
-	 * @see de.sebastianbenz.task.impl.TaskPackageImpl#getEmbeddedElement()
-	 * @generated
-	 */
-	int EMBEDDED_ELEMENT = 10;
-
-	/**
-	 * The feature id for the '<em><b>Offset</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EMBEDDED_ELEMENT__OFFSET = 0;
-
-	/**
-	 * The feature id for the '<em><b>Length</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EMBEDDED_ELEMENT__LENGTH = 1;
-
-	/**
-	 * The feature id for the '<em><b>Content</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EMBEDDED_ELEMENT__CONTENT = 2;
-
-	/**
-	 * The number of structural features of the '<em>Embedded Element</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EMBEDDED_ELEMENT_FEATURE_COUNT = 3;
-
-	/**
-	 * The meta object id for the '{@link de.sebastianbenz.task.impl.TagImpl <em>Tag</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see de.sebastianbenz.task.impl.TagImpl
-	 * @see de.sebastianbenz.task.impl.TaskPackageImpl#getTag()
-	 * @generated
-	 */
-	int TAG = 5;
-
-	/**
-	 * The feature id for the '<em><b>Offset</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TAG__OFFSET = EMBEDDED_ELEMENT__OFFSET;
-
-	/**
-	 * The feature id for the '<em><b>Length</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TAG__LENGTH = EMBEDDED_ELEMENT__LENGTH;
-
-	/**
-	 * The feature id for the '<em><b>Content</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TAG__CONTENT = EMBEDDED_ELEMENT__CONTENT;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TAG__NAME = EMBEDDED_ELEMENT_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Value</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TAG__VALUE = EMBEDDED_ELEMENT_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of structural features of the '<em>Tag</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TAG_FEATURE_COUNT = EMBEDDED_ELEMENT_FEATURE_COUNT + 2;
-
-	/**
 	 * The meta object id for the '{@link de.sebastianbenz.task.impl.GlobalTaskModelImpl <em>Global Task Model</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -571,7 +497,7 @@ public interface TaskPackage extends EPackage
 	 * @see de.sebastianbenz.task.impl.TaskPackageImpl#getGlobalTaskModel()
 	 * @generated
 	 */
-	int GLOBAL_TASK_MODEL = 6;
+	int GLOBAL_TASK_MODEL = 5;
 
 	/**
 	 * The feature id for the '<em><b>Children</b></em>' reference list.
@@ -599,7 +525,7 @@ public interface TaskPackage extends EPackage
 	 * @see de.sebastianbenz.task.impl.TaskPackageImpl#getEmptyLine()
 	 * @generated
 	 */
-	int EMPTY_LINE = 8;
+	int EMPTY_LINE = 7;
 
 	/**
 	 * The feature id for the '<em><b>Children</b></em>' reference list.
@@ -665,6 +591,15 @@ public interface TaskPackage extends EPackage
 	int EMPTY_LINE__LINKS = CONTENT__LINKS;
 
 	/**
+	 * The feature id for the '<em><b>Segments</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EMPTY_LINE__SEGMENTS = CONTENT__SEGMENTS;
+
+	/**
 	 * The number of structural features of the '<em>Empty Line</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -681,7 +616,7 @@ public interface TaskPackage extends EPackage
 	 * @see de.sebastianbenz.task.impl.TaskPackageImpl#getCode()
 	 * @generated
 	 */
-	int CODE = 9;
+	int CODE = 8;
 
 	/**
 	 * The feature id for the '<em><b>Children</b></em>' reference list.
@@ -747,6 +682,15 @@ public interface TaskPackage extends EPackage
 	int CODE__LINKS = CONTENT__LINKS;
 
 	/**
+	 * The feature id for the '<em><b>Segments</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CODE__SEGMENTS = CONTENT__SEGMENTS;
+
+	/**
 	 * The feature id for the '<em><b>Lang</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -765,6 +709,116 @@ public interface TaskPackage extends EPackage
 	int CODE_FEATURE_COUNT = CONTENT_FEATURE_COUNT + 1;
 
 	/**
+	 * The meta object id for the '{@link de.sebastianbenz.task.impl.TextSegmentImpl <em>Text Segment</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.sebastianbenz.task.impl.TextSegmentImpl
+	 * @see de.sebastianbenz.task.impl.TaskPackageImpl#getTextSegment()
+	 * @generated
+	 */
+	int TEXT_SEGMENT = 9;
+
+	/**
+	 * The feature id for the '<em><b>Offset</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TEXT_SEGMENT__OFFSET = 0;
+
+	/**
+	 * The feature id for the '<em><b>Length</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TEXT_SEGMENT__LENGTH = 1;
+
+	/**
+	 * The feature id for the '<em><b>Content</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TEXT_SEGMENT__CONTENT = 2;
+
+	/**
+	 * The number of structural features of the '<em>Text Segment</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TEXT_SEGMENT_FEATURE_COUNT = 3;
+
+	/**
+	 * The meta object id for the '{@link de.sebastianbenz.task.impl.TagImpl <em>Tag</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.sebastianbenz.task.impl.TagImpl
+	 * @see de.sebastianbenz.task.impl.TaskPackageImpl#getTag()
+	 * @generated
+	 */
+	int TAG = 10;
+
+	/**
+	 * The feature id for the '<em><b>Offset</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TAG__OFFSET = TEXT_SEGMENT__OFFSET;
+
+	/**
+	 * The feature id for the '<em><b>Length</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TAG__LENGTH = TEXT_SEGMENT__LENGTH;
+
+	/**
+	 * The feature id for the '<em><b>Content</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TAG__CONTENT = TEXT_SEGMENT__CONTENT;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TAG__NAME = TEXT_SEGMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TAG__VALUE = TEXT_SEGMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Tag</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TAG_FEATURE_COUNT = TEXT_SEGMENT_FEATURE_COUNT + 2;
+
+	/**
 	 * The meta object id for the '{@link de.sebastianbenz.task.impl.LinkImpl <em>Link</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -781,7 +835,7 @@ public interface TaskPackage extends EPackage
 	 * @generated
 	 * @ordered
 	 */
-	int LINK__OFFSET = EMBEDDED_ELEMENT__OFFSET;
+	int LINK__OFFSET = TEXT_SEGMENT__OFFSET;
 
 	/**
 	 * The feature id for the '<em><b>Length</b></em>' attribute.
@@ -790,7 +844,7 @@ public interface TaskPackage extends EPackage
 	 * @generated
 	 * @ordered
 	 */
-	int LINK__LENGTH = EMBEDDED_ELEMENT__LENGTH;
+	int LINK__LENGTH = TEXT_SEGMENT__LENGTH;
 
 	/**
 	 * The feature id for the '<em><b>Content</b></em>' reference.
@@ -799,7 +853,7 @@ public interface TaskPackage extends EPackage
 	 * @generated
 	 * @ordered
 	 */
-	int LINK__CONTENT = EMBEDDED_ELEMENT__CONTENT;
+	int LINK__CONTENT = TEXT_SEGMENT__CONTENT;
 
 	/**
 	 * The feature id for the '<em><b>Url</b></em>' attribute.
@@ -808,7 +862,7 @@ public interface TaskPackage extends EPackage
 	 * @generated
 	 * @ordered
 	 */
-	int LINK__URL = EMBEDDED_ELEMENT_FEATURE_COUNT + 0;
+	int LINK__URL = TEXT_SEGMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -817,7 +871,7 @@ public interface TaskPackage extends EPackage
 	 * @generated
 	 * @ordered
 	 */
-	int LINK__DESCRIPTION = EMBEDDED_ELEMENT_FEATURE_COUNT + 1;
+	int LINK__DESCRIPTION = TEXT_SEGMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Link</em>' class.
@@ -826,7 +880,62 @@ public interface TaskPackage extends EPackage
 	 * @generated
 	 * @ordered
 	 */
-	int LINK_FEATURE_COUNT = EMBEDDED_ELEMENT_FEATURE_COUNT + 2;
+	int LINK_FEATURE_COUNT = TEXT_SEGMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The meta object id for the '{@link de.sebastianbenz.task.impl.TextImpl <em>Text</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.sebastianbenz.task.impl.TextImpl
+	 * @see de.sebastianbenz.task.impl.TaskPackageImpl#getText()
+	 * @generated
+	 */
+	int TEXT = 12;
+
+	/**
+	 * The feature id for the '<em><b>Offset</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TEXT__OFFSET = TEXT_SEGMENT__OFFSET;
+
+	/**
+	 * The feature id for the '<em><b>Length</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TEXT__LENGTH = TEXT_SEGMENT__LENGTH;
+
+	/**
+	 * The feature id for the '<em><b>Content</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TEXT__CONTENT = TEXT_SEGMENT__CONTENT;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TEXT__VALUE = TEXT_SEGMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Text</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TEXT_FEATURE_COUNT = TEXT_SEGMENT_FEATURE_COUNT + 1;
 
 
 	/**
@@ -927,6 +1036,17 @@ public interface TaskPackage extends EPackage
 	EReference getContent_Links();
 
 	/**
+	 * Returns the meta object for the containment reference list '{@link de.sebastianbenz.task.Content#getSegments <em>Segments</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Segments</em>'.
+	 * @see de.sebastianbenz.task.Content#getSegments()
+	 * @see #getContent()
+	 * @generated
+	 */
+	EReference getContent_Segments();
+
+	/**
 	 * Returns the meta object for class '{@link de.sebastianbenz.task.Task <em>Task</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -955,38 +1075,6 @@ public interface TaskPackage extends EPackage
 	 * @generated
 	 */
 	EClass getProject();
-
-	/**
-	 * Returns the meta object for class '{@link de.sebastianbenz.task.Tag <em>Tag</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Tag</em>'.
-	 * @see de.sebastianbenz.task.Tag
-	 * @generated
-	 */
-	EClass getTag();
-
-	/**
-	 * Returns the meta object for the attribute '{@link de.sebastianbenz.task.Tag#getName <em>Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see de.sebastianbenz.task.Tag#getName()
-	 * @see #getTag()
-	 * @generated
-	 */
-	EAttribute getTag_Name();
-
-	/**
-	 * Returns the meta object for the attribute '{@link de.sebastianbenz.task.Tag#getValue <em>Value</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Value</em>'.
-	 * @see de.sebastianbenz.task.Tag#getValue()
-	 * @see #getTag()
-	 * @generated
-	 */
-	EAttribute getTag_Value();
 
 	/**
 	 * Returns the meta object for class '{@link de.sebastianbenz.task.GlobalTaskModel <em>Global Task Model</em>}'.
@@ -1051,47 +1139,79 @@ public interface TaskPackage extends EPackage
 	EAttribute getCode_Lang();
 
 	/**
-	 * Returns the meta object for class '{@link de.sebastianbenz.task.EmbeddedElement <em>Embedded Element</em>}'.
+	 * Returns the meta object for class '{@link de.sebastianbenz.task.TextSegment <em>Text Segment</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Embedded Element</em>'.
-	 * @see de.sebastianbenz.task.EmbeddedElement
+	 * @return the meta object for class '<em>Text Segment</em>'.
+	 * @see de.sebastianbenz.task.TextSegment
 	 * @generated
 	 */
-	EClass getEmbeddedElement();
+	EClass getTextSegment();
 
 	/**
-	 * Returns the meta object for the attribute '{@link de.sebastianbenz.task.EmbeddedElement#getOffset <em>Offset</em>}'.
+	 * Returns the meta object for the attribute '{@link de.sebastianbenz.task.TextSegment#getOffset <em>Offset</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Offset</em>'.
-	 * @see de.sebastianbenz.task.EmbeddedElement#getOffset()
-	 * @see #getEmbeddedElement()
+	 * @see de.sebastianbenz.task.TextSegment#getOffset()
+	 * @see #getTextSegment()
 	 * @generated
 	 */
-	EAttribute getEmbeddedElement_Offset();
+	EAttribute getTextSegment_Offset();
 
 	/**
-	 * Returns the meta object for the attribute '{@link de.sebastianbenz.task.EmbeddedElement#getLength <em>Length</em>}'.
+	 * Returns the meta object for the attribute '{@link de.sebastianbenz.task.TextSegment#getLength <em>Length</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Length</em>'.
-	 * @see de.sebastianbenz.task.EmbeddedElement#getLength()
-	 * @see #getEmbeddedElement()
+	 * @see de.sebastianbenz.task.TextSegment#getLength()
+	 * @see #getTextSegment()
 	 * @generated
 	 */
-	EAttribute getEmbeddedElement_Length();
+	EAttribute getTextSegment_Length();
 
 	/**
-	 * Returns the meta object for the reference '{@link de.sebastianbenz.task.EmbeddedElement#getContent <em>Content</em>}'.
+	 * Returns the meta object for the reference '{@link de.sebastianbenz.task.TextSegment#getContent <em>Content</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference '<em>Content</em>'.
-	 * @see de.sebastianbenz.task.EmbeddedElement#getContent()
-	 * @see #getEmbeddedElement()
+	 * @see de.sebastianbenz.task.TextSegment#getContent()
+	 * @see #getTextSegment()
 	 * @generated
 	 */
-	EReference getEmbeddedElement_Content();
+	EReference getTextSegment_Content();
+
+	/**
+	 * Returns the meta object for class '{@link de.sebastianbenz.task.Tag <em>Tag</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Tag</em>'.
+	 * @see de.sebastianbenz.task.Tag
+	 * @generated
+	 */
+	EClass getTag();
+
+	/**
+	 * Returns the meta object for the attribute '{@link de.sebastianbenz.task.Tag#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see de.sebastianbenz.task.Tag#getName()
+	 * @see #getTag()
+	 * @generated
+	 */
+	EAttribute getTag_Name();
+
+	/**
+	 * Returns the meta object for the attribute '{@link de.sebastianbenz.task.Tag#getValue <em>Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Value</em>'.
+	 * @see de.sebastianbenz.task.Tag#getValue()
+	 * @see #getTag()
+	 * @generated
+	 */
+	EAttribute getTag_Value();
 
 	/**
 	 * Returns the meta object for class '{@link de.sebastianbenz.task.Link <em>Link</em>}'.
@@ -1124,6 +1244,27 @@ public interface TaskPackage extends EPackage
 	 * @generated
 	 */
 	EAttribute getLink_Description();
+
+	/**
+	 * Returns the meta object for class '{@link de.sebastianbenz.task.Text <em>Text</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Text</em>'.
+	 * @see de.sebastianbenz.task.Text
+	 * @generated
+	 */
+	EClass getText();
+
+	/**
+	 * Returns the meta object for the attribute '{@link de.sebastianbenz.task.Text#getValue <em>Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Value</em>'.
+	 * @see de.sebastianbenz.task.Text#getValue()
+	 * @see #getText()
+	 * @generated
+	 */
+	EAttribute getText_Value();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -1225,6 +1366,14 @@ public interface TaskPackage extends EPackage
 		EReference CONTENT__LINKS = eINSTANCE.getContent_Links();
 
 		/**
+		 * The meta object literal for the '<em><b>Segments</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CONTENT__SEGMENTS = eINSTANCE.getContent_Segments();
+
+		/**
 		 * The meta object literal for the '{@link de.sebastianbenz.task.impl.TaskImpl <em>Task</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1253,32 +1402,6 @@ public interface TaskPackage extends EPackage
 		 * @generated
 		 */
 		EClass PROJECT = eINSTANCE.getProject();
-
-		/**
-		 * The meta object literal for the '{@link de.sebastianbenz.task.impl.TagImpl <em>Tag</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see de.sebastianbenz.task.impl.TagImpl
-		 * @see de.sebastianbenz.task.impl.TaskPackageImpl#getTag()
-		 * @generated
-		 */
-		EClass TAG = eINSTANCE.getTag();
-
-		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute TAG__NAME = eINSTANCE.getTag_Name();
-
-		/**
-		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute TAG__VALUE = eINSTANCE.getTag_Value();
 
 		/**
 		 * The meta object literal for the '{@link de.sebastianbenz.task.impl.GlobalTaskModelImpl <em>Global Task Model</em>}' class.
@@ -1337,14 +1460,14 @@ public interface TaskPackage extends EPackage
 		EAttribute CODE__LANG = eINSTANCE.getCode_Lang();
 
 		/**
-		 * The meta object literal for the '{@link de.sebastianbenz.task.impl.EmbeddedElementImpl <em>Embedded Element</em>}' class.
+		 * The meta object literal for the '{@link de.sebastianbenz.task.impl.TextSegmentImpl <em>Text Segment</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see de.sebastianbenz.task.impl.EmbeddedElementImpl
-		 * @see de.sebastianbenz.task.impl.TaskPackageImpl#getEmbeddedElement()
+		 * @see de.sebastianbenz.task.impl.TextSegmentImpl
+		 * @see de.sebastianbenz.task.impl.TaskPackageImpl#getTextSegment()
 		 * @generated
 		 */
-		EClass EMBEDDED_ELEMENT = eINSTANCE.getEmbeddedElement();
+		EClass TEXT_SEGMENT = eINSTANCE.getTextSegment();
 
 		/**
 		 * The meta object literal for the '<em><b>Offset</b></em>' attribute feature.
@@ -1352,7 +1475,7 @@ public interface TaskPackage extends EPackage
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute EMBEDDED_ELEMENT__OFFSET = eINSTANCE.getEmbeddedElement_Offset();
+		EAttribute TEXT_SEGMENT__OFFSET = eINSTANCE.getTextSegment_Offset();
 
 		/**
 		 * The meta object literal for the '<em><b>Length</b></em>' attribute feature.
@@ -1360,7 +1483,7 @@ public interface TaskPackage extends EPackage
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute EMBEDDED_ELEMENT__LENGTH = eINSTANCE.getEmbeddedElement_Length();
+		EAttribute TEXT_SEGMENT__LENGTH = eINSTANCE.getTextSegment_Length();
 
 		/**
 		 * The meta object literal for the '<em><b>Content</b></em>' reference feature.
@@ -1368,7 +1491,33 @@ public interface TaskPackage extends EPackage
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference EMBEDDED_ELEMENT__CONTENT = eINSTANCE.getEmbeddedElement_Content();
+		EReference TEXT_SEGMENT__CONTENT = eINSTANCE.getTextSegment_Content();
+
+		/**
+		 * The meta object literal for the '{@link de.sebastianbenz.task.impl.TagImpl <em>Tag</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.sebastianbenz.task.impl.TagImpl
+		 * @see de.sebastianbenz.task.impl.TaskPackageImpl#getTag()
+		 * @generated
+		 */
+		EClass TAG = eINSTANCE.getTag();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute TAG__NAME = eINSTANCE.getTag_Name();
+
+		/**
+		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute TAG__VALUE = eINSTANCE.getTag_Value();
 
 		/**
 		 * The meta object literal for the '{@link de.sebastianbenz.task.impl.LinkImpl <em>Link</em>}' class.
@@ -1395,6 +1544,24 @@ public interface TaskPackage extends EPackage
 		 * @generated
 		 */
 		EAttribute LINK__DESCRIPTION = eINSTANCE.getLink_Description();
+
+		/**
+		 * The meta object literal for the '{@link de.sebastianbenz.task.impl.TextImpl <em>Text</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.sebastianbenz.task.impl.TextImpl
+		 * @see de.sebastianbenz.task.impl.TaskPackageImpl#getText()
+		 * @generated
+		 */
+		EClass TEXT = eINSTANCE.getText();
+
+		/**
+		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute TEXT__VALUE = eINSTANCE.getText_Value();
 
 	}
 

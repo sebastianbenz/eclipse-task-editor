@@ -104,11 +104,6 @@ public class TaskAdapterFactory extends AdapterFactoryImpl
 				return createProjectAdapter();
 			}
 			@Override
-			public Adapter caseTag(Tag object)
-			{
-				return createTagAdapter();
-			}
-			@Override
 			public Adapter caseGlobalTaskModel(GlobalTaskModel object)
 			{
 				return createGlobalTaskModelAdapter();
@@ -129,14 +124,24 @@ public class TaskAdapterFactory extends AdapterFactoryImpl
 				return createCodeAdapter();
 			}
 			@Override
-			public Adapter caseEmbeddedElement(EmbeddedElement object)
+			public Adapter caseTextSegment(TextSegment object)
 			{
-				return createEmbeddedElementAdapter();
+				return createTextSegmentAdapter();
+			}
+			@Override
+			public Adapter caseTag(Tag object)
+			{
+				return createTagAdapter();
 			}
 			@Override
 			public Adapter caseLink(Link object)
 			{
 				return createLinkAdapter();
+			}
+			@Override
+			public Adapter caseText(Text object)
+			{
+				return createTextAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object)
@@ -236,21 +241,6 @@ public class TaskAdapterFactory extends AdapterFactoryImpl
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.sebastianbenz.task.Tag <em>Tag</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see de.sebastianbenz.task.Tag
-	 * @generated
-	 */
-	public Adapter createTagAdapter()
-	{
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link de.sebastianbenz.task.GlobalTaskModel <em>Global Task Model</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -311,16 +301,31 @@ public class TaskAdapterFactory extends AdapterFactoryImpl
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link de.sebastianbenz.task.EmbeddedElement <em>Embedded Element</em>}'.
+	 * Creates a new adapter for an object of class '{@link de.sebastianbenz.task.TextSegment <em>Text Segment</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see de.sebastianbenz.task.EmbeddedElement
+	 * @see de.sebastianbenz.task.TextSegment
 	 * @generated
 	 */
-	public Adapter createEmbeddedElementAdapter()
+	public Adapter createTextSegmentAdapter()
+	{
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.sebastianbenz.task.Tag <em>Tag</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.sebastianbenz.task.Tag
+	 * @generated
+	 */
+	public Adapter createTagAdapter()
 	{
 		return null;
 	}
@@ -336,6 +341,21 @@ public class TaskAdapterFactory extends AdapterFactoryImpl
 	 * @generated
 	 */
 	public Adapter createLinkAdapter()
+	{
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.sebastianbenz.task.Text <em>Text</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.sebastianbenz.task.Text
+	 * @generated
+	 */
+	public Adapter createTextAdapter()
 	{
 		return null;
 	}

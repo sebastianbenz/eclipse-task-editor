@@ -8,7 +8,7 @@
  * Contributors:
  *     Sebastian Benz - initial API and implementation
  ******************************************************************************/
-package de.sebastianbenz.task;
+package de.sebastianbenz.task.model;
 
 import static com.google.common.collect.Iterables.transform;
 import static com.google.common.collect.Lists.newArrayList;
@@ -25,9 +25,12 @@ import org.junit.Test;
 
 import com.google.common.base.Function;
 
+import de.sebastianbenz.task.Content;
+import de.sebastianbenz.task.Project;
+import de.sebastianbenz.task.TaskModel;
 import de.sebastianbenz.task.util.AbstractTest;
 
-public class ContentProviderTest extends AbstractTest{
+public class ContentHierarchyTest extends AbstractTest{
 
 	
 	@Test

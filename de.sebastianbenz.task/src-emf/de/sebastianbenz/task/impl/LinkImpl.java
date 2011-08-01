@@ -29,7 +29,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *
  * @generated
  */
-public class LinkImpl extends EmbeddedElementImplCustom implements Link
+public class LinkImpl extends TextSegmentImplCustom implements Link
 {
 	/**
 	 * The default value of the '{@link #getUrl() <em>Url</em>}' attribute.

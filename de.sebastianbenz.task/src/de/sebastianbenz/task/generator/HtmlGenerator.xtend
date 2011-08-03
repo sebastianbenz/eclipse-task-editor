@@ -45,7 +45,6 @@ class HtmlGenerator implements de.sebastianbenz.task.generator.TaskGenerator {
 				text-indent: -2em;
 			}
 			ul li:before {
-				list-style: none;
 				content: "\2D";	
 				margin-right: 0.5em;
 			}
@@ -115,7 +114,8 @@ class HtmlGenerator implements de.sebastianbenz.task.generator.TaskGenerator {
 	'''
 	
 	def isFirst(Task task){
-		return task.parent.children.get(0) == task
+		var tasks = filter(task.parent.children, typeof(Task))
+		return tasks.iterator.next == task
 	}
 	def isLast(Task task){
 		var siblings = task.parent.children
@@ -131,6 +131,7 @@ class HtmlGenerator implements de.sebastianbenz.task.generator.TaskGenerator {
 	}
 	
 	def dispatch generate(EmptyLine emptyLine)'''
+		<br>
 		«generateChildren(emptyLine)»
 	'''
 	

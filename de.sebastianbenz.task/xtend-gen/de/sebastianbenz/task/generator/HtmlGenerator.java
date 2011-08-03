@@ -1,5 +1,6 @@
 package de.sebastianbenz.task.generator;
 
+import com.google.common.collect.Iterables;
 import de.sebastianbenz.task.Code;
 import de.sebastianbenz.task.Container;
 import de.sebastianbenz.task.Content;
@@ -13,6 +14,7 @@ import de.sebastianbenz.task.TaskModel;
 import de.sebastianbenz.task.Text;
 import de.sebastianbenz.task.TextSegment;
 import de.sebastianbenz.task.generator.TaskGenerator;
+import java.util.Iterator;
 import org.apache.commons.lang.StringEscapeUtils;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.xtext.xbase.lib.BooleanExtensions;
@@ -90,9 +92,6 @@ public class HtmlGenerator implements TaskGenerator {
     _builder.newLine();
     _builder.append("\t");
     _builder.append("ul li:before {");
-    _builder.newLine();
-    _builder.append("\t\t");
-    _builder.append("list-style: none;");
     _builder.newLine();
     _builder.append("\t\t");
     _builder.append("content: \"\\2D\";\t");
@@ -205,7 +204,7 @@ public class HtmlGenerator implements TaskGenerator {
     StringConcatenation _builder = new StringConcatenation();
     {
       EList<Content> _children = container.getChildren();
-      for(final Content child : _children) {
+      for(Content child : _children) {
         StringConcatenation _generate = this.generate(child);
         _builder.append(_generate, "");
         _builder.newLineIfNotEmpty();
@@ -267,11 +266,16 @@ public class HtmlGenerator implements TaskGenerator {
   }
   
   public boolean isFirst(final Task task) {
-    Container _parent = task.getParent();
-    EList<Content> _children = _parent.getChildren();
-    Content _get = _children.get(0);
-    boolean _operator_equals = ObjectExtensions.operator_equals(_get, task);
-    return _operator_equals;
+    {
+      Container _parent = task.getParent();
+      EList<Content> _children = _parent.getChildren();
+      Iterable<Task> _filter = Iterables.<Task>filter(_children, de.sebastianbenz.task.Task.class);
+      Iterable<Task> tasks = _filter;
+      Iterator<Task> _iterator = tasks.iterator();
+      Task _next = _iterator.next();
+      boolean _operator_equals = ObjectExtensions.operator_equals(_next, task);
+      return _operator_equals;
+    }
   }
   
   public boolean isLast(final Task task) {
@@ -313,6 +317,8 @@ public class HtmlGenerator implements TaskGenerator {
   
   protected StringConcatenation _generate(final EmptyLine emptyLine) {
     StringConcatenation _builder = new StringConcatenation();
+    _builder.append("<br>");
+    _builder.newLine();
     StringConcatenation _generateChildren = this.generateChildren(emptyLine);
     _builder.append(_generateChildren, "");
     _builder.newLineIfNotEmpty();
@@ -342,7 +348,7 @@ public class HtmlGenerator implements TaskGenerator {
     StringConcatenation _builder = new StringConcatenation();
     {
       EList<TextSegment> _segments = content.getSegments();
-      for(final TextSegment s : _segments) {
+      for(TextSegment s : _segments) {
         CharSequence _write = this.write(s);
         _builder.append(_write, "");
       }

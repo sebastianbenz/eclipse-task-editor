@@ -47,7 +47,7 @@ public class ContentImplCustom extends de.sebastianbenz.task.impl.ContentImpl {
 		UNKNOWN, OPEN, COMPLETED
 	}
 	
-	public static final String TAG = "[ \t]@(\\w+)(\\((.*?)\\))?";
+	public static final String TAG = "(^|\\W)@(\\w+)(\\((.*?)\\))?";
 	
 	private static final Pattern TAG_PATTERN = Pattern.compile(TAG, Pattern.DOTALL);
 	private static final Pattern URL_DESCRIPTION_PATTERN = Pattern.compile("\\[(.+)\\]\\((.+)\\)|\\(?\\b(http://|www[.])[-A-Za-z0-9+&@#/%?=~_()|!:,.;]*[-A-Za-z0-9+&@#/%=~_()|]");
@@ -153,8 +153,8 @@ public class ContentImplCustom extends de.sebastianbenz.task.impl.ContentImpl {
 		}
 		Matcher matcher = TAG_PATTERN.matcher(text);
 		while (matcher.find()) {
-			String name = matcher.group(1);
-			String value = matcher.group(3);
+			String name = matcher.group(2);
+			String value = matcher.group(4);
 			int offset = matcher.start() + SPACE;
 			int length = matcher.end() - offset;
 			getTags().add(Tags.create(name, value, offset, length));
@@ -217,7 +217,7 @@ public class ContentImplCustom extends de.sebastianbenz.task.impl.ContentImpl {
 		addTextSegment(segments, begin, getText().length());
 	}
 
-	private void addTextSegment(EList<TextSegment> segments, int begin,
+	protected void addTextSegment(EList<TextSegment> segments, int begin,
 			int end) {
 		if(begin >= end){
 			return;

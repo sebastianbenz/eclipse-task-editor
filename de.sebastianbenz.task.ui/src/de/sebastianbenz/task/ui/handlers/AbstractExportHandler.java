@@ -36,7 +36,7 @@ public abstract class AbstractExportHandler extends AbstractEditorHandler {
 		doExport(resource, path);
 	}
 
-	private void doExport(XtextResource resource, String path) {
+	protected void doExport(XtextResource resource, String path) {
 		Iterable<TaskModel> taskModels = filter(resource.getContents(),
 				TaskModel.class);
 		Iterator<TaskModel> iterator = taskModels.iterator();
@@ -45,7 +45,6 @@ public abstract class AbstractExportHandler extends AbstractEditorHandler {
 		}
 		StringConcatenation string = generator.generate(iterator.next());
 		Files.writeStringIntoFile(path, string.toString());
-
 	}
 
 	protected String selectFile(Shell shell, XtextResource resource) {

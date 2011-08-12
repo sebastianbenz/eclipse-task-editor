@@ -204,7 +204,7 @@ public class HtmlGenerator implements TaskGenerator {
     StringConcatenation _builder = new StringConcatenation();
     {
       EList<Content> _children = container.getChildren();
-      for(Content child : _children) {
+      for(final Content child : _children) {
         StringConcatenation _generate = this.generate(child);
         _builder.append(_generate, "");
         _builder.newLineIfNotEmpty();
@@ -348,7 +348,7 @@ public class HtmlGenerator implements TaskGenerator {
     StringConcatenation _builder = new StringConcatenation();
     {
       EList<TextSegment> _segments = content.getSegments();
-      for(TextSegment s : _segments) {
+      for(final TextSegment s : _segments) {
         CharSequence _write = this.write(s);
         _builder.append(_write, "");
       }

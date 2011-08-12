@@ -21,7 +21,7 @@ public class MarkdownGenerator implements TaskGenerator {
     StringConcatenation _builder = new StringConcatenation();
     {
       EList<Content> _contents = taskModel.getContents();
-      for(Content content : _contents) {
+      for(final Content content : _contents) {
         StringConcatenation _generate = this.generate(content);
         _builder.append(_generate, "");
         _builder.newLineIfNotEmpty();
@@ -56,7 +56,7 @@ public class MarkdownGenerator implements TaskGenerator {
       String[] lines = _split;
       StringConcatenation _builder = new StringConcatenation();
       {
-        for(String line : lines) {
+        for(final String line : lines) {
           String _operator_plus = StringExtensions.operator_plus("    ", line);
           _builder.append(_operator_plus, "");
         }

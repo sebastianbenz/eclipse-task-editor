@@ -23,7 +23,7 @@ class ConfluenceGenerator implements de.sebastianbenz.task.generator.TaskGenerat
 		''' 
 	
 	def dispatch generate(Note note)
-		'''
+		''' 
 		{color:gray}«escape(note.value)»{color}'''
 	
 	def dispatch generate(Task task)
@@ -52,4 +52,3 @@ class ConfluenceGenerator implements de.sebastianbenz.task.generator.TaskGenerat
 		return string.replaceAll("\\{", "\\\\{").replaceAll("\\}", "\\\\}")
 	}
 }
- 

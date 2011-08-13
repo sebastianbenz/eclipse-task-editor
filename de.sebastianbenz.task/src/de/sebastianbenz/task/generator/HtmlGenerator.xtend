@@ -173,5 +173,6 @@ class HtmlGenerator implements de.sebastianbenz.task.generator.TaskGenerator {
 		<span class="tag">«tag»</span>
 	'''
 	
-}
+} 
+
  

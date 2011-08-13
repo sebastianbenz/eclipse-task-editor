@@ -20,7 +20,7 @@ class MarkdownGenerator implements de.sebastianbenz.task.generator.TaskGenerator
 		«FOR content : taskModel.contents»
 		«generate(content)»
 		«ENDFOR»
-		'''
+		''' 
 	} 
 	
 	def dispatch generate(Note note){

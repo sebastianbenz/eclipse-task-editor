@@ -78,6 +78,7 @@ public class TaskFactoryImpl extends EFactoryImpl implements TaskFactory
 			case TaskPackage.TAG: return createTag();
 			case TaskPackage.LINK: return createLink();
 			case TaskPackage.TEXT: return createText();
+			case TaskPackage.IMAGE: return createImage();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -191,6 +192,17 @@ public class TaskFactoryImpl extends EFactoryImpl implements TaskFactory
 	{
 		TextImplCustom text = new TextImplCustom();
 		return text;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Image createImage()
+	{
+		ImageImplCustom image = new ImageImplCustom();
+		return image;
 	}
 
 	/**

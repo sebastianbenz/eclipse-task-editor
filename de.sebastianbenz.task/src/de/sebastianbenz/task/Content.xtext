@@ -1,0 +1,41 @@
+grammar de.sebastianbenz.task.Content
+
+import "platform:/resource/de.sebastianbenz.task/model/Task.ecore"
+import "http://www.eclipse.org/emf/2002/Ecore" as ecore
+
+Content:
+	{Content}
+	(segments+=TextSegment)*
+	;	
+	
+TextSegment:
+	Text | Tag | Image | Link
+;
+
+Link:
+	(description=DESC url=VALUE) | url=URL
+;
+
+
+Image:
+	"!"(description=DESC url=VALUE) | url=URL
+;
+
+Tag:
+	'@'name=ID value=VALUE?
+;
+
+
+Text:
+	value=ANY
+;
+
+terminal fragment CHAR: !(' '|'\t'|'\r'|'\n');
+terminal URL: ('www.'|'http://') CHAR+;
+terminal DESC: '['->']';
+terminal VALUE: '(' -> ')';
+
+terminal ID: !('@'|'='|'<' |'>'|'!'|'('|')'|':'|' '|'\t'|'\r'|'\n'|'"'|'\''|'&' |'|') !(' '|'\t'|'\r'|'\n'|':')*;
+terminal ANY: .+;
+
+

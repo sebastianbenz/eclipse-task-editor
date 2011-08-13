@@ -18,6 +18,7 @@ import de.sebastianbenz.task.TextSegment
 import de.sebastianbenz.task.Link
 import de.sebastianbenz.task.Tag
 import de.sebastianbenz.task.Text
+import de.sebastianbenz.task.Image
 
 class HtmlGenerator implements de.sebastianbenz.task.generator.TaskGenerator {
 	   
@@ -163,6 +164,11 @@ class HtmlGenerator implements de.sebastianbenz.task.generator.TaskGenerator {
 		}
 		return '<a href="' + url + '">' + description + '</a>' 
 	}	
+	
+	def dispatch write(Image image){
+		return '<p><img src="' + image.url + '" title="' + image.description + '" alt="' + image.description + '"/></p>' 
+	}	
+	
 	def dispatch write(Tag tag)'''
 		<span class="tag">«tag»</span>
 	'''

@@ -16,6 +16,7 @@ package de.sebastianbenz.task.ui;
 import java.util.Collection;
 import java.util.Collections;
 
+import org.eclipse.jface.text.ITextHover;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.eclipse.xtext.ui.editor.XtextEditor;
 import org.eclipse.xtext.ui.editor.XtextSourceViewerConfiguration;
@@ -23,6 +24,7 @@ import org.eclipse.xtext.ui.editor.autoedit.AbstractEditStrategyProvider;
 import org.eclipse.xtext.ui.editor.contentassist.ITemplateProposalProvider;
 import org.eclipse.xtext.ui.editor.folding.FoldedPosition;
 import org.eclipse.xtext.ui.editor.folding.IFoldingRegionProvider;
+import org.eclipse.xtext.ui.editor.hover.IEObjectHoverProvider;
 import org.eclipse.xtext.ui.editor.hyperlinking.IHyperlinkHelper;
 import org.eclipse.xtext.ui.editor.model.IResourceForEditorInputFactory;
 import org.eclipse.xtext.ui.editor.model.ITokenTypeToPartitionTypeMapper;
@@ -37,6 +39,7 @@ import com.google.inject.Binder;
 
 import de.sebastianbenz.task.ui.contentassist.TaskTemplateProvider;
 import de.sebastianbenz.task.ui.editor.AutoEditStrategyProvider;
+import de.sebastianbenz.task.ui.editor.FoldingRegionProvider;
 import de.sebastianbenz.task.ui.editor.SourceViewerConfiguration;
 import de.sebastianbenz.task.ui.editor.TaskEditor;
 import de.sebastianbenz.task.ui.editor.TaskHyperLinkHelper;
@@ -44,6 +47,8 @@ import de.sebastianbenz.task.ui.editor.TaskTokenTypeToPartitionTypeMapper;
 import de.sebastianbenz.task.ui.highlighting.HighlightingConfiguration;
 import de.sebastianbenz.task.ui.highlighting.SemanticHighlightingCalculator;
 import de.sebastianbenz.task.ui.highlighting.TokenHighlightingConfiguration;
+import de.sebastianbenz.task.ui.hover.TaskCompositeHover;
+import de.sebastianbenz.task.ui.hover.TaskHoverProvider;
 
 /**
  * Use this class to register components to be used within the IDE.
@@ -68,10 +73,10 @@ public class TaskUiModule extends de.sebastianbenz.task.ui.AbstractTaskUiModule 
 		binder.bind(XtextEditor.class).to(TaskEditor.class);
 	}
 
-	public Class<? extends IFoldingRegionProvider> bindIFoldingRegionProvider(){
-		return NoFolding.class;
+	public Class<? extends IFoldingRegionProvider> bindIFoldingRegionProvider() {
+		return FoldingRegionProvider.class;
 	}
-	
+
 	public Class<? extends org.eclipse.xtext.ui.editor.syntaxcoloring.ISemanticHighlightingCalculator> bindISemanticHighlightingCalculator() {
 		return SemanticHighlightingCalculator.class;
 	}
@@ -112,17 +117,26 @@ public class TaskUiModule extends de.sebastianbenz.task.ui.AbstractTaskUiModule 
 	public com.google.inject.Provider<org.eclipse.xtext.resource.containers.IAllContainersState> provideIAllContainersState() {
 		return org.eclipse.xtext.ui.shared.Access.getWorkspaceProjectsState();
 	}
-	
-	@org.eclipse.xtext.service.SingletonBinding(eager=true)	public Class<? extends de.sebastianbenz.task.validation.TaskJavaValidator> bindTaskJavaValidator() {
+
+	@org.eclipse.xtext.service.SingletonBinding(eager = true)
+	public Class<? extends de.sebastianbenz.task.validation.TaskJavaValidator> bindTaskJavaValidator() {
 		return de.sebastianbenz.task.ui.validation.TaskUiValidator.class;
 	}
-	
-	public Class<? extends ITokenTypeToPartitionTypeMapper> bindITokenTypeToPartitionTypeMapper(){
+
+	public Class<? extends ITokenTypeToPartitionTypeMapper> bindITokenTypeToPartitionTypeMapper() {
 		return TaskTokenTypeToPartitionTypeMapper.class;
 	}
-	
+
 	public Class<? extends IHyperlinkHelper> bindIHyperlinkHelper() {
 		return TaskHyperLinkHelper.class;
 	}
+
+	public Class<? extends IEObjectHoverProvider> bindIEObjectHoverProvider() {
+		return TaskHoverProvider.class;
+	}
 	
+	public Class<? extends ITextHover> bindITextHover() {
+		return TaskCompositeHover.class;
+	}
+
 }

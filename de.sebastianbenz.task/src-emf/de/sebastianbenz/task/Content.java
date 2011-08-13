@@ -23,6 +23,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link de.sebastianbenz.task.Content#getTags <em>Tags</em>}</li>
  *   <li>{@link de.sebastianbenz.task.Content#getLinks <em>Links</em>}</li>
  *   <li>{@link de.sebastianbenz.task.Content#getSegments <em>Segments</em>}</li>
+ *   <li>{@link de.sebastianbenz.task.Content#getImages <em>Images</em>}</li>
  * </ul>
  * </p>
  *
@@ -177,6 +178,22 @@ public interface Content extends Container
 	 * @generated
 	 */
 	EList<TextSegment> getSegments();
+
+	/**
+	 * Returns the value of the '<em><b>Images</b></em>' containment reference list.
+	 * The list contents are of type {@link de.sebastianbenz.task.Image}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Images</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Images</em>' containment reference list.
+	 * @see de.sebastianbenz.task.TaskPackage#getContent_Images()
+	 * @model containment="true" transient="true" derived="true"
+	 * @generated
+	 */
+	EList<Image> getImages();
 
 	/**
 	 * <!-- begin-user-doc -->

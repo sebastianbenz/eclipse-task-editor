@@ -38,6 +38,8 @@ class ConfluenceGenerator implements de.sebastianbenz.task.generator.TaskGenerat
 		'''
 		
 		'''
+		
+	// image !fish.gif|title="I am a fish"!
 	
 	def dispatch generate(Code code)
 		''' 

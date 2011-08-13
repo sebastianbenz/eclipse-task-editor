@@ -8,6 +8,7 @@ package de.sebastianbenz.task.impl;
 
 import de.sebastianbenz.task.Container;
 import de.sebastianbenz.task.Content;
+import de.sebastianbenz.task.Image;
 import de.sebastianbenz.task.Link;
 import de.sebastianbenz.task.Tag;
 import de.sebastianbenz.task.TaskModel;
@@ -45,6 +46,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link de.sebastianbenz.task.impl.ContentImpl#getTags <em>Tags</em>}</li>
  *   <li>{@link de.sebastianbenz.task.impl.ContentImpl#getLinks <em>Links</em>}</li>
  *   <li>{@link de.sebastianbenz.task.impl.ContentImpl#getSegments <em>Segments</em>}</li>
+ *   <li>{@link de.sebastianbenz.task.impl.ContentImpl#getImages <em>Images</em>}</li>
  * </ul>
  * </p>
  *
@@ -121,6 +123,16 @@ public abstract class ContentImpl extends ContainerImplCustom implements Content
 	 * @ordered
 	 */
 	protected EList<TextSegment> segments;
+
+	/**
+	 * The cached value of the '{@link #getImages() <em>Images</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getImages()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Image> images;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -340,6 +352,20 @@ public abstract class ContentImpl extends ContainerImplCustom implements Content
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<Image> getImages()
+	{
+		if (images == null)
+		{
+			images = new EObjectContainmentEList<Image>(Image.class, this, TaskPackage.CONTENT__IMAGES);
+		}
+		return images;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public int getLevel()
 	{
 		// TODO: implement this method
@@ -413,6 +439,8 @@ public abstract class ContentImpl extends ContainerImplCustom implements Content
 				return ((InternalEList<?>)getLinks()).basicRemove(otherEnd, msgs);
 			case TaskPackage.CONTENT__SEGMENTS:
 				return ((InternalEList<?>)getSegments()).basicRemove(otherEnd, msgs);
+			case TaskPackage.CONTENT__IMAGES:
+				return ((InternalEList<?>)getImages()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -458,6 +486,8 @@ public abstract class ContentImpl extends ContainerImplCustom implements Content
 				return getLinks();
 			case TaskPackage.CONTENT__SEGMENTS:
 				return getSegments();
+			case TaskPackage.CONTENT__IMAGES:
+				return getImages();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -498,6 +528,10 @@ public abstract class ContentImpl extends ContainerImplCustom implements Content
 				getSegments().clear();
 				getSegments().addAll((Collection<? extends TextSegment>)newValue);
 				return;
+			case TaskPackage.CONTENT__IMAGES:
+				getImages().clear();
+				getImages().addAll((Collection<? extends Image>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -533,6 +567,9 @@ public abstract class ContentImpl extends ContainerImplCustom implements Content
 			case TaskPackage.CONTENT__SEGMENTS:
 				getSegments().clear();
 				return;
+			case TaskPackage.CONTENT__IMAGES:
+				getImages().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -561,6 +598,8 @@ public abstract class ContentImpl extends ContainerImplCustom implements Content
 				return links != null && !links.isEmpty();
 			case TaskPackage.CONTENT__SEGMENTS:
 				return segments != null && !segments.isEmpty();
+			case TaskPackage.CONTENT__IMAGES:
+				return images != null && !images.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

@@ -919,10 +919,10 @@ public class InternalQueryLexer extends Lexer {
     static final String DFA6_eofS =
         "\74\uffff";
     static final String DFA6_minS =
-        "\1\0\1\162\1\174\1\156\1\46\1\157\1\75\2\uffff\1\162\1\uffff\1"+
-        "\141\2\uffff\2\75\2\0\2\uffff\1\0\3\uffff\1\144\1\uffff\1\164\4"+
-        "\uffff\1\157\1\uffff\1\163\1\170\11\uffff\2\0\1\152\1\153\1\164"+
-        "\2\uffff\1\145\2\0\1\143\2\uffff\1\164\1\0\1\uffff";
+        "\1\0\1\162\1\174\1\156\1\46\1\157\1\75\2\uffff\1\162\1\uffff\1\141"+
+        "\2\uffff\2\75\2\0\2\uffff\1\0\3\uffff\1\144\1\uffff\1\164\4\uffff"+
+        "\1\157\1\uffff\1\163\1\170\11\uffff\2\0\1\152\1\153\1\164\2\uffff"+
+        "\1\145\2\0\1\143\2\uffff\1\164\1\0\1\uffff";
     static final String DFA6_maxS =
         "\1\uffff\1\162\1\174\1\156\1\46\1\157\1\75\2\uffff\1\162\1\uffff"+
         "\1\145\2\uffff\2\75\2\uffff\2\uffff\1\uffff\3\uffff\1\144\1\uffff"+

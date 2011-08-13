@@ -144,6 +144,11 @@ public class TaskAdapterFactory extends AdapterFactoryImpl
 				return createTextAdapter();
 			}
 			@Override
+			public Adapter caseImage(Image object)
+			{
+				return createImageAdapter();
+			}
+			@Override
 			public Adapter defaultCase(EObject object)
 			{
 				return createEObjectAdapter();
@@ -356,6 +361,21 @@ public class TaskAdapterFactory extends AdapterFactoryImpl
 	 * @generated
 	 */
 	public Adapter createTextAdapter()
+	{
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link de.sebastianbenz.task.Image <em>Image</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see de.sebastianbenz.task.Image
+	 * @generated
+	 */
+	public Adapter createImageAdapter()
 	{
 		return null;
 	}

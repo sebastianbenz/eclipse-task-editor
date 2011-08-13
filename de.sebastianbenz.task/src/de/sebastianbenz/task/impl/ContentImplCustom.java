@@ -10,6 +10,9 @@
  ******************************************************************************/
 package de.sebastianbenz.task.impl;
 
+import static com.google.common.collect.Iterables.concat;
+import static com.google.common.collect.Maps.newTreeMap;
+
 import java.util.TreeMap;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -23,6 +26,7 @@ import com.google.common.collect.Maps;
 import de.sebastianbenz.task.Container;
 import de.sebastianbenz.task.Content;
 import de.sebastianbenz.task.EmptyLine;
+import de.sebastianbenz.task.Image;
 import de.sebastianbenz.task.Link;
 import de.sebastianbenz.task.Tag;
 import de.sebastianbenz.task.TaskFactory;
@@ -30,6 +34,7 @@ import de.sebastianbenz.task.TaskPackage;
 import de.sebastianbenz.task.Text;
 import de.sebastianbenz.task.TextSegment;
 import de.sebastianbenz.task.tagging.Tags;
+import de.sebastianbenz.task.util.Images;
 import de.sebastianbenz.task.util.Links;
 
 public class ContentImplCustom extends de.sebastianbenz.task.impl.ContentImpl {
@@ -48,9 +53,9 @@ public class ContentImplCustom extends de.sebastianbenz.task.impl.ContentImpl {
 	}
 	
 	public static final String TAG = "(^|\\W)@(\\w+)(\\((.*?)\\))?";
-	
+	// !\\[(.+)\\]\\((.+) (\"(.*)\")? \\)
 	private static final Pattern TAG_PATTERN = Pattern.compile(TAG, Pattern.DOTALL);
-	private static final Pattern URL_DESCRIPTION_PATTERN = Pattern.compile("\\[(.+)\\]\\((.+)\\)|\\(?\\b(http://|www[.])[-A-Za-z0-9+&@#/%?=~_()|!:,.;]*[-A-Za-z0-9+&@#/%=~_()|]");
+	private static final Pattern URL_DESCRIPTION_PATTERN = Pattern.compile("(!)?\\[(.+)\\]\\((.+)\\)|\\(?\\b(http://|www[.])[-A-Za-z0-9+&@#/%?=~_()|!:,.;]*[-A-Za-z0-9+&@#/%=~_()|]");
 
 	private DoneStatus isDone = DoneStatus.UNKNOWN;
 	private String value;
@@ -139,8 +144,6 @@ public class ContentImplCustom extends de.sebastianbenz.task.impl.ContentImpl {
 	@Override
 	public EList<Link> getLinks() {
 		if(links == null){
-			links = new EObjectContainmentEList<Link>(Link.class, this,
-					TaskPackage.CONTENT__LINKS);
 			parseLinks();
 			
 		}
@@ -160,29 +163,53 @@ public class ContentImplCustom extends de.sebastianbenz.task.impl.ContentImpl {
 			getTags().add(Tags.create(name, value, offset, length));
 		}
 	}
+	
+	@Override
+	public EList<Image> getImages() {
+		if(images == null){
+			parseLinks();
+			
+		}
+		return images;
+	}
 
 	private void parseLinks() {
+		links = new EObjectContainmentEList<Link>(Link.class, this,
+				TaskPackage.CONTENT__LINKS);
+		images = new EObjectContainmentEList<Image>(Image.class, this,
+				TaskPackage.CONTENT__IMAGES);
+		
 		if (text == null) {
 			return;
 		}
 		Matcher matcher = URL_DESCRIPTION_PATTERN.matcher(text);
 		while (matcher.find()) {
-			String description = "";
-			String url;
-			if(isLinkWithDescription(matcher)){
-				description = matcher.group(1);
-				url = matcher.group(2);
-			}else{
-				url = matcher.group();
-			}
 			int offset = matcher.start();
 			int length = matcher.end() - offset;
-			links.add(Links.create(description, url, offset, length));
+
+			String description = "";
+			String url;
+			if(isImage(matcher)){
+				description = matcher.group(2);
+				url = matcher.group(3);
+				images.add(Images.create(description, url, offset, length));
+			}else if(isLinkWithDescription(matcher)){
+				description = matcher.group(2);
+				url = matcher.group(3);
+				links.add(Links.create(description, url, offset, length));
+			}else{
+				url = matcher.group();
+				links.add(Links.create(description, url, offset, length));
+			}
 		}
 	}
 
+	private boolean isImage(Matcher matcher) {
+		return matcher.group(1) != null;
+	}
+
 	private boolean isLinkWithDescription(Matcher matcher) {
-		return matcher.group(1) != null && matcher.group(2) != null;
+		return matcher.group(2) != null && matcher.group(3) != null;
 	}
 	
 	@Override
@@ -196,9 +223,8 @@ public class ContentImplCustom extends de.sebastianbenz.task.impl.ContentImpl {
 	}
 
 	private void calculateSegments(EList<TextSegment> segments) {
-		TreeMap<Integer, TextSegment> offsets = Maps.newTreeMap();
-		add(offsets, getLinks());
-		add(offsets, getTags());
+		TreeMap<Integer, TextSegment> offsets = newTreeMap();
+		add(offsets, concat(getLinks(), getTags(), getImages()));
 
 		if(offsets.isEmpty()){
 			addTextSegment(segments, 0, getText().length());
@@ -233,7 +259,7 @@ public class ContentImplCustom extends de.sebastianbenz.task.impl.ContentImpl {
 		segments.add(text);
 	}
 
-	private void add(TreeMap<Integer, TextSegment> offsets, EList<? extends TextSegment> segments) {
+	private void add(TreeMap<Integer, TextSegment> offsets, Iterable<? extends TextSegment> segments) {
 		for (TextSegment s : segments) {
 			offsets.put(s.getOffset(), s);
 		}

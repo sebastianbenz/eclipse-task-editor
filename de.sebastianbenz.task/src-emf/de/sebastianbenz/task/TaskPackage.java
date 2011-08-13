@@ -208,13 +208,22 @@ public interface TaskPackage extends EPackage
 	int CONTENT__SEGMENTS = CONTAINER_FEATURE_COUNT + 6;
 
 	/**
+	 * The feature id for the '<em><b>Images</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTENT__IMAGES = CONTAINER_FEATURE_COUNT + 7;
+
+	/**
 	 * The number of structural features of the '<em>Content</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTENT_FEATURE_COUNT = CONTAINER_FEATURE_COUNT + 7;
+	int CONTENT_FEATURE_COUNT = CONTAINER_FEATURE_COUNT + 8;
 
 	/**
 	 * The meta object id for the '{@link de.sebastianbenz.task.impl.TaskImpl <em>Task</em>}' class.
@@ -297,6 +306,15 @@ public interface TaskPackage extends EPackage
 	 * @ordered
 	 */
 	int TASK__SEGMENTS = CONTENT__SEGMENTS;
+
+	/**
+	 * The feature id for the '<em><b>Images</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TASK__IMAGES = CONTENT__IMAGES;
 
 	/**
 	 * The number of structural features of the '<em>Task</em>' class.
@@ -390,6 +408,15 @@ public interface TaskPackage extends EPackage
 	int NOTE__SEGMENTS = CONTENT__SEGMENTS;
 
 	/**
+	 * The feature id for the '<em><b>Images</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NOTE__IMAGES = CONTENT__IMAGES;
+
+	/**
 	 * The number of structural features of the '<em>Note</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -479,6 +506,15 @@ public interface TaskPackage extends EPackage
 	 * @ordered
 	 */
 	int PROJECT__SEGMENTS = CONTENT__SEGMENTS;
+
+	/**
+	 * The feature id for the '<em><b>Images</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROJECT__IMAGES = CONTENT__IMAGES;
 
 	/**
 	 * The number of structural features of the '<em>Project</em>' class.
@@ -600,6 +636,15 @@ public interface TaskPackage extends EPackage
 	int EMPTY_LINE__SEGMENTS = CONTENT__SEGMENTS;
 
 	/**
+	 * The feature id for the '<em><b>Images</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EMPTY_LINE__IMAGES = CONTENT__IMAGES;
+
+	/**
 	 * The number of structural features of the '<em>Empty Line</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -689,6 +734,15 @@ public interface TaskPackage extends EPackage
 	 * @ordered
 	 */
 	int CODE__SEGMENTS = CONTENT__SEGMENTS;
+
+	/**
+	 * The feature id for the '<em><b>Images</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CODE__IMAGES = CONTENT__IMAGES;
 
 	/**
 	 * The feature id for the '<em><b>Lang</b></em>' attribute.
@@ -937,6 +991,70 @@ public interface TaskPackage extends EPackage
 	 */
 	int TEXT_FEATURE_COUNT = TEXT_SEGMENT_FEATURE_COUNT + 1;
 
+	/**
+	 * The meta object id for the '{@link de.sebastianbenz.task.impl.ImageImpl <em>Image</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see de.sebastianbenz.task.impl.ImageImpl
+	 * @see de.sebastianbenz.task.impl.TaskPackageImpl#getImage()
+	 * @generated
+	 */
+	int IMAGE = 13;
+
+	/**
+	 * The feature id for the '<em><b>Offset</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE__OFFSET = TEXT_SEGMENT__OFFSET;
+
+	/**
+	 * The feature id for the '<em><b>Length</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE__LENGTH = TEXT_SEGMENT__LENGTH;
+
+	/**
+	 * The feature id for the '<em><b>Content</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE__CONTENT = TEXT_SEGMENT__CONTENT;
+
+	/**
+	 * The feature id for the '<em><b>Url</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE__URL = TEXT_SEGMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE__DESCRIPTION = TEXT_SEGMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Image</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMAGE_FEATURE_COUNT = TEXT_SEGMENT_FEATURE_COUNT + 2;
+
 
 	/**
 	 * Returns the meta object for class '{@link de.sebastianbenz.task.TaskModel <em>Model</em>}'.
@@ -1045,6 +1163,17 @@ public interface TaskPackage extends EPackage
 	 * @generated
 	 */
 	EReference getContent_Segments();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link de.sebastianbenz.task.Content#getImages <em>Images</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Images</em>'.
+	 * @see de.sebastianbenz.task.Content#getImages()
+	 * @see #getContent()
+	 * @generated
+	 */
+	EReference getContent_Images();
 
 	/**
 	 * Returns the meta object for class '{@link de.sebastianbenz.task.Task <em>Task</em>}'.
@@ -1267,6 +1396,38 @@ public interface TaskPackage extends EPackage
 	EAttribute getText_Value();
 
 	/**
+	 * Returns the meta object for class '{@link de.sebastianbenz.task.Image <em>Image</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Image</em>'.
+	 * @see de.sebastianbenz.task.Image
+	 * @generated
+	 */
+	EClass getImage();
+
+	/**
+	 * Returns the meta object for the attribute '{@link de.sebastianbenz.task.Image#getUrl <em>Url</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Url</em>'.
+	 * @see de.sebastianbenz.task.Image#getUrl()
+	 * @see #getImage()
+	 * @generated
+	 */
+	EAttribute getImage_Url();
+
+	/**
+	 * Returns the meta object for the attribute '{@link de.sebastianbenz.task.Image#getDescription <em>Description</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Description</em>'.
+	 * @see de.sebastianbenz.task.Image#getDescription()
+	 * @see #getImage()
+	 * @generated
+	 */
+	EAttribute getImage_Description();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1372,6 +1533,14 @@ public interface TaskPackage extends EPackage
 		 * @generated
 		 */
 		EReference CONTENT__SEGMENTS = eINSTANCE.getContent_Segments();
+
+		/**
+		 * The meta object literal for the '<em><b>Images</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CONTENT__IMAGES = eINSTANCE.getContent_Images();
 
 		/**
 		 * The meta object literal for the '{@link de.sebastianbenz.task.impl.TaskImpl <em>Task</em>}' class.
@@ -1562,6 +1731,32 @@ public interface TaskPackage extends EPackage
 		 * @generated
 		 */
 		EAttribute TEXT__VALUE = eINSTANCE.getText_Value();
+
+		/**
+		 * The meta object literal for the '{@link de.sebastianbenz.task.impl.ImageImpl <em>Image</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see de.sebastianbenz.task.impl.ImageImpl
+		 * @see de.sebastianbenz.task.impl.TaskPackageImpl#getImage()
+		 * @generated
+		 */
+		EClass IMAGE = eINSTANCE.getImage();
+
+		/**
+		 * The meta object literal for the '<em><b>Url</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute IMAGE__URL = eINSTANCE.getImage_Url();
+
+		/**
+		 * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute IMAGE__DESCRIPTION = eINSTANCE.getImage_Description();
 
 	}
 

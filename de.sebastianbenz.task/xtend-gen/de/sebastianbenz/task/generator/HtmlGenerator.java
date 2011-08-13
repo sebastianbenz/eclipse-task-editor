@@ -5,6 +5,7 @@ import de.sebastianbenz.task.Code;
 import de.sebastianbenz.task.Container;
 import de.sebastianbenz.task.Content;
 import de.sebastianbenz.task.EmptyLine;
+import de.sebastianbenz.task.Image;
 import de.sebastianbenz.task.Link;
 import de.sebastianbenz.task.Note;
 import de.sebastianbenz.task.Project;
@@ -391,6 +392,19 @@ public class HtmlGenerator implements TaskGenerator {
     }
   }
   
+  protected CharSequence _write(final Image image) {
+    String _url = image.getUrl();
+    String _operator_plus = StringExtensions.operator_plus("<p><img src=\"", _url);
+    String _operator_plus_1 = StringExtensions.operator_plus(_operator_plus, "\" title=\"");
+    String _description = image.getDescription();
+    String _operator_plus_2 = StringExtensions.operator_plus(_operator_plus_1, _description);
+    String _operator_plus_3 = StringExtensions.operator_plus(_operator_plus_2, "\" alt=\"");
+    String _description_1 = image.getDescription();
+    String _operator_plus_4 = StringExtensions.operator_plus(_operator_plus_3, _description_1);
+    String _operator_plus_5 = StringExtensions.operator_plus(_operator_plus_4, "\"/></p>");
+    return _operator_plus_5;
+  }
+  
   protected CharSequence _write(final Tag tag) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("<span class=\"tag\">");
@@ -417,16 +431,18 @@ public class HtmlGenerator implements TaskGenerator {
     }
   }
   
-  public CharSequence write(final TextSegment link) {
-    if ((link instanceof Link)) {
-      return _write((Link)link);
-    } else if ((link instanceof Tag)) {
-      return _write((Tag)link);
-    } else if ((link instanceof Text)) {
-      return _write((Text)link);
+  public CharSequence write(final TextSegment image) {
+    if ((image instanceof Image)) {
+      return _write((Image)image);
+    } else if ((image instanceof Link)) {
+      return _write((Link)image);
+    } else if ((image instanceof Tag)) {
+      return _write((Tag)image);
+    } else if ((image instanceof Text)) {
+      return _write((Text)image);
     } else {
       throw new IllegalArgumentException("Unhandled parameter types: " +
-        java.util.Arrays.<Object>asList(link).toString());
+        java.util.Arrays.<Object>asList(image).toString());
     }
   }
 }

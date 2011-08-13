@@ -10,6 +10,7 @@ import de.sebastianbenz.task.Code;
 import de.sebastianbenz.task.Content;
 import de.sebastianbenz.task.EmptyLine;
 import de.sebastianbenz.task.GlobalTaskModel;
+import de.sebastianbenz.task.Image;
 import de.sebastianbenz.task.Link;
 import de.sebastianbenz.task.Note;
 import de.sebastianbenz.task.Project;
@@ -126,6 +127,13 @@ public class TaskPackageImpl extends EPackageImpl implements TaskPackage
 	 * @generated
 	 */
 	private EClass textEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass imageEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -288,6 +296,16 @@ public class TaskPackageImpl extends EPackageImpl implements TaskPackage
 	public EReference getContent_Segments()
 	{
 		return (EReference)contentEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getContent_Images()
+	{
+		return (EReference)contentEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -505,6 +523,36 @@ public class TaskPackageImpl extends EPackageImpl implements TaskPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getImage()
+	{
+		return imageEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getImage_Url()
+	{
+		return (EAttribute)imageEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getImage_Description()
+	{
+		return (EAttribute)imageEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public TaskFactory getTaskFactory()
 	{
 		return (TaskFactory)getEFactoryInstance();
@@ -541,6 +589,7 @@ public class TaskPackageImpl extends EPackageImpl implements TaskPackage
 		createEReference(contentEClass, CONTENT__TAGS);
 		createEReference(contentEClass, CONTENT__LINKS);
 		createEReference(contentEClass, CONTENT__SEGMENTS);
+		createEReference(contentEClass, CONTENT__IMAGES);
 
 		taskEClass = createEClass(TASK);
 
@@ -573,6 +622,10 @@ public class TaskPackageImpl extends EPackageImpl implements TaskPackage
 
 		textEClass = createEClass(TEXT);
 		createEAttribute(textEClass, TEXT__VALUE);
+
+		imageEClass = createEClass(IMAGE);
+		createEAttribute(imageEClass, IMAGE__URL);
+		createEAttribute(imageEClass, IMAGE__DESCRIPTION);
 	}
 
 	/**
@@ -615,6 +668,7 @@ public class TaskPackageImpl extends EPackageImpl implements TaskPackage
 		tagEClass.getESuperTypes().add(this.getTextSegment());
 		linkEClass.getESuperTypes().add(this.getTextSegment());
 		textEClass.getESuperTypes().add(this.getTextSegment());
+		imageEClass.getESuperTypes().add(this.getTextSegment());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(taskModelEClass, TaskModel.class, "TaskModel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -628,6 +682,7 @@ public class TaskPackageImpl extends EPackageImpl implements TaskPackage
 		initEReference(getContent_Tags(), this.getTag(), null, "tags", null, 0, -1, Content.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEReference(getContent_Links(), this.getLink(), null, "links", null, 0, -1, Content.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 		initEReference(getContent_Segments(), this.getTextSegment(), null, "segments", null, 0, -1, Content.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getContent_Images(), this.getImage(), null, "images", null, 0, -1, Content.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		addEOperation(contentEClass, ecorePackage.getEInt(), "getLevel", 0, 1, IS_UNIQUE, IS_ORDERED);
 
@@ -666,6 +721,10 @@ public class TaskPackageImpl extends EPackageImpl implements TaskPackage
 
 		initEClass(textEClass, Text.class, "Text", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getText_Value(), ecorePackage.getEString(), "value", null, 0, 1, Text.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(imageEClass, Image.class, "Image", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getImage_Url(), ecorePackage.getEString(), "url", null, 0, 1, Image.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getImage_Description(), ecorePackage.getEString(), "description", null, 0, 1, Image.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

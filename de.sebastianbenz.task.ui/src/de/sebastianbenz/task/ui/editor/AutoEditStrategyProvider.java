@@ -123,7 +123,7 @@ public class AutoEditStrategyProvider extends DefaultAutoEditStrategyProvider {
 		super.configure(acceptor);
 		configureAngleBracket(acceptor);
 		
-		acceptor.accept(singleLineTerminals.newInstance("'''", "\n'''"),DEFAULT_CONTENT_TYPE);
+		acceptor.accept(partitionInsert.newInstance("'''", "'''"),DEFAULT_CONTENT_TYPE);
 	}
 
 	private void configureAngleBracket(IEditStrategyAcceptor acceptor) {

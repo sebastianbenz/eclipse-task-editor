@@ -22,6 +22,7 @@ import org.eclipse.xtext.ui.editor.XtextEditor;
 import org.eclipse.xtext.ui.editor.XtextSourceViewerConfiguration;
 import org.eclipse.xtext.ui.editor.autoedit.AbstractEditStrategyProvider;
 import org.eclipse.xtext.ui.editor.contentassist.ITemplateProposalProvider;
+import org.eclipse.xtext.ui.editor.doubleClicking.DoubleClickStrategyProvider;
 import org.eclipse.xtext.ui.editor.folding.FoldedPosition;
 import org.eclipse.xtext.ui.editor.folding.IFoldingRegionProvider;
 import org.eclipse.xtext.ui.editor.hover.IEObjectHoverProvider;
@@ -71,6 +72,7 @@ public class TaskUiModule extends de.sebastianbenz.task.ui.AbstractTaskUiModule 
 	public void configure(Binder binder) {
 		super.configure(binder);
 		binder.bind(XtextEditor.class).to(TaskEditor.class);
+		binder.bind(DoubleClickStrategyProvider.class).to(TaskDoubleClickStrategyProvider.class);
 	}
 
 	public Class<? extends IFoldingRegionProvider> bindIFoldingRegionProvider() {
@@ -138,6 +140,7 @@ public class TaskUiModule extends de.sebastianbenz.task.ui.AbstractTaskUiModule 
 	public Class<? extends ITextHover> bindITextHover() {
 		return TaskCompositeHover.class;
 	}
+	
 
 }
 

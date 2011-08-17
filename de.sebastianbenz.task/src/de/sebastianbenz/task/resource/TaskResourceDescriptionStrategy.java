@@ -58,7 +58,11 @@ public class TaskResourceDescriptionStrategy extends
 				tagData.add(tag.getName());
 			}
 			userData.put(Descriptions.TAG_KEY, on(Descriptions.SEPARATOR).join(tagData));
-			IEObjectDescription description = create(nameOf(content), content, userData);
+			QualifiedName name = nameOf(content);
+			if(name == null){
+				return Boolean.FALSE;
+			}
+			IEObjectDescription description = create(name, content, userData);
 			acceptor.accept(description);
 			return Boolean.TRUE;
 		}

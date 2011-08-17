@@ -52,6 +52,9 @@ class HtmlGenerator implements de.sebastianbenz.task.generator.TaskGenerator {
 			.note{
 				color: gray;
 			}
+			.syntaxhighlighter { 
+				padding-bottom: 1px;
+			}
 		</style
 		
 		</head> 
@@ -137,7 +140,7 @@ class HtmlGenerator implements de.sebastianbenz.task.generator.TaskGenerator {
 	'''
 	
 	def dispatch generate(Code code)''' 
-		<pre class="brush: «code.lang»">
+		<pre class="brush: «code.lang»; toolbar: false">
 		«StringEscapeUtils::escapeHtml(code.value)»
 		</pre>
 		«generateChildren(code)»

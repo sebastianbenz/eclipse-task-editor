@@ -112,6 +112,15 @@ public class HtmlGenerator implements TaskGenerator {
     _builder.append("\t");
     _builder.append("}");
     _builder.newLine();
+    _builder.append("\t");
+    _builder.append(".syntaxhighlighter { ");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append("padding-bottom: 1px;");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("}");
+    _builder.newLine();
     _builder.append("</style");
     _builder.newLine();
     _builder.newLine();
@@ -331,7 +340,7 @@ public class HtmlGenerator implements TaskGenerator {
     _builder.append("<pre class=\"brush: ");
     String _lang = code.getLang();
     _builder.append(_lang, "");
-    _builder.append("\">");
+    _builder.append("; toolbar: false\">");
     _builder.newLineIfNotEmpty();
     String _value = code.getValue();
     String _escapeHtml = StringEscapeUtils.escapeHtml(_value);

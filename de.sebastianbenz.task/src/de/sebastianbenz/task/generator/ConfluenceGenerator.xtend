@@ -12,23 +12,27 @@ import de.sebastianbenz.task.Note
 import de.sebastianbenz.task.Project
 import de.sebastianbenz.task.EmptyLine
 import org.eclipse.xtext.xtend2.lib.StringConcatenation
+import de.sebastianbenz.task.Text
+import de.sebastianbenz.task.Link
+import de.sebastianbenz.task.Image
+import de.sebastianbenz.task.Tag
 
 class ConfluenceGenerator implements de.sebastianbenz.task.generator.TaskGenerator {
 	   
 	override StringConcatenation generate(TaskModel taskModel)
 		'''
 		«FOR content : taskModel.contents»
-			«generate(content)»«FOR tag : content.tags»{color:gray}«tag»{color} «ENDFOR»
+			«generate(content)»
 		«ENDFOR»
 		''' 
 	
 	def dispatch generate(Note note)
 		''' 
-		{color:gray}«escape(note.value)»{color}'''
+		«FOR s : note.segments»«write(s)»«ENDFOR»'''
 	
 	def dispatch generate(Task task)
 		'''
-		*  «IF task.done»-«ENDIF»«escape(task.value.trim())» «IF task.done»-«ENDIF»'''
+		*  «IF task.done»-«ENDIF»«FOR s : task.segments»«write(s)»«ENDFOR»«IF task.done»-«ENDIF»'''
 	
 	def dispatch generate(Project project)
 		'''
@@ -39,14 +43,35 @@ class ConfluenceGenerator implements de.sebastianbenz.task.generator.TaskGenerat
 		
 		'''
 		
-	// image !fish.gif|title="I am a fish"!
+	def dispatch write(Text text){
+		return escape(text.value)
+	}
 	
-	def dispatch generate(Code code)
-		''' 
+	def dispatch write(Link link){
+		var url = link.url
+		if(!url.startsWith("http://")){
+			url = "http://" + url;
+		}
+		var description = ""
+		if(link.description == ""){
+			description = link.url 
+		}else{
+			description = link.description
+		}
+		return '[' + link.description + '|' + link.url + ']'
+	}	
+	
+	def dispatch write(Image image){
+		return '!' + image.url + '|title="' + image.description + '"!'
+	}	
+	
+	def dispatch write(Tag tag)'''{color:gray}+«tag»{+}{color}'''
+	
+	def dispatch generate(Code code)''' 
 		{code}
 		«code.value»
 		{code}
-		'''
+	'''
 	
 	def escape(String string){
 		return string.replaceAll("\\{", "\\\\{").replaceAll("\\}", "\\\\}")

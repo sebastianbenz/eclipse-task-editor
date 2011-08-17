@@ -7,7 +7,6 @@
 *******************************************************************************/
 package de.sebastianbenz.task.impl;
 
-import org.eclipse.xtext.util.Strings;
 
 
 public class ImageImplCustom extends de.sebastianbenz.task.impl.ImageImpl {

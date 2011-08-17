@@ -1,0 +1,86 @@
+Testing & Contious Integration:
+	
+	Creating a knowledge base:
+	
+		-  Testing frameworks
+			- When to use which framework?
+			- What tools are there?
+			- References to Blog entries, articles
+			- List of people with experience in these frameworks 
+		- Best practices
+			- How to test EMF based applications
+			- Builders
+			- Reusable matchers, provide matcher libraries
+		-  Book recommendations
+
+	Building a community:
+		
+		- Collect a list of people with experience in different testing domains
+		- Encourage active knowlege exchange
+		- Let people show what they are proud of
+		
+	Providing useful workflows:
+		
+		-  Build server integration
+		-  Define testing workflows, e.g. together with a coverage analysis
+	
+Next steps:
+		
+		-  Setup confluence page
+		- Define a publication schedule (either a newsletter or via blogpost)
+		- Collect a list of initial contributors for testing frameworks
+			- Google Test (C++) -> Stefan Holder 
+			- Testing c - > Daniel W.
+			- Junit -> Dana Wong
+			- Testng
+			- Hamcrest - > Sebastian
+			- Objective C -> Brian
+			- Mocking - > Paul
+		- Collect a list of best practices 
+			- Builders - > Sebastian
+			- Dependency injection - > Paul?
+			- Test an exception
+			- Junit temp folder - > Sebastian
+			- Custom test runners - > Sebastian
+			- Parameterized tests with Junit - > Paul
+			- Junit4 assumptions (Conditions) - > Dana
+			- How to test asynchronous code - > dana, daniel w.
+		- Builderserver integration / hudson
+			- Testing with Maven
+			- Testing with Ant
+			- Testing eclipse plugins
+			- Code Coverage
+			
+			
+	Week 1: Page structure and announcement (what do we plan) @Dana:
+	
+	Week 2: Unit testing:
+			-  JUnit @Dana
+			-  Google Test @StefanH 
+			-  Objective C @Brian
+			-  Testing C @DanielW
+	
+	Week 2.1: Unit Testing:
+			-  TestNG @Sebastian
+			-  Testing AUTOSA R components @StefanS
+			-  CPP Unit @?
+				
+	Week 3: Mocking:
+			-  JMock @Paul 
+			-  Mockito @Christian 
+			-  Mocking in C++ @StefanH 
+			-  Mocking in Objective C @Brian
+			
+	Week 4: Making tests easier:
+			-  Hamcrest @Sebastian  
+			-  Builders @Dana @Paul
+			
+	Week 5: Continous integration:
+			-  Continously testing java applications @ChristianK
+			-  Continously testing c / c++ @DanielW / @StefanH
+			-  Continously testing Objective C @Brian
+			
+	Week 6: Testing the untestable:
+			-  Testing asynchronous applications @Dana @DanielW
+			-  UI Testing in Eclipse @Max
+			

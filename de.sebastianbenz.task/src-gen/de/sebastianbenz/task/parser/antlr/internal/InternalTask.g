@@ -101,9 +101,13 @@ ruleTaskModel returns [EObject current=null]
 	    }
 
 )
-)*(this_WS_2=RULE_WS
+)*(
     { 
-    newLeafNode(this_WS_2, grammarAccess.getTaskModelAccess().getWSTerminalRuleCall_2()); 
+        newCompositeNode(grammarAccess.getTaskModelAccess().getWsParserRuleCall_2()); 
+    }
+ruleWs
+    { 
+        afterParserOrEnumRuleCall();
     }
 )*)
 ;
@@ -198,23 +202,23 @@ ruleTask returns [EObject current=null]
     @after { leaveRule(); }:
 ((
 (
-		lv_intend_0_0=RULE_WS
-		{
-			newLeafNode(lv_intend_0_0, grammarAccess.getTaskAccess().getIntendWSTerminalRuleCall_0_0()); 
-		}
-		{
+		{ 
+	        newCompositeNode(grammarAccess.getTaskAccess().getIntendIntendationParserRuleCall_0_0()); 
+	    }
+		lv_intend_0_0=ruleIntendation		{
 	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getTaskRule());
+	            $current = createModelElementForParent(grammarAccess.getTaskRule());
 	        }
-       		addWithLastConsumed(
+       		set(
        			$current, 
        			"intend",
         		lv_intend_0_0, 
-        		"WS");
+        		"Intendation");
+	        afterParserOrEnumRuleCall();
 	    }
 
 )
-)*(
+)(
 (
 		lv_text_1_0=RULE_TASK_TEXT
 		{
@@ -255,23 +259,23 @@ ruleNote returns [EObject current=null]
     @after { leaveRule(); }:
 ((
 (
-		lv_intend_0_0=RULE_WS
-		{
-			newLeafNode(lv_intend_0_0, grammarAccess.getNoteAccess().getIntendWSTerminalRuleCall_0_0()); 
-		}
-		{
+		{ 
+	        newCompositeNode(grammarAccess.getNoteAccess().getIntendIntendationParserRuleCall_0_0()); 
+	    }
+		lv_intend_0_0=ruleIntendation		{
 	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getNoteRule());
+	            $current = createModelElementForParent(grammarAccess.getNoteRule());
 	        }
-       		addWithLastConsumed(
+       		set(
        			$current, 
        			"intend",
         		lv_intend_0_0, 
-        		"WS");
+        		"Intendation");
+	        afterParserOrEnumRuleCall();
 	    }
 
 )
-)*(
+)(
 (
 		lv_text_1_0=RULE_TEXT
 		{
@@ -312,23 +316,23 @@ ruleProject returns [EObject current=null]
     @after { leaveRule(); }:
 ((
 (
-		lv_intend_0_0=RULE_WS
-		{
-			newLeafNode(lv_intend_0_0, grammarAccess.getProjectAccess().getIntendWSTerminalRuleCall_0_0()); 
-		}
-		{
+		{ 
+	        newCompositeNode(grammarAccess.getProjectAccess().getIntendIntendationParserRuleCall_0_0()); 
+	    }
+		lv_intend_0_0=ruleIntendation		{
 	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getProjectRule());
+	            $current = createModelElementForParent(grammarAccess.getProjectRule());
 	        }
-       		addWithLastConsumed(
+       		set(
        			$current, 
        			"intend",
         		lv_intend_0_0, 
-        		"WS");
+        		"Intendation");
+	        afterParserOrEnumRuleCall();
 	    }
 
 )
-)*(
+)(
 (
 		lv_text_1_0=RULE_PROJECT_
 		{
@@ -369,23 +373,23 @@ ruleCode returns [EObject current=null]
     @after { leaveRule(); }:
 ((
 (
-		lv_intend_0_0=RULE_WS
-		{
-			newLeafNode(lv_intend_0_0, grammarAccess.getCodeAccess().getIntendWSTerminalRuleCall_0_0()); 
-		}
-		{
+		{ 
+	        newCompositeNode(grammarAccess.getCodeAccess().getIntendIntendationParserRuleCall_0_0()); 
+	    }
+		lv_intend_0_0=ruleIntendation		{
 	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getCodeRule());
+	            $current = createModelElementForParent(grammarAccess.getCodeRule());
 	        }
-       		addWithLastConsumed(
+       		set(
        			$current, 
        			"intend",
         		lv_intend_0_0, 
-        		"WS");
+        		"Intendation");
+	        afterParserOrEnumRuleCall();
 	    }
 
 )
-)*(
+)(
 (
 		lv_text_1_0=RULE_CODE_
 		{
@@ -405,6 +409,56 @@ ruleCode returns [EObject current=null]
 )
 ))
 ;
+
+
+
+
+
+// Entry rule entryRuleIntendation
+entryRuleIntendation returns [String current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getIntendationRule()); } 
+	 iv_ruleIntendation=ruleIntendation 
+	 { $current=$iv_ruleIntendation.current.getText(); }  
+	 EOF 
+;
+
+// Rule Intendation
+ruleIntendation returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+(((    this_SPACE_0=RULE_SPACE    {
+		$current.merge(this_SPACE_0);
+    }
+
+    { 
+    newLeafNode(this_SPACE_0, grammarAccess.getIntendationAccess().getSPACETerminalRuleCall_0_0_0()); 
+    }
+    this_SPACE_1=RULE_SPACE    {
+		$current.merge(this_SPACE_1);
+    }
+
+    { 
+    newLeafNode(this_SPACE_1, grammarAccess.getIntendationAccess().getSPACETerminalRuleCall_0_0_1()); 
+    }
+)
+    |    this_TAB_2=RULE_TAB    {
+		$current.merge(this_TAB_2);
+    }
+
+    { 
+    newLeafNode(this_TAB_2, grammarAccess.getIntendationAccess().getTABTerminalRuleCall_0_1()); 
+    }
+)*(    this_SPACE_3=RULE_SPACE    {
+		$current.merge(this_SPACE_3);
+    }
+
+    { 
+    newLeafNode(this_SPACE_3, grammarAccess.getIntendationAccess().getSPACETerminalRuleCall_1()); 
+    }
+)?)
+    ;
 
 
 
@@ -463,12 +517,16 @@ ruleSpaces returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
-((    this_WS_0=RULE_WS    {
-		$current.merge(this_WS_0);
+((
+    { 
+        newCompositeNode(grammarAccess.getSpacesAccess().getWsParserRuleCall_0()); 
+    }
+    this_Ws_0=ruleWs    {
+		$current.merge(this_Ws_0);
     }
 
     { 
-    newLeafNode(this_WS_0, grammarAccess.getSpacesAccess().getWSTerminalRuleCall_0()); 
+        afterParserOrEnumRuleCall();
     }
 )*    this_NL_1=RULE_NL    {
 		$current.merge(this_NL_1);
@@ -484,7 +542,45 @@ ruleSpaces returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
 
 
 
-RULE_WS : (' '|'\t');
+// Entry rule entryRuleWs
+entryRuleWs returns [String current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getWsRule()); } 
+	 iv_ruleWs=ruleWs 
+	 { $current=$iv_ruleWs.current.getText(); }  
+	 EOF 
+;
+
+// Rule Ws
+ruleWs returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+(    this_SPACE_0=RULE_SPACE    {
+		$current.merge(this_SPACE_0);
+    }
+
+    { 
+    newLeafNode(this_SPACE_0, grammarAccess.getWsAccess().getSPACETerminalRuleCall_0()); 
+    }
+
+    |    this_TAB_1=RULE_TAB    {
+		$current.merge(this_TAB_1);
+    }
+
+    { 
+    newLeafNode(this_TAB_1, grammarAccess.getWsAccess().getTABTerminalRuleCall_1()); 
+    }
+)
+    ;
+
+
+
+
+
+RULE_SPACE : ' ';
+
+RULE_TAB : '\t';
 
 RULE_NL : '\r'? '\n';
 
@@ -492,9 +588,9 @@ RULE_CODE_ : '\'\'\'' ( options {greedy=false;} : . )*'\'\'\'' RULE_NL?;
 
 RULE_TASK_TEXT : RULE_HYPHEN ~(('\n'|'\r'))* RULE_NL?;
 
-RULE_TEXT : (~((RULE_HYPHEN|RULE_COLON|'\n'|'\r'|RULE_WS))|~((RULE_HYPHEN|'\n'|'\r'|RULE_WS)) ~(('\n'|'\r'))* ~((RULE_COLON|'\n'|'\r'))) RULE_NL?;
+RULE_TEXT : (~((RULE_HYPHEN|RULE_COLON|'\n'|'\r'|RULE_SPACE|RULE_TAB))|~((RULE_HYPHEN|'\n'|'\r'|RULE_SPACE|RULE_TAB)) ~(('\n'|'\r'))* ~((RULE_COLON|'\n'|'\r'))) RULE_NL?;
 
-RULE_PROJECT_ : ~(('\n'|'\r'|RULE_HYPHEN|RULE_WS)) ~(('\n'|'\r'))* RULE_COLON RULE_NL?;
+RULE_PROJECT_ : ~(('\n'|'\r'|RULE_HYPHEN|RULE_SPACE|RULE_TAB)) ~(('\n'|'\r'))* RULE_COLON RULE_NL?;
 
 fragment RULE_COLON : ':';
 

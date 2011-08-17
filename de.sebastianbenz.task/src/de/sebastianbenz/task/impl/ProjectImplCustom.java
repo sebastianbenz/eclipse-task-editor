@@ -11,6 +11,7 @@
 package de.sebastianbenz.task.impl;
 
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.xtext.util.Strings;
 
 import de.sebastianbenz.task.Text;
 import de.sebastianbenz.task.TextSegment;
@@ -27,7 +28,8 @@ public class ProjectImplCustom extends de.sebastianbenz.task.impl.ProjectImpl {
 		super.addTextSegment(segments, begin, end);
 		if(end == getText().length()){
 			Text lastSegment = (Text) segments.get(segments.size()-1);
-			lastSegment.setValue(lastSegment.getValue().substring(0, lastSegment.getLength()-2));
+			String string = lastSegment.getValue().trim();
+			lastSegment.setValue(string.substring(0, string.length()- 1));
 		}
 	}
 	

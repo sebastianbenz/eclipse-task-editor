@@ -56,8 +56,8 @@ public class ParserTest extends AbstractTest {
 	@Test
 	public void parseOpenTask() throws Exception {
 		assertThat(parse("- a task\n"), ContentTypesMatcher.are(Task.class));
-		assertThat(parse(" - a task\n"), ContentTypesMatcher.are(Task.class));
-		assertThat(parse("		- a task\n"), ContentTypesMatcher.are(Task.class));
+		assertThat(parse("  - a task\n"), ContentTypesMatcher.are(Task.class));
+		assertThat(parse("  	- a task\n"), ContentTypesMatcher.are(Task.class));
 		assertThat(parse("- a task :\n"), ContentTypesMatcher.are(Task.class));
 		assertThat(parse("- a task\n"), ContentTypesMatcher.are(Task.class));
 		assertThat(parse("- a task\n "), ContentTypesMatcher.are(Task.class));

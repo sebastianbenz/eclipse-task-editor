@@ -221,7 +221,7 @@ public class SemanticHighlightingCalculator implements ISemanticHighlightingCalc
 		
 		@Override
 		public Boolean caseProject(Project project) {
-			int level = project.getIntend().size();
+			int level = project.getLevel();
 			if(level == 1){
 				highlight(project, PROJECT2_ID);
 			}else if(level >= 2) {

@@ -2,6 +2,7 @@
  * <copyright>
  * </copyright>
  *
+
  */
 package de.sebastianbenz.task.impl;
 
@@ -26,7 +27,6 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
-import org.eclipse.emf.ecore.util.EDataTypeEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
@@ -54,14 +54,24 @@ import org.eclipse.emf.ecore.util.InternalEList;
 public abstract class ContentImpl extends ContainerImplCustom implements Content
 {
 	/**
-	 * The cached value of the '{@link #getIntend() <em>Intend</em>}' attribute list.
+	 * The default value of the '{@link #getIntend() <em>Intend</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getIntend()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<String> intend;
+	protected static final String INTEND_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getIntend() <em>Intend</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getIntend()
+	 * @generated
+	 * @ordered
+	 */
+	protected String intend = INTEND_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getText() <em>Text</em>}' attribute.
@@ -159,13 +169,22 @@ public abstract class ContentImpl extends ContainerImplCustom implements Content
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<String> getIntend()
+	public String getIntend()
 	{
-		if (intend == null)
-		{
-			intend = new EDataTypeEList<String>(String.class, this, TaskPackage.CONTENT__INTEND);
-		}
 		return intend;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setIntend(String newIntend)
+	{
+		String oldIntend = intend;
+		intend = newIntend;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TaskPackage.CONTENT__INTEND, oldIntend, intend));
 	}
 
 	/**
@@ -503,8 +522,7 @@ public abstract class ContentImpl extends ContainerImplCustom implements Content
 		switch (featureID)
 		{
 			case TaskPackage.CONTENT__INTEND:
-				getIntend().clear();
-				getIntend().addAll((Collection<? extends String>)newValue);
+				setIntend((String)newValue);
 				return;
 			case TaskPackage.CONTENT__TEXT:
 				setText((String)newValue);
@@ -546,7 +564,7 @@ public abstract class ContentImpl extends ContainerImplCustom implements Content
 		switch (featureID)
 		{
 			case TaskPackage.CONTENT__INTEND:
-				getIntend().clear();
+				setIntend(INTEND_EDEFAULT);
 				return;
 			case TaskPackage.CONTENT__TEXT:
 				setText(TEXT_EDEFAULT);
@@ -584,7 +602,7 @@ public abstract class ContentImpl extends ContainerImplCustom implements Content
 		switch (featureID)
 		{
 			case TaskPackage.CONTENT__INTEND:
-				return intend != null && !intend.isEmpty();
+				return INTEND_EDEFAULT == null ? intend != null : !INTEND_EDEFAULT.equals(intend);
 			case TaskPackage.CONTENT__TEXT:
 				return TEXT_EDEFAULT == null ? text != null : !TEXT_EDEFAULT.equals(text);
 			case TaskPackage.CONTENT__PARENT:

@@ -2,8 +2,12 @@ package de.sebastianbenz.task.model;
 
 import static de.sebastianbenz.task.util.ContentTypesMatcher.are;
 import static de.sebastianbenz.task.util.Tasks.newTask;
+import static de.sebastianbenz.task.util.Tasks.newTaskWithIntend;
+import static org.hamcrest.core.Is.is;
+import static org.junit.Assert.*;
 import static org.junit.Assert.assertThat;
 
+import org.hamcrest.core.Is;
 import org.junit.Test;
 
 import de.sebastianbenz.task.Image;
@@ -11,8 +15,23 @@ import de.sebastianbenz.task.Link;
 import de.sebastianbenz.task.Tag;
 import de.sebastianbenz.task.Task;
 import de.sebastianbenz.task.Text;
+import de.sebastianbenz.task.util.Tasks;
 
 public class ContentSegmentTest {
+	
+	private static final String SPACE = " ";
+	private static final String TAB = "\t";
+
+	@Test
+	public void shouldCalculateLevelBasedOnNumberOfIntends() throws Exception {
+		assertThat(newTaskWithIntend("").getLevel(), is(0));
+		assertThat(newTaskWithIntend(SPACE).getLevel(), is(0));
+		assertThat(newTaskWithIntend(TAB).getLevel(), is(1));
+		assertThat(newTaskWithIntend(SPACE + SPACE).getLevel(), is(1));
+		assertThat(newTaskWithIntend(TAB + TAB + "text").getLevel(), is(2));
+		assertThat(newTaskWithIntend(SPACE + SPACE + TAB + "text").getLevel(), is(2));
+		assertThat(newTaskWithIntend(SPACE + TAB +  SPACE + "text").getLevel(), is(1));
+	}
 	
 	@Test
 	public void shouldOrderSegmentsBasedOnOffset() throws Exception {

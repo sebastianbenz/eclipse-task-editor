@@ -42,7 +42,7 @@ public class ContentHierarchyTest extends AbstractTest{
 	public void shouldReturnAllProjectsWithZeroIntendation() throws Exception {
 		assertThat(contentsOf("project1:\n"), is(array("project1")));
 		assertThat(contentsOf("project1:\n" +
-							  " project2:\n"), is(array("project1")));
+							  "	project2:\n"), is(array("project1")));
 	}
 	
 	@Test
@@ -51,31 +51,31 @@ public class ContentHierarchyTest extends AbstractTest{
 		assertThat(contentsOf("note\n"), is(array("note")));
 		assertThat(contentsOf("note\n" +
 							  "project:\n" +
-							  " note2\n"), is(array("note", "project")));
-		assertThat(contentsOf(" project:\n"), is(array("project")));
-		assertThat(contentsOf(" project1:\n" +
-							  " project2:\n"), is(array("project1", "project2")));
-		assertThat(contentsOf(" project1:\n" +
-		  					  " project2:\n" +
-		  					  "  project3:\n"), is(array("project1", "project2")));
-		assertThat(contentsOf(" project1:\n" +
-				  			  "  project2:\n" +
+							  "  note2\n"), is(array("note", "project")));
+		assertThat(contentsOf("  project:\n"), is(array("project")));
+		assertThat(contentsOf("  project1:\n" +
+							  "  project2:\n"), is(array("project1", "project2")));
+		assertThat(contentsOf("  project1:\n" +
+		  					  "  project2:\n" +
+		  					  "    project3:\n"), is(array("project1", "project2")));
+		assertThat(contentsOf("  project1:\n" +
+				  			  "    project2:\n" +
 				  			  "note\n"), is(array("project1", "note")));
-		assertThat(contentsOf(" project1:\n" +
-	  			  			  " project2:\n" +
+		assertThat(contentsOf("  project1:\n" +
+	  			  			  "  project2:\n" +
 	  			  			  "note\n"), is(array("project1", "project2", "note")));
 	}
 
 	@Test
 	public void shouldReturnSubTasks() throws Exception {
 		assertThat(contentsOf("- task1\n" +
-								"	- task2\n"), is(array("task1")));
+								"	  - task2\n"), is(array("task1")));
 	}
 	
 	@Test
 	public void shouldReturnChildProjects() throws Exception {
-		assertThat(contentsOf(	" project1:\n" +
-	  			  				" project2:\n" +
+		assertThat(contentsOf(	"  project1:\n" +
+	  			  				"  project2:\n" +
 	  			  				"note\n"), 
 	  			  						is(array("project1", "project2", "note")));
 	}
@@ -92,10 +92,10 @@ public class ContentHierarchyTest extends AbstractTest{
 	@Test
 	public void shouldResolveAllContainedTasksOfAProject() throws Exception {
 		TaskModel root = taskModel("project:\n" +
-						 " note\n" +
-						 " - task\n" +
+						 "  note\n" +
+						 "  - task\n" +
 						 "project2:\n" +
-						 "  note2\n");
+						 "    note2\n");
 		EList<Content> contents = root.getContents();
 		assertThat(contentsOf((Project) contents.get(0)), is(array("note", "task")));
 		assertThat(contentsOf((Project) contents.get(3)), is(array("note2")));

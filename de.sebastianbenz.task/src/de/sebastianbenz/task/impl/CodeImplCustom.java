@@ -10,6 +10,8 @@
  ******************************************************************************/
 package de.sebastianbenz.task.impl;
 
+import java.util.regex.Pattern;
+
 import org.eclipse.emf.common.util.ECollections;
 import org.eclipse.emf.common.util.EList;
 
@@ -25,11 +27,23 @@ public class CodeImplCustom extends de.sebastianbenz.task.impl.CodeImpl {
 	private String lang;
 
 	@Override
-	protected String cleanText(String text) {
-		text = text.replaceAll(PREFIX, "").trim();
-		return text.substring(getLang().length());
+	protected String cleanText(String newText) {
+		newText = newText.trim();
+		newText = newText.substring(PREFIX.length(), newText.length() - PREFIX.length());
+		newText = removeLeadingWhiteSpace(newText);
+		newText = Pattern.compile("^" + getIntend(), Pattern.MULTILINE).matcher(newText).replaceAll("");
+		newText = newText.replaceAll("\t", "  "); 
+		return newText.substring(getLang().length());
 	}
-	
+
+	private String removeLeadingWhiteSpace(String text) {
+		int i = 0;
+		while(i < text.length() && text.charAt(i) == '\r' || text.charAt(i) == '\n'){
+			i++;
+		}
+		return text.substring(i);
+	}
+
 	@Override
 	public String getLang() {
 		if(lang == null){
@@ -51,5 +65,9 @@ public class CodeImplCustom extends de.sebastianbenz.task.impl.CodeImpl {
 	@Override
 	public EList<TextSegment> getSegments() {
 		return ECollections.emptyEList();
+	}
+	
+	protected String removeTags(String string) {
+		return string;
 	}
 }

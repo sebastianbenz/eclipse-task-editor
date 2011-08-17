@@ -21,8 +21,6 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
-import com.google.common.collect.Maps;
-
 import de.sebastianbenz.task.Container;
 import de.sebastianbenz.task.Content;
 import de.sebastianbenz.task.EmptyLine;
@@ -39,13 +37,32 @@ import de.sebastianbenz.task.util.Links;
 
 public class ContentImplCustom extends de.sebastianbenz.task.impl.ContentImpl {
 
+	private static final Pattern INTEND = Pattern.compile(" {2}|\t");
+	
 	private static final String DONE_TAG = "done";
+
+	private int level = -1;
 
 	@Override
 	public int getLevel() {
-		return getIntend().size();
+		if(level == -1){
+			level = 0;
+			Matcher matcher = INTEND.matcher(getIntend());
+			while(matcher.find()){
+				level++;
+			}
+		}
+		return level ;
 	}
-
+	
+	@Override
+	public String getIntend() {
+		String result = super.getIntend();
+		if(result == null){
+			result = "";
+		}
+		return result;
+	}
 	private static final int SPACE = 1;
 
 	private enum DoneStatus {

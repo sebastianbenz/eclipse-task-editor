@@ -38,11 +38,15 @@ public class TaskParser extends AbstractContentAssistParser {
 				private static final long serialVersionUID = 1L;
 				{
 					put(grammarAccess.getContentAccess().getAlternatives(), "rule__Content__Alternatives");
+					put(grammarAccess.getIntendationAccess().getAlternatives_0(), "rule__Intendation__Alternatives_0");
+					put(grammarAccess.getWsAccess().getAlternatives(), "rule__Ws__Alternatives");
 					put(grammarAccess.getTaskModelAccess().getGroup(), "rule__TaskModel__Group__0");
 					put(grammarAccess.getTaskAccess().getGroup(), "rule__Task__Group__0");
 					put(grammarAccess.getNoteAccess().getGroup(), "rule__Note__Group__0");
 					put(grammarAccess.getProjectAccess().getGroup(), "rule__Project__Group__0");
 					put(grammarAccess.getCodeAccess().getGroup(), "rule__Code__Group__0");
+					put(grammarAccess.getIntendationAccess().getGroup(), "rule__Intendation__Group__0");
+					put(grammarAccess.getIntendationAccess().getGroup_0_0(), "rule__Intendation__Group_0_0__0");
 					put(grammarAccess.getSpacesAccess().getGroup(), "rule__Spaces__Group__0");
 					put(grammarAccess.getTaskModelAccess().getContentsAssignment_1(), "rule__TaskModel__ContentsAssignment_1");
 					put(grammarAccess.getTaskAccess().getIntendAssignment_0(), "rule__Task__IntendAssignment_0");

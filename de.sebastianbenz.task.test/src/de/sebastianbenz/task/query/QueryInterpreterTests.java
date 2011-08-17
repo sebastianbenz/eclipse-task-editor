@@ -87,9 +87,9 @@ public class QueryInterpreterTests extends AbstractTest {
 	@Test
 	public void shouldFilterEmptyProjects() throws Exception {
 		model("project1:\n" +
-				" - task1 @done\n", 
+				"  - task1 @done\n", 
 			  "project2:\n" +
-				" - task2\n");
+				"  - task2\n");
 
 		select("@done");
 
@@ -99,10 +99,10 @@ public class QueryInterpreterTests extends AbstractTest {
 	@Test
 	public void shouldFilterEmptyProjectsRecursively() throws Exception {
 		model("project1:\n" +
-				" project1_1:\n" +
-				"  - task1 @done\n", 
+				"  project1_1:\n" +
+				"    - task1 @done\n", 
 			  "project2:\n" +
-				" - task2\n");
+				"  - task2\n");
 
 		select("@done");
 
@@ -112,9 +112,9 @@ public class QueryInterpreterTests extends AbstractTest {
 	@Test
 	public void shouldFilterProjects() throws Exception {
 		model("project1:\n" +
-				" - task1\n", 
+				"	- task1\n", 
 			  "project2:\n" +
-				" - task2\n");
+				"	- task2\n");
 
 		select("project: project1");
 
@@ -149,9 +149,9 @@ public class QueryInterpreterTests extends AbstractTest {
 	@Test
 	public void shouldFilterTasks() throws Exception {
 		model("project1:\n" +
-				" - task1\n", 
+				"	- task1\n", 
 			  "project2:\n" +
-				" task1\n");
+				"	task1\n");
 
 		select("task : task1");
 
@@ -161,9 +161,9 @@ public class QueryInterpreterTests extends AbstractTest {
 	@Test
 	public void shouldFilterText() throws Exception {
 		model("project1:\n" +
-				" - task1\n", 
+				"	- task1\n", 
 			  "project2:\n" +
-				" task1\n");
+				"	task1\n");
 
 		select("text : task1");
 
@@ -173,11 +173,11 @@ public class QueryInterpreterTests extends AbstractTest {
 	@Test
 	public void shouldFilterByProjectAndTag() throws Exception {
 		model("project1:\n" +
-				" - task11 @done\n" +
-				" - task12 \n",
+				"	- task11 @done\n" +
+				"	- task12 \n",
 			  "project2:\n" +
-				" - task21 @done\n" +
-				" - task22 \n"); 
+				"	- task21 @done\n" +
+				"	- task22 \n"); 
 
 		select("project : project1 and @done");
 
@@ -187,9 +187,9 @@ public class QueryInterpreterTests extends AbstractTest {
 	@Test
 	public void shouldFilterNotes() throws Exception {
 		model("project1:\n" +
-				" note1\n",
+				"	note1\n",
 			  "project2:\n" +
-				" note2\n"); 
+				"	note2\n"); 
 
 		select("project : project1");
 

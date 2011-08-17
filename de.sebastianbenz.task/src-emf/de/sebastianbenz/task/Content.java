@@ -2,6 +2,7 @@
  * <copyright>
  * </copyright>
  *
+
  */
 package de.sebastianbenz.task;
 
@@ -33,20 +34,30 @@ import org.eclipse.emf.common.util.EList;
 public interface Content extends Container
 {
 	/**
-	 * Returns the value of the '<em><b>Intend</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.String}.
+	 * Returns the value of the '<em><b>Intend</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Intend</em>' attribute list isn't clear,
+	 * If the meaning of the '<em>Intend</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Intend</em>' attribute list.
+	 * @return the value of the '<em>Intend</em>' attribute.
+	 * @see #setIntend(String)
 	 * @see de.sebastianbenz.task.TaskPackage#getContent_Intend()
 	 * @model unique="false"
 	 * @generated
 	 */
-	EList<String> getIntend();
+	String getIntend();
+
+	/**
+	 * Sets the value of the '{@link de.sebastianbenz.task.Content#getIntend <em>Intend</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Intend</em>' attribute.
+	 * @see #getIntend()
+	 * @generated
+	 */
+	void setIntend(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Text</b></em>' attribute.

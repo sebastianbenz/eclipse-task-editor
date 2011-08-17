@@ -3,14 +3,21 @@ package de.sebastianbenz.task.generator;
 import de.sebastianbenz.task.Code;
 import de.sebastianbenz.task.Content;
 import de.sebastianbenz.task.EmptyLine;
+import de.sebastianbenz.task.Image;
+import de.sebastianbenz.task.Link;
 import de.sebastianbenz.task.Note;
 import de.sebastianbenz.task.Project;
 import de.sebastianbenz.task.Tag;
 import de.sebastianbenz.task.Task;
 import de.sebastianbenz.task.TaskModel;
+import de.sebastianbenz.task.Text;
+import de.sebastianbenz.task.TextSegment;
 import de.sebastianbenz.task.generator.TaskGenerator;
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.xtext.xbase.lib.BooleanExtensions;
 import org.eclipse.xtext.xbase.lib.IntegerExtensions;
+import org.eclipse.xtext.xbase.lib.ObjectExtensions;
+import org.eclipse.xtext.xbase.lib.StringExtensions;
 import org.eclipse.xtext.xtend2.lib.StringConcatenation;
 
 @SuppressWarnings("all")
@@ -20,17 +27,9 @@ public class ConfluenceGenerator implements TaskGenerator {
     StringConcatenation _builder = new StringConcatenation();
     {
       EList<Content> _contents = taskModel.getContents();
-      for(Content content : _contents) {
+      for(final Content content : _contents) {
         StringConcatenation _generate = this.generate(content);
         _builder.append(_generate, "");
-        {
-          EList<Tag> _tags = content.getTags();
-          for(Tag tag : _tags) {
-            _builder.append("{color:gray}");
-            _builder.append(tag, "");
-            _builder.append("{color} ");
-          }
-        }
         _builder.newLineIfNotEmpty();
       }
     }
@@ -39,11 +38,13 @@ public class ConfluenceGenerator implements TaskGenerator {
   
   protected StringConcatenation _generate(final Note note) {
     StringConcatenation _builder = new StringConcatenation();
-    _builder.append("{color:gray}");
-    String _value = note.getValue();
-    String _escape = this.escape(_value);
-    _builder.append(_escape, "");
-    _builder.append("{color}");
+    {
+      EList<TextSegment> _segments = note.getSegments();
+      for(final TextSegment s : _segments) {
+        CharSequence _write = this.write(s);
+        _builder.append(_write, "");
+      }
+    }
     return _builder;
   }
   
@@ -56,11 +57,13 @@ public class ConfluenceGenerator implements TaskGenerator {
         _builder.append("-");
       }
     }
-    String _value = task.getValue();
-    String _trim = _value.trim();
-    String _escape = this.escape(_trim);
-    _builder.append(_escape, "");
-    _builder.append(" ");
+    {
+      EList<TextSegment> _segments = task.getSegments();
+      for(final TextSegment s : _segments) {
+        CharSequence _write = this.write(s);
+        _builder.append(_write, "");
+      }
+    }
     {
       boolean _isDone_1 = task.isDone();
       if (_isDone_1) {
@@ -87,6 +90,60 @@ public class ConfluenceGenerator implements TaskGenerator {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("\t\t");
     _builder.newLine();
+    return _builder;
+  }
+  
+  protected CharSequence _write(final Text text) {
+    String _value = text.getValue();
+    String _escape = this.escape(_value);
+    return _escape;
+  }
+  
+  protected CharSequence _write(final Link link) {
+    {
+      String _url = link.getUrl();
+      String url = _url;
+      boolean _startsWith = url.startsWith("http://");
+      boolean _operator_not = BooleanExtensions.operator_not(_startsWith);
+      if (_operator_not) {
+        String _operator_plus = StringExtensions.operator_plus("http://", url);
+        url = _operator_plus;
+      }
+      String description = "";
+      String _description = link.getDescription();
+      boolean _operator_equals = ObjectExtensions.operator_equals(_description, "");
+      if (_operator_equals) {
+        String _url_1 = link.getUrl();
+        description = _url_1;
+      } else {
+        String _description_1 = link.getDescription();
+        description = _description_1;
+      }
+      String _description_2 = link.getDescription();
+      String _operator_plus_1 = StringExtensions.operator_plus("[", _description_2);
+      String _operator_plus_2 = StringExtensions.operator_plus(_operator_plus_1, "|");
+      String _url_2 = link.getUrl();
+      String _operator_plus_3 = StringExtensions.operator_plus(_operator_plus_2, _url_2);
+      String _operator_plus_4 = StringExtensions.operator_plus(_operator_plus_3, "]");
+      return _operator_plus_4;
+    }
+  }
+  
+  protected CharSequence _write(final Image image) {
+    String _url = image.getUrl();
+    String _operator_plus = StringExtensions.operator_plus("!", _url);
+    String _operator_plus_1 = StringExtensions.operator_plus(_operator_plus, "|title=\"");
+    String _description = image.getDescription();
+    String _operator_plus_2 = StringExtensions.operator_plus(_operator_plus_1, _description);
+    String _operator_plus_3 = StringExtensions.operator_plus(_operator_plus_2, "\"!");
+    return _operator_plus_3;
+  }
+  
+  protected CharSequence _write(final Tag tag) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("{color:gray}+");
+    _builder.append(tag, "");
+    _builder.append("{+}{color}");
     return _builder;
   }
   
@@ -122,6 +179,21 @@ public class ConfluenceGenerator implements TaskGenerator {
     } else {
       throw new IllegalArgumentException("Unhandled parameter types: " +
         java.util.Arrays.<Object>asList(code).toString());
+    }
+  }
+  
+  public CharSequence write(final TextSegment image) {
+    if ((image instanceof Image)) {
+      return _write((Image)image);
+    } else if ((image instanceof Link)) {
+      return _write((Link)image);
+    } else if ((image instanceof Tag)) {
+      return _write((Tag)image);
+    } else if ((image instanceof Text)) {
+      return _write((Text)image);
+    } else {
+      throw new IllegalArgumentException("Unhandled parameter types: " +
+        java.util.Arrays.<Object>asList(image).toString());
     }
   }
 }

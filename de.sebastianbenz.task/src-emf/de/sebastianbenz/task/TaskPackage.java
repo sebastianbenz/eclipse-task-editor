@@ -2,6 +2,7 @@
  * <copyright>
  * </copyright>
  *
+
  */
 package de.sebastianbenz.task;
 
@@ -144,7 +145,7 @@ public interface TaskPackage extends EPackage
 	int CONTENT__CHILDREN = CONTAINER__CHILDREN;
 
 	/**
-	 * The feature id for the '<em><b>Intend</b></em>' attribute list.
+	 * The feature id for the '<em><b>Intend</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -244,7 +245,7 @@ public interface TaskPackage extends EPackage
 	int TASK__CHILDREN = CONTENT__CHILDREN;
 
 	/**
-	 * The feature id for the '<em><b>Intend</b></em>' attribute list.
+	 * The feature id for the '<em><b>Intend</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -344,7 +345,7 @@ public interface TaskPackage extends EPackage
 	int NOTE__CHILDREN = CONTENT__CHILDREN;
 
 	/**
-	 * The feature id for the '<em><b>Intend</b></em>' attribute list.
+	 * The feature id for the '<em><b>Intend</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -444,7 +445,7 @@ public interface TaskPackage extends EPackage
 	int PROJECT__CHILDREN = CONTENT__CHILDREN;
 
 	/**
-	 * The feature id for the '<em><b>Intend</b></em>' attribute list.
+	 * The feature id for the '<em><b>Intend</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -572,7 +573,7 @@ public interface TaskPackage extends EPackage
 	int EMPTY_LINE__CHILDREN = CONTENT__CHILDREN;
 
 	/**
-	 * The feature id for the '<em><b>Intend</b></em>' attribute list.
+	 * The feature id for the '<em><b>Intend</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -672,7 +673,7 @@ public interface TaskPackage extends EPackage
 	int CODE__CHILDREN = CONTENT__CHILDREN;
 
 	/**
-	 * The feature id for the '<em><b>Intend</b></em>' attribute list.
+	 * The feature id for the '<em><b>Intend</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1087,10 +1088,10 @@ public interface TaskPackage extends EPackage
 	EClass getContent();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link de.sebastianbenz.task.Content#getIntend <em>Intend</em>}'.
+	 * Returns the meta object for the attribute '{@link de.sebastianbenz.task.Content#getIntend <em>Intend</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Intend</em>'.
+	 * @return the meta object for the attribute '<em>Intend</em>'.
 	 * @see de.sebastianbenz.task.Content#getIntend()
 	 * @see #getContent()
 	 * @generated
@@ -1478,7 +1479,7 @@ public interface TaskPackage extends EPackage
 		EClass CONTENT = eINSTANCE.getContent();
 
 		/**
-		 * The meta object literal for the '<em><b>Intend</b></em>' attribute list feature.
+		 * The meta object literal for the '<em><b>Intend</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated

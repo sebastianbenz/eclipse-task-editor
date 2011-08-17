@@ -47,11 +47,11 @@ protected class ThisRootNode extends RootToken {
 /************ begin Rule TaskModel ****************
  *
  * TaskModel:
- * 	{TaskModel} contents+=Content* WS*;
+ * 	{TaskModel} contents+=Content* Ws*;
  *
  **/
 
-// {TaskModel} contents+=Content* WS*
+// {TaskModel} contents+=Content* Ws*
 protected class TaskModel_Group extends GroupToken {
 	
 	public TaskModel_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -161,11 +161,17 @@ protected class TaskModel_ContentsAssignment_1 extends AssignmentToken  {
 /************ begin Rule Content ****************
  *
  * / *
+ * 
  * Project
- * WS TASK
- * WS PROJECT
- * WS WS TASK
- * WS WS PROJECT 
+ * 
+ * Ws TASK
+ * 
+ * Ws PROJECT
+ * 
+ * Ws Ws TASK
+ * 
+ * Ws Ws PROJECT 
+ * 
  *  * / Content:
  * 	Project | Task | Note | EmptyLine | Code;
  *
@@ -395,11 +401,11 @@ protected class Content_CodeParserRuleCall_4 extends RuleCallToken {
 /************ begin Rule Task ****************
  *
  * Task:
- * 	intend+=WS* text=TASK_TEXT;
+ * 	intend=Intendation text=TASK_TEXT;
  *
  **/
 
-// intend+=WS* text=TASK_TEXT
+// intend=Intendation text=TASK_TEXT
 protected class Task_Group extends GroupToken {
 	
 	public Task_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -428,7 +434,7 @@ protected class Task_Group extends GroupToken {
 
 }
 
-// intend+=WS*
+// intend=Intendation
 protected class Task_IntendAssignment_0 extends AssignmentToken  {
 	
 	public Task_IntendAssignment_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -443,18 +449,17 @@ protected class Task_IntendAssignment_0 extends AssignmentToken  {
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new Task_IntendAssignment_0(lastRuleCallOrigin, this, 0, inst);
-			default: return lastRuleCallOrigin.createFollowerAfterReturn(this, index, index - 1, inst);
+			default: return lastRuleCallOrigin.createFollowerAfterReturn(this, index, index, inst);
 		}	
 	}
 
     @Override	
 	public IEObjectConsumer tryConsume() {
-		if((value = eObjectConsumer.getConsumable("intend",false)) == null) return null;
+		if((value = eObjectConsumer.getConsumable("intend",true)) == null) return null;
 		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("intend");
-		if(valueSerializer.isValid(obj.getEObject(), grammarAccess.getTaskAccess().getIntendWSTerminalRuleCall_0_0(), value, null)) {
-			type = AssignmentType.TERMINAL_RULE_CALL;
-			element = grammarAccess.getTaskAccess().getIntendWSTerminalRuleCall_0_0();
+		if(valueSerializer.isValid(obj.getEObject(), grammarAccess.getTaskAccess().getIntendIntendationParserRuleCall_0_0(), value, null)) {
+			type = AssignmentType.DATATYPE_RULE_CALL;
+			element = grammarAccess.getTaskAccess().getIntendIntendationParserRuleCall_0_0();
 			return obj;
 		}
 		return null;
@@ -478,7 +483,7 @@ protected class Task_TextAssignment_1 extends AssignmentToken  {
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
 			case 0: return new Task_IntendAssignment_0(lastRuleCallOrigin, this, 0, inst);
-			default: return lastRuleCallOrigin.createFollowerAfterReturn(this, index, index - 1, inst);
+			default: return null;
 		}	
 	}
 
@@ -503,11 +508,11 @@ protected class Task_TextAssignment_1 extends AssignmentToken  {
 /************ begin Rule Note ****************
  *
  * Note:
- * 	intend+=WS* text=TEXT;
+ * 	intend=Intendation text=TEXT;
  *
  **/
 
-// intend+=WS* text=TEXT
+// intend=Intendation text=TEXT
 protected class Note_Group extends GroupToken {
 	
 	public Note_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -536,7 +541,7 @@ protected class Note_Group extends GroupToken {
 
 }
 
-// intend+=WS*
+// intend=Intendation
 protected class Note_IntendAssignment_0 extends AssignmentToken  {
 	
 	public Note_IntendAssignment_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -551,18 +556,17 @@ protected class Note_IntendAssignment_0 extends AssignmentToken  {
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new Note_IntendAssignment_0(lastRuleCallOrigin, this, 0, inst);
-			default: return lastRuleCallOrigin.createFollowerAfterReturn(this, index, index - 1, inst);
+			default: return lastRuleCallOrigin.createFollowerAfterReturn(this, index, index, inst);
 		}	
 	}
 
     @Override	
 	public IEObjectConsumer tryConsume() {
-		if((value = eObjectConsumer.getConsumable("intend",false)) == null) return null;
+		if((value = eObjectConsumer.getConsumable("intend",true)) == null) return null;
 		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("intend");
-		if(valueSerializer.isValid(obj.getEObject(), grammarAccess.getNoteAccess().getIntendWSTerminalRuleCall_0_0(), value, null)) {
-			type = AssignmentType.TERMINAL_RULE_CALL;
-			element = grammarAccess.getNoteAccess().getIntendWSTerminalRuleCall_0_0();
+		if(valueSerializer.isValid(obj.getEObject(), grammarAccess.getNoteAccess().getIntendIntendationParserRuleCall_0_0(), value, null)) {
+			type = AssignmentType.DATATYPE_RULE_CALL;
+			element = grammarAccess.getNoteAccess().getIntendIntendationParserRuleCall_0_0();
 			return obj;
 		}
 		return null;
@@ -586,7 +590,7 @@ protected class Note_TextAssignment_1 extends AssignmentToken  {
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
 			case 0: return new Note_IntendAssignment_0(lastRuleCallOrigin, this, 0, inst);
-			default: return lastRuleCallOrigin.createFollowerAfterReturn(this, index, index - 1, inst);
+			default: return null;
 		}	
 	}
 
@@ -611,11 +615,11 @@ protected class Note_TextAssignment_1 extends AssignmentToken  {
 /************ begin Rule Project ****************
  *
  * Project:
- * 	intend+=WS* text=PROJECT_;
+ * 	intend=Intendation text=PROJECT_;
  *
  **/
 
-// intend+=WS* text=PROJECT_
+// intend=Intendation text=PROJECT_
 protected class Project_Group extends GroupToken {
 	
 	public Project_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -644,7 +648,7 @@ protected class Project_Group extends GroupToken {
 
 }
 
-// intend+=WS*
+// intend=Intendation
 protected class Project_IntendAssignment_0 extends AssignmentToken  {
 	
 	public Project_IntendAssignment_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -659,18 +663,17 @@ protected class Project_IntendAssignment_0 extends AssignmentToken  {
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new Project_IntendAssignment_0(lastRuleCallOrigin, this, 0, inst);
-			default: return lastRuleCallOrigin.createFollowerAfterReturn(this, index, index - 1, inst);
+			default: return lastRuleCallOrigin.createFollowerAfterReturn(this, index, index, inst);
 		}	
 	}
 
     @Override	
 	public IEObjectConsumer tryConsume() {
-		if((value = eObjectConsumer.getConsumable("intend",false)) == null) return null;
+		if((value = eObjectConsumer.getConsumable("intend",true)) == null) return null;
 		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("intend");
-		if(valueSerializer.isValid(obj.getEObject(), grammarAccess.getProjectAccess().getIntendWSTerminalRuleCall_0_0(), value, null)) {
-			type = AssignmentType.TERMINAL_RULE_CALL;
-			element = grammarAccess.getProjectAccess().getIntendWSTerminalRuleCall_0_0();
+		if(valueSerializer.isValid(obj.getEObject(), grammarAccess.getProjectAccess().getIntendIntendationParserRuleCall_0_0(), value, null)) {
+			type = AssignmentType.DATATYPE_RULE_CALL;
+			element = grammarAccess.getProjectAccess().getIntendIntendationParserRuleCall_0_0();
 			return obj;
 		}
 		return null;
@@ -694,7 +697,7 @@ protected class Project_TextAssignment_1 extends AssignmentToken  {
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
 			case 0: return new Project_IntendAssignment_0(lastRuleCallOrigin, this, 0, inst);
-			default: return lastRuleCallOrigin.createFollowerAfterReturn(this, index, index - 1, inst);
+			default: return null;
 		}	
 	}
 
@@ -719,11 +722,11 @@ protected class Project_TextAssignment_1 extends AssignmentToken  {
 /************ begin Rule Code ****************
  *
  * Code:
- * 	intend+=WS* text=CODE_;
+ * 	intend=Intendation text=CODE_;
  *
  **/
 
-// intend+=WS* text=CODE_
+// intend=Intendation text=CODE_
 protected class Code_Group extends GroupToken {
 	
 	public Code_Group(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -752,7 +755,7 @@ protected class Code_Group extends GroupToken {
 
 }
 
-// intend+=WS*
+// intend=Intendation
 protected class Code_IntendAssignment_0 extends AssignmentToken  {
 	
 	public Code_IntendAssignment_0(AbstractToken lastRuleCallOrigin, AbstractToken next, int transitionIndex, IEObjectConsumer eObjectConsumer) {
@@ -767,18 +770,17 @@ protected class Code_IntendAssignment_0 extends AssignmentToken  {
     @Override
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
-			case 0: return new Code_IntendAssignment_0(lastRuleCallOrigin, this, 0, inst);
-			default: return lastRuleCallOrigin.createFollowerAfterReturn(this, index, index - 1, inst);
+			default: return lastRuleCallOrigin.createFollowerAfterReturn(this, index, index, inst);
 		}	
 	}
 
     @Override	
 	public IEObjectConsumer tryConsume() {
-		if((value = eObjectConsumer.getConsumable("intend",false)) == null) return null;
+		if((value = eObjectConsumer.getConsumable("intend",true)) == null) return null;
 		IEObjectConsumer obj = eObjectConsumer.cloneAndConsume("intend");
-		if(valueSerializer.isValid(obj.getEObject(), grammarAccess.getCodeAccess().getIntendWSTerminalRuleCall_0_0(), value, null)) {
-			type = AssignmentType.TERMINAL_RULE_CALL;
-			element = grammarAccess.getCodeAccess().getIntendWSTerminalRuleCall_0_0();
+		if(valueSerializer.isValid(obj.getEObject(), grammarAccess.getCodeAccess().getIntendIntendationParserRuleCall_0_0(), value, null)) {
+			type = AssignmentType.DATATYPE_RULE_CALL;
+			element = grammarAccess.getCodeAccess().getIntendIntendationParserRuleCall_0_0();
 			return obj;
 		}
 		return null;
@@ -802,7 +804,7 @@ protected class Code_TextAssignment_1 extends AssignmentToken  {
 	public AbstractToken createFollower(int index, IEObjectConsumer inst) {
 		switch(index) {
 			case 0: return new Code_IntendAssignment_0(lastRuleCallOrigin, this, 0, inst);
-			default: return lastRuleCallOrigin.createFollowerAfterReturn(this, index, index - 1, inst);
+			default: return null;
 		}	
 	}
 
@@ -822,6 +824,7 @@ protected class Code_TextAssignment_1 extends AssignmentToken  {
 
 
 /************ end Rule Code ****************/
+
 
 
 /************ begin Rule EmptyLine ****************
@@ -867,6 +870,7 @@ protected class EmptyLine_TextAssignment extends AssignmentToken  {
 }
 
 /************ end Rule EmptyLine ****************/
+
 
 
 }

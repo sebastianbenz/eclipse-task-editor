@@ -1,0 +1,74 @@
+Sessions:
+	
+	What is a session?:
+		
+		A  session is when a group gathers to learn about a specific topic. This can be a presentation in the Freitagsrunde, a studygroup, a contest or a brainstorming. 
+	
+	Challenges:
+		
+		- How to find relevant topics?
+			- Wishlist + voting
+			- Derive from "Car IT Themencluster"
+		- How can we get people to prepare a session?
+			- Monthly Themes -  e.g. the C++ month 
+			- precedessor has to organize the next presentation
+		- What are good ways to communicate a new techology? 
+		
+	Ideas:
+		
+		Technology of the month (Teaser in the Freitagsrunde):
+			
+			- Montly presentation about a technology (framework, programming language,...)
+	
+		Monthly Code Smell (Teaser in the Freitagsrunde):
+		
+			- idea of having short presentations about a specific topic on a regular basis
+			- other ideas? 
+		
+		Studygroups:
+			
+			-  How can be have more studygroups?
+		
+		Monthly brown bag session (1h lunch):
+
+			- During lunch
+			- One organizer prepares a topic
+			- Informal discussion or brainstorming
+			- external presentation
+
+		Programming contests:
+					
+			Who can break my code?:
+				
+				- How can we inform others about this format?
+				 
+			Find a solution for X:
+				
+				- How can we inform others about this format? 
+		
+		Innovation Workshops (not regarded here):
+			
+			-  Brainstorming about a potential interesting topic
+		
+		Reading groups (not regarded here):
+			
+			-  Regular discussions of a specific paper
+	
+
+	
+	Next Steps:
+		
+		- Introduction to the sessions (Teaser in the Freitagsrunde) @Dana
+			- there should be topics and dates for a brown bag session, studygroup?, and technology of the month 
+			- introduce the wishlist
+		- Setup confluence infrastructure @Thomas
+			- one overview page 
+			- one page for each session type with a short description, the "rules" and a list of planned dates
+			- Create a whishlist for sessions
+		- Find organizer for the different sessions  @Sebastian @Dana @Thomas
+		- Find topics for: @Sebastian @Dana @Thomas
+			-  Brown bag session
+			- Technology of the month
+			- Studygroup
+
+			

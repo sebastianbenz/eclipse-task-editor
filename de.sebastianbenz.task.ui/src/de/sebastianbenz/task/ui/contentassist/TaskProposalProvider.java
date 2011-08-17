@@ -17,6 +17,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.jface.viewers.StyledString;
 import org.eclipse.xtext.Assignment;
 import org.eclipse.xtext.RuleCall;
+import org.eclipse.xtext.nodemodel.util.NodeModelUtils;
 import org.eclipse.xtext.ui.editor.contentassist.ContentAssistContext;
 import org.eclipse.xtext.ui.editor.contentassist.ICompletionProposalAcceptor;
 
@@ -58,7 +59,7 @@ public class TaskProposalProvider extends AbstractTaskProposalProvider {
 	@Override
 	public void complete_Code(EObject model, RuleCall ruleCall,
 			ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
-		if(!context.getPrefix().equals(CodeImplCustom.PREFIX)){
+		if(!context.getPrefix().trim().equals(CodeImplCustom.PREFIX)){
 			return;
 		}
 		for (String key : brushRegistry.getLanguages()) {

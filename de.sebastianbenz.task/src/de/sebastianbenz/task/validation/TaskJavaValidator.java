@@ -10,12 +10,6 @@
  ******************************************************************************/
 package de.sebastianbenz.task.validation;
 
-import org.eclipse.xtext.util.Strings;
-import org.eclipse.xtext.validation.Check;
-
-import com.google.inject.Inject;
-
-import de.sebastianbenz.task.Code;
  
 
 public class TaskJavaValidator extends AbstractTaskJavaValidator {

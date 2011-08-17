@@ -11,7 +11,7 @@
 package de.sebastianbenz.task.resource;
 
 import static com.google.common.collect.Iterables.addAll;
-import static com.google.inject.internal.Lists.newArrayList;
+import static com.google.common.collect.Lists.newArrayList;
 import static org.eclipse.xtext.nodemodel.util.NodeModelUtils.getNode;
 import static org.eclipse.xtext.util.ITextRegion.EMPTY_REGION;
 
@@ -60,7 +60,7 @@ public class LocationInFileProvider extends DefaultLocationInFileProvider {
 			Content content = todo.getContents().get(start);
 			if (content instanceof Project) {
 				Project candidate = (Project) content;
-				if (candidate.getIntend().size() <= project.getIntend().size()) {
+				if (candidate.getLevel() <= project.getLevel()) {
 					return result;
 				}
 			}

@@ -9,7 +9,7 @@ public class Contents {
 	
 	public static int offset(Content content) {
 		ICompositeNode node = NodeModelUtils.getNode(content);
-		return node.getOffset() + content.getIntend().size();
+		return node.getOffset() + content.getIntend().length();
 	}
 
 }

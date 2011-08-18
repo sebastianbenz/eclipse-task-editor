@@ -15,6 +15,8 @@
 	<meta name="viewport" content="width=device-width,initial-scale=1">
 	<meta name="robots" content="all" /> 
 	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/nivo-slider.css" type="text/css" media="screen" />
+	
 
 	<script src="js/libs/modernizr-2.0.6.min.js"></script>
 </head>
@@ -24,9 +26,23 @@
 	<header>
 	<h1>Eclipse Todo Editor</h1>
 	<a href="http://github.com/sebastianbenz/eclipse-task-editor"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://a248.e.akamai.net/assets.github.com/img/e6bef7a091f5f3138b8cd40bc3e114258dd68ddf/687474703a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67" alt="Fork me on GitHub"></a>
+	<!-- AddThis Button BEGIN -->
+	<div class="addthis_toolbox addthis_default_style ">
+	<a class="addthis_button_preferred_1"></a>
+	<a class="addthis_button_preferred_2"></a>
+	<a class="addthis_button_preferred_3"></a>
+	<a class="addthis_button_compact"></a>
+	<a class="addthis_counter addthis_bubble_style"></a>
+	</div>
+	<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=ra-4e4d8245175606b2"></script>
+	<!-- AddThis Button END -->
+	
 	</header>
 	<div id="main" role="main">
-
+		<div id="slider">
+		    <img src="images/EditorExample.png" alt="" />
+		    <img src="images/RcpApplication.png" alt="" title="This is an example of a caption" />
+		</div>
 	</div>
 	<footer>
 
@@ -37,10 +53,15 @@
 <script>window.jQuery || document.write('<script src="js/libs/jquery-1.6.2.min.js"><\/script>')</script>
 
 <!-- scripts concatenated and minified via ant build script-->
+<script src="js/lib/jquery.nivo.slider.pack.js" type="text/javascript"></script>
 <script src="js/plugins.js"></script>
 <script src="js/script.js"></script>
 <!-- end scripts-->
-
+<script type="text/javascript">
+$(window).load(function() {
+    $('#slider').nivoSlider();
+});
+</script>
 <script>
 	var _gaq=[['_setAccount','UA-25193424-1'],['_trackPageview']]; // Change UA-XXXXX-X to be your site's ID
 	(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;

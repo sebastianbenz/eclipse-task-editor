@@ -198,14 +198,25 @@ table { border-collapse: collapse; border-spacing: 0; }
 
 /* =============================================================================
    Primary styles
-   Author: 
+   Author: Sebastian Benz
    ========================================================================== */
 
-
-
-
-
-
+	#slider {
+	    position:relative;
+	    width:618px; /* Change this to your images width */
+	    height:246px; /* Change this to your images height */
+	    background:url(images/loading.gif) no-repeat 50% 50%;
+	}
+	#slider img {
+	    position:absolute;
+	    top:0px;
+	    left:0px;
+	    display:none;
+	}
+	#slider a {
+	    border:0;
+	    display:block;
+	}
 
 
 /* =============================================================================

@@ -68,7 +68,7 @@
             <artifact>
               <groupId>de.sebastianbenz.task</groupId>
               <artifactId>de.sebastianbenz.task.target</artifactId>
-              <version>1.0.0-SNAPSHOT</version>
+              <version>1.0.2-SNAPSHOT</version>
               <classifier>indigo</classifier>
             </artifact>
           </target>

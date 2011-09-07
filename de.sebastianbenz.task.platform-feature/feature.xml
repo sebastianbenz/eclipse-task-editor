@@ -171,7 +171,6 @@
          version="0.0.0"
          unpack="false"/>
 
-
    <plugin
          id="org.eclipse.ui.forms"
          download-size="0"
@@ -187,29 +186,7 @@
          unpack="false"/>
 
    <plugin
-         id="org.eclipse.compare"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.eclipse.ui.navigator"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
          id="com.ibm.icu"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-
-   <plugin
-         id="org.eclipse.ui.views.properties.tabbed"
          download-size="0"
          install-size="0"
          version="0.0.0"
@@ -244,28 +221,7 @@
          unpack="false"/>
 
    <plugin
-         id="org.apache.commons.cli"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
          id="org.apache.commons.lang"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.apache.log4j"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.eclipse.ui.views.log"
          download-size="0"
          install-size="0"
          version="0.0.0"
@@ -321,14 +277,6 @@
          unpack="false"/>
 
    <plugin
-         id="org.eclipse.compare.core"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-
-   <plugin
          id="org.eclipse.equinox.security"
          download-size="0"
          install-size="0"
@@ -355,7 +303,6 @@
          install-size="0"
          version="0.0.0"
          unpack="false"/>
-
 
    <plugin
          id="org.eclipse.core.runtime.compatibility.auth"
@@ -702,6 +649,27 @@
 
    <plugin
          id="org.eclipse.xtext.xtend2.lib"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.compare.core"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.compare"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.apache.log4j"
          download-size="0"
          install-size="0"
          version="0.0.0"

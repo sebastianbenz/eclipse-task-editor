@@ -53,7 +53,7 @@
         <page
             class="de.sebastianbenz.task.ui.TaskExecutableExtensionFactory:org.eclipse.xtext.ui.editor.preferences.LanguageRootPreferencePage"
             id="de.sebastianbenz.task.Task"
-            name="Task">
+            name="Todo Editor">
             <keywordReference id="de.sebastianbenz.task.ui.keyword_Task"/>
         </page>
         <page
@@ -445,18 +445,6 @@
             contextId="org.eclipse.ui.textEditorScope"
             schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
             sequence="M1+R">
-      </key>
-      <key
-            commandId="de.sebastianbenz.task.ui.commands.exportHtml"
-            contextId="org.eclipse.ui.textEditorScope"
-            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
-            sequence="M1+6">
-      </key>
-      <key
-            commandId="de.sebastianbenz.task.ui.commands.exportConfluence"
-            contextId="org.eclipse.ui.textEditorScope"
-            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
-            sequence="M1+6">
       </key>
    </extension>
 </plugin>

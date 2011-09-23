@@ -19,7 +19,7 @@ public class TokenHighlightingConfiguration extends
 
 	@Override
 	protected String calculateId(String tokenName, int tokenType) {
-		if ("RULE_TASK_OPEN".equals(tokenName)) {
+		if ("RULE_TASK_TEXT".equals(tokenName)) {
 			return HighlightingConfiguration.TASK_OPEN_ID;
 		}
 		if ("RULE_TEXT".equals(tokenName)) {

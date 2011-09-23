@@ -28,6 +28,7 @@ import de.sebastianbenz.task.Image;
 import de.sebastianbenz.task.Link;
 import de.sebastianbenz.task.Tag;
 import de.sebastianbenz.task.TaskFactory;
+import de.sebastianbenz.task.TaskModel;
 import de.sebastianbenz.task.TaskPackage;
 import de.sebastianbenz.task.Text;
 import de.sebastianbenz.task.TextSegment;
@@ -39,7 +40,7 @@ public class ContentImplCustom extends de.sebastianbenz.task.impl.ContentImpl {
 
 	private static final Pattern INTEND = Pattern.compile(" {2}|\t");
 	
-	private static final String DONE_TAG = "done";
+	public static final String DONE_TAG = "done";
 
 	private int level = -1;
 
@@ -70,7 +71,6 @@ public class ContentImplCustom extends de.sebastianbenz.task.impl.ContentImpl {
 	}
 	
 	public static final String TAG = "(^|\\W)@(\\w+)(\\((.*?)\\))?";
-	// !\\[(.+)\\]\\((.+) (\"(.*)\")? \\)
 	private static final Pattern TAG_PATTERN = Pattern.compile(TAG, Pattern.DOTALL);
 	private static final Pattern URL_DESCRIPTION_PATTERN = Pattern.compile("(!)?\\[(.+)\\]\\((.+)\\)|\\(?\\b(http://|www[.])[-A-Za-z0-9+&@#/%?=~_()|!:,.;]*[-A-Za-z0-9+&@#/%=~_()|]");
 
@@ -96,10 +96,14 @@ public class ContentImplCustom extends de.sebastianbenz.task.impl.ContentImpl {
 	}
 
 	protected Container resolveContainer() {
-		EList<Content> allContents = getTaskModel().getContents();
+		TaskModel taskModel = getTaskModel();
+		if(taskModel == null){
+			return null;
+		}
+		EList<Content> allContents = taskModel.getContents();
 		int index = allContents.indexOf(this);
 		if(index == 0){
-			return getTaskModel();
+			return taskModel;
 		}
 		for (int i = index - 1; i >= 0; i--) {
 			Content candidate = allContents.get(i);
@@ -107,7 +111,7 @@ public class ContentImplCustom extends de.sebastianbenz.task.impl.ContentImpl {
 				return (Container) candidate;
 			}
 		}
-		return getTaskModel();
+		return taskModel;
 	}
 
 	@Override
@@ -124,12 +128,12 @@ public class ContentImplCustom extends de.sebastianbenz.task.impl.ContentImpl {
 				return DoneStatus.COMPLETED;
 			}
 		}
-		// if (getParent() instanceof Content) {
-		// Content parent = (Content) getParent();
-		// if(parent.isDone()){
-		// return DoneStatus.COMPLETED;
-		// }
-		// }
+		if (getParent() instanceof Content) {
+			Content parent = (Content) getParent();
+			if (parent.isDone()) {
+				return DoneStatus.COMPLETED;
+			}
+		}
 		return DoneStatus.OPEN;
 	}
 
@@ -161,7 +165,7 @@ public class ContentImplCustom extends de.sebastianbenz.task.impl.ContentImpl {
 	@Override
 	public EList<Link> getLinks() {
 		if(links == null){
-			parseLinks();
+			parseLinksAndImages();
 			
 		}
 		return links;
@@ -184,13 +188,12 @@ public class ContentImplCustom extends de.sebastianbenz.task.impl.ContentImpl {
 	@Override
 	public EList<Image> getImages() {
 		if(images == null){
-			parseLinks();
-			
+			parseLinksAndImages();
 		}
 		return images;
 	}
 
-	private void parseLinks() {
+	private void parseLinksAndImages() {
 		links = new EObjectContainmentEList<Link>(Link.class, this,
 				TaskPackage.CONTENT__LINKS);
 		images = new EObjectContainmentEList<Image>(Image.class, this,

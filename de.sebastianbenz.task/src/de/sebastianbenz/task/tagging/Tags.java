@@ -30,6 +30,4 @@ public class Tags  {
 		tag.setValue(value);
 		return tag;
 	}
-
-	
 }

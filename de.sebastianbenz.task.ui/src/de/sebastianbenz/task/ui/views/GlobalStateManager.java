@@ -37,7 +37,7 @@ import de.sebastianbenz.task.TaskFactory;
 import de.sebastianbenz.task.TaskModel;
 import de.sebastianbenz.task.ui.views.ViewerUpdater.ResourceDescriptionsChangeListener;
 
-public class GlobalStateManager  implements ResourceDescriptionsChangeListener{
+public class GlobalStateManager implements ResourceDescriptionsChangeListener{
 
 	private static final Logger LOGGER = Logger.getLogger(GlobalStateManager.class);
 
@@ -110,8 +110,8 @@ public class GlobalStateManager  implements ResourceDescriptionsChangeListener{
 		if(description == null){
 			return true;
 		}
-		String extension = description.getURI().lastSegment();
-		return !extension.endsWith("todo") && !extension.endsWith("taskpaper");
+		String extension = description.getURI().fileExtension().toLowerCase();
+		return !extension.equals("todo") && !extension.equals("taskpaper");
 	}
 
 

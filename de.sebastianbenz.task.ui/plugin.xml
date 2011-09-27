@@ -239,6 +239,7 @@
             </and>
         </definition>
     </extension>
+    <!--
     <extension
             point="org.eclipse.ui.preferencePages">
         <page
@@ -262,6 +263,7 @@
             <keywordReference id="de.sebastianbenz.task.ui.keyword_Query"/>
         </page>
     </extension>
+    -->
     <extension
         point="org.eclipse.ui.keywords">
         <keyword

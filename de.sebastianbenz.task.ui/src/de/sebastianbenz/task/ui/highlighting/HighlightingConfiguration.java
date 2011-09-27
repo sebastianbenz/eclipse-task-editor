@@ -29,6 +29,9 @@ public class HighlightingConfiguration extends DefaultHighlightingConfiguration 
 	public static final String PROJECT1_ID = "project1";
 	public static final String PROJECT2_ID = "project2";
 	public static final String PROJECT3_ID = "project3";
+	public static final String PROJECT1_DONE_ID = "project1Done";
+	public static final String PROJECT2_DONE_ID = "project2Done";
+	public static final String PROJECT3_DONE_ID = "project3Done";
 	public static final String TASK_DONE_ID = "taskDone";
 	public static final String TASK_OPEN_ID = "taskOpen";
 	public static final String TAG_ID = "tag";
@@ -38,33 +41,57 @@ public class HighlightingConfiguration extends DefaultHighlightingConfiguration 
 	public static final String TASK_URL_ID = "taskUrl";
 
 	public void configure(IHighlightingConfigurationAcceptor acceptor) {
-		acceptor.acceptDefaultHighlighting(KEYWORD_ID, "Keyword", keywordTextStyle());
-		acceptor.acceptDefaultHighlighting(PUNCTUATION_ID, "Punctuation character", punctuationTextStyle());
-		acceptor.acceptDefaultHighlighting(COMMENT_ID, "Comment", commentTextStyle());
-		acceptor.acceptDefaultHighlighting(STRING_ID, "String", stringTextStyle());
-		acceptor.acceptDefaultHighlighting(NUMBER_ID, "Number", numberTextStyle());
-		acceptor.acceptDefaultHighlighting(DEFAULT_ID, "Default", defaultTextStyle());
-		acceptor.acceptDefaultHighlighting(INVALID_TOKEN_ID, "Invalid Symbol", errorTextStyle());
-		
-		acceptor.acceptDefaultHighlighting(NOTE_ID, "Note", nodeTextStyle());
-		acceptor.acceptDefaultHighlighting(NOTE_DONE_ID, "Note done", nodeDoneTextStyle());
-		acceptor.acceptDefaultHighlighting(NOTE_URL_ID, "Note URL", noteUrlTextStyle());
-		
-		acceptor.acceptDefaultHighlighting(PROJECT1_ID, "Project1", project1TextStyle());
-		acceptor.acceptDefaultHighlighting(PROJECT2_ID, "Project2", project2TextStyle());
-		acceptor.acceptDefaultHighlighting(PROJECT3_ID, "Project3", project3TextStyle());
-		
-		acceptor.acceptDefaultHighlighting(TASK_DONE_ID, "Task closed", taskDoneTextStyle());
-		acceptor.acceptDefaultHighlighting(TASK_OPEN_ID, "Task open", taskOpenTextStyle());
+		acceptor.acceptDefaultHighlighting(TAG_ID, "Tags", tagTextStyle());
+
+		acceptor.acceptDefaultHighlighting(TASK_OPEN_ID, "Task", taskOpenTextStyle());
+		acceptor.acceptDefaultHighlighting(TASK_DONE_ID, "Task (Done)", taskDoneTextStyle());
 		acceptor.acceptDefaultHighlighting(TASK_URL_ID, "Task URL", taskUrlTextStyle());
 		
+		acceptor.acceptDefaultHighlighting(NOTE_ID, "Note", nodeTextStyle());
+		acceptor.acceptDefaultHighlighting(NOTE_DONE_ID, "Note (Done)", nodeDoneTextStyle());
+		acceptor.acceptDefaultHighlighting(NOTE_URL_ID, "Note URL", noteUrlTextStyle());
 		
-		acceptor.acceptDefaultHighlighting(TAG_ID, "Tags", tagTextStyle());
+		acceptor.acceptDefaultHighlighting(PROJECT1_ID, "Project", project1TextStyle());
+		acceptor.acceptDefaultHighlighting(PROJECT2_ID, "Sub project", project2TextStyle());
+		acceptor.acceptDefaultHighlighting(PROJECT3_ID, "Sub sub project", project3TextStyle());
+		
+		acceptor.acceptDefaultHighlighting(PROJECT1_DONE_ID, "Project (Done)", project1DoneTextStyle());
+		acceptor.acceptDefaultHighlighting(PROJECT2_DONE_ID, "Sub project (Done)", project2DoneTextStyle());
+		acceptor.acceptDefaultHighlighting(PROJECT3_DONE_ID, "Sub sub project (Done)", project3DoneTextStyle());
+		
+		acceptor.acceptDefaultHighlighting(STRING_ID, "String", stringTextStyle());
+		acceptor.acceptDefaultHighlighting(NUMBER_ID, "Number", numberTextStyle());
+		acceptor.acceptDefaultHighlighting(COMMENT_ID, "Comment", commentTextStyle());
+		acceptor.acceptDefaultHighlighting(KEYWORD_ID, "Keyword", keywordTextStyle());
 		acceptor.acceptDefaultHighlighting(CODE_ID, "Code", codeTextStyle());
 		acceptor.acceptDefaultHighlighting(CODE_ANNOTATION_ID, "Code Annotation", codeAnnotationTextStyle());
 	}
 
 	
+
+	public TextStyle project3DoneTextStyle() {
+		TextStyle textStyle = project3TextStyle().copy();
+		strikethrough(textStyle);
+		return textStyle;
+	}
+
+
+
+	public TextStyle project2DoneTextStyle() {
+		TextStyle textStyle = project2TextStyle().copy();
+		strikethrough(textStyle);
+		return textStyle;
+	}
+
+
+
+	public TextStyle project1DoneTextStyle() {
+		TextStyle textStyle = project1TextStyle().copy();
+		strikethrough(textStyle);
+		return textStyle;
+	}
+
+
 
 	public TextStyle taskUrlTextStyle() {
 		TextStyle textStyle = taskOpenTextStyle().copy();

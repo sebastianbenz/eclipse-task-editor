@@ -4,4 +4,4 @@ target
 runtime-*
 .DS_Store
 junit-workspace
-
+.metadata

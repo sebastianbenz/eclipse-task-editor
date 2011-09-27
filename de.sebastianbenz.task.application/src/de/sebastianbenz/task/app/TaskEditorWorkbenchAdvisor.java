@@ -59,8 +59,13 @@ public class TaskEditorWorkbenchAdvisor extends WorkbenchAdvisor {
 				for (int i = 0; i < pages.length; i++) {
 					pages[i].hideActionSet("org.eclipse.ui.edit.text.actionSet.openExternalFile");
 					pages[i].hideActionSet("org.eclipse.search.menu");
-					// pages[i].hideActionSet("org.eclipse.ui.edit.text.actionSet.annotationNavigation");
-					// pages[i].hideActionSet("org.eclipse.ui.edit.text.actionSet.navigation");
+					pages[i].hideActionSet("org.eclipse.ui.edit.text.actionSet.annotationNavigation");
+					pages[i].hideActionSet("org.eclipse.ui.edit.text.actionSet.navigation");
+					pages[i].hideActionSet("org.eclipse.jdt.ui.edit.text.java.toggleMarkOccurrences");
+					pages[i].hideActionSet("org.eclipse.xtext.ui.editor.markOccurrences");
+					pages[i].hideActionSet("org.eclipse.search.searchActionSet");
+					pages[i].hideActionSet("org.eclipse.ui.edit.text.actionSet.presentation");
+					pages[i].hideActionSet("org.eclipse.ui.edit.text.actionSet.convertLineDelimitersTo");
 				}
 				TaskActivator.getInstance();
 			}

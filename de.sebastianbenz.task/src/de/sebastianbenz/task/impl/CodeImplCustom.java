@@ -38,7 +38,7 @@ public class CodeImplCustom extends de.sebastianbenz.task.impl.CodeImpl {
 
 	private String removeLeadingWhiteSpace(String text) {
 		int i = 0;
-		while(i < text.length() && text.charAt(i) == '\r' || text.charAt(i) == '\n'){
+		while(i < text.length() && (text.charAt(i) == '\r' || text.charAt(i) == '\n')){
 			i++;
 		}
 		return text.substring(i);

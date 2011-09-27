@@ -93,17 +93,17 @@ public class TaskUiValidator extends TaskJavaValidator {
 
 	@Check
 	public void checkSpelling(Task task) {
-		doCheckSpelling(task);
+		//doCheckSpelling(task);
 	}
 
 	@Check
 	public void checkSpelling(Project task) {
-		doCheckSpelling(task);
+		//doCheckSpelling(task);
 	}
 
 	@Check
 	public void checkSpelling(Note task) {
-		doCheckSpelling(task);
+		//doCheckSpelling(task);
 	}
 
 	private void doCheckSpelling(final Content content) {

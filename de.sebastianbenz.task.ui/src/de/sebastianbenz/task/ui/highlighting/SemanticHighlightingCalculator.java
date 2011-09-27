@@ -11,13 +11,14 @@
 package de.sebastianbenz.task.ui.highlighting;
 
 import static com.google.common.collect.Iterables.toArray;
-import static de.sebastianbenz.task.ui.highlighting.HighlightingConfiguration.NOTE_DONE_ID;
+import static de.sebastianbenz.task.ui.highlighting.HighlightingConfiguration.*;
 import static de.sebastianbenz.task.ui.highlighting.HighlightingConfiguration.PROJECT2_ID;
 import static de.sebastianbenz.task.ui.highlighting.HighlightingConfiguration.PROJECT3_ID;
 import static de.sebastianbenz.task.ui.highlighting.HighlightingConfiguration.TAG_ID;
 import static de.sebastianbenz.task.ui.highlighting.HighlightingConfiguration.TASK_DONE_ID;
 import static de.sebastianbenz.task.ui.highlighting.HighlightingConfiguration.TASK_URL_ID;
 import static de.sebastianbenz.task.util.Contents.offset;
+import static de.sebastianbenz.task.util.Contents.region;
 import static java.util.Collections.sort;
 import static org.eclipse.xtext.util.Strings.isEmpty;
 
@@ -42,6 +43,8 @@ import de.sebastianbenz.task.Project;
 import de.sebastianbenz.task.Tag;
 import de.sebastianbenz.task.Task;
 import de.sebastianbenz.task.impl.CodeImplCustom;
+import de.sebastianbenz.task.tagging.Region;
+import de.sebastianbenz.task.util.Contents;
 import de.sebastianbenz.task.util.TaskSwitch;
 
 public class SemanticHighlightingCalculator implements ISemanticHighlightingCalculator{
@@ -120,7 +123,6 @@ public class SemanticHighlightingCalculator implements ISemanticHighlightingCalc
 
 	private class Implementation extends TaskSwitch<Boolean>{
 
-
 		private final IHighlightedPositionAcceptor acceptor;
 
 		public Implementation(IHighlightedPositionAcceptor acceptor) {
@@ -166,9 +168,10 @@ public class SemanticHighlightingCalculator implements ISemanticHighlightingCalc
 		}
 		
 		private void markAsDone(Content content, Iterable<Tag> allTags, String doneStyle) {
-			int begin = getStartPosition(content);
-			int lastTagEnd = 0;
-			int taskOffset = offset(content);
+			Region region = Contents.region(content);
+			int begin = 0;
+			int lastTagEnd = region.getOffset();
+			int taskOffset = lastTagEnd;
 			for (Tag tag : allTags) {
 				int length = tag.getOffset() - begin - whiteSpaces(content, tag.getOffset());
 				if(length > 0){
@@ -183,7 +186,7 @@ public class SemanticHighlightingCalculator implements ISemanticHighlightingCalc
 			
 			int taskLength = content.getText().trim().length();
 			if(lastTagEnd < taskOffset + taskLength){
-				acceptor.addPosition(lastTagEnd + 2, taskLength-begin, doneStyle);
+				acceptor.addPosition(lastTagEnd, taskLength-begin, doneStyle);
 			}
 		}
 
@@ -201,15 +204,6 @@ public class SemanticHighlightingCalculator implements ISemanticHighlightingCalc
 			return content.getText().substring(beginIndex, beginIndex + length).trim().length() > 0;
 		}
 
-		protected int getStartPosition(Content content) {
-			String text = content.getText();
-			for(int i = 0; i < text.length(); i++){
-				if(text.charAt(i) != '-' && text.charAt(i) != ' '){
-					return i;
-				}
-			}
-			return 1;
-		}
 
 		private void highlightTags(Content content, Iterable<Tag> allTags) {
 			for (Tag tag : allTags) {
@@ -223,21 +217,24 @@ public class SemanticHighlightingCalculator implements ISemanticHighlightingCalc
 		public Boolean caseProject(Project project) {
 			int level = project.getLevel();
 			if(level == 1){
-				highlight(project, PROJECT2_ID);
+				highlight(project, PROJECT2_ID, PROJECT2_DONE_ID);
 			}else if(level >= 2) {
-				highlight(project, PROJECT3_ID);
+				highlight(project, PROJECT3_ID, PROJECT3_DONE_ID);
+			}else if(project.isDone()){
+				highlight(project, PROJECT1_DONE_ID);
 			}
 			return Boolean.TRUE;
 		}
 
+		private void highlight(Project project, String normal,
+				String done) {
+			String id = project.isDone() ? done : normal;
+			highlight(project, id);
+		}
+
 		protected void highlight(Content content, String id) {
-			ICompositeNode node = NodeModelUtils.getNode(content);
-			if(node == null){ 
-				return;
-			}
-			int offset = node.getOffset();
-			int length = node.getLength();
-			acceptor.addPosition(offset, length, id);
+			Region region = region(content);
+ 			acceptor.addPosition(region.getOffset(), region.getLength(), id);
 		}
 		
 		@Override
@@ -259,8 +256,7 @@ public class SemanticHighlightingCalculator implements ISemanticHighlightingCalc
 		}
 
 		protected Brush brushFor(Code code) {
-			Brush configuration = configurationRegistry.get(code.getLang());
-			return configuration;
+			return configurationRegistry.get(code.getLang());
 		}
 
 		protected int codeOffset(Code code) {
@@ -294,10 +290,7 @@ public class SemanticHighlightingCalculator implements ISemanticHighlightingCalc
 	}
 
 	protected boolean noNodeModel(XtextResource resource) {
-		return resource == null || resource.getParseResult() == null
-				|| root(resource) == null;
+		return resource == null || resource.getParseResult() == null || root(resource) == null;
 	}
-
-	
 	
 }

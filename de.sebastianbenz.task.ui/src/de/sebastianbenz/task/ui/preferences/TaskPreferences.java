@@ -22,7 +22,7 @@ public class TaskPreferences extends LanguageRootPreferencePage implements
 		Composite parent = getFieldEditorParent();
 		addField(new BooleanFieldEditor(TaskPreferenceConstants.SPELL_CHECKING,
 				"Enable spell checking", parent));
-		IntegerFieldEditor field = new IntegerFieldEditor(TaskPreferenceConstants.TAB_WIDtH,
+		IntegerFieldEditor field = new IntegerFieldEditor(TaskPreferenceConstants.TAB_WIDTH,
 				"Displayed tab width", parent, 2);
 		addField(field);
 	}

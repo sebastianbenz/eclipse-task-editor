@@ -19,7 +19,7 @@ public class TaskPreferenceInitializer extends AbstractPreferenceInitializer {
 	public void initializeDefaultPreferences() {
 		IPreferenceStore store = TaskActivator.getInstance().getPreferenceStore();
 		store.setDefault(TaskPreferenceConstants.SPELL_CHECKING, true);
-		store.setDefault(TaskPreferenceConstants.TAB_WIDtH, 2);
+		store.setDefault(TaskPreferenceConstants.TAB_WIDTH, 2);
 	}
 
 }

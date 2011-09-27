@@ -13,13 +13,16 @@ package de.sebastianbenz.task.ui.editor;
 import org.eclipse.jface.text.source.ISourceViewer;
 import org.eclipse.xtext.ui.editor.XtextSourceViewerConfiguration;
 
+import de.sebastianbenz.task.ui.internal.TaskActivator;
+import de.sebastianbenz.task.ui.preferences.TaskPreferenceConstants;
+
 public class SourceViewerConfiguration extends
 		XtextSourceViewerConfiguration {
 
 	
 	@Override
 	public int getTabWidth(ISourceViewer sourceViewer) {
-		return 2;
+		return TaskActivator.getInstance().getPreferenceStore().getInt(TaskPreferenceConstants.TAB_WIDTH);
 	}
 	
 	

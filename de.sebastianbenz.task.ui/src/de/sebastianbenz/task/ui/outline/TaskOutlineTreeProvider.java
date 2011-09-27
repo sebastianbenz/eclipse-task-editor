@@ -45,5 +45,9 @@ public class TaskOutlineTreeProvider extends DefaultOutlineTreeProvider {
 			createChildrenDispatcher.invoke(childNode, child);
 		}
 	}
+	
+	protected boolean _isLeaf(Container container){
+		return container.getChildren().isEmpty();
+	}
 
 }

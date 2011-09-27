@@ -17,7 +17,10 @@ import java.util.Collection;
 import java.util.Collections;
 
 import org.eclipse.jface.text.ITextHover;
+import org.eclipse.jface.text.reconciler.IReconciler;
+import org.eclipse.ui.editors.text.EditorsUI;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
+import org.eclipse.ui.texteditor.spelling.SpellingService;
 import org.eclipse.xtext.ui.editor.XtextEditor;
 import org.eclipse.xtext.ui.editor.XtextSourceViewerConfiguration;
 import org.eclipse.xtext.ui.editor.autoedit.AbstractEditStrategyProvider;
@@ -31,6 +34,7 @@ import org.eclipse.xtext.ui.editor.model.IResourceForEditorInputFactory;
 import org.eclipse.xtext.ui.editor.model.ITokenTypeToPartitionTypeMapper;
 import org.eclipse.xtext.ui.editor.model.IXtextDocument;
 import org.eclipse.xtext.ui.editor.model.ResourceForIEditorInputFactory;
+import org.eclipse.xtext.ui.editor.quickfix.XtextQuickAssistProcessor;
 import org.eclipse.xtext.ui.editor.syntaxcoloring.AbstractAntlrTokenToAttributeIdMapper;
 import org.eclipse.xtext.ui.editor.syntaxcoloring.IHighlightingConfiguration;
 import org.eclipse.xtext.ui.resource.IResourceSetProvider;
@@ -45,11 +49,13 @@ import de.sebastianbenz.task.ui.editor.SourceViewerConfiguration;
 import de.sebastianbenz.task.ui.editor.TaskEditor;
 import de.sebastianbenz.task.ui.editor.TaskHyperLinkHelper;
 import de.sebastianbenz.task.ui.editor.TaskTokenTypeToPartitionTypeMapper;
+import de.sebastianbenz.task.ui.editor.spelling.TaskReconciler;
 import de.sebastianbenz.task.ui.highlighting.HighlightingConfiguration;
 import de.sebastianbenz.task.ui.highlighting.SemanticHighlightingCalculator;
 import de.sebastianbenz.task.ui.highlighting.TokenHighlightingConfiguration;
 import de.sebastianbenz.task.ui.hover.TaskCompositeHover;
 import de.sebastianbenz.task.ui.hover.TaskHoverProvider;
+import de.sebastianbenz.task.ui.quickfix.TaskQuickAssistProcessor;
 
 /**
  * Use this class to register components to be used within the IDE.
@@ -73,6 +79,7 @@ public class TaskUiModule extends de.sebastianbenz.task.ui.AbstractTaskUiModule 
 		super.configure(binder);
 		binder.bind(XtextEditor.class).to(TaskEditor.class);
 		binder.bind(DoubleClickStrategyProvider.class).to(TaskDoubleClickStrategyProvider.class);
+		binder.bind(SpellingService.class).toInstance(EditorsUI.getSpellingService());
 	}
 
 	public Class<? extends IFoldingRegionProvider> bindIFoldingRegionProvider() {
@@ -139,6 +146,15 @@ public class TaskUiModule extends de.sebastianbenz.task.ui.AbstractTaskUiModule 
 	
 	public Class<? extends ITextHover> bindITextHover() {
 		return TaskCompositeHover.class;
+	}
+	
+	@Override
+	public Class<? extends IReconciler> bindIReconciler() {
+		return TaskReconciler.class;
+	}
+	
+	public Class<? extends XtextQuickAssistProcessor> bindXtextQuickAssistProcessor(){
+		return TaskQuickAssistProcessor.class;
 	}
 	
 

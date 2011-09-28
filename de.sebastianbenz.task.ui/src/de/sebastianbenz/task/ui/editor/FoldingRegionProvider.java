@@ -29,30 +29,15 @@ import de.sebastianbenz.task.Container;
 import de.sebastianbenz.task.Content;
 
 public class FoldingRegionProvider extends DefaultFoldingRegionProvider {
-	
+
 	protected void computeObjectFolding(EObject eObject, IFoldingRegionAcceptor<ITextRegion> foldingRegionAcceptor) {
-		if (eObject instanceof Content) {
-			Content content = (Content) eObject;
-			ITextRegion region = getLocationInFileProvider().getFullTextRegion(eObject);
-			if (region != null) {
-				ITextRegion significant = getLocationInFileProvider().getSignificantTextRegion(eObject);
-				if (significant == null)
-					throw new NullPointerException("significant region may not be null");
-				int offset = region.getOffset();
-				int length = region.getLength();
-				Container parent = content.getParent();
-				if(parent == null){
-					return;
-				}
-				
-				EList<Content> siblings = parent.getChildren();
-				int lastIndex = siblings.size()-1;
-				if(siblings.indexOf(content) != lastIndex){
-					ICompositeNode node = NodeModelUtils.getNode(siblings.get(lastIndex));
-					length = node.getOffset() + node.getLength() - offset;
-				}
-				foldingRegionAcceptor.accept(offset, length, significant);
-			}
+		if(!(eObject instanceof Container)){
+			return;
 		}
+		Container container = (Container)eObject;
+		if(container.getChildren().isEmpty()){
+			return;
+		}
+		super.computeObjectFolding(eObject, foldingRegionAcceptor);
 	}
 }

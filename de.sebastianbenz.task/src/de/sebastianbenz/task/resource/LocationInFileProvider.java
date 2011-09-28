@@ -20,15 +20,17 @@ import java.util.List;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtext.nodemodel.ICompositeNode;
+import org.eclipse.xtext.nodemodel.ILeafNode;
 import org.eclipse.xtext.nodemodel.INode;
 import org.eclipse.xtext.nodemodel.util.NodeModelUtils;
 import org.eclipse.xtext.resource.DefaultLocationInFileProvider;
 import org.eclipse.xtext.util.ITextRegion;
+import org.w3c.dom.Node;
 
 import com.google.common.collect.Iterables;
 
+import de.sebastianbenz.task.Container;
 import de.sebastianbenz.task.Content;
-import de.sebastianbenz.task.Project;
 import de.sebastianbenz.task.TaskModel;
 
 public class LocationInFileProvider extends DefaultLocationInFileProvider {
@@ -36,46 +38,52 @@ public class LocationInFileProvider extends DefaultLocationInFileProvider {
 	
 	@Override
 	protected ITextRegion getTextRegion(EObject obj, boolean isSignificant) {
-		if (obj instanceof Project) {
-			return getTextRegion((Project) obj, isSignificant);
+		if (!(obj instanceof Container)) {
+			return super.getTextRegion((Container) obj, isSignificant);
 		}
-		return super.getTextRegion(obj, isSignificant);
-	}
-
-	protected ITextRegion getTextRegion(Project project, boolean isSignificant) {
-		ICompositeNode sourceNode = getNode(project);
-		if (sourceNode == null) {
-			return EMPTY_REGION;
+		
+		ICompositeNode node = NodeModelUtils.findActualNodeFor(obj);
+		if (node == null) {
+			if (obj.eContainer() == null)
+				return ITextRegion.EMPTY_REGION;
+			return getTextRegion(obj.eContainer(), isSignificant);
 		}
-		List<INode> nodes = findNextProjectOnSameOrHigherLevel(project);
+		List<INode> nodes = newArrayList();
+		addAll(nodes, node.getLeafNodes());
+		if(!isSignificant){
+			addAllChildrensNodes(obj, nodes);
+		}
 		return createRegion(nodes);
 	}
 
-	private List<INode> findNextProjectOnSameOrHigherLevel(Project project) {
+	protected void addAllChildrensNodes(EObject obj, List<INode> nodes) {
+		for (Content child : ((Container)obj).getChildren()) {
+			INode childNode = NodeModelUtils.findActualNodeFor(child);
+			addAll(nodes, childNode .getLeafNodes());
+			addAllChildrensNodes(child, nodes);
+		}
+	}
+
+	protected ITextRegion getTextRegion(Container content, boolean isSignificant) {
+		ICompositeNode sourceNode = getNode(content);
+		if (sourceNode == null) {
+			return EMPTY_REGION;
+		}
+		List<INode> nodes = findNextProjectOnSameOrHigherLevel(content);
+		return createRegion(nodes);
+	}
+
+	private List<INode> findNextProjectOnSameOrHigherLevel(Container project) {
 		List<INode> result = newArrayList(getNodes(project));
-		
-		TaskModel todo = (TaskModel) project.eContainer();
-		int start = todo.getContents().indexOf(project) + 1;
-		while (start < todo.getContents().size()){
-			Content content = todo.getContents().get(start);
-			if (content instanceof Project) {
-				Project candidate = (Project) content;
-				if (candidate.getLevel() <= project.getLevel()) {
-					return result;
-				}
-			}
-			addAll(result, getNodes(content));
-			start++;
-		} 
 		return result;
 	}
 
-	private Iterable<INode> getNodes(Content content) {
-		ICompositeNode node = NodeModelUtils.getNode(content);
-		if(node == null){
-			return Collections.emptyList();
+	private Iterable<INode> getNodes(Container content) {
+		List<INode> result = newArrayList((INode)NodeModelUtils.getNode(content));
+		for (Content child : content.getChildren()) {
+			result.add(NodeModelUtils.getNode(child));
 		}
-		return Iterables.filter(node.getLeafNodes(), INode.class);
+		return result;
 	}
 
 }

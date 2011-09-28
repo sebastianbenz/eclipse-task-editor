@@ -48,6 +48,11 @@
             </and>
         </definition>
     </extension>
+    <extension 
+ 		point="org.eclipse.core.runtime.preferences">
+  		<initializer 
+  			class="de.sebastianbenz.task.ui.preferences.TaskPreferenceInitializer" /> 
+  	</extension>
     <extension
             point="org.eclipse.ui.preferencePages">
         <page

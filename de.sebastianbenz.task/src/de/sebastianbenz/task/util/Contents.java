@@ -18,8 +18,7 @@ public class Contents {
 		String text = node.getText();
 		int begin = 0;
 		for (; begin < text.length(); begin++) {
-			if (text.charAt(begin) != '-' 
-					&& text.charAt(begin) != ' '
+			if (text.charAt(begin) != ' '
 					&& text.charAt(begin) != '\t') {
 				break;
 			}

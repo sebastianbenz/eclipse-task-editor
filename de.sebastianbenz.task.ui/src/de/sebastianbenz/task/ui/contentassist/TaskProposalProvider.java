@@ -17,12 +17,12 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.jface.viewers.StyledString;
 import org.eclipse.xtext.Assignment;
 import org.eclipse.xtext.RuleCall;
-import org.eclipse.xtext.nodemodel.util.NodeModelUtils;
 import org.eclipse.xtext.ui.editor.contentassist.ContentAssistContext;
 import org.eclipse.xtext.ui.editor.contentassist.ICompletionProposalAcceptor;
 
 import com.google.inject.Inject;
 
+import de.sebastianbenz.task.Content;
 import de.sebastianbenz.task.Tag;
 import de.sebastianbenz.task.impl.CodeImplCustom;
 import de.sebastianbenz.task.tagging.TagProvider;
@@ -38,11 +38,13 @@ public class TaskProposalProvider extends AbstractTaskProposalProvider {
 	private TagProvider tagProvider;
 	
 	@Inject
+	private SimplePrefixMatcher prefixMatcher;
+	
+	@Inject
 	private BrushRegistry brushRegistry;
 	
-	@Override
-	public void completeTask_Text(EObject model, Assignment assignment,
-			ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+	protected void proposeTags(EObject model, ContentAssistContext context,
+			ICompletionProposalAcceptor acceptor) {
 		Tag done = Tags.from("done");
 		createProposal(model, context, acceptor, done);
 		for (Tag tag : tagProvider.in(model.eResource())) {
@@ -51,9 +53,39 @@ public class TaskProposalProvider extends AbstractTaskProposalProvider {
 	}
 	
 	@Override
-	public void complete_PROJECT_(EObject model, RuleCall ruleCall,
+	public void completeNote_Intend(EObject model, Assignment assignment,
 			ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
-		super.complete_PROJECT_(model, ruleCall, context, acceptor);
+		proposeTags(model, context, acceptor);
+	}
+	
+	@Override
+	public void completeTask_Intend(EObject model, Assignment assignment,
+			ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+		proposeTags(model, context, acceptor);
+	}
+	
+	@Override
+	public void completeProject_Intend(EObject model, Assignment assignment,
+			ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+		proposeTags(model, context, acceptor);
+	}
+	
+	@Override
+	public void completeNote_Text(EObject model, Assignment assignment,
+			ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+		proposeTags(model, context, acceptor);
+	}
+	
+	@Override
+	public void complete_TASK_TEXT(EObject model, RuleCall ruleCall,
+			ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+		proposeTags(model, context, acceptor);
+	}
+	
+	@Override
+	public void completeProject_Text(EObject model, Assignment assignment,
+			ContentAssistContext context, ICompletionProposalAcceptor acceptor) {
+		proposeTags(model, context, acceptor);
 	}
 	
 	@Override
@@ -68,14 +100,22 @@ public class TaskProposalProvider extends AbstractTaskProposalProvider {
 			}
 		}
 	}
+	
+	protected boolean isValidProposal(String proposal, String prefix, ContentAssistContext context) {
+		if (proposal == null)
+			return false;
+		if (!context.getMatcher().isCandidateMatchingPrefix(proposal, prefix))
+			return false;
+		return true;
+	}
 
 	protected void createProposal(EObject model, ContentAssistContext context,
 			ICompletionProposalAcceptor acceptor, Tag tag) {
 		String prefix = context.getPrefix();
-		if(prefix.trim().startsWith("-") && !prefix.contains("@" + tag.getName())){
+		if(!prefix.equals("") && !prefix.contains("@" + tag.getName())){
 			acceptor.accept(
 					createCompletionProposal(
-							prefix+ tag, 
+							prefix + tag,
 							getStyledDisplayString(model, tag.getName(), tag.getName()), 
 							getLabelProvider().getImage(tag), 
 							0, 

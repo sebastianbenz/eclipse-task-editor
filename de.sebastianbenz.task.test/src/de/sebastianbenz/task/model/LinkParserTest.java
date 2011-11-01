@@ -38,6 +38,16 @@ public class LinkParserTest {
 		assertThat(linksIn("text [Google](http://www.google.de) text"), is("[Google](http://www.google.de)"));
 	}
 	
+	@Test
+	public void shouldParseMultipleLinks() throws Exception {
+		assertThat(linksIn("text [Google](http://www.google.de) text [Amazon](http://www.amazon.de) text"), is("[Google](http://www.google.de), [Amazon](http://www.amazon.de)"));
+	}
+	
+	@Test
+	public void shouldParseMultipleLinksWithWhiteSpaceInBetween() throws Exception {
+		assertThat(linksIn("text [This is Google](http://www.google.de) text [This is Amazon](http://www.amazon.de) text"), is("[This is Google](http://www.google.de), [This is Amazon](http://www.amazon.de)"));
+	}
+	
 
 	private String linksIn(String string) {
 		return Joiner.on(", ").join(newTask(string).getLinks());

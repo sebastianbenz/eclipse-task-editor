@@ -12,6 +12,7 @@ package de.sebastianbenz.task.impl;
 
 import static com.google.common.collect.Iterables.concat;
 import static com.google.common.collect.Maps.newTreeMap;
+import static java.util.regex.Pattern.compile;
 
 import java.util.TreeMap;
 import java.util.regex.Matcher;
@@ -71,9 +72,10 @@ public class ContentImplCustom extends de.sebastianbenz.task.impl.ContentImpl {
 	}
 	
 	public static final String TAG = "(^|\\W)@(\\w+)(\\((.*?)\\))?";
+	private static final String URL = "[-A-Za-z0-9+&@#/%?=~_()|!:,.;]*[-A-Za-z0-9+&@#/%=~_()|]";
 	private static final Pattern TAG_PATTERN = Pattern.compile(TAG, Pattern.DOTALL);
-	private static final Pattern URL_DESCRIPTION_PATTERN = Pattern.compile("(!)?\\[(.+)\\]\\((.+)\\)|\\(?\\b(http://|www[.])[-A-Za-z0-9+&@#/%?=~_()|!:,.;]*[-A-Za-z0-9+&@#/%=~_()|]");
-
+	private static final Pattern URL_DESCRIPTION_PATTERN = compile("(!)?\\[([-A-Za-z0-9+&@#/%?=~_()|!:,.;\\s]+)\\]\\((" + URL + ")\\)|\\(?\\b(http://|www[.])" + URL);
+	
 	private DoneStatus isDone = DoneStatus.UNKNOWN;
 	private String value;
 

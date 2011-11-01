@@ -2,7 +2,6 @@
  * <copyright>
  * </copyright>
  *
-
  */
 package de.sebastianbenz.task.util;
 
@@ -207,6 +206,7 @@ public class TaskSwitch<T>
 			{
 				Image image = (Image)theEObject;
 				T result = caseImage(image);
+				if (result == null) result = caseLink(image);
 				if (result == null) result = caseTextSegment(image);
 				if (result == null) result = defaultCase(theEObject);
 				return result;

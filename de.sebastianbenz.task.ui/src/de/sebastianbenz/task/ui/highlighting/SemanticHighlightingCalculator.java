@@ -10,9 +10,13 @@
  ******************************************************************************/
 package de.sebastianbenz.task.ui.highlighting;
 
+import static com.google.common.collect.Iterables.concat;
 import static com.google.common.collect.Iterables.toArray;
-import static de.sebastianbenz.task.ui.highlighting.HighlightingConfiguration.*;
+import static de.sebastianbenz.task.ui.highlighting.HighlightingConfiguration.NOTE_DONE_ID;
+import static de.sebastianbenz.task.ui.highlighting.HighlightingConfiguration.PROJECT1_DONE_ID;
+import static de.sebastianbenz.task.ui.highlighting.HighlightingConfiguration.PROJECT2_DONE_ID;
 import static de.sebastianbenz.task.ui.highlighting.HighlightingConfiguration.PROJECT2_ID;
+import static de.sebastianbenz.task.ui.highlighting.HighlightingConfiguration.PROJECT3_DONE_ID;
 import static de.sebastianbenz.task.ui.highlighting.HighlightingConfiguration.PROJECT3_ID;
 import static de.sebastianbenz.task.ui.highlighting.HighlightingConfiguration.TAG_ID;
 import static de.sebastianbenz.task.ui.highlighting.HighlightingConfiguration.TASK_DONE_ID;
@@ -26,8 +30,6 @@ import java.util.Iterator;
 import java.util.List;
 
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.xtext.nodemodel.ICompositeNode;
-import org.eclipse.xtext.nodemodel.util.NodeModelUtils;
 import org.eclipse.xtext.resource.XtextResource;
 import org.eclipse.xtext.ui.editor.syntaxcoloring.IHighlightedPositionAcceptor;
 import org.eclipse.xtext.ui.editor.syntaxcoloring.ISemanticHighlightingCalculator;
@@ -42,6 +44,7 @@ import de.sebastianbenz.task.Note;
 import de.sebastianbenz.task.Project;
 import de.sebastianbenz.task.Tag;
 import de.sebastianbenz.task.Task;
+import de.sebastianbenz.task.TextSegment;
 import de.sebastianbenz.task.impl.CodeImplCustom;
 import de.sebastianbenz.task.tagging.Region;
 import de.sebastianbenz.task.util.Contents;
@@ -147,7 +150,7 @@ public class SemanticHighlightingCalculator implements ISemanticHighlightingCalc
 		
 		private void highlightUrls(Content content, String style) {
 			int offset = offset(content);
-			for (Link link : content.getLinks()) {
+			for (Link link : concat(content.getLinks(), content.getImages())) {
 				int linkOffset;
 				int linkLength;
 				if(isEmpty(link.getDescription())){

@@ -74,7 +74,7 @@ public interface Content extends Container
 	 * @generated
 	 */
 	String getText();
-	
+
 	/**
 	 * Sets the value of the '{@link de.sebastianbenz.task.Content#getText <em>Text</em>}' attribute.
 	 * <!-- begin-user-doc -->

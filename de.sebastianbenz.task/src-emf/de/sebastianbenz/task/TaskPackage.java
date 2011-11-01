@@ -2,7 +2,6 @@
  * <copyright>
  * </copyright>
  *
-
  */
 package de.sebastianbenz.task;
 
@@ -1008,7 +1007,7 @@ public interface TaskPackage extends EPackage
 	 * @generated
 	 * @ordered
 	 */
-	int IMAGE__OFFSET = TEXT_SEGMENT__OFFSET;
+	int IMAGE__OFFSET = LINK__OFFSET;
 
 	/**
 	 * The feature id for the '<em><b>Length</b></em>' attribute.
@@ -1017,7 +1016,7 @@ public interface TaskPackage extends EPackage
 	 * @generated
 	 * @ordered
 	 */
-	int IMAGE__LENGTH = TEXT_SEGMENT__LENGTH;
+	int IMAGE__LENGTH = LINK__LENGTH;
 
 	/**
 	 * The feature id for the '<em><b>Content</b></em>' reference.
@@ -1026,7 +1025,7 @@ public interface TaskPackage extends EPackage
 	 * @generated
 	 * @ordered
 	 */
-	int IMAGE__CONTENT = TEXT_SEGMENT__CONTENT;
+	int IMAGE__CONTENT = LINK__CONTENT;
 
 	/**
 	 * The feature id for the '<em><b>Url</b></em>' attribute.
@@ -1035,7 +1034,7 @@ public interface TaskPackage extends EPackage
 	 * @generated
 	 * @ordered
 	 */
-	int IMAGE__URL = TEXT_SEGMENT_FEATURE_COUNT + 0;
+	int IMAGE__URL = LINK__URL;
 
 	/**
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -1044,7 +1043,7 @@ public interface TaskPackage extends EPackage
 	 * @generated
 	 * @ordered
 	 */
-	int IMAGE__DESCRIPTION = TEXT_SEGMENT_FEATURE_COUNT + 1;
+	int IMAGE__DESCRIPTION = LINK__DESCRIPTION;
 
 	/**
 	 * The number of structural features of the '<em>Image</em>' class.
@@ -1053,7 +1052,7 @@ public interface TaskPackage extends EPackage
 	 * @generated
 	 * @ordered
 	 */
-	int IMAGE_FEATURE_COUNT = TEXT_SEGMENT_FEATURE_COUNT + 2;
+	int IMAGE_FEATURE_COUNT = LINK_FEATURE_COUNT + 0;
 
 
 	/**
@@ -1406,28 +1405,6 @@ public interface TaskPackage extends EPackage
 	EClass getImage();
 
 	/**
-	 * Returns the meta object for the attribute '{@link de.sebastianbenz.task.Image#getUrl <em>Url</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Url</em>'.
-	 * @see de.sebastianbenz.task.Image#getUrl()
-	 * @see #getImage()
-	 * @generated
-	 */
-	EAttribute getImage_Url();
-
-	/**
-	 * Returns the meta object for the attribute '{@link de.sebastianbenz.task.Image#getDescription <em>Description</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Description</em>'.
-	 * @see de.sebastianbenz.task.Image#getDescription()
-	 * @see #getImage()
-	 * @generated
-	 */
-	EAttribute getImage_Description();
-
-	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1741,22 +1718,6 @@ public interface TaskPackage extends EPackage
 		 * @generated
 		 */
 		EClass IMAGE = eINSTANCE.getImage();
-
-		/**
-		 * The meta object literal for the '<em><b>Url</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute IMAGE__URL = eINSTANCE.getImage_Url();
-
-		/**
-		 * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute IMAGE__DESCRIPTION = eINSTANCE.getImage_Description();
 
 	}
 

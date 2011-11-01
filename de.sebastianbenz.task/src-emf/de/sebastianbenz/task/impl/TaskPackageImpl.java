@@ -2,7 +2,6 @@
  * <copyright>
  * </copyright>
  *
-
  */
 package de.sebastianbenz.task.impl;
 
@@ -533,26 +532,6 @@ public class TaskPackageImpl extends EPackageImpl implements TaskPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getImage_Url()
-	{
-		return (EAttribute)imageEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getImage_Description()
-	{
-		return (EAttribute)imageEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public TaskFactory getTaskFactory()
 	{
 		return (TaskFactory)getEFactoryInstance();
@@ -624,8 +603,6 @@ public class TaskPackageImpl extends EPackageImpl implements TaskPackage
 		createEAttribute(textEClass, TEXT__VALUE);
 
 		imageEClass = createEClass(IMAGE);
-		createEAttribute(imageEClass, IMAGE__URL);
-		createEAttribute(imageEClass, IMAGE__DESCRIPTION);
 	}
 
 	/**
@@ -668,7 +645,7 @@ public class TaskPackageImpl extends EPackageImpl implements TaskPackage
 		tagEClass.getESuperTypes().add(this.getTextSegment());
 		linkEClass.getESuperTypes().add(this.getTextSegment());
 		textEClass.getESuperTypes().add(this.getTextSegment());
-		imageEClass.getESuperTypes().add(this.getTextSegment());
+		imageEClass.getESuperTypes().add(this.getLink());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(taskModelEClass, TaskModel.class, "TaskModel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -723,8 +700,6 @@ public class TaskPackageImpl extends EPackageImpl implements TaskPackage
 		initEAttribute(getText_Value(), ecorePackage.getEString(), "value", null, 0, 1, Text.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(imageEClass, Image.class, "Image", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getImage_Url(), ecorePackage.getEString(), "url", null, 0, 1, Image.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getImage_Description(), ecorePackage.getEString(), "description", null, 0, 1, Image.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

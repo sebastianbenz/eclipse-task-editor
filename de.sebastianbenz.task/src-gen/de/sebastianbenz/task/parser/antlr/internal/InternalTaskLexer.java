@@ -604,8 +604,8 @@ public class InternalTaskLexer extends Lexer {
     static final String DFA11_eofS =
         "\32\uffff";
     static final String DFA11_minS =
-        "\1\0\3\uffff\1\0\1\uffff\5\0\1\uffff\1\0\1\uffff\5\0\1\uffff\5"+
-        "\0\1\uffff";
+        "\1\0\3\uffff\1\0\1\uffff\5\0\1\uffff\1\0\1\uffff\5\0\1\uffff\5\0"+
+        "\1\uffff";
     static final String DFA11_maxS =
         "\1\uffff\3\uffff\1\uffff\1\uffff\5\uffff\1\uffff\1\uffff\1\uffff"+
         "\5\uffff\1\uffff\5\uffff\1\uffff";

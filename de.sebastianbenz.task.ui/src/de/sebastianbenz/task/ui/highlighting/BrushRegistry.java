@@ -61,7 +61,7 @@ public class BrushRegistry {
 					pattern("\\b([\\d]+(\\.[\\d]+)?|0x[a-f0-9]+)\\b").style(NUMBER_ID),
 					pattern("(?!\\@interface\\b)\\@[\\$\\w]+\\b").style(CODE_ANNOTATION_ID)),
 			// copyright Alex Gorbatchev
-			lang("js")
+			lang("js", "javascript")
 				.keywords(  "break case catch continue " +
 	                        "default delete do else false " +
 	                        "for function if in instanceof " +

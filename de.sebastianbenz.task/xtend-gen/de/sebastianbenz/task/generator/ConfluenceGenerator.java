@@ -13,6 +13,7 @@ import de.sebastianbenz.task.TaskModel;
 import de.sebastianbenz.task.Text;
 import de.sebastianbenz.task.TextSegment;
 import de.sebastianbenz.task.generator.TaskGenerator;
+import java.util.Arrays;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.xtext.xbase.lib.BooleanExtensions;
 import org.eclipse.xtext.xbase.lib.IntegerExtensions;
@@ -22,7 +23,6 @@ import org.eclipse.xtext.xtend2.lib.StringConcatenation;
 
 @SuppressWarnings("all")
 public class ConfluenceGenerator implements TaskGenerator {
-  
   public StringConcatenation generate(final TaskModel taskModel) {
     StringConcatenation _builder = new StringConcatenation();
     {
@@ -100,7 +100,6 @@ public class ConfluenceGenerator implements TaskGenerator {
   }
   
   protected CharSequence _write(final Link link) {
-    {
       String _url = link.getUrl();
       String url = _url;
       boolean _startsWith = url.startsWith("http://");
@@ -126,7 +125,6 @@ public class ConfluenceGenerator implements TaskGenerator {
       String _operator_plus_3 = StringExtensions.operator_plus(_operator_plus_2, _url_2);
       String _operator_plus_4 = StringExtensions.operator_plus(_operator_plus_3, "]");
       return _operator_plus_4;
-    }
   }
   
   protected CharSequence _write(final Image image) {
@@ -166,34 +164,34 @@ public class ConfluenceGenerator implements TaskGenerator {
   }
   
   public StringConcatenation generate(final Content code) {
-    if ((code instanceof Code)) {
+    if (code instanceof Code) {
       return _generate((Code)code);
-    } else if ((code instanceof EmptyLine)) {
+    } else if (code instanceof EmptyLine) {
       return _generate((EmptyLine)code);
-    } else if ((code instanceof Note)) {
+    } else if (code instanceof Note) {
       return _generate((Note)code);
-    } else if ((code instanceof Project)) {
+    } else if (code instanceof Project) {
       return _generate((Project)code);
-    } else if ((code instanceof Task)) {
+    } else if (code instanceof Task) {
       return _generate((Task)code);
     } else {
       throw new IllegalArgumentException("Unhandled parameter types: " +
-        java.util.Arrays.<Object>asList(code).toString());
+        Arrays.<Object>asList(code).toString());
     }
   }
   
   public CharSequence write(final TextSegment image) {
-    if ((image instanceof Image)) {
+    if (image instanceof Image) {
       return _write((Image)image);
-    } else if ((image instanceof Link)) {
+    } else if (image instanceof Link) {
       return _write((Link)image);
-    } else if ((image instanceof Tag)) {
+    } else if (image instanceof Tag) {
       return _write((Tag)image);
-    } else if ((image instanceof Text)) {
+    } else if (image instanceof Text) {
       return _write((Text)image);
     } else {
       throw new IllegalArgumentException("Unhandled parameter types: " +
-        java.util.Arrays.<Object>asList(image).toString());
+        Arrays.<Object>asList(image).toString());
     }
   }
 }

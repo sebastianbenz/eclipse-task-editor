@@ -8,6 +8,7 @@ import de.sebastianbenz.task.Project;
 import de.sebastianbenz.task.Task;
 import de.sebastianbenz.task.TaskModel;
 import de.sebastianbenz.task.generator.TaskGenerator;
+import java.util.Arrays;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.xtext.xbase.lib.ComparableExtensions;
 import org.eclipse.xtext.xbase.lib.IntegerExtensions;
@@ -16,7 +17,6 @@ import org.eclipse.xtext.xtend2.lib.StringConcatenation;
 
 @SuppressWarnings("all")
 public class MarkdownGenerator implements TaskGenerator {
-  
   public StringConcatenation generate(final TaskModel taskModel) {
     StringConcatenation _builder = new StringConcatenation();
     {
@@ -68,7 +68,6 @@ public class MarkdownGenerator implements TaskGenerator {
   }
   
   protected StringConcatenation _generate(final Project project) {
-    {
       int i = 0;
       StringConcatenation _stringConcatenation = new StringConcatenation();
       StringConcatenation result = _stringConcatenation;
@@ -89,7 +88,6 @@ public class MarkdownGenerator implements TaskGenerator {
       String _operator_plus_1 = StringExtensions.operator_plus(" ", _value);
       result.append(_operator_plus_1);
       return result;
-    }
   }
   
   protected StringConcatenation _generate(final EmptyLine emptyLine) {
@@ -100,19 +98,19 @@ public class MarkdownGenerator implements TaskGenerator {
   }
   
   public StringConcatenation generate(final Content code) {
-    if ((code instanceof Code)) {
+    if (code instanceof Code) {
       return _generate((Code)code);
-    } else if ((code instanceof EmptyLine)) {
+    } else if (code instanceof EmptyLine) {
       return _generate((EmptyLine)code);
-    } else if ((code instanceof Note)) {
+    } else if (code instanceof Note) {
       return _generate((Note)code);
-    } else if ((code instanceof Project)) {
+    } else if (code instanceof Project) {
       return _generate((Project)code);
-    } else if ((code instanceof Task)) {
+    } else if (code instanceof Task) {
       return _generate((Task)code);
     } else {
       throw new IllegalArgumentException("Unhandled parameter types: " +
-        java.util.Arrays.<Object>asList(code).toString());
+        Arrays.<Object>asList(code).toString());
     }
   }
 }

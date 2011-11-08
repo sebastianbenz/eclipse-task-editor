@@ -8,57 +8,57 @@
     complianceLevel="5.0" copyrightFields="false" editPluginID="de.sebastianbenz.task.edit"
     editorPluginID="de.sebastianbenz.task.editor">
   <genPackages prefix="Query" basePackage="de.sebastianbenz.task" disposableProviderFactory="true"
-      ecorePackage="platform:/resource/de.sebastianbenz.task/src-gen/de/sebastianbenz/task/Query.ecore#/">
-    <genEnums typeSafeEnumCompatible="false" ecoreEnum="platform:/resource/de.sebastianbenz.task/src-gen/de/sebastianbenz/task/Query.ecore#//CompEqOperator">
-      <genEnumLiterals ecoreEnumLiteral="platform:/resource/de.sebastianbenz.task/src-gen/de/sebastianbenz/task/Query.ecore#//CompEqOperator/EQUAL"/>
-      <genEnumLiterals ecoreEnumLiteral="platform:/resource/de.sebastianbenz.task/src-gen/de/sebastianbenz/task/Query.ecore#//CompEqOperator/NOT_EQUAL"/>
+      ecorePackage="Query.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="Query.ecore#//CompEqOperator">
+      <genEnumLiterals ecoreEnumLiteral="Query.ecore#//CompEqOperator/EQUAL"/>
+      <genEnumLiterals ecoreEnumLiteral="Query.ecore#//CompEqOperator/NOT_EQUAL"/>
     </genEnums>
-    <genEnums typeSafeEnumCompatible="false" ecoreEnum="platform:/resource/de.sebastianbenz.task/src-gen/de/sebastianbenz/task/Query.ecore#//CompOperator">
-      <genEnumLiterals ecoreEnumLiteral="platform:/resource/de.sebastianbenz.task/src-gen/de/sebastianbenz/task/Query.ecore#//CompOperator/LESS_EQUAL"/>
-      <genEnumLiterals ecoreEnumLiteral="platform:/resource/de.sebastianbenz.task/src-gen/de/sebastianbenz/task/Query.ecore#//CompOperator/LESS"/>
-      <genEnumLiterals ecoreEnumLiteral="platform:/resource/de.sebastianbenz.task/src-gen/de/sebastianbenz/task/Query.ecore#//CompOperator/GREATER_EQUAL"/>
-      <genEnumLiterals ecoreEnumLiteral="platform:/resource/de.sebastianbenz.task/src-gen/de/sebastianbenz/task/Query.ecore#//CompOperator/GREATER"/>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="Query.ecore#//CompOperator">
+      <genEnumLiterals ecoreEnumLiteral="Query.ecore#//CompOperator/LESS_EQUAL"/>
+      <genEnumLiterals ecoreEnumLiteral="Query.ecore#//CompOperator/LESS"/>
+      <genEnumLiterals ecoreEnumLiteral="Query.ecore#//CompOperator/GREATER_EQUAL"/>
+      <genEnumLiterals ecoreEnumLiteral="Query.ecore#//CompOperator/GREATER"/>
     </genEnums>
-    <genClasses ecoreClass="platform:/resource/de.sebastianbenz.task/src-gen/de/sebastianbenz/task/Query.ecore#//Query">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/de.sebastianbenz.task/src-gen/de/sebastianbenz/task/Query.ecore#//Query/expression"/>
+    <genClasses ecoreClass="Query.ecore#//Query">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Query.ecore#//Query/expression"/>
     </genClasses>
-    <genClasses ecoreClass="platform:/resource/de.sebastianbenz.task/src-gen/de/sebastianbenz/task/Query.ecore#//Expression"/>
-    <genClasses ecoreClass="platform:/resource/de.sebastianbenz.task/src-gen/de/sebastianbenz/task/Query.ecore#//Atom"/>
-    <genClasses ecoreClass="platform:/resource/de.sebastianbenz.task/src-gen/de/sebastianbenz/task/Query.ecore#//Value">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/de.sebastianbenz.task/src-gen/de/sebastianbenz/task/Query.ecore#//Value/value"/>
+    <genClasses ecoreClass="Query.ecore#//Expression"/>
+    <genClasses ecoreClass="Query.ecore#//Atom"/>
+    <genClasses ecoreClass="Query.ecore#//Value">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Query.ecore#//Value/value"/>
     </genClasses>
-    <genClasses ecoreClass="platform:/resource/de.sebastianbenz.task/src-gen/de/sebastianbenz/task/Query.ecore#//ParenExpr">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/de.sebastianbenz.task/src-gen/de/sebastianbenz/task/Query.ecore#//ParenExpr/expr"/>
+    <genClasses ecoreClass="Query.ecore#//ParenExpr">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Query.ecore#//ParenExpr/expr"/>
     </genClasses>
-    <genClasses ecoreClass="platform:/resource/de.sebastianbenz.task/src-gen/de/sebastianbenz/task/Query.ecore#//ProjectReference"/>
-    <genClasses ecoreClass="platform:/resource/de.sebastianbenz.task/src-gen/de/sebastianbenz/task/Query.ecore#//TaskReference"/>
-    <genClasses ecoreClass="platform:/resource/de.sebastianbenz.task/src-gen/de/sebastianbenz/task/Query.ecore#//TextReference"/>
-    <genClasses ecoreClass="platform:/resource/de.sebastianbenz.task/src-gen/de/sebastianbenz/task/Query.ecore#//Words">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/de.sebastianbenz.task/src-gen/de/sebastianbenz/task/Query.ecore#//Words/values"/>
+    <genClasses ecoreClass="Query.ecore#//ProjectReference"/>
+    <genClasses ecoreClass="Query.ecore#//TaskReference"/>
+    <genClasses ecoreClass="Query.ecore#//TextReference"/>
+    <genClasses ecoreClass="Query.ecore#//Words">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Query.ecore#//Words/values"/>
     </genClasses>
-    <genClasses ecoreClass="platform:/resource/de.sebastianbenz.task/src-gen/de/sebastianbenz/task/Query.ecore#//Word"/>
-    <genClasses ecoreClass="platform:/resource/de.sebastianbenz.task/src-gen/de/sebastianbenz/task/Query.ecore#//Phrase"/>
-    <genClasses ecoreClass="platform:/resource/de.sebastianbenz.task/src-gen/de/sebastianbenz/task/Query.ecore#//TagReference"/>
-    <genClasses ecoreClass="platform:/resource/de.sebastianbenz.task/src-gen/de/sebastianbenz/task/Query.ecore#//OrExpr">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/de.sebastianbenz.task/src-gen/de/sebastianbenz/task/Query.ecore#//OrExpr/left"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/de.sebastianbenz.task/src-gen/de/sebastianbenz/task/Query.ecore#//OrExpr/right"/>
+    <genClasses ecoreClass="Query.ecore#//Word"/>
+    <genClasses ecoreClass="Query.ecore#//Phrase"/>
+    <genClasses ecoreClass="Query.ecore#//TagReference"/>
+    <genClasses ecoreClass="Query.ecore#//OrExpr">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Query.ecore#//OrExpr/left"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Query.ecore#//OrExpr/right"/>
     </genClasses>
-    <genClasses ecoreClass="platform:/resource/de.sebastianbenz.task/src-gen/de/sebastianbenz/task/Query.ecore#//AndExpr">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/de.sebastianbenz.task/src-gen/de/sebastianbenz/task/Query.ecore#//AndExpr/left"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/de.sebastianbenz.task/src-gen/de/sebastianbenz/task/Query.ecore#//AndExpr/right"/>
+    <genClasses ecoreClass="Query.ecore#//AndExpr">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Query.ecore#//AndExpr/left"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Query.ecore#//AndExpr/right"/>
     </genClasses>
-    <genClasses ecoreClass="platform:/resource/de.sebastianbenz.task/src-gen/de/sebastianbenz/task/Query.ecore#//CompEqExpr">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/de.sebastianbenz.task/src-gen/de/sebastianbenz/task/Query.ecore#//CompEqExpr/left"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/de.sebastianbenz.task/src-gen/de/sebastianbenz/task/Query.ecore#//CompEqExpr/operator"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/de.sebastianbenz.task/src-gen/de/sebastianbenz/task/Query.ecore#//CompEqExpr/right"/>
+    <genClasses ecoreClass="Query.ecore#//CompEqExpr">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Query.ecore#//CompEqExpr/left"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Query.ecore#//CompEqExpr/operator"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Query.ecore#//CompEqExpr/right"/>
     </genClasses>
-    <genClasses ecoreClass="platform:/resource/de.sebastianbenz.task/src-gen/de/sebastianbenz/task/Query.ecore#//CompExpr">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/de.sebastianbenz.task/src-gen/de/sebastianbenz/task/Query.ecore#//CompExpr/left"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/resource/de.sebastianbenz.task/src-gen/de/sebastianbenz/task/Query.ecore#//CompExpr/operator"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/de.sebastianbenz.task/src-gen/de/sebastianbenz/task/Query.ecore#//CompExpr/right"/>
+    <genClasses ecoreClass="Query.ecore#//CompExpr">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Query.ecore#//CompExpr/left"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Query.ecore#//CompExpr/operator"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Query.ecore#//CompExpr/right"/>
     </genClasses>
-    <genClasses ecoreClass="platform:/resource/de.sebastianbenz.task/src-gen/de/sebastianbenz/task/Query.ecore#//UnaryExpr">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/resource/de.sebastianbenz.task/src-gen/de/sebastianbenz/task/Query.ecore#//UnaryExpr/expr"/>
+    <genClasses ecoreClass="Query.ecore#//UnaryExpr">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Query.ecore#//UnaryExpr/expr"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

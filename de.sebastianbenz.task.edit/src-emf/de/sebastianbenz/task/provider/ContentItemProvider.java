@@ -33,7 +33,6 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import de.sebastianbenz.task.Content;
-import de.sebastianbenz.task.TaskFactory;
 import de.sebastianbenz.task.TaskPackage;
 
 /**

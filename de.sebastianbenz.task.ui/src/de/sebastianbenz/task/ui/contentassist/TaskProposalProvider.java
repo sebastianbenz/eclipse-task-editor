@@ -22,7 +22,6 @@ import org.eclipse.xtext.ui.editor.contentassist.ICompletionProposalAcceptor;
 
 import com.google.inject.Inject;
 
-import de.sebastianbenz.task.Content;
 import de.sebastianbenz.task.Tag;
 import de.sebastianbenz.task.impl.CodeImplCustom;
 import de.sebastianbenz.task.tagging.TagProvider;
@@ -36,9 +35,6 @@ public class TaskProposalProvider extends AbstractTaskProposalProvider {
 
 	@Inject
 	private TagProvider tagProvider;
-	
-	@Inject
-	private SimplePrefixMatcher prefixMatcher;
 	
 	@Inject
 	private BrushRegistry brushRegistry;

@@ -15,23 +15,17 @@ import static com.google.common.collect.Lists.newArrayList;
 import static org.eclipse.xtext.nodemodel.util.NodeModelUtils.getNode;
 import static org.eclipse.xtext.util.ITextRegion.EMPTY_REGION;
 
-import java.util.Collections;
 import java.util.List;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtext.nodemodel.ICompositeNode;
-import org.eclipse.xtext.nodemodel.ILeafNode;
 import org.eclipse.xtext.nodemodel.INode;
 import org.eclipse.xtext.nodemodel.util.NodeModelUtils;
 import org.eclipse.xtext.resource.DefaultLocationInFileProvider;
 import org.eclipse.xtext.util.ITextRegion;
-import org.w3c.dom.Node;
-
-import com.google.common.collect.Iterables;
 
 import de.sebastianbenz.task.Container;
 import de.sebastianbenz.task.Content;
-import de.sebastianbenz.task.TaskModel;
 
 public class LocationInFileProvider extends DefaultLocationInFileProvider {
 

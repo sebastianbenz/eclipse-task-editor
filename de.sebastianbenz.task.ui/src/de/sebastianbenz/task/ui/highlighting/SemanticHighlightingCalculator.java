@@ -44,7 +44,6 @@ import de.sebastianbenz.task.Note;
 import de.sebastianbenz.task.Project;
 import de.sebastianbenz.task.Tag;
 import de.sebastianbenz.task.Task;
-import de.sebastianbenz.task.TextSegment;
 import de.sebastianbenz.task.impl.CodeImplCustom;
 import de.sebastianbenz.task.tagging.Region;
 import de.sebastianbenz.task.util.Contents;

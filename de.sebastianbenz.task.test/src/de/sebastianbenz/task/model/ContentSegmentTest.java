@@ -4,10 +4,8 @@ import static de.sebastianbenz.task.util.ContentTypesMatcher.are;
 import static de.sebastianbenz.task.util.Tasks.newTask;
 import static de.sebastianbenz.task.util.Tasks.newTaskWithIntend;
 import static org.hamcrest.core.Is.is;
-import static org.junit.Assert.*;
 import static org.junit.Assert.assertThat;
 
-import org.hamcrest.core.Is;
 import org.junit.Test;
 
 import de.sebastianbenz.task.Image;
@@ -15,7 +13,6 @@ import de.sebastianbenz.task.Link;
 import de.sebastianbenz.task.Tag;
 import de.sebastianbenz.task.Task;
 import de.sebastianbenz.task.Text;
-import de.sebastianbenz.task.util.Tasks;
 
 public class ContentSegmentTest {
 	

@@ -2,7 +2,6 @@ package de.sebastianbenz.task.ui.editor.spelling;
 
 import org.eclipse.jface.text.ITextViewer;
 import org.eclipse.jface.text.source.ISourceViewer;
-import org.eclipse.ui.editors.text.EditorsUI;
 import org.eclipse.ui.texteditor.spelling.SpellingService;
 import org.eclipse.xtext.ui.editor.reconciler.XtextReconciler;
 

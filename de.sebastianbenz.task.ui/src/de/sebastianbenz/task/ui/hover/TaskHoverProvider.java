@@ -12,9 +12,9 @@ import org.eclipse.xtext.ui.editor.hover.html.XtextBrowserInformationControlInpu
 
 import de.sebastianbenz.task.Image;
 
+@SuppressWarnings("restriction")
 public class TaskHoverProvider extends DefaultEObjectHoverProvider {
 
-	@SuppressWarnings("restriction")
 	@Override
 	protected XtextBrowserInformationControlInput getHoverInfo(EObject element,
 			IRegion hoverRegion, XtextBrowserInformationControlInput previous) {

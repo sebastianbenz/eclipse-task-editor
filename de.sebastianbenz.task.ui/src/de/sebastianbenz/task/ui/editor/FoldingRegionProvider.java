@@ -10,23 +10,12 @@
  ******************************************************************************/
 package de.sebastianbenz.task.ui.editor;
 
-import static com.google.common.collect.Sets.newHashSet;
-import static de.sebastianbenz.task.TaskPackage.Literals.PROJECT;
-import static de.sebastianbenz.task.TaskPackage.Literals.TASK_MODEL;
-
-import java.util.Set;
-
-import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.xtext.nodemodel.ICompositeNode;
-import org.eclipse.xtext.nodemodel.util.NodeModelUtils;
 import org.eclipse.xtext.ui.editor.folding.DefaultFoldingRegionProvider;
 import org.eclipse.xtext.ui.editor.folding.IFoldingRegionAcceptor;
 import org.eclipse.xtext.util.ITextRegion;
 
 import de.sebastianbenz.task.Container;
-import de.sebastianbenz.task.Content;
 
 public class FoldingRegionProvider extends DefaultFoldingRegionProvider {
 

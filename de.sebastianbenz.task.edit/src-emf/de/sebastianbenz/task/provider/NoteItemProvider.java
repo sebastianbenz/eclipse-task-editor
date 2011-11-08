@@ -16,8 +16,6 @@
 package de.sebastianbenz.task.provider;
 
 
-import de.sebastianbenz.task.Note;
-import de.sebastianbenz.task.TaskPackage;
 import java.util.Collection;
 import java.util.List;
 
@@ -29,6 +27,8 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
+
+import de.sebastianbenz.task.TaskPackage;
 
 /**
  * This is the item provider adapter for a {@link de.sebastianbenz.task.Note} object.

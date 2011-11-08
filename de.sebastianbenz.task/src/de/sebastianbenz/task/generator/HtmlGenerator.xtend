@@ -1,24 +1,21 @@
 package de.sebastianbenz.task.generator
 
-import org.eclipse.emf.ecore.resource.Resource
-import org.eclipse.xtext.generator.IGenerator
-import org.eclipse.xtext.generator.IFileSystemAccess
-import static com.google.common.collect.Iterables.*
-import de.sebastianbenz.task.TaskModel
-import de.sebastianbenz.task.Content
-import de.sebastianbenz.task.Task
-import de.sebastianbenz.task.Note
 import de.sebastianbenz.task.Code
-import de.sebastianbenz.task.Project
-import de.sebastianbenz.task.EmptyLine
-import org.eclipse.xtext.xtend2.lib.StringConcatenation
 import de.sebastianbenz.task.Container
-import org.apache.commons.lang.StringEscapeUtils
-import de.sebastianbenz.task.TextSegment
-import de.sebastianbenz.task.Link
-import de.sebastianbenz.task.Tag
-import de.sebastianbenz.task.Text
+import de.sebastianbenz.task.Content
+import de.sebastianbenz.task.EmptyLine
 import de.sebastianbenz.task.Image
+import de.sebastianbenz.task.Link
+import de.sebastianbenz.task.Note
+import de.sebastianbenz.task.Project
+import de.sebastianbenz.task.Tag
+import de.sebastianbenz.task.Task
+import de.sebastianbenz.task.TaskModel
+import de.sebastianbenz.task.Text
+import org.apache.commons.lang.StringEscapeUtils
+import org.eclipse.xtext.xtend2.lib.StringConcatenation
+
+import static com.google.common.collect.Iterables.*
 
 class HtmlGenerator implements de.sebastianbenz.task.generator.TaskGenerator {
 	   
@@ -33,7 +30,7 @@ class HtmlGenerator implements de.sebastianbenz.task.generator.TaskGenerator {
 			.tag{
 				color: gray;
 				text-decoration:underline;
-			}
+			} 
 			body {
 			  font-family: "Helvetica Neue", helvetica, arial, sans-serif;
 			  font-size: 14px;

@@ -56,7 +56,7 @@ public class HtmlGenerator implements TaskGenerator {
     _builder.append("text-decoration:underline;");
     _builder.newLine();
     _builder.append("\t");
-    _builder.append("}");
+    _builder.append("} ");
     _builder.newLine();
     _builder.append("\t");
     _builder.append("body {");

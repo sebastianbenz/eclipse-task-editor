@@ -1,16 +1,11 @@
 package de.sebastianbenz.task.generator
 
-import org.eclipse.emf.ecore.resource.Resource
-import org.eclipse.xtext.generator.IGenerator
-import org.eclipse.xtext.generator.IFileSystemAccess
-import static com.google.common.collect.Iterables.*
-import de.sebastianbenz.task.TaskModel
-import de.sebastianbenz.task.Content
-import de.sebastianbenz.task.Task
 import de.sebastianbenz.task.Code
+import de.sebastianbenz.task.EmptyLine
 import de.sebastianbenz.task.Note
 import de.sebastianbenz.task.Project
-import de.sebastianbenz.task.EmptyLine
+import de.sebastianbenz.task.Task
+import de.sebastianbenz.task.TaskModel
 import org.eclipse.xtext.xtend2.lib.StringConcatenation
 
 class MarkdownGenerator implements de.sebastianbenz.task.generator.TaskGenerator {
@@ -27,7 +22,7 @@ class MarkdownGenerator implements de.sebastianbenz.task.generator.TaskGenerator
 		'''
 		«note.value»
 		'''
-	}
+	} 
 	
 	def dispatch generate(Task task){
 		'''

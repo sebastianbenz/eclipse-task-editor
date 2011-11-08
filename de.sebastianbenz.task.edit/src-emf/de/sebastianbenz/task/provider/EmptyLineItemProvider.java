@@ -90,7 +90,7 @@ public class EmptyLineItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((EmptyLine)object).getText();
+		String label = ((EmptyLine)object).getIntend();
 		return label == null || label.length() == 0 ?
 			getString("_UI_EmptyLine_type") :
 			getString("_UI_EmptyLine_type") + " " + label;
@@ -135,7 +135,8 @@ public class EmptyLineItemProvider
 		boolean qualify =
 			childFeature == TaskPackage.Literals.CONTENT__TAGS ||
 			childFeature == TaskPackage.Literals.CONTENT__SEGMENTS ||
-			childFeature == TaskPackage.Literals.CONTENT__LINKS;
+			childFeature == TaskPackage.Literals.CONTENT__LINKS ||
+			childFeature == TaskPackage.Literals.CONTENT__IMAGES;
 
 		if (qualify) {
 			return getString

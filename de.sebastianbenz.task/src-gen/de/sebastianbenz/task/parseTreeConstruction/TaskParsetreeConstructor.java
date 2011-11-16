@@ -161,11 +161,17 @@ protected class TaskModel_ContentsAssignment_1 extends AssignmentToken  {
 /************ begin Rule Content ****************
  *
  * / *
+ * 
  * Project
+ * 
  * Ws TASK
+ * 
  * Ws PROJECT
+ * 
  * Ws Ws TASK
+ * 
  * Ws Ws PROJECT 
+ * 
  *  * / Content:
  * 	Project | Task | Note | EmptyLine | Code;
  *

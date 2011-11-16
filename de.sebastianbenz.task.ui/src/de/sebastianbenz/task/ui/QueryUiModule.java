@@ -13,6 +13,9 @@
  */
 package de.sebastianbenz.task.ui;
 
+import org.eclipse.core.runtime.IProgressMonitor;
+import org.eclipse.core.runtime.IStatus;
+import org.eclipse.core.runtime.jobs.Job;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.eclipse.xtext.scoping.IGlobalScopeProvider;
 import org.eclipse.xtext.ui.editor.model.IResourceForEditorInputFactory;
@@ -48,4 +51,5 @@ public class QueryUiModule extends de.sebastianbenz.task.ui.AbstractQueryUiModul
 	public com.google.inject.Provider<org.eclipse.xtext.resource.containers.IAllContainersState> provideIAllContainersState() {
 		return org.eclipse.xtext.ui.shared.Access.getWorkspaceProjectsState();
 	}
+	
 }

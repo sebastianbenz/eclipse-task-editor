@@ -11,5 +11,5 @@
 	<version>1.0.2-SNAPSHOT</version>
 	<artifactId>de.sebastianbenz.task.updatesite</artifactId>
 	<packaging>eclipse-update-site</packaging>
-	<name>Eclipse Task Edior Update Site</name>
+	<name>Task Editor Update Site</name>
 </project>

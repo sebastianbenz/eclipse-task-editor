@@ -71,7 +71,7 @@ public class ContentImplCustom extends de.sebastianbenz.task.impl.ContentImpl {
 		UNKNOWN, OPEN, COMPLETED
 	}
 	
-	public static final String TAG = "(^|\\W)@(\\w+)(\\((.*?)\\))?";
+	public static final String TAG = "(^|\\W)@([\\wäÄöÖüÜ]+)(\\((.*?)\\))?";
 	private static final String URL = "[-A-Za-z0-9+&@#/%?=~_()|!:,.;]*[-A-Za-z0-9+&@#/%=~_()|]";
 	private static final Pattern TAG_PATTERN = Pattern.compile(TAG, Pattern.DOTALL);
 	private static final Pattern URL_DESCRIPTION_PATTERN = compile("(!)?\\[([-A-Za-z0-9+&@#/%?=~_()|!:,.;\\s]+)\\]\\((" + URL + ")\\)|\\(?\\b(http://|www[.])" + URL);

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <?pde version="3.6"?>
 
-<target includeMode="feature" name="RHMI Editor" sequenceNumber="56">
+<target includeMode="feature" name="Task Editor" sequenceNumber="56">
 <locations>
 <location includeAllPlatforms="true" includeMode="planner" includeSource="true" type="InstallableUnit">
 <unit id="org.apache.commons.cli" version="1.2.0.v201105210650"/>

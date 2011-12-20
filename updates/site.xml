@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <site>
-   <feature url="features/de.sebastianbenz.task_1.0.1.201108120944.jar" id="de.sebastianbenz.task" version="1.0.1.201108120944">
+   <feature url="features/de.sebastianbenz.task_1.1.0.201112202135.jar" id="de.sebastianbenz.task" version="1.1.0.201112202135">
       <category name="Todo editor"/>
    </feature>
    <category-def name="Todo editor" label="Todo editor"/>

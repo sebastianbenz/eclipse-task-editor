@@ -1,5 +1,5 @@
 # To explicitly remove a site, use instructions.unconfigure instructions.configure=\
-org.eclipse.equinox.p2.touchpoint.eclipse.addRepository(type:0,location:https${#58}//sebastianbenz.github.com/eclipse-task-editor/updatesite/release/,name:Todo Editor);\
-org.eclipse.equinox.p2.touchpoint.eclipse.addRepository(type:1,location:https${#58}//sebastianbenz.github.com/eclipse-task-editor/updatesite/release/,name:Todo Editor);\
+org.eclipse.equinox.p2.touchpoint.eclipse.addRepository(type:0,location:https${#58}//sebastianbenz.github.com/eclipse-task-editor/updates/,name:Todo Editor);\
+org.eclipse.equinox.p2.touchpoint.eclipse.addRepository(type:1,location:https${#58}//sebastianbenz.github.com/eclipse-task-editor/updates/,name:Todo Editor);\
 org.eclipse.equinox.p2.touchpoint.eclipse.addRepository(type:0,location:https${#58}//download.eclipse.org/modeling/tmf/xtext/updates/composite/releases/,name:Xtext);\
 org.eclipse.equinox.p2.touchpoint.eclipse.addRepository(type:1,location:https${#58}//download.eclipse.org/modeling/tmf/xtext/updates/composite/releases/,name:Xtext);\

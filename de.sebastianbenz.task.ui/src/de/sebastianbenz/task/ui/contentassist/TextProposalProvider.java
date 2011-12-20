@@ -108,7 +108,7 @@ public class TextProposalProvider implements IContentProposalProvider {
 		XtextDocument document = documentProvider.get();
 		document.set(model);
 		document.setInput(xtextResource);
-		FastPartitioner partitioner = partitionerProvider.get();
+		DocumentPartitioner partitioner = partitionerProvider.get();
 		partitioner.connect(document);
 		document.setDocumentPartitioner(partitioner);
 		return document;

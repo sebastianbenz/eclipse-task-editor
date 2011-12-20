@@ -21,8 +21,8 @@ import de.sebastianbenz.task.Text
 import de.sebastianbenz.task.Image
 
 class HtmlGenerator implements de.sebastianbenz.task.generator.TaskGenerator {
-	   
-	override StringConcatenation generate(TaskModel taskModel)'''
+	    
+	override generate(TaskModel taskModel)'''
 		<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
 		<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
 		<head> 

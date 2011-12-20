@@ -43,7 +43,7 @@ public abstract class AbstractExportHandler extends AbstractEditorHandler {
 		if (!iterator.hasNext()) {
 			return;
 		}
-		StringConcatenation string = generator.generate(iterator.next());
+		CharSequence string = generator.generate(iterator.next());
 		Files.writeStringIntoFile(path, string.toString());
 	}
 

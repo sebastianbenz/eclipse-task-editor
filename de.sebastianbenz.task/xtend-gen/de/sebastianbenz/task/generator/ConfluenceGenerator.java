@@ -13,22 +13,22 @@ import de.sebastianbenz.task.TaskModel;
 import de.sebastianbenz.task.Text;
 import de.sebastianbenz.task.TextSegment;
 import de.sebastianbenz.task.generator.TaskGenerator;
+import java.util.Arrays;
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.xtend2.lib.StringConcatenation;
 import org.eclipse.xtext.xbase.lib.BooleanExtensions;
 import org.eclipse.xtext.xbase.lib.IntegerExtensions;
 import org.eclipse.xtext.xbase.lib.ObjectExtensions;
 import org.eclipse.xtext.xbase.lib.StringExtensions;
-import org.eclipse.xtext.xtend2.lib.StringConcatenation;
 
 @SuppressWarnings("all")
 public class ConfluenceGenerator implements TaskGenerator {
-  
-  public StringConcatenation generate(final TaskModel taskModel) {
+  public CharSequence generate(final TaskModel taskModel) {
     StringConcatenation _builder = new StringConcatenation();
     {
       EList<Content> _contents = taskModel.getContents();
       for(final Content content : _contents) {
-        StringConcatenation _generate = this.generate(content);
+        CharSequence _generate = this.generate(content);
         _builder.append(_generate, "");
         _builder.newLineIfNotEmpty();
       }
@@ -36,7 +36,7 @@ public class ConfluenceGenerator implements TaskGenerator {
     return _builder;
   }
   
-  protected StringConcatenation _generate(final Note note) {
+  protected CharSequence _generate(final Note note) {
     StringConcatenation _builder = new StringConcatenation();
     {
       EList<TextSegment> _segments = note.getSegments();
@@ -48,7 +48,7 @@ public class ConfluenceGenerator implements TaskGenerator {
     return _builder;
   }
   
-  protected StringConcatenation _generate(final Task task) {
+  protected CharSequence _generate(final Task task) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("*  ");
     {
@@ -73,11 +73,11 @@ public class ConfluenceGenerator implements TaskGenerator {
     return _builder;
   }
   
-  protected StringConcatenation _generate(final Project project) {
+  protected CharSequence _generate(final Project project) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("h");
     int _level = project.getLevel();
-    int _operator_plus = IntegerExtensions.operator_plus(((Integer)_level), ((Integer)1));
+    int _operator_plus = IntegerExtensions.operator_plus(_level, 1);
     _builder.append(_operator_plus, "");
     _builder.append(". ");
     String _value = project.getValue();
@@ -86,7 +86,7 @@ public class ConfluenceGenerator implements TaskGenerator {
     return _builder;
   }
   
-  protected StringConcatenation _generate(final EmptyLine emptyLine) {
+  protected CharSequence _generate(final EmptyLine emptyLine) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("\t\t");
     _builder.newLine();
@@ -100,7 +100,6 @@ public class ConfluenceGenerator implements TaskGenerator {
   }
   
   protected CharSequence _write(final Link link) {
-    {
       String _url = link.getUrl();
       String url = _url;
       boolean _startsWith = url.startsWith("http://");
@@ -126,7 +125,6 @@ public class ConfluenceGenerator implements TaskGenerator {
       String _operator_plus_3 = StringExtensions.operator_plus(_operator_plus_2, _url_2);
       String _operator_plus_4 = StringExtensions.operator_plus(_operator_plus_3, "]");
       return _operator_plus_4;
-    }
   }
   
   protected CharSequence _write(final Image image) {
@@ -147,7 +145,7 @@ public class ConfluenceGenerator implements TaskGenerator {
     return _builder;
   }
   
-  protected StringConcatenation _generate(final Code code) {
+  protected CharSequence _generate(final Code code) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("{code}");
     _builder.newLine();
@@ -165,35 +163,35 @@ public class ConfluenceGenerator implements TaskGenerator {
     return _replaceAll_1;
   }
   
-  public StringConcatenation generate(final Content code) {
-    if ((code instanceof Code)) {
+  public CharSequence generate(final Content code) {
+    if (code instanceof Code) {
       return _generate((Code)code);
-    } else if ((code instanceof EmptyLine)) {
+    } else if (code instanceof EmptyLine) {
       return _generate((EmptyLine)code);
-    } else if ((code instanceof Note)) {
+    } else if (code instanceof Note) {
       return _generate((Note)code);
-    } else if ((code instanceof Project)) {
+    } else if (code instanceof Project) {
       return _generate((Project)code);
-    } else if ((code instanceof Task)) {
+    } else if (code instanceof Task) {
       return _generate((Task)code);
     } else {
       throw new IllegalArgumentException("Unhandled parameter types: " +
-        java.util.Arrays.<Object>asList(code).toString());
+        Arrays.<Object>asList(code).toString());
     }
   }
   
   public CharSequence write(final TextSegment image) {
-    if ((image instanceof Image)) {
+    if (image instanceof Image) {
       return _write((Image)image);
-    } else if ((image instanceof Link)) {
+    } else if (image instanceof Link) {
       return _write((Link)image);
-    } else if ((image instanceof Tag)) {
+    } else if (image instanceof Tag) {
       return _write((Tag)image);
-    } else if ((image instanceof Text)) {
+    } else if (image instanceof Text) {
       return _write((Text)image);
     } else {
       throw new IllegalArgumentException("Unhandled parameter types: " +
-        java.util.Arrays.<Object>asList(image).toString());
+        Arrays.<Object>asList(image).toString());
     }
   }
 }

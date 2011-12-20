@@ -36,5 +36,7 @@ Export-Package: de.sebastianbenz.task;uses:="org.eclipse.xtext,org.eclipse.xtext
  de.sebastianbenz.task.services;uses:="org.eclipse.xtext,org.eclipse.xtext.service",
  de.sebastianbenz.task.tagging;uses:="org.eclipse.emf.ecore.resource,de.sebastianbenz.task",
  de.sebastianbenz.task.util;uses:="de.sebastianbenz.task,org.eclipse.xtext.util,org.eclipse.xtext.naming",
- de.sebastianbenz.task.validation;uses:="org.eclipse.xtext.validation"
+ de.sebastianbenz.task.validation;uses:="org.eclipse.xtext.validation",
+ de.sebastianbenz.task.scoping,
+ de.sebastianbenz.task.formatting
 

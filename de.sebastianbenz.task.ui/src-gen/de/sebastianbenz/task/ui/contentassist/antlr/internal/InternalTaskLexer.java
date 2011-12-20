@@ -41,8 +41,8 @@ public class InternalTaskLexer extends Lexer {
         try {
             int _type = RULE_SPACE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalTask.g:1100:12: ( ' ' )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalTask.g:1100:14: ' '
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalTask.g:1099:12: ( ' ' )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalTask.g:1099:14: ' '
             {
             match(' '); 
 
@@ -61,8 +61,8 @@ public class InternalTaskLexer extends Lexer {
         try {
             int _type = RULE_TAB;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalTask.g:1102:10: ( '\\t' )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalTask.g:1102:12: '\\t'
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalTask.g:1101:10: ( '\\t' )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalTask.g:1101:12: '\\t'
             {
             match('\t'); 
 
@@ -81,10 +81,10 @@ public class InternalTaskLexer extends Lexer {
         try {
             int _type = RULE_NL;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalTask.g:1104:9: ( ( '\\r' )? '\\n' )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalTask.g:1104:11: ( '\\r' )? '\\n'
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalTask.g:1103:9: ( ( '\\r' )? '\\n' )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalTask.g:1103:11: ( '\\r' )? '\\n'
             {
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalTask.g:1104:11: ( '\\r' )?
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalTask.g:1103:11: ( '\\r' )?
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -93,7 +93,7 @@ public class InternalTaskLexer extends Lexer {
             }
             switch (alt1) {
                 case 1 :
-                    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalTask.g:1104:11: '\\r'
+                    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalTask.g:1103:11: '\\r'
                     {
                     match('\r'); 
 
@@ -119,12 +119,12 @@ public class InternalTaskLexer extends Lexer {
         try {
             int _type = RULE_CODE_;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalTask.g:1106:12: ( '\\'\\'\\'' ( options {greedy=false; } : . )* '\\'\\'\\'' ( RULE_NL )? )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalTask.g:1106:14: '\\'\\'\\'' ( options {greedy=false; } : . )* '\\'\\'\\'' ( RULE_NL )?
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalTask.g:1105:12: ( '\\'\\'\\'' ( options {greedy=false; } : . )* '\\'\\'\\'' ( RULE_NL )? )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalTask.g:1105:14: '\\'\\'\\'' ( options {greedy=false; } : . )* '\\'\\'\\'' ( RULE_NL )?
             {
             match("'''"); 
 
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalTask.g:1106:23: ( options {greedy=false; } : . )*
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalTask.g:1105:23: ( options {greedy=false; } : . )*
             loop2:
             do {
                 int alt2=2;
@@ -158,7 +158,7 @@ public class InternalTaskLexer extends Lexer {
 
                 switch (alt2) {
             	case 1 :
-            	    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalTask.g:1106:51: .
+            	    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalTask.g:1105:51: .
             	    {
             	    matchAny(); 
 
@@ -172,7 +172,7 @@ public class InternalTaskLexer extends Lexer {
 
             match("'''"); 
 
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalTask.g:1106:64: ( RULE_NL )?
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalTask.g:1105:64: ( RULE_NL )?
             int alt3=2;
             int LA3_0 = input.LA(1);
 
@@ -181,7 +181,7 @@ public class InternalTaskLexer extends Lexer {
             }
             switch (alt3) {
                 case 1 :
-                    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalTask.g:1106:64: RULE_NL
+                    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalTask.g:1105:64: RULE_NL
                     {
                     mRULE_NL(); 
 
@@ -206,11 +206,11 @@ public class InternalTaskLexer extends Lexer {
         try {
             int _type = RULE_TASK_TEXT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalTask.g:1108:16: ( RULE_HYPHEN (~ ( ( '\\n' | '\\r' ) ) )* ( RULE_NL )? )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalTask.g:1108:18: RULE_HYPHEN (~ ( ( '\\n' | '\\r' ) ) )* ( RULE_NL )?
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalTask.g:1107:16: ( RULE_HYPHEN (~ ( ( '\\n' | '\\r' ) ) )* ( RULE_NL )? )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalTask.g:1107:18: RULE_HYPHEN (~ ( ( '\\n' | '\\r' ) ) )* ( RULE_NL )?
             {
             mRULE_HYPHEN(); 
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalTask.g:1108:30: (~ ( ( '\\n' | '\\r' ) ) )*
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalTask.g:1107:30: (~ ( ( '\\n' | '\\r' ) ) )*
             loop4:
             do {
                 int alt4=2;
@@ -223,7 +223,7 @@ public class InternalTaskLexer extends Lexer {
 
                 switch (alt4) {
             	case 1 :
-            	    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalTask.g:1108:30: ~ ( ( '\\n' | '\\r' ) )
+            	    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalTask.g:1107:30: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -243,7 +243,7 @@ public class InternalTaskLexer extends Lexer {
                 }
             } while (true);
 
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalTask.g:1108:46: ( RULE_NL )?
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalTask.g:1107:46: ( RULE_NL )?
             int alt5=2;
             int LA5_0 = input.LA(1);
 
@@ -252,7 +252,7 @@ public class InternalTaskLexer extends Lexer {
             }
             switch (alt5) {
                 case 1 :
-                    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalTask.g:1108:46: RULE_NL
+                    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalTask.g:1107:46: RULE_NL
                     {
                     mRULE_NL(); 
 
@@ -277,10 +277,10 @@ public class InternalTaskLexer extends Lexer {
         try {
             int _type = RULE_TEXT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalTask.g:1110:11: ( (~ ( ( RULE_HYPHEN | RULE_COLON | '\\n' | '\\r' | RULE_SPACE | RULE_TAB ) ) | ~ ( ( RULE_HYPHEN | '\\n' | '\\r' | RULE_SPACE | RULE_TAB ) ) (~ ( ( '\\n' | '\\r' ) ) )* ~ ( ( RULE_COLON | '\\n' | '\\r' ) ) ) ( RULE_NL )? )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalTask.g:1110:13: (~ ( ( RULE_HYPHEN | RULE_COLON | '\\n' | '\\r' | RULE_SPACE | RULE_TAB ) ) | ~ ( ( RULE_HYPHEN | '\\n' | '\\r' | RULE_SPACE | RULE_TAB ) ) (~ ( ( '\\n' | '\\r' ) ) )* ~ ( ( RULE_COLON | '\\n' | '\\r' ) ) ) ( RULE_NL )?
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalTask.g:1109:11: ( (~ ( ( RULE_HYPHEN | RULE_COLON | '\\n' | '\\r' | RULE_SPACE | RULE_TAB ) ) | ~ ( ( RULE_HYPHEN | '\\n' | '\\r' | RULE_SPACE | RULE_TAB ) ) (~ ( ( '\\n' | '\\r' ) ) )* ~ ( ( RULE_COLON | '\\n' | '\\r' ) ) ) ( RULE_NL )? )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalTask.g:1109:13: (~ ( ( RULE_HYPHEN | RULE_COLON | '\\n' | '\\r' | RULE_SPACE | RULE_TAB ) ) | ~ ( ( RULE_HYPHEN | '\\n' | '\\r' | RULE_SPACE | RULE_TAB ) ) (~ ( ( '\\n' | '\\r' ) ) )* ~ ( ( RULE_COLON | '\\n' | '\\r' ) ) ) ( RULE_NL )?
             {
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalTask.g:1110:13: (~ ( ( RULE_HYPHEN | RULE_COLON | '\\n' | '\\r' | RULE_SPACE | RULE_TAB ) ) | ~ ( ( RULE_HYPHEN | '\\n' | '\\r' | RULE_SPACE | RULE_TAB ) ) (~ ( ( '\\n' | '\\r' ) ) )* ~ ( ( RULE_COLON | '\\n' | '\\r' ) ) )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalTask.g:1109:13: (~ ( ( RULE_HYPHEN | RULE_COLON | '\\n' | '\\r' | RULE_SPACE | RULE_TAB ) ) | ~ ( ( RULE_HYPHEN | '\\n' | '\\r' | RULE_SPACE | RULE_TAB ) ) (~ ( ( '\\n' | '\\r' ) ) )* ~ ( ( RULE_COLON | '\\n' | '\\r' ) ) )
             int alt7=2;
             int LA7_0 = input.LA(1);
 
@@ -304,7 +304,7 @@ public class InternalTaskLexer extends Lexer {
             }
             switch (alt7) {
                 case 1 :
-                    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalTask.g:1110:14: ~ ( ( RULE_HYPHEN | RULE_COLON | '\\n' | '\\r' | RULE_SPACE | RULE_TAB ) )
+                    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalTask.g:1109:14: ~ ( ( RULE_HYPHEN | RULE_COLON | '\\n' | '\\r' | RULE_SPACE | RULE_TAB ) )
                     {
                     if ( (input.LA(1)>='\u0000' && input.LA(1)<='\b')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\u001F')||(input.LA(1)>='!' && input.LA(1)<=',')||(input.LA(1)>='.' && input.LA(1)<='9')||(input.LA(1)>=';' && input.LA(1)<='\uFFFF') ) {
                         input.consume();
@@ -319,7 +319,7 @@ public class InternalTaskLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalTask.g:1110:72: ~ ( ( RULE_HYPHEN | '\\n' | '\\r' | RULE_SPACE | RULE_TAB ) ) (~ ( ( '\\n' | '\\r' ) ) )* ~ ( ( RULE_COLON | '\\n' | '\\r' ) )
+                    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalTask.g:1109:72: ~ ( ( RULE_HYPHEN | '\\n' | '\\r' | RULE_SPACE | RULE_TAB ) ) (~ ( ( '\\n' | '\\r' ) ) )* ~ ( ( RULE_COLON | '\\n' | '\\r' ) )
                     {
                     if ( (input.LA(1)>='\u0000' && input.LA(1)<='\b')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\u001F')||(input.LA(1)>='!' && input.LA(1)<=',')||(input.LA(1)>='.' && input.LA(1)<='\uFFFF') ) {
                         input.consume();
@@ -330,7 +330,7 @@ public class InternalTaskLexer extends Lexer {
                         recover(mse);
                         throw mse;}
 
-                    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalTask.g:1110:119: (~ ( ( '\\n' | '\\r' ) ) )*
+                    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalTask.g:1109:119: (~ ( ( '\\n' | '\\r' ) ) )*
                     loop6:
                     do {
                         int alt6=2;
@@ -352,7 +352,7 @@ public class InternalTaskLexer extends Lexer {
 
                         switch (alt6) {
                     	case 1 :
-                    	    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalTask.g:1110:119: ~ ( ( '\\n' | '\\r' ) )
+                    	    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalTask.g:1109:119: ~ ( ( '\\n' | '\\r' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -387,7 +387,7 @@ public class InternalTaskLexer extends Lexer {
 
             }
 
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalTask.g:1110:162: ( RULE_NL )?
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalTask.g:1109:162: ( RULE_NL )?
             int alt8=2;
             int LA8_0 = input.LA(1);
 
@@ -396,7 +396,7 @@ public class InternalTaskLexer extends Lexer {
             }
             switch (alt8) {
                 case 1 :
-                    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalTask.g:1110:162: RULE_NL
+                    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalTask.g:1109:162: RULE_NL
                     {
                     mRULE_NL(); 
 
@@ -421,8 +421,8 @@ public class InternalTaskLexer extends Lexer {
         try {
             int _type = RULE_PROJECT_;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalTask.g:1112:15: (~ ( ( '\\n' | '\\r' | RULE_HYPHEN | RULE_SPACE | RULE_TAB ) ) (~ ( ( '\\n' | '\\r' ) ) )* RULE_COLON ( RULE_NL )? )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalTask.g:1112:17: ~ ( ( '\\n' | '\\r' | RULE_HYPHEN | RULE_SPACE | RULE_TAB ) ) (~ ( ( '\\n' | '\\r' ) ) )* RULE_COLON ( RULE_NL )?
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalTask.g:1111:15: (~ ( ( '\\n' | '\\r' | RULE_HYPHEN | RULE_SPACE | RULE_TAB ) ) (~ ( ( '\\n' | '\\r' ) ) )* RULE_COLON ( RULE_NL )? )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalTask.g:1111:17: ~ ( ( '\\n' | '\\r' | RULE_HYPHEN | RULE_SPACE | RULE_TAB ) ) (~ ( ( '\\n' | '\\r' ) ) )* RULE_COLON ( RULE_NL )?
             {
             if ( (input.LA(1)>='\u0000' && input.LA(1)<='\b')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\u001F')||(input.LA(1)>='!' && input.LA(1)<=',')||(input.LA(1)>='.' && input.LA(1)<='\uFFFF') ) {
                 input.consume();
@@ -433,7 +433,7 @@ public class InternalTaskLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalTask.g:1112:64: (~ ( ( '\\n' | '\\r' ) ) )*
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalTask.g:1111:64: (~ ( ( '\\n' | '\\r' ) ) )*
             loop9:
             do {
                 int alt9=2;
@@ -455,7 +455,7 @@ public class InternalTaskLexer extends Lexer {
 
                 switch (alt9) {
             	case 1 :
-            	    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalTask.g:1112:64: ~ ( ( '\\n' | '\\r' ) )
+            	    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalTask.g:1111:64: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -476,7 +476,7 @@ public class InternalTaskLexer extends Lexer {
             } while (true);
 
             mRULE_COLON(); 
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalTask.g:1112:91: ( RULE_NL )?
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalTask.g:1111:91: ( RULE_NL )?
             int alt10=2;
             int LA10_0 = input.LA(1);
 
@@ -485,7 +485,7 @@ public class InternalTaskLexer extends Lexer {
             }
             switch (alt10) {
                 case 1 :
-                    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalTask.g:1112:91: RULE_NL
+                    // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalTask.g:1111:91: RULE_NL
                     {
                     mRULE_NL(); 
 
@@ -508,8 +508,8 @@ public class InternalTaskLexer extends Lexer {
     // $ANTLR start "RULE_COLON"
     public final void mRULE_COLON() throws RecognitionException {
         try {
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalTask.g:1114:21: ( ':' )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalTask.g:1114:23: ':'
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalTask.g:1113:21: ( ':' )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalTask.g:1113:23: ':'
             {
             match(':'); 
 
@@ -524,8 +524,8 @@ public class InternalTaskLexer extends Lexer {
     // $ANTLR start "RULE_HYPHEN"
     public final void mRULE_HYPHEN() throws RecognitionException {
         try {
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalTask.g:1116:22: ( '-' )
-            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalTask.g:1116:24: '-'
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalTask.g:1115:22: ( '-' )
+            // ../de.sebastianbenz.task.ui/src-gen/de/sebastianbenz/task/ui/contentassist/antlr/internal/InternalTask.g:1115:24: '-'
             {
             match('-'); 
 

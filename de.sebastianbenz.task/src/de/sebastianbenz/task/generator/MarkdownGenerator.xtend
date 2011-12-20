@@ -15,7 +15,7 @@ import org.eclipse.xtext.xtend2.lib.StringConcatenation
 
 class MarkdownGenerator implements de.sebastianbenz.task.generator.TaskGenerator {
 	   
-	override StringConcatenation generate(TaskModel taskModel){
+	override generate(TaskModel taskModel){
 		'''
 		«FOR content : taskModel.contents»
 		«generate(content)»

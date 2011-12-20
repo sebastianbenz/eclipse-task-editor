@@ -15,19 +15,19 @@ import de.sebastianbenz.task.TaskModel;
 import de.sebastianbenz.task.Text;
 import de.sebastianbenz.task.TextSegment;
 import de.sebastianbenz.task.generator.TaskGenerator;
+import java.util.Arrays;
 import java.util.Iterator;
 import org.apache.commons.lang.StringEscapeUtils;
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.xtend2.lib.StringConcatenation;
 import org.eclipse.xtext.xbase.lib.BooleanExtensions;
 import org.eclipse.xtext.xbase.lib.IntegerExtensions;
 import org.eclipse.xtext.xbase.lib.ObjectExtensions;
 import org.eclipse.xtext.xbase.lib.StringExtensions;
-import org.eclipse.xtext.xtend2.lib.StringConcatenation;
 
 @SuppressWarnings("all")
 public class HtmlGenerator implements TaskGenerator {
-  
-  public StringConcatenation generate(final TaskModel taskModel) {
+  public CharSequence generate(final TaskModel taskModel) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\"> ");
     _builder.newLine();
@@ -128,7 +128,7 @@ public class HtmlGenerator implements TaskGenerator {
     _builder.newLine();
     _builder.append("<body> ");
     _builder.newLine();
-    StringConcatenation _generateChildren = this.generateChildren(taskModel);
+    CharSequence _generateChildren = this.generateChildren(taskModel);
     _builder.append(_generateChildren, "");
     _builder.newLineIfNotEmpty();
     _builder.append("</body>");
@@ -210,12 +210,12 @@ public class HtmlGenerator implements TaskGenerator {
     return _builder;
   }
   
-  public StringConcatenation generateChildren(final Container container) {
+  public CharSequence generateChildren(final Container container) {
     StringConcatenation _builder = new StringConcatenation();
     {
       EList<Content> _children = container.getChildren();
       for(final Content child : _children) {
-        StringConcatenation _generate = this.generate(child);
+        CharSequence _generate = this.generate(child);
         _builder.append(_generate, "");
         _builder.newLineIfNotEmpty();
       }
@@ -223,13 +223,13 @@ public class HtmlGenerator implements TaskGenerator {
     return _builder;
   }
   
-  protected StringConcatenation _generate(final Note note) {
+  protected CharSequence _generate(final Note note) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("<p class=\"note\">");
-    StringConcatenation _write = this.write(note);
+    CharSequence _write = this.write(note);
     _builder.append(_write, "");
     _builder.newLineIfNotEmpty();
-    StringConcatenation _generateChildren = this.generateChildren(note);
+    CharSequence _generateChildren = this.generateChildren(note);
     _builder.append(_generateChildren, "");
     _builder.newLineIfNotEmpty();
     _builder.append("</p>");
@@ -237,7 +237,7 @@ public class HtmlGenerator implements TaskGenerator {
     return _builder;
   }
   
-  protected StringConcatenation _generate(final Task task) {
+  protected CharSequence _generate(final Task task) {
     StringConcatenation _builder = new StringConcatenation();
     {
       boolean _isFirst = this.isFirst(task);
@@ -255,11 +255,11 @@ public class HtmlGenerator implements TaskGenerator {
       }
     }
     _builder.append(">");
-    StringConcatenation _write = this.write(task);
+    CharSequence _write = this.write(task);
     _builder.append(_write, "	");
     _builder.newLineIfNotEmpty();
     _builder.append("\t");
-    StringConcatenation _generateChildren = this.generateChildren(task);
+    CharSequence _generateChildren = this.generateChildren(task);
     _builder.append(_generateChildren, "	");
     _builder.newLineIfNotEmpty();
     _builder.append("\t");
@@ -276,7 +276,6 @@ public class HtmlGenerator implements TaskGenerator {
   }
   
   public boolean isFirst(final Task task) {
-    {
       Container _parent = task.getParent();
       EList<Content> _children = _parent.getChildren();
       Iterable<Task> _filter = Iterables.<Task>filter(_children, de.sebastianbenz.task.Task.class);
@@ -285,39 +284,36 @@ public class HtmlGenerator implements TaskGenerator {
       Task _next = _iterator.next();
       boolean _operator_equals = ObjectExtensions.operator_equals(_next, task);
       return _operator_equals;
-    }
   }
   
   public boolean isLast(final Task task) {
-    {
       Container _parent = task.getParent();
       EList<Content> _children = _parent.getChildren();
       EList<Content> siblings = _children;
       int _size = siblings.size();
-      int _operator_minus = IntegerExtensions.operator_minus(((Integer)_size), ((Integer)1));
+      int _operator_minus = IntegerExtensions.operator_minus(_size, 1);
       Content _get = siblings.get(_operator_minus);
       boolean _operator_equals = ObjectExtensions.operator_equals(_get, task);
       return _operator_equals;
-    }
   }
   
-  protected StringConcatenation _generate(final Project project) {
-    StringConcatenation _xblockexpression = null;
+  protected CharSequence _generate(final Project project) {
+    CharSequence _xblockexpression = null;
     {
       int _level = project.getLevel();
-      int _operator_plus = IntegerExtensions.operator_plus(((Integer)_level), ((Integer)1));
+      int _operator_plus = IntegerExtensions.operator_plus(_level, 1);
       int level = _operator_plus;
       StringConcatenation _builder = new StringConcatenation();
       _builder.append("<h");
       _builder.append(level, "");
       _builder.append(">");
-      StringConcatenation _write = this.write(project);
+      CharSequence _write = this.write(project);
       _builder.append(_write, "");
       _builder.append("</h");
       _builder.append(level, "");
       _builder.append(">");
       _builder.newLineIfNotEmpty();
-      StringConcatenation _generateChildren = this.generateChildren(project);
+      CharSequence _generateChildren = this.generateChildren(project);
       _builder.append(_generateChildren, "");
       _builder.newLineIfNotEmpty();
       _xblockexpression = (_builder);
@@ -325,17 +321,17 @@ public class HtmlGenerator implements TaskGenerator {
     return _xblockexpression;
   }
   
-  protected StringConcatenation _generate(final EmptyLine emptyLine) {
+  protected CharSequence _generate(final EmptyLine emptyLine) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("<br>");
     _builder.newLine();
-    StringConcatenation _generateChildren = this.generateChildren(emptyLine);
+    CharSequence _generateChildren = this.generateChildren(emptyLine);
     _builder.append(_generateChildren, "");
     _builder.newLineIfNotEmpty();
     return _builder;
   }
   
-  protected StringConcatenation _generate(final Code code) {
+  protected CharSequence _generate(final Code code) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("<pre class=\"brush: ");
     String _lang = code.getLang();
@@ -348,13 +344,13 @@ public class HtmlGenerator implements TaskGenerator {
     _builder.newLineIfNotEmpty();
     _builder.append("</pre>");
     _builder.newLine();
-    StringConcatenation _generateChildren = this.generateChildren(code);
+    CharSequence _generateChildren = this.generateChildren(code);
     _builder.append(_generateChildren, "");
     _builder.newLineIfNotEmpty();
     return _builder;
   }
   
-  public StringConcatenation write(final Content content) {
+  public CharSequence write(final Content content) {
     StringConcatenation _builder = new StringConcatenation();
     {
       EList<TextSegment> _segments = content.getSegments();
@@ -374,7 +370,6 @@ public class HtmlGenerator implements TaskGenerator {
   }
   
   protected CharSequence _write(final Link link) {
-    {
       String _url = link.getUrl();
       String url = _url;
       boolean _startsWith = url.startsWith("http://");
@@ -398,7 +393,6 @@ public class HtmlGenerator implements TaskGenerator {
       String _operator_plus_3 = StringExtensions.operator_plus(_operator_plus_2, description);
       String _operator_plus_4 = StringExtensions.operator_plus(_operator_plus_3, "</a>");
       return _operator_plus_4;
-    }
   }
   
   protected CharSequence _write(final Image image) {
@@ -423,35 +417,35 @@ public class HtmlGenerator implements TaskGenerator {
     return _builder;
   }
   
-  public StringConcatenation generate(final Content code) {
-    if ((code instanceof Code)) {
+  public CharSequence generate(final Content code) {
+    if (code instanceof Code) {
       return _generate((Code)code);
-    } else if ((code instanceof EmptyLine)) {
+    } else if (code instanceof EmptyLine) {
       return _generate((EmptyLine)code);
-    } else if ((code instanceof Note)) {
+    } else if (code instanceof Note) {
       return _generate((Note)code);
-    } else if ((code instanceof Project)) {
+    } else if (code instanceof Project) {
       return _generate((Project)code);
-    } else if ((code instanceof Task)) {
+    } else if (code instanceof Task) {
       return _generate((Task)code);
     } else {
       throw new IllegalArgumentException("Unhandled parameter types: " +
-        java.util.Arrays.<Object>asList(code).toString());
+        Arrays.<Object>asList(code).toString());
     }
   }
   
   public CharSequence write(final TextSegment image) {
-    if ((image instanceof Image)) {
+    if (image instanceof Image) {
       return _write((Image)image);
-    } else if ((image instanceof Link)) {
+    } else if (image instanceof Link) {
       return _write((Link)image);
-    } else if ((image instanceof Tag)) {
+    } else if (image instanceof Tag) {
       return _write((Tag)image);
-    } else if ((image instanceof Text)) {
+    } else if (image instanceof Text) {
       return _write((Text)image);
     } else {
       throw new IllegalArgumentException("Unhandled parameter types: " +
-        java.util.Arrays.<Object>asList(image).toString());
+        Arrays.<Object>asList(image).toString());
     }
   }
 }

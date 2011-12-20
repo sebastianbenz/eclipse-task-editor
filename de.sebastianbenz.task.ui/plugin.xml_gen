@@ -71,6 +71,19 @@
         </page>
     </extension>
     <extension
+            point="org.eclipse.ui.propertyPages">
+        <page
+            class="de.sebastianbenz.task.ui.TaskExecutableExtensionFactory:org.eclipse.xtext.ui.editor.preferences.LanguageRootPreferencePage"
+            id="de.sebastianbenz.task.Task"
+            name="Task">
+            <keywordReference id="de.sebastianbenz.task.ui.keyword_Task"/>
+            <enabledWhen>
+	            <adapt type="org.eclipse.core.resources.IProject"/>
+			</enabledWhen>
+	        <filter name="projectNature" value="org.eclipse.xtext.ui.shared.xtextNature"/>
+        </page>
+    </extension>
+    <extension
         point="org.eclipse.ui.keywords">
         <keyword
             id="de.sebastianbenz.task.ui.keyword_Task"
@@ -278,6 +291,19 @@
             id="de.sebastianbenz.task.Query.templates"
             name="Templates">
             <keywordReference id="de.sebastianbenz.task.ui.keyword_Query"/>
+        </page>
+    </extension>
+    <extension
+            point="org.eclipse.ui.propertyPages">
+        <page
+            class="de.sebastianbenz.task.ui.QueryExecutableExtensionFactory:org.eclipse.xtext.ui.editor.preferences.LanguageRootPreferencePage"
+            id="de.sebastianbenz.task.Query"
+            name="Query">
+            <keywordReference id="de.sebastianbenz.task.ui.keyword_Query"/>
+            <enabledWhen>
+	            <adapt type="org.eclipse.core.resources.IProject"/>
+			</enabledWhen>
+	        <filter name="projectNature" value="org.eclipse.xtext.ui.shared.xtextNature"/>
         </page>
     </extension>
     <extension

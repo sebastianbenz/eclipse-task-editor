@@ -19,7 +19,7 @@ import de.sebastianbenz.task.Tag
 
 class ConfluenceGenerator implements de.sebastianbenz.task.generator.TaskGenerator {
 	   
-	override StringConcatenation generate(TaskModel taskModel)
+	override generate(TaskModel taskModel)
 		'''
 		«FOR content : taskModel.contents»
 			«generate(content)»

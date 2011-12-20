@@ -6,8 +6,6 @@ import org.eclipse.jface.text.IRegion;
 import org.eclipse.jface.text.reconciler.DirtyRegion;
 import org.eclipse.jface.text.reconciler.IReconcilingStrategyExtension;
 import org.eclipse.jface.text.source.ISourceViewer;
-import org.eclipse.ui.editors.text.EditorsUI;
-import org.eclipse.ui.texteditor.spelling.SpellingReconcileStrategy;
 import org.eclipse.ui.texteditor.spelling.SpellingService;
 import org.eclipse.xtext.ui.editor.reconciler.XtextDocumentReconcileStrategy;
 

@@ -140,7 +140,8 @@ public class TaskItemProvider
 		boolean qualify =
 			childFeature == TaskPackage.Literals.CONTENT__TAGS ||
 			childFeature == TaskPackage.Literals.CONTENT__SEGMENTS ||
-			childFeature == TaskPackage.Literals.CONTENT__LINKS;
+			childFeature == TaskPackage.Literals.CONTENT__LINKS ||
+			childFeature == TaskPackage.Literals.CONTENT__IMAGES;
 
 		if (qualify) {
 			return getString

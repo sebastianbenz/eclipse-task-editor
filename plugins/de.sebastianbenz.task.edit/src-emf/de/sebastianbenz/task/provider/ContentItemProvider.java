@@ -202,6 +202,7 @@ public class ContentItemProvider
 			case TaskPackage.CONTENT__TAGS:
 			case TaskPackage.CONTENT__LINKS:
 			case TaskPackage.CONTENT__SEGMENTS:
+			case TaskPackage.CONTENT__IMAGES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -240,7 +241,8 @@ public class ContentItemProvider
 		boolean qualify =
 			childFeature == TaskPackage.Literals.CONTENT__TAGS ||
 			childFeature == TaskPackage.Literals.CONTENT__SEGMENTS ||
-			childFeature == TaskPackage.Literals.CONTENT__LINKS;
+			childFeature == TaskPackage.Literals.CONTENT__LINKS ||
+			childFeature == TaskPackage.Literals.CONTENT__IMAGES;
 
 		if (qualify) {
 			return getString

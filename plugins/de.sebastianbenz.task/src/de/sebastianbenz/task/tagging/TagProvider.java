@@ -21,7 +21,6 @@ import com.google.common.collect.Iterators;
 
 import de.sebastianbenz.task.Content;
 import de.sebastianbenz.task.Tag;
-import de.sebastianbenz.task.Task;
 
 public class TagProvider {
 

@@ -22,7 +22,7 @@ class MarkdownGenerator implements de.sebastianbenz.task.generator.TaskGenerator
 		'''
 		«note.value»
 		'''
-	}
+	} 
 	
 	def dispatch generate(Task task){
 		'''

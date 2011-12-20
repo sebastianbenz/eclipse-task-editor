@@ -3,12 +3,9 @@ package de.sebastianbenz.task.ui.editor;
 import static org.eclipse.xtext.util.Strings.isEmpty;
 
 import org.apache.log4j.Logger;
-import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.jface.text.IRegion;
 import org.eclipse.jface.text.hyperlink.IHyperlink;
-import org.eclipse.ui.IViewPart;
 import org.eclipse.ui.PartInitException;
-import org.eclipse.xtext.util.Strings;
 
 import de.sebastianbenz.task.Tag;
 import de.sebastianbenz.task.impl.TagImplCustom;

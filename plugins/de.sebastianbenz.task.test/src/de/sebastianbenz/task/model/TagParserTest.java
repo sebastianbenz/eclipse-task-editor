@@ -34,6 +34,7 @@ public class TagParserTest {
 	@Test
 	public void shouldParseSimpleTags() throws Exception {
 		assertThat(tagsIn(" @today"), is("@today"));
+		assertThat(tagsIn(" @m,aaa"), is("@m"));
 		assertThat(tagsIn("  @today"), is("@today"));
 		assertThat(tagsIn("  @today  "), is("@today"));
 		assertThat(tagsIn("  @a @b  "), anyOf(is("@a, @b"), is("@b, @a")));

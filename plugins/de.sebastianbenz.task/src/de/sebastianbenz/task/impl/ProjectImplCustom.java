@@ -11,7 +11,6 @@
 package de.sebastianbenz.task.impl;
 
 import org.eclipse.emf.common.util.EList;
-import org.eclipse.xtext.util.Strings;
 
 import de.sebastianbenz.task.Text;
 import de.sebastianbenz.task.TextSegment;

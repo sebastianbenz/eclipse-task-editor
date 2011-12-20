@@ -31,7 +31,7 @@ class ConfluenceGenerator implements de.sebastianbenz.task.generator.TaskGenerat
 	def dispatch generate(Project project)
 		'''
 		h«project.level + 1». «escape(project.value)»'''
-	
+	 
 	def dispatch generate(EmptyLine emptyLine)
 		'''
 		

@@ -13,7 +13,6 @@ import de.sebastianbenz.task.Task
 import de.sebastianbenz.task.TaskModel
 import de.sebastianbenz.task.Text
 import org.apache.commons.lang.StringEscapeUtils
- 
 import static com.google.common.collect.Iterables.*
 
 class HtmlGenerator implements de.sebastianbenz.task.generator.TaskGenerator {
@@ -29,7 +28,7 @@ class HtmlGenerator implements de.sebastianbenz.task.generator.TaskGenerator {
 			.tag{
 				color: gray;
 				text-decoration:underline;
-			}
+			} 
 			body {
 			  font-family: "Helvetica Neue", helvetica, arial, sans-serif;
 			  font-size: 14px;

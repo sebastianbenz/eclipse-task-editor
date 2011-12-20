@@ -66,8 +66,8 @@ public class TaskHyperLinkHelper extends HyperlinkHelper {
 	}
 
 	private IHyperlink create(int offset, Link link) {
-		IRegion region = new Region(offset, link.getLength());
 		String url = link.getUrl();
+		IRegion region = new Region(offset, link.getLength());
 		if(!url.startsWith("http")){
 			url = "http://" + url;
 		}

@@ -3,7 +3,7 @@ Simple Task Editor:
 	Task Editor:
 	
 		All tasks related to the editor components.
-		
+		  
 		- Enable folding @done
 		- Show structure in outline view @done
 		- Reduce tabsize to 2 @done

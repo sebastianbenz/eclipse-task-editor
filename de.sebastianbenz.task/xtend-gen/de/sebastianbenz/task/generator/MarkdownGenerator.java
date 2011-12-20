@@ -68,8 +68,8 @@ public class MarkdownGenerator implements TaskGenerator {
   
   protected CharSequence _generate(final Project project) {
       int i = 0;
-      org.eclipse.xtext.xtend2.lib.StringConcatenation _stringConcatenation = new org.eclipse.xtext.xtend2.lib.StringConcatenation();
-      org.eclipse.xtext.xtend2.lib.StringConcatenation result = _stringConcatenation;
+      StringConcatenation _stringConcatenation = new StringConcatenation();
+      StringConcatenation result = _stringConcatenation;
       int _level = project.getLevel();
       boolean _operator_lessEqualsThan = IntegerExtensions.operator_lessEqualsThan(i, _level);
       boolean _while = _operator_lessEqualsThan;

@@ -10,7 +10,6 @@ import org.eclipse.swt.widgets.Shell;
 import org.eclipse.xtext.resource.XtextResource;
 import org.eclipse.xtext.ui.editor.XtextEditor;
 import org.eclipse.xtext.util.Files;
-import org.eclipse.xtext.xtend2.lib.StringConcatenation;
 
 import de.sebastianbenz.task.TaskModel;
 import de.sebastianbenz.task.generator.TaskGenerator;

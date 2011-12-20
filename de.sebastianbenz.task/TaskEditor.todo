@@ -4,7 +4,7 @@ Simple Task Editor:
 	
 		All tasks related to the editor components.
 		
-		- Enable folding 
+		- Enable folding @done
 		- Show structure in outline view @done
 		- Reduce tabsize to 2 @done
 		- Automatic line wrap in editor should be aware of the intendation 

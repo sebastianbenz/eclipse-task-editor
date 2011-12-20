@@ -2,7 +2,7 @@
 <feature
       id="de.sebastianbenz.task"
       label="Todo editor"
-      version="1.0.2.qualifier"
+      version="1.1.0.qualifier"
       provider-name="Sebastian Benz">
 
    <description>
@@ -68,7 +68,7 @@ This Agreement is governed by the laws of the State of New York and the intellec
    <url>
       <update label="Todo Editor" url="http://sebastianbenz.github.com/eclipse-task-editor/updates/"/>
       <discovery label="Indigo" url="http://download.eclipse.org/releases/indigo"/>
-      <discovery label="Xtext" url="http://download.eclipse.org/modeling/tmf/updates/releases"/>
+      <discovery label="Xtext Releases" url="http://newsite"/>
    </url>
 
    <requires>

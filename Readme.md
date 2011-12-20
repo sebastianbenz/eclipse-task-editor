@@ -2,7 +2,7 @@
 
 You can find a general introduction [here](http://sebastianbenz.de/a-simple-text-based-todo-editor-for-eclipse).
 
-![Screenshot](http://sebastianbenz.github.com/eclipse-task-editor/images/Screenshot.png)
+![Screenshot](http://sebastianbenz.github.com/eclipse-task-editor/images/ScreenshotNew.png)
 
 #Installation
 

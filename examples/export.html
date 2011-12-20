@@ -1,0 +1,119 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+<head> 
+<style type="text/css">
+	.done {
+		text-decoration: line-through;
+	}
+	.tag{
+		color: gray;
+		text-decoration:underline;
+	} 
+	body {
+	  font-family: "Helvetica Neue", helvetica, arial, sans-serif;
+	  font-size: 14px;
+	  line-height: 1.4em;
+	  color: #333333;
+	}
+	ul{
+		list-style: none;
+		margin-left: 0;
+		text-indent: -2em;
+	}
+	ul li:before {
+		content: "\2D";	
+		margin-right: 0.5em;
+	}
+	.note{
+		color: gray;
+	}
+	.syntaxhighlighter { 
+		padding-bottom: 1px;
+	}
+</style
+
+</head> 
+<body> 
+<h1>New Todo Editor Release	
+</h1>
+<p class="note">It has been a while since the last release of the <a href="http://sebastianbenz.de/a-simple-text-based-todo-editor-for-eclipse">Eclipse Todo Editor</a>. After its initial release I have been using and updating it on a regular basis. Besides using it for tracking my todo lists, it has also become my favorite tool for taking notes during meetings and discussion. Now I am happy to announce the new 1.1.0 release. It has some great new features shifting its focus from a todo list manager to a general note taking application. You can install it either via <a href="http://marketplace.eclipse.org/content/eclipse-todo-editor">Eclipse Market Place</a> or its <a href="http://sebastianbenz.github.com/eclipse-task-editor/updates">Update Site</a>. 
+</p>
+<h2>Syntax Highlighting	
+</h2>
+<p class="note">While developing, I often store code snipplets in my todo files. To make these more readable I added support for custom syntax highlighting for 			different programming languages. The only thing you need to do is to 		declare the language after the code block literal: 
+</p>
+<pre class="brush: java; toolbar: false">
+
+public class MyClass{
+  public static void main(String[] args){
+    System.out.println(&quot;Hello World&quot;);
+  }
+}
+</pre>
+<p class="note">Here is an example what it looks in the editor: 
+</p>
+<p class="note"><p><img src="http://sebastianbenz.github.com/eclipse-task-editor/images/SyntaxHighlighting.png" title="Syntax highlighting example" alt="Syntax highlighting example"/></p>
+</p>
+<h2>Images & Links	
+</h2>
+<p class="note">You can now specifying links and images in the todo files. The editor 		automatically underlines links within the text. You can open a link by pressing F3 or hold CMD/STRG when clicking on it. Links with descriptions 	and images can in <a href="http://daringfireball.net/projects/markdown/">Markdown</a> syntax: 
+</p>
+<p class="note"><p><img src="http://sebastianbenz.github.com/eclipse-task-editor/images/LinksAndImages.png" title="Images and hyperlinks" alt="Images and hyperlinks"/></p>
+</p>
+<h2>Export	
+</h2>
+<p class="note">You might wonder why one would want to specify links or images in a todo file. This comes in handy with the new export feature: todo files can now be exported into HTML or <a href="http://confluence.atlassian.com/display/CONF20/Confluence+Notation+Guide+Overview">Confluence Markup</a> using the context menu in the editor. Links and images will be translated into their respective counterparts. <a href="http://sebastianbenz.github.com/eclipse-task-editor/examples/export.html">Here</a> is an example what this blog post would look like (note that the syntax highlighting in the code snippet is still present). 
+</p>
+<h2>More	
+</h2>
+<p class="note">There are some more smaller fixes: 
+</p>
+<ul>
+	<li> Migration to Xtext 2.2.1
+	</li>
+	<li> CMD/Ctrl + Click a tag and it will automatically open the query view showing all elements with this tag.
+	</li>
+	<li> Notes and projects can now be tagged. 
+	</li>
+	<li> Tags do now also apply to subtasks.
+	</li>
+	<li> Improved Spell checking:
+	<ul>
+		<li> Support for quick fixes.
+		</li>
+		<li> Can be disabled via the preferences.
+		</li>
+	</ul>		
+	</li>
+</ul>		
+</body>
+<link href="http://alexgorbatchev.com/pub/sh/current/styles/shCore.css" rel="stylesheet" type="text/css" />
+<link href="http://alexgorbatchev.com/pub/sh/current/styles/shThemeDefault.css" rel="stylesheet" type="text/css" />
+<script src="http://alexgorbatchev.com/pub/sh/current/scripts/shCore.js" type="text/javascript"></script>
+<script src="http://alexgorbatchev.com/pub/sh/current/scripts/shAutoloader.js" type="text/javascript"></script>
+<script type="text/javascript">
+function path()
+{
+  var args = arguments,
+      result = []
+      ;
+       
+  for(var i = 0; i < args.length; i++)
+      result.push(args[i].replace('@', 'http://alexgorbatchev.com/pub/sh/current/scripts/'));
+       
+  return result
+};
+ 
+SyntaxHighlighter.autoloader.apply(null, path(
+  'cpp c                  @shBrushCpp.js',
+  'css                    @shBrushCss.js',
+  'java                   @shBrushJava.js',
+  'js jscript javascript  @shBrushJScript.js',
+  'py python              @shBrushPython.js',
+  'ruby rails ror rb      @shBrushRuby.js',
+  'scala                  @shBrushScala.js',
+  'xml xhtml xslt html    @shBrushXml.js'
+));
+SyntaxHighlighter.all();
+</script>
+</html>

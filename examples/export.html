@@ -34,13 +34,15 @@
 
 </head> 
 <body> 
-<h1>New Todo Editor Release	
+<h1>New Eclipse Todo Editor Release (1.1.0)	
 </h1>
-<p class="note">It has been a while since the last release of the <a href="http://sebastianbenz.de/a-simple-text-based-todo-editor-for-eclipse">Eclipse Todo Editor</a>. After its initial release I have been using and updating it on a regular basis. Besides using it for tracking my todo lists, it has also become my favorite tool for taking notes during meetings and discussion. Now I am happy to announce the new 1.1.0 release. It has some great new features shifting its focus from a todo list manager to a general note taking application. You can install it either via <a href="http://marketplace.eclipse.org/content/eclipse-todo-editor">Eclipse Market Place</a> or its <a href="http://sebastianbenz.github.com/eclipse-task-editor/updates">Update Site</a>. 
+<p class="note">It has been a while since the last release of the <a href="http://sebastianbenz.de/a-simple-text-based-todo-editor-for-eclipse">Eclipse Todo Editor</a>. After its initial release I have been using and updating it on a regular basis. Besides using it for tracking my todo lists, it has also become my favorite tool for taking notes during meetings and discussions. Now I am happy to announce the new 1.1.0 release. It has some great new features, shifting its focus from a todo list manager to a general note taking application. You can install it either via <a href="http://marketplace.eclipse.org/content/eclipse-todo-editor">Eclipse Market Place</a> or its <a href="http://sebastianbenz.github.com/eclipse-task-editor/updates">Update Site</a>. 
+</p>
+<p class="note"><p><img src="http://sebastianbenz.github.com/eclipse-task-editor/images/ScreenshotNew.png" title="Screenshot" alt="Screenshot"/></p>
 </p>
 <h2>Syntax Highlighting	
 </h2>
-<p class="note">While developing, I often store code snipplets in my todo files. To make these more readable I added support for custom syntax highlighting for 			different programming languages. The only thing you need to do is to 		declare the language after the code block literal: 
+<p class="note">While developing, I often store code snipplets in my todo files. To make these more readable, I added support for custom syntax highlighting for 			different programming languages. The only thing you need to do is to 		declare the language after the code block literal: 
 </p>
 <pre class="brush: java; toolbar: false">
 
@@ -50,23 +52,23 @@ public class MyClass{
   }
 }
 </pre>
-<p class="note">Here is an example what it looks in the editor: 
+<p class="note">Here is an example what it looks like in the editor: 
 </p>
 <p class="note"><p><img src="http://sebastianbenz.github.com/eclipse-task-editor/images/SyntaxHighlighting.png" title="Syntax highlighting example" alt="Syntax highlighting example"/></p>
 </p>
 <h2>Images & Links	
 </h2>
-<p class="note">You can now specifying links and images in the todo files. The editor 		automatically underlines links within the text. You can open a link by pressing F3 or hold CMD/STRG when clicking on it. Links with descriptions 	and images can in <a href="http://daringfireball.net/projects/markdown/">Markdown</a> syntax: 
+<p class="note">You can now specify links and images in the todo files. The editor 		automatically underlines links within the text. You can open a link by pressing F3 or hold CMD/STRG when clicking on it. Links with descriptions 	and images can be specified in <a href="http://daringfireball.net/projects/markdown/">Markdown</a> syntax: 
 </p>
 <p class="note"><p><img src="http://sebastianbenz.github.com/eclipse-task-editor/images/LinksAndImages.png" title="Images and hyperlinks" alt="Images and hyperlinks"/></p>
 </p>
 <h2>Export	
 </h2>
-<p class="note">You might wonder why one would want to specify links or images in a todo file. This comes in handy with the new export feature: todo files can now be exported into HTML or <a href="http://confluence.atlassian.com/display/CONF20/Confluence+Notation+Guide+Overview">Confluence Markup</a> using the context menu in the editor. Links and images will be translated into their respective counterparts. <a href="http://sebastianbenz.github.com/eclipse-task-editor/examples/export.html">Here</a> is an example what this blog post would look like (note that the syntax highlighting in the code snippet is still present). 
+<p class="note">You might have wondered why one wants to specify links or images in a todo file. This comes in handy with the new export feature: todo files can now be exported into HTML or <a href="http://confluence.atlassian.com/display/CONF20/Confluence+Notation+Guide+Overview">Confluence Markup</a> using the context menu in the editor. Links and images will be translated into their respective counterparts. <a href="http://sebastianbenz.github.com/eclipse-task-editor/examples/export.html">Here</a> is an example how this blog post would look like (note that the syntax highlighting in the code snippet is still present). 
 </p>
 <h2>More	
 </h2>
-<p class="note">There are some more smaller fixes: 
+<p class="note">More new features: 
 </p>
 <ul>
 	<li> Migration to Xtext 2.2.1
@@ -77,13 +79,9 @@ public class MyClass{
 	</li>
 	<li> Tags do now also apply to subtasks.
 	</li>
-	<li> Improved Spell checking:
-	<ul>
-		<li> Support for quick fixes.
-		</li>
-		<li> Can be disabled via the preferences.
-		</li>
-	</ul>		
+	<li> Support for text folding.
+	</li>
+	<li> Improved Spell checking
 	</li>
 </ul>		
 </body>

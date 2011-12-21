@@ -10,13 +10,15 @@ The editor can be installed via the following update site:
 
 http://sebastianbenz.github.com/eclipse-task-editor/updates
 
+Note: The editor requires Xtext, which can be installed via: http://download.eclipse.org/modeling/tmf/xtext/updates/composite/releases/.
+
 The editor is also available as a standalone Eclipse RCP application. The application runs on windows, linux and mac. You can build the application via:
 
 	git clone git://github.com/sebastianbenz/eclipse-task-editor.git
 	cd eclipse-task-editor
 	mvn clean install
 
-The zipped applications can be found in de.sebastianbenz.task.rcp/target/products/task-editor-*.zip and a zipped update site is located in de.sebastianbenz.task.update-site/target/site.zip.
+The zipped applications can be found in plugins/de.sebastianbenz.task.rcp/target/products/task-editor-*.zip and a zipped update site is located in tools/de.sebastianbenz.task.update-site/target/site.zip.
 
 #Usage
 

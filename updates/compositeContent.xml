@@ -5,7 +5,7 @@
   <properties size='1'>
     <property name='p2.timestamp' value='1324423015000'/>
   </properties>
- <children size='1'>
+ <children size='2'>
     <child location='http://download.eclipse.org/modeling/tmf/xtext/updates/composite/releases/'/>
 	<child location='http://sebastianbenz.github.com/eclipse-task-editor/updates/release'/>
   </children>

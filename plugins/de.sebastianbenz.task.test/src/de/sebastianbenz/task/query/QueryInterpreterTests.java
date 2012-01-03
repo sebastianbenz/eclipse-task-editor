@@ -16,7 +16,6 @@ import static org.junit.Assert.assertThat;
 
 import java.util.List;
 
-import org.eclipse.emf.ecore.resource.Resource;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
@@ -36,6 +35,9 @@ public class QueryInterpreterTests extends AbstractTest {
 
 	private String result;
 
+	
+	@Inject
+	private QueryStringParser queryParser;
 	
 	@Inject
 	private QueryInterpreter fixture;
@@ -305,6 +307,13 @@ public class QueryInterpreterTests extends AbstractTest {
 	}
 	
 	@Test
+	public void shouldSupportUtf8() throws Exception {
+		model(  "- aoeui 亜 み eĥoŝanĝo іўё aoeu\n"); 
+		select("'aoeui 亜 み eĥoŝanĝo іўё aoeu'");
+		assertThat(result, is("aoeui 亜 み eĥoŝanĝo іўё aoeu"));
+	}
+	
+	@Test
 	public void shouldSupportNestedTasks() throws Exception {
 		model(  "- task2\n"+
 				"	- task21\n" + 
@@ -328,9 +337,7 @@ public class QueryInterpreterTests extends AbstractTest {
 	}
 
 	protected Query query(String queryString) {
-		Resource resource = resource(queryString, "__query");
-		Query query = (Query) resource.getContents().get(0);
-		return query;
+		return queryParser.parse(queryString);
 	}
 
 	private void model(String... taskModels) {

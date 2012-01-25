@@ -253,8 +253,7 @@ public class SemanticHighlightingCalculator implements ISemanticHighlightingCalc
 		}
 
 		protected String textOf(Code code) {
-			String text = code.getText();
-			return text.substring(CODE_SEPARATOR, text.length()-CODE_SEPARATOR);
+			return code.getText();
 		}
 
 		protected Brush brushFor(Code code) {

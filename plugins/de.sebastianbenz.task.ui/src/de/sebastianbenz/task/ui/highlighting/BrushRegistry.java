@@ -4,10 +4,6 @@ import static com.google.common.collect.Maps.newHashMap;
 import static de.sebastianbenz.task.ui.highlighting.Brush.Mapping.pattern;
 import static de.sebastianbenz.task.ui.highlighting.BrushBuilder.lang;
 import static de.sebastianbenz.task.ui.highlighting.HighlightingConfiguration.CODE_ANNOTATION_ID;
-import static org.eclipse.xtext.ui.editor.syntaxcoloring.DefaultHighlightingConfiguration.COMMENT_ID;
-import static org.eclipse.xtext.ui.editor.syntaxcoloring.DefaultHighlightingConfiguration.KEYWORD_ID;
-import static org.eclipse.xtext.ui.editor.syntaxcoloring.DefaultHighlightingConfiguration.NUMBER_ID;
-import static org.eclipse.xtext.ui.editor.syntaxcoloring.DefaultHighlightingConfiguration.STRING_ID;
 
 import java.util.Collection;
 import java.util.Map;
@@ -16,8 +12,17 @@ import java.util.regex.Pattern;
 
 import com.google.inject.Singleton;
 
+import de.sebastianbenz.task.ui.highlighting.Brush;
+import de.sebastianbenz.task.ui.highlighting.BrushBuilder;
+import de.sebastianbenz.task.ui.highlighting.HighlightingConfiguration;
+
 @Singleton
 public class BrushRegistry {
+	
+	public static final String KEYWORD_ID = "keyword";
+	public static final String COMMENT_ID = "comment";
+	public static final String STRING_ID = "string";
+	public static final String NUMBER_ID = "number";
 	
 	private static final Pattern PERL_SINGLE_LINE_COMMENT = Pattern.compile("#.*$", Pattern.MULTILINE);
 	public static final String DEFAULT_CONFIGURATION = "default";

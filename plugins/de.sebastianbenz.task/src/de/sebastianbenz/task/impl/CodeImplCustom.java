@@ -10,6 +10,8 @@
  ******************************************************************************/
 package de.sebastianbenz.task.impl;
 
+import static de.sebastianbenz.task.util.Strings2.firstWord;
+
 import java.util.regex.Pattern;
 
 import org.eclipse.emf.common.util.ECollections;
@@ -18,7 +20,6 @@ import org.eclipse.emf.common.util.EList;
 import de.sebastianbenz.task.Link;
 import de.sebastianbenz.task.Tag;
 import de.sebastianbenz.task.TextSegment;
-import de.sebastianbenz.task.util.Strings2;
 
 
 public class CodeImplCustom extends de.sebastianbenz.task.impl.CodeImpl {
@@ -28,12 +29,11 @@ public class CodeImplCustom extends de.sebastianbenz.task.impl.CodeImpl {
 
 	@Override
 	protected String cleanText(String newText) {
-		newText = newText.trim();
-		newText = newText.substring(PREFIX.length(), newText.length() - PREFIX.length());
+		newText = newText.substring(getLang().length());
 		newText = removeLeadingWhiteSpace(newText);
 		newText = Pattern.compile("^" + getIntend(), Pattern.MULTILINE).matcher(newText).replaceAll("");
 		newText = newText.replaceAll("\t", "  "); 
-		return newText.substring(getLang().length());
+		return newText;
 	}
 
 	private String removeLeadingWhiteSpace(String text) {
@@ -47,7 +47,11 @@ public class CodeImplCustom extends de.sebastianbenz.task.impl.CodeImpl {
 	@Override
 	public String getLang() {
 		if(lang == null){
-			lang = Strings2.firstWord(getText().substring(PREFIX.length()));
+			if(getText().indexOf("\n") == -1){
+				lang = "";
+			}else{
+				lang = firstWord(getText());
+			}
 		}
 		return lang;
 	}

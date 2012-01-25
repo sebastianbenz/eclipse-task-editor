@@ -13,6 +13,7 @@
  */
 package de.sebastianbenz.task;
 
+import org.eclipse.xtext.conversion.IValueConverterService;
 import org.eclipse.xtext.linking.ILinker;
 import org.eclipse.xtext.naming.IQualifiedNameProvider;
 import org.eclipse.xtext.resource.IDefaultResourceDescriptionStrategy;
@@ -24,6 +25,7 @@ import com.google.inject.Binder;
 import de.sebastianbenz.task.model.RestructuringLinker;
 import de.sebastianbenz.task.resource.LocationInFileProvider;
 import de.sebastianbenz.task.resource.TaskResourceDescriptionStrategy;
+import de.sebastianbenz.task.services.TaskValueConverterService;
 import de.sebastianbenz.task.util.TaskQualifiedNameProvider;
 
 /**
@@ -58,6 +60,11 @@ public class TaskRuntimeModule extends
 	@Override
 	public Class<? extends ILinker> bindILinker() {
 		return RestructuringLinker.class;
+	}
+	
+	@Override
+	public Class<? extends IValueConverterService> bindIValueConverterService() {
+		return TaskValueConverterService.class;
 	}
 
 }

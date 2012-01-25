@@ -12,9 +12,10 @@ public class CodeTest {
 
 	@Test
 	public void shouldResolveBrushNameFromFirstWordInText() {
-		assertThat(code("'''java '''").getLang(), is("java"));
-		assertThat(code("''' java '''").getLang(), is(""));
-		assertThat(code("'''\njava '''").getLang(), is(""));
+		assertThat(code("java ").getLang(), is(""));
+		assertThat(code("java\n ").getLang(), is("java"));
+		assertThat(code(" java ").getLang(), is(""));
+		assertThat(code("\njava ").getLang(), is(""));
 	}
 	
 	private Code code(String value) {
@@ -30,28 +31,29 @@ public class CodeTest {
 
 	@Test
 	public void shouldRemovePreAndPostfix() throws Exception {
-		assertThat(code("'''test'''").getValue(), is("test"));
-		assertThat(code("     ", "'''test'''").getValue(), is("test"));
-		assertThat(code("     ", "'''\ntest\n     '''").getValue(), is("test\n"));
+		assertThat(code("").getValue(), is(""));
+		assertThat(code("test").getValue(), is("test"));
+		assertThat(code("     ", "test").getValue(), is("test"));
+		assertThat(code("     ", "\ntest\n     ").getValue(), is("test\n"));
 	}
 	
 	@Test
 	public void shouldNormalizeWhitespacesBasedOnWhitespacesInFrontOfPrefix() throws Exception {
-		assertThat(code("    ", "'''\n" +
-						"    text'''").getValue(), is("text"));
+		assertThat(code("    ", "\n" +
+						"    text").getValue(), is("text"));
 		
-		assertThat(code("    ", "'''\n" +
+		assertThat(code("    ", "\n" +
 						"    text\n" +
-						"    text2'''").getValue(), is("text\n" +
+						"    text2").getValue(), is("text\n" +
 													   "text2"));
-		assertThat(code("    ", "'''\n" +
+		assertThat(code("    ", "java\n" +
 						"    text\n" +
-						"  text2'''").getValue(), is("text\n" +
+						"  text2").getValue(), is("text\n" +
 													 "  text2"));
 		
-		assertThat(code("    ", "'''\n" +
+		assertThat(code("    ", "\n" +
 						"    text\n" +
-						"  text2'''").getValue(), is("text\n" +
+						"  text2").getValue(), is("text\n" +
 													 "  text2"));
 	}
 }

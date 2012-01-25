@@ -10,22 +10,24 @@
  ******************************************************************************/
 package de.sebastianbenz.task.ui.validation;
 
+import static org.eclipse.xtext.nodemodel.util.NodeModelUtils.getNode;
+
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.Path;
 import org.eclipse.emf.common.util.URI;
-import org.eclipse.xtext.nodemodel.util.NodeModelUtils;
 import org.eclipse.xtext.util.Strings;
 import org.eclipse.xtext.validation.Check;
 
+import com.google.common.base.Joiner;
 import com.google.inject.Inject;
 
 import de.sebastianbenz.task.Code;
+import de.sebastianbenz.task.impl.CodeImplCustom;
 import de.sebastianbenz.task.ui.highlighting.BrushRegistry;
 import de.sebastianbenz.task.validation.TaskJavaValidator;
 
 public class TaskUiValidator extends TaskJavaValidator {
-
 
 	@Inject
 	private BrushRegistry brushes;
@@ -37,8 +39,13 @@ public class TaskUiValidator extends TaskJavaValidator {
 			return;
 		}
 		if(!brushes.getLanguages().contains(lang)){
-			acceptWarning("Unknown language", code, NodeModelUtils.getNode(code).getOffset() + 3, lang.length(), "UnknownLanguage");
+			acceptWarning("Unknown language, supported are: " + Joiner.on(", ").join(brushes.getLanguages()), code, offsetOf(code), lang.length(), 
+					"UnknownLanguage");
 		}
+	}
+
+	protected int offsetOf(Code code) {
+		return getNode(code).getOffset() + code.getIntend().length() + CodeImplCustom.PREFIX.length();
 	}
 
 	public static IFile getFile(URI uri) {

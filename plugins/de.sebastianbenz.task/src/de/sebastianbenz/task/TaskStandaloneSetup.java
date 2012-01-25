@@ -10,6 +10,8 @@
  ******************************************************************************/
 package de.sebastianbenz.task;
 
+import org.eclipse.emf.ecore.EPackage;
+
 import com.google.inject.Injector;
 
 import de.sebastianbenz.task.query.QueryPackage;
@@ -22,8 +24,8 @@ public class TaskStandaloneSetup extends TaskStandaloneSetupGenerated{
 
 	@Override
 	public Injector createInjectorAndDoEMFRegistration() {
-		TaskPackage.eINSTANCE.getClass();
-		QueryPackage.eINSTANCE.getClass();
+		EPackage.Registry.INSTANCE.put(TaskPackage.eNS_URI, TaskPackage.eINSTANCE);
+		EPackage.Registry.INSTANCE.put(QueryPackage.eNS_URI, QueryPackage.eINSTANCE);
 		new QueryStandaloneSetup().createInjectorAndDoEMFRegistration();
 		return super.createInjectorAndDoEMFRegistration();
 	}

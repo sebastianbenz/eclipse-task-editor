@@ -2,7 +2,7 @@
 <feature
       id="de.sebastianbenz.task.platform"
       label="Platform Feature"
-      version="1.1.0.qualifier"
+      version="1.1.1.qualifier"
       provider-name="Sebastian Benz">
 
    <description>

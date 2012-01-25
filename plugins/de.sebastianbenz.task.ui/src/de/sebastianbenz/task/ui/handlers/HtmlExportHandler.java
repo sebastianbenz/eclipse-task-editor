@@ -1,6 +1,7 @@
 package de.sebastianbenz.task.ui.handlers;
 
 import org.eclipse.swt.program.Program;
+import org.eclipse.xtext.parser.IEncodingProvider;
 import org.eclipse.xtext.resource.XtextResource;
 
 import com.google.inject.Inject;
@@ -12,8 +13,8 @@ public class HtmlExportHandler extends AbstractExportHandler {
 	private static final String EXT = "html";
 
 	@Inject
-	public HtmlExportHandler(HtmlGenerator generator){
-		super(generator);
+	public HtmlExportHandler(HtmlGenerator generator, IEncodingProvider encodingProvider){
+		super(generator, encodingProvider);
 	}
 
 	@Override

@@ -35,6 +35,8 @@ public class HtmlGenerator implements TaskGenerator {
     _builder.newLine();
     _builder.append("<head> ");
     _builder.newLine();
+    _builder.append("<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">");
+    _builder.newLine();
     _builder.append("<style type=\"text/css\">");
     _builder.newLine();
     _builder.append("\t");
@@ -117,6 +119,9 @@ public class HtmlGenerator implements TaskGenerator {
     _builder.newLine();
     _builder.append("\t\t");
     _builder.append("padding-bottom: 1px;");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append("padding-left: 5px;");
     _builder.newLine();
     _builder.append("\t");
     _builder.append("}");

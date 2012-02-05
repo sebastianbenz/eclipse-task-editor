@@ -12,7 +12,7 @@ import de.sebastianbenz.task.TaskModel
 import de.sebastianbenz.task.Text
 
 class ConfluenceGenerator implements de.sebastianbenz.task.generator.TaskGenerator {
-	   
+ 	   
 	override generate(TaskModel taskModel)
 		'''
 		«FOR content : taskModel.contents»

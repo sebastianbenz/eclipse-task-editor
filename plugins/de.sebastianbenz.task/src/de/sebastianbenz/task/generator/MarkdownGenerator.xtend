@@ -9,7 +9,7 @@ import de.sebastianbenz.task.TaskModel
 import org.eclipse.xtend2.lib.StringConcatenation
 
 class MarkdownGenerator implements de.sebastianbenz.task.generator.TaskGenerator {
-	   
+ 	   
 	override generate(TaskModel taskModel){
 		'''
 		«FOR content : taskModel.contents»

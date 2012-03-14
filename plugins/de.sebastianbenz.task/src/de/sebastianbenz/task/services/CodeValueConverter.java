@@ -9,7 +9,7 @@ public class CodeValueConverter extends STRINGValueConverter {
 
 	@Override
 	protected String toEscapedString(String value) {
-		return "'''" + Strings.convertToJavaString(value, false) + "'''" + Strings.newLine();
+		return "'''" + value + "'''" + Strings.newLine();
 	}
 	
 	public String toValue(String string, INode node) {
@@ -17,7 +17,7 @@ public class CodeValueConverter extends STRINGValueConverter {
 			return null;
 		try {
 			string = string.trim();
-			return Strings.convertFromJavaString(string.substring(3, string.length() - 3), true);
+			return string.substring(3, string.length() - 3);
 		} catch (IllegalArgumentException e) {
 			throw new ValueConverterException(e.getMessage(), node, e);
 		}

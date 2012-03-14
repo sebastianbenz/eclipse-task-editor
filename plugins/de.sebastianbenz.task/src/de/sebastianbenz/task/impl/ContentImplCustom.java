@@ -142,8 +142,12 @@ public class ContentImplCustom extends de.sebastianbenz.task.impl.ContentImpl {
 	@Override
 	public String getValue() {
 		if(value == null){
-			value = removeTags(getText());
-			value = cleanText(value);
+			if(getText() == null){
+				value = "";
+			}else{
+				value = removeTags(getText());
+				value = cleanText(value);
+			}
 		}
 		return value;
 	}

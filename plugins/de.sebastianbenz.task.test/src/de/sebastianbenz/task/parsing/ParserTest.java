@@ -14,9 +14,16 @@
 package de.sebastianbenz.task.parsing;
 
 import static org.hamcrest.core.Is.is;
+import static org.junit.Assert.*;
 import static org.junit.Assert.assertThat;
 
+import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.xtext.resource.XtextResourceSet;
+import org.junit.Assert;
 import org.junit.Test;
+
+import com.google.common.base.Joiner;
 
 import de.sebastianbenz.task.Code;
 import de.sebastianbenz.task.EmptyLine;
@@ -121,5 +128,11 @@ public class ParserTest extends AbstractTest {
 						 "'''\n"), ContentTypesMatcher.are(Code.class));
 	}
 	
+	@Test
+	public void codeBlockParsing() throws Exception {
+		URI uri = URI.createPlatformPluginURI("de.sebastianbenz.task.test/examples/SyntaxHighlightingExamples.todo", true);
+		Resource resource = new XtextResourceSet().getResource(uri, true);
+		assertTrue(Joiner.on("\n").join(resource.getErrors()), resource.getErrors().isEmpty());
+	}
 	
 }

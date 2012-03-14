@@ -25,7 +25,7 @@
       startupProgressRect="20,275,445,15"
       startupMessageRect="20,252,445,20"
       startupForegroundColor="7F7F7F" />
-   <launcher>
+   <launcher name="taskeditor">
       <macosx icon="../../../../de.sebastianbenz.task.application/icons/Icon.icns"/>
       <solaris/>
       <win useIco="true">

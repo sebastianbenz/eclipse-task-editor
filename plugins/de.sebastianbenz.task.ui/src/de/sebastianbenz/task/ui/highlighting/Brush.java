@@ -46,6 +46,9 @@ public class Brush {
 		}
 
 		public void apply(String string, IHighlightedPositionAcceptor acceptor) {
+			if(string == null || string.length() == 0){
+				return;
+			}
 			Matcher matcher = pattern.matcher(string);
 			while(matcher.find()){
 				int offset = matcher.start();

@@ -44,7 +44,7 @@ public class TaskFactoryImpl extends EFactoryImpl implements TaskFactory
 		{
 			EcorePlugin.INSTANCE.log(exception);
 		}
-		return new TaskFactoryImplCustom();
+		return new TaskFactoryImpl();
 	}
 
 	/**

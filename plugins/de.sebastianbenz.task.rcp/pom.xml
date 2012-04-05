@@ -46,6 +46,7 @@
 					<products>
 						<product>
 							<id>task-editor</id>
+							<rootFolder>task-editor</rootFolder>
 						</product>
 					</products>
 				</configuration>

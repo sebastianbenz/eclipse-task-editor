@@ -1,4 +1,4 @@
-#An easy to use textual todo editor for Eclipse
+An easy to use textual todo editor for Eclipse
 
 You can find a general introduction [here](http://sebastianbenz.de/a-simple-text-based-todo-editor-for-eclipse).
 

@@ -2,14 +2,12 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-
-	<version>${task-editor-version}</version>
 	<artifactId>de.sebastianbenz.task.rcp</artifactId>
 	<packaging>eclipse-repository</packaging>
 	<name>Task Editor RCP Product</name>
 
 	<parent>
-		<version>${task-editor-version}</version>
+		<version>1.1.2-SNAPSHOT</version>
 		<groupId>de.sebastianbenz.task.plugins</groupId>
 		<artifactId>parent</artifactId>
 	</parent>
@@ -35,21 +33,56 @@
 							<goal>materialize-products</goal>
 						</goals>
 					</execution>
-					<execution>
-						<id>archive-products</id>
-						<goals>
-							<goal>archive-products</goal>
-						</goals>
-					</execution>
 				</executions>
 				<configuration>
 					<products>
 						<product>
 							<id>task-editor</id>
-							<rootFolder>task-editor</rootFolder>
+							<rootFolder>task-editor.app</rootFolder>
 						</product>
 					</products>
 				</configuration>
+			</plugin>
+			<plugin>
+				<artifactId>maven-antrun-plugin</artifactId>
+				<version>1.7</version>
+				<executions>
+					<execution>
+						<phase>package</phase>
+						<configuration>
+	                        <target>
+	                            <delete>
+						    	    <fileset dir="target/products">
+						    			<include name="**/*.jdt.*"/>
+						    	    	<include name="**/*.debug.*"/>
+						    	    	<include name="**/*.navigator.*"/>
+						    	    	<include name="**/*.debug*"/>
+						    	    	<include name="**/*.mwe*"/>
+						    	    	<include name="**/*.mwe2*"/>
+						    	    	<include name="**/*.ltk*"/>
+						    	    	<include name="**/*.search*"/>
+						    	    	<include name="**/*.team*"/>
+						    		</fileset>
+						    	</delete>
+						    	
+						    	<property name="root.folder" value="target/products/task-editor/"/>
+ 	
+						    	<move file="${root.folder}linux/gtk/x86/task-editor.app" toFile="${root.folder}linux/gtk/x86/task-editor"/>
+						    	<move file="${root.folder}linux/gtk/x86_64/task-editor.app" toFile="${root.folder}linux/gtk/x86_64/task-editor"/>
+								<move file="${root.folder}win32/win32/x86/task-editor.app" toFile="${root.folder}win32/win32/x86/task-editor"/>
+						    	<move file="${root.folder}win32/win32/x86_64/task-editor.app" toFile="${root.folder}win32/win32/x86_64/task-editor"/>
+						    	
+						    	<zip basedir="${root.folder}linux/gtk/x86/task-editor" destfile="target/products/task-editor-linux.gtk.x86.zip"/>
+						    	<zip basedir="${root.folder}linux/gtk/x86_64/task-editor" destfile="target/products/task-editor-linux.gtk.x86_64.zip"/>
+								<zip basedir="${root.folder}win32/win32/x86/task-editor" destfile="target/products/task-editor-win32.win32.x86.zip"/>
+						    	<zip basedir="${root.folder}win32/win32/x86_64/task-editor" destfile="target/products/task-editor-win32.win32.x86_64.zip"/>
+	                        </target>
+						</configuration>
+						<goals>
+							<goal>run</goal>
+						</goals>
+					</execution>
+				</executions>
 			</plugin>
 		</plugins>
 	</build>

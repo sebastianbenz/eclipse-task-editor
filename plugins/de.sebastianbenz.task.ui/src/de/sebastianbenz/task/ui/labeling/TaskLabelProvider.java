@@ -64,5 +64,5 @@ public class TaskLabelProvider extends DeclarativeLabelProvider {
 			return new StyledString(getText(element));
 		}
 	}
-	
+
 }

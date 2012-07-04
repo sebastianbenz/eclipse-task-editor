@@ -165,6 +165,28 @@
     </extension>
 
 
+    <!-- marker definitions for de.sebastianbenz.task.Task -->
+    <extension
+            id="task.check.fast"
+            name="Task Problem"
+            point="org.eclipse.core.resources.markers">
+        <super type="org.eclipse.xtext.ui.check.fast"/>
+        <persistent value="true"/>
+    </extension>
+    <extension
+            id="task.check.normal"
+            name="Task Problem"
+            point="org.eclipse.core.resources.markers">
+        <super type="org.eclipse.xtext.ui.check.normal"/>
+        <persistent value="true"/>
+    </extension>
+    <extension
+            id="task.check.expensive"
+            name="Task Problem"
+            point="org.eclipse.core.resources.markers">
+        <super type="org.eclipse.xtext.ui.check.expensive"/>
+        <persistent value="true"/>
+    </extension>
 
 	<!-- Quick Outline -->
 	<extension
@@ -199,13 +221,34 @@
 			</command>
 		</menuContribution>
 	</extension>
-   <!-- quickfix marker resolution generator -->
-   <extension
-         point="org.eclipse.ui.ide.markerResolution">
-      <markerResolutionGenerator
-            class="de.sebastianbenz.task.ui.TaskExecutableExtensionFactory:org.eclipse.xtext.ui.editor.quickfix.MarkerResolutionGenerator">
-      </markerResolutionGenerator>
-   </extension>
+    <!-- quickfix marker resolution generator for de.sebastianbenz.task.Task -->
+    <extension
+            point="org.eclipse.ui.ide.markerResolution">
+        <markerResolutionGenerator
+            class="de.sebastianbenz.task.ui.TaskExecutableExtensionFactory:org.eclipse.xtext.ui.editor.quickfix.MarkerResolutionGenerator"
+            markerType="de.sebastianbenz.task.ui.task.check.fast">
+            <attribute
+                name="FIXABLE_KEY"
+                value="true">
+            </attribute>
+        </markerResolutionGenerator>
+        <markerResolutionGenerator
+            class="de.sebastianbenz.task.ui.TaskExecutableExtensionFactory:org.eclipse.xtext.ui.editor.quickfix.MarkerResolutionGenerator"
+            markerType="de.sebastianbenz.task.ui.task.check.normal">
+            <attribute
+                name="FIXABLE_KEY"
+                value="true">
+            </attribute>
+        </markerResolutionGenerator>
+        <markerResolutionGenerator
+            class="de.sebastianbenz.task.ui.TaskExecutableExtensionFactory:org.eclipse.xtext.ui.editor.quickfix.MarkerResolutionGenerator"
+            markerType="de.sebastianbenz.task.ui.task.check.expensive">
+            <attribute
+                name="FIXABLE_KEY"
+                value="true">
+            </attribute>
+        </markerResolutionGenerator>
+    </extension>
 
   <extension point="org.eclipse.compare.contentViewers">
     <viewer id="de.sebastianbenz.task.Task.compare.contentViewers"
@@ -374,5 +417,27 @@
     </extension>
 
 
+    <!-- marker definitions for de.sebastianbenz.task.Query -->
+    <extension
+            id="query.check.fast"
+            name="Query Problem"
+            point="org.eclipse.core.resources.markers">
+        <super type="org.eclipse.xtext.ui.check.fast"/>
+        <persistent value="true"/>
+    </extension>
+    <extension
+            id="query.check.normal"
+            name="Query Problem"
+            point="org.eclipse.core.resources.markers">
+        <super type="org.eclipse.xtext.ui.check.normal"/>
+        <persistent value="true"/>
+    </extension>
+    <extension
+            id="query.check.expensive"
+            name="Query Problem"
+            point="org.eclipse.core.resources.markers">
+        <super type="org.eclipse.xtext.ui.check.expensive"/>
+        <persistent value="true"/>
+    </extension>
 
 </plugin>

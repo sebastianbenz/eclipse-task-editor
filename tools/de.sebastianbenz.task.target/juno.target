@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?pde version="3.8"?>
+
+<target includeMode="feature" name="TaskEditor" sequenceNumber="47">
+<locations>
+<location includeAllPlatforms="false" includeConfigurePhase="false" includeMode="planner" includeSource="true" type="InstallableUnit">
+<unit id="org.eclipse.emf" version="0.0.0"/>
+<unit id="org.eclipse.emf.common" version="0.0.0"/>
+<unit id="org.eclipse.emf.common.ui" version="0.0.0"/>
+<unit id="org.eclipse.emf.ecore" version="0.0.0"/>
+<unit id="org.eclipse.emf.codegen.ecore" version="0.0.0"/>
+<unit id="org.eclipse.emf.ecore.editor" version="0.0.0"/>
+<unit id="org.eclipse.emf.edit" version="0.0.0"/>
+<unit id="org.eclipse.emf.edit.ui" version="0.0.0"/>
+<unit id="org.eclipse.emf.ecore.change" version="0.0.0"/>
+<unit id="org.eclipse.emf.ecore.xmi" version="0.0.0"/>
+<repository location="http://download.eclipse.org/releases/juno"/>
+</location>
+<location includeAllPlatforms="false" includeConfigurePhase="false" includeMode="planner" includeSource="true" type="InstallableUnit">
+<unit id="org.hamcrest.core" version="0.0.0"/>
+<unit id="org.hamcrest.core.source" version="0.0.0"/>
+<unit id="org.hamcrest.integration.source" version="0.0.0"/>
+<unit id="org.hamcrest.generator" version="0.0.0"/>
+<unit id="org.hamcrest.generator.source" version="0.0.0"/>
+<unit id="org.hamcrest.integration" version="0.0.0"/>
+<unit id="org.hamcrest.library" version="0.0.0"/>
+<unit id="org.hamcrest.library.source" version="0.0.0"/>
+<unit id="org.hamcrest" version="0.0.0"/>
+<unit id="org.hamcrest.text" version="0.0.0"/>
+<unit id="org.hamcrest.text.source" version="0.0.0"/>
+<unit id="com.google.guava" version="0.0.0"/>
+<unit id="com.google.inject" version="0.0.0"/>
+<unit id="com.thoughtworks.qdox" version="0.0.0"/>
+<unit id="org.apache.log4j" version="0.0.0"/>
+<unit id="org.aopalliance" version="0.0.0"/>
+<unit id="org.antlr.runtime" version="0.0.0"/>
+<unit id="javax.inject" version="0.0.0"/>
+<unit id="org.junit" version="0.0.0"/>
+<unit id="org.apache.commons.lang" version="0.0.0"/>
+<unit id="org.apache.commons.cli" version="0.0.0"/>
+<unit id="org.apache.commons.cli.source" version="0.0.0"/>
+<unit id="org.junit.source" version="0.0.0"/>
+<unit id="org.apache.commons.logging" version="0.0.0"/>
+<repository location="http://download.eclipse.org/modeling/tmf/xtext/updates/orbit"/>
+</location>
+<location includeAllPlatforms="false" includeMode="planner" includeSource="true" type="InstallableUnit">
+<unit id="org.eclipse.emf.mwe.core.feature.group" version="1.2.1.v201112070431"/>
+<unit id="org.eclipse.emf.mwe2.runtime.sdk.feature.group" version="2.2.0.v201112070431"/>
+<unit id="org.eclipse.xpand.feature.group" version="0.0.0"/>
+<repository location="http://download.eclipse.org/modeling/tmf/xtext/updates/composite/releases"/>
+</location>
+<location includeAllPlatforms="false" includeConfigurePhase="false" includeMode="planner" includeSource="true" type="InstallableUnit">
+<unit id="org.eclipse.xtext.runtime.feature.group" version="2.3.0.v201206120633"/>
+<unit id="org.eclipse.xtext.ui.feature.group" version="2.3.0.v201206120633"/>
+<unit id="org.eclipse.xtext.xbase.lib" version="2.3.0.v201206120633"/>
+<unit id="org.eclipse.xtext.junit4" version="2.3.0.v201206120633"/>
+<unit id="org.eclipse.xtext.ui.junit" version="2.3.0.v201206120633"/>
+<repository location="http://download.eclipse.org/modeling/tmf/xtext/updates/composite/releases/"/>
+</location>
+<location includeAllPlatforms="false" includeConfigurePhase="false" includeMode="planner" includeSource="true" type="InstallableUnit">
+<unit id="org.eclipse.platform.feature.group" version="4.2.0.v20120608-135145-9JF7BHV8FyMteji0Oi_ePMz0xuZ8TVo7lV0z0ecb"/>
+<unit id="org.eclipse.equinox.executable.feature.group" version="3.6.0.v20120522-1813-7P7OG2BFLWUl7UmbVUO9iCm"/>
+<unit id="org.eclipse.rcp.sdk.id" version="4.2.0.I20120608-1400"/>
+<unit id="org.eclipse.equinox.p2.sdk.feature.group" version="3.8.0.v20120524-0542-9N89H_mGMMn84Osz0TAoT279BRQD"/>
+<unit id="org.eclipse.ui.ide" version="0.0.0"/>
+<unit id="org.eclipse.ui" version="0.0.0"/>
+<unit id="org.eclipse.e4.ui.model.workbench" version="0.0.0"/>
+<unit id="com.ibm.icu" version="0.0.0"/>
+<repository location="http://download.eclipse.org/eclipse/updates/4.2"/>
+</location>
+</locations>
+</target>

@@ -8,6 +8,8 @@ import org.osgi.framework.Bundle;
 
 import com.google.inject.Injector;
 
+import de.sebastianbenz.task.ui.internal.TaskActivator;
+
 /**
  * This class was generated. Customizations should only happen in a newly
  * introduced subclass. 
@@ -16,12 +18,12 @@ public class QueryExecutableExtensionFactory extends AbstractGuiceAwareExecutabl
 
 	@Override
 	protected Bundle getBundle() {
-		return de.sebastianbenz.task.ui.internal.TaskActivator.getInstance().getBundle();
+		return TaskActivator.getInstance().getBundle();
 	}
 	
 	@Override
 	protected Injector getInjector() {
-		return de.sebastianbenz.task.ui.internal.TaskActivator.getInstance().getInjector("de.sebastianbenz.task.Query");
+		return TaskActivator.getInstance().getInjector(TaskActivator.DE_SEBASTIANBENZ_TASK_QUERY);
 	}
 	
 }

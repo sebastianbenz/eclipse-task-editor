@@ -1,5 +1,6 @@
 package de.sebastianbenz.task.generator;
 
+import com.google.common.base.Objects;
 import com.google.common.collect.Iterables;
 import de.sebastianbenz.task.Code;
 import de.sebastianbenz.task.Container;
@@ -20,10 +21,6 @@ import java.util.Iterator;
 import org.apache.commons.lang.StringEscapeUtils;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.xtend2.lib.StringConcatenation;
-import org.eclipse.xtext.xbase.lib.BooleanExtensions;
-import org.eclipse.xtext.xbase.lib.IntegerExtensions;
-import org.eclipse.xtext.xbase.lib.ObjectExtensions;
-import org.eclipse.xtext.xbase.lib.StringExtensions;
 
 @SuppressWarnings("all")
 public class HtmlGenerator implements TaskGenerator {
@@ -281,33 +278,28 @@ public class HtmlGenerator implements TaskGenerator {
   }
   
   public boolean isFirst(final Task task) {
-      Container _parent = task.getParent();
-      EList<Content> _children = _parent.getChildren();
-      Iterable<Task> _filter = Iterables.<Task>filter(_children, de.sebastianbenz.task.Task.class);
-      Iterable<Task> tasks = _filter;
-      Iterator<Task> _iterator = tasks.iterator();
-      Task _next = _iterator.next();
-      boolean _operator_equals = ObjectExtensions.operator_equals(_next, task);
-      return _operator_equals;
+    Container _parent = task.getParent();
+    EList<Content> _children = _parent.getChildren();
+    Iterable<Task> tasks = Iterables.<Task>filter(_children, Task.class);
+    Iterator<Task> _iterator = tasks.iterator();
+    Task _next = _iterator.next();
+    return Objects.equal(_next, task);
   }
   
   public boolean isLast(final Task task) {
-      Container _parent = task.getParent();
-      EList<Content> _children = _parent.getChildren();
-      EList<Content> siblings = _children;
-      int _size = siblings.size();
-      int _operator_minus = IntegerExtensions.operator_minus(_size, 1);
-      Content _get = siblings.get(_operator_minus);
-      boolean _operator_equals = ObjectExtensions.operator_equals(_get, task);
-      return _operator_equals;
+    Container _parent = task.getParent();
+    EList<Content> siblings = _parent.getChildren();
+    int _size = siblings.size();
+    int _minus = (_size - 1);
+    Content _get = siblings.get(_minus);
+    return Objects.equal(_get, task);
   }
   
   protected CharSequence _generate(final Project project) {
     CharSequence _xblockexpression = null;
     {
       int _level = project.getLevel();
-      int _operator_plus = IntegerExtensions.operator_plus(_level, 1);
-      int level = _operator_plus;
+      int level = (_level + 1);
       StringConcatenation _builder = new StringConcatenation();
       _builder.append("<h");
       _builder.append(level, "");
@@ -370,47 +362,43 @@ public class HtmlGenerator implements TaskGenerator {
   }
   
   protected CharSequence _write(final Text text) {
-    String _value = text.getValue();
-    return _value;
+    return text.getValue();
   }
   
   protected CharSequence _write(final Link link) {
+    String url = link.getUrl();
+    boolean _startsWith = url.startsWith("http://");
+    boolean _not = (!_startsWith);
+    if (_not) {
+      String _plus = ("http://" + url);
+      url = _plus;
+    }
+    String description = "";
+    String _description = link.getDescription();
+    boolean _equals = Objects.equal(_description, "");
+    if (_equals) {
       String _url = link.getUrl();
-      String url = _url;
-      boolean _startsWith = url.startsWith("http://");
-      boolean _operator_not = BooleanExtensions.operator_not(_startsWith);
-      if (_operator_not) {
-        String _operator_plus = StringExtensions.operator_plus("http://", url);
-        url = _operator_plus;
-      }
-      String description = "";
-      String _description = link.getDescription();
-      boolean _operator_equals = ObjectExtensions.operator_equals(_description, "");
-      if (_operator_equals) {
-        String _url_1 = link.getUrl();
-        description = _url_1;
-      } else {
-        String _description_1 = link.getDescription();
-        description = _description_1;
-      }
-      String _operator_plus_1 = StringExtensions.operator_plus("<a href=\"", url);
-      String _operator_plus_2 = StringExtensions.operator_plus(_operator_plus_1, "\">");
-      String _operator_plus_3 = StringExtensions.operator_plus(_operator_plus_2, description);
-      String _operator_plus_4 = StringExtensions.operator_plus(_operator_plus_3, "</a>");
-      return _operator_plus_4;
+      description = _url;
+    } else {
+      String _description_1 = link.getDescription();
+      description = _description_1;
+    }
+    String _plus_1 = ("<a href=\"" + url);
+    String _plus_2 = (_plus_1 + "\">");
+    String _plus_3 = (_plus_2 + description);
+    return (_plus_3 + "</a>");
   }
   
   protected CharSequence _write(final Image image) {
     String _url = image.getUrl();
-    String _operator_plus = StringExtensions.operator_plus("<p><img src=\"", _url);
-    String _operator_plus_1 = StringExtensions.operator_plus(_operator_plus, "\" title=\"");
+    String _plus = ("<p><img src=\"" + _url);
+    String _plus_1 = (_plus + "\" title=\"");
     String _description = image.getDescription();
-    String _operator_plus_2 = StringExtensions.operator_plus(_operator_plus_1, _description);
-    String _operator_plus_3 = StringExtensions.operator_plus(_operator_plus_2, "\" alt=\"");
+    String _plus_2 = (_plus_1 + _description);
+    String _plus_3 = (_plus_2 + "\" alt=\"");
     String _description_1 = image.getDescription();
-    String _operator_plus_4 = StringExtensions.operator_plus(_operator_plus_3, _description_1);
-    String _operator_plus_5 = StringExtensions.operator_plus(_operator_plus_4, "\"/></p>");
-    return _operator_plus_5;
+    String _plus_4 = (_plus_3 + _description_1);
+    return (_plus_4 + "\"/></p>");
   }
   
   protected CharSequence _write(final Tag tag) {

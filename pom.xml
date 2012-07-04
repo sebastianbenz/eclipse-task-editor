@@ -6,15 +6,12 @@
   
 
   <properties>
-   <tycho-version>0.14.1</tycho-version>
-	<task-editor-version>1.1.2-SNAPSHOT</task-editor-version>
+   <tycho-version>0.15.0</tycho-version>
     <tycho-groupid>org.eclipse.tycho</tycho-groupid>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <platform-version-name>indigo</platform-version-name>
-    <eclipse-site>http://download.eclipse.org/releases/${platform-version-name}</eclipse-site>
   </properties>
   
-  <version>${task-editor-version}</version>
+  <version>1.1.2-SNAPSHOT</version>
   <groupId>de.sebastianbenz.task</groupId>
   <artifactId>parent</artifactId>
   <packaging>pom</packaging>
@@ -26,31 +23,7 @@
     <module>tools</module>
   </modules>
 
-<repositories>
-    <repository>
-      <id>indigo</id>
-      <layout>p2</layout>
-      <url>${eclipse-site}</url>
-    </repository>
-  </repositories>
-
-  <profiles>
-    <profile>
-      <id>platform-indigo</id>
-      <activation>
-        <property>
-          <name>platform-version-name</name>
-          <value>indigo</value>
-        </property>
-      </activation>
-      <properties>
-        <eclipse-site>http://download.eclipse.org/releases/indigo</eclipse-site>
-        <platform-version>[3.7,3.8)</platform-version>
-      </properties>
-    </profile>
-  </profiles> 
-
-  <build>
+    <build>
     <plugins>
       <plugin>
         <groupId>${tycho-groupid}</groupId>
@@ -62,13 +35,29 @@
             <artifact>
               <groupId>de.sebastianbenz.task.tools</groupId>
               <artifactId>de.sebastianbenz.task.target</artifactId>
-              <version>${task-editor-version}</version>
-              <classifier>indigo</classifier>
+              <version>1.1.2-SNAPSHOT</version>
+              <classifier>juno</classifier>
             </artifact>
+            <filters>
+              <filter>
+              <type>eclipse-plugin</type>
+              <id>org.eclipse.jdt.core</id>
+                <restrictTo>
+                <version>10.0.0</version>
+                </restrictTo>
+              </filter>
+              <filter>
+              <type>eclipse-plugin</type>
+              <id>org.eclipse.jdt.ui</id>
+              <restrictTo>
+                <version>10.0.0</version>
+                </restrictTo>
+              </filter>
+            </filters>
           </target>
           <ignoreTychoRepositories>true</ignoreTychoRepositories>
           <environments>
-             <environment>
+            <environment>
               <os>macosx</os>
               <ws>cocoa</ws>
               <arch>x86_64</arch>
@@ -93,6 +82,7 @@
               <ws>gtk</ws>
               <arch>x86_64</arch>
             </environment>
+
           </environments>
         </configuration>
       </plugin>

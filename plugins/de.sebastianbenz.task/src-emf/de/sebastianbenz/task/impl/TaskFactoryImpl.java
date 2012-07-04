@@ -1,8 +1,4 @@
 /**
- * <copyright>
- * </copyright>
- *
-
  */
 package de.sebastianbenz.task.impl;
 
@@ -44,7 +40,7 @@ public class TaskFactoryImpl extends EFactoryImpl implements TaskFactory
 		{
 			EcorePlugin.INSTANCE.log(exception);
 		}
-		return new TaskFactoryImpl();
+		return new TaskFactoryImplCustom();
 	}
 
 	/**

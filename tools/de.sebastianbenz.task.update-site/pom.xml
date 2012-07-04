@@ -4,11 +4,10 @@
 	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
-		<version>${task-editor-version}</version>
+		<version>1.1.2-SNAPSHOT</version>
 		<groupId>de.sebastianbenz.task.tools</groupId>
 		<artifactId>parent</artifactId>
 	</parent>
-	<version>${task-editor-version}</version>
 	<artifactId>de.sebastianbenz.task.updatesite</artifactId>
 	<packaging>eclipse-update-site</packaging>
 	<name>Todo Editor</name>

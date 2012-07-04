@@ -11,8 +11,6 @@ import de.sebastianbenz.task.generator.TaskGenerator;
 import java.util.Arrays;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.xtend2.lib.StringConcatenation;
-import org.eclipse.xtext.xbase.lib.IntegerExtensions;
-import org.eclipse.xtext.xbase.lib.StringExtensions;
 
 @SuppressWarnings("all")
 public class MarkdownGenerator implements TaskGenerator {
@@ -51,13 +49,12 @@ public class MarkdownGenerator implements TaskGenerator {
     CharSequence _xblockexpression = null;
     {
       String _value = code.getValue();
-      String[] _split = _value.split("\n");
-      String[] lines = _split;
+      String[] lines = _value.split("\n");
       StringConcatenation _builder = new StringConcatenation();
       {
         for(final String line : lines) {
-          String _operator_plus = StringExtensions.operator_plus("    ", line);
-          _builder.append(_operator_plus, "");
+          String _plus = ("    " + line);
+          _builder.append(_plus, "");
         }
       }
       _builder.newLineIfNotEmpty();
@@ -67,26 +64,26 @@ public class MarkdownGenerator implements TaskGenerator {
   }
   
   protected CharSequence _generate(final Project project) {
-      int i = 0;
-      StringConcatenation _stringConcatenation = new StringConcatenation();
-      StringConcatenation result = _stringConcatenation;
-      int _level = project.getLevel();
-      boolean _operator_lessEqualsThan = IntegerExtensions.operator_lessEqualsThan(i, _level);
-      boolean _while = _operator_lessEqualsThan;
-      while (_while) {
-        {
-          result.append("#");
-          int _operator_plus = IntegerExtensions.operator_plus(i, 1);
-          i = _operator_plus;
-        }
-        int _level_1 = project.getLevel();
-        boolean _operator_lessEqualsThan_1 = IntegerExtensions.operator_lessEqualsThan(i, _level_1);
-        _while = _operator_lessEqualsThan_1;
+    int i = 0;
+    StringConcatenation _stringConcatenation = new StringConcatenation();
+    StringConcatenation result = _stringConcatenation;
+    int _level = project.getLevel();
+    boolean _lessEqualsThan = (i <= _level);
+    boolean _while = _lessEqualsThan;
+    while (_while) {
+      {
+        result.append("#");
+        int _plus = (i + 1);
+        i = _plus;
       }
-      String _value = project.getValue();
-      String _operator_plus = StringExtensions.operator_plus(" ", _value);
-      result.append(_operator_plus);
-      return result;
+      int _level_1 = project.getLevel();
+      boolean _lessEqualsThan_1 = (i <= _level_1);
+      _while = _lessEqualsThan_1;
+    }
+    String _value = project.getValue();
+    String _plus = (" " + _value);
+    result.append(_plus);
+    return result;
   }
   
   protected CharSequence _generate(final EmptyLine emptyLine) {

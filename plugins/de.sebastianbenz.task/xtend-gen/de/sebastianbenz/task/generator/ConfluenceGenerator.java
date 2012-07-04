@@ -1,5 +1,6 @@
 package de.sebastianbenz.task.generator;
 
+import com.google.common.base.Objects;
 import de.sebastianbenz.task.Code;
 import de.sebastianbenz.task.Content;
 import de.sebastianbenz.task.EmptyLine;
@@ -16,10 +17,6 @@ import de.sebastianbenz.task.generator.TaskGenerator;
 import java.util.Arrays;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.xtend2.lib.StringConcatenation;
-import org.eclipse.xtext.xbase.lib.BooleanExtensions;
-import org.eclipse.xtext.xbase.lib.IntegerExtensions;
-import org.eclipse.xtext.xbase.lib.ObjectExtensions;
-import org.eclipse.xtext.xbase.lib.StringExtensions;
 
 @SuppressWarnings("all")
 public class ConfluenceGenerator implements TaskGenerator {
@@ -77,8 +74,8 @@ public class ConfluenceGenerator implements TaskGenerator {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("h");
     int _level = project.getLevel();
-    int _operator_plus = IntegerExtensions.operator_plus(_level, 1);
-    _builder.append(_operator_plus, "");
+    int _plus = (_level + 1);
+    _builder.append(_plus, "");
     _builder.append(". ");
     String _value = project.getValue();
     String _escape = this.escape(_value);
@@ -95,46 +92,42 @@ public class ConfluenceGenerator implements TaskGenerator {
   
   protected CharSequence _write(final Text text) {
     String _value = text.getValue();
-    String _escape = this.escape(_value);
-    return _escape;
+    return this.escape(_value);
   }
   
   protected CharSequence _write(final Link link) {
+    String url = link.getUrl();
+    boolean _startsWith = url.startsWith("http://");
+    boolean _not = (!_startsWith);
+    if (_not) {
+      String _plus = ("http://" + url);
+      url = _plus;
+    }
+    String description = "";
+    String _description = link.getDescription();
+    boolean _equals = Objects.equal(_description, "");
+    if (_equals) {
       String _url = link.getUrl();
-      String url = _url;
-      boolean _startsWith = url.startsWith("http://");
-      boolean _operator_not = BooleanExtensions.operator_not(_startsWith);
-      if (_operator_not) {
-        String _operator_plus = StringExtensions.operator_plus("http://", url);
-        url = _operator_plus;
-      }
-      String description = "";
-      String _description = link.getDescription();
-      boolean _operator_equals = ObjectExtensions.operator_equals(_description, "");
-      if (_operator_equals) {
-        String _url_1 = link.getUrl();
-        description = _url_1;
-      } else {
-        String _description_1 = link.getDescription();
-        description = _description_1;
-      }
-      String _description_2 = link.getDescription();
-      String _operator_plus_1 = StringExtensions.operator_plus("[", _description_2);
-      String _operator_plus_2 = StringExtensions.operator_plus(_operator_plus_1, "|");
-      String _url_2 = link.getUrl();
-      String _operator_plus_3 = StringExtensions.operator_plus(_operator_plus_2, _url_2);
-      String _operator_plus_4 = StringExtensions.operator_plus(_operator_plus_3, "]");
-      return _operator_plus_4;
+      description = _url;
+    } else {
+      String _description_1 = link.getDescription();
+      description = _description_1;
+    }
+    String _description_2 = link.getDescription();
+    String _plus_1 = ("[" + _description_2);
+    String _plus_2 = (_plus_1 + "|");
+    String _url_1 = link.getUrl();
+    String _plus_3 = (_plus_2 + _url_1);
+    return (_plus_3 + "]");
   }
   
   protected CharSequence _write(final Image image) {
     String _url = image.getUrl();
-    String _operator_plus = StringExtensions.operator_plus("!", _url);
-    String _operator_plus_1 = StringExtensions.operator_plus(_operator_plus, "|title=\"");
+    String _plus = ("!" + _url);
+    String _plus_1 = (_plus + "|title=\"");
     String _description = image.getDescription();
-    String _operator_plus_2 = StringExtensions.operator_plus(_operator_plus_1, _description);
-    String _operator_plus_3 = StringExtensions.operator_plus(_operator_plus_2, "\"!");
-    return _operator_plus_3;
+    String _plus_2 = (_plus_1 + _description);
+    return (_plus_2 + "\"!");
   }
   
   protected CharSequence _write(final Tag tag) {
@@ -159,8 +152,7 @@ public class ConfluenceGenerator implements TaskGenerator {
   
   public String escape(final String string) {
     String _replaceAll = string.replaceAll("\\{", "\\\\{");
-    String _replaceAll_1 = _replaceAll.replaceAll("\\}", "\\\\}");
-    return _replaceAll_1;
+    return _replaceAll.replaceAll("\\}", "\\\\}");
   }
   
   public CharSequence generate(final Content code) {

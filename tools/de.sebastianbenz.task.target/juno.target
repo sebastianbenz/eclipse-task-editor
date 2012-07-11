@@ -55,6 +55,7 @@
 <unit id="org.eclipse.xtext.xbase.lib" version="2.3.0.v201206120633"/>
 <unit id="org.eclipse.xtext.junit4" version="2.3.0.v201206120633"/>
 <unit id="org.eclipse.xtext.ui.junit" version="2.3.0.v201206120633"/>
+<unit id="org.eclipse.xtend.sdk.feature.group" version="2.3.0.v201206120633"/>
 <repository location="http://download.eclipse.org/modeling/tmf/xtext/updates/composite/releases/"/>
 </location>
 <location includeAllPlatforms="false" includeConfigurePhase="false" includeMode="planner" includeSource="true" type="InstallableUnit">

@@ -26,6 +26,7 @@
       startupMessageRect="20,252,445,20"
       startupForegroundColor="7F7F7F" />
    <launcher name="taskeditor">
+      <linux icon="../../../../de.sebastianbenz.task.application/icons/Icon_128.xpm"/>
       <macosx icon="../../../../de.sebastianbenz.task.application/icons/Icon.icns"/>
       <solaris/>
       <win useIco="true">
